@@ -11,4 +11,9 @@ venv/
 # Run output. The RECORDED run is checked in under kits/*/results/ so a fresh clone shows real
 # results with no key; this is the scratch directory your own runs write to.
 runs/
-data/_fetched/
+# The raw HTML fetch_corpus.py downloads; build_corpus.py turns it into the corpus that ships.
+# NO LEADING PATH ON PURPOSE. Written as `data/_fetched/` this matched nothing: a pattern with an
+# internal slash is anchored to the .gitignore's own directory, and the real path is
+# kits/<kit>/data/_fetched/. The files had already been untracked by hand, so the repo looked
+# correct while the rule meant to keep them out matched no path at all.
+_fetched/
