@@ -22,7 +22,6 @@ import os
 import re
 import subprocess
 import sys
-from html.parser import HTMLParser
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(HERE, "data", "_fetched")
@@ -43,55 +42,13 @@ FORMAT = {
 # Everything not named above stays as the HTML it arrived as.
 
 
-class _Text(HTMLParser):
-    """HTML to text and to markdown in one pass.
-
-    Deliberately stdlib. A kit that needs a scraping library to read its own sample data has spent
-    a dependency on the least interesting part of itself, and `src/` has to parse HTML at runtime
-    too -- so whatever this uses, that has to use as well.
-    """
-
-    SKIP = {"script", "style", "head", "nav"}
-    HEAD = {"h1": "# ", "h2": "## ", "h3": "### ", "h4": "#### "}
-
-    def __init__(self, md):
-        super().__init__(convert_charrefs=True)
-        self.md, self.out, self.skip, self.pre, self.pending = md, [], 0, 0, ""
-
-    def handle_starttag(self, tag, attrs):
-        if tag in self.SKIP:
-            self.skip += 1
-        elif tag == "pre":
-            self.pre += 1
-            self.out.append("\n```\n" if self.md else "\n")
-        elif tag in self.HEAD:
-            self.out.append("\n\n" + (self.HEAD[tag] if self.md else ""))
-        elif tag in ("p", "div", "tr", "br", "table"):
-            self.out.append("\n")
-        elif tag == "li":
-            self.out.append("\n" + ("- " if self.md else "  "))
-
-    def handle_endtag(self, tag):
-        if tag in self.SKIP:
-            self.skip = max(0, self.skip - 1)
-        elif tag == "pre":
-            self.pre = max(0, self.pre - 1)
-            self.out.append("\n```\n" if self.md else "\n")
-        elif tag in self.HEAD:
-            self.out.append("\n")
-
-    def handle_data(self, d):
-        if not self.skip:
-            self.out.append(d if self.pre else re.sub(r"\s+", " ", d))
-
-    def text(self):
-        s = "".join(self.out)
-        s = re.sub(r"\n[ \t]+\n", "\n\n", s)
-        return re.sub(r"\n{3,}", "\n\n", s).strip() + "\n"
-
-
 def convert(html, md):
-    p = _Text(md)
+    # The runtime pipeline reads these same documents, so it must use this same parser.
+    # src/extract.py owns it; a second copy here would drift and the corpus would stop matching
+    # what the index was built from.
+    sys.path.insert(0, HERE)
+    from src.extract import HtmlText
+    p = HtmlText(md)
     p.feed(html)
     return p.text()
 
