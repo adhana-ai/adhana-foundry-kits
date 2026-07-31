@@ -48,7 +48,7 @@ def build(corpus_dir=CORPUS, verbose=True):
 
     # Repeated furniture is dropped ACROSS the corpus, which is why it happens here rather than in
     # an extractor: one document cannot tell you what every document repeats.
-    texts, boiler = boilerplate.strip(texts)
+    texts, boiler = boilerplate.strip(texts, formats)
 
     chunks = []
     for doc_id in sorted(texts):
