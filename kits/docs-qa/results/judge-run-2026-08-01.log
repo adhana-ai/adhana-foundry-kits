@@ -1,0 +1,68 @@
+# The judge's own run log — 2026-08-01, deepseek-v4-pro grading both models
+#
+# This file is evidence, not decoration. A page that says "we used an LLM as a judge" and shows
+# only the resulting percentage is asking to be believed. What makes the number checkable is
+# visible here and nowhere else:
+#
+#   1. THE SELF-TEST RAN FIRST AND HAD TO GO RED. Four fluent, confident WRONG answers -- one of
+#      them true but answering a different question -- plus two correct paraphrases that had to
+#      pass. A grader that cannot fail anything reports 100% and means nothing.
+#   2. EVERY DISAGREEMENT WITH THE SUBSTRING GRADER IS PRINTED, with the judge's reason. These are
+#      the rows where one of the two graders is wrong, and they are the rows a human should read.
+#      L27 is the one that goes the other way: the substring check scored a REFUSAL as correct
+#      because the model quoted the passage while declining, and the judge caught it.
+#   3. THE CALL COUNT EXCEEDS THE ROW COUNT. 54 calls for 50 rows, 56 for 50 -- those are the
+#      escalations from the 400-token ceiling, which covers thinking and not just output.
+#
+# Reproduce with:  python evals/judge.py --self-test
+#                  python evals/judge.py results/eval-deepseek-v4-<model>.json --judge-model deepseek-v4-pro
+
+=== 06:11:47  SELF-TEST -- prove the judge can still go red
+SELF-TEST -- the judge must reject fluent wrong answers and accept correct paraphrases.
+  1. PASS  expected=False got=False  opposite polarity, stated fluently
+  2. PASS  expected=False got=False  confidently wrong on the only fact asked for
+  3. PASS  expected=False got=False  true, on-topic, and answers a different question
+  4. PASS  expected=False got=False  empty
+  5. PASS  expected=True  got=True   correct paraphrase -- the exact case the substring grader failed
+  6. PASS  expected=True  got=True   correct paraphrase in different words
+
+USABLE -- 6 of 6 fixtures behaved as required.
+
+=== 06:12:03  judging results/eval-deepseek-v4-flash.json
+judging 50 answers from deepseek-v4-flash with deepseek-v4-pro
+
+  DISAGREE L21   substring=False judge=True   Both state that readers and writers do not block each other and can run concurrently.
+  DISAGREE L25   substring=False judge=True   The candidate correctly states the recommendation to avoid AUTOINCREMENT unless strictly needed and cites the overhead reasons; adding detail does not contradict.
+  DISAGREE L28   substring=False judge=True   The candidate correctly describes reductions in disk space and performance improvements, matching the reference's optimization of storage and processing requirements.
+  DISAGREE L30   substring=False judge=True   The candidate correctly states that an index can reference expressions involving table columns, which is the core of the reference answer.
+  DISAGREE L32   substring=False judge=True   Conveys that rowid lookup is direct and fast, consistent with reference.
+  DISAGREE L42   substring=False judge=True   The candidate correctly paraphrases the reference's key point and includes an additional accurate detail about automatic transaction commitment.
+  DISAGREE L47   substring=False judge=True   The candidate describes querying R*Tree via WHERE clauses constraining min/max columns, which matches the reference's method, and adds correct details about bounding-box queries and MATCH operator.
+  DISAGREE L49   substring=False judge=True   The candidate correctly lists out-of-memory, I/O errors, crashes, and compound failure tests, matching the reference.
+
+  judged correct   90.0%   (45 of 50 readable verdicts)
+  grounded         74.0%   exact fragment present -- NOT a correctness score
+  agreement        84.0%   42 agree, 8 disagree, 0 unreadable
+  judge spend      54 calls for 50 rows, 16827 in / 12322 out tokens
+
+wrote results/eval-deepseek-v4-flash.json
+
+=== 06:16:05  judging results/eval-deepseek-v4-pro.json
+judging 50 answers from deepseek-v4-pro with deepseek-v4-pro
+
+  DISAGREE L11   substring=False judge=True   The candidate correctly states the identification method: object name plus database name.
+  DISAGREE L21   substring=False judge=True   The candidate accurately paraphrases that readers and writers do not block each other and can operate concurrently.
+  DISAGREE L27   substring=True  judge=False  The candidate fails to answer the question, stating the details are missing, while the reference clearly outlines the user's responsibility.
+  DISAGREE L28   substring=False judge=True   It correctly states a reduction in storage (disk space) despite omitting processing requirements.
+  DISAGREE L30   substring=False judge=True   The candidate correctly states that indexes can reference expressions either directly or via a generated column, matching the reference's meaning.
+  DISAGREE L32   substring=False judge=True   The candidate answer conveys that SQLite uses the rowid directly as a key in its storage engine, which matches the reference's description of looking up via rowid directly.
+  DISAGREE L42   substring=False judge=True   Candidate conveys the core relationship that all database access occurs within transactions and auto-start if none is active.
+
+  judged correct   88.0%   (44 of 50 readable verdicts)
+  grounded         78.0%   exact fragment present -- NOT a correctness score
+  agreement        86.0%   43 agree, 7 disagree, 0 unreadable
+  judge spend      56 calls for 50 rows, 17263 in / 13245 out tokens
+
+wrote results/eval-deepseek-v4-pro.json
+
+=== 06:20:32  DONE

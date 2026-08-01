@@ -116,18 +116,27 @@ def _read_verdict(text):
 def _verdict(cfg, question, reference, candidate):
     """One judgement, escalating the token ceiling while the reply is unreadable.
 
-    Returns (correct|None, reason). None survives all escalations and is recorded as such rather
-    than silently coerced to False: a parse failure is not a wrong answer, and counting it as one
-    would understate the system under test and flatter the grader."""
+    Returns (correct|None, reason, usage). None survives all escalations and is recorded as such
+    rather than silently coerced to False: a parse failure is not a wrong answer, and counting it
+    as one would understate the system under test and flatter the grader.
+
+    `usage` counts EVERY call this judgement made, including the escalation retries. A retry is
+    billed like any other call, so charging only the successful one would understate grading cost
+    exactly on the rows that were most expensive to grade."""
     user = ("QUESTION:\n%s\n\nREFERENCE ANSWER:\n%s\n\nCANDIDATE ANSWER:\n%s"
             % (question, reference, candidate if candidate.strip() else "(empty)"))
     reason = "not attempted"
+    usage = {"calls": 0, "input": 0, "output": 0}
     for ceiling in VERDICT_TOKEN_SCALE:
         got = complete(cfg, SYSTEM, user, max_tokens=ceiling)
+        usage["calls"] += 1
+        usage["input"] += got.get("input_tokens") or 0
+        usage["output"] += got.get("output_tokens") or 0
         correct, reason = _read_verdict(got.get("text"))
         if correct is not None:
-            return correct, reason
-    return None, "%s (unreadable at every ceiling up to %d)" % (reason, VERDICT_TOKEN_SCALE[-1])
+            return correct, reason, usage
+    return (None, "%s (unreadable at every ceiling up to %d)"
+            % (reason, VERDICT_TOKEN_SCALE[-1]), usage)
 
 
 # Known-wrong answers. Each is fluent, on-topic and confidently phrased -- the failure mode a
@@ -172,7 +181,7 @@ def self_test(cfg):
     print("SELF-TEST -- the judge must reject fluent wrong answers and accept correct paraphrases.")
     bad = 0
     for i, c in enumerate(SELF_TEST, 1):
-        correct, reason = _verdict(cfg, c["q"], c["ref"], c["cand"])
+        correct, reason, _ = _verdict(cfg, c["q"], c["ref"], c["cand"])
         ok = correct is c["expect"]
         bad += not ok
         print("  %d. %-5s expected=%-5s got=%-5s  %s" % (
@@ -218,13 +227,18 @@ def main():
     print("judging %d answers from %s with %s\n" % (len(rows), payload.get("model"), judged_by))
 
     agree = disagree = unreadable = 0
+    spend = {"calls": 0, "input": 0, "output": 0}
     for r in rows:
         lab = labels.get(r["id"])
         if not lab:
             continue
-        correct, reason = _verdict(cfg, lab["question"], lab["answer"], r.get("answer", ""))
+        correct, reason, usage = _verdict(cfg, lab["question"], lab["answer"], r.get("answer", ""))
+        for k in spend:
+            spend[k] += usage[k]
         substring = bool(r.get("correct"))
-        r["judge"] = {"correct": correct, "reason": reason, "judged_by": judged_by}
+        r["judge"] = {"correct": correct, "reason": reason, "judged_by": judged_by,
+                      "input_tokens": usage["input"], "output_tokens": usage["output"],
+                      "calls": usage["calls"]}
         r["grounded"] = substring          # the old signal, renamed to what it actually measures
         if correct is None:
             unreadable += 1
@@ -250,6 +264,13 @@ def main():
     s["judge_model"] = judged_by
     s["judge_agreement"] = round(agree / (agree + disagree), 4) if (agree + disagree) else None
     s["judge_unreadable"] = unreadable
+    # Grading is not free, and lens 07 could not price it because these three numbers did not
+    # exist -- the adapter has always returned usage and this file discarded it. `judge_calls`
+    # exceeds the row count whenever a verdict needed an escalated ceiling, which is the honest
+    # denominator: retries are billed.
+    s["judge_calls"] = spend["calls"]
+    s["judge_input_tokens_total"] = spend["input"]
+    s["judge_output_tokens_total"] = spend["output"]
     # Idempotent: judging a result file twice must not stack duplicate caveats.
     cnv = payload.setdefault("could_not_verify", [])
     cnv[:] = [c for c in cnv if not c.startswith("judge_accuracy is")]
@@ -266,6 +287,8 @@ def main():
           % (100 * s["grounding_rate"]))
     print("  agreement        %.1f%%   %d agree, %d disagree, %d unreadable"
           % (100 * s["judge_agreement"], agree, disagree, unreadable))
+    print("  judge spend      %d calls for %d rows, %d in / %d out tokens"
+          % (spend["calls"], len(rows), spend["input"], spend["output"]))
 
     with open(a.result, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=1, sort_keys=True)

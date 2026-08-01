@@ -25,6 +25,20 @@ INDEX = os.path.join(HERE, "data", "index")
 CHUNKS = os.path.join(INDEX, "chunks.json")
 VECTORS = os.path.join(INDEX, "vectors.json")
 
+# A file that DESCRIBES the corpus is not part of it. `SOURCES.md` carries the licence and the
+# provenance for the forty documents beside it, and it sits there deliberately -- provenance travels
+# with the thing it covers or it is not provenance. But it is Markdown in a corpus that legitimately
+# holds twelve Markdown documents, so nothing about its extension marks it as furniture.
+#
+# It was added on 2026-07-31 and silently became a 41st document: a rebuild produces 41 documents
+# and 676 chunks against the committed 40 and 668. Retrieval over a corpus with an extra document
+# scores differently, so every published number would have quietly stopped reproducing. Nobody saw
+# it because the cold-clone fork test runs `--retrieval-only`, which calls load() and never build().
+#
+# README.md is named here too, ahead of a forker meeting the same thing: dropping documents into a
+# folder that already explains itself is the ordinary case, not an exotic one.
+NOT_CORPUS = {"SOURCES.md", "README.md"}
+
 
 def build(corpus_dir=CORPUS, verbose=True):
     """Extract, chunk, write. Deterministic: sorted input, sorted output, stable ids -- so a
@@ -33,7 +47,7 @@ def build(corpus_dir=CORPUS, verbose=True):
     texts, formats, failures, by_format = {}, {}, [], {}
     for name in sorted(os.listdir(corpus_dir)):
         path = os.path.join(corpus_dir, name)
-        if not os.path.isfile(path) or name.startswith("."):
+        if not os.path.isfile(path) or name.startswith(".") or name in NOT_CORPUS:
             continue
         doc_id = os.path.splitext(name)[0]
         try:

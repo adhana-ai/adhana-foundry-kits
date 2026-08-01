@@ -47,9 +47,19 @@ function renderAsk(d) {
   const band = $("#failband"), e = d.expected;
   if (e && e.cause) {
     band.hidden = false;
+    /* TWO DIFFERENT FAILURES WEAR THE ONE CAUSE NAME, and saying the wrong one is worse than
+       saying nothing. `bad_ranking` fires whenever the answer is absent from the retrieved
+       passages -- which happens both when the right document never came back AND when it came
+       back but the chunks that won were its table of contents. This band used to assert the
+       first unconditionally; on L26 it read "retrieval did not rank it into the top 5" directly
+       above three EXPECTED passages from that very document. The evidence was on screen
+       contradicting the caption. `doc_retrieved` already distinguishes them, so use it. */
+    const where = e.doc_retrieved
+      ? `<code>${esc(e.doc)}</code> WAS ranked into the top ${d.hits.length}, but the chunks that ` +
+        `won carry none of the answer — so the split is what failed here, not the search`
+      : `<code>${esc(e.doc)}</code> was not ranked into the top ${d.hits.length} at all`;
     band.innerHTML =
-      `<strong>${esc(e.cause)}</strong> — the answer to this question is in ` +
-      `<code>${esc(e.doc)}</code>, and retrieval did not rank it into the top ${d.hits.length}. ` +
+      `<strong>${esc(e.cause)}</strong> — the answer to this question is in ${where}. ` +
       `The model below is answering without the evidence, which is why it should decline. ` +
       `<em>This failure is real, reproducible and costs nothing to see: it is pure code.</em>`;
   } else band.hidden = true;
