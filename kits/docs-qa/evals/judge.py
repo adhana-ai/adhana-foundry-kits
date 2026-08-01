@@ -242,6 +242,11 @@ def main():
     s = payload.setdefault("summary", {})
     s["judge_accuracy"] = round(n_correct / len(readable), 4) if readable else None
     s["grounding_rate"] = round(sub_correct / len(rows), 4)
+    # `accuracy` was the substring score, and it is the same number as grounding_rate. Leaving a
+    # key called "accuracy" beside judge_accuracy is how the wrong figure gets published by someone
+    # reading the file in a hurry -- so once a judge has run, the ambiguous name goes and the value
+    # survives under the name that says what it measured.
+    s.pop("accuracy", None)
     s["judge_model"] = judged_by
     s["judge_agreement"] = round(agree / (agree + disagree), 4) if (agree + disagree) else None
     s["judge_unreadable"] = unreadable
