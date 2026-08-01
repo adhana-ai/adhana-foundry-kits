@@ -18,6 +18,7 @@ Checks:
   3. no duplicate ids, no duplicate questions
   4. the set spans every format the corpus ships, so retrieval is not scored on the easy ones
   5. no fragment is longer than MAX_FRAGMENT_WORDS -- see below
+  6. no question is polar -- one that can be answered "Yes." -- see below
 
 WHY CHECK 5 EXISTS, AND THE MEASUREMENT THAT PUT IT THERE.
 Check 2 has a hole big enough to invert a headline number, and it stayed green through it. It
@@ -43,9 +44,35 @@ A word cap is a proxy for the real rule -- a fragment must be the DISCRIMINATING
 a term, a stem -- and a proxy is what is mechanically checkable. Judging whether a short fragment
 is the RIGHT short fragment is still a human read, and check 2's closing note still applies.
 
+WHY CHECK 6 EXISTS -- THE THIRD ARTIFACT OUT OF THE SAME INSTRUMENT.
+Check 5 fixed how LONG a fragment may be. It says nothing about the QUESTION, and the question is
+the other half of what the grader is really measuring. A polar question -- "Does WAL mode affect
+concurrency?" -- has a correct answer that is one word long. "Yes." is right, contains no fragment,
+and an exact-substring grader must mark it wrong. So the grader stops scoring correctness and
+starts scoring verbosity, and the model that writes longer sentences wins.
+
+That is not hypothetical. On the run that produced the measurement above, four of the dearer
+model's seven remaining failures were correct answers marked wrong for being brief -- L21 answered
+"Does WAL mode affect concurrency?" with "Yes." and scored zero. The cheaper model "beat" it
+largely by padding.
+
+The fix is authorial, so the gate has to hold it: a question must be shaped so that any correct
+answer carries the reason. Ask "how does WAL mode change the blocking relationship between readers
+and writers?" and "Yes." is no longer an answer at all. The opener list below is a proxy -- it
+catches the shape, not the semantics -- and, like check 5, a proxy is what is mechanically
+checkable. A question can still be lazy without opening with an auxiliary verb.
+
+One caution learned the expensive way: rewriting a question changes RETRIEVAL as well as grading,
+because the question IS the retrieval query. Two of the fourteen rewrites silently dropped the
+distinctive term their row retrieved on -- "client-server", "ACID" -- and cost 4 points of doc-hit
+that had nothing to do with the pipeline. Hold the vocabulary, change only the shape, and re-run
+`run.py --retrieval-only` under a NEW --run-id to prove you did.
+
 An LLM-as-judge grader would measure correctness directly rather than by proxy. That is the honest
 next instrument, and it is deliberately not this one: a judge costs a call per row and brings its
-own error, so it is a decision to take with numbers in hand, not a default.
+own error, so it is a decision to take with numbers in hand, not a default. Note that checks 5 and
+6 are both proxies for the same thing a judge would just answer -- which is the argument for the
+judge, not against these.
 """
 import json
 import os
@@ -65,6 +92,14 @@ LABELS = os.path.join(HERE, "data", "labelled.jsonl")
 # and a cap that forbids the correct answer would be a gate that cannot go green.
 MAX_FRAGMENT_WORDS = 4
 _FRAG_WORD = re.compile(r"[A-Za-z0-9:.*_-]+")
+
+# Openers that make a question answerable with a bare "Yes." or "No.". Matched on the first word
+# only: "Is shared-cache mode recommended?" is polar, "Why is shared-cache mode discouraged?" is
+# not, and the difference is entirely in which word comes first. Deliberately a shape test -- a
+# semantic one would need the judge this gate exists to postpone.
+_POLAR_OPENER = re.compile(
+    r"^(is|are|was|were|am|be|been|does|do|did|has|have|had|can|could|will|would|shall|should|"
+    r"may|might|must)\b", re.I)
 
 
 def _norm(s):
@@ -113,6 +148,11 @@ def check(rows, docs, fmts):
         if q in seen_q:
             problems.append((rid, "duplicate question"))
         seen_q.add(q)
+        if _POLAR_OPENER.match(q):
+            problems.append((rid, "polar question -- \"Yes.\" answers it correctly and contains no "
+                                  "fragment, so the grader would score length, not correctness. "
+                                  "Reshape it so a right answer must carry the reason: %r"
+                                  % r.get("question", "")[:70]))
         doc = r.get("doc")
         if doc not in docs:
             problems.append((rid, "doc %r is not in the corpus" % doc))
