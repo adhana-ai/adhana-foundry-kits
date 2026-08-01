@@ -1,8 +1,18 @@
 # AI Foundry — Use-Case Kits
 
-**Nothing is built yet.** This repo exists so kit #1 has somewhere to live. It is private until
-that first kit is complete: a public repo holding one half-finished kit is a worse first impression
-than a private one that opens complete.
+**Kit #1 runs.** [`kits/docs-qa`](kits/docs-qa) — *answer questions over your own documents* — is a
+complete pipeline with a UI, a labelled test set, an eval harness that classifies every failure by
+cause, and results recorded from a real run. **It works with no API key**: the corpus, the index and
+the recorded results all ship in the repo.
+
+```bash
+cd kits/docs-qa
+python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt
+./.venv/bin/python3 -m src.app          # → http://127.0.0.1:8765
+```
+
+Still outstanding on kit #1: `spec.json`, the cross-links back to Foundry, and the walkthrough
+video. Everything described above is runnable today — nothing in this repo is a mockup.
 
 ## What a kit is
 
