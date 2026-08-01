@@ -12,7 +12,8 @@
  },
  "could_not_verify": [
   "not_extracted: unreachable by construction -- check_labels.py verifies every answer fragment against the extracted text, so no label can describe content extraction lost. Testing that needs labels authored against the source document rather than the pipeline's own output.",
-  "answered_wrong is unpopulated on a retrieval-only run: it needs the model half."
+  "answered_wrong is unpopulated on a retrieval-only run: it needs the model half.",
+  "judge_accuracy is a model's judgement, not ground truth. It never sees answer_contains, and it was proved red on fluent wrong answers before use (judge.py --self-test), but it can still be persuaded by a confident wrong answer. grounding_rate is the old exact-substring signal, kept because it fails in the opposite direction: it cannot be talked round, and it cannot recognise a paraphrase."
  ],
  "dataset": {
   "file": "data/labelled.jsonl",
@@ -23,70 +24,77 @@
  "retriever": "keyword",
  "rows": [
   {
-   "answer": "No, SQLite is not directly comparable to MySQL, Oracle, or PostgreSQL. [1]",
-   "answer_in_context": true,
-   "answered": true,
-   "cause": "answered_wrong",
-   "correct": false,
-   "doc": "whentouse",
-   "doc_hit": true,
-   "hits": [
-    {
-     "doc": "whentouse",
-     "format": "pdf",
-     "id": "whentouse#0",
-     "score": 7.86724
-    },
-    {
-     "doc": "quirks",
-     "format": "docx",
-     "id": "quirks#1",
-     "score": 7.43415
-    },
-    {
-     "doc": "testing",
-     "format": "html",
-     "id": "testing#5",
-     "score": 5.58656
-    },
-    {
-     "doc": "testing",
-     "format": "html",
-     "id": "testing#6",
-     "score": 3.8734
-    },
-    {
-     "doc": "quirks",
-     "format": "docx",
-     "id": "quirks#10",
-     "score": 3.82535
-    }
-   ],
-   "id": "L01",
-   "input_tokens": 1626,
-   "latency_ms": 18.48,
-   "model_latency_ms": 2654.28,
-   "output_tokens": 183,
-   "prompt_chars": 7241,
-   "prompt_parts": 7,
-   "question": "Is SQLite directly comparable to MySQL, Oracle or PostgreSQL?",
-   "retriever": "keyword",
-   "top_docs": [
-    "whentouse",
-    "quirks",
-    "testing",
-    "testing",
-    "quirks"
-   ]
-  },
-  {
-   "answer": "Client/server SQL database engines set out to implement a shared repository of enterprise data [2].",
+   "answer": "Because SQLite is trying to solve a different problem. Client/server engines emphasize scalability, concurrency, centralization, and control, while SQLite emphasizes economy, efficiency, reliability, independence, and simplicity. [1]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "whentouse",
    "doc_hit": true,
+   "grounded": true,
+   "hits": [
+    {
+     "doc": "whentouse",
+     "format": "pdf",
+     "id": "whentouse#0",
+     "score": 19.52758
+    },
+    {
+     "doc": "quirks",
+     "format": "docx",
+     "id": "quirks#1",
+     "score": 18.697
+    },
+    {
+     "doc": "faq",
+     "format": "docx",
+     "id": "faq#4",
+     "score": 11.34447
+    },
+    {
+     "doc": "whentouse",
+     "format": "pdf",
+     "id": "whentouse#8",
+     "score": 11.02382
+    },
+    {
+     "doc": "whentouse",
+     "format": "pdf",
+     "id": "whentouse#3",
+     "score": 10.76801
+    }
+   ],
+   "id": "L01",
+   "input_tokens": 1832,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate captures the core reason and adds correct distinguishing details without contradiction."
+   },
+   "latency_ms": 18.86,
+   "model_latency_ms": 6856.07,
+   "output_tokens": 348,
+   "prompt_chars": 8653,
+   "prompt_parts": 7,
+   "question": "Why is SQLite not directly comparable to client/server engines such as MySQL, Oracle or PostgreSQL?",
+   "retriever": "keyword",
+   "top_docs": [
+    "whentouse",
+    "quirks",
+    "faq",
+    "whentouse",
+    "whentouse"
+   ]
+  },
+  {
+   "answer": "Client/server SQL database engines strive to implement a shared repository of enterprise data [2].",
+   "answer_in_context": true,
+   "answered": true,
+   "cause": null,
+   "correct": true,
+   "doc": "whentouse",
+   "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "quirks",
@@ -121,9 +129,14 @@
    ],
    "id": "L02",
    "input_tokens": 1854,
-   "latency_ms": 17.99,
-   "model_latency_ms": 5001.07,
-   "output_tokens": 172,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate paraphrases the reference, describing the same goal of providing a shared data repository."
+   },
+   "latency_ms": 17.8,
+   "model_latency_ms": 3682.04,
+   "output_tokens": 184,
    "prompt_chars": 8570,
    "prompt_parts": 7,
    "question": "What problem do client/server SQL engines set out to solve?",
@@ -137,13 +150,14 @@
    ]
   },
   {
-   "answer": "The major internal components of the SQLite library include the tokenizer, parser, code generator, virtual machine, B-tree, pager, and OS interface [1]. The virtual machine runs bytecode programs created by the code generator [2], and the database is maintained on disk using a B-tree implementation [2].",
+   "answer": "According to the provided passages, the major internal components of the SQLite library include those listed in the diagram description:\n\n- QL Command Processor (likely \"SQL Command Processor\")\n- Virtual Machine\n- B-Tree\n- Pager\n- OS Interface\n- Tokenizer\n- Parser\n- Code Generator\n- Utilities\n- Test Code\n- Core\n- Backend\n- SQL Compiler\n- Accessories [1]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "arch",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "arch",
@@ -178,9 +192,14 @@
    ],
    "id": "L03",
    "input_tokens": 1558,
-   "latency_ms": 19.05,
-   "model_latency_ms": 5156.45,
-   "output_tokens": 335,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate answer lists all the reference components (Tokenizer, Parser, Code Generator, Virtual Machine, B-Tree, Pager, OS Interface) among its items."
+   },
+   "latency_ms": 17.61,
+   "model_latency_ms": 6903.78,
+   "output_tokens": 433,
    "prompt_chars": 6679,
    "prompt_parts": 7,
    "question": "What are the major internal components of the SQLite library?",
@@ -194,13 +213,14 @@
    ]
   },
   {
-   "answer": "The SQLite architecture document is written for those who want to understand or modify the inner workings of SQLite [1].",
+   "answer": "The document is written for those who want to understand or modify the inner workings of SQLite [1].",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "arch",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "arch",
@@ -235,9 +255,14 @@
    ],
    "id": "L04",
    "input_tokens": 1379,
-   "latency_ms": 18.76,
-   "model_latency_ms": 1943.48,
-   "output_tokens": 117,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate conveys the same substance as the reference, specifying the intended audience as those wanting to understand or modify SQLite internals."
+   },
+   "latency_ms": 17.99,
+   "model_latency_ms": 4192.17,
+   "output_tokens": 249,
    "prompt_chars": 6198,
    "prompt_parts": 7,
    "question": "Who is the SQLite architecture document written for?",
@@ -258,6 +283,7 @@
    "correct": true,
    "doc": "isolation",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "isolation",
@@ -292,9 +318,14 @@
    ],
    "id": "L05",
    "input_tokens": 1639,
-   "latency_ms": 18.53,
-   "model_latency_ms": 2366.7,
-   "output_tokens": 132,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate answer conveys the same core meaning as the reference."
+   },
+   "latency_ms": 17.27,
+   "model_latency_ms": 4389.96,
+   "output_tokens": 238,
    "prompt_chars": 7711,
    "prompt_parts": 7,
    "question": "What does the isolation property of a database determine?",
@@ -308,13 +339,14 @@
    ]
   },
   {
-   "answer": "The SQLite documentation presents these advantages as reasons why an SQLite database makes an excellent application file format, listing them as [3]:\n\n1. Simplified Application Development\n2. Single-File Documents\n3. High-Level Query Language\n4. Accessible Content\n5. Cross-Platform\n6. Atomic Transactions\n7. Incremental And Continuous Updates\n8. Easily Extensible\n9. Performance\n10. Concurrent Use By Multiple Processes\n11. Multiple Programming Languages\n12. Better Applications\n\nPassage [2] also refers to them as \"advantages\" and specifically mentions Simplified Application Development as one of them [2].",
+   "answer": "",
    "answer_in_context": true,
    "answered": true,
    "cause": "answered_wrong",
    "correct": false,
    "doc": "appfileformat",
    "doc_hit": true,
+   "grounded": false,
    "hits": [
     {
      "doc": "appfileformat",
@@ -349,9 +381,14 @@
    ],
    "id": "L06",
    "input_tokens": 1710,
-   "latency_ms": 18.58,
-   "model_latency_ms": 8603.54,
-   "output_tokens": 638,
+   "judge": {
+    "correct": false,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "Empty candidate answer provides no information."
+   },
+   "latency_ms": 18.19,
+   "model_latency_ms": 15895.36,
+   "output_tokens": 1024,
    "prompt_chars": 7429,
    "prompt_parts": 7,
    "question": "What does the SQLite documentation call the advantages of using an SQLite database as an application file format?",
@@ -365,70 +402,77 @@
    ]
   },
   {
-   "answer": "Yes, SQLite always validates its inputs. [1]",
+   "answer": "SQLite guarantees that it should never crash, overflow a buffer, leak memory, or exhibit any other harmful behavior, even when presented with maliciously malformed SQL inputs or database files. It should always detect erroneous inputs and raise an error, not crash or corrupt memory. [2] Testing verifies it responds by finding file format errors and reporting them without overflowing buffers, dereferencing NULL pointers, or performing other unwholesome actions. [4]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "security",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
+    {
+     "doc": "tempfiles",
+     "format": "md",
+     "id": "tempfiles#29",
+     "score": 6.19891
+    },
     {
      "doc": "security",
      "format": "pdf",
      "id": "security#0",
-     "score": 9.4869
+     "score": 6.13799
     },
     {
      "doc": "testing",
      "format": "html",
-     "id": "testing#6",
-     "score": 2.99912
+     "id": "testing#20",
+     "score": 5.9083
     },
     {
      "doc": "testing",
      "format": "html",
-     "id": "testing#7",
-     "score": 2.54281
+     "id": "testing#26",
+     "score": 5.09168
     },
     {
-     "doc": "testing",
-     "format": "html",
-     "id": "testing#16",
-     "score": 2.36408
-    },
-    {
-     "doc": "security",
-     "format": "pdf",
-     "id": "security#3",
-     "score": 1.86568
+     "doc": "inmemorydb",
+     "format": "txt",
+     "id": "inmemorydb#5",
+     "score": 5.0139
     }
    ],
    "id": "L07",
-   "input_tokens": 1720,
-   "latency_ms": 17.75,
-   "model_latency_ms": 2420.99,
-   "output_tokens": 151,
-   "prompt_chars": 7395,
+   "input_tokens": 1312,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly paraphrases the reference's guarantee of no harmful behavior and adds consistent detail about error detection."
+   },
+   "latency_ms": 17.49,
+   "model_latency_ms": 8048.0,
+   "output_tokens": 471,
+   "prompt_chars": 5459,
    "prompt_parts": 7,
-   "question": "Does SQLite validate its inputs?",
+   "question": "What does SQLite guarantee about its own behaviour when it is handed maliciously malformed input?",
    "retriever": "keyword",
    "top_docs": [
+    "tempfiles",
     "security",
     "testing",
     "testing",
-    "testing",
-    "security"
+    "inmemorydb"
    ]
   },
   {
-   "answer": "To create an autoincrement field in SQLite, declare a column as `INTEGER PRIMARY KEY AUTOINCREMENT`. [2][4]",
+   "answer": "To create an autoincrement field in SQLite, declare a column with the type `INTEGER PRIMARY KEY AUTOINCREMENT`. [2][3]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "faq",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "faq",
@@ -463,9 +507,14 @@
    ],
    "id": "L08",
    "input_tokens": 1735,
-   "latency_ms": 19.36,
-   "model_latency_ms": 5611.44,
-   "output_tokens": 409,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly specifies the SQLite syntax for autoincrement, which is the substance covered in the FAQ."
+   },
+   "latency_ms": 17.28,
+   "model_latency_ms": 7728.78,
+   "output_tokens": 519,
    "prompt_chars": 7682,
    "prompt_parts": 7,
    "question": "How do I create an autoincrement field in SQLite?",
@@ -479,70 +528,77 @@
    ]
   },
   {
-   "answer": "No, SQLite is not a client-server database. It is described as embedded and serverless [1].",
+   "answer": "According to the provided passages, an application interacts with the database engine using function calls. [4]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "quirks",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
-    {
-     "doc": "quirks",
-     "format": "docx",
-     "id": "quirks#1",
-     "score": 11.09988
-    },
     {
      "doc": "whentouse",
      "format": "pdf",
-     "id": "whentouse#3",
-     "score": 10.72312
+     "id": "whentouse#10",
+     "score": 16.86456
     },
     {
      "doc": "whentouse",
      "format": "pdf",
      "id": "whentouse#8",
-     "score": 10.36341
+     "score": 13.75211
     },
     {
      "doc": "whentouse",
      "format": "pdf",
-     "id": "whentouse#0",
-     "score": 10.19901
+     "id": "whentouse#3",
+     "score": 13.356
+    },
+    {
+     "doc": "quirks",
+     "format": "docx",
+     "id": "quirks#1",
+     "score": 13.21664
     },
     {
      "doc": "whentouse",
      "format": "pdf",
-     "id": "whentouse#11",
-     "score": 9.6789
+     "id": "whentouse#4",
+     "score": 11.78187
     }
    ],
    "id": "L09",
-   "input_tokens": 1800,
-   "latency_ms": 18.05,
-   "model_latency_ms": 3870.51,
-   "output_tokens": 248,
-   "prompt_chars": 8199,
+   "input_tokens": 1672,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly identifies function calls as the communication method."
+   },
+   "latency_ms": 17.99,
+   "model_latency_ms": 3685.86,
+   "output_tokens": 169,
+   "prompt_chars": 7754,
    "prompt_parts": 7,
-   "question": "Is SQLite a client-server database?",
+   "question": "Since SQLite is not a client-server database, how does an application communicate with the database engine?",
    "retriever": "keyword",
    "top_docs": [
+    "whentouse",
+    "whentouse",
+    "whentouse",
     "quirks",
-    "whentouse",
-    "whentouse",
-    "whentouse",
     "whentouse"
    ]
   },
   {
-   "answer": "The amalgamation is recommended as an intermediate step. Even if a project starts from individual source files, it is still recommended to use the amalgamation source file for subsequent build steps [1].",
+   "answer": "The amalgamation is recommended as an intermediate step. [1]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "howtocompile",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "howtocompile",
@@ -577,9 +633,14 @@
    ],
    "id": "L10",
    "input_tokens": 2078,
-   "latency_ms": 19.02,
-   "model_latency_ms": 3541.93,
-   "output_tokens": 263,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly states that the amalgamation is recommended as an intermediate step."
+   },
+   "latency_ms": 17.78,
+   "model_latency_ms": 3713.74,
+   "output_tokens": 228,
    "prompt_chars": 8764,
    "prompt_parts": 7,
    "question": "When compiling SQLite, which is recommended as an intermediate step -- the amalgamation or individual source files?",
@@ -593,13 +654,14 @@
    ]
   },
   {
-   "answer": "A database object in SQLite is identified by the name of the object and the name of the database that it resides in [1].",
+   "answer": "In SQLite, a database object is identified by its name and the name of the database it resides in [1].",
    "answer_in_context": true,
    "answered": true,
-   "cause": null,
-   "correct": true,
+   "cause": "answered_wrong",
+   "correct": false,
    "doc": "lang_naming",
    "doc_hit": true,
+   "grounded": false,
    "hits": [
     {
      "doc": "lang_naming",
@@ -634,9 +696,14 @@
    ],
    "id": "L11",
    "input_tokens": 1103,
-   "latency_ms": 18.34,
-   "model_latency_ms": 2461.02,
-   "output_tokens": 160,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly paraphrases the reference answer, stating the object is identified by its name and the database name."
+   },
+   "latency_ms": 17.39,
+   "model_latency_ms": 2318.83,
+   "output_tokens": 126,
    "prompt_chars": 4704,
    "prompt_parts": 7,
    "question": "How is a database object identified in SQLite?",
@@ -650,13 +717,14 @@
    ]
   },
   {
-   "answer": "According to the SQL standard, keywords may not be used as the names of tables, columns, or other named objects. [1]",
+   "answer": "According to the provided passage, the SQL standard specifies that a large number of keywords may not be used as names for tables, columns, or other named objects. [1]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "lang_keywords",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "lang_keywords",
@@ -691,9 +759,14 @@
    ],
    "id": "L12",
    "input_tokens": 1371,
-   "latency_ms": 18.87,
-   "model_latency_ms": 3367.28,
-   "output_tokens": 224,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "Candidate correctly states that the SQL standard forbids keywords from being used as names, matching the reference."
+   },
+   "latency_ms": 17.66,
+   "model_latency_ms": 5245.39,
+   "output_tokens": 320,
    "prompt_chars": 5724,
    "prompt_parts": 7,
    "question": "What does the SQL standard say about using keywords as the names of tables and columns?",
@@ -707,13 +780,14 @@
    ]
   },
   {
-   "answer": "The most common way to force an SQLite database to exist purely in memory is to open the database using the special filename `\":memory:\"`. Instead of passing the name of a real disk file into the `sqlite3_open()`, `sqlite3_open16()`, or `sqlite3_open_v2()` functions, you pass the string `\":memory:\"`. For example:\n\n`rc = sqlite3_open(\":memory:\", &db);`\n\nWhen this is done, no disk file is opened; a new database is created purely in memory and ceases to exist as soon as the database connection is closed. Every `:memory:` database is distinct from every other. [1][2]",
+   "answer": "To force an SQLite database to exist purely in memory, open the database using the special filename `\":memory:\"` instead of a disk file name. This is done by passing `\":memory:\"` to functions like `sqlite3_open()`, `sqlite3_open16()`, or `sqlite3_open_v2()`. For example:  \n`rc = sqlite3_open(\":memory:\", &db);`  \n\nThis creates a new database entirely in memory, with no disk file. The database ceases to exist once the connection is closed [1][2].",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "inmemorydb",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "inmemorydb",
@@ -748,9 +822,14 @@
    ],
    "id": "L13",
    "input_tokens": 1496,
-   "latency_ms": 18.77,
-   "model_latency_ms": 3422.84,
-   "output_tokens": 229,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly explains using ':memory:' filename, which matches the reference."
+   },
+   "latency_ms": 17.79,
+   "model_latency_ms": 5218.15,
+   "output_tokens": 302,
    "prompt_chars": 6370,
    "prompt_parts": 7,
    "question": "How do I force an SQLite database to exist purely in memory?",
@@ -771,6 +850,7 @@
    "correct": true,
    "doc": "uri",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "uri",
@@ -805,9 +885,14 @@
    ],
    "id": "L14",
    "input_tokens": 1057,
-   "latency_ms": 18.83,
-   "model_latency_ms": 3805.16,
-   "output_tokens": 172,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly states version 3.7.7, and the extra date does not contradict the reference."
+   },
+   "latency_ms": 17.71,
+   "model_latency_ms": 3720.18,
+   "output_tokens": 181,
    "prompt_chars": 4485,
    "prompt_parts": 7,
    "question": "From which SQLite version can a database filename be given as a URI?",
@@ -821,13 +906,14 @@
    ]
   },
   {
-   "answer": "\"Limits\" in the context of SQLite documentation means sizes or quantities that can not be exceeded [2].",
+   "answer": "According to the provided passages, \"Limits\" means sizes or quantities that cannot be exceeded [2].",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "limits",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "withoutrowid",
@@ -862,9 +948,14 @@
    ],
    "id": "L15",
    "input_tokens": 1160,
-   "latency_ms": 18.79,
-   "model_latency_ms": 3662.53,
-   "output_tokens": 235,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate conveys the same meaning as the reference, paraphrasing it correctly."
+   },
+   "latency_ms": 17.27,
+   "model_latency_ms": 3171.58,
+   "output_tokens": 175,
    "prompt_chars": 4992,
    "prompt_parts": 7,
    "question": "What does the word \"limits\" mean in the SQLite documentation?",
@@ -878,60 +969,66 @@
    ]
   },
   {
-   "answer": "No, SQLite was originally designed with a policy of avoiding arbitrary limits. [1]",
+   "answer": "SQLite was originally designed with a policy of avoiding arbitrary limits. [1]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "limits",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "limits",
      "format": "txt",
      "id": "limits#0",
-     "score": 12.95795
+     "score": 16.37669
+    },
+    {
+     "doc": "faq",
+     "format": "docx",
+     "id": "faq#7",
+     "score": 4.09916
+    },
+    {
+     "doc": "quirks",
+     "format": "docx",
+     "id": "quirks#10",
+     "score": 4.0852
+    },
+    {
+     "doc": "quirks",
+     "format": "docx",
+     "id": "quirks#9",
+     "score": 3.88433
     },
     {
      "doc": "testing",
      "format": "html",
      "id": "testing#27",
      "score": 3.84608
-    },
-    {
-     "doc": "lockingv3",
-     "format": "md",
-     "id": "lockingv3#0",
-     "score": 3.6264
-    },
-    {
-     "doc": "nulls",
-     "format": "md",
-     "id": "nulls#0",
-     "score": 3.30252
-    },
-    {
-     "doc": "lang_vacuum",
-     "format": "html",
-     "id": "lang_vacuum#5",
-     "score": 2.87825
     }
    ],
    "id": "L16",
-   "input_tokens": 1457,
-   "latency_ms": 18.22,
-   "model_latency_ms": 2828.43,
-   "output_tokens": 175,
-   "prompt_chars": 6556,
+   "input_tokens": 1717,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly states the policy of avoiding arbitrary limits, matching the reference's core point."
+   },
+   "latency_ms": 17.3,
+   "model_latency_ms": 3436.33,
+   "output_tokens": 170,
+   "prompt_chars": 7586,
    "prompt_parts": 7,
-   "question": "Was SQLite originally designed with arbitrary limits?",
+   "question": "What policy about limits did SQLite's original design follow?",
    "retriever": "keyword",
    "top_docs": [
     "limits",
-    "testing",
-    "lockingv3",
-    "nulls",
-    "lang_vacuum"
+    "faq",
+    "quirks",
+    "quirks",
+    "testing"
    ]
   },
   {
@@ -942,6 +1039,7 @@
    "correct": true,
    "doc": "dbhash",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "dbhash",
@@ -976,9 +1074,14 @@
    ],
    "id": "L17",
    "input_tokens": 1109,
-   "latency_ms": 18.82,
-   "model_latency_ms": 2208.58,
-   "output_tokens": 145,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly states that dbhash computes the SHA1 hash of schema and content."
+   },
+   "latency_ms": 16.95,
+   "model_latency_ms": 3828.22,
+   "output_tokens": 210,
    "prompt_chars": 4186,
    "prompt_parts": 7,
    "question": "What does the dbhash utility compute?",
@@ -999,6 +1102,7 @@
    "correct": true,
    "doc": "csv",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "csv",
@@ -1033,9 +1137,14 @@
    ],
    "id": "L18",
    "input_tokens": 1125,
-   "latency_ms": 18.77,
-   "model_latency_ms": 1834.32,
-   "output_tokens": 85,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate answer matches the reference answer exactly, aside from an extraneous citation marker."
+   },
+   "latency_ms": 17.15,
+   "model_latency_ms": 2667.33,
+   "output_tokens": 133,
    "prompt_chars": 4941,
    "prompt_parts": 7,
    "question": "What format does the CSV virtual table read?",
@@ -1049,13 +1158,14 @@
    ]
   },
   {
-   "answer": "The zipfile module provides read-only access through a table-valued function, as described in the passages. This function accepts a single argument: either a file path to a zip archive on the file system or an SQL blob containing the archive data itself. For example:\n\n```sql\nSELECT * FROM zipfile('test.zip');\n```\n\nor, using a blob:\n\n```sql\nSELECT * FROM zipfile(readfile('test.zip'));\n```\n\nThese queries allow inspection of the archive's contents without modifying it [2][3].",
+   "answer": "The zipfile module provides read-only access through a table-valued function that takes a single argument. If the argument is a text string, it is treated as a path to a zip archive on the file system; if it is a SQL blob, it is treated as the zip archive data itself [2][3]. For example:  \n`SELECT * FROM zipfile('test.zip');`  \nor  \n`SELECT * FROM zipfile(readfile('test.zip'));` [3]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "zipfile",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "zipfile",
@@ -1090,9 +1200,14 @@
    ],
    "id": "L19",
    "input_tokens": 1035,
-   "latency_ms": 19.06,
-   "model_latency_ms": 6051.18,
-   "output_tokens": 437,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly identifies the table-valued function interface and provides additional accurate detail."
+   },
+   "latency_ms": 17.65,
+   "model_latency_ms": 7646.16,
+   "output_tokens": 527,
    "prompt_chars": 4367,
    "prompt_parts": 7,
    "question": "How can the zipfile module be used for read-only access to an archive?",
@@ -1106,13 +1221,14 @@
    ]
   },
   {
-   "answer": "Checkpointing is the process of moving the WAL file transactions back into the original database [2].",
+   "answer": "Checkpointing is the process of moving the WAL file transactions back into the original database. [2]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "wal",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "wal",
@@ -1147,9 +1263,14 @@
    ],
    "id": "L20",
    "input_tokens": 1282,
-   "latency_ms": 18.75,
-   "model_latency_ms": 4061.17,
-   "output_tokens": 306,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "It correctly describes checkpointing as moving transactions from the WAL file back into the database."
+   },
+   "latency_ms": 17.11,
+   "model_latency_ms": 9702.89,
+   "output_tokens": 751,
    "prompt_chars": 5820,
    "prompt_parts": 7,
    "question": "What is checkpointing in write-ahead logging?",
@@ -1163,53 +1284,59 @@
    ]
   },
   {
-   "answer": "Yes. [4]",
+   "answer": "In WAL mode, readers and writers do not block each other; they can run at the same time [1][4].",
    "answer_in_context": true,
    "answered": true,
    "cause": "answered_wrong",
    "correct": false,
    "doc": "wal",
    "doc_hit": true,
+   "grounded": false,
    "hits": [
     {
      "doc": "wal",
      "format": "md",
+     "id": "wal#8",
+     "score": 14.18818
+    },
+    {
+     "doc": "wal",
+     "format": "md",
+     "id": "wal#9",
+     "score": 12.14938
+    },
+    {
+     "doc": "wal",
+     "format": "md",
      "id": "wal#30",
-     "score": 9.24008
-    },
-    {
-     "doc": "wal",
-     "format": "md",
-     "id": "wal#0",
-     "score": 8.78919
-    },
-    {
-     "doc": "wal",
-     "format": "md",
-     "id": "wal#19",
-     "score": 7.26189
+     "score": 11.52551
     },
     {
      "doc": "wal",
      "format": "md",
      "id": "wal#1",
-     "score": 6.92812
+     "score": 10.13446
     },
     {
      "doc": "wal",
      "format": "md",
-     "id": "wal#34",
-     "score": 6.59053
+     "id": "wal#32",
+     "score": 9.90696
     }
    ],
    "id": "L21",
-   "input_tokens": 1506,
-   "latency_ms": 17.79,
-   "model_latency_ms": 3686.3,
-   "output_tokens": 213,
-   "prompt_chars": 6059,
+   "input_tokens": 1865,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate accurately conveys that readers and writers do not block each other and can run concurrently."
+   },
+   "latency_ms": 17.39,
+   "model_latency_ms": 4514.21,
+   "output_tokens": 207,
+   "prompt_chars": 8354,
    "prompt_parts": 7,
-   "question": "Does WAL mode affect concurrency?",
+   "question": "How does WAL mode change the blocking relationship between readers and writers?",
    "retriever": "keyword",
    "top_docs": [
     "wal",
@@ -1220,13 +1347,14 @@
    ]
   },
   {
-   "answer": "The values in an SQLite database can have the storage classes NULL, INTEGER, REAL, TEXT, and BLOB [1].",
+   "answer": "The storage classes are NULL, INTEGER, REAL, TEXT, and BLOB. [1]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "datatype3",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "datatype3",
@@ -1261,9 +1389,14 @@
    ],
    "id": "L22",
    "input_tokens": 1602,
-   "latency_ms": 19.31,
-   "model_latency_ms": 3397.86,
-   "output_tokens": 180,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate lists the same five storage classes as the reference."
+   },
+   "latency_ms": 17.58,
+   "model_latency_ms": 2533.37,
+   "output_tokens": 128,
    "prompt_chars": 6768,
    "prompt_parts": 7,
    "question": "What are the storage classes a value in an SQLite database can have?",
@@ -1277,13 +1410,14 @@
    ]
   },
   {
-   "answer": "Based on the provided passages, type affinity in SQLite is described as follows:\n\nThe type affinity of a column is the recommended type for data stored in that column [5]. The key idea is that the type is recommended, not required, and any column can still store any type of data [5]. The preferred storage class for a column is called its \"affinity\" [5].",
+   "answer": "Type affinity is the recommended type for data stored in a column, indicating a preferred storage class, though the column can still store any type of data [5].",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "datatype3",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "datatype3",
@@ -1318,9 +1452,14 @@
    ],
    "id": "L23",
    "input_tokens": 1516,
-   "latency_ms": 18.46,
-   "model_latency_ms": 4441.53,
-   "output_tokens": 297,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly paraphrases type affinity as a recommended type for a column, not a strict type, with additional accurate detail."
+   },
+   "latency_ms": 17.76,
+   "model_latency_ms": 4263.13,
+   "output_tokens": 247,
    "prompt_chars": 6111,
    "prompt_parts": 7,
    "question": "What is type affinity in SQLite?",
@@ -1334,13 +1473,14 @@
    ]
   },
   {
-   "answer": "SQLite's goal is to make its NULL handling standards-compliant [3].",
+   "answer": "According to the document, the goal is to handle NULLs in a standards-compliant way, but because the SQL standards on NULL handling are ambiguous, SQLite instead tested other popular SQL engines and aimed to make SQLite work like all the other engines [3].",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "nulls",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "datatype3",
@@ -1375,9 +1515,14 @@
    ],
    "id": "L24",
    "input_tokens": 1160,
-   "latency_ms": 18.93,
-   "model_latency_ms": 4301.96,
-   "output_tokens": 277,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly states the goal as standards-compliant NULL handling, matching the reference, even though it adds extra context."
+   },
+   "latency_ms": 17.61,
+   "model_latency_ms": 6002.84,
+   "output_tokens": 361,
    "prompt_chars": 4166,
    "prompt_parts": 7,
    "question": "What is SQLite's goal for NULL handling?",
@@ -1391,70 +1536,77 @@
    ]
   },
   {
-   "answer": "Based on the provided passages, you should probably not use the AUTOINCREMENT keyword.\n\nThe AUTOINCREMENT keyword imposes extra overhead and should be avoided if not strictly needed, as it is usually not needed [1]. You should only use it if your application specifically requires that automatically generated ROWIDs are never reused and are monotonically increasing, though this comes at the cost of slower INSERT operations [3].",
+   "answer": "The SQLite documentation recommends avoiding the AUTOINCREMENT keyword if it is not strictly needed because it imposes extra overhead and slows down INSERT operations. Specifically, it says that AUTOINCREMENT \"imposes extra CPU, memory, disk space, and disk I/O overhead and should be avoided if not strictly needed\" [3]. It also states that if your application does not require the properties guaranteed by AUTOINCREMENT (like preventing ROWID reuse and ensuring monotonically increasing ROWIDs), you should use the default behavior, since AUTOINCREMENT \"requires additional work to be done as each row is inserted and thus causes INSERTs to run a little slower\" [4]. The feature is usually not needed because the default INTEGER PRIMARY KEY behavior already assigns unique ROWIDs automatically [3].",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "autoinc",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "autoinc",
      "format": "md",
-     "id": "autoinc#0",
-     "score": 10.69645
+     "id": "autoinc#6",
+     "score": 10.73255
     },
     {
      "doc": "lang_keywords",
      "format": "txt",
      "id": "lang_keywords#1",
-     "score": 9.8403
+     "score": 10.46403
+    },
+    {
+     "doc": "autoinc",
+     "format": "md",
+     "id": "autoinc#0",
+     "score": 10.31175
     },
     {
      "doc": "autoinc",
      "format": "md",
      "id": "autoinc#7",
-     "score": 9.57522
+     "score": 9.88519
     },
     {
-     "doc": "autoinc",
-     "format": "md",
-     "id": "autoinc#6",
-     "score": 8.45588
-    },
-    {
-     "doc": "testing",
-     "format": "html",
-     "id": "testing#10",
-     "score": 6.62116
+     "doc": "quirks",
+     "format": "docx",
+     "id": "quirks#10",
+     "score": 9.08039
     }
    ],
    "id": "L25",
-   "input_tokens": 1495,
-   "latency_ms": 18.33,
-   "model_latency_ms": 5322.24,
-   "output_tokens": 319,
-   "prompt_chars": 6843,
+   "input_tokens": 1523,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate accurately conveys the recommendation to avoid AUTOINCREMENT unless strictly needed due to overhead, matching the reference."
+   },
+   "latency_ms": 17.46,
+   "model_latency_ms": 8472.65,
+   "output_tokens": 516,
+   "prompt_chars": 6921,
    "prompt_parts": 7,
-   "question": "Should I use the AUTOINCREMENT keyword?",
+   "question": "What does the SQLite documentation recommend about the AUTOINCREMENT keyword, and for what reason?",
    "retriever": "keyword",
    "top_docs": [
     "autoinc",
     "lang_keywords",
     "autoinc",
     "autoinc",
-    "testing"
+    "quirks"
    ]
   },
   {
-   "answer": "The provided passages do not contain the answer. They reference that Section 2 describes how to enable foreign key support, but the content of that section is not included. [1][5]",
+   "answer": "The provided passages do not contain the steps to enable foreign key support. They only mention that it is described elsewhere. [5]",
    "answer_in_context": false,
    "answered": true,
    "cause": "bad_ranking",
    "correct": false,
    "doc": "foreignkeys",
    "doc_hit": true,
+   "grounded": false,
    "hits": [
     {
      "doc": "foreignkeys",
@@ -1489,9 +1641,14 @@
    ],
    "id": "L26",
    "input_tokens": 1381,
-   "latency_ms": 18.66,
-   "model_latency_ms": 7006.82,
-   "output_tokens": 479,
+   "judge": {
+    "correct": false,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate does not provide the required information; it states the answer is elsewhere, which is not an answer."
+   },
+   "latency_ms": 17.39,
+   "model_latency_ms": 5251.23,
+   "output_tokens": 262,
    "prompt_chars": 6114,
    "prompt_parts": 7,
    "question": "How do I turn on foreign key support in SQLite?",
@@ -1505,53 +1662,59 @@
    ]
   },
   {
-   "answer": "Yes, using foreign key constraints requires the user to create some indexes. [1] mentions \"the indexes that the user must create in order to use foreign key constraints, and those that should be created in order for foreign key constraints to function efficiently.\"",
+   "answer": "The provided passages do not contain the specific details about the user's responsibility regarding indexes. [3] only mentions that section 3 describes the indexes the user must create and those that should be created for efficiency, but the content of that section is not included here.",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "foreignkeys",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "foreignkeys",
      "format": "md",
-     "id": "foreignkeys#1",
-     "score": 13.70294
-    },
-    {
-     "doc": "foreignkeys",
-     "format": "md",
      "id": "foreignkeys#27",
-     "score": 13.29467
+     "score": 13.54924
     },
     {
      "doc": "foreignkeys",
      "format": "md",
      "id": "foreignkeys#0",
-     "score": 12.98781
+     "score": 12.46951
+    },
+    {
+     "doc": "foreignkeys",
+     "format": "md",
+     "id": "foreignkeys#1",
+     "score": 12.36399
     },
     {
      "doc": "foreignkeys",
      "format": "md",
      "id": "foreignkeys#44",
-     "score": 11.9577
+     "score": 11.54796
     },
     {
      "doc": "foreignkeys",
      "format": "md",
      "id": "foreignkeys#28",
-     "score": 11.70254
+     "score": 11.48372
     }
    ],
    "id": "L27",
-   "input_tokens": 1254,
-   "latency_ms": 18.54,
-   "model_latency_ms": 4810.74,
-   "output_tokens": 283,
-   "prompt_chars": 6022,
+   "input_tokens": 1258,
+   "judge": {
+    "correct": false,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate does not convey the required information; it states the details are not provided, whereas the reference clearly states the user's responsibilities."
+   },
+   "latency_ms": 17.93,
+   "model_latency_ms": 3750.34,
+   "output_tokens": 224,
+   "prompt_chars": 6050,
    "prompt_parts": 7,
-   "question": "Does using foreign key constraints require the user to create indexes?",
+   "question": "What is the user's own responsibility regarding indexes when working with foreign key constraints?",
    "retriever": "keyword",
    "top_docs": [
     "foreignkeys",
@@ -1562,13 +1725,14 @@
    ]
   },
   {
-   "answer": "A WITHOUT ROWID table can reduce disk space usage [1][2].",
+   "answer": "A WITHOUT ROWID table can sometimes reduce disk space usage. [1]",
    "answer_in_context": false,
    "answered": true,
    "cause": "bad_ranking",
    "correct": false,
    "doc": "withoutrowid",
    "doc_hit": true,
+   "grounded": false,
    "hits": [
     {
      "doc": "withoutrowid",
@@ -1603,9 +1767,14 @@
    ],
    "id": "L28",
    "input_tokens": 1509,
-   "latency_ms": 18.04,
-   "model_latency_ms": 3475.78,
-   "output_tokens": 197,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly states that WITHOUT ROWID reduces disk space usage, which is part of the reference's 'storage' reduction; incompleteness is not an error."
+   },
+   "latency_ms": 17.82,
+   "model_latency_ms": 5464.11,
+   "output_tokens": 296,
    "prompt_chars": 6102,
    "prompt_parts": 7,
    "question": "What does a WITHOUT ROWID table reduce?",
@@ -1626,6 +1795,7 @@
    "correct": true,
    "doc": "rowidtable",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "withoutrowid",
@@ -1660,9 +1830,14 @@
    ],
    "id": "L29",
    "input_tokens": 1830,
-   "latency_ms": 17.99,
-   "model_latency_ms": 4690.67,
-   "output_tokens": 288,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly describes rowid tables as having unique integer rowids, which is equivalent to the reference's classification."
+   },
+   "latency_ms": 17.05,
+   "model_latency_ms": 6401.22,
+   "output_tokens": 383,
    "prompt_chars": 7675,
    "prompt_parts": 7,
    "question": "What is a rowid table?",
@@ -1676,70 +1851,77 @@
    ]
   },
   {
-   "answer": "Yes, an SQLite index can reference an expression rather than a column. [3]",
+   "answer": "An SQLite index can also reference expressions involving table columns, either directly in the CREATE INDEX statement or by referencing a VIRTUAL generated column [4].",
    "answer_in_context": true,
    "answered": true,
    "cause": "answered_wrong",
    "correct": false,
    "doc": "expridx",
    "doc_hit": true,
+   "grounded": false,
    "hits": [
     {
-     "doc": "datatype3",
+     "doc": "nulls",
      "format": "md",
-     "id": "datatype3#13",
-     "score": 9.13802
+     "id": "nulls#7",
+     "score": 10.32357
     },
     {
      "doc": "lang_naming",
      "format": "txt",
      "id": "lang_naming#2",
-     "score": 6.81254
+     "score": 7.72684
+    },
+    {
+     "doc": "rtree",
+     "format": "html",
+     "id": "rtree#22",
+     "score": 6.77435
     },
     {
      "doc": "expridx",
      "format": "md",
      "id": "expridx#0",
-     "score": 6.18421
+     "score": 6.34374
     },
     {
-     "doc": "datatype3",
-     "format": "md",
-     "id": "datatype3#32",
-     "score": 5.99384
-    },
-    {
-     "doc": "limits",
+     "doc": "csv",
      "format": "txt",
-     "id": "limits#6",
-     "score": 5.3989
+     "id": "csv#3",
+     "score": 6.23105
     }
    ],
    "id": "L30",
-   "input_tokens": 1331,
-   "latency_ms": 18.52,
-   "model_latency_ms": 3261.46,
-   "output_tokens": 189,
-   "prompt_chars": 5638,
+   "input_tokens": 1147,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly states that expressions and generated columns (including virtual ones) can be indexed, matching the substance of the reference."
+   },
+   "latency_ms": 18.49,
+   "model_latency_ms": 5876.2,
+   "output_tokens": 328,
+   "prompt_chars": 4432,
    "prompt_parts": 7,
-   "question": "Can an SQLite index reference an expression rather than a column?",
+   "question": "Besides the columns of a table, what else can an SQLite index reference?",
    "retriever": "keyword",
    "top_docs": [
-    "datatype3",
+    "nulls",
     "lang_naming",
+    "rtree",
     "expridx",
-    "datatype3",
-    "limits"
+    "csv"
    ]
   },
   {
-   "answer": "The provided passages do not contain the answer.",
+   "answer": "The provided passages do not contain the answer to how SQLite searches a table that has no indices.",
    "answer_in_context": false,
    "answered": true,
    "cause": "bad_ranking",
    "correct": false,
    "doc": "queryplanner",
    "doc_hit": true,
+   "grounded": false,
    "hits": [
     {
      "doc": "faq",
@@ -1774,9 +1956,14 @@
    ],
    "id": "L31",
    "input_tokens": 1408,
-   "latency_ms": 19.33,
-   "model_latency_ms": 3839.08,
-   "output_tokens": 215,
+   "judge": {
+    "correct": false,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate says it doesn't have the answer, but the reference says it scans the table."
+   },
+   "latency_ms": 16.94,
+   "model_latency_ms": 6492.0,
+   "output_tokens": 330,
    "prompt_chars": 5890,
    "prompt_parts": 7,
    "question": "How does SQLite search a table that has no indices?",
@@ -1790,13 +1977,14 @@
    ]
   },
   {
-   "answer": "SQLite uses the rowid as the access key for the data in the underlying B-tree storage engine [2].",
+   "answer": "SQLite uses the rowid as the access key for the data in the underlying B-tree storage engine [2]. The rowid serves as the true primary key to look up rows in this storage engine [2].",
    "answer_in_context": false,
    "answered": true,
    "cause": "bad_ranking",
    "correct": false,
    "doc": "queryplanner",
    "doc_hit": false,
+   "grounded": false,
    "hits": [
     {
      "doc": "withoutrowid",
@@ -1831,9 +2019,14 @@
    ],
    "id": "L32",
    "input_tokens": 1835,
-   "latency_ms": 18.35,
-   "model_latency_ms": 4145.54,
-   "output_tokens": 285,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly explains that rowid is used as the key for direct lookup, consistent with the reference."
+   },
+   "latency_ms": 17.57,
+   "model_latency_ms": 4401.25,
+   "output_tokens": 246,
    "prompt_chars": 7692,
    "prompt_parts": 7,
    "question": "How does SQLite look up a row by rowid?",
@@ -1854,6 +2047,7 @@
    "correct": true,
    "doc": "lockingv3",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "lockingv3",
@@ -1888,9 +2082,14 @@
    ],
    "id": "L33",
    "input_tokens": 881,
-   "latency_ms": 19.03,
-   "model_latency_ms": 4437.81,
-   "output_tokens": 151,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly states the original creation time as early 2004, matching the reference."
+   },
+   "latency_ms": 30.42,
+   "model_latency_ms": 2188.48,
+   "output_tokens": 121,
    "prompt_chars": 3824,
    "prompt_parts": 7,
    "question": "When was the SQLite version 3 locking document originally written?",
@@ -1904,53 +2103,59 @@
    ]
   },
   {
-   "answer": "No, shared-cache mode is discouraged. [5]",
+   "answer": "Shared-cache mode is an obsolete feature and its use is discouraged. Most of its use cases are better served by WAL mode. [4]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "sharedcache",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "sharedcache",
      "format": "md",
      "id": "sharedcache#0",
-     "score": 16.59384
+     "score": 17.28516
     },
     {
      "doc": "sharedcache",
      "format": "md",
      "id": "sharedcache#1",
-     "score": 13.70376
+     "score": 15.2516
     },
     {
      "doc": "sharedcache",
      "format": "md",
      "id": "sharedcache#14",
-     "score": 10.85224
-    },
-    {
-     "doc": "sharedcache",
-     "format": "md",
-     "id": "sharedcache#12",
-     "score": 10.09705
+     "score": 12.46911
     },
     {
      "doc": "sharedcache",
      "format": "md",
      "id": "sharedcache#3",
-     "score": 9.25869
+     "score": 12.07544
+    },
+    {
+     "doc": "sharedcache",
+     "format": "md",
+     "id": "sharedcache#12",
+     "score": 10.63876
     }
    ],
    "id": "L34",
-   "input_tokens": 1295,
-   "latency_ms": 17.54,
-   "model_latency_ms": 2265.03,
-   "output_tokens": 119,
-   "prompt_chars": 5326,
+   "input_tokens": 1309,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate conveys the same meaning as the reference."
+   },
+   "latency_ms": 18.49,
+   "model_latency_ms": 4594.17,
+   "output_tokens": 220,
+   "prompt_chars": 5386,
    "prompt_parts": 7,
-   "question": "Is shared-cache mode recommended?",
+   "question": "What is the current standing of shared-cache mode, and what serves most of its use cases now?",
    "retriever": "keyword",
    "top_docs": [
     "sharedcache",
@@ -1961,13 +2166,14 @@
    ]
   },
   {
-   "answer": "SQLite currently uses nine distinct types of temporary files [2].",
+   "answer": "SQLite uses nine distinct types of temporary files. [2]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "tempfiles",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "tempfiles",
@@ -2002,9 +2208,14 @@
    ],
    "id": "L35",
    "input_tokens": 1353,
-   "latency_ms": 18.61,
-   "model_latency_ms": 1939.39,
-   "output_tokens": 83,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "Both state the number is nine."
+   },
+   "latency_ms": 17.04,
+   "model_latency_ms": 1994.2,
+   "output_tokens": 95,
    "prompt_chars": 6126,
    "prompt_parts": 7,
    "question": "How many kinds of temporary file does SQLite use?",
@@ -2025,6 +2236,7 @@
    "correct": true,
    "doc": "tempfiles",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "tempfiles",
@@ -2059,9 +2271,14 @@
    ],
    "id": "L36",
    "input_tokens": 1786,
-   "latency_ms": 18.41,
-   "model_latency_ms": 3067.76,
-   "output_tokens": 155,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly identifies it as a temporary file, matching the reference, and adds further detail without contradiction."
+   },
+   "latency_ms": 16.62,
+   "model_latency_ms": 4849.5,
+   "output_tokens": 257,
    "prompt_chars": 8225,
    "prompt_parts": 7,
    "question": "What is a rollback journal?",
@@ -2075,13 +2292,14 @@
    ]
   },
   {
-   "answer": "Yes, SQLite transactions are ACID compliant. [4]",
+   "answer": "SQLite transactions are ACID compliant even after system crashes and power failures[4].",
    "answer_in_context": true,
    "answered": true,
-   "cause": "answered_wrong",
-   "correct": false,
+   "cause": null,
+   "correct": true,
    "doc": "features",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "lang_transaction",
@@ -2093,52 +2311,58 @@
      "doc": "lang_transaction",
      "format": "html",
      "id": "lang_transaction#1",
-     "score": 4.74753
+     "score": 4.82673
     },
     {
-     "doc": "wal",
+     "doc": "sharedcache",
      "format": "md",
-     "id": "wal#5",
-     "score": 3.2033
+     "id": "sharedcache#6",
+     "score": 4.77617
     },
     {
      "doc": "features",
      "format": "html",
      "id": "features#0",
-     "score": 2.91274
+     "score": 3.73787
     },
     {
      "doc": "wal",
      "format": "md",
-     "id": "wal#2",
-     "score": 2.85455
+     "id": "wal#4",
+     "score": 3.60718
     }
    ],
    "id": "L37",
-   "input_tokens": 1254,
-   "latency_ms": 18.29,
-   "model_latency_ms": 3239.43,
-   "output_tokens": 234,
-   "prompt_chars": 5561,
+   "input_tokens": 1174,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly identifies system crashes and power failures, matching the reference answer."
+   },
+   "latency_ms": 16.98,
+   "model_latency_ms": 3309.16,
+   "output_tokens": 135,
+   "prompt_chars": 5265,
    "prompt_parts": 7,
-   "question": "Are SQLite transactions ACID compliant?",
+   "question": "SQLite transactions are ACID compliant even after which two kinds of event?",
    "retriever": "keyword",
    "top_docs": [
     "lang_transaction",
     "lang_transaction",
-    "wal",
+    "sharedcache",
     "features",
     "wal"
    ]
   },
   {
-   "answer": "The quickest way to start experimenting with SQLite, without a lot of tedious reading and configuration, is to use the Command Line Interface (CLI). At a shell or DOS prompt, enter: \"sqlite3 test.db\". This will create a new database named \"test.db\". [1]",
+   "answer": "The quickest way is to download the prebuilt binaries for your machine, then use the command line interface to create a new database by entering \"sqlite3 test.db\" at a shell or DOS prompt [1].",
    "answer_in_context": true,
    "answered": true,
-   "cause": "answered_wrong",
-   "correct": false,
+   "cause": null,
+   "correct": true,
    "doc": "quickstart",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "quickstart",
@@ -2173,9 +2397,14 @@
    ],
    "id": "L38",
    "input_tokens": 1795,
-   "latency_ms": 18.18,
-   "model_latency_ms": 4048.77,
-   "output_tokens": 280,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly states downloading prebuilt binaries, and the extra command-line detail is additional correct information."
+   },
+   "latency_ms": 16.99,
+   "model_latency_ms": 2739.84,
+   "output_tokens": 153,
    "prompt_chars": 7840,
    "prompt_parts": 7,
    "question": "What is the quickest way to start experimenting with SQLite?",
@@ -2189,70 +2418,77 @@
    ]
   },
   {
-   "answer": "No, the built-in math functions are not available by default. According to the passage, they are \"only active if the amalgamation is compiled using the -DSQLITE_ENABLE_MATH_FUNCTIONS compile-time option\" [2].",
+   "answer": "The amalgamation must be compiled using the -DSQLITE_ENABLE_MATH_FUNCTIONS compile-time option [2].",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "lang_mathfunc",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "lang_corefunc",
      "format": "html",
      "id": "lang_corefunc#0",
-     "score": 13.10276
+     "score": 11.04072
     },
     {
      "doc": "lang_mathfunc",
      "format": "html",
      "id": "lang_mathfunc#0",
-     "score": 9.87692
+     "score": 8.66974
     },
     {
-     "doc": "arch",
-     "format": "pdf",
-     "id": "arch#4",
-     "score": 5.30136
+     "doc": "testing",
+     "format": "html",
+     "id": "testing#39",
+     "score": 7.47639
     },
     {
      "doc": "lang_mathfunc",
      "format": "html",
      "id": "lang_mathfunc#1",
-     "score": 5.03563
+     "score": 4.10745
     },
     {
-     "doc": "expridx",
-     "format": "md",
-     "id": "expridx#5",
-     "score": 4.04628
+     "doc": "testing",
+     "format": "html",
+     "id": "testing#40",
+     "score": 4.07975
     }
    ],
    "id": "L39",
-   "input_tokens": 1323,
-   "latency_ms": 18.09,
-   "model_latency_ms": 3214.51,
-   "output_tokens": 239,
-   "prompt_chars": 5469,
+   "input_tokens": 1010,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "Candidate accurately states the required compile-time option."
+   },
+   "latency_ms": 17.18,
+   "model_latency_ms": 2792.53,
+   "output_tokens": 170,
+   "prompt_chars": 3938,
    "prompt_parts": 7,
-   "question": "Are the built-in math functions available by default?",
+   "question": "What condition must be met before SQLite's built-in math functions will work?",
    "retriever": "keyword",
    "top_docs": [
     "lang_corefunc",
     "lang_mathfunc",
-    "arch",
+    "testing",
     "lang_mathfunc",
-    "expridx"
+    "testing"
    ]
   },
   {
-   "answer": "The VACUUM command rebuilds the database file, repacking it into a minimal amount of disk space. [2]",
+   "answer": "The VACUUM command rebuilds the database file to reclaim empty space left from deleted data, repacking it into a minimal amount of disk space and reducing the file size [2].",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "lang_vacuum",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "lang_vacuum",
@@ -2287,9 +2523,14 @@
    ],
    "id": "L40",
    "input_tokens": 1412,
-   "latency_ms": 17.81,
-   "model_latency_ms": 5306.99,
-   "output_tokens": 402,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate answer accurately describes the VACUUM command's function, adding correct detail about reclaiming space from deleted data."
+   },
+   "latency_ms": 16.79,
+   "model_latency_ms": 6562.88,
+   "output_tokens": 389,
    "prompt_chars": 6033,
    "prompt_parts": 7,
    "question": "What does the VACUUM command do?",
@@ -2303,13 +2544,14 @@
    ]
   },
   {
-   "answer": "The recommended way to keep ANALYZE statistics current is to rerun the ANALYZE command when the content of the database changes significantly or when the schema changes [1].",
+   "answer": "The recommended way to keep ANALYZE statistics current is to rerun the ANALYZE command when the database content changes significantly or when the database schema changes [1].",
    "answer_in_context": true,
    "answered": true,
    "cause": "answered_wrong",
    "correct": false,
    "doc": "lang_analyze",
    "doc_hit": true,
+   "grounded": false,
    "hits": [
     {
      "doc": "lang_analyze",
@@ -2344,9 +2586,14 @@
    ],
    "id": "L41",
    "input_tokens": 1315,
-   "latency_ms": 18.72,
-   "model_latency_ms": 7937.39,
-   "output_tokens": 574,
+   "judge": {
+    "correct": false,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate recommends running ANALYZE directly, but the correct recommendation is to run PRAGMA optimize."
+   },
+   "latency_ms": 16.99,
+   "model_latency_ms": 5629.13,
+   "output_tokens": 309,
    "prompt_chars": 5946,
    "prompt_parts": 7,
    "question": "What is the recommended way to keep ANALYZE statistics current?",
@@ -2360,70 +2607,77 @@
    ]
   },
   {
-   "answer": "No, passages indicate that a read is started by a SELECT statement, which initiates a read transaction [1].",
-   "answer_in_context": false,
+   "answer": "In SQLite, all reads and writes occur exclusively within transactions. Any command that accesses the database (most SQL commands) will automatically start a transaction if one is not already active, and that transaction is committed when the statement completes [1]. Transactions can also be started manually using BEGIN, and they normally persist until COMMIT or ROLLBACK is issued [1]. Additionally, SQLite supports multiple simultaneous read transactions from separate connections, but only one write transaction at a time [2].",
+   "answer_in_context": true,
    "answered": true,
-   "cause": "bad_ranking",
+   "cause": "answered_wrong",
    "correct": false,
    "doc": "lang_transaction",
    "doc_hit": true,
+   "grounded": false,
    "hits": [
     {
      "doc": "lang_transaction",
      "format": "html",
-     "id": "lang_transaction#3",
-     "score": 9.88095
-    },
-    {
-     "doc": "isolation",
-     "format": "pdf",
-     "id": "isolation#4",
-     "score": 6.6146
-    },
-    {
-     "doc": "sharedcache",
-     "format": "md",
-     "id": "sharedcache#9",
-     "score": 5.75642
-    },
-    {
-     "doc": "sharedcache",
-     "format": "md",
-     "id": "sharedcache#6",
-     "score": 5.60827
+     "id": "lang_transaction#1",
+     "score": 5.92096
     },
     {
      "doc": "lang_transaction",
      "format": "html",
-     "id": "lang_transaction#0",
-     "score": 5.42106
+     "id": "lang_transaction#2",
+     "score": 5.9105
+    },
+    {
+     "doc": "wal",
+     "format": "md",
+     "id": "wal#2",
+     "score": 4.50609
+    },
+    {
+     "doc": "foreignkeys",
+     "format": "md",
+     "id": "foreignkeys#5",
+     "score": 4.22504
+    },
+    {
+     "doc": "zipfile",
+     "format": "txt",
+     "id": "zipfile#2",
+     "score": 4.0678
     }
    ],
    "id": "L42",
-   "input_tokens": 1125,
-   "latency_ms": 19.64,
-   "model_latency_ms": 5997.29,
-   "output_tokens": 349,
-   "prompt_chars": 5136,
+   "input_tokens": 1191,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate accurately states that all database access occurs within transactions and automatic transaction start, and adds additional correct details without contradiction."
+   },
+   "latency_ms": 17.24,
+   "model_latency_ms": 7953.35,
+   "output_tokens": 515,
+   "prompt_chars": 5472,
    "prompt_parts": 7,
-   "question": "Can a read happen outside a transaction in SQLite?",
+   "question": "What is the relationship between transactions and database access in SQLite?",
    "retriever": "keyword",
    "top_docs": [
     "lang_transaction",
-    "isolation",
-    "sharedcache",
-    "sharedcache",
-    "lang_transaction"
+    "lang_transaction",
+    "wal",
+    "foreignkeys",
+    "zipfile"
    ]
   },
   {
-   "answer": "Seven. [1][3]",
+   "answer": "SQLite supports seven scalar date and time functions [1].",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "lang_datefunc",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "lang_datefunc",
@@ -2458,9 +2712,14 @@
    ],
    "id": "L43",
    "input_tokens": 1338,
-   "latency_ms": 18.76,
-   "model_latency_ms": 3649.63,
-   "output_tokens": 209,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate states the correct number, seven, matching the reference answer."
+   },
+   "latency_ms": 16.85,
+   "model_latency_ms": 3515.33,
+   "output_tokens": 206,
    "prompt_chars": 5398,
    "prompt_parts": 7,
    "question": "How many scalar date and time functions does SQLite support?",
@@ -2474,13 +2733,14 @@
    ]
   },
   {
-   "answer": "The SQLite online backup API is used to copy the contents of one database into another database file, replacing any original contents. It can perform the copy incrementally, so the source database is only locked briefly while being read, allowing other users to continue without excessive delays. This creates a bit-wise identical snapshot of the source database as it was when copying started. [2]",
+   "answer": "The SQLite online backup API allows the contents of one database to be copied into another database file, replacing any original contents of the target database. It can do this incrementally so that the source database is only locked for brief periods, enabling other users to continue without excessive delays while a backup is made. The result is a bit-wise identical copy (\"snapshot\") of the source database as it was when copying commenced [2].",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "backup",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "backup",
@@ -2515,9 +2775,14 @@
    ],
    "id": "L44",
    "input_tokens": 1218,
-   "latency_ms": 18.67,
-   "model_latency_ms": 6583.63,
-   "output_tokens": 522,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate correctly describes the backup API's purpose, even if it omits the in-memory database use case."
+   },
+   "latency_ms": 16.96,
+   "model_latency_ms": 5532.76,
+   "output_tokens": 343,
    "prompt_chars": 5340,
    "prompt_parts": 7,
    "question": "What is the SQLite online backup API used for?",
@@ -2538,6 +2803,7 @@
    "correct": true,
    "doc": "lang_explain",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "lang_explain",
@@ -2572,9 +2838,14 @@
    ],
    "id": "L45",
    "input_tokens": 1145,
-   "latency_ms": 18.4,
-   "model_latency_ms": 2959.17,
-   "output_tokens": 183,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate conveys the same substance as the reference: EXPLAIN QUERY PLAN reports the query plan that would be used."
+   },
+   "latency_ms": 16.37,
+   "model_latency_ms": 4519.32,
+   "output_tokens": 243,
    "prompt_chars": 5030,
    "prompt_parts": 7,
    "question": "What does EXPLAIN QUERY PLAN report?",
@@ -2588,13 +2859,14 @@
    ]
   },
   {
-   "answer": "The provided passages do not contain the specific instructions on how to create an R*Tree index. While [1] references \"Creating An R*Tree Index\" as section 3.1 in the table of contents, the actual content of that section is not included in any of the passages.",
+   "answer": "The provided passages do not contain the steps for creating an R*Tree index. While the table of contents in [1] lists a section for \"3.1. Creating An R*Tree Index\", the actual content of that section is not included in any of the passages given.",
    "answer_in_context": false,
    "answered": true,
    "cause": "bad_ranking",
    "correct": false,
    "doc": "rtree",
    "doc_hit": true,
+   "grounded": false,
    "hits": [
     {
      "doc": "rtree",
@@ -2629,9 +2901,14 @@
    ],
    "id": "L46",
    "input_tokens": 1394,
-   "latency_ms": 17.74,
-   "model_latency_ms": 5388.76,
-   "output_tokens": 356,
+   "judge": {
+    "correct": false,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate does not answer the question, stating the content is not in the passages, which is content-free and incorrect."
+   },
+   "latency_ms": 16.68,
+   "model_latency_ms": 6543.17,
+   "output_tokens": 369,
    "prompt_chars": 5554,
    "prompt_parts": 7,
    "question": "How do you create an R*Tree index?",
@@ -2645,13 +2922,14 @@
    ]
   },
   {
-   "answer": "You query an R*Tree index by using standard SQL expressions in the WHERE clause of a SELECT query to find entries that intersect or are contained within a bounding box, or by using the MATCH operator in the WHERE clause for custom queries that intersect arbitrary shapes. [3]",
+   "answer": "You can query an R*Tree index by using standard SQL expressions in the WHERE clause of a SELECT to find entries that intersect or are contained within a bounding-box, and by using the MATCH operator for custom queries that search for entries intersecting any arbitrary region or shape [3].",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "rtree",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "rtree",
@@ -2686,9 +2964,14 @@
    ],
    "id": "L47",
    "input_tokens": 1490,
-   "latency_ms": 19.03,
-   "model_latency_ms": 5426.42,
-   "output_tokens": 404,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate accurately describes querying via WHERE clause conditions on bounding-box columns (implicitly constraining min/max) and mentions the MATCH operator, both valid methods."
+   },
+   "latency_ms": 16.68,
+   "model_latency_ms": 5583.28,
+   "output_tokens": 317,
    "prompt_chars": 6076,
    "prompt_parts": 7,
    "question": "How do you query an R*Tree index?",
@@ -2702,37 +2985,38 @@
    ]
   },
   {
-   "answer": "Yes, the core scalar SQL functions are available by default. [1]",
+   "answer": "An application may define additional functions written in C and added to the database engine using the sqlite3_create_function() API. [1]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "lang_corefunc",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "lang_corefunc",
      "format": "html",
      "id": "lang_corefunc#0",
-     "score": 15.34688
-    },
-    {
-     "doc": "lang_mathfunc",
-     "format": "html",
-     "id": "lang_mathfunc#0",
-     "score": 6.28646
+     "score": 11.57666
     },
     {
      "doc": "lang_datefunc",
      "format": "html",
      "id": "lang_datefunc#0",
-     "score": 5.38189
+     "score": 5.56027
     },
     {
-     "doc": "testing",
+     "doc": "lang_mathfunc",
      "format": "html",
-     "id": "testing#3",
-     "score": 5.15182
+     "id": "lang_mathfunc#0",
+     "score": 5.40038
+    },
+    {
+     "doc": "lang_datefunc",
+     "format": "html",
+     "id": "lang_datefunc#9",
+     "score": 4.64602
     },
     {
      "doc": "lang_corefunc",
@@ -2742,30 +3026,36 @@
     }
    ],
    "id": "L48",
-   "input_tokens": 752,
-   "latency_ms": 18.26,
-   "model_latency_ms": 3696.8,
-   "output_tokens": 254,
-   "prompt_chars": 3045,
+   "input_tokens": 865,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate conveys the same method of adding C functions via sqlite3_create_function() API."
+   },
+   "latency_ms": 17.1,
+   "model_latency_ms": 4967.05,
+   "output_tokens": 298,
+   "prompt_chars": 3400,
    "prompt_parts": 7,
-   "question": "Are the core scalar SQL functions available by default?",
+   "question": "How can an application add scalar SQL functions beyond the ones SQLite ships with?",
    "retriever": "keyword",
    "top_docs": [
     "lang_corefunc",
+    "lang_datefunc",
     "lang_mathfunc",
     "lang_datefunc",
-    "testing",
     "lang_corefunc"
    ]
   },
   {
-   "answer": "SQLite uses Out-Of-Memory Testing, I/O Error Testing, Crash Testing, and Compound failure tests as part of its anomaly testing [1][2].",
+   "answer": "SQLite uses Out-Of-Memory Testing, I/O Error Testing, Crash Testing, and Compound failure tests. [2]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "testing",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "testing",
@@ -2800,9 +3090,14 @@
    ],
    "id": "L49",
    "input_tokens": 1371,
-   "latency_ms": 18.91,
-   "model_latency_ms": 6125.29,
-   "output_tokens": 445,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate lists the same four anomaly testing types as the reference."
+   },
+   "latency_ms": 16.74,
+   "model_latency_ms": 4642.61,
+   "output_tokens": 330,
    "prompt_chars": 5539,
    "prompt_parts": 7,
    "question": "What kinds of anomaly testing does SQLite use?",
@@ -2816,53 +3111,59 @@
    ]
   },
   {
-   "answer": "Yes, the SQLite project uses fuzz testing. The passages state that \"fuzz testing seeks to establish that SQLite responds correctly to invalid, out-of-range, or malformed inputs\" [3] and that \"in more recent years, the testing strategy of SQLite has evolved to place more emphasis on fuzz testing\" [1]. Specific fuzzers like AFL and OSS Fuzz are also mentioned [4].",
+   "answer": "Fuzz testing seeks to establish that SQLite responds correctly to invalid, out-of-range, or malformed inputs. [1][4]",
    "answer_in_context": true,
    "answered": true,
    "cause": null,
    "correct": true,
    "doc": "testing",
    "doc_hit": true,
+   "grounded": true,
    "hits": [
     {
      "doc": "testing",
      "format": "html",
+     "id": "testing#15",
+     "score": 13.56785
+    },
+    {
+     "doc": "testing",
+     "format": "html",
      "id": "testing#24",
-     "score": 12.19064
+     "score": 12.08798
     },
     {
      "doc": "testing",
      "format": "html",
      "id": "testing#0",
-     "score": 10.86124
-    },
-    {
-     "doc": "testing",
-     "format": "html",
-     "id": "testing#15",
-     "score": 9.99644
-    },
-    {
-     "doc": "testing",
-     "format": "html",
-     "id": "testing#18",
-     "score": 9.6204
+     "score": 10.75411
     },
     {
      "doc": "testing",
      "format": "html",
      "id": "testing#14",
-     "score": 6.88818
+     "score": 9.71443
+    },
+    {
+     "doc": "testing",
+     "format": "html",
+     "id": "testing#18",
+     "score": 8.00922
     }
    ],
    "id": "L50",
-   "input_tokens": 1346,
-   "latency_ms": 18.55,
-   "model_latency_ms": 5665.52,
-   "output_tokens": 399,
-   "prompt_chars": 5104,
+   "input_tokens": 1348,
+   "judge": {
+    "correct": true,
+    "judged_by": "deepseek-v4-pro",
+    "reason": "The candidate answer matches the reference in meaning, with citation markers."
+   },
+   "latency_ms": 16.74,
+   "model_latency_ms": 2436.92,
+   "output_tokens": 125,
+   "prompt_chars": 5117,
    "prompt_parts": 7,
-   "question": "Does the SQLite project use fuzz testing?",
+   "question": "What does fuzz testing seek to establish about SQLite?",
    "retriever": "keyword",
    "top_docs": [
     "testing",
@@ -2875,20 +3176,25 @@
  ],
  "run_id": "deepseek-v4-pro",
  "summary": {
-  "accuracy": 0.74,
-  "answer_in_context_rate": 0.88,
+  "accuracy": 0.78,
+  "answer_in_context_rate": 0.9,
   "answered": 50,
   "causes": {
-   "answered_wrong": 7,
-   "bad_ranking": 6
+   "answered_wrong": 6,
+   "bad_ranking": 5
   },
   "doc_hit_rate": 0.98,
-  "input_tokens_total": 70714,
-  "model_latency_p50_ms": 3839.08,
-  "model_latency_p95_ms": 7006.82,
-  "output_tokens_total": 13396,
-  "retrieval_latency_p50_ms": 18.58,
-  "retrieval_latency_p95_ms": 19.33,
+  "grounding_rate": 0.78,
+  "input_tokens_total": 70653,
+  "judge_accuracy": 0.88,
+  "judge_agreement": 0.86,
+  "judge_model": "deepseek-v4-pro",
+  "judge_unreadable": 0,
+  "model_latency_p50_ms": 4642.61,
+  "model_latency_p95_ms": 8472.65,
+  "output_tokens_total": 14881,
+  "retrieval_latency_p50_ms": 17.39,
+  "retrieval_latency_p95_ms": 18.49,
   "rows": 50,
   "top_k": 5
  },
