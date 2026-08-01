@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>docs-qa — answer questions over your own documents</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <h1>docs-qa</h1>
+        <p class="sub">Answer questions over your own documents — and see every step that produced the answer.</p>
+      </div>
+    </div>
+    <div id="status" class="status" aria-live="polite">
+      <span class="stat"><span class="k">loading</span></span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs wrap" role="tablist">
+  <button class="tab sel" role="tab" data-tab="ask" aria-selected="true">Ask</button>
+  <button class="tab" role="tab" data-tab="results" aria-selected="false">Recorded results</button>
+  <button class="tab" role="tab" data-tab="corpus" aria-selected="false">The corpus</button>
+</nav>
+
+<main class="wrap">
+
+  <!-- ───────────────────────────────── ASK ───────────────────────────────── -->
+  <section id="tab-ask" class="panel">
+    <form id="askform" class="askbar">
+      <input id="q" type="text" autocomplete="off" spellcheck="false"
+             placeholder="Ask something about the documents in this corpus…"
+             aria-label="Your question">
+      <button type="submit" id="askbtn">Ask</button>
+    </form>
+
+    <div class="starters">
+      <span class="lbl">Try one</span>
+      <div id="chips" class="chips"></div>
+    </div>
+
+    <div id="askout" hidden>
+
+      <div id="failband" class="band bad" hidden></div>
+
+      <article class="block" id="answerblock">
+        <h2>The answer <span class="seam">seam 1 · src/adapters/</span></h2>
+        <div id="answer"></div>
+      </article>
+
+      <article class="block">
+        <h2>Retrieved passages <span class="seam">seam 4 · src/retrieve.py</span></h2>
+        <p class="hint" id="rethint"></p>
+        <div id="hits" class="hits"></div>
+      </article>
+
+      <article class="block">
+        <h2>The assembled prompt, in full <span class="seam">seam 5 · src/prompt.py</span></h2>
+        <p class="hint">Exactly what the model receives. The decomposition below is built as the
+          string is built, so it cannot disagree with it.</p>
+        <div id="parts" class="parts"></div>
+        <details class="raw">
+          <summary>Show the raw prompt</summary>
+          <pre id="rawprompt"></pre>
+        </details>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────── RESULTS ─────────────────────────────── -->
+  <section id="tab-results" class="panel" hidden>
+    <div id="results"></div>
+  </section>
+
+  <!-- ──────────────────────────────── CORPUS ─────────────────────────────── -->
+  <section id="tab-corpus" class="panel" hidden>
+    <div id="corpus"></div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>Runs entirely on your machine. No key is asked for, stored or sent anywhere except the
+     provider you configure in your own <code>.env</code>.</p>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
