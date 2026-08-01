@@ -17,6 +17,35 @@ Checks:
   2. every `answer_contains` string really occurs in that document's extracted text
   3. no duplicate ids, no duplicate questions
   4. the set spans every format the corpus ships, so retrieval is not scored on the easy ones
+  5. no fragment is longer than MAX_FRAGMENT_WORDS -- see below
+
+WHY CHECK 5 EXISTS, AND THE MEASUREMENT THAT PUT IT THERE.
+Check 2 has a hole big enough to invert a headline number, and it stayed green through it. It
+proves a fragment is IN the document; it has never proved the fragment ANSWERS THE QUESTION. A
+section heading is in the document. So `answer_contains: ["querying an r*tree index"]` passed the
+gate, and then marked every correct prose answer wrong, because no answer to "how do you query an
+R*Tree index?" contains that document's table-of-contents entry.
+
+Measured on the first capture run -- 50 rows x 2 models, 100 graded answers:
+
+    longest fragment in the row     graded correct
+      1-2 words                          80%
+      3-4 words                          43%
+      5-6 words                          45%
+      7+  words                          33%
+
+The model cannot see the label. That slide is the RULER, not the model: the longer the string you
+require verbatim, the less likely a correct paraphrase happens to contain it, so measured
+"accuracy" falls as label verbosity rises. Left alone, the published number would have described
+the authoring style of the labelled set and been read as a property of the model.
+
+A word cap is a proxy for the real rule -- a fragment must be the DISCRIMINATING content, a number,
+a term, a stem -- and a proxy is what is mechanically checkable. Judging whether a short fragment
+is the RIGHT short fragment is still a human read, and check 2's closing note still applies.
+
+An LLM-as-judge grader would measure correctness directly rather than by proxy. That is the honest
+next instrument, and it is deliberately not this one: a judge costs a call per row and brings its
+own error, so it is a decision to take with numbers in hand, not a default.
 """
 import json
 import os
@@ -30,6 +59,12 @@ from src import boilerplate, extract                                     # noqa:
 
 CORPUS = os.path.join(HERE, "data", "corpus")
 LABELS = os.path.join(HERE, "data", "labelled.jsonl")
+
+# Four, not two, and the gap is deliberate. The measurement says 1-2 words grades most reliably,
+# but some answers genuinely need a short phrase -- "no reads or writes", "name of the object" --
+# and a cap that forbids the correct answer would be a gate that cannot go green.
+MAX_FRAGMENT_WORDS = 4
+_FRAG_WORD = re.compile(r"[A-Za-z0-9:.*_-]+")
 
 
 def _norm(s):
@@ -85,6 +120,10 @@ def check(rows, docs, fmts):
         for frag in r.get("answer_contains", []):
             if _norm(frag) not in docs[doc]:
                 problems.append((rid, "answer fragment not found in %s: %r" % (doc, frag[:60])))
+            n = len(_FRAG_WORD.findall(frag))
+            if n > MAX_FRAGMENT_WORDS:
+                problems.append((rid, "fragment is %d words, cap is %d -- grade a paraphrase, not "
+                                      "a quotation: %r" % (n, MAX_FRAGMENT_WORDS, frag[:60])))
     covered = {fmts[r["doc"]] for r in rows if r.get("doc") in fmts}
     missing = set(fmts.values()) - covered
     if missing:
