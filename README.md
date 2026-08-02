@@ -43,10 +43,14 @@ cost move on the same dashboard.
 
 ## Why the shape is fixed
 
-The whole idea stands or falls on every kit having the same shape. The standard lives in the
-Foundry repo as pure data — `mcp/standards/use_case.py`, seven lenses with a typed per-lens
-contract — and is read by the scaffolding and validation tools rather than restated here. There is
-no second copy to drift.
+The whole idea stands or falls on every kit having the same shape. **Seven lenses, each with a
+typed contract**: what a kit must report about its UI, its business case, its architecture, its
+data, its prompt, its evaluation and its cost. The shape is held as data by the tooling that
+authors and checks a kit, and read from there rather than restated here, so there is no second
+copy to drift.
+
+The tooling itself is not part of this repo. **What is here is the kit** — the pipeline, the
+labelled set, the graders, the harness — which is the part you would fork, read and change.
 
 ## Stack
 

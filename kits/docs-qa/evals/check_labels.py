@@ -2,8 +2,8 @@
 
 WHY THIS EXISTS, AND WHY IT RUNS FIRST.
 Every other number this kit publishes is derived from a run. The labels are not: somebody wrote
-them. That makes them the one input no downstream gate can check -- `validate_kit` checks that a
-score EXISTS, never that it is right. A question whose expected answer is not actually in the
+them. That makes them the one input no downstream gate can check -- a structural validator checks
+that a score EXISTS, never that it is right. A question whose expected answer is not actually in the
 corpus produces a confidently wrong accuracy figure, an error taxonomy built on it, and a cost per
 correct answer derived from that, with nothing red anywhere.
 
