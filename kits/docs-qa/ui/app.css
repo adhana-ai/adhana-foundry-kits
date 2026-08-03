@@ -118,6 +118,57 @@ main.wrap { padding-top:0; }
   padding:13px 16px; border-radius:0 6px 6px 0; font-size:14.5px; color:var(--ink2);
 }
 .band strong { color:var(--bad); font-family:var(--mono); font-size:13px; }
+/* .band is red because its first user was a failure band. A save that worked must not be reported
+   in the colour this kit uses for a retrieval failure, so the other two outcomes get their own
+   rule rather than a second element. */
+.band.good { border-left-color:var(--good); background:var(--good-soft); }
+.band.good strong { color:var(--good); }
+.band.warn { border-left-color:var(--accent); background:var(--accent-soft); }
+.band.warn strong { color:var(--accent); }
+.band .models {
+  margin:8px 0 0; font-family:var(--mono); font-size:12.5px; color:var(--ink3);
+  max-height:140px; overflow:auto; word-break:break-all;
+}
+
+/* ── Connect a model ───────────────────────────────────────────────────────
+   Deliberately quiet. It is the first thing on the page for a reader with no key, and if it looked
+   like a setup wizard the kit would read as unusable until it is filled in -- which is the
+   opposite of this kit's claim. Panel chrome, not a modal, and no colour until something has
+   actually happened. */
+.connect {
+  border:1px solid var(--rule); background:var(--panel);
+  border-radius:8px; padding:18px 20px;
+  display:flex; flex-direction:column; gap:12px;
+}
+.connect h2 {
+  margin:0; font:600 13px/1 var(--mono); letter-spacing:.07em; text-transform:uppercase;
+  color:var(--accent); display:flex; gap:10px; align-items:baseline;
+}
+.connect h2 .opt {
+  font:500 11px/1 var(--sans); letter-spacing:0; text-transform:none; color:var(--ink3);
+  border:1px solid var(--rule); border-radius:99px; padding:3px 8px;
+}
+.connect > p { margin:0; font-size:14.5px; color:var(--ink2); }
+.cform {
+  display:grid; grid-template-columns:max-content 1fr; gap:10px 14px; align-items:center;
+}
+.cform label { font:600 12px/1 var(--mono); letter-spacing:.04em; color:var(--ink3); }
+.cform input {
+  font:14px/1.4 var(--mono); padding:9px 11px; color:var(--ink);
+  background:var(--sunk); border:1px solid var(--rule); border-radius:6px; min-width:0;
+}
+.cform input:focus { outline:2px solid var(--accent); outline-offset:1px; }
+.cform button {
+  grid-column:2; justify-self:start; font:600 14px var(--sans); cursor:pointer;
+  padding:9px 18px; border-radius:6px; border:1px solid var(--accent);
+  background:var(--accent); color:#fff;
+}
+.cform button[disabled] { opacity:.55; cursor:default; }
+.cnote { margin:0; font-size:13px; color:var(--ink3); }
+@media (max-width:620px) {
+  .cform { grid-template-columns:1fr; }
+  .cform button { grid-column:1; }
+}
 
 /* The blocks are siblings in a plain div, so without this they stacked flush -- h2 and p both
    carry margin:0, and there was nothing left to separate one stage of the pipeline from the next. */

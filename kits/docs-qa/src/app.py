@@ -28,7 +28,9 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
+import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -72,6 +74,65 @@ def api_status():
             "model": cfg["model"] or None,
             "has_key": config.has_key(cfg),
             "top_k": rt.TOP_K}
+
+
+def api_connect(body):
+    """POST /api/connect — point the kit at a model, from the kit's own UI.
+
+    IT PROBES BEFORE IT SAVES, AND THE PROBE IS FREE. A bare "saved" tells you nothing: the whole
+    failure this replaces is a .env that looks filled in and is not. So it asks the endpoint for its
+    model list first -- GET /models, which every OpenAI-compatible provider serves and none of them
+    charge for -- and reports what came back. That single call is what unblocked a run here after
+    an afternoon of guessing: the list named the two models that actually exist, so the base URL and
+    the key were both confirmed without spending anything.
+
+    WHAT REFUSES TO SAVE, AND WHY EACH ONE. A rejected key (401/403) and an unreachable host are
+    saved-nowhere, because both mean the value in front of you is wrong and writing it down only
+    buries the error. A provider that has no /models route (404) IS saved, marked unverified --
+    refusing there would lock out a working provider over a route that is not required to exist.
+
+    THE KEY IS NEVER RETURNED, NEVER LOGGED AND NEVER PUT IN A URL. It goes into one header and
+    into a 0600 file. api_status() has always answered with a boolean for the same reason.
+    """
+    base = str(body.get("base_url") or "").strip().rstrip("/")
+    key = str(body.get("api_key") or "").strip()
+    model = str(body.get("model") or "").strip()
+    provider = str(body.get("provider") or "openai-compatible").strip()
+    if not base or not key:
+        return {"ok": False, "error": "a base URL and a key are both needed"}
+    if not base.startswith(("http://", "https://")):
+        return {"ok": False, "error": "the base URL must start with http:// or https://"}
+
+    listed, verified, note = [], False, ""
+    req = urllib.request.Request(base + "/models",
+                                 headers={"Authorization": "Bearer " + key})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            data = json.loads(r.read().decode("utf-8"))
+        listed = sorted(str(m.get("id")) for m in (data.get("data") or []) if m.get("id"))
+        verified = True
+        if model and listed and model not in listed:
+            # NOT a refusal. Providers alias and version model names, and a list that does not
+            # mention yours is a reason to look twice rather than a reason to overrule someone
+            # about their own account.
+            note = ("saved, but %r is not in the %d models this endpoint lists — check the "
+                    "spelling against the list below." % (model, len(listed)))
+        elif listed:
+            note = "endpoint and key confirmed: %d models listed." % len(listed)
+    except urllib.error.HTTPError as e:
+        if e.code in (401, 403):
+            return {"ok": False,
+                    "error": "the endpoint rejected that key (HTTP %d). Nothing was saved."
+                             % e.code}
+        note = ("saved unverified: this endpoint has no /models route (HTTP %d), which is allowed. "
+                "The first question you ask will be the real test." % e.code)
+    except Exception as e:
+        return {"ok": False,
+                "error": "could not reach %s (%s). Nothing was saved." % (base, e)}
+
+    path = config.save({"PROVIDER": provider, "BASE_URL": base, "API_KEY": key, "MODEL": model})
+    return {"ok": True, "verified": verified, "models": listed[:60], "note": note,
+            "wrote": os.path.basename(path), "status": api_status()}
 
 
 def api_ask(question, label_id=None):
@@ -219,6 +280,41 @@ class Handler(BaseHTTPRequestHandler):
             ext = os.path.splitext(full)[1]
             return self._send(200, open(full, "rb").read(),
                               MIME.get(ext, "application/octet-stream"))
+        except Exception as e:
+            return self._json({"error": str(e)}, 500)
+
+    def do_POST(self):
+        """The only write this server accepts. Three things keep it safe, and the loopback bind is
+        NOT one of them — any page in the browser can reach 127.0.0.1.
+
+        1. POST ONLY. No link, redirect, <img> or prefetch can fire it, so it cannot be triggered
+           by a page merely being open.
+        2. application/json REQUIRED. A cross-origin form or fetch cannot send that content type
+           without a CORS preflight, and this server answers no preflight and sets no CORS header —
+           so a page on another origin cannot reach it at all. Relaxing the content-type check is
+           what would undo that, which is why it is checked here rather than left to the parser.
+        3. NOTHING IS ECHOED. The reply carries a boolean and a model list; the value written is
+           never read back out of this process.
+        """
+        u = urllib.parse.urlparse(self.path)
+        if u.path != "/api/connect":
+            return self._json({"error": "not found"}, 404)
+        ctype = (self.headers.get("content-type") or "").split(";")[0].strip().lower()
+        if ctype != "application/json":
+            return self._json({"error": "send application/json"}, 415)
+        try:
+            length = int(self.headers.get("content-length") or 0)
+            if length <= 0 or length > 8192:
+                return self._json({"error": "expected a small JSON body"}, 400)
+            body = json.loads(self.rfile.read(length).decode("utf-8"))
+            if not isinstance(body, dict):
+                return self._json({"error": "expected a JSON object"}, 400)
+            # NO RESTART IS NEEDED AND NO CACHE IS INVALIDATED HERE: config.load() reads .env on
+            # every call, which is why api_connect can return a fresh api_status() in the same
+            # reply. If that ever becomes a cached read, this is the place that has to change with
+            # it — a save the next question does not see reads exactly like a save that failed.
+            out = api_connect(body)
+            return self._json(out, 200 if out.get("ok") else 400)
         except Exception as e:
             return self._json({"error": str(e)}, 500)
 

@@ -33,6 +33,36 @@
 
   <!-- ───────────────────────────────── ASK ───────────────────────────────── -->
   <section id="tab-ask" class="panel">
+
+    <!-- FIRST RUN, NOT AN ERROR. Shown only when no key is configured, and it sits ABOVE the ask
+         box rather than replacing it: retrieval, the winning passages and the exact prompt all
+         work with no key, so the kit must never look like it is waiting to be set up. This panel
+         offers the model half; it does not gate the kit. -->
+    <div id="connect" class="connect" hidden>
+      <h2>Connect a model <span class="opt">optional</span></h2>
+      <p>Everything below already works — the passages that win and the exact prompt are computed
+         from the checked-in index with no key and no network. A key adds one thing: the written
+         answer at the end. Use whichever provider you already hold one for. It is written to
+         <code>.env</code> on this machine, readable only by you, and sent nowhere but that
+         provider.</p>
+      <form id="connectform" class="cform">
+        <label for="c-base">Base URL</label>
+        <input id="c-base" type="url" autocomplete="off" spellcheck="false"
+               placeholder="https://api.openai.com/v1">
+        <label for="c-key">API key</label>
+        <input id="c-key" type="password" autocomplete="off" spellcheck="false"
+               placeholder="the key from your provider">
+        <label for="c-model">Model</label>
+        <input id="c-model" type="text" autocomplete="off" spellcheck="false"
+               placeholder="the model id, e.g. gpt-4o-mini">
+        <button type="submit" id="c-save">Check and save</button>
+      </form>
+      <p class="cnote">The check asks the endpoint for its model list — a request no provider
+         charges for — so you find out whether the URL and the key are right before you spend
+         anything on a question.</p>
+      <div id="connectout" class="band" hidden></div>
+    </div>
+
     <form id="askform" class="askbar">
       <input id="q" type="text" autocomplete="off" spellcheck="false"
              placeholder="Ask something about the documents in this corpus…"

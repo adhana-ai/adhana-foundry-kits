@@ -36,6 +36,64 @@ function renderStatus(s) {
       : t("model", "not set — offline", "off"));
 }
 
+/* ── connect a model ──────────────────────────────────────────────────────
+ *
+ * Shown only when the server reports has_key false. It never blocks the ask box: retrieval, the
+ * passages and the prompt are the part of this kit that needs no credential, and putting them
+ * behind a setup step would misrepresent what the kit is.
+ *
+ * THE KEY GOES STRAIGHT INTO THE POST AND NOWHERE ELSE. Not localStorage, not the URL, and the
+ * field is cleared the moment the server has it -- the server writes a 0600 .env and answers with
+ * a boolean, so there is no reason for the browser to hold a copy. */
+
+function renderConnect(s) {
+  $("#connect").hidden = !!s.has_key;
+  if (s.has_key) return;
+  if (s.model) $("#c-model").value = s.model;      // prefilled from .env when only the key is missing
+}
+
+async function connect(ev) {
+  ev.preventDefault();
+  const btn = $("#c-save"), out = $("#connectout");
+  const body = {
+    base_url: $("#c-base").value.trim(),
+    api_key:  $("#c-key").value,
+    model:    $("#c-model").value.trim(),
+  };
+  btn.disabled = true; btn.textContent = "Checking…";
+  out.hidden = true;
+  try {
+    const r = await fetch("/api/connect", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    const d = await r.json();
+    out.hidden = false;
+    if (!d.ok) {
+      /* THE ENDPOINT'S OWN WORDS. Nothing is saved on this path, and the message says so -- a
+         reader who is not told that will retype the same wrong value believing it is stored. */
+      out.className = "band";
+      out.innerHTML = `<strong>not connected</strong> — ${esc(d.error || "unknown error")}`;
+      return;
+    }
+    $("#c-key").value = "";                        // the server has it; the browser keeps no copy
+    out.className = d.verified ? "band good" : "band warn";
+    out.innerHTML = `<strong>${d.verified ? "connected" : "saved"}</strong> — ${esc(d.note)}` +
+      (d.models && d.models.length
+        ? `<div class="models">${d.models.map(esc).join(" · ")}</div>` : "");
+    STATUS = d.status;
+    renderStatus(STATUS);
+    renderConnect(STATUS);
+  } catch (e) {
+    out.hidden = false;
+    out.className = "band";
+    out.innerHTML = `<strong>not connected</strong> — ${esc(e.message)}`;
+  } finally {
+    btn.disabled = false; btn.textContent = "Check and save";
+  }
+}
+
 /* ── ask ──────────────────────────────────────────────────────────────── */
 
 function renderAsk(d) {
@@ -308,6 +366,8 @@ document.addEventListener("click", ev => {
   ask(q, id);
 });
 
+$("#connectform").addEventListener("submit", connect);
+
 $("#askform").addEventListener("submit", ev => {
   ev.preventDefault();
   const q = $("#q").value.trim();
@@ -318,6 +378,7 @@ $("#askform").addEventListener("submit", ev => {
   try {
     STATUS = await get("/api/status");
     renderStatus(STATUS);
+    renderConnect(STATUS);
     const [labels, results, corpus] = await Promise.all(
       [get("/api/labels"), get("/api/results"), get("/api/corpus")]);
     RESULTS = results.runs;
