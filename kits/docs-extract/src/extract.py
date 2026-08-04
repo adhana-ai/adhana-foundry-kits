@@ -14,6 +14,13 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIELDS = os.path.join(HERE, "data", "fields.json")
 CORPUS = os.path.join(HERE, "data", "corpus")
 
+# ⚑ THE OUTPUT CEILING, NAMED ONCE. It used to be a literal in the call below, and the run
+# harness printed its own sentence about "3000 output tokens" without being able to say whether
+# 3000 was the reply or the limit. It was both, and a reader of the artifact could not tell:
+# run 2's four failures each consumed the entire budget and were cut off mid-JSON, and that got
+# recorded as an unexplained defect for a day. A number two files reason about belongs to one.
+MAX_TOKENS = 3000
+
 
 def load_fields():
     with open(FIELDS, encoding="utf-8") as f:
@@ -44,7 +51,7 @@ def extract(cfg, doc_text, fields, complete=None):
     # a truncated JSON object fails to parse, parse() returns {}, and nine empty fields read as
     # nine model misses. The header fields gave it away -- nct_id missed on exactly the same 20
     # documents it missed brief_title, on a value printed at the top of the page.
-    res = call(cfg, msgs[0]["content"], msgs[1]["content"], max_tokens=3000)
+    res = call(cfg, msgs[0]["content"], msgs[1]["content"], max_tokens=MAX_TOKENS)
     raw = res.get("text", "")
     values = P.parse(raw, fields)
     # ⚑ THE THIRD STATE, AGAIN, AND IT COST A PAID RUN TO LEARN. "The model returned nothing for

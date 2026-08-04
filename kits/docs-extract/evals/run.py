@@ -18,6 +18,7 @@ import time
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src import config, extract as EX          # noqa: E402
+from src.extract import MAX_TOKENS             # noqa: E402
 from evals import judge as J                   # noqa: E402
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -71,6 +72,7 @@ def main():
 
     complete = stub_complete if a.stub else None
     records, lat, tin, tout, failures = {}, [], 0, 0, []
+    first = None
     t_all = time.time()
     for i, nct in enumerate(docs, 1):
         t0 = time.time()
@@ -91,15 +93,31 @@ def main():
             # Counted where every other lost document is counted. It cost money and produced no
             # answer -- exactly like a 503 -- and scoring it as nine misses would publish a
             # parsing defect as a model quality figure, which is what run 1 did.
+            #
+            # ⚠︎ AND THE REPLY IS KEPT. Run 2's four failures each reported 3000 output tokens
+            # against a max_tokens of 3000 -- the reply had consumed its entire budget and been
+            # cut off mid-JSON -- and the run recorded that number and threw the text away, so
+            # the one question left open ("why does a nine-field record run to 3000 tokens?")
+            # could not be answered from the artifact. A failure that discards its own evidence
+            # is a failure you get to have twice.
             failures.append({"doc": nct, "error": "reply did not parse as JSON (truncated?) — "
-                                                  "%d output tokens" % (r.get("output_tokens") or 0)})
-            print("  !! %-14s reply did not parse" % nct)
+                                                  "%d output tokens" % (r.get("output_tokens") or 0),
+                             "output_tokens": r.get("output_tokens"),
+                             "max_tokens": MAX_TOKENS,
+                             "at_ceiling": (r.get("output_tokens") or 0) >= MAX_TOKENS,
+                             "raw_text": (r.get("raw_text") or "")[:4000]})
+            print("  !! %-14s reply did not parse (%s output tokens, cap %d)"
+                  % (nct, r.get("output_tokens"), MAX_TOKENS))
             continue
         lat.append(int((time.time() - t0) * 1000))
         tin += r.get("input_tokens") or 0
         tout += r.get("output_tokens") or 0
         records[nct] = r["fields"]
-        if i == 1:
+        # THE FIRST DOCUMENT THAT WORKED, not the first one attempted. `if i == 1` left `first`
+        # unbound whenever document 1 failed and a later one succeeded -- `records` is non-empty,
+        # so the guard below reads `first` and the run dies at the write step with a NameError,
+        # after every call has been paid for.
+        if first is None:
             first = r
         print("  %3d/%-3d %-14s %d ms" % (i, len(docs), nct, lat[-1]))
 
@@ -123,8 +141,15 @@ def main():
         "by_field": scored["by_field"],
         "cells": scored["cells"],
         "prompt_parts": [{"name": q["name"], "chars": len(q["text"])}
-                         for q in (first["prompt_parts"] if records else [])],
-        "sections_used": (first["sections_used"] if records else []),
+                         for q in (first["prompt_parts"] if first else [])],
+        "sections_used": (first["sections_used"] if first else []),
+        # ⚑ ONE REAL REPLY, VERBATIM, BEFORE ANY PARSING. The kit standard's LLM lens asks for it
+        # and this harness was the reason it could not be filled: `extract()` has always returned
+        # `raw_text` and the write step dropped it, so four runs produced no example of what the
+        # model actually sends back. It is the first successful document's, matching the prompt
+        # parts and sections beside it, so the three describe one call rather than three.
+        "raw_text": (first["raw_text"] if first else ""),
+        "max_tokens": MAX_TOKENS,
     }
     path = os.path.join(RESULTS, "eval-%s.json" % a.run_id)
     with open(path, "w", encoding="utf-8") as f:
