@@ -1,5 +1,9 @@
 data/_fetched/
 .env
-results/
 __pycache__/
 *.pyc
+# NOT results/ -- it was here, copied from a misreading of the scaffold rule. That rule says
+# never COPY a result between kits (a result belongs to the run that produced it); it does not
+# say do not commit one. docs-qa tracks its results, every published figure names the run file
+# it came from, and the register gate checks that a record's source exists in the kit. An
+# uncommitted result is evidence nothing can cite.
