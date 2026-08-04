@@ -79,7 +79,10 @@ def score(fields, records, golds):
             v = score_cell(f, got, g.get(name), st)
             cells.append({"doc": nct, "field": name, "verdict": v,
                           "got": got, "want": g.get(name), "stated": st,
-                          "span": bool((rec.get(name) or {}).get("span"))})
+                          "span": bool((rec.get(name) or {}).get("span")),
+                          # Default True so a record from before `spannable` existed is not
+                          # silently dropped from the denominator.
+                          "spannable": (rec.get(name) or {}).get("spannable", True)})
             d = by_field.setdefault(name, {"hit": 0, "miss": 0, "wrong": 0,
                                            "abstained": 0, "hallucinated": 0})
             d[v] += 1
@@ -88,8 +91,14 @@ def score(fields, records, golds):
     ext_hit = sum(1 for c in cells if c["stated"] and c["verdict"] == "hit")
     ref_n = sum(1 for c in cells if not c["stated"])
     ref_ok = sum(1 for c in cells if not c["stated"] and c["verdict"] == "abstained")
-    spanned = sum(1 for c in cells if c["verdict"] in ("hit", "wrong") and c["span"])
-    valued = sum(1 for c in cells if c["verdict"] in ("hit", "wrong", "hallucinated"))
+    # ⚠︎ SPAN RATE IS OVER SPANNABLE FIELDS ONLY. An enum's answer is a canonical token the
+    # document does not contain (ALL, RANDOMIZED, DOUBLE), so it can never carry a verbatim span
+    # and counting it as a miss would cap this figure below 1.0 by construction — a guardrail
+    # that can never be met reads as a system failing, not as a category error in the metric.
+    spanned = sum(1 for c in cells
+                  if c["verdict"] in ("hit", "wrong") and c["spannable"] and c["span"])
+    valued = sum(1 for c in cells
+                 if c["verdict"] in ("hit", "wrong", "hallucinated") and c["spannable"])
 
     return {
         "by_field": by_field,
@@ -106,6 +115,7 @@ def score(fields, records, golds):
             # but it is a value a reader cannot check, and that is worth a number of its own.
             "values_returned": valued,
             "values_with_span": spanned,
+            "non_spannable_fields": sorted({f["name"] for f in fields if f.get("type") == "enum"}),
             "span_rate": round(spanned / valued, 4) if valued else None,
         },
     }

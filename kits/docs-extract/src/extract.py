@@ -49,12 +49,26 @@ def extract(cfg, doc_text, fields, complete=None):
         v = values.get(name)
         if v in ("", "null", "None"):        # a model writing the word rather than the value
             v = None
-        span = segment.locate(doc_text, v) if v is not None else None
+        # ⚑ AN ENUM CAN NEVER HONESTLY CARRY A SPAN, AND THAT IS NOT A FAILURE.
+        #
+        # The prompt tells the model two things that conflict for exactly these fields: "copy
+        # values verbatim" and "use the exact allowed value for a field that lists them". For
+        # `sex` the document says "both males and females" and the answer is ALL; for `allocation`
+        # it says "randomly assigned" and the answer is RANDOMIZED. The canonical token is not IN
+        # the document, by design, so searching for it can only ever return nothing — or, before
+        # the word-boundary fix, something spurious.
+        #
+        # So spannable is a property of the FIELD, and a non-spannable field is a third state:
+        # not "no span found" (a miss) but "a span was never applicable". Rolling those together
+        # is what would make span_rate look like a failing guardrail when it is a category error.
+        spannable = f.get("type") != "enum"
+        span = segment.locate(doc_text, v) if (v is not None and spannable) else None
         out[name] = {
             "value": v,
-            # ⚠︎ A SPAN IS EVIDENCE, SO IT IS NEVER GUESSED. `locate` is a literal search; a
-            # paraphrased value gets value-without-span, and the app renders that honestly
-            # rather than pointing a reader at approximately the right place.
+            "spannable": spannable,
+            # ⚠︎ A SPAN IS EVIDENCE, SO IT IS NEVER GUESSED. `locate` is a literal, word-boundary
+            # search; a paraphrased value gets value-without-span, and the app renders that
+            # honestly rather than pointing a reader at approximately the right place.
             "span": ({"start": span[0], "end": span[1],
                       "section": segment.span_label(secs, span[0])} if span else None),
         }

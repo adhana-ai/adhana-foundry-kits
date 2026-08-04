@@ -43,14 +43,26 @@ def locate(text, value):
     model paraphrased, this returns None and the value ships WITHOUT a span rather than with a
     guessed one. An approximate span pointing at roughly-the-right-place is worse than none —
     it invites a reader to check, and the check appears to succeed.
+
+    ⚠︎ IT MATCHES ON WORD BOUNDARIES, AND THE FIRST VERSION DID NOT. `str.find` is a substring
+    search, so the value "ALL" matched the letters inside "electronically" and the panel rendered
+    a confident "§ Detailed Description" citation pointing at an unrelated sentence. Found live on
+    2026-08-03, by the operator, on the very first extraction anyone ran. A fabricated citation is
+    worse than a missing one on any page; on this one it also inflates `span_rate`, which is a
+    published guardrail figure. Short values are the dangerous case and short values are exactly
+    what an extractor returns.
     """
-    if not value:
+    if value in (None, ""):
         return None
-    i = text.find(str(value))
-    if i >= 0:
-        return (i, i + len(str(value)))
-    i = text.lower().find(str(value).lower())
-    return (i, i + len(str(value))) if i >= 0 else None
+    v = str(value)
+    # \b is wrong at a non-word edge (e.g. a value starting with a digit is fine, one starting
+    # with "(" is not), so the boundary is asserted only where the value's own edge is a word
+    # character. That keeps "12 Years" and "400" strict without breaking "Asthma control test
+    # (ACT®) scores."
+    left = r"\b" if re.match(r"\w", v[0]) else ""
+    right = r"\b" if re.search(r"\w$", v) else ""
+    m = re.search(left + re.escape(v) + right, text, re.IGNORECASE)
+    return (m.start(), m.end()) if m else None
 
 
 def span_label(secs, start):

@@ -15,7 +15,11 @@ function row(f, cell) {
     '<td class="s' + (span ? "" : " none") + '"></td>';
   tr.children[0].textContent = f.name;
   tr.children[1].textContent = vtxt;
-  tr.children[2].textContent = span ? ("§ " + span.section) : "—";
+  // THREE STATES HERE TOO, for the same reason as the value column. A span that was never
+  // applicable (an enum answers with a canonical token the document does not contain) is not the
+  // same fact as a span we looked for and could not find, and a bare dash says both.
+  tr.children[2].textContent = span ? ("§ " + span.section)
+    : (cell && cell.spannable === false ? "n/a — fixed value" : "—");
   return tr;
 }
 
@@ -33,7 +37,9 @@ function draw(fields) {
   const filled = vals.filter((c) => c.value !== null && c.value !== undefined && c.value !== "");
   $("k-filled").textContent = filled.length + " filled";
   $("k-missing").textContent = (FIELDS.length - filled.length) + " not found";
-  $("k-span").textContent = vals.filter((c) => c.span).length + " with a span";
+  const spannable = vals.filter((c) => c.spannable !== false && c.value);
+  $("k-span").textContent = vals.filter((c) => c.span).length + " of " + spannable.length
+    + " with a span";
 }
 
 async function load() {

@@ -67,6 +67,12 @@ def extract(doc_text, fields):
     v["allocation"] = ("RANDOMIZED" if re.search(r"\brandomi[sz]ed\b", t) else
                        ("NON_RANDOMIZED" if re.search(r"\bnon-randomi[sz]ed\b", t) else None))
 
+    # `spannable` is declared here too, and it must match src/extract.py exactly. The judge uses
+    # it as the span-rate DENOMINATOR, so a baseline that omitted it would be scored over a
+    # different set of cells than the model — two runs, one judge, incomparable figures. That is
+    # the same defect this estate already shipped once, comparing two model tiers as if they were
+    # one system.
     return {f["name"]: {"value": v.get(f["name"]),
+                        "spannable": f.get("type") != "enum",
                         "span": None}                       # rules do not claim spans
             for f in fields}
