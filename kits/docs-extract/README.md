@@ -12,7 +12,7 @@ python -m evals.run --run-id b000 --baseline     # free — the rules-and-regex 
 python -m evals.run --run-id t000 --stub         # free — proves the wiring end to end
 cp .env.example .env && $EDITOR .env             # your provider, your key
 python -m evals.run --run-id r001-<model>        # THIS SPENDS MONEY: one call per document
-python -m src.app                                # the local UI on 127.0.0.1:8765
+python -m src.app                                # the local UI on 127.0.0.1:8766 (docs-qa owns 8765; --port moves it)
 ```
 
 ## What it is measuring, and why it is two numbers

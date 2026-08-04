@@ -9,6 +9,8 @@ IT RENDERS WITH NO KEY. /api/fields and /api/doc need nothing; only /api/extract
 and with no API_KEY it returns a 200 saying so rather than an error, so the page is explorable
 before anyone spends anything.
 """
+import argparse
+import errno
 import json
 import os
 import sys
@@ -21,7 +23,17 @@ from src import config, extract as EX          # noqa: E402
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UI = os.path.join(HERE, "ui")
-PORT = int(os.environ.get("PORT", "8765"))
+
+# ⚑ 8766, NOT 8765 — changed 2026-08-03, the first time anyone ran two kits at once.
+#
+# docs-qa picked 8765 deliberately (its own note: "not 8000: 8000 is the first port every other
+# local thing takes"). This kit copied that reasoning and therefore copied the port, so starting
+# the second kit while the first was still up died with a nine-line traceback ending in
+# "Address already in use" — which reads as a broken kit, not an occupied socket.
+#
+# One kit per port, and the collision is handled below rather than merely made less likely: a
+# forker may well have something of their own here too.
+PORT = int(os.environ.get("PORT", "8766"))
 
 
 class H(BaseHTTPRequestHandler):
@@ -92,12 +104,38 @@ class H(BaseHTTPRequestHandler):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--port", type=int, default=PORT,
+                    help="default %d. The PORT environment variable works too." % PORT)
+    a = ap.parse_args()
+
     cfg = config.load()
-    print("docs-extract UI  ->  http://127.0.0.1:%d" % PORT)
+    # ⚠︎ BIND FIRST, ANNOUNCE SECOND. The old order printed "docs-extract UI -> http://..." and
+    # THEN threw, so the last thing on screen before the traceback was a URL that was never going
+    # to answer. Anything that prints a promise before keeping it can print a false one.
+    try:
+        srv = ThreadingHTTPServer(("127.0.0.1", a.port), H)
+    except OSError as exc:
+        if exc.errno != errno.EADDRINUSE:
+            raise
+        # A stack trace here says "this kit is broken". It is not: a socket is taken, very likely
+        # by the OTHER kit, and the fix is one flag. Say that instead.
+        raise SystemExit(
+            "Port %d is already in use.\n"
+            "\n"
+            "Most likely that is another kit's UI — docs-qa defaults to 8765. Both can run at\n"
+            "once; they just need different ports.\n"
+            "\n"
+            "  python -m src.app --port %d          # or: PORT=%d python -m src.app\n"
+            "\n"
+            "To see what is holding it:  lsof -nP -iTCP:%d -sTCP:LISTEN"
+            % (a.port, a.port + 1, a.port + 1, a.port))
+
+    print("docs-extract UI  ->  http://127.0.0.1:%d" % a.port)
     print("  documents: %d   fields: %d   API_KEY: %s"
           % (len(EX.documents()), len(EX.load_fields()),
              "set" if config.has_key(cfg) else "not set (the page still renders)"))
-    ThreadingHTTPServer(("127.0.0.1", PORT), H).serve_forever()
+    srv.serve_forever()
 
 
 if __name__ == "__main__":
