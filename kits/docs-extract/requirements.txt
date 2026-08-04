@@ -1,7 +1,9 @@
-# One dependency, and it earns its place: PDF text extraction.
+# NOTHING. This kit is Python standard library, end to end.
 #
-# Everything else -- HTML and DOCX extraction, chunking, the keyword retriever, the provider
-# adapters -- is Python standard library, on purpose. A kit is meant to be read and changed by
-# someone who cloned it ten minutes ago, and every dependency is a thing they have to understand
-# before they can change the part they came for.
-pypdf>=4.0
+# It was not written to be minimal for its own sake -- docs-qa has one dependency, pypdf, and
+# that dependency earns its place because PDF text extraction is genuinely not something to
+# hand-roll. This corpus is plain text fetched over urllib, so there was nothing left to add.
+#
+# ⚠︎ THIS FILE WAS COPIED FROM docs-qa AND LISTED pypdf FOR A WHILE. Nothing imports it here.
+# A requirements file naming a package the code never touches is a small lie that costs a
+# forker an install and teaches them the kit is bigger than it is.
