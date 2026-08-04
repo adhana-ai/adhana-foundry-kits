@@ -17,12 +17,25 @@ including token counts -- lens 05 publishes them and lens 07 prices them, so a p
 returns no usage cannot be published.
 """
 import json
+import time
 import urllib.error
 import urllib.request
 
 
 class AdapterError(RuntimeError):
-    pass
+    """`status` is the HTTP code when there was one, else None — so a caller can tell a provider
+    being BUSY from a request being WRONG without parsing an error string."""
+
+    def __init__(self, msg, status=None):
+        super().__init__(msg)
+        self.status = status
+
+
+# ⚑ TRANSIENT vs TERMINAL. 429 and 5xx mean "ask again shortly"; 400/401/403/404 mean "asking
+# again will fail identically and cost you the same". Retrying the second kind is how a bad key
+# turns into a rate-limit ban.
+TRANSIENT = {408, 429, 500, 502, 503, 504}
+RETRIES = 4
 
 
 def _post(url, headers, payload, timeout=120):
@@ -35,7 +48,8 @@ def _post(url, headers, payload, timeout=120):
     except urllib.error.HTTPError as e:
         # The body carries the actual reason. Raising the status alone turns "your key is for a
         # different model" into "400", which is the kind of error message that costs an afternoon.
-        raise AdapterError("%s %s: %s" % (e.code, e.reason, e.read().decode("utf-8", "replace")))
+        raise AdapterError("%s %s: %s" % (e.code, e.reason, e.read().decode("utf-8", "replace")),
+                           status=e.code)
 
 
 def openai_compatible(cfg, system, user, max_tokens):
@@ -84,4 +98,24 @@ def complete(cfg, system, user, max_tokens=1024):
     if not cfg.get("model"):
         raise AdapterError("no MODEL set. There is no default on purpose: a kit that picks a model "
                            "for you has picked your bill and your latency too.")
-    return PROVIDERS[name](cfg, system, user, max_tokens)
+    # ⚑ A BUSY PROVIDER IS NOT A FAILED DOCUMENT — added 2026-08-03, mid-run, after a live
+    # 503 "Service is too busy" dropped a document from a paid run of 57.
+    #
+    # ⚠︎ THIS DOES NOT WEAKEN "RUN ONCE". Run-once is a claim about how many times the TASK was
+    # attempted and published, not about how many TCP requests it took to get one answer. A 503
+    # returns no completion, so nothing was extracted and nothing was billed; asking again is
+    # finishing the first attempt, not taking a second one. What would break the claim is
+    # re-running a document that already answered, and that is not what happens here.
+    #
+    # Bounded and backed off, because the failure mode on the other side is a provider under load:
+    # 1s, 2s, 4s, 8s, then give up and let the caller RECORD the failure as it does today.
+    last = None
+    for attempt in range(RETRIES + 1):
+        try:
+            return PROVIDERS[name](cfg, system, user, max_tokens)
+        except AdapterError as exc:
+            if exc.status not in TRANSIENT or attempt == RETRIES:
+                raise
+            last = exc
+            time.sleep(2 ** attempt)
+    raise last
