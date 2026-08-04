@@ -40,8 +40,18 @@ def extract(cfg, doc_text, fields, complete=None):
     secs = segment.sections(doc_text)
     msgs, parts, used = P.build(doc_text, secs, fields, selector)
     call = complete or adapters.complete
-    res = call(cfg, msgs[0]["content"], msgs[1]["content"], max_tokens=1024)
-    values = P.parse(res.get("text", ""), fields)
+    # ⚠︎ 1024 CLIPPED 20 OF 42 DOCUMENTS ON THE FIRST PAID RUN, and the clipping was invisible:
+    # a truncated JSON object fails to parse, parse() returns {}, and nine empty fields read as
+    # nine model misses. The header fields gave it away -- nct_id missed on exactly the same 20
+    # documents it missed brief_title, on a value printed at the top of the page.
+    res = call(cfg, msgs[0]["content"], msgs[1]["content"], max_tokens=3000)
+    raw = res.get("text", "")
+    values = P.parse(raw, fields)
+    # ⚑ THE THIRD STATE, AGAIN, AND IT COST A PAID RUN TO LEARN. "The model returned nothing for
+    # this field" and "the model's whole reply was unreadable" are different facts, and only the
+    # first one is about the model's judgement. An unparseable reply is reported to the caller so
+    # the run can record it as a FAILED DOCUMENT rather than scoring it as nine refusals.
+    parsed_ok = bool(values) and any(v is not None for v in values.values())
 
     out = {}
     for f in fields:
@@ -78,5 +88,6 @@ def extract(cfg, doc_text, fields, complete=None):
         "prompt_parts": parts,
         "input_tokens": res.get("input_tokens"),
         "output_tokens": res.get("output_tokens"),
-        "raw_text": res.get("text", ""),
+        "raw_text": raw,
+        "parsed": parsed_ok,
     }

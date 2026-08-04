@@ -87,6 +87,14 @@ def main():
             failures.append({"doc": nct, "error": str(exc)[:300]})
             print("  !! %-14s %s" % (nct, str(exc)[:90]))
             continue
+        if not r.get("parsed", True):
+            # Counted where every other lost document is counted. It cost money and produced no
+            # answer -- exactly like a 503 -- and scoring it as nine misses would publish a
+            # parsing defect as a model quality figure, which is what run 1 did.
+            failures.append({"doc": nct, "error": "reply did not parse as JSON (truncated?) — "
+                                                  "%d output tokens" % (r.get("output_tokens") or 0)})
+            print("  !! %-14s reply did not parse" % nct)
+            continue
         lat.append(int((time.time() - t0) * 1000))
         tin += r.get("input_tokens") or 0
         tout += r.get("output_tokens") or 0
