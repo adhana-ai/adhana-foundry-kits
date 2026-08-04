@@ -1,0 +1,62 @@
+{
+ "run_id": "p001-prompt-split",
+ "kind": "prompt_tokens",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 3,
+ "calls": 6,
+ "parts": [
+  {
+   "part": "chat protocol and system prompt",
+   "tokens": 201,
+   "chars": 508,
+   "chars_per_token": 2.53,
+   "share_pct": 14.5
+  },
+  {
+   "part": "field schema",
+   "tokens": 217,
+   "chars": 868,
+   "chars_per_token": 4.0,
+   "share_pct": 15.7
+  },
+  {
+   "part": "instruction framing",
+   "tokens": 49,
+   "chars": 216,
+   "chars_per_token": 4.41,
+   "share_pct": 3.5
+  },
+  {
+   "part": "document sections",
+   "tokens": 917,
+   "chars": 4375,
+   "chars_per_token": 4.77,
+   "share_pct": 66.3
+  }
+ ],
+ "per_document": [
+  {
+   "doc": "NCT00005610",
+   "prompt_tokens": 1190,
+   "document_sections": 723,
+   "document_chars": 3394
+  },
+  {
+   "doc": "NCT00099840",
+   "prompt_tokens": 1971,
+   "document_sections": 1504,
+   "document_chars": 7256
+  },
+  {
+   "doc": "NCT00150735",
+   "prompt_tokens": 991,
+   "document_sections": 524,
+   "document_chars": 2476
+  }
+ ],
+ "prompt_tokens_avg": 1384,
+ "method": "Nested prefixes, each the previous plus one part, sent at max_tokens=1; every part's size is the difference between two consecutive prompt_tokens counts as the provider reported them. The first three prefixes do not vary by document and were measured once; the document-sections figure is the mean over the 3 documents sampled.",
+ "caveat": "A token may span the boundary between two parts, so a part's count can differ by one from that part tokenized alone. The parts are never sent alone, and the figure published is what each part ADDS to the billed prompt."
+}

@@ -1,0 +1,50 @@
+{
+ "run_id": "p000-stub",
+ "kind": "prompt_tokens",
+ "stub": true,
+ "model": "stub",
+ "provider": "stub",
+ "documents": 2,
+ "calls": 5,
+ "parts": [
+  {
+   "part": "chat protocol and system prompt",
+   "tokens": 127,
+   "chars": null,
+   "share_pct": 7.3
+  },
+  {
+   "part": "field schema",
+   "tokens": 217,
+   "chars": 868,
+   "share_pct": 12.6
+  },
+  {
+   "part": "instruction framing",
+   "tokens": 54,
+   "chars": 1084,
+   "share_pct": 3.1
+  },
+  {
+   "part": "document sections",
+   "tokens": 1331,
+   "chars": 4478,
+   "share_pct": 77.0
+  }
+ ],
+ "per_document": [
+  {
+   "doc": "NCT00005610",
+   "prompt_tokens": 1246,
+   "document_sections": 848
+  },
+  {
+   "doc": "NCT00099840",
+   "prompt_tokens": 2212,
+   "document_sections": 1814
+  }
+ ],
+ "prompt_tokens_avg": 1729,
+ "method": "Nested prefixes, each the previous plus one part, sent at max_tokens=1; every part's size is the difference between two consecutive prompt_tokens counts as the provider reported them. The first three prefixes do not vary by document and were measured once; the document-sections figure is the mean over the 2 documents sampled.",
+ "caveat": "A token may span the boundary between two parts, so a part's count can differ by one from that part tokenized alone. The parts are never sent alone, and the figure published is what each part ADDS to the billed prompt."
+}

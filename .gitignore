@@ -17,3 +17,7 @@ runs/
 # kits/<kit>/data/_fetched/. The files had already been untracked by hand, so the repo looked
 # correct while the rule meant to keep them out matched no path at all.
 _fetched/
+# The shared daily call ledger (src/budget.py). One line per live call, so it is machine-local
+# state and not a repo fact -- and it records which kit and which model, which is nobody's
+# business but the person holding the key.
+.calls-ledger.jsonl

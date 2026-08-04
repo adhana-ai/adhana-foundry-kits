@@ -17,6 +17,7 @@ import time
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from src import budget as BUDGET               # noqa: E402
 from src import config, extract as EX          # noqa: E402
 from src.extract import MAX_TOKENS             # noqa: E402
 from evals import judge as J                   # noqa: E402
@@ -65,10 +66,16 @@ def main():
     if not a.stub and not a.baseline:
         if not config.has_key(cfg):
             raise SystemExit("no API_KEY configured. Use --stub to prove the wiring for free.")
-        print("about to make %d live call(s) with model %r via %s"
-              % (len(docs), cfg.get("model"), cfg.get("provider")))
+        # The plan line now carries the shared daily cap, because "57 calls" and "57 calls, 12 of
+        # your 200 used today" are different decisions — and on a machine with no cap set at all
+        # that is the single most useful thing this line can say before you type 'run'.
+        print(BUDGET.plan(len(docs), cfg.get("model")) + " via %s" % cfg.get("provider"))
         if not a.yes and input("type 'run' to continue: ").strip() != "run":
             raise SystemExit("nothing was called.")
+        # Refuse the whole run up front when it cannot finish inside the cap, rather than dying
+        # partway through with half a corpus paid for and no scoreable result file. The adapter
+        # checks each call as well; this is the check that saves you the money, not just the call.
+        BUDGET.check(len(docs))
 
     complete = stub_complete if a.stub else None
     records, lat, tin, tout, failures = {}, [], 0, 0, []

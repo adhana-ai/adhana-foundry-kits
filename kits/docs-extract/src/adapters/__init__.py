@@ -21,6 +21,8 @@ import time
 import urllib.error
 import urllib.request
 
+from .. import budget
+
 
 class AdapterError(RuntimeError):
     """`status` is the HTTP code when there was one, else None — so a caller can tell a provider
@@ -109,6 +111,20 @@ def complete(cfg, system, user, max_tokens=1024):
     #
     # Bounded and backed off, because the failure mode on the other side is a provider under load:
     # 1s, 2s, 4s, 8s, then give up and let the caller RECORD the failure as it does today.
+    # ⚑ THE DAILY CAP IS CHECKED HERE, NOT IN THE RUN HARNESS — added 2026-08-04.
+    #
+    # One key funds every kit, and this is the only line all of them go through: the eval harness,
+    # the local app, a screenshot script, and whatever a forker writes next. Putting the guard in
+    # `evals/run.py` would cap the run that already prints what it is about to spend and leave
+    # every other caller uncapped — including the app, which spends one call per click with
+    # nothing counting them at all. A second place to remember is a place to forget.
+    #
+    # It is checked ONCE per completion rather than once per HTTP attempt, because a retried 503
+    # returns no completion and is billed for none: charging the budget for it would make a busy
+    # provider look like spending, which is exactly the confusion the retry comment above settles.
+    budget.check(1)
+    budget.record(cfg.get("model"))
+
     last = None
     for attempt in range(RETRIES + 1):
         try:
