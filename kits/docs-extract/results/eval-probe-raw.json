@@ -1,0 +1,209 @@
+{
+ "run_id": "probe-raw",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 1,
+ "failures": [],
+ "latency_p50_ms": 4126,
+ "latency_p95_ms": 4126,
+ "wall_seconds": 4.1,
+ "input_tokens_total": 1190,
+ "output_tokens_total": 444,
+ "scores": {
+  "extraction_cells": 6,
+  "extraction_accuracy": 1.0,
+  "refusal_cells": 3,
+  "refusal_accuracy": 1.0,
+  "hallucinations": 0,
+  "values_returned": 5,
+  "values_with_span": 4,
+  "non_spannable_fields": [
+   "allocation",
+   "masking",
+   "sex"
+  ],
+  "span_rate": 0.8
+ },
+ "by_field": {
+  "nct_id": {
+   "hit": 1,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "brief_title": {
+   "hit": 1,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "condition": {
+   "hit": 1,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "primary_outcome": {
+   "hit": 1,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "sex": {
+   "hit": 1,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "minimum_age": {
+   "hit": 1,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "allocation": {
+   "hit": 0,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 1,
+   "hallucinated": 0
+  },
+  "enrollment": {
+   "hit": 0,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 1,
+   "hallucinated": 0
+  },
+  "masking": {
+   "hit": 0,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 1,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "NCT00005610",
+   "field": "nct_id",
+   "verdict": "hit",
+   "got": "NCT00005610",
+   "want": "NCT00005610",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "NCT00005610",
+   "field": "brief_title",
+   "verdict": "hit",
+   "got": "Study of Aerosolized Sargramostim in Treating Patients With Melanoma Metastatic to the Lung",
+   "want": "Study of Aerosolized Sargramostim in Treating Patients With Melanoma Metastatic to the Lung",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "NCT00005610",
+   "field": "condition",
+   "verdict": "hit",
+   "got": "Melanoma (Skin), Metastatic Cancer",
+   "want": "Melanoma (Skin), Metastatic Cancer",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "NCT00005610",
+   "field": "primary_outcome",
+   "verdict": "hit",
+   "got": "Progression-free survival",
+   "want": "Progression-free survival",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "NCT00005610",
+   "field": "sex",
+   "verdict": "hit",
+   "got": "ALL",
+   "want": "ALL",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "NCT00005610",
+   "field": "minimum_age",
+   "verdict": "hit",
+   "got": "18 Years",
+   "want": "18 Years",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "NCT00005610",
+   "field": "allocation",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "NCT00005610",
+   "field": "enrollment",
+   "verdict": "abstained",
+   "got": null,
+   "want": 28,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "NCT00005610",
+   "field": "masking",
+   "verdict": "abstained",
+   "got": null,
+   "want": "NONE",
+   "stated": false,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 508
+  },
+  {
+   "name": "field schema",
+   "chars": 844
+  },
+  {
+   "name": "document sections",
+   "chars": 3393
+  }
+ ],
+ "sections_used": [
+  "ClinicalTrials.gov Study Record",
+  "Brief Summary",
+  "Detailed Description",
+  "Interventions",
+  "Primary Outcome Measures",
+  "Eligibility Criteria"
+ ],
+ "raw_text": "{\n  \"nct_id\": \"NCT00005610\",\n  \"brief_title\": \"Study of Aerosolized Sargramostim in Treating Patients With Melanoma Metastatic to the Lung\",\n  \"condition\": \"Melanoma (Skin), Metastatic Cancer\",\n  \"primary_outcome\": \"Progression-free survival\",\n  \"sex\": \"ALL\",\n  \"minimum_age\": \"18 Years\",\n  \"allocation\": null,\n  \"enrollment\": null,\n  \"masking\": null\n}",
+ "max_tokens": 3000
+}
