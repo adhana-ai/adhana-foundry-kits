@@ -23,8 +23,12 @@ function draw(fields) {
   const body = $("rows");
   body.textContent = "";
   FIELDS.forEach((f) => body.appendChild(row(f, fields ? fields[f.name] : undefined)));
-  if (!fields) { $("k-filled").textContent = "—"; $("k-missing").textContent = "—";
-                 $("k-span").textContent = "—"; return; }
+  // A DASH KEEPS ITS LABEL. Three bare "—" chips say nothing about what is unknown. And note
+  // what they must NOT say before a run: "9 not found" would report nine refusals that never
+  // happened. "Not found" is a verdict — the model was asked and declined — and nothing has been
+  // asked yet. That distinction is the whole point of this kit, so the header cannot blur it.
+  if (!fields) { $("k-filled").textContent = "— filled"; $("k-missing").textContent = "— not found";
+                 $("k-span").textContent = "— with a span"; return; }
   const vals = FIELDS.map((f) => fields[f.name] || {});
   const filled = vals.filter((c) => c.value !== null && c.value !== undefined && c.value !== "");
   $("k-filled").textContent = filled.length + " filled";
