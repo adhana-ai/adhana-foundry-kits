@@ -52,9 +52,30 @@ def load_run(run_id):
         return json.load(f)
 
 
+# How many unusable answers in a row before this stops asking. A person who cannot answer stops on
+# their own; a stream of queued newlines does not, and scrolling the document they were reading off
+# the top of the terminal is the one thing that makes this job harder than it already is.
+GIVE_UP_AFTER = 3
+
+
 def _ask(prompt_text, valid):
     """Read one grade. An unreadable answer is asked again rather than defaulted — a default here
-    would silently put a number nobody gave into a published figure."""
+    would silently put a number nobody gave into a published figure.
+
+    ⚠︎ THE HINT WAS BUILT FROM THE `valid` SET AND PRINTED IN A DIFFERENT ORDER EVERY RUN —
+    "3, 2, 5, 4, s, 0, 1", then "3, 5, 2, 1, 0, 4, s" the next time, because Python randomises
+    string hashing per process. A 0-5 scale is an ORDERED thing, and this is the line a grader
+    looks at more than any other; shuffling it makes them re-read it every time. Sorted now:
+    digits ascending, 's' last.
+
+    ⚠︎ AND IT SPUN. Every empty line consumed one cycle and re-printed the hint, silently, for as
+    long as input kept arriving — a paste carrying trailing newlines produced a wall of a dozen
+    identical prompts and pushed the document being graded off the screen. The loop did exactly
+    what it was written to do, which is why nothing caught it and why the fix is a stop condition
+    rather than a correction.
+    """
+    hint = ", ".join(sorted(valid, key=lambda v: (not v.isdigit(), v)))
+    misses = 0
     while True:
         try:
             raw = input(prompt_text).strip().lower()
@@ -62,7 +83,15 @@ def _ask(prompt_text, valid):
             raise SystemExit("\nstopped. Nothing is lost — rerun with --resume.")
         if raw in valid:
             return raw
-        print("   (enter one of: %s)" % ", ".join(valid))
+        misses += 1
+        if misses >= GIVE_UP_AFTER:
+            raise SystemExit(
+                "\n%d unusable answers in a row — stopping rather than filling the screen.\n"
+                "Expected one of: %s\n"
+                "If those arrived as a paste, the trailing newlines were read as answers. NOTHING "
+                "WAS RECORDED for them — a blank is not a grade.\n"
+                "Nothing is lost — rerun with --resume." % (misses, hint))
+        print("   (enter one of: %s)" % hint)
 
 
 def score(run, grades, sections):
@@ -147,6 +176,19 @@ def main():
         print("nothing to grade — all %d document(s) already have grades from %s."
               % (len(docs), a.grader))
         return
+
+    # ⚑ A PERSON GRADES THIS, SO A PERSON HAS TO BE AT THE KEYBOARD. Everything below reads
+    # stdin and writes whatever it gets into a published figure. Piped in, `yes 4 | ...` scores a
+    # whole run in a second and the record would name a grader who never read a word — the exact
+    # failure `_ask` refuses to commit by defaulting, arriving through the door next to it. Refused
+    # up front rather than discovered in a grades file that looks like work.
+    if not sys.stdin.isatty():
+        raise SystemExit(
+            "stdin is not a terminal, so nothing here is a person's judgement. Grading is manual "
+            "by design: two correct summaries of one document share almost no words, so there is "
+            "nothing to match against, and scoring a model with a model measures the judge.\n"
+            "Run this in a terminal. For a score over grades that already exist, use --report, "
+            "which grades nothing and is safe to pipe.")
 
     print("Grading %d brief(s) from run %s as grader '%s'." % (len(todo), a.run_id, a.grader))
     print("Scale: " + "  ".join("%s=%s" % (k, v.split(",")[0].split("—")[0].strip())
