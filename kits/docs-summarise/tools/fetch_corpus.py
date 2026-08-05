@@ -29,7 +29,12 @@ anything the briefs say about the world is the world of 1994-2008. That is a pro
 corpus, not of the pipeline, and it is recorded here, in SOURCES.md and on the kit's Data lens
 rather than left for a reader to notice.
 
-A free DEMO_KEY is rate-limited. Set GOVINFO_API_KEY (free, from api.data.gov) for a real one.
+⚑ DEMO_KEY CANNOT FILL THIS CORPUS, AND THE NUMBERS ARE WORSE THAN "rate-limited" SUGGESTS.
+Measured 2026-08-05 off the 429's own headers: x-ratelimit-limit 10, x-ratelimit-remaining 0,
+retry-after 67920 — a TEN-request budget refilling after about NINETEEN HOURS, not an hourly
+window. A document costs three calls (search, summary, text) and the topic loop below spends one
+per topic on searches alone, so a whole window buys one or two reports. Set GOVINFO_API_KEY (free,
+from api.data.gov) before expecting this to fetch anything. Waiting and retrying is not a plan.
 """
 import json
 import os

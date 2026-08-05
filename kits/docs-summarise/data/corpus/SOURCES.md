@@ -68,6 +68,14 @@ python -m tools.fetch_corpus      # network. Set GOVINFO_API_KEY for a real rate
 python -m tools.build_corpus      # no network, reproducible byte-for-byte
 ```
 
-`DEMO_KEY` works without registration and is limited to roughly 30 requests an
-hour, which is not enough to fill a corpus — get a free key at api.data.gov.
+`DEMO_KEY` works without registration and **cannot fill this corpus** — get a free
+key at api.data.gov. This said "roughly 30 requests an hour" until it was measured
+on 2026-08-05, and the real numbers are worse and shaped differently: the 429 body
+comes back with **`x-ratelimit-limit: 10`**, `x-ratelimit-remaining: 0` and
+**`retry-after: 67920`** — a **ten-request budget refilling after about nineteen
+hours**, not an hourly window you can wait out over coffee. One document costs
+three calls (search, summary, text) and the eight-topic loop spends eight on
+searches before it fetches anything, so a full window yields **at most one or two
+reports**. That is why the corpus here holds one; it is a quota, not a defect, and
+not something a retry loop should ever be pointed at.
 `data/_fetched/` holds the raw pulls and is **never** shipped; `.gitignore` holds it.
