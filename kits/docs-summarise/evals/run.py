@@ -23,6 +23,7 @@ import time
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from src import adapters                        # noqa: E402
 from src import budget as BUDGET                # noqa: E402
 from src import config, summarise as SM         # noqa: E402
 from src.summarise import MAX_TOKENS            # noqa: E402
@@ -63,6 +64,20 @@ def main():
                          "are comparable.")
     ap.add_argument("--budget-tokens", type=int, default=0,
                     help="override the packer's input budget for this run")
+    # ⚑ THE ONE KNOB r003 POINTED AT. DeepSeek documents thinking as DEFAULTING TO ENABLED on
+    # Flash, so every run this kit has recorded carried a reasoning pass nobody asked for — and
+    # r003 measured that pass taking a median of 100% of the output ceiling and returning zero
+    # visible text on 8 of its 13 failures.
+    #
+    # ⚠︎ OFF IS A DIFFERENT SYSTEM, NOT A TUNED ONE. A run with thinking disabled must not be
+    # differenced against the four runs above it, which is why the setting is written into the
+    # result file rather than living only in a shell history: it becomes a comparability guard,
+    # the same class of thing as `max_tokens`, whose 4,000 -> 8,000 change already split this
+    # kit's runs into two groups that may not be compared.
+    ap.add_argument("--no-thinking", action="store_true",
+                    help="send thinking={'type':'disabled'}. Provider-documented for "
+                         "deepseek-v4-flash, where it is ON by default and is the main cost and "
+                         "latency lever. Recorded in the run as a comparability guard.")
     ap.add_argument("--yes", action="store_true", help="skip the confirmation")
     a = ap.parse_args()
 
@@ -84,6 +99,13 @@ def main():
         BUDGET.check(len(docs))
 
     complete = stub_complete if a.stub else None
+    # None means "send no such field", which is what every run before 2026-08-05 did. The stub
+    # takes no `thinking` argument, so it is left at None there too rather than pretended at: a
+    # stub run that claimed to have disabled reasoning would be recording a setting nothing sent.
+    thinking = adapters.THINKING_OFF if (a.no_thinking and not a.stub and not a.lead) else None
+    if a.no_thinking and (a.stub or a.lead):
+        print("  note: --no-thinking ignored — %s calls no provider, so there is no reasoning "
+              "pass to disable." % ("--stub" if a.stub else "--lead"))
     records, lat, tin, tout, failures = {}, [], 0, 0, []
     first, dropped_any = None, 0
     t_all = time.time()
@@ -100,7 +122,8 @@ def main():
                      "input_tokens": 0, "output_tokens": 0, "raw_text": "", "parsed": True}
             else:
                 r = SM.summarise(cfg, text, sections, complete=complete,
-                                 budget_tokens=a.budget_tokens or None)
+                                 budget_tokens=a.budget_tokens or None,
+                                 thinking=thinking)
         except Exception as exc:
             # A failed document is RECORDED, not retried into a bill and not dropped. A run that
             # silently skips its failures reports a result for the documents that happened to work.
@@ -190,6 +213,13 @@ def main():
                          for q in (first["prompt_parts"] if first else [])],
         "raw_text": (first["raw_text"] if first else ""),
         "max_tokens": MAX_TOKENS,
+        # ⚑ WHAT WAS SENT, NOT WHAT WAS ASKED FOR. `thinking` is the object that actually went on
+        # the wire, or null when no such field was sent — which is what every run before
+        # 2026-08-05 did, so those records read null and stay honest without being rewritten.
+        # A reader differencing two runs must treat this the way it treats `max_tokens`: reasoning
+        # on and reasoning off are two systems, and a yield that moves between them has not
+        # improved, it has been measured somewhere else.
+        "thinking": thinking,
     }
     path = os.path.join(RESULTS, "eval-%s.json" % a.run_id)
     with open(path, "w", encoding="utf-8") as f:

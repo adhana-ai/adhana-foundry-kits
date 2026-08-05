@@ -84,17 +84,24 @@ def documents():
     return sorted(fn[:-4] for fn in os.listdir(CORPUS) if fn.endswith(".txt"))
 
 
-def summarise(cfg, doc_text, sections, complete=None, budget_tokens=None):
+def summarise(cfg, doc_text, sections, complete=None, budget_tokens=None, thinking=None):
     """Return the full record for one document.
 
     `complete` is injectable so the eval harness, the app and the stub all drive the SAME code
     path. One copy of the behaviour, and the seam is a parameter — UC001 learned the cost of the
     alternative, having to port its ranker to JS and then hold two copies identical with a gate.
+
+    `thinking` reaches the provider untouched, or is omitted when None. It is threaded rather than
+    read from config here so the stub — which takes no such argument — keeps driving this same
+    path, and so a run states its own setting instead of inheriting one from the environment.
     """
     secs = segment.sections(doc_text)
     msgs, parts, plan = P.build(doc_text, secs, sections, pack, budget_tokens)
     call = complete or adapters.complete
-    res = call(cfg, msgs[0]["content"], msgs[1]["content"], max_tokens=MAX_TOKENS)
+    kw = {"max_tokens": MAX_TOKENS}
+    if thinking is not None:
+        kw["thinking"] = thinking
+    res = call(cfg, msgs[0]["content"], msgs[1]["content"], **kw)
     raw = res.get("text", "")
     values = P.parse(raw, sections)
     parsed_ok = bool(values) and any(v for v in values.values())

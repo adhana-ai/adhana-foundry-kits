@@ -54,15 +54,24 @@ def _post(url, headers, payload, timeout=120):
                            status=e.code)
 
 
-def openai_compatible(cfg, system, user, max_tokens):
+def openai_compatible(cfg, system, user, max_tokens, thinking=None):
     """Covers every provider that speaks the OpenAI chat-completions shape -- OpenAI itself,
     DeepSeek, Groq, Together, Mistral, xAI, and any local server (Ollama, LM Studio, vLLM).
-    BASE_URL is what selects between them, which is why it is in .env rather than in here."""
+    BASE_URL is what selects between them, which is why it is in .env rather than in here.
+
+    `thinking` is sent ONLY when the caller passes one, and is passed through verbatim. Omitted,
+    the request is byte-identical to what it was before this parameter existed -- so every run
+    already recorded stays comparable to a future run that also omits it.
+    """
+    payload = {"model": cfg["model"], "max_tokens": max_tokens,
+               "messages": [{"role": "system", "content": system},
+                            {"role": "user", "content": user}]}
+    # ⚑ NOT A DEFAULT, AND NOT GUESSED AT. See the note on `token_details` below for why this knob
+    # was deliberately absent until now, and `complete()` for the shape the docs confirm.
+    if thinking is not None:
+        payload["thinking"] = thinking
     body = _post(cfg["base_url"].rstrip("/") + "/chat/completions",
-                 {"authorization": "Bearer " + cfg["api_key"]},
-                 {"model": cfg["model"], "max_tokens": max_tokens,
-                  "messages": [{"role": "system", "content": system},
-                               {"role": "user", "content": user}]})
+                 {"authorization": "Bearer " + cfg["api_key"]}, payload)
     usage = body.get("usage") or {}
     choice = body["choices"][0]
     return {"text": choice["message"]["content"],
@@ -87,11 +96,22 @@ def openai_compatible(cfg, system, user, max_tokens):
             # Recorded as whatever the provider sends, with no shape assumed: a provider that omits
             # it yields None, which is an honest absence rather than a fabricated zero.
             #
-            # ⚠︎ AND DELIBERATELY NO REQUEST-SIDE KNOB. The obvious next move is to cap or disable
-            # reasoning in the request, and it is not made here: this file cannot verify that
-            # deepseek-v4-flash accepts such a parameter, and an invented field name would be
-            # rejected by the API on the operator's paid run — trading a diagnosed problem for an
-            # undiagnosable one. Measure first, then send a parameter the docs confirm exists.
+            # ⚠︎ THE REQUEST-SIDE KNOB WAS WITHHELD UNTIL BOTH ITS PRECONDITIONS WERE MET, AND ON
+            # 2026-08-05 THEY WERE. This note used to end "Measure first, then send a parameter the
+            # docs confirm exists." Both halves are now done, in that order:
+            #
+            #   MEASURED — run r003 carried this field. Across its 13 failures the reasoning share
+            #   of the 8,000-token ceiling ran 78% to 100%, median 100%, and 8 of the 13 spent the
+            #   whole budget reasoning and returned zero visible characters. The inference above is
+            #   now a number, and reasoning is confirmed as the binding constraint.
+            #
+            #   CONFIRMED — DeepSeek's API documents `thinking` as an object that turns the
+            #   reasoning pass on or off, and notes it DEFAULTS TO ENABLED on Flash. Every run this
+            #   kit has made carried a reasoning pass nobody asked for. The shape is taken from the
+            #   vendor's own request example, `{"type": "disabled"}`, and is not constructed here.
+            #
+            # It is still not a default: `thinking` is None unless a caller passes one, so an
+            # untouched run is byte-identical to every run already recorded.
             "token_details": (usage.get("completion_tokens_details")
                               or usage.get("output_tokens_details")),
             "raw": body}
@@ -120,8 +140,26 @@ def anthropic(cfg, system, user, max_tokens):
 PROVIDERS = {"openai-compatible": openai_compatible, "anthropic": anthropic}
 
 
-def complete(cfg, system, user, max_tokens=1024):
+# The one shape this kit will send, taken verbatim from DeepSeek's own request example for
+# deepseek-v4-flash. Named rather than spelled inline at the call site so there is exactly one
+# place a provider's documented field lives, and so a run record can say which one it used.
+THINKING_OFF = {"type": "disabled"}
+
+
+def complete(cfg, system, user, max_tokens=1024, thinking=None):
+    """`thinking` is passed through to the provider untouched, or omitted entirely when None.
+
+    ⚠︎ PROVIDER-SPECIFIC, AND NOT SILENTLY SWALLOWED. Only the OpenAI-compatible path accepts it,
+    because that is the only shape whose documentation this kit has read. Sending it to Anthropic
+    would be inventing a field on a provider nobody checked — so it is refused loudly rather than
+    dropped, which would leave a run believing it had disabled something it had not.
+    """
     name = cfg.get("provider")
+    if thinking is not None and name != "openai-compatible":
+        raise AdapterError(
+            "thinking=%r was requested but provider %r has no documented field for it in this "
+            "kit. Dropping it silently would let a run record claim a setting it never sent."
+            % (thinking, name))
     if name not in PROVIDERS:
         raise AdapterError("unknown PROVIDER %r -- known: %s. Add one in src/adapters/__init__.py"
                            % (name, ", ".join(sorted(PROVIDERS))))
@@ -159,6 +197,8 @@ def complete(cfg, system, user, max_tokens=1024):
     last = None
     for attempt in range(RETRIES + 1):
         try:
+            if thinking is not None:
+                return PROVIDERS[name](cfg, system, user, max_tokens, thinking=thinking)
             return PROVIDERS[name](cfg, system, user, max_tokens)
         except AdapterError as exc:
             if exc.status not in TRANSIENT or attempt == RETRIES:
