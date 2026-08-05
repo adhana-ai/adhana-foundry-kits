@@ -1,0 +1,70 @@
+{
+ "_comment": [
+  "THE RUBRIC IS THIS KIT. It is the INPUT (the shape the brief must take), the GOLD (there is",
+  "no other — two correct summaries of one document share almost no words, so there is no string",
+  "to match), and the COST DRIVER (a person reads against it, priced in reviewer-minutes).",
+  "",
+  "Weights total 100 and are shown on the empty panel deliberately: a reader learns what the",
+  "brief is graded ON before anything has run. A rubric that only appeared after a run would let",
+  "the shape be whatever the model happened to produce.",
+  "",
+  "The scale is 0-5 per section, not pass/fail. A binary scale throws away the thing a person is",
+  "there for. Approved 2026-08-04 at Stop A."
+ ],
+ "scale": {
+  "min": 0,
+  "max": 5,
+  "anchors": {
+   "0": "absent, or so wrong it would mislead someone who did not open the source",
+   "1": "present but mostly unusable — vague, or contradicted by the document",
+   "2": "partly right, with an error or an omission a reader would notice",
+   "3": "usable. Nothing wrong, nothing that adds to reading the document's own opening",
+   "4": "good. Accurate and specific, missing something a careful reader would have kept",
+   "5": "what you would want to receive instead of the document"
+  }
+ },
+ "sections": [
+  {
+   "key": "about",
+   "name": "What this document is about",
+   "weight": 20,
+   "asks": "Would a reader who never opens the source know the subject and the scope?",
+   "why": "The cheapest section to get roughly right and the most damaging to get wrong."
+  },
+  {
+   "key": "findings",
+   "name": "Key findings",
+   "weight": 30,
+   "asks": "Are the findings the document's own, and are the significant ones present?",
+   "why": "The heaviest, because this is what a brief is FOR. Omission is the failure mode, and an omission renders as a shorter section rather than as an error."
+  },
+  {
+   "key": "numbers",
+   "name": "Numbers that matter",
+   "weight": 20,
+   "asks": "Is every figure carried here in the source, unaltered, with its unit and period?",
+   "why": "The one section where a hallucination is unambiguous and cheap to catch — a grader can check a number against the document in seconds."
+  },
+  {
+   "key": "recommended",
+   "name": "What is recommended or required",
+   "weight": 15,
+   "asks": "Are these actions the document calls for, rather than actions the model thinks are sensible?",
+   "why": "Separates summarising from advising, which is the single most common drift in this task."
+  },
+  {
+   "key": "unsettled",
+   "name": "What the document does not settle",
+   "weight": 10,
+   "asks": "Does it name the limits, open questions and caveats the source itself states?",
+   "why": "A brief that never says 'unknown' is the tell that it was written from the highlights rather than the document."
+  },
+  {
+   "key": "audience",
+   "name": "Who it is for",
+   "weight": 5,
+   "asks": "Is the audience and the decision it supports stated in one line?",
+   "why": "Light, but it is what makes a brief a brief rather than an abstract."
+  }
+ ]
+}

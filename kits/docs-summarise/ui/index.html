@@ -1,0 +1,39 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>docs-summarise — summarise a long document to a fixed brief</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Summarise a long document to a fixed brief</h1>
+    <p class="sub">One long report, one model call, a brief in a shape decided before the run.
+      Each section shows what it is <b>worth</b>; a section the document does not support comes
+      back <b>not stated</b>, which is a correct answer here, not a gap.</p>
+  </header>
+
+  <div class="bar">
+    <select id="doc" aria-label="Document"></select>
+    <button id="go" type="button">Summarise</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <!-- ⚑ WHAT THE MODEL WAS GIVEN, ABOVE WHAT IT PRODUCED. A brief written from a document the
+       packer truncated is not a measurement of the model, and this is the only place a reader
+       could ever find that out. It is empty until a run fills it, never a plausible default. -->
+  <div id="packbar" class="packbar" hidden></div>
+
+  <div class="panel">
+    <div class="ph"><span>The brief</span>
+      <span class="k" id="k-shape">fixed shape</span>
+      <span class="k" id="k-person">graded by a person</span>
+      <span class="k kw" id="k-state">nothing has run</span></div>
+    <div id="cards"></div>
+  </div>
+
+  <details class="doc">
+    <summary>The document this was written from</summary>
+    <pre id="text"></pre>
+  </details>
+</div>
+<script src="/app.js"></script>
