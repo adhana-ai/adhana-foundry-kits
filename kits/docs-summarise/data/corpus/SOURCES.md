@@ -76,6 +76,45 @@ comes back with **`x-ratelimit-limit: 10`**, `x-ratelimit-remaining: 0` and
 hours**, not an hourly window you can wait out over coffee. One document costs
 three calls (search, summary, text) and the eight-topic loop spends eight on
 searches before it fetches anything, so a full window yields **at most one or two
-reports**. That is why the corpus here holds one; it is a quota, not a defect, and
-not something a retry loop should ever be pointed at.
+reports**. That is a quota, not a defect, and not something a retry loop should ever
+be pointed at. **This corpus was filled on 2026-08-05 with a free key**, which lifts
+the ceiling to 1,000 requests an hour and completes the whole fetch in one run.
 `data/_fetched/` holds the raw pulls and is **never** shipped; `.gitignore` holds it.
+
+## What is actually in it
+
+**42 documents**, all issued between **2008-05-30 and 2008-09-18**, 27–108 pages
+(median 58), 62k–259k characters (median 129k). Six per topic for six of the eight
+topics; `transportation infrastructure safety` and `veterans health administration`
+returned only three qualifying reports each and are short rather than padded.
+
+Note the **date spread is narrow even though the subject spread is wide**: the
+fetcher sorts newest-first, so a full pull lands on the last few months of an
+archive that ends in 2008. That is a property of the source, stated here rather
+than left for a reader to infer from `manifest.json`.
+
+## ⚠︎ Testimony and manuals are excluded, and the first filter that claimed to do it caught nothing
+
+`fetch_corpus.py` tested `"-T-" in packageId`, on the belief that testimony carries
+a `T-` **prefix**. GovInfo puts the marker at the **end** of the number —
+`GAOREPORTS-GAO-08-1056T` — so the test never matched a single package. The first
+full fetch pulled **7 testimonies** into a 44-document set, which is exactly what
+that filter existed to prevent. It had looked like it worked because `MIN_PAGES`
+quietly dropped the short testimony, which is most of it; only the long ones
+survived to show the rule was dead.
+
+Nothing at all excluded the **manuals**: `GAO-08-1029G` is the 611-page FISCAM
+audit manual and `GAO-08-586G` the 360-page Financial Audit Manual — reference
+works, not analytic reports, at eleven times the median length. Either one in a
+corpus dominates every token and cost figure this kit reports, and "summarise this
+to a fixed brief" is not the same task for a procedures manual.
+
+| suffix | what it is | kept? |
+|---|---|---|
+| *(none)* | a numbered GAO report | **yes** |
+| `R` | a letter report — analytic, 33–83 pages, in family | **yes** |
+| `T` | testimony to a committee | no |
+| `G` | guidance / manual | no |
+
+Keeping `R` is a judgment call. Dropping `T` and `G` is the rule this file already
+claimed to enforce and did not.

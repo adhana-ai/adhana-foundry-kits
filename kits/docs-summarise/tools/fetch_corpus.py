@@ -38,6 +38,7 @@ from api.data.gov) before expecting this to fetch anything. Waiting and retrying
 """
 import json
 import os
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -64,10 +65,31 @@ TOPICS = [
 ]
 PER_TOPIC = 6
 
-# Reports only. A "T-" prefixed package is TESTIMONY — a statement to a committee, typically ten
-# pages and shaped nothing like a report. Mixing them in would put two different document kinds in
-# one corpus and make every length-related finding unreadable.
+# Reports only, and the FIRST VERSION OF THIS FILTER CAUGHT NOTHING — measured 2026-08-05 on the
+# first fetch that a real API key made possible.
+#
+# It tested `"-T-" in pid`, on the belief that testimony carries a "T-" PREFIX. GovInfo puts the
+# marker at the END of the number: GAOREPORTS-GAO-08-1056T. So the test never matched a single
+# package, and 7 testimonies came through in a 44-document pull — exactly what the comment below
+# says must not happen. It read as a working filter because MIN_PAGES quietly excluded the short
+# testimony, which is most of it; only the long ones survived to prove the rule was dead.
+#
+# Nothing at all excluded the MANUALS. GAO-08-1029G is the 611-page FISCAM audit manual and
+# GAO-08-586G the 360-page Financial Audit Manual — reference works, not analytic reports, at 11x
+# the 53-page median. One of those in a corpus dominates every token and cost figure the kit
+# reports, and "summarise this to a fixed brief" is not the same task for a procedures manual.
+#
+# WHAT EACH SUFFIX MEANS, and why R stays: T = testimony to a committee. G = guidance/manual.
+# R = a letter report — analytic, in-family at 33-83 pages, and a real report. Keeping R is a
+# judgment; dropping T and G is the rule the file already claimed to enforce.
+DROP_SUFFIX = ("T", "G")
 MIN_PAGES = 25
+
+
+def is_report(package_id):
+    """True for a plain or letter GAO report; False for testimony and manuals."""
+    m = re.search(r"GAO-\d+-\d+([A-Z]*)$", package_id)
+    return bool(m) and m.group(1) not in DROP_SUFFIX
 
 
 def _get(url, timeout=60):
@@ -123,7 +145,7 @@ def main():
         took = 0
         for r in page.get("results", []):
             pid = r.get("packageId", "")
-            if took >= PER_TOPIC or pid in seen or "-T-" in pid:
+            if took >= PER_TOPIC or pid in seen or not is_report(pid):
                 continue
             try:
                 meta = summary(pid)
