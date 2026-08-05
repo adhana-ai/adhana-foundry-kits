@@ -25,7 +25,19 @@ CORPUS = os.path.join(HERE, "data", "corpus")
 # say whether 3000 was the reply or the limit. It was both, and four truncated replies were
 # recorded as an unexplained defect for a day. A brief is longer than a field record, so this is
 # higher — six sections of prose, with room for the model to be wordy before it is cut off.
-MAX_TOKENS = 4000
+#
+# ⚠︎ 4000 WAS STILL TOO LOW, AND RUN r001 PAID 42 CALLS TO FIND OUT — 2026-08-05. It wrote 6 briefs
+# and lost 36, and the split is exactly the ceiling: every one of the 36 failures came back at
+# 3999–4000 output tokens, every one of the 6 successes at 1634–3898. The captured replies are
+# well-formed JSON severed mid-sentence. Nothing about that is a measurement of the model — the
+# reply was cut off, and a score computed from it would have published a harness defect as a
+# model-quality figure, which is the exact failure `parsed` was separated out to prevent.
+#
+# 8000, because the evidence says the ceiling must clear a real six-section brief and the largest
+# SUCCESSFUL reply was already 3898 — half the headroom was gone at the old value. This is a
+# ceiling, not a target: it costs nothing on the replies that finish early, which was most of them
+# before and is the point of a cap rather than a quota.
+MAX_TOKENS = 8000
 
 
 def load_rubric():
@@ -104,6 +116,9 @@ def summarise(cfg, doc_text, sections, complete=None, budget_tokens=None):
         "section_count": len(secs),
         "input_tokens": res.get("input_tokens"),
         "output_tokens": res.get("output_tokens"),
+        # Carried so a failure can say WHY in the provider's own word rather than having it
+        # reconstructed from a token count. "length" means the reply was cut off, full stop.
+        "finish_reason": res.get("finish_reason"),
         "raw_text": raw,
         "parsed": parsed_ok,
     }

@@ -103,15 +103,23 @@ def main():
         if not r.get("parsed", True):
             # It cost money and produced no brief. Scoring it as six absent sections would publish
             # a parsing defect as a model-quality figure, which is what UC002's first run did.
+            # ⚑ SAY WHY, IN THE PROVIDER'S WORD. Until 2026-08-05 this said "(truncated?)" with a
+            # question mark and left a person to compare output_tokens against the cap by eye —
+            # across 36 failures in run r001, which is how a one-word answer the API had already
+            # given became an inference. finish_reason == "length" IS the answer.
+            why = r.get("finish_reason")
+            cut = (why == "length") or (r.get("output_tokens") or 0) >= MAX_TOKENS
             failures.append({"doc": doc_id,
-                             "error": "reply did not parse as JSON (truncated?) — %d output tokens"
-                                      % (r.get("output_tokens") or 0),
+                             "error": "reply did not parse as JSON — %s, %d output tokens (cap %d)"
+                                      % ("CUT OFF AT THE CEILING" if cut else "cause unclear",
+                                         r.get("output_tokens") or 0, MAX_TOKENS),
                              "output_tokens": r.get("output_tokens"),
                              "max_tokens": MAX_TOKENS,
-                             "at_ceiling": (r.get("output_tokens") or 0) >= MAX_TOKENS,
+                             "finish_reason": why,
+                             "at_ceiling": cut,
                              "raw_text": (r.get("raw_text") or "")[:4000]})
-            print("  !! %-18s reply did not parse (%s output tokens, cap %d)"
-                  % (doc_id, r.get("output_tokens"), MAX_TOKENS))
+            print("  !! %-18s reply did not parse (%s output tokens, cap %d, finish_reason=%s)"
+                  % (doc_id, r.get("output_tokens"), MAX_TOKENS, why))
             continue
 
         lat.append(int((time.time() - t0) * 1000))
