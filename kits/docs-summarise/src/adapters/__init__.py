@@ -74,6 +74,26 @@ def openai_compatible(cfg, system, user, max_tokens):
             # strictly below. The provider had said "length" in this field the whole time and
             # nothing read it, so a one-word answer was reconstructed from arithmetic.
             "finish_reason": choice.get("finish_reason"),
+            # ⚑ AND HOW THE OUTPUT BUDGET WAS ACTUALLY SPENT — added after run r002, 2026-08-05.
+            # Raising the ceiling 4000 -> 8000 took the yield from 6 briefs to 27, so the cap was
+            # real; but all 15 remaining failures came back at exactly 8000 with finish_reason
+            # "length", and ELEVEN of them returned zero characters of visible text. A reply that
+            # spends 8,000 output tokens and returns nothing has spent them somewhere the `content`
+            # field does not show, and on a reasoning model that somewhere is reasoning.
+            #
+            # ⚠︎ THAT IS STILL AN INFERENCE, AND THIS FIELD IS HOW IT STOPS BEING ONE. The
+            # OpenAI-compatible shape reports the split in usage.completion_tokens_details
+            # (`reasoning_tokens`), so the next run MEASURES it instead of arguing from a silence.
+            # Recorded as whatever the provider sends, with no shape assumed: a provider that omits
+            # it yields None, which is an honest absence rather than a fabricated zero.
+            #
+            # ⚠︎ AND DELIBERATELY NO REQUEST-SIDE KNOB. The obvious next move is to cap or disable
+            # reasoning in the request, and it is not made here: this file cannot verify that
+            # deepseek-v4-flash accepts such a parameter, and an invented field name would be
+            # rejected by the API on the operator's paid run — trading a diagnosed problem for an
+            # undiagnosable one. Measure first, then send a parameter the docs confirm exists.
+            "token_details": (usage.get("completion_tokens_details")
+                              or usage.get("output_tokens_details")),
             "raw": body}
 
 

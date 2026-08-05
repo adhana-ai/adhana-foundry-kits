@@ -46,11 +46,23 @@ CORPUS = os.path.join(HERE, "data", "corpus")
 # larger consumer. 8000 buys room for both — the largest SUCCESSFUL reply was already 3,898, so
 # half the old ceiling was gone before reasoning was accounted for at all.
 #
-# ⚠︎ THIS IS A HYPOTHESIS WITH ONE RUN BEHIND IT, NOT A SETTLED NUMBER. `finish_reason` is
-# recorded now and raw_text is kept, so the next run says which mode dominated instead of leaving
-# it to be inferred from a token count. If reasoning is the whole story, the fix is a provider
-# parameter, not a bigger ceiling. It is a ceiling, not a quota: it costs nothing on the replies
-# that finish early.
+# ⚑ RUN r002 SETTLED IT, AND BOTH HALVES OF THE ABOVE WERE RIGHT — 2026-08-05, 42 more calls.
+# At 8000 the yield went from 6 briefs to 27 of 42, so the ceiling WAS a real constraint and
+# raising it was not a guess. But all 15 remaining failures came back at exactly 8000 with
+# finish_reason "length", and the shape of them is the answer:
+#     11 of 15 returned ZERO characters of visible text
+#      1 returned a measurable 2,825 chars — roughly 706 tokens — against 8,000 spent
+#      3 were INDETERMINATE, because the recorder's own 4000-char cap truncated them, not the model
+# A reply that spends 8,000 output tokens and returns nothing has spent them where `content` cannot
+# show them. On a reasoning model that is reasoning, and reasoning is therefore the binding
+# constraint now — not the size of the brief.
+#
+# ⚠︎ SO DO NOT RAISE THIS AGAIN ON THE STRENGTH OF r002. Another doubling buys more room for
+# reasoning to fill and costs a call per document to discover it; the yield curve, 6 -> 27, is a
+# ceiling being cleared, not a ceiling that wants clearing twice. The next lever is request-side,
+# and `token_details` exists so that the run which pulls it does so on a measured reasoning-token
+# count rather than on this paragraph. It is a ceiling, not a quota: it costs nothing on the replies
+# that finish early, which is now 27 of 42.
 MAX_TOKENS = 8000
 
 
@@ -133,6 +145,9 @@ def summarise(cfg, doc_text, sections, complete=None, budget_tokens=None):
         # Carried so a failure can say WHY in the provider's own word rather than having it
         # reconstructed from a token count. "length" means the reply was cut off, full stop.
         "finish_reason": res.get("finish_reason"),
+        # How the output budget was actually spent (reasoning vs visible answer), when the provider
+        # reports it. None where it does not — an honest absence, not a fabricated zero.
+        "token_details": res.get("token_details"),
         "raw_text": raw,
         "parsed": parsed_ok,
     }

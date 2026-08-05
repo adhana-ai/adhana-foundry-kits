@@ -31,6 +31,13 @@ from evals import baseline as B                 # noqa: E402
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTS = os.path.join(HERE, "results")
 
+# How much of a failed reply is kept, in characters. A six-section brief that fills the 8000-token
+# ceiling is roughly 32,000 characters, so this holds a whole one and then some — the value exists
+# so that "the stored text ends here" always means the MODEL stopped, never that the recorder did.
+# `raw_text_complete` states which it was, so no future reader has to compare a length to this
+# constant by eye, the way run r002's three indeterminate failures had to be.
+RAW_TEXT_KEEP = 40000
+
 
 def stub_complete(cfg, system, user, max_tokens=1024):
     """A deterministic fake provider. It returns the rubric's keys filled with a marker string, so
@@ -116,8 +123,23 @@ def main():
                              "output_tokens": r.get("output_tokens"),
                              "max_tokens": MAX_TOKENS,
                              "finish_reason": why,
+                             "token_details": r.get("token_details"),
                              "at_ceiling": cut,
-                             "raw_text": (r.get("raw_text") or "")[:4000]})
+                             # ⚑ THE RECORDER'S OWN CAP BECAME THE THING HIDING THE ANSWER.
+                             # At 4000 chars, run r002 stored exactly 4000 for three of its 15
+                             # failures — so "4000 chars of visible text" meant "the RECORDER
+                             # stopped", not "the model stopped", and those three could not be
+                             # told apart from a full reply. 11 of the 15 returned zero text and
+                             # one returned a measurable 2,825, both readable; the three at the
+                             # cap were the only indeterminate ones, and the cap is why.
+                             #
+                             # It is the same defect the kept-reply comment above was written to
+                             # fix, one level up: a failure that discards its own evidence. Sized
+                             # to hold a whole six-section brief with room over, because the point
+                             # of keeping the text is to be able to see where it actually ended.
+                             "raw_text_chars_kept": RAW_TEXT_KEEP,
+                             "raw_text_complete": len(r.get("raw_text") or "") <= RAW_TEXT_KEEP,
+                             "raw_text": (r.get("raw_text") or "")[:RAW_TEXT_KEEP]})
             print("  !! %-18s reply did not parse (%s output tokens, cap %d, finish_reason=%s)"
                   % (doc_id, r.get("output_tokens"), MAX_TOKENS, why))
             continue
