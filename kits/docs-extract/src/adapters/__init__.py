@@ -64,9 +64,15 @@ def openai_compatible(cfg, system, user, max_tokens):
                   "messages": [{"role": "system", "content": system},
                                {"role": "user", "content": user}]})
     usage = body.get("usage") or {}
-    return {"text": body["choices"][0]["message"]["content"],
+    choice = body["choices"][0]
+    return {"text": choice["message"]["content"],
             "input_tokens": usage.get("prompt_tokens"),
             "output_tokens": usage.get("completion_tokens"),
+            # ⚑ THE PROVIDER SAYS WHY IT STOPPED — RECORD IT. Run 2's four failures each reported
+            # 3000 output tokens against a cap of 3000, and extract.py still carries the question
+            # that left open: "why does a nine-field record run to 3000 tokens?" The API had been
+            # answering half of it in this field the whole time and nothing read it.
+            "finish_reason": choice.get("finish_reason"),
             "raw": body}
 
 
@@ -83,6 +89,10 @@ def anthropic(cfg, system, user, max_tokens):
     return {"text": text,
             "input_tokens": usage.get("input_tokens"),
             "output_tokens": usage.get("output_tokens"),
+            # Anthropic spells the same fact "max_tokens" rather than "length". Normalised here so
+            # a caller can test one value across both providers, which is this module's whole job.
+            "finish_reason": {"max_tokens": "length"}.get(body.get("stop_reason"),
+                                                          body.get("stop_reason")),
             "raw": body}
 
 

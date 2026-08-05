@@ -28,15 +28,29 @@ CORPUS = os.path.join(HERE, "data", "corpus")
 #
 # ⚠︎ 4000 WAS STILL TOO LOW, AND RUN r001 PAID 42 CALLS TO FIND OUT — 2026-08-05. It wrote 6 briefs
 # and lost 36, and the split is exactly the ceiling: every one of the 36 failures came back at
-# 3999–4000 output tokens, every one of the 6 successes at 1634–3898. The captured replies are
-# well-formed JSON severed mid-sentence. Nothing about that is a measurement of the model — the
-# reply was cut off, and a score computed from it would have published a harness defect as a
-# model-quality figure, which is the exact failure `parsed` was separated out to prevent.
+# 3999–4000 output tokens, every one of the 6 successes at 1634–3898. No reply that fit failed to
+# parse and no reply that hit the cap survived, so this is the harness, not the model — and a
+# score computed from it would have published a harness defect as a model-quality figure, the
+# exact failure `parsed` was separated out to prevent.
 #
-# 8000, because the evidence says the ceiling must clear a real six-section brief and the largest
-# SUCCESSFUL reply was already 3898 — half the headroom was gone at the old value. This is a
-# ceiling, not a target: it costs nothing on the replies that finish early, which was most of them
-# before and is the point of a cap rather than a quota.
+# ⚑ BUT THE 36 ARE NOT ALL THE SAME FAILURE, AND THE TIDY VERSION OF THIS STORY IS WRONG.
+# Only 8 of them captured any text at all. Of those 8:
+#   * GAO-08-1075R ran 3,909 chars through five of the six keys in order, no repetition anywhere,
+#     and stopped mid-sentence — a real brief that needed more room.
+#   * GAO-08-525 and GAO-08-825 hold ~765 chars, roughly 200 tokens of visible text, while the
+#     provider reported 4,000 output tokens. That gap is REASONING TOKENS: DeepSeek counts them in
+#     completion_tokens and never returns them as content. The remaining 28 captured nothing at
+#     all, which is what it looks like when reasoning consumes the whole budget before the first
+#     character of the answer is emitted.
+# So max_tokens here has to cover reasoning AND the brief, and on the evidence reasoning is the
+# larger consumer. 8000 buys room for both — the largest SUCCESSFUL reply was already 3,898, so
+# half the old ceiling was gone before reasoning was accounted for at all.
+#
+# ⚠︎ THIS IS A HYPOTHESIS WITH ONE RUN BEHIND IT, NOT A SETTLED NUMBER. `finish_reason` is
+# recorded now and raw_text is kept, so the next run says which mode dominated instead of leaving
+# it to be inferred from a token count. If reasoning is the whole story, the fix is a provider
+# parameter, not a bigger ceiling. It is a ceiling, not a quota: it costs nothing on the replies
+# that finish early.
 MAX_TOKENS = 8000
 
 

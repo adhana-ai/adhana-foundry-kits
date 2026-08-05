@@ -107,14 +107,23 @@ def main():
             # the one question left open ("why does a nine-field record run to 3000 tokens?")
             # could not be answered from the artifact. A failure that discards its own evidence
             # is a failure you get to have twice.
-            failures.append({"doc": nct, "error": "reply did not parse as JSON (truncated?) — "
-                                                  "%d output tokens" % (r.get("output_tokens") or 0),
+            #
+            # ⚑ AND IT NOW SAYS WHY IN THE PROVIDER'S OWN WORD — 2026-08-05. "(truncated?)", with
+            # a question mark, left a reader to compare output_tokens against the cap by eye.
+            # finish_reason == "length" IS that answer and the API had been sending it all along.
+            why = r.get("finish_reason")
+            cut = (why == "length") or (r.get("output_tokens") or 0) >= MAX_TOKENS
+            failures.append({"doc": nct,
+                             "error": "reply did not parse as JSON — %s, %d output tokens (cap %d)"
+                                      % ("CUT OFF AT THE CEILING" if cut else "cause unclear",
+                                         r.get("output_tokens") or 0, MAX_TOKENS),
                              "output_tokens": r.get("output_tokens"),
                              "max_tokens": MAX_TOKENS,
-                             "at_ceiling": (r.get("output_tokens") or 0) >= MAX_TOKENS,
+                             "finish_reason": why,
+                             "at_ceiling": cut,
                              "raw_text": (r.get("raw_text") or "")[:4000]})
-            print("  !! %-14s reply did not parse (%s output tokens, cap %d)"
-                  % (nct, r.get("output_tokens"), MAX_TOKENS))
+            print("  !! %-14s reply did not parse (%s output tokens, cap %d, finish_reason=%s)"
+                  % (nct, r.get("output_tokens"), MAX_TOKENS, why))
             continue
         lat.append(int((time.time() - t0) * 1000))
         tin += r.get("input_tokens") or 0

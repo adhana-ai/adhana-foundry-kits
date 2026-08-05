@@ -19,6 +19,22 @@ CORPUS = os.path.join(HERE, "data", "corpus")
 # 3000 was the reply or the limit. It was both, and a reader of the artifact could not tell:
 # run 2's four failures each consumed the entire budget and were cut off mid-JSON, and that got
 # recorded as an unexplained defect for a day. A number two files reason about belongs to one.
+#
+# ⚠︎ LEFT AT 3000 ON PURPOSE, 2026-08-05, AFTER THE SIBLING KIT RAISED ITS OWN. docs-summarise hit
+# the identical wall — 36 of 42 briefs lost, every failure sitting exactly on its ceiling — and
+# raised 4000 to 8000 on evidence: it still had its truncated replies, and one showed a real answer
+# running orderly through five of six sections before it stopped mid-sentence. THIS kit has no such
+# evidence. Run 2 kept `output_tokens` and threw the text away, so all four of its failures carry
+# an EMPTY raw_text, and the question above — why does a NINE-FIELD record run to 3000 tokens? —
+# is still unanswered.
+#
+# Raising it here would be a guess, and the two candidate explanations want opposite fixes. If the
+# model is emitting a genuinely long record, the ceiling is too low. If it is emitting reasoning
+# tokens — DeepSeek counts those in completion_tokens and never returns them as text, which is what
+# docs-summarise's evidence suggests dominated there, two of its captured replies holding ~200
+# tokens of visible text against a reported 4,000 — then a bigger ceiling just buys more of the
+# same and the fix is a provider parameter. `finish_reason` is recorded now and raw_text is kept,
+# so the next run answers it outright. Raise this WHEN that run says which one it is, not before.
 MAX_TOKENS = 3000
 
 
