@@ -1,0 +1,51 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>docs-route — route an incoming document to the right queue</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Route an incoming document to the right queue</h1>
+    <p class="sub">One document, one decision. The model must also say how <b>confident</b> it is —
+      and anything under the floor is <b>escalated to a person</b> instead of routed. That third
+      outcome is the point of this kit: a router that is only ever right or wrong has nowhere to
+      put the documents it should not have guessed at.</p>
+  </header>
+
+  <div class="bar">
+    <select id="doc" aria-label="Document"></select>
+    <button id="go" type="button">Route it</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <!-- ⚑ THE FREE ANSWER SITS ABOVE THE PAID ONE, DELIBERATELY. The keyword router needs no key and
+       no money, and on this corpus it is right 79% of the time. Showing it first means every model
+       answer is read against the boring thing it has to beat, which is the question a buyer is
+       actually asking. Hiding it below would make the model look like the only option. -->
+  <div class="panel free">
+    <div class="ph"><span>The free router</span>
+      <span class="k">regular expressions</span>
+      <span class="k">no key, no cost</span></div>
+    <div id="base" class="decision">Pick a document.</div>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>The model router</span>
+      <span class="k" id="k-model">—</span>
+      <span class="k" id="k-floor">floor —</span>
+      <span class="k kw" id="k-state">nothing has run</span></div>
+    <div id="model" class="decision">Nothing has run.</div>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>The queues</span><span class="k">and what each one commits you to</span></div>
+    <div id="queues"></div>
+  </div>
+
+  <details class="doc">
+    <summary>The document this decision was made from</summary>
+    <pre id="text"></pre>
+  </details>
+</div>
+<script src="/app.js"></script>

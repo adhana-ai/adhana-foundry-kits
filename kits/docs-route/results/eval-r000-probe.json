@@ -1,0 +1,156 @@
+{
+ "run_id": "r000-probe",
+ "kind": "pipeline",
+ "stub": false,
+ "baseline": null,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 5,
+ "failures": [],
+ "latency_p50_ms": 2054,
+ "latency_p95_ms": 3161,
+ "wall_seconds": 10.6,
+ "input_tokens_total": 2580,
+ "output_tokens_total": 591,
+ "confidence_floor": 0.6,
+ "taxonomy": {
+  "rule": "Rule",
+  "proposed": "Proposed Rule",
+  "notice": "Notice"
+ },
+ "null_baseline_accuracy": 100.0,
+ "scores": {
+  "documents": 5,
+  "gold_per_class": {
+   "rule": 0,
+   "proposed": 5,
+   "notice": 0
+  },
+  "confusion": {
+   "rule": {
+    "rule": 0,
+    "proposed": 0,
+    "notice": 0,
+    "null": 0
+   },
+   "proposed": {
+    "rule": 0,
+    "proposed": 4,
+    "notice": 1,
+    "null": 0
+   },
+   "notice": {
+    "rule": 0,
+    "proposed": 0,
+    "notice": 0,
+    "null": 0
+   }
+  },
+  "per_class": {
+   "rule": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "withheld": 0,
+    "precision": null,
+    "recall": null,
+    "f1": null
+   },
+   "proposed": {
+    "tp": 4,
+    "fp": 0,
+    "fn": 1,
+    "withheld": 0,
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1": 0.8889
+   },
+   "notice": {
+    "tp": 0,
+    "fp": 1,
+    "fn": 0,
+    "withheld": 0,
+    "precision": 0.0,
+    "recall": null,
+    "f1": null
+   }
+  },
+  "outcomes": {
+   "ok": 5
+  },
+  "withheld": 0,
+  "withheld_rate": 0.0,
+  "accuracy": 0.8,
+  "accuracy_when_answered": 0.8,
+  "correct": 4,
+  "answered": 5
+ },
+ "records": {
+  "2026-15018": {
+   "model_queue": "proposed",
+   "routed_to": "proposed",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 1.0,
+   "why": "Proposed rule solicits comments; binding effects not yet in force.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 572,
+   "output_tokens": 130
+  },
+  "2026-15021": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "This is a notification of a petition filing, not a binding rule or open comment proposal.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 491,
+   "output_tokens": 158
+  },
+  "2026-15029": {
+   "model_queue": "proposed",
+   "routed_to": "proposed",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "NPRM correction and comment period extension, so still open for comment.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 505,
+   "output_tokens": 151
+  },
+  "2026-15030": {
+   "model_queue": "proposed",
+   "routed_to": "proposed",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.98,
+   "why": "Extension of comment period for an NPRM; comment window remains open.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 535,
+   "output_tokens": 98
+  },
+  "2026-15047": {
+   "model_queue": "proposed",
+   "routed_to": "proposed",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 1.0,
+   "why": "Notice of proposed rulemaking with open comment period.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 477,
+   "output_tokens": 54
+  }
+ },
+ "max_tokens": 400
+}
