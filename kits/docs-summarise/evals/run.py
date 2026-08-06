@@ -90,6 +90,17 @@ def main():
         raise SystemExit("the corpus is empty. Run `python -m tools.fetch_corpus` then "
                          "`python -m tools.build_corpus` first.")
 
+    # ⚑ WHICH CORPUS THIS RUN READ, STAMPED BEFORE ANYTHING IS CALLED — 2026-08-06.
+    # `load_doc` now drops front and back matter, so a run made after that landed read a different
+    # document from one made before it, and nothing in the older records says so. This key is how
+    # a reader tells them apart: ABSENT means the run predates the pass and saw the raw files.
+    # It is the same kind of guard `thinking` is, for the same reason — two inputs differenced is
+    # not a result — and it resets BOTH series, reasoning-on and reasoning-off alike.
+    furniture = SM.corpus_furniture()
+    print("corpus: %d documents, front/back matter %s — %d lines, %d distinct"
+          % (len(SM.documents()), furniture["rule"], furniture["lines_dropped"],
+             furniture["distinct_dropped"]))
+
     if not a.stub and not a.lead:
         if not config.has_key(cfg):
             raise SystemExit("no API_KEY configured. Use --stub to prove the wiring for free.")
@@ -203,6 +214,10 @@ def main():
         # document the packer truncated is not a measurement of the model, and without this number
         # nothing downstream could tell the two apart.
         "documents_with_dropped_sections": dropped_any,
+        # ⚠︎ THE INPUT, NOT JUST THE SETTINGS. A run record that names the model and the ceiling
+        # but not the corpus revision lets two runs over two different documents sit on one board
+        # looking comparable. Absent on every run before 2026-08-06; those read the raw files.
+        "corpus_furniture": furniture,
         "rubric_weights": {s["key"]: s["weight"] for s in sections},
         "null_baseline_score": B.null_score(sections),
         # ⚠︎ NO SCORES. This kit's verdict is a person's, and it is attached by evals/grade.py into

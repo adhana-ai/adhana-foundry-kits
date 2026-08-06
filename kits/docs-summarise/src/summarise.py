@@ -14,7 +14,7 @@ made the refusal explicit.
 import json
 import os
 
-from . import adapters, segment, pack, prompt as P
+from . import adapters, boilerplate, segment, pack, prompt as P
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RUBRIC = os.path.join(HERE, "data", "rubric.json")
@@ -75,13 +75,54 @@ def sections_spec():
     return load_rubric()["sections"]
 
 
-def load_doc(doc_id):
+def documents():
+    return sorted(fn[:-4] for fn in os.listdir(CORPUS) if fn.endswith(".txt"))
+
+
+def _read(doc_id):
     with open(os.path.join(CORPUS, "%s.txt" % doc_id), encoding="utf-8") as f:
         return f.read()
 
 
-def documents():
-    return sorted(fn[:-4] for fn in os.listdir(CORPUS) if fn.endswith(".txt"))
+_CLEANED = {}            # doc_id -> text with front and back matter removed
+_FURNITURE = None        # the report, and the flag that says the pass has run
+
+
+def corpus_furniture():
+    """Run the front/back-matter pass over the whole corpus, once, and cache it.
+
+    ⚑ IT HAS TO BE A CORPUS-WIDE PASS, WHICH IS WHY IT IS NOT INSIDE `load_doc`. Furniture is
+    detected by repetition ACROSS documents; a file read on its own carries no evidence that its
+    own opening paragraph is a template. So the boundary is the corpus, not the file, and the
+    price is one read of everything on first use.
+    """
+    global _FURNITURE
+    if _FURNITURE is None:
+        docs = {d: _read(d) for d in documents()}
+        cleaned, report = boilerplate.matter(docs)
+        _CLEANED.update(cleaned)
+        _FURNITURE = report
+    return _FURNITURE
+
+
+def load_doc(doc_id, raw=False):
+    """The corpus boundary. The run harness, the `--lead` baseline and the app all read documents
+    through here, so the cleaning reaches all three or none of them.
+
+    ⚠︎ AND THAT IS THE POINT, NOT A CONVENIENCE — 2026-08-06. The defect was found in the baseline:
+    `lead_summary` takes the first 2,000 characters, and a median of 74.6% of those characters was
+    the GAO accessibility notice. `b000` was measuring how well "print the first 2,000 characters"
+    summarises a boilerplate notice, and the answer to that is not interesting. But fixing it only
+    in the baseline would have left the baseline reading a different document from the model it
+    exists to be compared against — two measurements over two inputs, differenced, and the
+    difference called a result. That is worse than the defect it fixes.
+
+    `raw=True` returns the file verbatim, for anything that has to show what was removed.
+    """
+    if raw:
+        return _read(doc_id)
+    corpus_furniture()
+    return _CLEANED.get(doc_id) or _read(doc_id)
 
 
 def summarise(cfg, doc_text, sections, complete=None, budget_tokens=None, thinking=None):
