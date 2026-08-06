@@ -1,17 +1,17 @@
 {
- "run_id": "r002-deepseek-v4-pro",
+ "run_id": "r001-docs-route-flash",
  "kind": "pipeline",
  "stub": false,
  "baseline": null,
- "model": "deepseek-v4-pro",
+ "model": "deepseek-v4-flash",
  "provider": "openai-compatible",
  "documents": 120,
  "failures": [],
- "latency_p50_ms": 4219,
- "latency_p95_ms": 9994,
- "wall_seconds": 609.7,
- "input_tokens_total": 56697,
- "output_tokens_total": 25257,
+ "latency_p50_ms": 1709,
+ "latency_p95_ms": 4885,
+ "wall_seconds": 252.9,
+ "input_tokens_total": 66177,
+ "output_tokens_total": 14457,
  "confidence_floor": 0.6,
  "taxonomy": {
   "rule": "Rule",
@@ -28,63 +28,63 @@
   },
   "confusion": {
    "rule": {
-    "rule": 33,
+    "rule": 36,
     "proposed": 0,
     "notice": 2,
-    "null": 5
+    "null": 2
    },
    "proposed": {
     "rule": 0,
-    "proposed": 31,
-    "notice": 4,
-    "null": 5
+    "proposed": 37,
+    "notice": 3,
+    "null": 0
    },
    "notice": {
     "rule": 0,
-    "proposed": 1,
-    "notice": 37,
-    "null": 2
+    "proposed": 2,
+    "notice": 34,
+    "null": 4
    }
   },
   "per_class": {
    "rule": {
-    "tp": 33,
+    "tp": 36,
     "fp": 0,
     "fn": 2,
-    "withheld": 5,
+    "withheld": 2,
     "precision": 1.0,
-    "recall": 0.825,
-    "f1": 0.9041
+    "recall": 0.9,
+    "f1": 0.9474
    },
    "proposed": {
-    "tp": 31,
-    "fp": 1,
-    "fn": 4,
-    "withheld": 5,
-    "precision": 0.9688,
-    "recall": 0.775,
-    "f1": 0.8611
+    "tp": 37,
+    "fp": 2,
+    "fn": 3,
+    "withheld": 0,
+    "precision": 0.9487,
+    "recall": 0.925,
+    "f1": 0.9367
    },
    "notice": {
-    "tp": 37,
-    "fp": 6,
-    "fn": 1,
-    "withheld": 2,
-    "precision": 0.8605,
-    "recall": 0.925,
-    "f1": 0.8916
+    "tp": 34,
+    "fp": 5,
+    "fn": 2,
+    "withheld": 4,
+    "precision": 0.8718,
+    "recall": 0.85,
+    "f1": 0.8608
    }
   },
   "outcomes": {
-   "ok": 108,
-   "unparsed": 12
+   "ok": 114,
+   "unparsed": 6
   },
-  "withheld": 12,
-  "withheld_rate": 0.1,
-  "accuracy": 0.8417,
-  "accuracy_when_answered": 0.9352,
-  "correct": 101,
-  "answered": 108
+  "withheld": 6,
+  "withheld_rate": 0.05,
+  "accuracy": 0.8917,
+  "accuracy_when_answered": 0.9386,
+  "correct": 107,
+  "answered": 114
  },
  "records": {
   "2026-15018": {
@@ -93,12 +93,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "Explicitly a proposed rule with a comment request.",
+   "why": "Proposed rule with request for comments; open for comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 493,
-   "output_tokens": 205
+   "input_tokens": 572,
+   "output_tokens": 64
   },
   "2026-15021": {
    "model_queue": "notice",
@@ -106,12 +106,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "This is a notice of a filed petition, not a binding rule or open comment period.",
+   "why": "FDA notice of petition filing, informational only, no binding rule or comment period.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 412,
-   "output_tokens": 164
+   "input_tokens": 491,
+   "output_tokens": 161
   },
   "2026-15029": {
    "model_queue": "proposed",
@@ -119,25 +119,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "Correction to an NPRM with an extended comment period; still open for comment.",
+   "why": "Corrects an NPRM and extends comment period, so proposal is still open.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 426,
-   "output_tokens": 281
+   "input_tokens": 505,
+   "output_tokens": 95
   },
   "2026-15030": {
    "model_queue": "proposed",
    "routed_to": "proposed",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.95,
-   "why": "It extends a comment period for a proposed rule, so the window is still open.",
+   "confidence": 0.98,
+   "why": "Extension of NPRM comment period means the rule is still open for comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 456,
-   "output_tokens": 295
+   "input_tokens": 535,
+   "output_tokens": 103
   },
   "2026-15047": {
    "model_queue": "proposed",
@@ -145,12 +145,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The action is a Notice of proposed rulemaking, which is open for comment.",
+   "why": "Notice of proposed rulemaking, open for comment before any binding action.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 398,
-   "output_tokens": 124
+   "input_tokens": 477,
+   "output_tokens": 68
   },
   "2026-15072": {
    "model_queue": "proposed",
@@ -158,25 +158,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "It is a Notice of Proposed Rulemaking (NPRM), open for comment.",
+   "why": "This is an NPRM, open for comment before any rule binds.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 460,
-   "output_tokens": 162
+   "input_tokens": 539,
+   "output_tokens": 69
   },
   "2026-15073": {
    "model_queue": "proposed",
    "routed_to": "proposed",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.99,
-   "why": "The document is explicitly a Notice of Proposed Rulemaking (NPRM), which is open for comment.",
+   "confidence": 1.0,
+   "why": "Notice of proposed rulemaking with open comment period; nothing binding yet.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 537,
-   "output_tokens": 185
+   "input_tokens": 616,
+   "output_tokens": 70
   },
   "2026-15080": {
    "model_queue": "proposed",
@@ -184,12 +184,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "It is a proposed rule with a request for comment.",
+   "why": "Proposed rule and guidance with request for comment means the comment window is open.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 491,
-   "output_tokens": 159
+   "input_tokens": 570,
+   "output_tokens": 83
   },
   "2026-15117": {
    "model_queue": "proposed",
@@ -197,12 +197,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The action is explicitly a proposed rule with a request for comment.",
+   "why": "Action is a proposed rule with a request for comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 464,
-   "output_tokens": 131
+   "input_tokens": 543,
+   "output_tokens": 69
   },
   "2026-15120": {
    "model_queue": "proposed",
@@ -210,25 +210,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The action is explicitly 'Proposed rule' and it seeks comment on new conditions.",
+   "why": "Second Further Notice of Proposed Rulemaking seeks comment on SLTE conditions.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 585,
-   "output_tokens": 229
+   "input_tokens": 664,
+   "output_tokens": 160
   },
   "2026-15145": {
    "model_queue": "proposed",
    "routed_to": "proposed",
    "escalated": false,
    "state": "ok",
-   "confidence": 1.0,
-   "why": "It is a proposed rule with a correction, still open for comment.",
+   "confidence": 0.95,
+   "why": "Correction to a proposed rule with request for comment; input window remains open.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 455,
-   "output_tokens": 236
+   "input_tokens": 534,
+   "output_tokens": 148
   },
   "2026-15167": {
    "model_queue": "proposed",
@@ -236,12 +236,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The ACTION field explicitly states 'Proposed rule.'",
+   "why": "Action explicitly labeled proposed rule with comment period open.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 720,
-   "output_tokens": 111
+   "input_tokens": 799,
+   "output_tokens": 52
   },
   "2026-15168": {
    "model_queue": "proposed",
@@ -249,38 +249,38 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The Action line explicitly states 'Proposed rule.'",
+   "why": "Document is a proposed rule with an open comment period.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 629,
-   "output_tokens": 172
+   "input_tokens": 708,
+   "output_tokens": 67
   },
   "2026-15182": {
-   "model_queue": "notice",
-   "routed_to": "notice",
+   "model_queue": "proposed",
+   "routed_to": "proposed",
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "This is a notice of receipt of a rulemaking petition and request for comments on that petition, not a proposed or final rule.",
+   "why": "FTC invites comment on petition; open window for influence.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 484,
-   "output_tokens": 365
+   "input_tokens": 563,
+   "output_tokens": 337
   },
   "2026-15197": {
-   "model_queue": null,
-   "routed_to": null,
+   "model_queue": "proposed",
+   "routed_to": "proposed",
    "escalated": false,
-   "state": "unparsed",
-   "confidence": null,
-   "why": "",
+   "state": "ok",
+   "confidence": 0.97,
+   "why": "Notice of inquiry requests comments on a proposed bridge regulation change.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 507,
-   "output_tokens": 400
+   "input_tokens": 586,
+   "output_tokens": 69
   },
   "2026-15204": {
    "model_queue": "notice",
@@ -288,38 +288,38 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "This is a notice of a finding, not a proposed or final rule.",
+   "why": "12-month finding is a final decision with no comment period; informational.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 467,
-   "output_tokens": 164
+   "input_tokens": 546,
+   "output_tokens": 177
   },
   "2026-15211": {
-   "model_queue": null,
-   "routed_to": null,
+   "model_queue": "proposed",
+   "routed_to": "proposed",
    "escalated": false,
-   "state": "unparsed",
-   "confidence": null,
-   "why": "",
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "Extension keeps the proposed rule's comment period open, so it belongs with proposed.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 556,
-   "output_tokens": 400
+   "input_tokens": 635,
+   "output_tokens": 187
   },
   "2026-15216": {
-   "model_queue": null,
-   "routed_to": null,
+   "model_queue": "proposed",
+   "routed_to": "proposed",
    "escalated": false,
-   "state": "unparsed",
-   "confidence": null,
-   "why": "",
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "Comment period extended; public input still open, so proposed rule queue applies.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 560,
-   "output_tokens": 400
+   "input_tokens": 639,
+   "output_tokens": 99
   },
   "2026-15227": {
    "model_queue": "proposed",
@@ -327,12 +327,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "It is a proposed rule being reopened for public comment.",
+   "why": "Proposed rule with reopened comment period, still open for public input.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 412,
-   "output_tokens": 141
+   "input_tokens": 491,
+   "output_tokens": 79
   },
   "2026-15229": {
    "model_queue": "proposed",
@@ -340,25 +340,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "It is a notice of proposed rulemaking (NPRM) with an open comment window.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 415,
-   "output_tokens": 166
-  },
-  "2026-15231": {
-   "model_queue": null,
-   "routed_to": null,
-   "escalated": false,
-   "state": "unparsed",
-   "confidence": null,
-   "why": "",
+   "why": "Notice of proposed rulemaking with comment window; no binding effect yet.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
    "input_tokens": 494,
-   "output_tokens": 400
+   "output_tokens": 57
+  },
+  "2026-15231": {
+   "model_queue": "proposed",
+   "routed_to": "proposed",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "Extension of comment period for an NPRM; comment window remains open.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 573,
+   "output_tokens": 88
   },
   "2026-15283": {
    "model_queue": "proposed",
@@ -366,38 +366,38 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "It is a Notice of Proposed Rulemaking, open for comment period.",
+   "why": "This is a notice of proposed rulemaking, open for comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 628,
-   "output_tokens": 108
+   "input_tokens": 707,
+   "output_tokens": 79
   },
   "2026-15294": {
-   "model_queue": null,
-   "routed_to": null,
+   "model_queue": "proposed",
+   "routed_to": "proposed",
    "escalated": false,
-   "state": "unparsed",
-   "confidence": null,
-   "why": "",
+   "state": "ok",
+   "confidence": 0.98,
+   "why": "Advance notice of proposed rulemaking with request for comments is open for public input.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 418,
-   "output_tokens": 400
+   "input_tokens": 497,
+   "output_tokens": 76
   },
   "2026-15321": {
    "model_queue": "proposed",
    "routed_to": "proposed",
    "escalated": false,
    "state": "ok",
-   "confidence": 1.0,
-   "why": "It's a notice of proposed rulemaking with an extended comment period, still open for input.",
+   "confidence": 0.98,
+   "why": "Correction and comment period extension to an NPRM; still open for comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 473,
-   "output_tokens": 180
+   "input_tokens": 552,
+   "output_tokens": 88
   },
   "2026-15325": {
    "model_queue": "proposed",
@@ -405,12 +405,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "Action states notice of proposed rulemaking with request for comments.",
+   "why": "Notice of proposed rulemaking with request for comments indicates open comment period.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 436,
-   "output_tokens": 189
+   "input_tokens": 515,
+   "output_tokens": 80
   },
   "2026-15340": {
    "model_queue": "proposed",
@@ -418,12 +418,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "Document announces a public hearing on a proposed rule, still open for comment.",
+   "why": "Proposed rule with public hearing seeking comment; comment window open, not final.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 416,
-   "output_tokens": 149
+   "input_tokens": 495,
+   "output_tokens": 115
   },
   "2026-15352": {
    "model_queue": "proposed",
@@ -431,12 +431,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The action is explicitly a proposed rule, open for comment before finalization.",
+   "why": "Proposed rule under TSCA, action explicitly states 'Proposed rule'.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 523,
-   "output_tokens": 146
+   "input_tokens": 602,
+   "output_tokens": 109
   },
   "2026-15362": {
    "model_queue": "proposed",
@@ -444,12 +444,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The document is explicitly labeled as a proposed rule, open for comment.",
+   "why": "Proposed rule action explicitly open for public comments.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 514,
-   "output_tokens": 112
+   "input_tokens": 593,
+   "output_tokens": 66
   },
   "2026-15371": {
    "model_queue": "proposed",
@@ -457,12 +457,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The ACTION field explicitly identifies this as a proposed rule.",
+   "why": "The action is explicitly a proposed rule, which is open for public comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 441,
-   "output_tokens": 191
+   "input_tokens": 520,
+   "output_tokens": 93
   },
   "2026-15372": {
    "model_queue": "proposed",
@@ -470,25 +470,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The action is explicitly listed as 'Proposed rule'.",
+   "why": "EPA explicitly labels this a proposed rule with a comment window open.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 565,
-   "output_tokens": 139
+   "input_tokens": 644,
+   "output_tokens": 77
   },
   "2026-15374": {
    "model_queue": "proposed",
    "routed_to": "proposed",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.95,
-   "why": "It is a Notice of Proposed Rulemaking, open for comment.",
+   "confidence": 1.0,
+   "why": "This is an FAA Notice of proposed rulemaking, open for comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 637,
-   "output_tokens": 157
+   "input_tokens": 716,
+   "output_tokens": 88
   },
   "2026-15403": {
    "model_queue": "notice",
@@ -496,12 +496,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "It is a withdrawal of a proposed rule, which is an informational notice.",
+   "why": "Withdrawal of a prior proposed rule is informational, with no comment period or binding effect.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 448,
-   "output_tokens": 203
+   "input_tokens": 527,
+   "output_tokens": 158
   },
   "2026-15406": {
    "model_queue": "proposed",
@@ -509,25 +509,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The action is a proposed rule, open for public comment.",
+   "why": "Action is 'Proposed rule,' indicating an open comment window.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 387,
-   "output_tokens": 105
+   "input_tokens": 466,
+   "output_tokens": 52
   },
   "2026-15415": {
    "model_queue": "proposed",
    "routed_to": "proposed",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.99,
-   "why": "It is an NPRM, an open proposed rule inviting comment before finalization.",
+   "confidence": 1.0,
+   "why": "NPRM means open for comment; nothing binding yet.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 495,
-   "output_tokens": 140
+   "input_tokens": 574,
+   "output_tokens": 75
   },
   "2026-15450": {
    "model_queue": "proposed",
@@ -535,12 +535,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The document is explicitly a proposed rule with request for comment.",
+   "why": "Action is a proposed rule with request for comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 557,
-   "output_tokens": 202
+   "input_tokens": 636,
+   "output_tokens": 37
   },
   "2026-15458": {
    "model_queue": "proposed",
@@ -548,25 +548,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The ACTION field explicitly says Notice of proposed rulemaking.",
+   "why": "It is a notice of proposed rulemaking, open for comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 482,
-   "output_tokens": 169
+   "input_tokens": 561,
+   "output_tokens": 84
   },
   "2026-15529": {
    "model_queue": "proposed",
    "routed_to": "proposed",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.95,
-   "why": "Extension of comment period for a proposed rule, still open for comment.",
+   "confidence": 1.0,
+   "why": "Proposed rule with extended comment period, still open for comments.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 402,
-   "output_tokens": 350
+   "input_tokens": 481,
+   "output_tokens": 81
   },
   "2026-15532": {
    "model_queue": "proposed",
@@ -574,12 +574,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The ACTION is 'Notice of proposed rulemaking (NPRM)' and the text says 'proposes to supersede'.",
+   "why": "Action states Notice of proposed rulemaking, open for comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 530,
-   "output_tokens": 194
+   "input_tokens": 609,
+   "output_tokens": 80
   },
   "2026-15578": {
    "model_queue": "rule",
@@ -587,38 +587,38 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "This is a confirmation of a direct final rule, so it is binding law.",
+   "why": "Confirms effective date of a direct final rule; binding regulation.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 429,
-   "output_tokens": 204
+   "input_tokens": 508,
+   "output_tokens": 103
   },
   "2026-15579": {
    "model_queue": "notice",
    "routed_to": "notice",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.95,
-   "why": "Withdrawal of a direct final rule is an informational action, not a binding rule or open proposal.",
+   "confidence": 1.0,
+   "why": "Action is withdrawal of a rule, informational only, no comment or compliance deadline.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 389,
-   "output_tokens": 338
+   "input_tokens": 468,
+   "output_tokens": 118
   },
   "2026-15580": {
    "model_queue": "rule",
    "routed_to": "rule",
    "escalated": false,
    "state": "ok",
-   "confidence": 1.0,
-   "why": "Confirmation of effective date for a direct final rule; rule is binding and comment window closed.",
+   "confidence": 0.95,
+   "why": "Direct final rule confirmation of effective date is binding and requires compliance review.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 441,
-   "output_tokens": 215
+   "input_tokens": 520,
+   "output_tokens": 87
   },
   "2026-15581": {
    "model_queue": "rule",
@@ -626,12 +626,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "It confirms effective date of a direct final rule, which is binding and no longer open for comment.",
+   "why": "Direct final rule confirming effective date; binding and closed to comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 441,
-   "output_tokens": 254
+   "input_tokens": 520,
+   "output_tokens": 86
   },
   "2026-15582": {
    "model_queue": "notice",
@@ -639,25 +639,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "Withdrawal of a direct final rule is an informational notice, not a binding or proposed action.",
+   "why": "Withdrawal of a prior rule is informational, not binding or open for comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 389,
-   "output_tokens": 248
+   "input_tokens": 468,
+   "output_tokens": 89
   },
   "2026-15583": {
    "model_queue": "rule",
    "routed_to": "rule",
    "escalated": false,
    "state": "ok",
-   "confidence": 1.0,
-   "why": "Confirmation of effective date for a direct final rule; it is now binding.",
+   "confidence": 0.95,
+   "why": "Confirmation of effective date for a direct final rule, binding action.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 451,
-   "output_tokens": 270
+   "input_tokens": 530,
+   "output_tokens": 144
   },
   "2026-15584": {
    "model_queue": "rule",
@@ -665,38 +665,38 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "Direct final rule with confirmed effective date; binding and comment window closed.",
+   "why": "Confirms effective date of a binding direct final rule, so compliance is required.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 449,
-   "output_tokens": 176
+   "input_tokens": 528,
+   "output_tokens": 302
   },
   "2026-15585": {
    "model_queue": "rule",
    "routed_to": "rule",
    "escalated": false,
    "state": "ok",
-   "confidence": 1.0,
-   "why": "The action is a final rule, which is binding and requires compliance by set deadlines.",
+   "confidence": 0.99,
+   "why": "Final rule with binding compliance deadlines for radio altimeters.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 705,
-   "output_tokens": 160
+   "input_tokens": 784,
+   "output_tokens": 68
   },
   "2026-15586": {
-   "model_queue": null,
-   "routed_to": null,
+   "model_queue": "rule",
+   "routed_to": "rule",
    "escalated": false,
-   "state": "unparsed",
-   "confidence": null,
-   "why": "",
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "Interim final rule is binding now, despite open comment request.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 429,
-   "output_tokens": 400
+   "input_tokens": 508,
+   "output_tokens": 280
   },
   "2026-15588": {
    "model_queue": "rule",
@@ -704,38 +704,38 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "It is a final rule updating payment rates for psychiatric facilities.",
+   "why": "Final rule with binding rate updates and effective dates; comment window closed.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 489,
-   "output_tokens": 145
+   "input_tokens": 568,
+   "output_tokens": 80
   },
   "2026-15589": {
-   "model_queue": null,
-   "routed_to": null,
+   "model_queue": "rule",
+   "routed_to": "rule",
    "escalated": false,
-   "state": "unparsed",
-   "confidence": null,
-   "why": "",
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "Direct final rule is binding with closed comment period.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 369,
-   "output_tokens": 400
+   "input_tokens": 448,
+   "output_tokens": 94
   },
   "2026-15597": {
-   "model_queue": null,
-   "routed_to": null,
+   "model_queue": "rule",
+   "routed_to": "rule",
    "escalated": false,
-   "state": "unparsed",
-   "confidence": null,
-   "why": "",
+   "state": "ok",
+   "confidence": 1.0,
+   "why": "Direct final rule is binding and closed to comment.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 376,
-   "output_tokens": 400
+   "input_tokens": 455,
+   "output_tokens": 74
   },
   "2026-15598": {
    "model_queue": "rule",
@@ -743,25 +743,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "It is a final rule, binding and with no open comment period.",
+   "why": "Final rule adopted; binding, with no open comment window.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 750,
-   "output_tokens": 171
+   "input_tokens": 829,
+   "output_tokens": 66
   },
   "2026-15599": {
    "model_queue": "rule",
    "routed_to": "rule",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.98,
-   "why": "Action is Final rule, comment window has closed.",
+   "confidence": 1.0,
+   "why": "Final rule with binding effect; comment window closed.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 397,
-   "output_tokens": 134
+   "input_tokens": 476,
+   "output_tokens": 52
   },
   "2026-15600": {
    "model_queue": "proposed",
@@ -769,12 +769,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "It is a proposed rule seeking comment, so still open for influence.",
+   "why": "Further Notice of Proposed Rulemaking seeks comment on proposed rules.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 413,
-   "output_tokens": 134
+   "input_tokens": 492,
+   "output_tokens": 76
   },
   "2026-15601": {
    "model_queue": "rule",
@@ -782,38 +782,38 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "Action is 'Final rule.'",
+   "why": "Action states Final rule, binding requirements take effect.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 411,
-   "output_tokens": 122
+   "input_tokens": 490,
+   "output_tokens": 72
   },
   "2026-15602": {
    "model_queue": "proposed",
    "routed_to": "proposed",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.99,
-   "why": "Document is explicitly a Notice of Proposed Rulemaking (NPRM), open for comment.",
+   "confidence": 1.0,
+   "why": "Action is Notice of proposed rulemaking; comment window is open.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 530,
-   "output_tokens": 119
+   "input_tokens": 609,
+   "output_tokens": 93
   },
   "2026-15603": {
    "model_queue": "rule",
    "routed_to": "rule",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.99,
-   "why": "It is a final rule, so binding and no comment period.",
+   "confidence": 1.0,
+   "why": "Final rule amending coordinates; binding action with no open comment period.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 447,
-   "output_tokens": 119
+   "input_tokens": 526,
+   "output_tokens": 53
   },
   "2026-15634": {
    "model_queue": "rule",
@@ -821,12 +821,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The action is a final rule, which is binding and effective.",
+   "why": "Final rule establishes a binding pesticide tolerance; comment window closed.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 440,
-   "output_tokens": 117
+   "input_tokens": 519,
+   "output_tokens": 63
   },
   "2026-15650": {
    "model_queue": "rule",
@@ -834,25 +834,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The document is explicitly a final rule, making it binding and the comment window closed.",
+   "why": "Final rule is binding and requires compliance review.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 443,
-   "output_tokens": 104
+   "input_tokens": 522,
+   "output_tokens": 68
   },
   "2026-15652": {
    "model_queue": "rule",
    "routed_to": "rule",
    "escalated": false,
    "state": "ok",
-   "confidence": 1.0,
-   "why": "The document is a final rule with no open comment period.",
+   "confidence": 0.98,
+   "why": "Final rule with binding FY 2027 payment rates; compliance review required.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 598,
-   "output_tokens": 111
+   "input_tokens": 677,
+   "output_tokens": 96
   },
   "2026-15654": {
    "model_queue": "rule",
@@ -860,25 +860,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "Document states 'ACTION: Final rule,' indicating it is binding.",
+   "why": "Final rule with binding changes and no open comment window.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 456,
-   "output_tokens": 120
+   "input_tokens": 535,
+   "output_tokens": 49
   },
   "2026-15665": {
    "model_queue": "rule",
    "routed_to": "rule",
    "escalated": false,
    "state": "ok",
-   "confidence": 1.0,
-   "why": "The document is a final rule, which is binding and has no open comment period.",
+   "confidence": 0.98,
+   "why": "Final rule imposes binding RIF and transition program changes requiring compliance review.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 449,
-   "output_tokens": 141
+   "input_tokens": 528,
+   "output_tokens": 63
   },
   "2026-15666": {
    "model_queue": "rule",
@@ -886,12 +886,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The action is explicitly a Final rule, so it is binding with no comment period.",
+   "why": "Final rule with binding effect; deadlines to assess operational changes apply.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 461,
-   "output_tokens": 148
+   "input_tokens": 540,
+   "output_tokens": 50
   },
   "2026-15675": {
    "model_queue": "rule",
@@ -899,25 +899,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The action is explicitly labeled a final rule, making it binding.",
+   "why": "Final rule establishes RNAV route; binding with closed comment period.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 407,
-   "output_tokens": 138
+   "input_tokens": 486,
+   "output_tokens": 53
   },
   "2026-15680": {
    "model_queue": "rule",
    "routed_to": "rule",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.99,
-   "why": "Final rule is binding and requires immediate review against current operations.",
+   "confidence": 1.0,
+   "why": "Final rule amending an airway; binding, comment window closed.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 433,
-   "output_tokens": 116
+   "input_tokens": 512,
+   "output_tokens": 50
   },
   "2026-15681": {
    "model_queue": "rule",
@@ -925,12 +925,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "Final rule; binding and comment period closed.",
+   "why": "Final rule is binding; comment window closed.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 389,
-   "output_tokens": 129
+   "input_tokens": 468,
+   "output_tokens": 51
   },
   "2026-15686": {
    "model_queue": "rule",
@@ -938,12 +938,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "Final rule with binding updates; comment window closed.",
+   "why": "Final rule with binding payment rate updates and requirements.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 516,
-   "output_tokens": 99
+   "input_tokens": 595,
+   "output_tokens": 69
   },
   "2026-15720": {
    "model_queue": "rule",
@@ -951,12 +951,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The document is explicitly a final rule, binding and with no comment period.",
+   "why": "Final rule that amends binding regulations; comment window closed.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 455,
-   "output_tokens": 159
+   "input_tokens": 534,
+   "output_tokens": 69
   },
   "2026-15726": {
    "model_queue": "rule",
@@ -964,25 +964,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "Final rule establishing a permanent program; binding and past comment window.",
+   "why": "Final rule is binding and requires compliance review against current operations.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 477,
-   "output_tokens": 121
+   "input_tokens": 556,
+   "output_tokens": 51
   },
   "2026-15756": {
    "model_queue": "rule",
    "routed_to": "rule",
    "escalated": false,
    "state": "ok",
-   "confidence": 1.0,
-   "why": "Temporary final rule establishing a safety zone is binding law with no comment period.",
+   "confidence": 0.98,
+   "why": "Temporary final rule is binding with closed comment period; action required.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 438,
-   "output_tokens": 169
+   "input_tokens": 517,
+   "output_tokens": 74
   },
   "2026-15757": {
    "model_queue": "rule",
@@ -990,12 +990,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "Document is a final rule adopting binding amendments to IFR altitudes.",
+   "why": "Final rule adopting binding amendments; comment window closed.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 432,
-   "output_tokens": 123
+   "input_tokens": 511,
+   "output_tokens": 57
   },
   "2026-15761": {
    "model_queue": "rule",
@@ -1003,12 +1003,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "Document action is 'Final rule', making it binding.",
+   "why": "Final rule establishing binding pesticide tolerances under FFDCA.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 425,
-   "output_tokens": 103
+   "input_tokens": 504,
+   "output_tokens": 69
   },
   "2026-15778": {
    "model_queue": "rule",
@@ -1016,12 +1016,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "It's explicitly labeled a final rule, binding with no comment window.",
+   "why": "Final rule is binding and requires compliance review against current practices.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 449,
-   "output_tokens": 170
+   "input_tokens": 528,
+   "output_tokens": 90
   },
   "2026-15784": {
    "model_queue": null,
@@ -1033,7 +1033,7 @@
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 502,
+   "input_tokens": 581,
    "output_tokens": 400
   },
   "2026-15798": {
@@ -1046,7 +1046,7 @@
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 454,
+   "input_tokens": 533,
    "output_tokens": 400
   },
   "2026-15803": {
@@ -1055,12 +1055,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The document is explicitly labeled 'Final rule'.",
+   "why": "Final rule is binding, comment window closed, requiring compliance review.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 382,
-   "output_tokens": 102
+   "input_tokens": 461,
+   "output_tokens": 82
   },
   "2026-15805": {
    "model_queue": "rule",
@@ -1068,12 +1068,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The action is explicitly stated as a final rule, binding with no open comment period.",
+   "why": "Final rule, binding, with compliance obligations for shippers and carriers.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 385,
-   "output_tokens": 218
+   "input_tokens": 464,
+   "output_tokens": 53
   },
   "2026-15808": {
    "model_queue": "rule",
@@ -1081,12 +1081,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.99,
-   "why": "The document is explicitly labeled as a final rule.",
+   "why": "Final rule with binding requirements; comment window closed, action needed.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 385,
-   "output_tokens": 105
+   "input_tokens": 464,
+   "output_tokens": 53
   },
   "2026-15809": {
    "model_queue": "rule",
@@ -1094,12 +1094,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "Final rule; binding, no comment window.",
+   "why": "Final rule is binding and requires compliance review against current operations.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 410,
-   "output_tokens": 110
+   "input_tokens": 489,
+   "output_tokens": 57
   },
   "2026-15810": {
    "model_queue": "rule",
@@ -1107,12 +1107,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The document is a final rule, so it is binding and the comment window has closed.",
+   "why": "Final rule is binding and requires compliance review against current operations.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 411,
-   "output_tokens": 190
+   "input_tokens": 490,
+   "output_tokens": 49
   },
   "2026-15811": {
    "model_queue": "rule",
@@ -1120,12 +1120,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The document is labeled as a final rule, meaning it is binding and the comment period has closed.",
+   "why": "Final rule with binding amendments; comment window closed.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 405,
-   "output_tokens": 137
+   "input_tokens": 484,
+   "output_tokens": 50
   },
   "2026-15843": {
    "model_queue": null,
@@ -1137,7 +1137,7 @@
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 443,
+   "input_tokens": 522,
    "output_tokens": 400
   },
   "2026-15846": {
@@ -1146,25 +1146,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "This is a standard notice of information collection submission, not a rule.",
+   "why": "Notice of OMB review under Paperwork Reduction Act, not a rule.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 403,
-   "output_tokens": 194
+   "input_tokens": 482,
+   "output_tokens": 254
   },
   "2026-15847": {
    "model_queue": "notice",
    "routed_to": "notice",
    "escalated": false,
    "state": "ok",
-   "confidence": 1.0,
-   "why": "Document is explicitly labeled as a Notice and informs of a statutory adjustment.",
+   "confidence": 0.98,
+   "why": "Statutory cap adjustment published as a notice; informational only, no comment or binding changes.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 430,
-   "output_tokens": 214
+   "input_tokens": 509,
+   "output_tokens": 104
   },
   "2026-15848": {
    "model_queue": "proposed",
@@ -1172,25 +1172,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "The document explicitly requests public comments on a proposed information collection, indicating an open comment period.",
+   "why": "This requests public comments on a proposed information collection, so it belongs in proposed.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 554,
-   "output_tokens": 369
+   "input_tokens": 633,
+   "output_tokens": 175
   },
   "2026-15849": {
    "model_queue": "notice",
    "routed_to": "notice",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.99,
-   "why": "This is a notice of OFAC sanctions actions, publishing SDN List updates, no rulemaking.",
+   "confidence": 0.98,
+   "why": "This is an informational sanctions notice with no comment period or binding rule.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 465,
-   "output_tokens": 211
+   "input_tokens": 544,
+   "output_tokens": 102
   },
   "2026-15850": {
    "model_queue": "notice",
@@ -1198,12 +1198,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "This is a Paperwork Reduction Act notice requesting comment on an information collection, not a rulemaking.",
+   "why": "Paperwork Reduction Act notice seeking comment is informational, not a rulemaking.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 440,
-   "output_tokens": 382
+   "input_tokens": 519,
+   "output_tokens": 180
   },
   "2026-15851": {
    "model_queue": "notice",
@@ -1211,274 +1211,14 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "It is a request for comments on a data collection, not a proposed or final rule.",
+   "why": "Information collection request for public comments, not rulemaking; no binding regulatory changes.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 430,
-   "output_tokens": 380
+   "input_tokens": 509,
+   "output_tokens": 265
   },
   "2026-15854": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "It's a notice of information collection under PRA, a routine filing for information.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 392,
-   "output_tokens": 379
-  },
-  "2026-15856": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 1.0,
-   "why": "This is a notice of request for approval of an information collection, not a rule.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 431,
-   "output_tokens": 282
-  },
-  "2026-15858": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "Renewal of existing information collection, request for comment, not a rulemaking.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 394,
-   "output_tokens": 239
-  },
-  "2026-15861": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 1.0,
-   "why": "The document is a notice of a matching program, fitting the 'notice' queue description.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 429,
-   "output_tokens": 220
-  },
-  "2026-15862": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "This is an information collection notice, not a proposed rule.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 472,
-   "output_tokens": 304
-  },
-  "2026-15864": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 1.0,
-   "why": "It is a notice of information collection under PRA, purely informational.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 442,
-   "output_tokens": 232
-  },
-  "2026-15865": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 1.0,
-   "why": "It’s a PRA notice seeking public comment on an information collection, which is a standard notice.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 446,
-   "output_tokens": 169
-  },
-  "2026-15866": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "It is a notice requesting comments on an existing information collection, not a proposed rule.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 387,
-   "output_tokens": 224
-  },
-  "2026-15868": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 1.0,
-   "why": "It is labeled 'Notice' and declares a disaster, purely informational.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 375,
-   "output_tokens": 189
-  },
-  "2026-15869": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 1.0,
-   "why": "The document's action is 'Notice,' which is informational and not a rule or proposal.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 382,
-   "output_tokens": 224
-  },
-  "2026-15870": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "Amendment to a major disaster declaration is an administrative notice, not a rule or proposed rule.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 407,
-   "output_tokens": 170
-  },
-  "2026-15871": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "Amendment of a disaster declaration is a notice, not a rule.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 396,
-   "output_tokens": 131
-  },
-  "2026-15872": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "The action is labeled Notice and acknowledges procedural extensions, not a binding or proposed rule.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 359,
-   "output_tokens": 145
-  },
-  "2026-15874": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "The document is a notice of a disaster declaration, purely informational.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 386,
-   "output_tokens": 159
-  },
-  "2026-15876": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 1.0,
-   "why": "The ACTION field is 'Notice', indicating an informational notice, not a rule or proposed rule.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 554,
-   "output_tokens": 164
-  },
-  "2026-15877": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "Preliminary results in an administrative review are a standard notice, not a rule or proposed rule.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 470,
-   "output_tokens": 266
-  },
-  "2026-15887": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "This is a request for information, not a rule.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 551,
-   "output_tokens": 196
-  },
-  "2026-15889": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 1.0,
-   "why": "The document is a meeting notice, fitting the 'notice' queue for informational items.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 398,
-   "output_tokens": 162
-  },
-  "2026-15890": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "Preliminary determination in a countervailing duty investigation is an informational notice, not a binding rule or open for comment.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 412,
-   "output_tokens": 230
-  },
-  "2026-15891": {
-   "model_queue": "notice",
-   "routed_to": "notice",
-   "escalated": false,
-   "state": "ok",
-   "confidence": 0.95,
-   "why": "This is a notice soliciting comments on a specific vessel determination, not a rulemaking.",
-   "floor": 0.6,
-   "offered": null,
-   "raw_text": "",
-   "input_tokens": 504,
-   "output_tokens": 193
-  },
-  "2026-15892": {
    "model_queue": null,
    "routed_to": null,
    "escalated": false,
@@ -1488,34 +1228,294 @@
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 502,
+   "input_tokens": 471,
    "output_tokens": 400
   },
-  "2026-15893": {
+  "2026-15856": {
    "model_queue": "notice",
    "routed_to": "notice",
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "It is a notice soliciting comments on a specific vessel determination, not a rule or proposed rule.",
+   "why": "Paperwork Reduction Act information collection request; comment period but not rulemaking.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 503,
-   "output_tokens": 198
+   "input_tokens": 510,
+   "output_tokens": 160
+  },
+  "2026-15858": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.98,
+   "why": "Renewal of OMB information collection, not a rule; it's a notice for comment.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 473,
+   "output_tokens": 226
+  },
+  "2026-15861": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.99,
+   "why": "This is a Privacy Act matching program notice, informational only.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 508,
+   "output_tokens": 99
+  },
+  "2026-15862": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "This is a 60-day information collection notice, not a proposed rule.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 551,
+   "output_tokens": 182
+  },
+  "2026-15864": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 1.0,
+   "why": "This is a Paperwork Reduction Act notice for OMB review, not a rule.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 521,
+   "output_tokens": 86
+  },
+  "2026-15865": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 1.0,
+   "why": "PRA notice announces OMB review of information collection; informational only.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 525,
+   "output_tokens": 108
+  },
+  "2026-15866": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "Paperwork Reduction Act notice seeking comment on information collection extension.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 466,
+   "output_tokens": 156
+  },
+  "2026-15868": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 1.0,
+   "why": "This is an informational notice of a disaster declaration, not a rule.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 454,
+   "output_tokens": 63
+  },
+  "2026-15869": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.98,
+   "why": "The action is explicitly a notice of a disaster loan declaration.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 461,
+   "output_tokens": 70
+  },
+  "2026-15870": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.98,
+   "why": "Presidential disaster declaration amendment is informational, not a rule or proposal.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 486,
+   "output_tokens": 71
+  },
+  "2026-15871": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "Disaster declaration amendment is informational, not a rule or proposal.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 475,
+   "output_tokens": 86
+  },
+  "2026-15872": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "Notice extends comment deadlines; purely informational, no binding rule.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 438,
+   "output_tokens": 93
+  },
+  "2026-15874": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 1.0,
+   "why": "Notice of disaster loan declaration; informational, no comment period or binding rule.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 465,
+   "output_tokens": 66
+  },
+  "2026-15876": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "Action is a notice announcing a final determination of nonregulated status, informational only.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 633,
+   "output_tokens": 77
+  },
+  "2026-15877": {
+   "model_queue": "proposed",
+   "routed_to": "proposed",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "Preliminary antidumping review results invite comments; no binding final action yet.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 549,
+   "output_tokens": 182
+  },
+  "2026-15887": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "This is a request for information notice, not a rulemaking.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 630,
+   "output_tokens": 214
+  },
+  "2026-15889": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 1.0,
+   "why": "Notice of public advisory board meeting, informational only.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 477,
+   "output_tokens": 51
+  },
+  "2026-15890": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "Preliminary Commerce determination in an investigation; informational notice, not rulemaking or comment period.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 491,
+   "output_tokens": 140
+  },
+  "2026-15891": {
+   "model_queue": null,
+   "routed_to": null,
+   "escalated": false,
+   "state": "unparsed",
+   "confidence": null,
+   "why": "",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 583,
+   "output_tokens": 400
+  },
+  "2026-15892": {
+   "model_queue": "notice",
+   "routed_to": "notice",
+   "escalated": false,
+   "state": "ok",
+   "confidence": 0.95,
+   "why": "It is a notice requesting comments on a vessel use determination, not a rulemaking.",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 581,
+   "output_tokens": 191
+  },
+  "2026-15893": {
+   "model_queue": null,
+   "routed_to": null,
+   "escalated": false,
+   "state": "unparsed",
+   "confidence": null,
+   "why": "",
+   "floor": 0.6,
+   "offered": null,
+   "raw_text": "",
+   "input_tokens": 582,
+   "output_tokens": 400
   },
   "2026-15894": {
    "model_queue": "notice",
    "routed_to": "notice",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.9,
-   "why": "This is a notice about a specific determination request, soliciting comments, not a proposed rule.",
+   "confidence": 0.95,
+   "why": "It is a notice and request for comments on a vessel determination, not a rule.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 501,
-   "output_tokens": 322
+   "input_tokens": 580,
+   "output_tokens": 218
   },
   "2026-15895": {
    "model_queue": "notice",
@@ -1523,12 +1523,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "This is a notice and request for comments on a specific determination, not a rule.",
+   "why": "Notice solicits comments on a vessel use determination, not a rulemaking.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 503,
-   "output_tokens": 372
+   "input_tokens": 582,
+   "output_tokens": 336
   },
   "2026-15896": {
    "model_queue": "notice",
@@ -1536,12 +1536,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "This is a notice soliciting comments on a specific vessel determination, not a proposed rule.",
+   "why": "Notice and request for comments on a vessel determination; not a rule.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 501,
-   "output_tokens": 391
+   "input_tokens": 580,
+   "output_tokens": 373
   },
   "2026-15898": {
    "model_queue": "notice",
@@ -1549,51 +1549,51 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "It is a notice of a public meeting, not a rule or proposed rule.",
+   "why": "This is a public meeting notice, informational only, not a rule.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 393,
-   "output_tokens": 196
+   "input_tokens": 472,
+   "output_tokens": 59
   },
   "2026-15899": {
    "model_queue": "notice",
    "routed_to": "notice",
    "escalated": false,
    "state": "ok",
-   "confidence": 1.0,
-   "why": "The document's ACTION is explicitly labeled 'Notice' and it announces awards, not a rule.",
+   "confidence": 0.99,
+   "why": "This is a notice announcing CDC cooperative agreement awards, for information only.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 885,
-   "output_tokens": 124
+   "input_tokens": 964,
+   "output_tokens": 91
   },
   "2026-15900": {
    "model_queue": "notice",
    "routed_to": "notice",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.95,
-   "why": "Document is a notice announcing grant awards, not a rule or proposed rule.",
+   "confidence": 0.98,
+   "why": "Notice of grant awards, informational only, no comment period or binding rules.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 684,
-   "output_tokens": 134
+   "input_tokens": 763,
+   "output_tokens": 79
   },
   "2026-15901": {
    "model_queue": "notice",
    "routed_to": "notice",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.99,
-   "why": "It is a notice of grant awards, not a rule or proposed rule.",
+   "confidence": 1.0,
+   "why": "Announcement of cooperative agreement awards, purely informational Federal Register notice.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 859,
-   "output_tokens": 191
+   "input_tokens": 938,
+   "output_tokens": 100
   },
   "2026-15903": {
    "model_queue": "notice",
@@ -1601,12 +1601,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "It is a notice of funding awards, purely informational.",
+   "why": "This is an announcement of cooperative agreement awards, purely informational.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 617,
-   "output_tokens": 203
+   "input_tokens": 696,
+   "output_tokens": 84
   },
   "2026-15904": {
    "model_queue": "notice",
@@ -1614,12 +1614,12 @@
    "escalated": false,
    "state": "ok",
    "confidence": 1.0,
-   "why": "The document is explicitly labeled a Notice and announces a grant award, matching the notice queue definition.",
+   "why": "This is a grant award announcement, purely informational; no rulemaking or comment period.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 426,
-   "output_tokens": 163
+   "input_tokens": 505,
+   "output_tokens": 70
   },
   "2026-15905": {
    "model_queue": "notice",
@@ -1627,25 +1627,25 @@
    "escalated": false,
    "state": "ok",
    "confidence": 0.95,
-   "why": "It is a notification of a final agency decision on petitions, not a rulemaking.",
+   "why": "Final agency decision notification; informational notice, not a rule or open comment period.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 466,
-   "output_tokens": 193
+   "input_tokens": 545,
+   "output_tokens": 91
   },
   "2026-15906": {
    "model_queue": "notice",
    "routed_to": "notice",
    "escalated": false,
    "state": "ok",
-   "confidence": 0.95,
-   "why": "The document is a notice of an award, not a binding or proposed rule.",
+   "confidence": 1.0,
+   "why": "Announces a funding award; purely informational, no rulemaking or comment period.",
    "floor": 0.6,
    "offered": null,
    "raw_text": "",
-   "input_tokens": 425,
-   "output_tokens": 179
+   "input_tokens": 504,
+   "output_tokens": 112
   }
  },
  "max_tokens": 400
