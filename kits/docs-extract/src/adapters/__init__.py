@@ -54,15 +54,28 @@ def _post(url, headers, payload, timeout=120):
                            status=e.code)
 
 
-def openai_compatible(cfg, system, user, max_tokens):
+def openai_compatible(cfg, system, user, max_tokens, thinking=None):
     """Covers every provider that speaks the OpenAI chat-completions shape -- OpenAI itself,
     DeepSeek, Groq, Together, Mistral, xAI, and any local server (Ollama, LM Studio, vLLM).
-    BASE_URL is what selects between them, which is why it is in .env rather than in here."""
+    BASE_URL is what selects between them, which is why it is in .env rather than in here.
+
+    `thinking` is sent ONLY when the caller passes one, and is passed through verbatim. Omitted,
+    the request is byte-identical to what it was before this parameter existed -- so every run
+    already recorded stays comparable to a future run that also omits it.
+    """
+    payload = {"model": cfg["model"], "max_tokens": max_tokens,
+               "messages": [{"role": "system", "content": system},
+                            {"role": "user", "content": user}]}
+    # ⚑ NOT A DEFAULT, AND NOT GUESSED AT. See THINKING_OFF below for the shape and where it came
+    # from. This kit's four run-2 failures each returned exactly 3000 output tokens against a cap
+    # of 3000, and extract.py still carries the open question "why does a nine-field record run to
+    # 3000 tokens?" -- docs-summarise asked the same question of its own corpus and the answer was
+    # a reasoning pass nobody asked for. This is the knob that tests it here. It is NOT the answer
+    # yet: that needs a run, and the run is the operator's to fire.
+    if thinking is not None:
+        payload["thinking"] = thinking
     body = _post(cfg["base_url"].rstrip("/") + "/chat/completions",
-                 {"authorization": "Bearer " + cfg["api_key"]},
-                 {"model": cfg["model"], "max_tokens": max_tokens,
-                  "messages": [{"role": "system", "content": system},
-                               {"role": "user", "content": user}]})
+                 {"authorization": "Bearer " + cfg["api_key"]}, payload)
     usage = body.get("usage") or {}
     choice = body["choices"][0]
     return {"text": choice["message"]["content"],
@@ -73,6 +86,13 @@ def openai_compatible(cfg, system, user, max_tokens):
             # that left open: "why does a nine-field record run to 3000 tokens?" The API had been
             # answering half of it in this field the whole time and nothing read it.
             "finish_reason": choice.get("finish_reason"),
+            # ⚑ WHERE THE BUDGET WENT. `finish_reason` says the reply was cut off; this says what
+            # ate it. docs-summarise added the same field and it turned "why does a nine-field
+            # record run to 3000 tokens?" from a hypothesis into a number in one run -- a median of
+            # 100% of that kit's ceiling was a reasoning pass nobody asked for. Absent on providers
+            # that do not report it, which is the third state and not a zero.
+            "token_details": (usage.get("completion_tokens_details")
+                              or usage.get("output_tokens_details")),
             "raw": body}
 
 
@@ -99,8 +119,26 @@ def anthropic(cfg, system, user, max_tokens):
 PROVIDERS = {"openai-compatible": openai_compatible, "anthropic": anthropic}
 
 
-def complete(cfg, system, user, max_tokens=1024):
+# The one shape this kit will send, taken verbatim from DeepSeek's own request example for
+# deepseek-v4-flash. Named rather than spelled inline at the call site so there is exactly one
+# place a provider's documented field lives, and so a run record can say which one it used.
+THINKING_OFF = {"type": "disabled"}
+
+
+def complete(cfg, system, user, max_tokens=1024, thinking=None):
+    """`thinking` is passed through to the provider untouched, or omitted entirely when None.
+
+    ⚠︎ PROVIDER-SPECIFIC, AND NOT SILENTLY SWALLOWED. Only the OpenAI-compatible path accepts it,
+    because that is the only shape whose documentation this kit has read. Sending it to Anthropic
+    would be inventing a field on a provider nobody checked -- so it is refused loudly rather than
+    dropped, which would leave a run believing it had disabled something it had not.
+    """
     name = cfg.get("provider")
+    if thinking is not None and name != "openai-compatible":
+        raise AdapterError(
+            "thinking=%r was requested but provider %r has no documented field for it in this "
+            "kit. Dropping it silently would let a run record claim a setting it never sent."
+            % (thinking, name))
     if name not in PROVIDERS:
         raise AdapterError("unknown PROVIDER %r -- known: %s. Add one in src/adapters/__init__.py"
                            % (name, ", ".join(sorted(PROVIDERS))))
@@ -138,6 +176,11 @@ def complete(cfg, system, user, max_tokens=1024):
     last = None
     for attempt in range(RETRIES + 1):
         try:
+            # `thinking` reaches the provider only where it is accepted; the guard above already
+            # refused every other path loudly, so passing it here cannot reach a provider that
+            # would ignore it.
+            if thinking is not None:
+                return PROVIDERS[name](cfg, system, user, max_tokens, thinking=thinking)
             return PROVIDERS[name](cfg, system, user, max_tokens)
         except AdapterError as exc:
             if exc.status not in TRANSIENT or attempt == RETRIES:

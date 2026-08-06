@@ -52,13 +52,17 @@ def documents():
     return sorted(fn[:-4] for fn in os.listdir(CORPUS) if fn.endswith(".txt"))
 
 
-def extract(cfg, doc_text, fields, complete=None):
+def extract(cfg, doc_text, fields, complete=None, thinking=None):
     """Return the full record for one document.
 
     `complete` is injectable so the eval harness, the app and the tests all drive the SAME code
     path against a stub provider. UC001 learned this the expensive way from the other direction:
     the ranker had to be ported to JS and then held identical by a gate, because two copies of one
     behaviour drift. Here there is one copy and the seam is a parameter.
+
+    `thinking` reaches the provider untouched, or is omitted when None. It is threaded rather than
+    read from cfg so that a stub `complete` -- which takes no such argument -- is never handed one:
+    the harness leaves it None on every free path, and a run that sent nothing records nothing.
     """
     secs = segment.sections(doc_text)
     msgs, parts, used = P.build(doc_text, secs, fields, selector)
@@ -67,7 +71,10 @@ def extract(cfg, doc_text, fields, complete=None):
     # a truncated JSON object fails to parse, parse() returns {}, and nine empty fields read as
     # nine model misses. The header fields gave it away -- nct_id missed on exactly the same 20
     # documents it missed brief_title, on a value printed at the top of the page.
-    res = call(cfg, msgs[0]["content"], msgs[1]["content"], max_tokens=MAX_TOKENS)
+    kw = {"max_tokens": MAX_TOKENS}
+    if thinking is not None:
+        kw["thinking"] = thinking
+    res = call(cfg, msgs[0]["content"], msgs[1]["content"], **kw)
     raw = res.get("text", "")
     values = P.parse(raw, fields)
     # ⚑ THE THIRD STATE, AGAIN, AND IT COST A PAID RUN TO LEARN. "The model returned nothing for
@@ -111,6 +118,18 @@ def extract(cfg, doc_text, fields, complete=None):
         "prompt_parts": parts,
         "input_tokens": res.get("input_tokens"),
         "output_tokens": res.get("output_tokens"),
+        # ⚠︎ THESE TWO WERE DROPPED HERE, AND ONE OF THEM SILENTLY DISABLED A FIX MADE THE SAME DAY.
+        # The adapter began returning `finish_reason` on 2026-08-05 so a failure could say why it
+        # stopped IN THE PROVIDER'S OWN WORD instead of leaving a reader to compare output_tokens
+        # against the cap by eye — and evals/run.py duly reads `r.get("finish_reason")`. But this
+        # dict is what `r` IS, and it never carried the key, so that read was always None and the
+        # only thing still classifying a ceiling stop was the token-count fallback beside it. The
+        # fix compiled, shipped and did nothing; no run has been fired since, so it would have
+        # written `finish_reason: null` on every failure of the next one.
+        #
+        # A seam that drops a field is indistinguishable from a provider that never sent it.
+        "finish_reason": res.get("finish_reason"),
+        "token_details": res.get("token_details"),
         "raw_text": raw,
         "parsed": parsed_ok,
     }

@@ -18,6 +18,7 @@ import time
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src import budget as BUDGET               # noqa: E402
+from src import adapters                        # noqa: E402
 from src import config, extract as EX          # noqa: E402
 from src.extract import MAX_TOKENS             # noqa: E402
 from evals import judge as J                   # noqa: E402
@@ -54,6 +55,22 @@ def main():
     ap.add_argument("--baseline", action="store_true",
                     help="run the rules-and-regex extractor instead of a model: no key, no spend, "
                          "scored by the same judge so the two are comparable")
+    # ⚑ THE KNOB THE SIBLING KIT'S EVIDENCE POINTS AT. docs-summarise measured its own ceiling
+    # failures spending a MEDIAN OF 100% of the output budget on a reasoning pass nobody asked for
+    # -- `thinking` defaults to ENABLED on this model family -- and disabling it took that kit from
+    # 29 of 42 to 42 of 42 with a maximum output of 1,419 tokens against a cap of 8,000.
+    #
+    # This kit has the same shape of failure and no diagnosis: run 2's four failures each returned
+    # exactly 3000 output tokens against a cap of 3000, and nothing here has ever recorded
+    # `token_details`, so the cause is a hypothesis rather than a measurement.
+    #
+    # ⚠︎ WIRED, NOT CONCLUDED. This flag makes the experiment possible; it does not report its
+    # result, and no claim about this kit's ceiling may be made until a run has been fired.
+    ap.add_argument("--no-thinking", action="store_true",
+                    help="send thinking={'type':'disabled'}. Provider-documented for "
+                         "deepseek-v4-flash, where it is ON by default. Recorded in the run as a "
+                         "comparability guard: reasoning-off is a DIFFERENT SYSTEM, not a tuned "
+                         "one, and its runs may not be differenced against reasoning-on runs.")
     ap.add_argument("--yes", action="store_true", help="skip the confirmation")
     a = ap.parse_args()
 
@@ -78,6 +95,16 @@ def main():
         BUDGET.check(len(docs))
 
     complete = stub_complete if a.stub else None
+    # ⚠︎ ONLY THE PAID PATH CAN SEND IT, AND SAYING SO IS THE POINT. `stub_complete` takes no
+    # `thinking` argument and the rules baseline calls no provider at all, so a run down either
+    # path sends nothing and must RECORD nothing -- a result file claiming a setting it never put
+    # on the wire is the exact failure `thinking` was withheld from the adapter for two runs to
+    # avoid. Ignored loudly rather than silently, so a wiring check cannot be mistaken for a test.
+    thinking = adapters.THINKING_OFF if (a.no_thinking and not a.stub and not a.baseline) else None
+    if a.no_thinking and (a.stub or a.baseline):
+        print("  note: --no-thinking ignored — %s calls no provider, so there is no reasoning "
+              "pass to disable and the run records none."
+              % ("--stub" if a.stub else "--baseline"))
     records, lat, tin, tout, failures = {}, [], 0, 0, []
     first = None
     t_all = time.time()
@@ -89,7 +116,8 @@ def main():
                 r = {"fields": B.extract(EX.load_doc(nct), fields), "sections_used": [],
                      "prompt_parts": [], "input_tokens": 0, "output_tokens": 0, "raw_text": ""}
             else:
-                r = EX.extract(cfg, EX.load_doc(nct), fields, complete=complete)
+                r = EX.extract(cfg, EX.load_doc(nct), fields, complete=complete,
+                               thinking=thinking)
         except Exception as exc:
             # A failed document is RECORDED, not retried into a bill and not dropped. A run that
             # silently skips its failures reports a rate for the documents that happened to work.
@@ -119,6 +147,13 @@ def main():
                                          r.get("output_tokens") or 0, MAX_TOKENS),
                              "output_tokens": r.get("output_tokens"),
                              "max_tokens": MAX_TOKENS,
+                             # ⚑ WHERE THE BUDGET WENT, NOT JUST HOW MUCH OF IT. This is the field
+                             # that settled the identical question in docs-summarise: every failure
+                             # returned at exactly the cap there too, and `token_details` showed a
+                             # median of 100% of it going to reasoning. Four runs of this kit have
+                             # recorded the number and never the destination, which is why "why
+                             # does a nine-field record run to 3000 tokens?" is still open.
+                             "token_details": r.get("token_details"),
                              "finish_reason": why,
                              "at_ceiling": cut,
                              "raw_text": (r.get("raw_text") or "")[:4000]})
@@ -166,6 +201,11 @@ def main():
         # parts and sections beside it, so the three describe one call rather than three.
         "raw_text": (first["raw_text"] if first else ""),
         "max_tokens": MAX_TOKENS,
+        # ⚑ WHAT WAS SENT, NOT WHAT WAS ASKED FOR. `thinking` is the object that actually went on
+        # the wire, so --no-thinking down a free path records null rather than a setting it never
+        # sent. build/measured/runlog.py reads it into a comparability guard: a reasoning-off run
+        # measures a DIFFERENT SYSTEM and the board refuses to difference it against these.
+        "thinking": thinking,
     }
     path = os.path.join(RESULTS, "eval-%s.json" % a.run_id)
     with open(path, "w", encoding="utf-8") as f:
