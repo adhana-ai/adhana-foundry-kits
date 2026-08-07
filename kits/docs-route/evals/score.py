@@ -87,6 +87,16 @@ def score(records, gold=None):
     withheld = sum(m[q][None] for q in TX.labels())
     answered = n - withheld
     counts = {q: sum(m[q].values()) for q in TX.labels()}
+    # ⚑ WITHHELD, DISENTANGLED. `withheld` sums every doc_id the router did not put a queue on —
+    # but "did not answer" has two unrelated causes: the CONFIDENCE FLOOR chose to escalate an
+    # answer it had (`escalated=True`), or the model never produced a usable answer to escalate
+    # in the first place (unparsed, abstained, or named a queue that does not exist). A single
+    # withheld_rate reads as "the guardrail did this" even on a run where the guardrail never
+    # fired once — r001/r002's 5.0%/10.0% were entirely the second kind, at a ceiling that has
+    # since been fixed. `escalated` and `no_reply` always sum to `withheld`; neither is inferred,
+    # both are counted from the same per-document `state`/`escalated` fields the guardrail wrote.
+    escalated = states.get("escalated", 0)
+    no_reply = withheld - escalated
     return {
         "documents": n,
         "gold_per_class": counts,
@@ -95,6 +105,10 @@ def score(records, gold=None):
         "outcomes": states,
         "withheld": withheld,
         "withheld_rate": round(withheld / n, 4) if n else None,
+        "escalated": escalated,
+        "escalated_rate": round(escalated / n, 4) if n else None,
+        "no_reply": no_reply,
+        "no_reply_rate": round(no_reply / n, 4) if n else None,
         # Two accuracies, and the kit prints BOTH every time. `accuracy` is over everything the
         # router was given; `accuracy_when_answered` is over what it chose to answer. Reporting
         # only the second is how a router that escalates half its traffic advertises 96%.
