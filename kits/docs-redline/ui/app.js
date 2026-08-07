@@ -118,7 +118,10 @@ async function boot() {
       body: JSON.stringify({ id: sel.value }),
     })).json();
     decision($("model"), r);
-    drawSpan(r.span);
+    // The no_key and error replies carry no `span` at all (src/app.py's do_POST returns early,
+    // before RL.decide() ever runs) — redrawing with `undefined` cleared the real span /api/pair
+    // had already shown and replaced it with "No difference found", which was never true.
+    if (r.span !== undefined) drawSpan(r.span);
     $("k-state").textContent = r.outcome || (r.no_key ? "no key" : "done");
   });
   if (s.pairs.length) { sel.value = s.pairs[0]; loadPair(sel.value); }
