@@ -1,0 +1,54 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>docs-redline — compare two versions of a document, flag what materially changed</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Compare two versions, flag what materially changed</h1>
+    <p class="sub">A rule and its own later correction, paired by the publisher's Regulation ID
+      Number. The two texts are aligned first, by <b>pure code</b> — the model never sees the
+      whole diff problem, only the one span that changed, and its only job is <b>material or
+      editorial</b>. There is no publisher label to score this against, so the number this kit
+      publishes is <b>agreement between two independent models</b> on the same span, not
+      accuracy — see the Evals tab.</p>
+  </header>
+
+  <div class="bar">
+    <select id="pair" aria-label="Document pair"></select>
+    <button id="go" type="button">Classify the change</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="panel free">
+    <div class="ph"><span>The free baseline</span>
+      <span class="k">regex over the changed span</span>
+      <span class="k">no key, no cost</span></div>
+    <div id="base" class="decision">Pick a pair.</div>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>The model verdict</span>
+      <span class="k" id="k-model">—</span>
+      <span class="k" id="k-floor">floor —</span>
+      <span class="k kw" id="k-state">nothing has run</span></div>
+    <div id="model" class="decision">Nothing has run.</div>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>The changed span</span><span class="k">found by pure code, before the model runs</span></div>
+    <div id="span" class="decision">Pick a pair.</div>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>The levels</span><span class="k">and what calling it one costs to get wrong</span></div>
+    <div id="levels"></div>
+  </div>
+
+  <details class="doc">
+    <summary>The two document versions this decision was made from</summary>
+    <pre id="text"></pre>
+  </details>
+</div>
+<script src="/app.js"></script>
