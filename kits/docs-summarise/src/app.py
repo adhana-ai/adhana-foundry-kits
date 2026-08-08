@@ -24,7 +24,7 @@ from urllib.parse import urlparse, parse_qs
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src import config, summarise as SM          # noqa: E402
+from src import adapters, config, summarise as SM          # noqa: E402
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UI = os.path.join(HERE, "ui")
@@ -88,7 +88,19 @@ class H(BaseHTTPRequestHandler):
                                     "note": "No API_KEY is configured, so nothing was called. "
                                             "Copy .env.example to .env and set one."})
         try:
-            r = SM.summarise(cfg, SM.load_doc(did), SM.sections_spec())
+            # ⚠︎ THINKING IS EXPLICITLY DISABLED HERE, NOT LEFT AT THE PROVIDER DEFAULT — and the
+            # reason is that THIS KIT'S PUBLISHED NUMBERS COME FROM A THINKING-OFF RUN. The spec
+            # cites `r005-nothink` and states `settings.thinking = "disabled"`; this line never
+            # passed the argument, so every live click through this page ran with the provider
+            # default instead and could not reproduce the page it sits behind.
+            #
+            # Found 2026-08-08 by checking all five already-published kits after docs-redact hit
+            # the same defect. It is real HERE and nowhere else: docs-qa, docs-extract, docs-route
+            # and docs-redline all publish from runs that also used the provider default, so their
+            # apps and their pages already agree. The rule is not "always disable thinking" — it
+            # is "the live UI runs what the published run ran".
+            r = SM.summarise(cfg, SM.load_doc(did), SM.sections_spec(),
+                             thinking=adapters.THINKING_OFF)
         except Exception as exc:
             # ⚠︎ THE PROVIDER'S MESSAGE IS RETURNED, THE CONFIGURATION IS NOT. A base URL or a key
             # can hold anything, so no secret's VALUE reaches the page, not even inside an error.
