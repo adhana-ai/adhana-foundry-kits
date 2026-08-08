@@ -1,0 +1,48 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>docs-verify — check each claim against its cited source</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Check each claim against its cited source</h1>
+    <p class="sub">One document, one model call, a verdict per claim — with the sentence it relied
+      on. Three verdicts, not two: <b>supported</b>, <b>contradicted</b>, and <b>not stated</b>.
+      The third is the point. A claim the source is simply silent about is where a hallucination
+      lives, and calling it "contradicted" hides exactly the thing you were checking for.</p>
+  </header>
+
+  <div class="bar">
+    <select id="doc" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Check claims</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Cited source</span><span class="hint">the document the claims name</span></div>
+      <textarea id="src" class="src" spellcheck="false"></textarea>
+    </div>
+
+    <div class="panel">
+      <div class="ph">
+        <span>Claims</span>
+        <span class="seg" id="viewseg">
+          <button type="button" class="on" data-view="all">All</button>
+          <button type="button" data-view="supported">Supported</button>
+          <button type="button" data-view="contradicted">Contradicted</button>
+          <button type="button" data-view="not_stated">Not stated</button>
+        </span>
+      </div>
+      <div id="claims" class="out"></div>
+      <div class="stats">
+        <div class="stat"><b id="s-total">—</b><span>claims checked</span></div>
+        <div class="stat"><b id="s-sup">—</b><span>supported</span></div>
+        <div class="stat"><b id="s-con">—</b><span>contradicted</span></div>
+        <div class="stat"><b id="s-not">—</b><span>not stated</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>

@@ -1,0 +1,1571 @@
+{
+ "run_id": "r002-docs-verify-flash",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 20,
+ "claims": 174,
+ "failures": 0,
+ "latency_p50_ms": 2540,
+ "latency_p95_ms": 3988,
+ "wall_seconds": 53.1,
+ "input_tokens_total": 14672,
+ "output_tokens_total": 5807,
+ "scores": {
+  "claims": 174,
+  "answered": 174,
+  "unanswered": 0,
+  "answered_pct": 100.0,
+  "accuracy_answered_pct": 98.28,
+  "accuracy_all_pct": 98.28,
+  "false_support": 1,
+  "false_support_rate_pct": 1.16,
+  "quotes_offered": 132,
+  "quotes_found_in_doc": 132,
+  "quote_fidelity_pct": 100.0
+ },
+ "per_class": {
+  "supported": {
+   "gold": 88,
+   "predicted": 89,
+   "correct": 88,
+   "recall_pct": 100.0,
+   "precision_pct": 98.88
+  },
+  "contradicted": {
+   "gold": 46,
+   "predicted": 43,
+   "correct": 43,
+   "recall_pct": 93.48,
+   "precision_pct": 100.0
+  },
+  "not_stated": {
+   "gold": 40,
+   "predicted": 42,
+   "correct": 40,
+   "recall_pct": 100.0,
+   "precision_pct": 95.24
+  }
+ },
+ "matrix": {
+  "supported": {
+   "supported": 88,
+   "contradicted": 0,
+   "not_stated": 0
+  },
+  "contradicted": {
+   "supported": 1,
+   "contradicted": 43,
+   "not_stated": 2
+  },
+  "not_stated": {
+   "supported": 0,
+   "contradicted": 0,
+   "not_stated": 40
+  }
+ },
+ "unanswered_by_class": {
+  "supported": 0,
+  "contradicted": 0,
+  "not_stated": 0
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 1118
+  },
+  {
+   "name": "claims",
+   "chars": 514
+  },
+  {
+   "name": "document",
+   "chars": 1436
+  }
+ ],
+ "raw_text": "```json\n{\n  \"verdicts\": [\n    {\n      \"n\": 1,\n      \"verdict\": \"contradicted\",\n      \"quote\": \"Phase: Phase 3\"\n    },\n    {\n      \"n\": 2,\n      \"verdict\": \"supported\",\n      \"quote\": \"Enrollment: 178 [Actual]\"\n    },\n    {\n      \"n\": 3,\n      \"verdict\": \"supported\",\n      \"quote\": \"Allocation: NON_RANDOMIZED\"\n    },\n    {\n      \"n\": 4,\n      \"verdict\": \"contradicted\",\n      \"quote\": \"Masking: NONE\"\n    },\n    {\n      \"n\": 5,\n      \"verdict\": \"supported\",\n      \"quote\": \"Ages eligible for study: 7 Years to 17 Years\"\n    },\n    {\n      \"n\": 6,\n      \"verdict\": \"supported\",\n      \"quote\": \"Sexes eligible for study: ALL\"\n    },\n    {\n      \"n\": 7,\n      \"verdict\": \"contradicted\",\n      \"quote\": \"Anti-hepatitis A Virus (Anti-HAV) Antibody Concentration [Time Frame: Years 6, 7, 8, 9, and 10.]\"\n    },\n    {\n      \"n\": 8,\n      \"verdict\": \"supported\",\n      \"quote\": \"Lead sponsor: GlaxoSmithKline\"\n    },\n    {\n      \"n\": 9,\n      \"verdict\": \"not_stated\",\n      \"quote\": \"\"\n    },\n    {\n      \"n\": 10,\n      \"verdict\": \"not_stated\",\n      \"quote\": \"\"\n    }\n  ]\n}\n```",
+ "max_tokens": 2000,
+ "thinking": {
+  "type": "disabled"
+ },
+ "records": [
+  {
+   "doc": "NCT00289744",
+   "claims": [
+    {
+     "id": "NCT00289744-c01",
+     "claim": "This study is a Phase 1 trial.",
+     "verdict": "contradicted",
+     "quote": "Phase: Phase 3",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00289744-c02",
+     "claim": "Enrolment was 178 participants.",
+     "verdict": "supported",
+     "quote": "Enrollment: 178 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00289744-c03",
+     "claim": "Participants were assigned to groups by a non-randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: NON_RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00289744-c04",
+     "claim": "The trial was run double blind.",
+     "verdict": "contradicted",
+     "quote": "Masking: NONE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00289744-c05",
+     "claim": "Participants aged 7 Years to 17 Years were eligible.",
+     "verdict": "supported",
+     "quote": "Ages eligible for study: 7 Years to 17 Years",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00289744-c06",
+     "claim": "The study was open to all sexes.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00289744-c07",
+     "claim": "The primary outcome was measured over a single visit at week 2.",
+     "verdict": "contradicted",
+     "quote": "Anti-hepatitis A Virus (Anti-HAV) Antibody Concentration [Time Frame: Years 6, 7, 8, 9, and 10.]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00289744-c08",
+     "claim": "The trial's lead sponsor was GlaxoSmithKline.",
+     "verdict": "supported",
+     "quote": "Lead sponsor: GlaxoSmithKline",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00289744-c09",
+     "claim": "The results of this trial have been published in a peer-reviewed journal.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT00289744-c10",
+     "claim": "Participants were compensated for their travel costs.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 10,
+   "asked": 10,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 822,
+   "output_tokens": 363,
+   "reasoning_tokens": null,
+   "latency_ms": 3280
+  },
+  {
+   "doc": "NCT00294580",
+   "claims": [
+    {
+     "id": "NCT00294580-c01",
+     "claim": "This study is a Phase 4 trial.",
+     "verdict": "supported",
+     "quote": "Phase: Phase 4",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00294580-c02",
+     "claim": "Enrolment was 2253 participants.",
+     "verdict": "supported",
+     "quote": "Enrollment: 2253",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00294580-c03",
+     "claim": "Participants were assigned to groups by a non-randomised design.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT00294580-c04",
+     "claim": "The trial was run double blind.",
+     "verdict": "supported",
+     "quote": "Masking: DOUBLE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00294580-c05",
+     "claim": "Participants aged 3 Months to 59 Months were eligible.",
+     "verdict": "supported",
+     "quote": "Ages eligible for study: 3 Months to 59 Months",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00294580-c06",
+     "claim": "The study was open to female participants only.",
+     "verdict": "contradicted",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00294580-c07",
+     "claim": "The trial's lead sponsor was Imperial College London.",
+     "verdict": "supported",
+     "quote": "Lead sponsor: Imperial College London",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00294580-c08",
+     "claim": "Participants were compensated for their travel costs.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT00294580-c09",
+     "claim": "The study protocol was amended after enrolment began.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 9,
+   "asked": 9,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 714,
+   "output_tokens": 286,
+   "reasoning_tokens": null,
+   "latency_ms": 2627
+  },
+  {
+   "doc": "NCT00831311",
+   "claims": [
+    {
+     "id": "NCT00831311-c01",
+     "claim": "This study is a Phase 2 trial.",
+     "verdict": "supported",
+     "quote": "Phase: Phase 2",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00831311-c02",
+     "claim": "Enrolment was 634 participants.",
+     "verdict": "contradicted",
+     "quote": "Enrollment: 624 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00831311-c03",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00831311-c04",
+     "claim": "The trial was run open label, with no masking.",
+     "verdict": "supported",
+     "quote": "Masking: NONE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00831311-c05",
+     "claim": "Participants aged 60 Days to 70 Days were eligible.",
+     "verdict": "contradicted",
+     "quote": "Ages eligible for study: 50 Days to 70 Days",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00831311-c06",
+     "claim": "The study was open to all sexes.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00831311-c07",
+     "claim": "The primary outcome was measured over 1 month post last vaccination.",
+     "verdict": "supported",
+     "quote": "[Time Frame: 1 month post last vaccination]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00831311-c08",
+     "claim": "The trial's lead sponsor was the World Health Organization.",
+     "verdict": "contradicted",
+     "quote": "Lead sponsor: Sanofi Pasteur, a Sanofi Company",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT00831311-c09",
+     "claim": "The study protocol was amended after enrolment began.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT00831311-c10",
+     "claim": "Site staff completed a training programme before the first participant was enrolled.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 10,
+   "asked": 10,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 970,
+   "output_tokens": 340,
+   "reasoning_tokens": null,
+   "latency_ms": 2393
+  },
+  {
+   "doc": "NCT01225926",
+   "claims": [
+    {
+     "id": "NCT01225926-c01",
+     "claim": "Enrolment was 34 participants.",
+     "verdict": "contradicted",
+     "quote": "Enrollment: 24 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01225926-c02",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01225926-c03",
+     "claim": "The trial was run single blind.",
+     "verdict": "supported",
+     "quote": "Masking: SINGLE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01225926-c04",
+     "claim": "The study was open to female participants only.",
+     "verdict": "contradicted",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01225926-c05",
+     "claim": "The primary outcome was measured over Month 3.",
+     "verdict": "supported",
+     "quote": "Monocular Uncorrected Distance Visual Acuity (Monocular UCDVA) at Month 3 [Time Frame: Month 3]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01225926-c06",
+     "claim": "The trial's lead sponsor was Alcon Research.",
+     "verdict": "supported",
+     "quote": "Lead sponsor: Alcon Research",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01225926-c07",
+     "claim": "Site staff completed a training programme before the first participant was enrolled.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT01225926-c08",
+     "claim": "No serious adverse events were reported during the trial.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 8,
+   "asked": 8,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 657,
+   "output_tokens": 282,
+   "reasoning_tokens": null,
+   "latency_ms": 2777
+  },
+  {
+   "doc": "NCT01359696",
+   "claims": [
+    {
+     "id": "NCT01359696-c01",
+     "claim": "This study is a Phase 1 trial.",
+     "verdict": "supported",
+     "quote": "Phase: Phase 1",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01359696-c02",
+     "claim": "Enrolment was 40 participants.",
+     "verdict": "supported",
+     "quote": "Enrollment: 40 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01359696-c03",
+     "claim": "The trial was run double blind.",
+     "verdict": "contradicted",
+     "quote": "This is an open-label, multicenter, Phase I, dose-escalation study",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01359696-c04",
+     "claim": "The study was open to all sexes.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01359696-c05",
+     "claim": "The primary outcome was measured over Up to 1 year.",
+     "verdict": "supported",
+     "quote": "Incidence of all adverse events graded according to NCI CTCAE, v4.0 [Time Frame: Up to 1 year]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01359696-c06",
+     "claim": "The trial's lead sponsor was the World Health Organization.",
+     "verdict": "contradicted",
+     "quote": "Lead sponsor: Genentech, Inc.",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01359696-c07",
+     "claim": "An independent data monitoring committee reviewed the interim results.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT01359696-c08",
+     "claim": "The results of this trial have been published in a peer-reviewed journal.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 8,
+   "asked": 8,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 722,
+   "output_tokens": 290,
+   "reasoning_tokens": null,
+   "latency_ms": 2527
+  },
+  {
+   "doc": "NCT01625364",
+   "claims": [
+    {
+     "id": "NCT01625364-c01",
+     "claim": "Enrolment was 432 participants.",
+     "verdict": "supported",
+     "quote": "Enrollment: 432 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01625364-c02",
+     "claim": "Participants were assigned to groups by a non-randomised design.",
+     "verdict": "contradicted",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01625364-c03",
+     "claim": "The trial was run single blind.",
+     "verdict": "supported",
+     "quote": "Masking: SINGLE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01625364-c04",
+     "claim": "The study was open to all sexes.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01625364-c05",
+     "claim": "The primary outcome was measured over a single visit at week 2.",
+     "verdict": "contradicted",
+     "quote": "Reasoning about Asthma Management [Time Frame: 24 months or 2 years post-intervention]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01625364-c06",
+     "claim": "The trial's lead sponsor was University of Texas at Austin.",
+     "verdict": "supported",
+     "quote": "Lead sponsor: University of Texas at Austin",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01625364-c07",
+     "claim": "An independent data monitoring committee reviewed the interim results.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT01625364-c08",
+     "claim": "The results of this trial have been published in a peer-reviewed journal.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 8,
+   "asked": 8,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 810,
+   "output_tokens": 272,
+   "reasoning_tokens": null,
+   "latency_ms": 3252
+  },
+  {
+   "doc": "NCT01786356",
+   "claims": [
+    {
+     "id": "NCT01786356-c01",
+     "claim": "Enrolment was 70 participants.",
+     "verdict": "contradicted",
+     "quote": "Enrollment: 60 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01786356-c02",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01786356-c03",
+     "claim": "The trial was run double blind.",
+     "verdict": "supported",
+     "quote": "Masking: DOUBLE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01786356-c04",
+     "claim": "The study was open to female participants only.",
+     "verdict": "contradicted",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01786356-c05",
+     "claim": "The primary outcome was measured over 4 years.",
+     "verdict": "supported",
+     "quote": "posterior capsular opacification (PCO) [Time Frame: 4 years]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01786356-c06",
+     "claim": "The trial's lead sponsor was Medical University of Vienna.",
+     "verdict": "supported",
+     "quote": "Lead sponsor: Medical University of Vienna",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01786356-c07",
+     "claim": "The results of this trial have been published in a peer-reviewed journal.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT01786356-c08",
+     "claim": "Participants were compensated for their travel costs.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 8,
+   "asked": 8,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 849,
+   "output_tokens": 169,
+   "reasoning_tokens": null,
+   "latency_ms": 1943
+  },
+  {
+   "doc": "NCT01806207",
+   "claims": [
+    {
+     "id": "NCT01806207-c01",
+     "claim": "This study is a Phase 4 trial.",
+     "verdict": "supported",
+     "quote": "Phase: Phase 4",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01806207-c02",
+     "claim": "Enrolment was 218 participants.",
+     "verdict": "supported",
+     "quote": "Enrollment: 218 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01806207-c03",
+     "claim": "Participants were assigned to groups by a non-randomised design.",
+     "verdict": "contradicted",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01806207-c04",
+     "claim": "The trial was run double blind.",
+     "verdict": "supported",
+     "quote": "Masking: DOUBLE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01806207-c05",
+     "claim": "The study was open to all sexes.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01806207-c06",
+     "claim": "The primary outcome was measured over a single visit at week 2.",
+     "verdict": "contradicted",
+     "quote": "Proportion of responders at 6 weeks. [Time Frame: At 6 weeks after treatment]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01806207-c07",
+     "claim": "The trial's lead sponsor was Galderma R&D.",
+     "verdict": "supported",
+     "quote": "Lead sponsor: Galderma R&D",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01806207-c08",
+     "claim": "Participants were compensated for their travel costs.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT01806207-c09",
+     "claim": "The study protocol was amended after enrolment began.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 9,
+   "asked": 9,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 666,
+   "output_tokens": 301,
+   "reasoning_tokens": null,
+   "latency_ms": 2333
+  },
+  {
+   "doc": "NCT01931670",
+   "claims": [
+    {
+     "id": "NCT01931670-c01",
+     "claim": "This study is a Phase 3 trial.",
+     "verdict": "supported",
+     "quote": "Phase: Phase 3",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01931670-c02",
+     "claim": "Enrolment was 825 participants.",
+     "verdict": "contradicted",
+     "quote": "Enrollment: 815 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01931670-c03",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01931670-c04",
+     "claim": "The trial was run quadruple blind.",
+     "verdict": "supported",
+     "quote": "Masking: QUADRUPLE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01931670-c05",
+     "claim": "Participants aged 28 Years to 49 Years were eligible.",
+     "verdict": "contradicted",
+     "quote": "Ages eligible for study: 18 Years to 49 Years",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01931670-c06",
+     "claim": "The study was open to female participants only.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: FEMALE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01931670-c07",
+     "claim": "The primary outcome was measured over At Month 3 of the Treatment Period.",
+     "verdict": "supported",
+     "quote": "Time Frame: At Month 3 of the Treatment Period",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01931670-c08",
+     "claim": "The trial's lead sponsor was the World Health Organization.",
+     "verdict": "contradicted",
+     "quote": "Lead sponsor: AbbVie",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT01931670-c09",
+     "claim": "The study protocol was amended after enrolment began.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT01931670-c10",
+     "claim": "Site staff completed a training programme before the first participant was enrolled.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 10,
+   "asked": 10,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 719,
+   "output_tokens": 334,
+   "reasoning_tokens": null,
+   "latency_ms": 2628
+  },
+  {
+   "doc": "NCT02394587",
+   "claims": [
+    {
+     "id": "NCT02394587-c01",
+     "claim": "Enrolment was 70 participants.",
+     "verdict": "contradicted",
+     "quote": "Enrollment: 60 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02394587-c02",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02394587-c03",
+     "claim": "The trial was run open label, with no masking.",
+     "verdict": "supported",
+     "quote": "Masking: NONE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02394587-c04",
+     "claim": "The study was open to female participants only.",
+     "verdict": "contradicted",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02394587-c05",
+     "claim": "The primary outcome was measured over 6 weeks.",
+     "verdict": "supported",
+     "quote": "Acceptability of MBSR as measured by semi-scripted telephone assessments [Time Frame: 6 weeks]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02394587-c06",
+     "claim": "The trial's lead sponsor was Duke University.",
+     "verdict": "supported",
+     "quote": "Lead sponsor: Duke University",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02394587-c07",
+     "claim": "Site staff completed a training programme before the first participant was enrolled.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT02394587-c08",
+     "claim": "No serious adverse events were reported during the trial.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 8,
+   "asked": 8,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 846,
+   "output_tokens": 272,
+   "reasoning_tokens": null,
+   "latency_ms": 3619
+  },
+  {
+   "doc": "NCT02425462",
+   "claims": [
+    {
+     "id": "NCT02425462-c01",
+     "claim": "Enrolment was 895 participants.",
+     "verdict": "supported",
+     "quote": "Enrollment: 895 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02425462-c02",
+     "claim": "The study was open to female participants only.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: FEMALE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02425462-c03",
+     "claim": "The primary outcome was measured over a single visit at week 2.",
+     "verdict": "contradicted",
+     "quote": "The mean change from baseline to 6 months of treatment in pain-related Quality of Life measured by EHP-30. [Time Frame: Baseline and at 6 months]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02425462-c04",
+     "claim": "The trial's lead sponsor was Bayer.",
+     "verdict": "supported",
+     "quote": "Lead sponsor: Bayer",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02425462-c05",
+     "claim": "No serious adverse events were reported during the trial.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT02425462-c06",
+     "claim": "An independent data monitoring committee reviewed the interim results.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 6,
+   "asked": 6,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 786,
+   "output_tokens": 224,
+   "reasoning_tokens": null,
+   "latency_ms": 3988
+  },
+  {
+   "doc": "NCT02602509",
+   "claims": [
+    {
+     "id": "NCT02602509-c01",
+     "claim": "This study is a Phase 1 trial.",
+     "verdict": "supported",
+     "quote": "Phase: Phase 1",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02602509-c02",
+     "claim": "Enrolment was 28 participants.",
+     "verdict": "contradicted",
+     "quote": "Enrollment: 18 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02602509-c03",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02602509-c04",
+     "claim": "The trial was run open label, with no masking.",
+     "verdict": "supported",
+     "quote": "Masking: NONE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02602509-c05",
+     "claim": "Participants aged 31 Years to 60 Years were eligible.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT02602509-c06",
+     "claim": "The study was open to all sexes.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02602509-c07",
+     "claim": "The primary outcome was measured over 8 hours.",
+     "verdict": "supported",
+     "quote": "Log change CFU.day (cumulative over 8 hours) calculated from Mycobacteria Growth Indicator Tube (MGIT) Time to Positivity [Time Frame: 8 hours]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02602509-c08",
+     "claim": "The trial's lead sponsor was the World Health Organization.",
+     "verdict": "contradicted",
+     "quote": "Lead sponsor: National University Hospital, Singapore",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02602509-c09",
+     "claim": "An independent data monitoring committee reviewed the interim results.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT02602509-c10",
+     "claim": "The results of this trial have been published in a peer-reviewed journal.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 10,
+   "asked": 10,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 702,
+   "output_tokens": 344,
+   "reasoning_tokens": null,
+   "latency_ms": 2670
+  },
+  {
+   "doc": "NCT02719665",
+   "claims": [
+    {
+     "id": "NCT02719665-c01",
+     "claim": "Enrolment was 40 participants.",
+     "verdict": "contradicted",
+     "quote": "Enrollment: 30 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02719665-c02",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02719665-c03",
+     "claim": "The trial was run double blind.",
+     "verdict": "supported",
+     "quote": "Masking: DOUBLE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02719665-c04",
+     "claim": "The study was open to female participants only.",
+     "verdict": "contradicted",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02719665-c05",
+     "claim": "The primary outcome was measured over Baseline, Day 33.",
+     "verdict": "supported",
+     "quote": "Optimal Phase 1b Dose [Time Frame: Baseline, Day 33]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02719665-c06",
+     "claim": "The trial's lead sponsor was University of California, San Francisco.",
+     "verdict": "supported",
+     "quote": "Lead sponsor: University of California, San Francisco",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02719665-c07",
+     "claim": "The results of this trial have been published in a peer-reviewed journal.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT02719665-c08",
+     "claim": "Participants were compensated for their travel costs.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 8,
+   "asked": 8,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 698,
+   "output_tokens": 269,
+   "reasoning_tokens": null,
+   "latency_ms": 1786
+  },
+  {
+   "doc": "NCT02803307",
+   "claims": [
+    {
+     "id": "NCT02803307-c01",
+     "claim": "This study is a Phase 1/Phase 2 trial.",
+     "verdict": "supported",
+     "quote": "Phase: Phase 1/Phase 2",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02803307-c02",
+     "claim": "Enrolment was 40 participants.",
+     "verdict": "supported",
+     "quote": "Enrollment: 40 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02803307-c03",
+     "claim": "Participants were assigned to groups by a non-randomised design.",
+     "verdict": "contradicted",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02803307-c04",
+     "claim": "The trial was run open label, with no masking.",
+     "verdict": "supported",
+     "quote": "Masking: NONE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02803307-c05",
+     "claim": "The study was open to all sexes.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02803307-c06",
+     "claim": "The primary outcome was measured over a single visit at week 2.",
+     "verdict": "contradicted",
+     "quote": "Primary Outcome Measures - Number of Participants With Treatment-Emergent Adverse Events (TEAEs) [Time Frame: up to 12 weeks after dosing]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02803307-c07",
+     "claim": "The trial's lead sponsor was Taiwan Liposome Company.",
+     "verdict": "supported",
+     "quote": "Lead sponsor: Taiwan Liposome Company",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT02803307-c08",
+     "claim": "Participants were compensated for their travel costs.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT02803307-c09",
+     "claim": "The study protocol was amended after enrolment began.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 9,
+   "asked": 9,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 655,
+   "output_tokens": 316,
+   "reasoning_tokens": null,
+   "latency_ms": 2540
+  },
+  {
+   "doc": "NCT03101436",
+   "claims": [
+    {
+     "id": "NCT03101436-c01",
+     "claim": "Enrolment was 20 participants.",
+     "verdict": "supported",
+     "quote": "Enrollment: 20 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03101436-c02",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "contradicted",
+     "quote": "Allocation: NON_RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03101436-c03",
+     "claim": "The trial was run open label, with no masking.",
+     "verdict": "supported",
+     "quote": "Masking: NONE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03101436-c04",
+     "claim": "Participants aged 30 Years to 65 Years were eligible.",
+     "verdict": "supported",
+     "quote": "Ages eligible for study: 30 Years to 65 Years",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03101436-c05",
+     "claim": "The study was open to female participants only.",
+     "verdict": "contradicted",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03101436-c06",
+     "claim": "The primary outcome was measured over 1 month.",
+     "verdict": "supported",
+     "quote": "Microbiota Changes [Time Frame: 1 month]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03101436-c07",
+     "claim": "The trial's lead sponsor was Fundación Pública Andaluza para la Investigación de Málaga en Biomedicina y Salud.",
+     "verdict": "supported",
+     "quote": "Lead sponsor: Fundación Pública Andaluza para la Investigación de Málaga en Biomedicina y Salud",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03101436-c08",
+     "claim": "The study protocol was amended after enrolment began.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT03101436-c09",
+     "claim": "Site staff completed a training programme before the first participant was enrolled.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 9,
+   "asked": 9,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 679,
+   "output_tokens": 267,
+   "reasoning_tokens": null,
+   "latency_ms": 2331
+  },
+  {
+   "doc": "NCT03103984",
+   "claims": [
+    {
+     "id": "NCT03103984-c01",
+     "claim": "Enrolment was 50 participants.",
+     "verdict": "contradicted",
+     "quote": "Enrollment: 40 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03103984-c02",
+     "claim": "Participants were assigned to groups by a non-randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: NON_RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03103984-c03",
+     "claim": "The trial was run open label, with no masking.",
+     "verdict": "supported",
+     "quote": "Masking: NONE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03103984-c04",
+     "claim": "Participants aged 28 Years to 60 Years were eligible.",
+     "verdict": "contradicted",
+     "quote": "Ages eligible for study: 18 Years to 60 Years",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03103984-c05",
+     "claim": "The study was open to all sexes.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03103984-c06",
+     "claim": "The primary outcome was measured over Baseline and 30, 60, 90 and 180 days.",
+     "verdict": "supported",
+     "quote": "[Time Frame: Baseline and 30, 60, 90 and 180 days]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03103984-c07",
+     "claim": "The trial's lead sponsor was the World Health Organization.",
+     "verdict": "contradicted",
+     "quote": "Lead sponsor: Federal University of Minas Gerais",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03103984-c08",
+     "claim": "Site staff completed a training programme before the first participant was enrolled.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT03103984-c09",
+     "claim": "No serious adverse events were reported during the trial.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 9,
+   "asked": 9,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 686,
+   "output_tokens": 312,
+   "reasoning_tokens": null,
+   "latency_ms": 2504
+  },
+  {
+   "doc": "NCT03502304",
+   "claims": [
+    {
+     "id": "NCT03502304-c01",
+     "claim": "Enrolment was 28 participants.",
+     "verdict": "supported",
+     "quote": "Enrollment: 28 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03502304-c02",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03502304-c03",
+     "claim": "The trial was run double blind.",
+     "verdict": "contradicted",
+     "quote": "Masking: SINGLE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03502304-c04",
+     "claim": "Participants aged 30 Years to 59 Years were eligible.",
+     "verdict": "supported",
+     "quote": "Ages eligible for study: 30 Years to 59 Years",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03502304-c05",
+     "claim": "The study was open to female participants only.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: FEMALE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03502304-c06",
+     "claim": "The trial's lead sponsor was the World Health Organization.",
+     "verdict": "contradicted",
+     "quote": "Lead sponsor: Universidad Santo Tomas",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03502304-c07",
+     "claim": "No serious adverse events were reported during the trial.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT03502304-c08",
+     "claim": "An independent data monitoring committee reviewed the interim results.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 8,
+   "asked": 8,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 693,
+   "output_tokens": 268,
+   "reasoning_tokens": null,
+   "latency_ms": 2503
+  },
+  {
+   "doc": "NCT03702738",
+   "claims": [
+    {
+     "id": "NCT03702738-c01",
+     "claim": "This study is a Phase 2 trial.",
+     "verdict": "supported",
+     "quote": "Phase: Phase 2",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03702738-c02",
+     "claim": "Enrolment was 120 participants.",
+     "verdict": "contradicted",
+     "quote": "Enrollment: 110 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03702738-c03",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03702738-c04",
+     "claim": "The trial was run open label, with no masking.",
+     "verdict": "supported",
+     "quote": "Masking: NONE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03702738-c05",
+     "claim": "Participants aged 28 Years to 65 Years were eligible.",
+     "verdict": "contradicted",
+     "quote": "Ages eligible for study: 18 Years to 65 Years",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03702738-c06",
+     "claim": "The study was open to all sexes.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03702738-c07",
+     "claim": "The primary outcome was measured over 6 months.",
+     "verdict": "supported",
+     "quote": "Median time to stable sputum culture conversion using liquid medium [Time Frame: 6 months]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03702738-c08",
+     "claim": "The trial's lead sponsor was the World Health Organization.",
+     "verdict": "contradicted",
+     "quote": "Lead sponsor: The Aurum Institute NPC",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03702738-c09",
+     "claim": "An independent data monitoring committee reviewed the interim results.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT03702738-c10",
+     "claim": "The results of this trial have been published in a peer-reviewed journal.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 10,
+   "asked": 10,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 663,
+   "output_tokens": 341,
+   "reasoning_tokens": null,
+   "latency_ms": 2736
+  },
+  {
+   "doc": "NCT03947138",
+   "claims": [
+    {
+     "id": "NCT03947138-c01",
+     "claim": "This study is a Phase 1 trial.",
+     "verdict": "contradicted",
+     "quote": "Phase: Phase 3",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03947138-c02",
+     "claim": "Enrolment was 750 participants.",
+     "verdict": "supported",
+     "quote": "Enrollment: 750 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03947138-c03",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03947138-c04",
+     "claim": "The trial was run double blind.",
+     "verdict": "supported",
+     "quote": "Masking: TRIPLE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03947138-c05",
+     "claim": "The study was open to all sexes.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: ALL",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03947138-c06",
+     "claim": "The primary outcome was measured over 84 days after administration of the investigational product.",
+     "verdict": "supported",
+     "quote": "Time Frame: 84 days after administration of the investigational product",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03947138-c07",
+     "claim": "The trial's lead sponsor was the World Health Organization.",
+     "verdict": "contradicted",
+     "quote": "Lead sponsor: Green Cross Corporation",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03947138-c08",
+     "claim": "The results of this trial have been published in a peer-reviewed journal.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT03947138-c09",
+     "claim": "Participants were compensated for their travel costs.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 9,
+   "asked": 9,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 643,
+   "output_tokens": 294,
+   "reasoning_tokens": null,
+   "latency_ms": 2496
+  },
+  {
+   "doc": "NCT03979183",
+   "claims": [
+    {
+     "id": "NCT03979183-c01",
+     "claim": "Enrolment was 26 participants.",
+     "verdict": "supported",
+     "quote": "Enrollment: 26 [Actual]",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03979183-c02",
+     "claim": "Participants were assigned to groups by a randomised design.",
+     "verdict": "supported",
+     "quote": "Allocation: RANDOMIZED",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03979183-c03",
+     "claim": "The trial was run open label, with no masking.",
+     "verdict": "contradicted",
+     "quote": "Masking: DOUBLE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03979183-c04",
+     "claim": "Participants aged 18 Years to 50 Years were eligible.",
+     "verdict": "supported",
+     "quote": "Ages eligible for study: 18 Years to 50 Years",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03979183-c05",
+     "claim": "The study was open to female participants only.",
+     "verdict": "supported",
+     "quote": "Sexes eligible for study: FEMALE",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03979183-c06",
+     "claim": "The trial's lead sponsor was the World Health Organization.",
+     "verdict": "contradicted",
+     "quote": "Lead sponsor: Universidad de Granada",
+     "quote_in_doc": true
+    },
+    {
+     "id": "NCT03979183-c07",
+     "claim": "Participants were compensated for their travel costs.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    },
+    {
+     "id": "NCT03979183-c08",
+     "claim": "The study protocol was amended after enrolment began.",
+     "verdict": "not_stated",
+     "quote": "",
+     "quote_in_doc": null
+    }
+   ],
+   "answered": 8,
+   "asked": 8,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 692,
+   "output_tokens": 263,
+   "reasoning_tokens": null,
+   "latency_ms": 2192
+  }
+ ]
+}
