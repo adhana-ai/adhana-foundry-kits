@@ -1,0 +1,143 @@
+{
+ "run_id": "r001-docs-redact",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 14,
+ "failures": [
+  {
+   "doc": "customer-support-email-01",
+   "error": "reply did not parse as JSON — CUT OFF AT THE CEILING, 800 output tokens (cap 800)",
+   "output_tokens": 800,
+   "max_tokens": 800,
+   "token_details": {
+    "reasoning_tokens": 800
+   },
+   "finish_reason": "length",
+   "at_ceiling": true,
+   "raw_text": ""
+  },
+  {
+   "doc": "insurance-claim-correspondence-01",
+   "error": "reply did not parse as JSON — CUT OFF AT THE CEILING, 800 output tokens (cap 800)",
+   "output_tokens": 800,
+   "max_tokens": 800,
+   "token_details": {
+    "reasoning_tokens": 800
+   },
+   "finish_reason": "length",
+   "at_ceiling": true,
+   "raw_text": ""
+  },
+  {
+   "doc": "mortgage-application-01",
+   "error": "reply did not parse as JSON — CUT OFF AT THE CEILING, 800 output tokens (cap 800)",
+   "output_tokens": 800,
+   "max_tokens": 800,
+   "token_details": {
+    "reasoning_tokens": 800
+   },
+   "finish_reason": "length",
+   "at_ceiling": true,
+   "raw_text": ""
+  },
+  {
+   "doc": "subscription-cancellation-email-01",
+   "error": "reply did not parse as JSON — CUT OFF AT THE CEILING, 800 output tokens (cap 800)",
+   "output_tokens": 800,
+   "max_tokens": 800,
+   "token_details": {
+    "reasoning_tokens": 800
+   },
+   "finish_reason": "length",
+   "at_ceiling": true,
+   "raw_text": ""
+  }
+ ],
+ "latency_p50_ms": 5200,
+ "latency_p95_ms": 7822,
+ "wall_seconds": 104.3,
+ "input_tokens_total": 9998,
+ "output_tokens_total": 7168,
+ "scores": {
+  "labelled_spans": 88,
+  "detected_spans": 61,
+  "true_positives": 61,
+  "leaked": 27,
+  "leak_rate": 0.3068,
+  "over_redacted": 0,
+  "over_redaction_rate": 0.0,
+  "precision": 1.0,
+  "recall": 0.6932,
+  "f1": 0.8188
+ },
+ "by_category": {
+  "DOB": {
+   "true_positives": 8,
+   "leaked": 3,
+   "over_redacted": 0,
+   "labelled": 11,
+   "detected": 8
+  },
+  "EMAIL": {
+   "true_positives": 9,
+   "leaked": 5,
+   "over_redacted": 0,
+   "labelled": 14,
+   "detected": 9
+  },
+  "NAME": {
+   "true_positives": 14,
+   "leaked": 5,
+   "over_redacted": 0,
+   "labelled": 19,
+   "detected": 14
+  },
+  "ADDRESS": {
+   "true_positives": 11,
+   "leaked": 4,
+   "over_redacted": 0,
+   "labelled": 15,
+   "detected": 11
+  },
+  "PHONE": {
+   "true_positives": 11,
+   "leaked": 5,
+   "over_redacted": 0,
+   "labelled": 16,
+   "detected": 11
+  },
+  "SSN": {
+   "true_positives": 4,
+   "leaked": 3,
+   "over_redacted": 0,
+   "labelled": 7,
+   "detected": 4
+  },
+  "CARD": {
+   "true_positives": 4,
+   "leaked": 2,
+   "over_redacted": 0,
+   "labelled": 6,
+   "detected": 4
+  }
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 1143
+  },
+  {
+   "name": "category schema",
+   "chars": 822
+  },
+  {
+   "name": "document",
+   "chars": 314
+  }
+ ],
+ "raw_text": "{\"spans\": [{\"text\": \"Ingrid Solberg\", \"category\": \"NAME\"}, {\"text\": \"1990-03-22\", \"category\": \"DOB\"}, {\"text\": \"88 Fenwick Row, Unit 4, Minneapolis, MN 55401\", \"category\": \"ADDRESS\"}, {\"text\": \"ingrid.solberg@leasehub.net\", \"category\": \"EMAIL\"}, {\"text\": \"612-555-0187\", \"category\": \"PHONE\"}]}",
+ "example_redacted": "RIVERSTONE APARTMENTS — Lease Renewal Notice\n\nTenant: [NAME] (DOB [DOB])\nUnit Address: [ADDRESS]\n\nYour current lease expires in 60 days. To renew, confirm via [EMAIL] or call the leasing office at [PHONE].\n\nWe look forward to another year.\n",
+ "max_tokens": 800,
+ "thinking": null
+}

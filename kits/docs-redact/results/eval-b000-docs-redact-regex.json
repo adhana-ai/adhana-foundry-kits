@@ -1,0 +1,73 @@
+{
+ "run_id": "b000-docs-redact-regex",
+ "stub": false,
+ "model": "none",
+ "provider": "none",
+ "baseline": "regex",
+ "baseline_rule_count": "5 pattern families (SSN, EMAIL, PHONE, CARD, cued DOB); abstains on NAME and ADDRESS, which have no fixed surface shape",
+ "documents": 18,
+ "failures": [],
+ "scores": {
+  "labelled_spans": 88,
+  "detected_spans": 54,
+  "true_positives": 52,
+  "leaked": 36,
+  "leak_rate": 0.4091,
+  "over_redacted": 2,
+  "over_redaction_rate": 0.037,
+  "precision": 0.963,
+  "recall": 0.5909,
+  "f1": 0.7324
+ },
+ "by_category": {
+  "EMAIL": {
+   "true_positives": 14,
+   "leaked": 0,
+   "over_redacted": 2,
+   "labelled": 14,
+   "detected": 16
+  },
+  "ADDRESS": {
+   "true_positives": 0,
+   "leaked": 15,
+   "over_redacted": 0,
+   "labelled": 15,
+   "detected": 0
+  },
+  "PHONE": {
+   "true_positives": 16,
+   "leaked": 0,
+   "over_redacted": 0,
+   "labelled": 16,
+   "detected": 16
+  },
+  "NAME": {
+   "true_positives": 0,
+   "leaked": 19,
+   "over_redacted": 0,
+   "labelled": 19,
+   "detected": 0
+  },
+  "DOB": {
+   "true_positives": 9,
+   "leaked": 2,
+   "over_redacted": 0,
+   "labelled": 11,
+   "detected": 9
+  },
+  "SSN": {
+   "true_positives": 7,
+   "leaked": 0,
+   "over_redacted": 0,
+   "labelled": 7,
+   "detected": 7
+  },
+  "CARD": {
+   "true_positives": 6,
+   "leaked": 0,
+   "over_redacted": 0,
+   "labelled": 6,
+   "detected": 6
+  }
+ }
+}

@@ -1,18 +1,19 @@
-# Screenshots — pending a real run
+# Screenshots
 
-This kit has not been run yet. `docs-qa`'s and `docs-extract`'s `docs/shots/*.png` are real
-captures taken from their own local UI, after a real (or stub) run produced something on screen to
-photograph — they are not mockups. This directory intentionally ships no images for the same
-reason: there is nothing genuine to capture until `python -m src.app` has actually been started
-and driven through a no-key state, a stub or real detection, and the redacted/highlighted toggle.
+Two real captures on disk, taken by `tools/shoot_ui.mjs` against `python -m src.app` running on
+this machine — not mockups, not redrawn from `docs-redact-wireframe.html`.
 
-What belongs here once that happens, matching the shape the sibling kits use (`kit-nokey.png`,
-`kit-answered.png`, plus whatever states are worth a second image):
+- `redact-landing.png` — the app on load: `apartment-lease-notice-01` (a real shipped document)
+  in the source panel, the 7-category legend built from `/api/categories`, no call made yet.
+- `redact-nokey.png` — the same document after clicking "Detect & redact" with no `API_KEY`
+  configured: the calm red note ("No API_KEY is configured, so nothing was called...") and the
+  result panel staying empty rather than erroring. This is the pass's failure/limitation shot.
 
-- `redact-nokey.png` — the app with no `API_KEY` configured, showing the calm "not set" state.
-- `redact-detected.png` — a document after detection, redacted view, legend and stats visible.
-- `redact-highlighted.png` — the same result toggled to the highlighted view.
+Both are free — neither drives `/api/redact` far enough to reach the provider. A third shot,
+`redact-answered.png` (a real detected-and-redacted result, `--live`), is NOT here yet: capturing
+it spends one real model call, and this pass's brief was explicit that no further spend should
+happen after the three paid eval runs (r001/r002/r003) already on disk. Run
+`node tools/shoot_ui.mjs --live` to add it once a future session is authorized to spend that call.
 
 `docs-redact-wireframe.html` (outside this repo, built for stakeholder approval) shows the intended
-composition. It is a mock, not a source of images — the screenshots that eventually land here must
-come from this kit's own running UI, not be redrawn from the wireframe.
+composition and stays a mock, not a source of images.

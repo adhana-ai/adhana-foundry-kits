@@ -20,6 +20,7 @@ from urllib.parse import urlparse, parse_qs
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src import config, detect as D, redact as R          # noqa: E402
+from src import adapters                                    # noqa: E402
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UI = os.path.join(HERE, "ui")
@@ -88,7 +89,14 @@ class H(BaseHTTPRequestHandler):
                                     "note": "No API_KEY is configured, so nothing was called. "
                                             "Copy .env.example to .env and set one."})
         try:
-            r = D.detect(cfg, text, D.load_categories())
+            # ⚠︎ THINKING IS EXPLICITLY DISABLED HERE, NOT LEFT AT THE PROVIDER DEFAULT — found
+            # live, taking this kit's own UI screenshots. deepseek-v4-flash reasons by default;
+            # `evals/run.py` learned this the hard way (r001: 4 of 18 documents burned their
+            # entire 800-token ceiling on hidden reasoning and returned nothing, `--no-thinking`
+            # was the fix, r002 is the corrected run this kit's own numbers are drawn from) but
+            # that fix was never propagated here — every live click through this page was
+            # reproducing r001's defect, not r002's fix, until this line existed.
+            r = D.detect(cfg, text, D.load_categories(), thinking=adapters.THINKING_OFF)
         except Exception as exc:
             # ⚠︎ THE PROVIDER'S MESSAGE IS RETURNED, THE CONFIGURATION IS NOT. A base URL or a key
             # can hold anything, so no secret's VALUE reaches the page, not even inside an error.
