@@ -19,10 +19,18 @@ ledger sits beside whichever `.env` is the shared one, so every kit under that r
 one budget. That is what makes it a cap on the KEY rather than a cap per kit, which would be no
 cap at all when the kits share a key.
 
-⚠︎ NO CAP CONFIGURED MEANS NO CAP, AND IT SAYS SO OUT LOUD. A forker who clones one kit has no
-repo root above it and must still get a working kit — refusing to run without a budget would make
-this file the thing that breaks the fork test. Absence is a state, not a value, and the one thing
-it must never do is be silent about it.
+⚠︎ NO CAP CONFIGURED FALLS BACK TO THE HARD CEILING, NOT TO UNLIMITED. A forker who clones one kit
+has no repo root above it and must still get a working kit, so absence of MAX_CALLS_PER_DAY is not
+an error — but it is also never silently infinite. Absence, and any unparseable value, both land on
+HARD_CEILING below, the one number this file will not go past no matter what `.env` says.
+
+⚑ THE HARD CEILING IS A SEPARATE NUMBER FROM MAX_CALLS_PER_DAY, ON PURPOSE. `.env` sets the day's
+working cap and is meant to move — raised for a real run, reverted after. HARD_CEILING is the number
+`.env` can never push past, because `.env` is a file whoever is operating this kit (including an
+agent) can edit on its own judgment mid-run, and a "raise the cap?" / "yes" exchange is not the same
+as a decision made by opening this file and changing this constant. Set 2026-08-07 by the operator
+at 300 calls/day — raising it means editing HARD_CEILING here directly, never via `.env`, never on
+a chat "yes."
 
     MAX_CALLS_PER_DAY=200          # in <repo>/.env — all kits, rolling calendar day, local time
 
@@ -42,15 +50,20 @@ SHARED_ENV = os.path.join(ROOT, ".env")
 # Beside the shared .env when there is one, else inside the kit — a lone fork still counts itself.
 LEDGER = os.path.join(ROOT if os.path.exists(SHARED_ENV) else HERE, ".calls-ledger.jsonl")
 
+# The absolute ceiling MAX_CALLS_PER_DAY can ever effectively reach, no matter what .env or the
+# real environment says. Never edited by an agent operating this kit — raising it is a decision
+# made by a person opening this file, not one granted in a chat turn. See the docstring above.
+HARD_CEILING = 300
+
 
 class BudgetExceeded(RuntimeError):
     """Raised INSTEAD of making a call. Nothing was sent and nothing was billed."""
 
 
 def cap():
-    """The configured ceiling, or None for "no cap". Anything unparseable is treated as absent and
-    announced — a typo'd cap that silently means "unlimited" is the failure this file exists to
-    prevent, so it must not be able to happen quietly."""
+    """The configured ceiling, clamped to HARD_CEILING. Absence and anything unparseable both land
+    on HARD_CEILING too — a typo'd or missing cap must never silently mean "unlimited," which is
+    the failure this file exists to prevent."""
     raw = None
     for path in (SHARED_ENV, os.path.join(HERE, ".env")):
         if not os.path.exists(path):
@@ -61,13 +74,16 @@ def cap():
                 raw = line.split("=", 1)[1].strip().strip('"').strip("'")
     raw = os.environ.get("MAX_CALLS_PER_DAY", raw)
     if raw in (None, ""):
-        return None
+        return HARD_CEILING
     try:
         n = int(raw)
     except ValueError:
-        print("  !! MAX_CALLS_PER_DAY=%r is not a number — treating it as NO CAP" % raw)
-        return None
-    return n if n > 0 else None
+        print("  !! MAX_CALLS_PER_DAY=%r is not a number — treating it as the hard ceiling (%d)"
+              % (raw, HARD_CEILING))
+        return HARD_CEILING
+    if n <= 0:
+        return HARD_CEILING
+    return min(n, HARD_CEILING)
 
 
 def _today():
@@ -93,22 +109,20 @@ def spent_today():
 
 
 def remaining():
-    """None when uncapped. Never negative — a ledger ahead of the cap reads as 0 left, not as debt."""
-    c = cap()
-    return None if c is None else max(0, c - spent_today())
+    """Never negative — a ledger ahead of the cap reads as 0 left, not as debt."""
+    return max(0, cap() - spent_today())
 
 
 def check(n=1):
-    """Refuse BEFORE spending. Raises BudgetExceeded; returns the remaining count, or None."""
+    """Refuse BEFORE spending. Raises BudgetExceeded; returns the remaining count."""
     left = remaining()
-    if left is None:
-        return None
     if n > left:
         raise BudgetExceeded(
-            "daily call cap reached: %d of %d used today across every kit under %s. "
-            "This call was NOT made and nothing was billed. Raise MAX_CALLS_PER_DAY in %s, "
-            "or wait for the day to roll over."
-            % (spent_today(), cap(), ROOT, SHARED_ENV))
+            "daily call cap reached: %d of %d used today across every kit under %s (hard ceiling "
+            "%d). This call was NOT made and nothing was billed. Raise MAX_CALLS_PER_DAY in %s up "
+            "to the hard ceiling, or edit HARD_CEILING in this file yourself to go further — never "
+            "on a chat 'yes' — or wait for the day to roll over."
+            % (spent_today(), cap(), ROOT, HARD_CEILING, SHARED_ENV))
     return left
 
 
@@ -124,12 +138,7 @@ def record(model, kit=None):
 
 
 def plan(n, model):
-    """The line a harness prints before a run. Says the cap AND says when there is not one, because
-    "no cap" is the state a person most needs to be told about before spending."""
-    c = cap()
-    if c is None:
-        return ("about to make %d live call(s) with model %r — NO DAILY CAP IS SET. "
-                "Set MAX_CALLS_PER_DAY in %s to cap every kit that shares this key."
-                % (n, model, SHARED_ENV))
-    return ("about to make %d live call(s) with model %r — %d of %d used today, %d left"
-            % (n, model, spent_today(), c, remaining()))
+    """The line a harness prints before a run — always a real number now, never "no cap"."""
+    return ("about to make %d live call(s) with model %r — %d of %d used today, %d left "
+            "(hard ceiling %d)"
+            % (n, model, spent_today(), cap(), remaining(), HARD_CEILING))
