@@ -5,9 +5,9 @@
 // changes. Ported from docs-extract's copy (kit #2), same shape: this kit's UI is also one
 // document, one call, no multi-step flow to drive.
 //
-// ⚠︎ IT NEVER SPENDS ON ITS OWN. Both shots here are free — /api/categories and /api/doc need
+// ⚠︎ IT NEVER SPENDS ON ITS OWN. Both shots here are free — /api/state and /api/doc need
 // nothing, and clicking Detect with no API_KEY configured returns a calm 200 with no call made.
-// A third, --live shot (a real answered call) is deliberately NOT taken by this pass: docs-redact
+// A third, --live shot (a real answered call) is deliberately NOT taken by this pass: docs-verify
 // already has three real paid runs on disk (r001/r002/r003) and this capture session's brief was
 // explicit that no further spend should happen, so the "answered" shot is left for a future pass
 // that is authorized to spend one call.
@@ -42,19 +42,19 @@ process.on('exit', () => server.kill())
 
 // ⚑ PROVE THE THING ON THAT PORT IS THIS KIT BEFORE PHOTOGRAPHING IT — same discipline the
 // sibling scripts learned the hard way: a dead server is caught by any timeout, but a LIVE server
-// belonging to something else answers everything. /api/categories must answer, with this kit's
-// own shape (7 categories, a documents list).
+// belonging to something else answers everything. /api/state must answer, with this kit's
+// own shape: a documents list of exactly the 20 CTG records this kit ships.
 async function proveItIsOurs() {
   let last = 'no attempt completed'
   for (let i = 0; i < 40; i++) {
     try {
-      const r = await fetch(`http://127.0.0.1:${PORT}/api/categories`)
+      const r = await fetch(`http://127.0.0.1:${PORT}/api/state`)
       if (!r.ok) {
-        last = `HTTP ${r.status} from /api/categories`
+        last = `HTTP ${r.status} from /api/state`
       } else {
         const j = await r.json()
-        if (Array.isArray(j.categories) && j.categories.length === 7
-            && Array.isArray(j.documents)) return j
+        if (Array.isArray(j.documents) && j.documents.length === 20
+            && j.documents.every((d) => /^NCT\d+$/.test(d))) return j
         last = 'answered, but not with this kit\'s shape'
       }
     } catch (e) {
@@ -62,7 +62,7 @@ async function proveItIsOurs() {
     }
     await sleep(250)
   }
-  console.error(`  !! nothing recognisable as docs-redact is serving 127.0.0.1:${PORT}.`)
+  console.error(`  !! nothing recognisable as docs-verify is serving 127.0.0.1:${PORT}.`)
   console.error(`     Last: ${last}`)
   console.error('     If another app owns that port, free it or set PORT= to a spare one.')
   console.error('     Refusing to screenshot a page this script cannot identify.')
@@ -92,18 +92,40 @@ try {
   // 1. The landing state. The first shipped document loaded, the 7-category legend built, no
   //    call made yet — the shot that shows the two-panel UI and what it asks of a document before
   //    anything is spent.
-  await page.screenshot({ path: path.join(OUT, 'redact-landing.png') })
+  await page.screenshot({ path: path.join(OUT, 'verify-landing.png') })
   console.log('  wrote redact-landing.png')
 
-  // 2. Press "Detect & redact" with no API_KEY configured. A configuration state the page renders
-  //    calmly — the note explains nothing was called, the source panel stays populated — and, in
-  //    the absence of a fresh paid call, the honest failure/limitation shot for this pass.
+  // 2. Press "Check claims". With DOC set, a specific document is selected first.
+  //
+  // ⚠︎ THE FAILURE SHOT HERE IS A REAL WRONG ANSWER, NOT A "no API_KEY" PANEL. The sibling kits
+  //    photograph the no-key state because it is free, and this kit's repo-root .env means that
+  //    state cannot be reached without deleting a key. So the honest failure shot is the one the
+  //    run actually produced: NCT03947138, the document carrying the kit's single
+  //    false-support row in r002.
+  //
+  //    ⚠︎ AND PHOTOGRAPHING IT FOUND SOMETHING THE RUN RECORD ALONE DID NOT. The claim is "The
+  //    trial was run double blind"; the document says "Masking: TRIPLE"; the labelled set says
+  //    CONTRADICTED. Run r002 answered SUPPORTED -- the false-support row. This screenshot, same
+  //    model, same prompt, same document, answered CONTRADICTED. The borderline claim FLIPS
+  //    between calls, which is a fact about run-to-run variance on an ambiguous row that a single
+  //    run can never show you.
+  //
+  //    Two honest readings, and the kit publishes both rather than picking one: a triple-masked
+  //    trial genuinely IS double-masked in the ordinary sense, so SUPPORTED is defensible and the
+  //    label is arguably too strict; and whichever reading you prefer, the model does not hold it
+  //    steady. Neither the label nor the run was edited to make the other look better.
+  //    See Eval.could_not_verify and Eval.repeat.
+  if (process.env.DOC) {
+    await page.select('#doc', process.env.DOC)
+    await sleep(500)
+  }
   const btn = await page.$('#go')
   if (btn) {
     await btn.click()
     if (LIVE) {
       await page.waitForFunction(
-        () => document.querySelector('#s-spans').textContent !== '—',
+        () => document.querySelector('#s-total').textContent !== '—'
+              && !document.querySelector('#go').disabled,
         { timeout: 120000 })
       await sleep(400)
     } else {
@@ -112,7 +134,7 @@ try {
         { timeout: 15000 })
       await sleep(300)
     }
-    const name = LIVE ? 'redact-answered.png' : 'redact-nokey.png'
+    const name = LIVE ? 'verify-answered.png' : 'verify-nokey.png'
     await page.screenshot({ path: path.join(OUT, name) })
     console.log(`  wrote ${name}`)
   } else {

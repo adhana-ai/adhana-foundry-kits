@@ -38,22 +38,11 @@ button[disabled]{opacity:.5;cursor:default}
   min-height:280px;max-height:440px;overflow:auto;white-space:pre-wrap}
 textarea.src{border:none;background:transparent;color:var(--t1);resize:vertical;width:100%}
 textarea.src:focus{outline:none}
-.out mark.span{border-radius:4px;padding:0 3px;font-weight:600;color:var(--t1)}
-.out mark.name{background:color-mix(in srgb,var(--c-name) 30%,transparent)}
-.out mark.ssn{background:color-mix(in srgb,var(--c-ssn) 30%,transparent)}
-.out mark.email{background:color-mix(in srgb,var(--c-email) 30%,transparent)}
-.out mark.phone{background:color-mix(in srgb,var(--c-phone) 30%,transparent)}
-.out mark.addr{background:color-mix(in srgb,var(--c-addr) 30%,transparent)}
-.out mark.dob{background:color-mix(in srgb,var(--c-dob) 30%,transparent)}
-.out mark.card{background:color-mix(in srgb,var(--c-card) 30%,transparent)}
 .legend{display:flex;flex-wrap:wrap;gap:7px;padding:11px 15px;border-top:1px solid var(--line)}
 .chip{display:inline-flex;align-items:center;gap:6px;font:600 10.5px var(--mono);color:var(--t2);
   background:var(--pan2);border:1px solid var(--line);border-radius:99px;padding:3px 9px 3px 7px}
 .dot{width:7px;height:7px;border-radius:99px;flex:none}
-.dot.name{background:var(--c-name)} .dot.ssn{background:var(--c-ssn)}
-.dot.email{background:var(--c-email)} .dot.phone{background:var(--c-phone)}
-.dot.addr{background:var(--c-addr)} .dot.dob{background:var(--c-dob)} .dot.card{background:var(--c-card)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
   border-top:1px solid var(--line)}
 .stat{background:var(--pan2);padding:12px 14px;text-align:center}
 .stat b{display:block;font-size:19px;font-variant-numeric:tabular-nums;letter-spacing:-.01em;
@@ -90,3 +79,9 @@ textarea.src:focus{outline:none}
 .claim .ev.none{font-style:italic;border-left-color:#d6a94e}
 .claim .warn{color:#e0736a;font-style:normal}
 .empty{color:var(--muted,#9aa6c0);font-size:13px;padding:14px 2px}
+
+/* The claims pane scrolls in its own box rather than clipping. The first live screenshot cut a
+   claim off mid-word ("...measured over 84 days after administration of the") because the panel
+   had a fixed height inherited from the redact UI, where the output was one masked document
+   rather than a list that grows with the claim count. */
+#claims{max-height:520px;overflow-y:auto;padding:12px 14px}
