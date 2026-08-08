@@ -145,7 +145,17 @@ def check(cfg, doc_text, rule_list, complete=None, thinking=None):
         "input_tokens": res.get("input_tokens"),
         "output_tokens": res.get("output_tokens"),
         "finish_reason": res.get("finish_reason"),
-        "reasoning_tokens": res.get("reasoning_tokens"),
+        # ⚠︎ AND THE NOTE ABOVE DID NOT SAVE THIS LINE, WHICH MADE THE SAME MISTAKE IT WARNS ABOUT.
+        # It read `res["reasoning_tokens"]`, a key adapters.complete() has never returned — the
+        # adapter reports the provider's `completion_tokens_details` dict under `token_details`.
+        # So this field was null on every record ever written by this kit, and null is a
+        # plausible-looking answer for "how much reasoning happened" when the run disabled
+        # reasoning, which is exactly what r001 did. Found the moment a run turned reasoning ON:
+        # the probe burned 6000 of 6000 output tokens and returned empty text, and the one field
+        # that would have said WHY read null. Absent stays None — a provider that does not report
+        # the split is a third state, not a zero.
+        "reasoning_tokens": (res.get("token_details") or {}).get("reasoning_tokens"),
+        "token_details": res.get("token_details"),
         "model": res.get("model"),
     }
 
