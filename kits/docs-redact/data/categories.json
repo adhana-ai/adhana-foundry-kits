@@ -1,0 +1,24 @@
+{
+  "_comment": [
+    "THE SEVEN CATEGORIES THIS KIT DETECTS, AND WHY THE SET IS FIXED RATHER THAN OPEN-ENDED.",
+    "",
+    "A detector that is told 'find anything sensitive' has no way to be wrong in a way that can be",
+    "measured -- 'sensitive' means something different to every reader. Naming the seven categories",
+    "gives the model a closed schema to fill and gives the eval a closed set of labels to grade",
+    "against, the same reason docs-extract's fields.json exists instead of a free-text extraction.",
+    "",
+    "A forker pointing this at a different document set edits this file, not src/prompt.py -- the",
+    "prompt is generated FROM this list, the same discipline docs-route's taxonomy.py uses for its",
+    "queues. Adding an eighth category (say, PASSPORT_NUMBER) is one entry here plus new labelled",
+    "examples; nothing about the pipeline shape changes."
+  ],
+  "categories": [
+    {"name": "NAME", "hint": "A person's full name, as it appears -- not a title or role alone."},
+    {"name": "SSN", "hint": "A US Social Security Number, in any format the document writes it: dashed (123-45-6789), undashed (123456789), or labelled inline."},
+    {"name": "EMAIL", "hint": "An email address."},
+    {"name": "PHONE", "hint": "A phone number, in any format: parenthesised area code, dashed, dotted, or with a country prefix."},
+    {"name": "ADDRESS", "hint": "A mailing or street address -- street, city, state and/or ZIP together, as one span. Not a city or state named alone in prose."},
+    {"name": "DOB", "hint": "A date of birth, in any format the document writes it -- numeric, spelled month, or labelled 'DOB'. Not any other date in the document: an appointment date or an issue date is not a DOB."},
+    {"name": "CARD", "hint": "A payment card number, in any grouping the document writes it -- spaced, dashed, or run together. Not a partial 'ending in ####'."}
+  ]
+}

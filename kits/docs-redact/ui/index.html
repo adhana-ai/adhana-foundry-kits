@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>docs-redact — mask sensitive spans in a document</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Mask sensitive spans in a document</h1>
+    <p class="sub">One document, one model call to find what's sensitive, then pure code masks it.
+      Every span is scored on two failure directions: sensitive text that <b>leaked</b> (missed),
+      and safe text that got <b>over-redacted</b> (flagged by mistake).</p>
+  </header>
+
+  <div class="bar">
+    <select id="doc" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Detect &amp; redact</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Source document</span><span class="hint">paste your own or pick above</span></div>
+      <textarea id="src" class="src" spellcheck="false"></textarea>
+    </div>
+
+    <div class="panel">
+      <div class="ph">
+        <span>Result</span>
+        <span class="seg" id="viewseg">
+          <button type="button" class="on" data-view="redacted">Redacted</button>
+          <button type="button" data-view="highlighted">Highlighted</button>
+        </span>
+      </div>
+      <pre id="out-redacted" class="out"></pre>
+      <div id="out-highlighted" class="out" hidden></div>
+      <div class="legend" id="legend"></div>
+      <div class="stats">
+        <div class="stat"><b id="s-spans">—</b><span>spans detected</span></div>
+        <div class="stat"><b id="s-cats">—</b><span id="s-cats-label">of 7 categories</span></div>
+        <div class="stat" id="s-unlocated-wrap"><b id="s-unlocated">—</b><span>unlocated</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>
