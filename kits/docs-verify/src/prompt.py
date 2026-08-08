@@ -20,16 +20,50 @@ import json
 # same answer to a careless reader and opposite answers to a useful one.
 VERDICTS = ("supported", "contradicted", "not_stated")
 
+# ⚑ THE VERDICT VOCABULARY IS DECLARED ONCE, HERE, AND EVERYTHING READS IT FROM HERE. The prompt
+# below builds its own definition block from this dict rather than restating it, `parse()` accepts
+# nothing outside `VERDICTS`, `evals/judge.py` scores these three and no others, and the site's
+# app panel reads this module by AST rather than shipping a `data/verdicts.json` beside it. A
+# second copy of a class list is the thing that drifts from the scorer, and a class list that has
+# drifted from the scorer is worse than no panel at all.
+#
+# `costs` is what getting THIS verdict wrong does to whoever trusts it. It is written down for the
+# same reason the two failure directions are written on docs-redact's panel: the mistakes are not
+# interchangeable, and a single accuracy figure hides which one you are making.
+VERDICT_MEANINGS = {
+    "not_stated": {
+        "means": "The document neither asserts nor denies this. It may be entirely plausible; "
+                 "that is irrelevant. If the document simply does not address it, this is the "
+                 "answer.",
+        "costs": "Called anything else, a hallucination stops being visible. This is the class "
+                 "the kit exists to separate, and the one a two-verdict checker cannot express.",
+    },
+    "supported": {
+        "means": "The document states this, or states something that plainly entails it.",
+        "costs": "A FALSE SUPPORT is the expensive error: an unbacked claim goes out with a "
+                 "confident tick on it. Counted separately from accuracy in evals/judge.py.",
+    },
+    "contradicted": {
+        "means": "The document states something incompatible with this.",
+        "costs": "Called not_stated instead, a real error the source WOULD have caught is "
+                 "downgraded to a shrug and nobody goes back to check it.",
+    },
+}
+
+# not_stated is defined FIRST, ahead of the other two, because it is the one a model will otherwise
+# collapse into contradicted -- "the document doesn't say this" and "the document says otherwise"
+# are the same answer to a careless reader and opposite answers to a useful one.
+_DEFS = "".join(
+    "  %-12s %s\n" % (name, VERDICT_MEANINGS[name]["means"])
+    for name in ("not_stated", "supported", "contradicted"))
+
 SYSTEM = (
     "You check claims against a source document. You are given one document and a numbered list "
     "of claims about it. For each claim, decide which of exactly three verdicts applies, using "
     "ONLY the document -- never outside knowledge, and never what is likely to be true of studies "
     "in general.\n"
     "\n"
-    "  not_stated   The document neither asserts nor denies this. It may be entirely plausible; "
-    "that is irrelevant. If the document simply does not address it, this is the answer.\n"
-    "  supported    The document states this, or states something that plainly entails it.\n"
-    "  contradicted The document states something incompatible with this.\n"
+    + _DEFS +
     "\n"
     "The distinction between not_stated and contradicted matters more than any other judgement "
     "you will make here. A claim the document is silent about is NOT contradicted. Do not reach "

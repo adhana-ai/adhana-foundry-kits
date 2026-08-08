@@ -93,8 +93,13 @@ def main():
         "documents": len(records),
         "claims": scored["overall"]["claims"],
         "failures": 0,
-        "latency_p50_ms": 0, "latency_p95_ms": 0,
-        "input_tokens_total": 0, "output_tokens_total": 0,
+        # ⚠︎ None, NOT 0. This baseline calls no provider, so it has no latency and no token count
+        # — those are ABSENT measurements, not measurements of zero. Writing 0 would put "0 ms,
+        # 0 tokens" on the history board beside two real runs, reading as "instant and free"
+        # (true) and as "measured against the same thing" (not true). build/measured/runlog.py
+        # renders an absent value as a dash for exactly this reason.
+        "latency_p50_ms": None, "latency_p95_ms": None,
+        "input_tokens_total": None, "output_tokens_total": None,
         "scores": scored["overall"],
         "per_class": scored["per_class"],
         "matrix": scored["matrix"],
