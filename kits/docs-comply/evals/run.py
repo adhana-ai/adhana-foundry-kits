@@ -90,10 +90,14 @@ def main():
     first = None
     t_all = time.time()
     for i, doc_id in enumerate(docs, 1):
-        if not a.stub:
-            # Recorded BEFORE the call, so a crash mid-call over-counts by one rather than
-            # under-counting — the direction a spend guard should round.
-            BUDGET.record(cfg.get("model"))
+        # ⚠︎ THE LEDGER IS WRITTEN BY adapters.complete(), NOT HERE, AND THIS IS A FIX RATHER THAN
+        # A STYLE CHOICE. This loop used to call BUDGET.record() itself, immediately before
+        # C.check() — which also records, one layer down, inside the adapter. Every call was
+        # therefore written to the ledger TWICE, and the first 30-call run left 60 lines behind.
+        # A spend guard that double-counts is not conservative, it is broken: it halves the real
+        # cap, and anyone reconciling the ledger against a provider invoice finds two numbers that
+        # cannot both be right. Found by counting the ledger after the first run rather than by any
+        # check. `budget.check()` is likewise the adapter's, for the same reason.
         t0 = time.time()
         r = C.check(cfg, C.load_doc(doc_id), rules, complete=complete, thinking=thinking)
         ms = int((time.time() - t0) * 1000)

@@ -45,22 +45,47 @@ missing statement someone must write. A checker that merges them hands the reade
 
 ## What was measured
 
-**No run has been made yet.** The two spend-free runs below are recorded and reproducible; the live
-run is deliberately not started, because starting one is the operator's call.
+One paid run, 30 calls, 2026-08-08. Scored over the **1,068 applicable** rule-verdicts (162 of the
+1,230 are rules the regulation does not bind, dropped before scoring).
 
 | run | what it is | accuracy | breached recall | false met |
 |---|---|---|---|---|
-| `b000-label` | **baseline** — pure code, no model. "Is the element's label in the document?" | **95.97%** | **0.0** | 7 (2.54%) |
+| `b000-label` | **baseline** — pure code, no model. "Is the element's label in the document?" | **95.97%** | **0.0** (0/38) | 7 (2.54%) |
+| `r001` | **deepseek-v4-flash**, reasoning **off**, 41 rules per call | **93.45%** | **5.26%** (2/38) | **15 (5.43%)** |
 | `t000-stub` | stub provider, answers `met` to everything | 74.16% | 0.0 | 276 (100%) |
 
-**Read those two numbers together, because they are the most useful thing in this kit.** A string
-match with no model scores **96% accuracy and finds not one breach**. A stub that answers "met" to
-all 1,068 applicable rules scores 74%. Accuracy on this corpus is very nearly a measure of nothing,
-which is why `evals/judge.py` prints no single headline figure and reports per-class recall instead.
+### The model lost to the free baseline, and that is the result
 
-**The model's entire value has to come from the 38 breaches**, and that is what a live run would be
-measuring. Breach is 3.6% of applicable rules because ClinicalTrials.gov enforces most of these
-elements at submission — a compliance checker over a well-curated registry genuinely finds few.
+Not a hedge — the numbers go the wrong way on both headline measures. The model scored **2.5 points
+lower on accuracy** and made **twice as many false METs** (15 vs 7), which is the expensive error:
+a breach shipped with a tick on it. Its only win was finding **2 of 38 breaches** where the baseline
+found none — and it paid for those two with **22 false breach alarms** (precision 8.33%).
+
+Where the 36 missed breaches went: **27 were called `never addressed`** and 9 were called `met`. The
+model reliably noticed something was wrong and then misclassified *which kind* of wrong — which is
+the one distinction the kit exists to draw. All 7 `Why Study Stopped` breaches were missed this way:
+the model saw no such line and said "never addressed", never connecting *status = TERMINATED* to
+*therefore this is required, so its absence is a breach*. That conditional is the reasoning the
+rulebook demands.
+
+Clean on the mechanical measures: **100% answered** (1,068/1,068), **100% quote fidelity** — every
+line it cited genuinely exists in the document — and 0 unparseable replies.
+
+### What this run does and does not license you to say
+
+- **It does not show that "LLMs cannot do compliance checking."** It is one model, at one tier, on
+  one corpus, in **one configuration** — and that configuration matters: `--no-thinking` was passed,
+  so the model's reasoning was **disabled**. For a task whose hard cases are conditional
+  (*this rule binds only if the trial was stopped*), that is a real handicap, and the honest reading
+  is that this run has not yet tested the mode most likely to help. Reasoning was disabled because
+  UC006 lost a whole run to a provider that reasons by default and burned its output ceiling; this
+  kit's ceiling is the largest in the estate for exactly that reason, so it may well survive it.
+- **It does show something worth knowing anyway**: that on this task a trivial string match is a
+  genuinely hard baseline, that accuracy is the wrong headline, and that a checker can look 93%
+  correct while finding 5% of what you bought it for.
+
+`--no-thinking` is recorded as a guard on the run record, so this run forms its own series and
+nothing may be differenced against a reasoning-on run.
 
 ## The gold verdicts cannot drift from the documents
 
