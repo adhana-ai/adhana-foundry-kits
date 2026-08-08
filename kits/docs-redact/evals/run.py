@@ -136,6 +136,17 @@ def main():
 
     labels = load_labels()
     scored = J.score(labels, records)
+    # ⚑ THE PER-CALL TIMINGS ARE KEPT, NOT ONLY AGGREGATED — 2026-08-08. Every one of these
+    # was measured above and then thrown away the moment it had been folded into a p50 and a p95,
+    # so the result file could publish the two percentiles with no distribution behind them. A p95
+    # on its own cannot say whether the tail is one slow call or a fat one; the array can. Snapshot
+    # taken BEFORE the sort, so call order survives and a warm-up effect stays visible — sorting in
+    # place is what would have made this a distribution and not a history.
+    #
+    # It is written at the TOP LEVEL rather than onto each per-document record on purpose: those
+    # records are what score.py grades, and adding a key to a graded structure to carry telemetry
+    # is how a timing turns into a phantom extracted field. Costs one array and no provider call.
+    lat_in_order = list(lat)
     lat.sort()
     p = lambda q: lat[min(len(lat) - 1, int(len(lat) * q))] if lat else None
 
@@ -148,6 +159,7 @@ def main():
         "documents": len(records),
         "failures": failures,
         "latency_p50_ms": p(0.50), "latency_p95_ms": p(0.95),
+        "latency_ms_all": lat_in_order,
         "wall_seconds": round(time.time() - t_all, 1),
         "input_tokens_total": tin, "output_tokens_total": tout,
         "scores": scored["overall"],
