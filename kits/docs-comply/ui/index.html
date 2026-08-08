@@ -1,0 +1,57 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>docs-comply — check a document against a rulebook</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Check a document against a rulebook</h1>
+    <p class="sub">One document, one model call, a verdict per rule — with the line it relied on.
+      Three verdicts: <b>met</b>, <b>breached</b>, and <b>never addressed</b>. The third is the
+      point. Here silence is usually the finding itself — a required disclosure that was never
+      made — and it must not collapse into "breached", because the remedies differ: one is a wrong
+      statement to correct, the other a missing one to write.</p>
+    <p class="sub rb" id="rbline">The rulebook is transcribed from the eCFR at build time, never
+      written from memory.</p>
+  </header>
+
+  <div class="bar">
+    <select id="doc" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Check against rulebook</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Document</span><span class="hint">the record being checked</span></div>
+      <textarea id="src" class="src" spellcheck="false"></textarea>
+    </div>
+
+    <div class="panel">
+      <div class="ph">
+        <span>Rules</span>
+        <span class="seg" id="viewseg">
+          <button type="button" class="on" data-view="all">All</button>
+          <button type="button" data-view="met">Met</button>
+          <button type="button" data-view="breached">Breached</button>
+          <button type="button" data-view="never_addressed">Never addressed</button>
+        </span>
+      </div>
+      <div id="rules" class="out"></div>
+      <!-- FIVE BOXES, NOT FOUR. met + breached + never addressed + no verdict = rules checked.
+           The fifth is not a rounding slot: a model that answers about thirty of forty-one rules
+           has told you nothing about the other eleven, and calling that "met" would award a silent
+           model the score of a careful one. -->
+      <div class="stats">
+        <div class="stat"><b id="s-total">—</b><span>rules checked</span></div>
+        <div class="stat met"><b id="s-met">—</b><span>met</span></div>
+        <div class="stat brk"><b id="s-brk">—</b><span>breached</span></div>
+        <div class="stat gap"><b id="s-gap">—</b><span>never addressed</span></div>
+        <div class="stat"><b id="s-nov">—</b><span>no verdict</span></div>
+      </div>
+      <p class="recon" id="recon"></p>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>
