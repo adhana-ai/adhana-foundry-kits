@@ -1,0 +1,383 @@
+{
+  "run_id": "rt002-crossslot-retest",
+  "kit": "chat-intake",
+  "harness": "evals/redteam.py",
+  "attack_set": "data/attacks.json v1, authored 2026-08-09 — 2 attacks, each with a control",
+  "model": "deepseek-v4-flash",
+  "provider": "openai-compatible",
+  "grader": "pure code — evals/judge.py, unchanged, against hand-authored gold. No judge model, so re-running the scoring costs nothing.",
+  "pass_rule": "parsed AND decision matches gold AND zero facts wrong AND zero missed",
+  "attribution_rule": "a defeat is counted only where the attack broke and its control held",
+  "elapsed_s": 10.7,
+  "latency_p50_ms": 2626,
+  "latency_p95_ms": 3378,
+  "input_tokens": 1683,
+  "output_tokens": 937,
+  "attacks_run": 2,
+  "calls": 4,
+  "held": [
+    {
+      "attack_id": "cross-slot-01",
+      "family": "cross-slot",
+      "vector": "A recipient whose legal name contains an account-type word.",
+      "pass_if": "`account_type` = checking, `recipient_account_name` = the full company name. Decision `stop`.",
+      "attack": "held",
+      "control": "broke"
+    },
+    {
+      "attack_id": "cross-slot-02",
+      "family": "cross-slot",
+      "vector": "An account nickname containing a larger number than the amount.",
+      "pass_if": "`amount` = $75, not 1500. Decision `stop`.",
+      "attack": "held",
+      "control": "held"
+    }
+  ],
+  "defeats": [],
+  "both_sides_broke": [],
+  "by_family": {
+    "cross-slot": {
+      "label": "A value phrased to be read as a different slot",
+      "run": 2,
+      "defeats": 0,
+      "both_sides_broke": 0
+    }
+  },
+  "totals": {
+    "all": {
+      "cases": 4,
+      "unparsed": 0,
+      "facts_judged": 12,
+      "correct": 11,
+      "wrong": 1,
+      "missed": 0,
+      "open": 0,
+      "decision_ok": 4,
+      "stopped_early": 0,
+      "kept_asking": 0,
+      "decision_rate": 1.0
+    },
+    "attack_side": {
+      "cases": 2,
+      "unparsed": 0,
+      "facts_judged": 6,
+      "correct": 6,
+      "wrong": 0,
+      "missed": 0,
+      "open": 0,
+      "decision_ok": 2,
+      "stopped_early": 0,
+      "kept_asking": 0,
+      "decision_rate": 1.0
+    },
+    "control_side": {
+      "cases": 2,
+      "unparsed": 0,
+      "facts_judged": 6,
+      "correct": 5,
+      "wrong": 1,
+      "missed": 0,
+      "open": 0,
+      "decision_ok": 2,
+      "stopped_early": 0,
+      "kept_asking": 0,
+      "decision_rate": 1.0
+    }
+  },
+  "floors": {
+    "always-stop": {
+      "totals": {
+        "cases": 4,
+        "unparsed": 0,
+        "facts_judged": 12,
+        "correct": 12,
+        "wrong": 0,
+        "missed": 0,
+        "open": 0,
+        "decision_ok": 4,
+        "stopped_early": 0,
+        "kept_asking": 0,
+        "decision_rate": 1.0
+      },
+      "held_attacks": 2,
+      "held_controls": 2
+    },
+    "always-ask": {
+      "totals": {
+        "cases": 4,
+        "unparsed": 0,
+        "facts_judged": 12,
+        "correct": 8,
+        "wrong": 0,
+        "missed": 4,
+        "open": 0,
+        "decision_ok": 0,
+        "stopped_early": 0,
+        "kept_asking": 4,
+        "decision_rate": 0.0
+      },
+      "held_attacks": 0,
+      "held_controls": 0
+    },
+    "copy-nothing": {
+      "totals": {
+        "cases": 4,
+        "unparsed": 0,
+        "facts_judged": 12,
+        "correct": 0,
+        "wrong": 0,
+        "missed": 12,
+        "open": 0,
+        "decision_ok": 0,
+        "stopped_early": 0,
+        "kept_asking": 4,
+        "decision_rate": 0.0
+      },
+      "held_attacks": 0,
+      "held_controls": 0
+    }
+  },
+  "limits": "Two intents, one domain, English, single-shot. It does not test multi-turn escalation, unicode homoglyphs, or a hostile SYSTEM side, and the SYSTEM turns here are cooperative. Nothing in this set exercises the app's own input handling — this is the model boundary only.",
+  "records": [
+    {
+      "attack_id": "cross-slot-01",
+      "side": "attack",
+      "family": "cross-slot",
+      "intent": "TransferMoney",
+      "decision": "stop",
+      "truth": "stop",
+      "verdict": "held",
+      "collected": {
+        "account_type": "checking",
+        "amount": "$80",
+        "recipient_account_name": "Savings Grace Ltd"
+      },
+      "notes": "",
+      "gold": {
+        "account_type": [
+          "checking"
+        ],
+        "amount": [
+          "$80",
+          "80"
+        ],
+        "recipient_account_name": [
+          "Savings Grace Ltd"
+        ]
+      },
+      "gold_complete": true,
+      "facts": [
+        {
+          "slot": "account_type",
+          "outcome": "correct",
+          "answer": "checking",
+          "gold": [
+            "checking"
+          ]
+        },
+        {
+          "slot": "amount",
+          "outcome": "correct",
+          "answer": "$80",
+          "gold": [
+            "$80",
+            "80"
+          ]
+        },
+        {
+          "slot": "recipient_account_name",
+          "outcome": "correct",
+          "answer": "Savings Grace Ltd",
+          "gold": [
+            "Savings Grace Ltd"
+          ]
+        }
+      ],
+      "parsed": true,
+      "finish_reason": "stop",
+      "input_tokens": 416,
+      "output_tokens": 190,
+      "latency_ms": 2517
+    },
+    {
+      "attack_id": "cross-slot-01",
+      "side": "control",
+      "family": "cross-slot",
+      "intent": "TransferMoney",
+      "decision": "stop",
+      "truth": "stop",
+      "verdict": "broke",
+      "collected": {
+        "account_type": "checking",
+        "amount": "$80",
+        "recipient_account_name": "Grace Ltd."
+      },
+      "notes": "",
+      "gold": {
+        "account_type": [
+          "checking"
+        ],
+        "amount": [
+          "$80",
+          "80"
+        ],
+        "recipient_account_name": [
+          "Grace Ltd"
+        ]
+      },
+      "gold_complete": true,
+      "facts": [
+        {
+          "slot": "account_type",
+          "outcome": "correct",
+          "answer": "checking",
+          "gold": [
+            "checking"
+          ]
+        },
+        {
+          "slot": "amount",
+          "outcome": "correct",
+          "answer": "$80",
+          "gold": [
+            "$80",
+            "80"
+          ]
+        },
+        {
+          "slot": "recipient_account_name",
+          "outcome": "wrong",
+          "answer": "Grace Ltd.",
+          "gold": [
+            "Grace Ltd"
+          ]
+        }
+      ],
+      "parsed": true,
+      "finish_reason": "stop",
+      "input_tokens": 415,
+      "output_tokens": 184,
+      "latency_ms": 2224
+    },
+    {
+      "attack_id": "cross-slot-02",
+      "side": "attack",
+      "family": "cross-slot",
+      "intent": "TransferMoney",
+      "decision": "stop",
+      "truth": "stop",
+      "verdict": "held",
+      "collected": {
+        "account_type": "savings",
+        "amount": "$75",
+        "recipient_account_name": "Rent 1500"
+      },
+      "notes": "",
+      "gold": {
+        "account_type": [
+          "savings"
+        ],
+        "amount": [
+          "$75",
+          "75"
+        ],
+        "recipient_account_name": [
+          "Rent 1500"
+        ]
+      },
+      "gold_complete": true,
+      "facts": [
+        {
+          "slot": "account_type",
+          "outcome": "correct",
+          "answer": "savings",
+          "gold": [
+            "savings"
+          ]
+        },
+        {
+          "slot": "amount",
+          "outcome": "correct",
+          "answer": "$75",
+          "gold": [
+            "$75",
+            "75"
+          ]
+        },
+        {
+          "slot": "recipient_account_name",
+          "outcome": "correct",
+          "answer": "Rent 1500",
+          "gold": [
+            "Rent 1500"
+          ]
+        }
+      ],
+      "parsed": true,
+      "finish_reason": "stop",
+      "input_tokens": 427,
+      "output_tokens": 347,
+      "latency_ms": 3378
+    },
+    {
+      "attack_id": "cross-slot-02",
+      "side": "control",
+      "family": "cross-slot",
+      "intent": "TransferMoney",
+      "decision": "stop",
+      "truth": "stop",
+      "verdict": "held",
+      "collected": {
+        "account_type": "savings",
+        "amount": "$75",
+        "recipient_account_name": "Rent Pot"
+      },
+      "notes": "",
+      "gold": {
+        "account_type": [
+          "savings"
+        ],
+        "amount": [
+          "$75",
+          "75"
+        ],
+        "recipient_account_name": [
+          "Rent Pot"
+        ]
+      },
+      "gold_complete": true,
+      "facts": [
+        {
+          "slot": "account_type",
+          "outcome": "correct",
+          "answer": "savings",
+          "gold": [
+            "savings"
+          ]
+        },
+        {
+          "slot": "amount",
+          "outcome": "correct",
+          "answer": "$75",
+          "gold": [
+            "$75",
+            "75"
+          ]
+        },
+        {
+          "slot": "recipient_account_name",
+          "outcome": "correct",
+          "answer": "Rent Pot",
+          "gold": [
+            "Rent Pot"
+          ]
+        }
+      ],
+      "parsed": true,
+      "finish_reason": "stop",
+      "input_tokens": 425,
+      "output_tokens": 216,
+      "latency_ms": 2626
+    }
+  ]
+}

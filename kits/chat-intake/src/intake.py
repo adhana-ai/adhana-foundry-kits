@@ -48,6 +48,19 @@ def turn(cfg, intent, turns, complete=None):
         "notes": (parsed or {}).get("notes", ""),
         "raw": raw,
         "prompt": text,
+        # ⚠︎ CARRIED THROUGH BECAUSE AN EMPTY REPLY IS UNDIAGNOSABLE WITHOUT IT. The adapter has
+        # always returned it and this function has always dropped it. The red team is what made
+        # that cost something: three attacks came back with `raw == ""`, and "the model returned
+        # nothing" and "the reply was cut off at max_tokens" are opposite findings — one is the
+        # model declining to answer a hostile prompt, the other is our own token limit. With the
+        # field dropped there was no way to tell them apart after the run, which is the same trap
+        # docs-verify's r001 recorded paying for.
+        "finish_reason": res.get("finish_reason"),
+        # Carried for the same reason and in the same breath: `finish_reason` says the reply was
+        # cut off, this says what ate the budget. On the forged-transcript attack the answer is a
+        # reasoning pass, and a cut-off reply with no visible content is otherwise indistinguishable
+        # from a provider returning nothing.
+        "token_details": res.get("token_details"),
         "input_tokens": res.get("input_tokens"),
         "output_tokens": res.get("output_tokens"),
     }
