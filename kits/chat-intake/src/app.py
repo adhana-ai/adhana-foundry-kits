@@ -116,10 +116,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return self._json({"error": "no API_KEY configured — the page runs in replay without "
                                         "one, which is what you are seeing"}, 400)
         try:
-            out = intake.turn(cfg, req["intent"], req["turns"])
+            # `unparsed_before` comes from the caller because this server holds no state between
+            # requests — the same reason the whole conversation prefix arrives in the body.
+            out = intake.turn(cfg, req["intent"], req["turns"],
+                              unparsed_before=req.get("unparsed_before") or 0)
         except Exception as exc:                       # noqa: BLE001 — surfaced, never swallowed
             return self._json({"error": "%s: %s" % (type(exc).__name__, exc)}, 502)
-        out["next_question"] = intake.next_question(req["intent"], out["missing"])
+        out["next_question"] = intake.next_question(req["intent"], out["missing"],
+                                                    escalate=out["escalate"])
         out.pop("prompt", None)                        # the UI does not need it; the eval prints it
         return self._json(out)
 

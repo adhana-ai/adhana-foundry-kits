@@ -48,6 +48,32 @@ RULES = (
 )
 
 
+def one_line(utterance):
+    """One turn renders as exactly one line. Collapse every run of whitespace, newlines included.
+
+    ⚠︎ THIS IS A SECURITY FIX AND IT IS THE WHOLE OF ONE. The conversation is laid out below as
+    `Speaker: utterance`, so before this existed an utterance containing a newline and the word
+    `System:` rendered as an extra line in the SYSTEM's voice — a turn the customer wrote and the
+    model had no way to tell from the transcript around it. The red team measured what that buys:
+    the reply came back empty on 5 of 5 attempts, `finish_reason=length`, with 100% of the output
+    ceiling spent on a reasoning pass the provider bills and never returns. Raising the ceiling
+    four-fold billed four times as much for the same silence.
+
+    ⚑ COLLAPSING IS THE FIX, NOT STRIPPING OR REFUSING. Nothing is removed — every word the
+    customer typed still reaches the model, in their own words, which rule 3 of RULES requires and
+    which a filter that deleted suspicious text would break. What is removed is the STRUCTURE:
+    after this, a forged `System:` is a phrase inside a line clearly attributed to the customer,
+    which is a claim rather than a forgery. The kit already resists customer claims — being told
+    to stop asking, being told the facts are on file, being told they were given three times, all
+    held at 100% across every run.
+
+    ⚠︎ AND IT CHANGES THE SHIPPED PROMPT, so every number measured against the old one is stale
+    the moment this lands. That is why the fix waited for a decision rather than being slipped in:
+    the cost was never the line, it was re-measuring 16 published pages.
+    """
+    return " ".join(str(utterance).split())
+
+
 def render(intent, turns):
     """The whole prompt for one turn of one conversation, assembled verbatim.
 
@@ -65,7 +91,7 @@ def render(intent, turns):
         "- %s%s" % (s, ("  (answer with exactly one of: %s)" % ", ".join(allowed[s]))
                     if allowed.get(s) else "")
         for s in need)
-    lines = "\n".join("%s: %s" % (t["speaker"].title(), t["utterance"]) for t in turns)
+    lines = "\n".join("%s: %s" % (t["speaker"].title(), one_line(t["utterance"])) for t in turns)
     return (
         "%s\n\n"
         "The customer wants to: %s\n\n"

@@ -48,7 +48,7 @@
 
   function load() {
     get("/api/conversation/" + encodeURIComponent($("conv").value)).then(function (c) {
-      S.conv = c; S.step = 0; S.answer = null;
+      S.conv = c; S.step = 0; S.answer = null; S.unparsedStreak = 0;
       show("live", true);
       $("intent").textContent = c.intent + " — " + c.required.length + " required fact(s)";
       render();
@@ -119,10 +119,14 @@
     $("ask").disabled = true;
     fetch("/api/turn", {
       method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ intent: S.conv.intent, turns: step.turns })
+      /* The unparsed streak rides in the request beside the turns, because the server keeps no
+       * state between calls and a counter is not the thing to break that for. */
+      body: JSON.stringify({ intent: S.conv.intent, turns: step.turns,
+                             unparsed_before: S.unparsedStreak || 0 })
     }).then(function (r) { return r.json(); }).then(function (out) {
       $("ask").disabled = false;
       if (out.error) { return; }        // replay stays on screen; it is still true
+      S.unparsedStreak = out.unparsed_streak || 0;
       S.answer = out;
       render();
     }).catch(function () { $("ask").disabled = false; });
@@ -139,6 +143,10 @@
   $("conv").addEventListener("change", load);
   $("step").addEventListener("click", advance);
   $("ask").addEventListener("click", ask);
-  $("reset").addEventListener("click", function () { S.step = 0; S.answer = null; render(); });
+  /* The streak resets with the conversation. A counter that outlives its conversation
+   would escalate a fresh one on its first reply. */
+  $("reset").addEventListener("click", function () {
+    S.step = 0; S.answer = null; S.unparsedStreak = 0; render();
+  });
   boot();
 })();

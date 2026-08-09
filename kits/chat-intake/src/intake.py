@@ -17,13 +17,29 @@ from . import adapters, prompt, slots
 
 MAX_TOKENS = 400
 
+# ⚑ TWO UNANSWERED TURNS IN A ROW IS AN INCIDENT, NOT A THIRD QUESTION — added 2026-08-09 after the
+# red team. Failing safe is not the same as failing visibly: an unparsed reply carries no collected
+# facts, so the set difference returns the whole checklist and the pipeline politely asks again. On
+# a hostile input that loop is the attack's payoff — a full-price call per turn, no answer, and
+# nothing anywhere counting how often it happens. Two is the threshold because one unparsed reply
+# is ordinary (it happened once in 40 on a clean run) and two in a row is not.
+UNPARSED_LIMIT = 2
 
-def turn(cfg, intent, turns, complete=None):
+
+def turn(cfg, intent, turns, complete=None, unparsed_before=0):
     """The whole kit for one turn.
 
     `complete` is injectable so the eval harness, the app and any stub drive the SAME code path —
     the reason every sibling kit's entry point takes this parameter. A demo that runs different
     code from the eval is a demo of something nobody measured.
+
+    ⚑ `unparsed_before` RIDES IN THE REQUEST, exactly as the conversation prefix does, and for the
+    same reason: this kit holds no state between calls and a streak counter is not the thing to
+    break that for. The caller carries it, the same way it already carries every turn.
+
+    ⚠︎ AND ESCALATION IS A SEPARATE FLAG, NOT A THIRD `decision`. `decision` has two values, the
+    grader scores them, and every published number is over those two — quietly adding a third
+    would silently change what every rate on the page means. `escalate` sits beside it.
     """
     text = prompt.render(intent, turns)
     call = complete or adapters.complete
@@ -37,6 +53,8 @@ def turn(cfg, intent, turns, complete=None):
     collected = (parsed or {}).get("collected") or {}
     still = slots.missing(intent, collected) if parsed else slots.required(intent)
 
+    streak = 0 if parsed else int(unparsed_before or 0) + 1
+
     return {
         "intent": intent,
         "turns": len(turns),
@@ -45,6 +63,8 @@ def turn(cfg, intent, turns, complete=None):
         "missing": still,
         # The product of the whole kit: not a value, a decision.
         "decision": "ask" if (still or not parsed) else "stop",
+        "unparsed_streak": streak,
+        "escalate": streak >= UNPARSED_LIMIT,
         "notes": (parsed or {}).get("notes", ""),
         "raw": raw,
         "prompt": text,
@@ -66,8 +86,12 @@ def turn(cfg, intent, turns, complete=None):
     }
 
 
-def next_question(intent, missing):
+def next_question(intent, missing, escalate=False):
     """What the app shows when the decision is `ask`.
+
+    An escalation is NOT phrased as a question, because the whole point is that asking again is
+    what stops. Whoever is watching gets told what happened rather than the customer getting a
+    fourth prompt they cannot satisfy.
 
     ⚠︎ TEMPLATED ON PURPOSE, AND NOT A SECOND MODEL CALL. Phrasing the question well is a real
     product problem and it is NOT the one this kit measures — measuring it would need a judge, and
@@ -76,6 +100,9 @@ def next_question(intent, missing):
     ships the plainest possible question and says so, rather than quietly spending on prose nobody
     is grading.
     """
+    if escalate:
+        return ("%d replies in a row could not be read. Handing this to a person rather than "
+                "asking again." % UNPARSED_LIMIT)
     if not missing:
         return "Nothing further is needed."
     human = missing[0].replace("_", " ")
