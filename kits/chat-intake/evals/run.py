@@ -21,7 +21,7 @@ import time
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from evals import baseline, judge                                            # noqa: E402
-from src import budget, config, intake, prompt, slots                                # noqa: E402
+from src import config, intake, prompt, slots                                # noqa: E402
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RESULTS = os.path.join(HERE, "results")
@@ -68,7 +68,15 @@ def main():
     print("\nmodel %s via %s" % (cfg["model"] or "(unset)", cfg["provider"]))
     rows, records, t0 = [], [], time.time()
     for i, c in enumerate(cases, 1):
-        budget.record(cfg.get("model", ""), "chat-intake")
+        # ⚠︎ THE LEDGER IS WRITTEN BY adapters.complete(), NOT HERE. This loop used to call
+        # budget.record() itself, one line above intake.turn() — which reaches the adapter, which
+        # records one layer down. Every eval call was therefore written to the ledger TWICE: the
+        # three Stop-B runs left 242 lines behind against 122 real calls. The two entries are
+        # indistinguishable after the fact, because `record(model, kit=None)` falls back to
+        # `kit or KIT` and KIT is already "chat-intake" — so nothing is lost by deleting this and
+        # nothing could have told them apart. A spend guard that double-counts is not conservative,
+        # it is broken: it trips at half the true usage the moment MAX_CALLS_PER_DAY is set.
+        # `budget.check()` is likewise the adapter's, for the same reason — one place to remember.
         started = time.time()
         out = intake.turn(cfg, c["intent"], c["turns"])
         out["latency_ms"] = int(1000 * (time.time() - started))
