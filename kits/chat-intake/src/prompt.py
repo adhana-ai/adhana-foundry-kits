@@ -41,7 +41,8 @@ RULES = (
     "a plausible default.\n"
     "- An omitted fact costs one more question. A wrong fact is never caught, because the "
     "checklist will read as complete and nothing downstream will ask again.\n"
-    "- Copy the customer's own value. Do not normalise, expand, abbreviate or correct it.\n"
+    "- Where a fact lists allowed values, answer with exactly one of them. Where it does not, "
+    "copy the customer's own words and do not normalise, expand, abbreviate or correct them.\n"
     "- Report only the facts on the required list below. Ignore anything else the conversation "
     "contains.\n"
 )
@@ -55,6 +56,15 @@ def render(intent, turns):
     allowed: there is no store, no session id and nothing that outlives the request.
     """
     need = slots.required(intent)
+    allowed = slots.values(intent)
+    # ⚑ A CLOSED-VOCABULARY SLOT IS SHOWN WITH ITS VOCABULARY — added after r001, which scored 18
+    # of 28 stated facts wrong purely because the model answered "savings account" and the schema
+    # says "savings". A free-text slot (`amount`, `recipient_account_name`) has no list and still
+    # takes the customer's own words, which is why the copy-verbatim rule below stays.
+    need_lines = "\n".join(
+        "- %s%s" % (s, ("  (answer with exactly one of: %s)" % ", ".join(allowed[s]))
+                    if allowed.get(s) else "")
+        for s in need)
     lines = "\n".join("%s: %s" % (t["speaker"].title(), t["utterance"]) for t in turns)
     return (
         "%s\n\n"
@@ -65,7 +75,7 @@ def render(intent, turns):
         "Answer with JSON only, no prose and no code fence:\n"
         '{\"collected\": {\"<fact name>\": \"<the customer\'s own words>\"}, '
         '\"notes\": \"<one short line, or an empty string>\"}\n'
-        % (SYSTEM, intent, "\n".join("- %s" % s for s in need), RULES, lines))
+        % (SYSTEM, intent, need_lines, RULES, lines))
 
 
 def parse(text):

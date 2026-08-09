@@ -46,6 +46,22 @@ def required(intent):
     return intents().get(intent, [])
 
 
+def values(intent):
+    """{slot: [allowed value, ...]} for the CLOSED-VOCABULARY slots of one intent, from the
+    dataset's own `is_categorical` / `possible_values`. Absent for free-text slots like `amount`.
+
+    ⚠︎ THE PROMPT NEEDS THIS AND r001 PROVED IT. Without the value space the model answers in the
+    customer's words — "savings account" where the schema says "savings" — and a scorer strict
+    enough to be worth anything marks every one of them wrong. The fix belongs here rather than in
+    the comparison: loosening the match to accept substrings would let "Peter" pass for
+    "Peter Kim", which is the exact failure this kit exists to catch.
+    """
+    for i in load()["intents"]:
+        if i["key"] == intent:
+            return dict(i.get("values") or {})
+    return {}
+
+
 def states():
     """The four states the panel and the report share. Authored, unlike the checklist."""
     return load()["states"]

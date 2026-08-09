@@ -104,6 +104,28 @@
       + (S.answer ? "  [model]" : "  [replay — the dataset's own state, not a prediction]");
 
     $("step").disabled = S.step >= S.conv.steps.length - 1;
+    $("ask").hidden = !S.hasKey;
+  }
+
+  /* One call, on the turn currently displayed. Split out of advance() so the FIRST turn can be
+   * read too — the shoot tool needs a model answer at step 0, and more importantly a reader who
+   * opens a conversation and presses this expects the answer to be about what they are looking at.
+   *
+   * ⚠︎ IT IS A BUTTON, NOT SOMETHING load() DOES. Calling on load would spend a call every time
+   * the picker changes, which is a bill nobody asked for by browsing. */
+  function ask() {
+    if (!S.hasKey || !S.conv) return;
+    var step = S.conv.steps[S.step];
+    $("ask").disabled = true;
+    fetch("/api/turn", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ intent: S.conv.intent, turns: step.turns })
+    }).then(function (r) { return r.json(); }).then(function (out) {
+      $("ask").disabled = false;
+      if (out.error) { return; }        // replay stays on screen; it is still true
+      S.answer = out;
+      render();
+    }).catch(function () { $("ask").disabled = false; });
   }
 
   function advance() {
@@ -111,20 +133,12 @@
     S.step += 1;
     S.answer = null;
     render();
-    if (!S.hasKey) return;
-    var step = S.conv.steps[S.step];
-    fetch("/api/turn", {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ intent: S.conv.intent, turns: step.turns })
-    }).then(function (r) { return r.json(); }).then(function (out) {
-      if (out.error) { return; }        // replay stays on screen; it is still true
-      S.answer = out;
-      render();
-    });
+    ask();
   }
 
   $("conv").addEventListener("change", load);
   $("step").addEventListener("click", advance);
+  $("ask").addEventListener("click", ask);
   $("reset").addEventListener("click", function () { S.step = 0; S.answer = null; render(); });
   boot();
 })();

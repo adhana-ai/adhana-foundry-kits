@@ -100,6 +100,18 @@ def _schema():
 
 
 def _write_slots(svc):
+    # ⚑ CATEGORICAL SLOTS CARRY THEIR VALUE SPACE, AND r001 IS WHY. The first real run scored 18 of
+    # 28 stated facts WRONG while getting 95% of decisions right, which is not a shape a model
+    # failure makes. The model had answered "savings account" where gold says "savings" — because
+    # the prompt told it to copy the customer's own words, and the customer says "savings account".
+    #
+    # ⚠︎ THE FIX IS THE PROMPT, NOT THE SCORER. Accepting substrings would have made the numbers
+    # look fine and destroyed the one thing this kit measures: "Peter" must not pass for
+    # "Peter Kim". The dataset already declares which slots are closed vocabularies and what the
+    # values are, so the value space is read from the schema like everything else here — never
+    # typed, and never guessed at by the model.
+    vals = {s["name"]: list(s.get("possible_values") or [])
+            for s in svc.get("slots", []) if s.get("is_categorical")}
     intents = []
     for it in svc["intents"]:
         req = list(it.get("required_slots") or [])
@@ -111,6 +123,7 @@ def _write_slots(svc):
         intents.append({"key": it["name"],
                         "label": LABELS.get(it["name"], it["name"]),
                         "required": req,
+                        "values": {s: vals[s] for s in req if s in vals},
                         "optional": sorted((it.get("optional_slots") or {}).keys())})
     out = {
         "source": "Schema-Guided Dialogue (SGD), service %s, train split" % SERVICE,

@@ -30,8 +30,16 @@ GOLD = os.path.join(HERE, "data", "gold.jsonl")
 PORT = int(os.environ.get("PORT", "8769"))
 
 
-def _cases(limit=40):
-    """A few conversations to step through. Sorted, so the list is the same every launch."""
+def _cases(limit=150):
+    """Conversations to step through, one entry each, in a stable order.
+
+    ⚠︎ SORT FIRST, THEN CAP — IT USED TO CAP FIRST AND THAT MADE THE PICKER LOOK SORTED WHILE BEING
+    FILE ORDER. The tail was whatever shard happened to be read first, so `39_00123` — the one case
+    both models are known to get wrong — was absent from a list that ended at `40_00003` and
+    therefore looked complete. tools/shoot_ui.mjs selected it, the select silently no-opped, and
+    the "failure" screenshot came out a success on a different conversation. A cap applied before
+    a sort is a sample pretending to be a prefix.
+    """
     if not os.path.exists(GOLD):
         return []
     seen, out = set(), []
@@ -42,9 +50,7 @@ def _cases(limit=40):
         seen.add(c["dialogue_id"])
         out.append({"dialogue_id": c["dialogue_id"], "intent": c["intent"],
                     "opening": c["turns"][0]["utterance"] if c["turns"] else ""})
-        if len(out) >= limit:
-            break
-    return sorted(out, key=lambda c: c["dialogue_id"])
+    return sorted(out, key=lambda c: c["dialogue_id"])[:limit]
 
 
 def _conversation(dialogue_id):
