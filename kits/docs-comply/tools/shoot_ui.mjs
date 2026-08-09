@@ -44,14 +44,25 @@ mkdirSync(OUT, { recursive: true })
 // appeared. Identity is not enough when the imposter is yourself.
 //
 // So: the port must be FREE before we start, and if it is not, nothing is photographed.
-async function portIsFree() {
-  try {
-    const r = await fetch(`http://127.0.0.1:${PORT}/api/state`, { signal: AbortSignal.timeout(1500) })
-    return !r.ok
-  } catch { return true }
+//
+// ⚠︎ THIS WAS AN HTTP PROBE UNTIL 2026-08-08 AND IT HAD THE SAME HOLE ONE LAYER DOWN: it fetched
+// /api/state and returned `!r.ok`, so anything answering with a non-OK status read as FREE. A
+// process that is up but erroring, or serving a different app, is still going to fight this
+// script for the bind — "it did not answer the way I expected" is not "nothing is there". A raw
+// TCP connect asks the only question that matters.
+async function portIsFree(port) {
+  const net = await import('node:net')
+  return new Promise((resolve) => {
+    const s = net.createConnection({ host: '127.0.0.1', port })
+    const done = (v) => { try { s.destroy() } catch {} ; resolve(v) }
+    s.setTimeout(1200)
+    s.on('connect', () => done(false))
+    s.on('timeout', () => done(true))
+    s.on('error', () => done(true))
+  })
 }
-if (!(await portIsFree())) {
-  console.error(`  !! something is ALREADY serving 127.0.0.1:${PORT}.`)
+if (!(await portIsFree(PORT))) {
+  console.error(`  !! something is ALREADY listening on 127.0.0.1:${PORT}.`)
   console.error('     Refusing to start: this script blanks API_KEY so its shots are free, and a')
   console.error('     server it did not start may hold a real key — clicking would SPEND.')
   console.error(`     Free the port (lsof -nP -iTCP:${PORT} -sTCP:LISTEN) or set PORT= to a spare one.`)

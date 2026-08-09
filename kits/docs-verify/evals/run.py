@@ -79,6 +79,15 @@ def main():
             print("aborted — nothing spent")
             return
     if not a.stub:
+        # ⚠︎ THIS IS THE ONLY BUDGET CALL THIS HARNESS MAKES, AND THE LOOP BELOW USED TO MAKE
+        # ANOTHER. It called BUDGET.record(1) after every document while adapters.complete()
+        # already recorded one layer down, so every call was written to the shared ledger TWICE —
+        # and worse, `1` was passed where record() expects a MODEL, so the phantom lines are
+        # filed under model "1" and cannot even be attributed. A spend guard that double-counts is
+        # not conservative, it is broken: it halves the real cap and cannot be reconciled against
+        # a provider invoice. THE ADAPTER OWNS `check` AND `record`; a harness must not also
+        # record. This pre-flight check is a different question — "can I afford the whole run
+        # before starting it" — and stays.
         BUDGET.check(len(docs))
 
     thinking = adapters.THINKING_OFF if (a.no_thinking and not a.stub) else None
@@ -116,8 +125,6 @@ def main():
         print("  %2d/%d  %-14s %2d/%-2d answered  %s"
               % (i, len(docs), doc_id, r["answered"], r["asked"],
                  "" if r["parsed"] else "*** UNPARSEABLE ***"))
-        if not a.stub:
-            BUDGET.record(1)
 
     scored = J.score(records, labelled)
     lat.sort()

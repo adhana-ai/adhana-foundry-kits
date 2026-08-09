@@ -208,7 +208,21 @@ def match_definition(element, defs):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--fetch", action="store_true", help="force a fresh pull of the eCFR XML")
+    ap.add_argument("--print-hash", action="store_true",
+                    help="print the fingerprint of the rulebook on disk and exit, without "
+                         "rebuilding. This is the value src/comply.py pins as RULEBOOK_SHA256.")
     a = ap.parse_args()
+    if getattr(a, "print_hash", False):
+        import sys as _sys
+        _sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        from src.comply import rulebook_fingerprint as _fp, RULEBOOK_SHA256 as _pinned
+        with open(OUT, encoding="utf-8") as _fh:
+            _rules = json.load(_fh)["rules"]
+        _got = _fp(_rules)
+        print(_got)
+        print("pinned in src/comply.py: %s" % _pinned)
+        print("MATCH" if _got == _pinned else "MISMATCH — the rulebook on disk is not the pinned one")
+        return
 
     if a.fetch or not os.path.exists(XML):
         print("fetching %s" % SRC)
@@ -253,7 +267,20 @@ def main():
         json.dump(payload, fh, indent=1)
         fh.write("\n")
 
+    # ⚑ THE NEW FINGERPRINT, PRINTED WHERE THE PERSON WHO CHANGED THE RULES IS LOOKING. A pin in
+    # code that a legitimate rebuild cannot easily update is a pin somebody deletes; this makes
+    # updating it a copy-paste with a diff, which is exactly the deliberate act it should be.
+    import sys as _sys
+    _sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    from src.comply import rulebook_fingerprint as _fp, RULEBOOK_SHA256 as _pinned
+    _got = _fp(rules)
     print("rulebook: %d rules -> data/rulebook.json" % len(rules))
+    print("   fingerprint: %s" % _got)
+    if _got != _pinned:
+        print("   ⚠︎ THIS DOES NOT MATCH src/comply.py's RULEBOOK_SHA256 (%s...)." % _pinned[:16])
+        print("      The rules changed. If that was intended, paste the value above into")
+        print("      src/comply.py; every run will refuse to start until you do. If it was NOT")
+        print("      intended, find out what changed before running anything.")
     print("   definitions matched from §11.10(b): %d/%d" % (matched, len(rules)))
     by_group = {}
     for r in rules:

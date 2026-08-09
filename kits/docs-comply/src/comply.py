@@ -19,6 +19,7 @@ The cost of that decision is stated on the page rather than hidden: the whole do
 every check, so cost scales with document length and rule count together, and the kit gets more
 expensive on long documents rather than smarter about them.
 """
+import hashlib
 import json
 import os
 
@@ -50,15 +51,66 @@ def documents():
     return sorted(fn[:-4] for fn in os.listdir(CORPUS) if fn.endswith(".txt"))
 
 
-def rulebook():
+# ⚑ THE RULEBOOK'S FINGERPRINT, PINNED IN CODE — added 2026-08-08, straight out of the red-team
+# run. x002 found that a single edited rule turns a real breach into a pass on 5 of 5 attempts,
+# and nothing in the kit would have noticed: `tools/build_rulebook.py` parses the regulation once
+# at build time and everything downstream trusted the file forever after.
+#
+# ⚠︎ THE HASH IS HERE, IN SOURCE, AND NOT IN data/rulebook.json — THAT PLACEMENT IS THE ENTIRE
+# CONTROL. A fingerprint stored inside the file it fingerprints is not a control at all: whoever
+# edits a rule edits the hash on the line below it and the check passes. Keeping it in code means
+# tampering with the rulebook alone fails loudly, and tampering successfully requires a second
+# edit, to a different file, in a language diff review actually reads.
+#
+# ⚠︎ WHAT IT DOES NOT DO, because a security control described loosely is worse than none:
+#   · It does NOT verify the rulebook against the eCFR. It pins what was parsed, not that what was
+#     parsed was right. A poisoned SOURCE, or a bad parse, hashes perfectly.
+#   · It does NOT stop anyone who can edit this file. Someone with commit access can move both.
+#     It converts a silent one-line data edit into a visible two-file code change.
+#   · It is NOT a runtime authentication of anything. There is no signature and no key.
+# Regenerating the rulebook legitimately WILL fail this check, which is correct and is the whole
+# point — `python -m tools.build_rulebook --print-hash` emits the new value to paste here, so
+# updating it is a deliberate act with a diff, not a silent drift.
+RULEBOOK_SHA256 = "7d18c1200281ff214721bd5007a94791ac18e6fc18ebf302938ebc5f82bec851"
+
+
+class RulebookTampered(Exception):
+    """The rules on disk are not the rules this code was written against."""
+
+
+def rulebook_fingerprint(rule_list):
+    """The canonical hash of a rule list. Sorted keys and no whitespace, so re-serialising the
+    same rules with a different formatter does not read as tampering."""
+    canon = json.dumps(rule_list, sort_keys=True, separators=(",", ":"),
+                       ensure_ascii=False).encode("utf-8")
+    return hashlib.sha256(canon).hexdigest()
+
+
+def rulebook(verify=True):
     """The transcribed rulebook. Read from disk every time rather than cached at import, so a
-    regenerated rulebook takes effect without restarting a long-lived app."""
+    regenerated rulebook takes effect without restarting a long-lived app.
+
+    `verify=False` is for the red-team harness, which poisons rules ON PURPOSE and would otherwise
+    be blocked by the control it exists to measure. Nothing else passes it.
+    """
     with open(RULEBOOK, encoding="utf-8") as f:
-        return json.load(f)
+        book = json.load(f)
+    if verify:
+        got = rulebook_fingerprint(book["rules"])
+        if got != RULEBOOK_SHA256:
+            raise RulebookTampered(
+                "data/rulebook.json does not match the fingerprint pinned in src/comply.py.\n"
+                "  expected %s\n  got      %s\n"
+                "If you regenerated the rulebook on purpose, run "
+                "`python -m tools.build_rulebook --print-hash` and paste the new value into "
+                "RULEBOOK_SHA256. If you did not, do not run this kit until you know why the "
+                "rules changed: a single edited rule is enough to turn a breach into a pass, "
+                "measured at 5 of 5 in run x002-docs-comply." % (RULEBOOK_SHA256, got))
+    return book
 
 
-def rules():
-    return rulebook()["rules"]
+def rules(verify=True):
+    return rulebook(verify=verify)["rules"]
 
 
 def load_gold():

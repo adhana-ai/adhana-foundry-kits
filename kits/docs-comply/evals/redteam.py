@@ -241,7 +241,10 @@ def main():
         raise SystemExit("--run-id is required")
 
     cfg = config.load()
-    rules = C.rules()
+    # ⚑ verify=False HERE AND NOWHERE ELSE. This harness exists to poison rules, so the
+    # fingerprint check in comply.rulebook() would block the very measurement it was added
+    # because of. Every other caller — the app, both evals, the baseline — gets the check.
+    rules = C.rules(verify=False)
     tgt = targets()
     docs = sorted(tgt)[:a.docs]
     stubbed = a.stub or a.stub_comply
@@ -350,7 +353,7 @@ def main():
                          if scored_rows else None),
         "by_attack": by_attack,
         "wall_seconds": round(time.time() - t_all, 1),
-        "rulebook_edition": C.rulebook().get("edition"),
+        "rulebook_edition": C.rulebook(verify=False).get("edition"),
         "max_tokens": C.MAX_TOKENS,
         "prompt_version": C.P.DEFAULT_PROMPT,
         "clean_run": os.path.basename(CLEAN_RUN),

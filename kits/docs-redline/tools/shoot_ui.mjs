@@ -33,6 +33,39 @@ mkdirSync(OUT, { recursive: true })
 const env = { ...process.env, PORT: String(PORT) }
 if (!LIVE) { env.API_KEY = ''; env.LLM_API_KEY = ''; env.OPENAI_API_KEY = '' }
 
+// ⚠︎ THE PORT MUST BE **FREE**, NOT MERELY OCCUPIED BY SOMETHING THAT LOOKS RIGHT — added
+// 2026-08-08 after this exact gap cost a real provider call in docs-comply.
+//
+// The identity check further down asks "is the thing on this port THIS kit?". A STALE COPY OF THE
+// SAME KIT, left listening by an earlier session, answers that perfectly — it IS this kit. But it
+// was started with a real API_KEY, while this script deliberately starts its server with the key
+// blanked so the shots are free. The spawn below then loses the bind, dies quietly, and the script
+// photographs the OLD server: the click reaches a process holding a live key, spends, and the
+// no-key panel this pass exists to capture never appears. Identity is not enough when the imposter
+// is yourself.
+//
+// A raw TCP connect is used rather than an HTTP probe on purpose. Asking an endpoint and treating
+// a non-OK reply as "free" is the same mistake one layer down — something IS there, and it is
+// about to fight this script for the bind.
+async function portIsFree(port) {
+  const net = await import('node:net')
+  return new Promise((resolve) => {
+    const s = net.createConnection({ host: '127.0.0.1', port })
+    const done = (v) => { try { s.destroy() } catch {} ; resolve(v) }
+    s.setTimeout(1200)
+    s.on('connect', () => done(false))
+    s.on('timeout', () => done(true))
+    s.on('error', () => done(true))
+  })
+}
+if (!(await portIsFree(PORT))) {
+  console.error(`  !! something is ALREADY listening on 127.0.0.1:${PORT}.`)
+  console.error('     Refusing to start: this script blanks API_KEY so its shots are free, and a')
+  console.error('     server it did not start may hold a real key — clicking would SPEND.')
+  console.error(`     Free the port (lsof -nP -iTCP:${PORT} -sTCP:LISTEN) or set PORT= to a spare one.`)
+  process.exit(4)
+}
+
 const server = spawn('python3', ['-m', 'src.app'], { cwd: HERE, env, stdio: 'ignore' })
 process.on('exit', () => server.kill())
 
