@@ -65,6 +65,17 @@ def turn(cfg, intent, turns, complete=None, unparsed_before=0):
         "decision": "ask" if (still or not parsed) else "stop",
         "unparsed_streak": streak,
         "escalate": streak >= UNPARSED_LIMIT,
+        # ⚑ THE ONE GUARDRAIL THE RED TEAM'S DATA ACTUALLY EARNED. Measured over every record that
+        # carries a finish_reason: this signature fires 9 times, every one of them an attack, and
+        # it explains 100% of the unparsed replies with no false positive on any control or clean
+        # case. The provider was telling us the whole time — `finish_reason` arrived on every call
+        # and nothing read it. It costs no model call, it is not a heuristic, and it names the
+        # attack on its first appearance instead of on a red-team run.
+        #
+        # ⚠︎ IT IS A FLAG, NOT A REFUSAL. The decision is unchanged and stays `ask`: a caller that
+        # dropped the turn on this signal would hand an attacker a way to kill any conversation.
+        # What it buys is that the failure is now VISIBLE and countable rather than silent.
+        "budget_exhausted": (res.get("finish_reason") == "length" and parsed is None),
         "notes": (parsed or {}).get("notes", ""),
         "raw": raw,
         "prompt": text,

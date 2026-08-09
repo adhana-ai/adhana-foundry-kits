@@ -1,0 +1,1917 @@
+{
+  "run_id": "p002-chat-intake-banks2-full",
+  "kit": "chat-intake",
+  "split": "held-out",
+  "model": "deepseek-v4-flash",
+  "provider": "openai-compatible",
+  "dataset_version": "Schema-Guided Dialogue (SGD), service Banks_2, dev split — held-out carved by sha256(dialogue_id) < 0.20",
+  "corpus": "banks_2",
+  "grader": "pure code — evals/judge.py, == against the dataset's own dialogue state. No judge model, so the eval costs nothing to re-run.",
+  "elapsed_s": 184.8,
+  "latency_p50_ms": 2052,
+  "latency_p95_ms": 3336,
+  "input_tokens": 41742,
+  "output_tokens": 7104,
+  "totals": {
+    "cases": 83,
+    "unparsed": 0,
+    "facts_judged": 83,
+    "correct": 57,
+    "wrong": 0,
+    "missed": 0,
+    "open": 26,
+    "decision_ok": 83,
+    "stopped_early": 0,
+    "kept_asking": 0,
+    "decision_rate": 1.0
+  },
+  "floors": {
+    "always-stop": {
+      "cases": 83,
+      "unparsed": 0,
+      "facts_judged": 83,
+      "correct": 57,
+      "wrong": 26,
+      "missed": 0,
+      "open": 0,
+      "decision_ok": 57,
+      "stopped_early": 26,
+      "kept_asking": 0,
+      "decision_rate": 0.6867469879518072
+    },
+    "always-ask": {
+      "cases": 83,
+      "unparsed": 0,
+      "facts_judged": 83,
+      "correct": 0,
+      "wrong": 0,
+      "missed": 57,
+      "open": 26,
+      "decision_ok": 26,
+      "stopped_early": 0,
+      "kept_asking": 57,
+      "decision_rate": 0.3132530120481928
+    },
+    "copy-nothing": {
+      "cases": 83,
+      "unparsed": 0,
+      "facts_judged": 83,
+      "correct": 0,
+      "wrong": 0,
+      "missed": 57,
+      "open": 26,
+      "decision_ok": 26,
+      "stopped_early": 0,
+      "kept_asking": 57,
+      "decision_rate": 0.3132530120481928
+    }
+  },
+  "checklist": {
+    "CheckBalance": [
+      "account_type"
+    ],
+    "TransferMoney": [
+      "account_type",
+      "transfer_amount",
+      "recipient_name"
+    ]
+  },
+  "records": [
+    {
+      "case_id": "11_00006#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 403,
+      "output_tokens": 68,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 50
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1814
+    },
+    {
+      "case_id": "11_00006#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 413,
+      "output_tokens": 81,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 63
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2088
+    },
+    {
+      "case_id": "11_00029#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 407,
+      "output_tokens": 57,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 39
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1732
+    },
+    {
+      "case_id": "11_00033#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 410,
+      "output_tokens": 59,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 41
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1929
+    },
+    {
+      "case_id": "11_00033#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 422,
+      "output_tokens": 66,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 47
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1908
+    },
+    {
+      "case_id": "11_00038#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 407,
+      "output_tokens": 58,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 39
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1879
+    },
+    {
+      "case_id": "11_00039#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 405,
+      "output_tokens": 55,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 37
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1836
+    },
+    {
+      "case_id": "11_00042#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 414,
+      "output_tokens": 86,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 68
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2236
+    },
+    {
+      "case_id": "11_00048#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 404,
+      "output_tokens": 59,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 39
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1789
+    },
+    {
+      "case_id": "11_00048#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 417,
+      "output_tokens": 90,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 71
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1907
+    },
+    {
+      "case_id": "12_00068#5",
+      "intent": "CheckBalance",
+      "turns": 5,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 447,
+      "output_tokens": 81,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 62
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2129
+    },
+    {
+      "case_id": "12_00069#11",
+      "intent": "CheckBalance",
+      "turns": 11,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 623,
+      "output_tokens": 110,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 91
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2567
+    },
+    {
+      "case_id": "12_00070#9",
+      "intent": "CheckBalance",
+      "turns": 9,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 617,
+      "output_tokens": 86,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 67
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2250
+    },
+    {
+      "case_id": "12_00072#7",
+      "intent": "CheckBalance",
+      "turns": 7,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 462,
+      "output_tokens": 79,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 68
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2483
+    },
+    {
+      "case_id": "12_00072#9",
+      "intent": "CheckBalance",
+      "turns": 9,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 474,
+      "output_tokens": 128,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 109
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2598
+    },
+    {
+      "case_id": "12_00077#11",
+      "intent": "CheckBalance",
+      "turns": 11,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 594,
+      "output_tokens": 72,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 53
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2123
+    },
+    {
+      "case_id": "12_00081#7",
+      "intent": "CheckBalance",
+      "turns": 7,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 496,
+      "output_tokens": 72,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 53
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1915
+    },
+    {
+      "case_id": "12_00098#5",
+      "intent": "CheckBalance",
+      "turns": 5,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 450,
+      "output_tokens": 93,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 75
+      },
+      "budget_exhausted": false,
+      "latency_ms": 3336
+    },
+    {
+      "case_id": "12_00103#13",
+      "intent": "CheckBalance",
+      "turns": 13,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 524,
+      "output_tokens": 96,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 79
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2429
+    },
+    {
+      "case_id": "12_00103#15",
+      "intent": "CheckBalance",
+      "turns": 15,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 537,
+      "output_tokens": 83,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 64
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1724
+    },
+    {
+      "case_id": "17_00104#15",
+      "intent": "CheckBalance",
+      "turns": 15,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 648,
+      "output_tokens": 86,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 68
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2210
+    },
+    {
+      "case_id": "17_00105#19",
+      "intent": "CheckBalance",
+      "turns": 19,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 712,
+      "output_tokens": 62,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 43
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1830
+    },
+    {
+      "case_id": "17_00111#17",
+      "intent": "CheckBalance",
+      "turns": 17,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 667,
+      "output_tokens": 84,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 66
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2120
+    },
+    {
+      "case_id": "17_00116#13",
+      "intent": "CheckBalance",
+      "turns": 13,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 656,
+      "output_tokens": 291,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 275
+      },
+      "budget_exhausted": false,
+      "latency_ms": 3950
+    },
+    {
+      "case_id": "17_00116#15",
+      "intent": "CheckBalance",
+      "turns": 15,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 678,
+      "output_tokens": 82,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 63
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1950
+    },
+    {
+      "case_id": "17_00124#15",
+      "intent": "CheckBalance",
+      "turns": 15,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 663,
+      "output_tokens": 85,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 67
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1974
+    },
+    {
+      "case_id": "18_00001#25",
+      "intent": "CheckBalance",
+      "turns": 25,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 832,
+      "output_tokens": 96,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 75
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2226
+    },
+    {
+      "case_id": "18_00001#27",
+      "intent": "CheckBalance",
+      "turns": 27,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 859,
+      "output_tokens": 97,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 79
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2342
+    },
+    {
+      "case_id": "18_00006#21",
+      "intent": "CheckBalance",
+      "turns": 21,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 657,
+      "output_tokens": 72,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 61
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2103
+    },
+    {
+      "case_id": "18_00006#23",
+      "intent": "CheckBalance",
+      "turns": 23,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 672,
+      "output_tokens": 67,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 48
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1908
+    },
+    {
+      "case_id": "18_00009#11",
+      "intent": "CheckBalance",
+      "turns": 11,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 588,
+      "output_tokens": 213,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 194
+      },
+      "budget_exhausted": false,
+      "latency_ms": 3389
+    },
+    {
+      "case_id": "18_00012#19",
+      "intent": "CheckBalance",
+      "turns": 19,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 716,
+      "output_tokens": 158,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 139
+      },
+      "budget_exhausted": false,
+      "latency_ms": 3052
+    },
+    {
+      "case_id": "18_00016#13",
+      "intent": "CheckBalance",
+      "turns": 13,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 572,
+      "output_tokens": 101,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 83
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2224
+    },
+    {
+      "case_id": "18_00024#13",
+      "intent": "CheckBalance",
+      "turns": 13,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 633,
+      "output_tokens": 65,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 46
+      },
+      "budget_exhausted": false,
+      "latency_ms": 8088
+    },
+    {
+      "case_id": "18_00026#21",
+      "intent": "CheckBalance",
+      "turns": 21,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 725,
+      "output_tokens": 97,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 78
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2046
+    },
+    {
+      "case_id": "18_00071#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 405,
+      "output_tokens": 65,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 49
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1872
+    },
+    {
+      "case_id": "18_00071#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 423,
+      "output_tokens": 84,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 65
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1792
+    },
+    {
+      "case_id": "18_00077#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 405,
+      "output_tokens": 74,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 58
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1973
+    },
+    {
+      "case_id": "18_00077#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 421,
+      "output_tokens": 68,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 50
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1808
+    },
+    {
+      "case_id": "18_00088#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 402,
+      "output_tokens": 70,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 54
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1984
+    },
+    {
+      "case_id": "18_00088#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 425,
+      "output_tokens": 81,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 62
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2096
+    },
+    {
+      "case_id": "18_00092#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 401,
+      "output_tokens": 52,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 34
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1779
+    },
+    {
+      "case_id": "18_00095#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 408,
+      "output_tokens": 46,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 27
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1900
+    },
+    {
+      "case_id": "18_00103#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 402,
+      "output_tokens": 67,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 51
+      },
+      "budget_exhausted": false,
+      "latency_ms": 3136
+    },
+    {
+      "case_id": "18_00103#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 420,
+      "output_tokens": 101,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 82
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2465
+    },
+    {
+      "case_id": "18_00105#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 408,
+      "output_tokens": 79,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 60
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1739
+    },
+    {
+      "case_id": "18_00106#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 416,
+      "output_tokens": 50,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 30
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1638
+    },
+    {
+      "case_id": "18_00106#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 434,
+      "output_tokens": 78,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 60
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2053
+    },
+    {
+      "case_id": "18_00110#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 405,
+      "output_tokens": 70,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 51
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2061
+    },
+    {
+      "case_id": "18_00114#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 406,
+      "output_tokens": 72,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 56
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1927
+    },
+    {
+      "case_id": "18_00114#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 431,
+      "output_tokens": 57,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 39
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1849
+    },
+    {
+      "case_id": "18_00118#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 408,
+      "output_tokens": 111,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 93
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2411
+    },
+    {
+      "case_id": "18_00118#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 429,
+      "output_tokens": 93,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 75
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2034
+    },
+    {
+      "case_id": "4_00109#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 416,
+      "output_tokens": 79,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 61
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1876
+    },
+    {
+      "case_id": "4_00109#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 441,
+      "output_tokens": 75,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 57
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1822
+    },
+    {
+      "case_id": "4_00115#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 429,
+      "output_tokens": 59,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 41
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2018
+    },
+    {
+      "case_id": "5_00000#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 408,
+      "output_tokens": 50,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 32
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1886
+    },
+    {
+      "case_id": "5_00002#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 409,
+      "output_tokens": 63,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 45
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1898
+    },
+    {
+      "case_id": "5_00006#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 420,
+      "output_tokens": 92,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 76
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2244
+    },
+    {
+      "case_id": "5_00006#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 442,
+      "output_tokens": 56,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 37
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2922
+    },
+    {
+      "case_id": "5_00014#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 406,
+      "output_tokens": 94,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 76
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1766
+    },
+    {
+      "case_id": "5_00018#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 404,
+      "output_tokens": 73,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 55
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1701
+    },
+    {
+      "case_id": "5_00018#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 421,
+      "output_tokens": 88,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 70
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1947
+    },
+    {
+      "case_id": "5_00021#1",
+      "intent": "CheckBalance",
+      "turns": 1,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 403,
+      "output_tokens": 67,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 51
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2095
+    },
+    {
+      "case_id": "5_00021#3",
+      "intent": "CheckBalance",
+      "turns": 3,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 417,
+      "output_tokens": 49,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 31
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1935
+    },
+    {
+      "case_id": "8_00102#5",
+      "intent": "CheckBalance",
+      "turns": 5,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 491,
+      "output_tokens": 98,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 82
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2394
+    },
+    {
+      "case_id": "8_00102#7",
+      "intent": "CheckBalance",
+      "turns": 7,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 512,
+      "output_tokens": 74,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 56
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1664
+    },
+    {
+      "case_id": "8_00109#11",
+      "intent": "CheckBalance",
+      "turns": 11,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 623,
+      "output_tokens": 149,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 131
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2927
+    },
+    {
+      "case_id": "8_00109#13",
+      "intent": "CheckBalance",
+      "turns": 13,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 640,
+      "output_tokens": 78,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 60
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2111
+    },
+    {
+      "case_id": "8_00116#11",
+      "intent": "CheckBalance",
+      "turns": 11,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 567,
+      "output_tokens": 73,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 54
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2074
+    },
+    {
+      "case_id": "8_00118#5",
+      "intent": "CheckBalance",
+      "turns": 5,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 494,
+      "output_tokens": 96,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 85
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2181
+    },
+    {
+      "case_id": "8_00118#7",
+      "intent": "CheckBalance",
+      "turns": 7,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 525,
+      "output_tokens": 87,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 69
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2052
+    },
+    {
+      "case_id": "8_00120#11",
+      "intent": "CheckBalance",
+      "turns": 11,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 484,
+      "output_tokens": 70,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 53
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2055
+    },
+    {
+      "case_id": "8_00120#9",
+      "intent": "CheckBalance",
+      "turns": 9,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 475,
+      "output_tokens": 89,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 73
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2111
+    },
+    {
+      "case_id": "8_00122#9",
+      "intent": "CheckBalance",
+      "turns": 9,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 486,
+      "output_tokens": 64,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 46
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1933
+    },
+    {
+      "case_id": "9_00009#7",
+      "intent": "CheckBalance",
+      "turns": 7,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 500,
+      "output_tokens": 76,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 58
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2002
+    },
+    {
+      "case_id": "9_00009#9",
+      "intent": "CheckBalance",
+      "turns": 9,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 518,
+      "output_tokens": 59,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 41
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1601
+    },
+    {
+      "case_id": "9_00016#11",
+      "intent": "CheckBalance",
+      "turns": 11,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 549,
+      "output_tokens": 82,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 63
+      },
+      "budget_exhausted": false,
+      "latency_ms": 1977
+    },
+    {
+      "case_id": "9_00017#11",
+      "intent": "CheckBalance",
+      "turns": 11,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 583,
+      "output_tokens": 104,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 88
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2323
+    },
+    {
+      "case_id": "9_00017#13",
+      "intent": "CheckBalance",
+      "turns": 13,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 600,
+      "output_tokens": 82,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 63
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2258
+    },
+    {
+      "case_id": "9_00018#9",
+      "intent": "CheckBalance",
+      "turns": 9,
+      "decision": "stop",
+      "collected": {
+        "account_type": "checking"
+      },
+      "gold": {
+        "account_type": [
+          "checking"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 554,
+      "output_tokens": 91,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 73
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2313
+    },
+    {
+      "case_id": "9_00020#11",
+      "intent": "CheckBalance",
+      "turns": 11,
+      "decision": "stop",
+      "collected": {
+        "account_type": "savings"
+      },
+      "gold": {
+        "account_type": [
+          "savings"
+        ]
+      },
+      "gold_complete": true,
+      "parsed": true,
+      "input_tokens": 547,
+      "output_tokens": 247,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 228
+      },
+      "budget_exhausted": false,
+      "latency_ms": 3396
+    },
+    {
+      "case_id": "9_00020#9",
+      "intent": "CheckBalance",
+      "turns": 9,
+      "decision": "ask",
+      "collected": {},
+      "gold": {},
+      "gold_complete": false,
+      "parsed": true,
+      "input_tokens": 525,
+      "output_tokens": 87,
+      "finish_reason": "stop",
+      "token_details": {
+        "reasoning_tokens": 68
+      },
+      "budget_exhausted": false,
+      "latency_ms": 2620
+    }
+  ]
+}

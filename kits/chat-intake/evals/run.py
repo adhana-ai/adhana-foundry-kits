@@ -90,6 +90,13 @@ def main():
                         "gold_complete": c["gold_complete"], "parsed": out["parsed"],
                         "input_tokens": out["input_tokens"],
                         "output_tokens": out["output_tokens"],
+                        # Carried since 2026-08-09 for the same reason redteam.py carries them: an
+                        # unparsed reply is undiagnosable without knowing whether the model said
+                        # nothing or was cut off, and the eval records had been dropping the field
+                        # the adapter always returned.
+                        "finish_reason": out.get("finish_reason"),
+                        "token_details": out.get("token_details"),
+                        "budget_exhausted": out.get("budget_exhausted"),
                         "latency_ms": out["latency_ms"]})
         print("  %3d/%d  %-16s %-4s %s" % (i, len(cases), c["case_id"], out["decision"],
                                            "ok" if row["decision_ok"] else "WRONG"))

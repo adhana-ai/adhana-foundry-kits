@@ -124,6 +124,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return self._json({"error": "%s: %s" % (type(exc).__name__, exc)}, 502)
         out["next_question"] = intake.next_question(req["intent"], out["missing"],
                                                     escalate=out["escalate"])
+        if out.get("budget_exhausted"):
+            # Named on the surface a person is looking at, because "no answer" and
+            # "the answer was cut off mid-thought and billed in full" are different
+            # events and only one of them is worth paging somebody about.
+            out["notice"] = ("The reply hit the token ceiling and returned nothing. "
+                             "This call was billed in full. Repeated on the same turn, "
+                             "it is the signature of a hostile input.")
         out.pop("prompt", None)                        # the UI does not need it; the eval prints it
         return self._json(out)
 
