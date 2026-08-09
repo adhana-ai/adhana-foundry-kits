@@ -102,7 +102,14 @@ def main():
         "split": a.split,
         "model": cfg["model"],
         "provider": cfg["provider"],
-        "dataset_version": "SGD Banks_1, train, held-out carved by sha256(dialogue_id) < 0.20",
+        # ⚠︎ DERIVED, NOT TYPED — it was the literal string "SGD Banks_1, train, ..." until
+        # 2026-08-09, and the first probe run against Banks_2 wrote a result file claiming Banks_1.
+        # A provenance line that cannot be wrong is worth more than one that reads well: this is
+        # the field somebody uses to decide whether two runs may be compared, and a hardcoded one
+        # is guaranteed to lie the moment a second corpus exists.
+        "dataset_version": "%s — held-out carved by sha256(dialogue_id) < 0.20"
+                           % slots.load().get("source", "unknown corpus"),
+        "corpus": slots.CORPUS or "banks_1",
         "grader": "pure code — evals/judge.py, == against the dataset's own dialogue state. "
                   "No judge model, so the eval costs nothing to re-run.",
         "elapsed_s": round(time.time() - t0, 1),

@@ -15,7 +15,14 @@ import json
 import os
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PATH = os.path.join(HERE, "data", "slots.json")
+# ⚑ ONE ENVIRONMENT VARIABLE SWITCHES THE CHECKLIST, AND IT IS THE POINT OF THE KIT RATHER THAN A
+# TEST HOOK. `CHAT_INTAKE_CORPUS=banks_2` reads data/slots-banks_2.json instead — the same two
+# intents under RENAMED slots, from a split this kit has never been run against. If the design
+# claim is true (the checklist is data, the code is generic), nothing else has to change to run it.
+# Unset is the shipped corpus, byte for byte.
+CORPUS = os.environ.get("CHAT_INTAKE_CORPUS", "").strip()
+_SUFFIX = ("-" + CORPUS) if CORPUS else ""
+PATH = os.path.join(HERE, "data", "slots%s.json" % _SUFFIX)
 
 
 class NotBuilt(RuntimeError):

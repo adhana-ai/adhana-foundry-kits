@@ -21,6 +21,7 @@ shards. Cloning the repo is ~590 MB checked out; these nine are single-digit MB.
 DISCOVERED, not hard-coded — see `_shards()` — because a hand-listed set of source files is the
 exact shape that made `figorphans` miss 205 producers over in the site repo.
 """
+import argparse
 import json
 import os
 import sys
@@ -31,6 +32,11 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(HERE, "data", "_fetched")
 RAW = ("https://raw.githubusercontent.com/google-research-datasets/"
        "dstc8-schema-guided-dialogue/master")
+# ⚑ SERVICE AND SPLIT ARE ARGUMENTS WITH DEFAULTS, NOT CONSTANTS — 2026-08-09. They were module
+# constants, which made the unseen-schema probe a code edit rather than a flag: `dev` carries
+# Banks_2, the same two intents under RENAMED slots, and it is the only test that shows whether
+# this kit reads a checklist or has memorised one. A probe that requires editing the fetcher is a
+# probe nobody runs. Defaults are exactly what they were, so every existing command is unchanged.
 SERVICE = "Banks_1"
 SPLIT = "train"
 # 127 shards in train. We probe them all for the service and download only the hits; the probe is
@@ -72,6 +78,16 @@ def _shards():
 
 
 def main():
+    global SERVICE, SPLIT, OUT
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--service", default=SERVICE)
+    ap.add_argument("--split", default=SPLIT, choices=("train", "dev", "test"))
+    a = ap.parse_args()
+    SERVICE, SPLIT = a.service, a.split
+    # A non-default fetch lands in its own directory. Writing a second service's shards over the
+    # first would leave build_corpus silently parsing whichever download happened last.
+    if (SERVICE, SPLIT) != ("Banks_1", "train"):
+        OUT = os.path.join(HERE, "data", "_fetched", "%s-%s" % (SPLIT, SERVICE.lower()))
     os.makedirs(OUT, exist_ok=True)
 
     print("schema (%s) ..." % SPLIT)

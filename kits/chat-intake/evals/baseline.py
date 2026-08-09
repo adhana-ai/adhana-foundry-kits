@@ -32,7 +32,9 @@ from evals import judge                                                      # n
 from src import slots                                                        # noqa: E402
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-GOLD = os.path.join(HERE, "data", "gold.jsonl")
+# Follows src.slots.CORPUS, so the floors and the gold can never come from different
+# corpora — which is the one way this switch could produce a number nobody could read.
+GOLD = os.path.join(HERE, "data", "gold%s.jsonl" % slots._SUFFIX)
 
 
 def cases(split=None):

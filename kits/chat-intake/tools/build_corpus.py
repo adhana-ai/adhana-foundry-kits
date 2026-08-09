@@ -26,6 +26,7 @@ transcribed. A hand-typed checklist would be our opinion of what a bank transfer
 kit would then grade a model against our opinion while claiming to grade it against reality.
 """
 import hashlib
+import argparse
 import json
 import os
 import sys
@@ -33,7 +34,14 @@ import sys
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FETCHED = os.path.join(HERE, "data", "_fetched")
 DATA = os.path.join(HERE, "data")
+# ⚑ SERVICE, SPLIT AND THE OUTPUT SUFFIX ARE ARGUMENTS — 2026-08-09, for the unseen-schema probe.
+# SGD's `dev` carries Banks_2: the same two intents under RENAMED slots (`transfer_amount`,
+# `recipient_name`, and a `transfer_time` that does not exist here). Running the kit against it is
+# the only test that distinguishes "reads a checklist" from "has memorised this one" — so it has to
+# be a flag. Defaults reproduce the shipped corpus byte for byte.
 SERVICE = "Banks_1"
+SPLIT = "train"
+SUFFIX = ""                     # "" for the shipped corpus, "-banks_2" for the probe
 
 # ⚑ THE STATE VOCABULARY IS OURS AND THE CHECKLIST IS NOT, WHICH IS WHY THEY LIVE IN ONE FILE WITH
 # DIFFERENT PROVENANCE. `intents` below is derived from schema.json. This is authored — it is the
@@ -126,7 +134,7 @@ def _write_slots(svc):
                         "values": {s: vals[s] for s in req if s in vals},
                         "optional": sorted((it.get("optional_slots") or {}).keys())})
     out = {
-        "source": "Schema-Guided Dialogue (SGD), service %s, train split" % SERVICE,
+        "source": "Schema-Guided Dialogue (SGD), service %s, %s split" % (SERVICE, SPLIT),
         "url": ("https://github.com/google-research-datasets/"
                 "dstc8-schema-guided-dialogue"),
         "licence": ("CC BY-SA 4.0 — read at LICENSE.txt in the source repo on 2026-08-09. The "
@@ -137,9 +145,9 @@ def _write_slots(svc):
         "intents": intents,
         "states": STATES,
     }
-    p = os.path.join(DATA, "slots.json")
+    p = os.path.join(DATA, "slots%s.json" % SUFFIX)
     json.dump(out, open(p, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
-    print("  slots.json: %d intent(s), %d state(s)" % (len(intents), len(STATES)))
+    print("  %s: %d intent(s), %d state(s)" % (os.path.basename(p), len(intents), len(STATES)))
     return out
 
 
@@ -203,6 +211,15 @@ def _cases(slots):
 
 
 def main():
+    global SERVICE, SPLIT, SUFFIX, FETCHED
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--service", default=SERVICE)
+    ap.add_argument("--split", default=SPLIT, choices=("train", "dev", "test"))
+    a = ap.parse_args()
+    SERVICE, SPLIT = a.service, a.split
+    if (SERVICE, SPLIT) != ("Banks_1", "train"):
+        SUFFIX = "-" + SERVICE.lower()
+        FETCHED = os.path.join(HERE, "data", "_fetched", "%s-%s" % (SPLIT, SERVICE.lower()))
     svc = _schema()
     if svc is None:
         return 1
@@ -215,14 +232,15 @@ def main():
     if not cases:
         print("ERROR: no cases built — did tools.fetch_corpus run?", file=sys.stderr)
         return 1
-    p = os.path.join(DATA, "gold.jsonl")
+    p = os.path.join(DATA, "gold%s.jsonl" % SUFFIX)
     with open(p, "w", encoding="utf-8") as fh:
         for c in cases:
             fh.write(json.dumps(c, ensure_ascii=False) + "\n")
 
     held = sum(1 for c in cases if c["split"] == "held-out")
     done = sum(1 for c in cases if c["gold_complete"])
-    print("  gold.jsonl: %d case(s) from %d %s dialogue(s)" % (len(cases), dialogues, SERVICE))
+    print("  %s: %d case(s) from %d %s %s dialogue(s)"
+          % (os.path.basename(p), len(cases), dialogues, SERVICE, SPLIT))
     print("    held-out %d / sample %d  (hashed, %d%% target)"
           % (held, len(cases) - held, int(HELD_OUT_SHARE * 100)))
     print("    STOP cases %d / KEEP-ASKING cases %d — the decision has both sides, which it "
