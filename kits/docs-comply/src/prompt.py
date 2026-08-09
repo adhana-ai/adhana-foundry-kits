@@ -86,6 +86,46 @@ SYSTEM = (
     "document says nothing about the requirement, that is never_addressed."
 )
 
+# ⚑ THE CONDITIONAL-OBLIGATION PARAGRAPH — the v2 prompt, added 2026-08-08 as an EXPERIMENT with a
+# named hypothesis, not as an improvement somebody assumed.
+#
+# WHAT IT IS TRYING TO FIX. Run r001 and r003 make the same mistake and it is the kit's single
+# largest error class: 27 of r001's 36 missed breaches and 30 of r003's 35 were reported as
+# `never_addressed`. The model saw that nothing was written and could not conclude that something
+# was OWED. Every one of the `Why Study Stopped` breaches went that way on both models — the
+# regulation requires an explanation only "for a clinical trial that is suspended or terminated or
+# withdrawn", the document states the trial is SUSPENDED three lines up, and the model still
+# reported silence.
+#
+# ⚠︎ IT ENCODES THIS KIT'S READING OF THE REGULATION, AND THAT IS THE HONEST DESCRIPTION OF IT.
+# The gold set treats a satisfied trigger plus a missing statement as `breached` — the document
+# raised the subject and fell short — rather than as silence. That reading is stated in the
+# regulation's own words and computed mechanically in tools/build_corpus.py, but it IS a reading,
+# and this paragraph tells the model to use it. So a score improvement here is NOT evidence that
+# the model got better at compliance; it is evidence that the disagreement was about the reading
+# rather than about the document. The eval reports it as exactly that.
+#
+# ⚠︎ AND IT HAS A PREDICTED COST, WRITTEN DOWN BEFORE THE RUN. Pushing the model toward `breached`
+# should make E4 worse — the 4 cases where it already called a genuinely-silent rule breached, all
+# Study Design on observational studies. If E1 falls and E4 rises by more, this paragraph is a
+# worse prompt with a better headline. False MET and false alarm are both reported either way.
+_CONDITIONAL = (
+    "\n"
+    "Some requirements only bind when something ELSE in the document is true, and the rule says "
+    "so in its own text. Before judging one of those, look for the fact that triggers it. If the "
+    "trigger is present in the document and the required statement is absent, that is BREACHED, "
+    "not never_addressed: the document has raised the subject and failed the requirement, and "
+    "there is a line to quote -- the line stating the trigger. Reserve never_addressed for a "
+    "requirement the document is silent about with no trigger anywhere in it."
+)
+
+SYSTEM_V2 = SYSTEM + "\n" + _CONDITIONAL
+
+# The prompts this kit can send, by name. `v1` is what r001 and r003 ran and stays the default, so
+# a run started without thinking about it is comparable to the two already on the page.
+SYSTEMS = {"v1": SYSTEM, "v2": SYSTEM_V2}
+DEFAULT_PROMPT = "v1"
+
 
 def rule_line(r):
     """One rule as the model sees it. The citation travels with the rule so a verdict can be
@@ -98,12 +138,19 @@ def rule_line(r):
     return text
 
 
-def build(doc_text, rules):
+def build(doc_text, rules, prompt=DEFAULT_PROMPT):
     """Return (messages, parts). `parts` is the decomposition the LLM lens publishes.
 
     THE PARTS ARE A REAL DECOMPOSITION, NOT A TIDY BREAKDOWN — same rule every sibling kit's
     build() follows: every part's text occurs verbatim in what is sent, in this order.
+
+    `prompt` names which SYSTEM to send. It defaults to v1 — what r001 and r003 ran — so a caller
+    that does not think about it stays comparable to the runs already published, and only a caller
+    that deliberately asks gets the experiment.
     """
+    if prompt not in SYSTEMS:
+        raise ValueError("unknown prompt %r -- known: %s" % (prompt, ", ".join(sorted(SYSTEMS))))
+    system = SYSTEMS[prompt]
     numbered = "\n".join("%d. %s" % (i + 1, rule_line(r)) for i, r in enumerate(rules))
     user = ("Check the document below against each rule.\n\n"
             "Return a JSON object with one key, \"verdicts\", a list with one entry per rule in "
@@ -113,11 +160,11 @@ def build(doc_text, rules):
             "DOCUMENT\n--------\n%s\n" % (", ".join(VERDICTS), numbered, doc_text))
 
     parts = [
-        {"name": "system", "text": SYSTEM},
+        {"name": "system", "text": system},
         {"name": "rulebook", "text": numbered},
         {"name": "document", "text": doc_text},
     ]
-    return ([{"role": "system", "content": SYSTEM},
+    return ([{"role": "system", "content": system},
              {"role": "user", "content": user}],
             parts)
 

@@ -94,13 +94,16 @@ def _quote_is_real(quote, doc_text):
     return norm in hay
 
 
-def check(cfg, doc_text, rule_list, complete=None, thinking=None):
+def check(cfg, doc_text, rule_list, complete=None, thinking=None, prompt=P.DEFAULT_PROMPT):
     """Return the full record for one document: a verdict per rule, and what the call cost.
 
     `complete` is injectable so the eval harness, the app and the stub all drive the SAME code
     path — the reason every sibling kit's entry point takes the same parameter.
+
+    `prompt` names which SYSTEM variant to send and defaults to the one r001 and r003 ran, so the
+    app and any caller that does not ask stay on the published prompt.
     """
-    msgs, parts = P.build(doc_text, rule_list)
+    msgs, parts = P.build(doc_text, rule_list, prompt=prompt)
     call = complete or adapters.complete
     kw = {"max_tokens": MAX_TOKENS}
     if thinking is not None:

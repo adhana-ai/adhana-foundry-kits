@@ -58,6 +58,10 @@ def main():
                     help="disable provider-side reasoning. The default leaves it alone; UC006 "
                          "found the hard way that a provider default of ON can burn the whole "
                          "output ceiling on hidden reasoning and return nothing.")
+    ap.add_argument("--prompt", default=C.P.DEFAULT_PROMPT,
+                    help="which SYSTEM variant to send: %s. Defaults to the one r001 and r003 "
+                         "ran, so an unthinking run stays comparable to what is published."
+                         % ", ".join(sorted(C.P.SYSTEMS)))
     ap.add_argument("--yes", action="store_true", help="skip the confirmation")
     a = ap.parse_args()
 
@@ -74,6 +78,7 @@ def main():
     print("calls    : %d  (one per document — all %d rules are batched)" % (len(docs), len(rules)))
     print("model    : %s" % ("stub" if a.stub else cfg.get("model")))
     print("thinking : %s" % ("disabled" if a.no_thinking else "provider default"))
+    print("prompt   : %s" % a.prompt)
     if not a.stub:
         print(BUDGET.plan(len(docs), cfg.get("model")))
     if not a.stub and not a.yes:
@@ -99,7 +104,8 @@ def main():
         # cannot both be right. Found by counting the ledger after the first run rather than by any
         # check. `budget.check()` is likewise the adapter's, for the same reason.
         t0 = time.time()
-        r = C.check(cfg, C.load_doc(doc_id), rules, complete=complete, thinking=thinking)
+        r = C.check(cfg, C.load_doc(doc_id), rules, complete=complete, thinking=thinking,
+                    prompt=a.prompt)
         ms = int((time.time() - t0) * 1000)
         lat.append(ms)
         tin += r.get("input_tokens") or 0
@@ -153,6 +159,10 @@ def main():
         "raw_text": (first["raw"] if first else ""),
         "max_tokens": MAX_TOKENS,
         "thinking": thinking,
+        # ⚑ WHICH PROMPT WAS SENT, ON EVERY RECORD. Added with the v2 experiment: two runs of the
+        # same model on the same corpus are only differenceable if the record says what changed,
+        # and a prompt variant is exactly the kind of change that leaves no other trace.
+        "prompt_version": a.prompt,
         "rulebook_edition": C.rulebook().get("edition"),
         "records": records,
     }
