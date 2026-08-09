@@ -1,0 +1,51 @@
+{
+  "source": "Schema-Guided Dialogue (SGD), service Banks_1, train split",
+  "url": "https://github.com/google-research-datasets/dstc8-schema-guided-dialogue",
+  "licence": "CC BY-SA 4.0 — read at LICENSE.txt in the source repo on 2026-08-09. The dialogues are NOT redistributed by this kit; only these slot names, which are the dataset's own schema metadata, and the attribution above.",
+  "citation": "Rastogi et al. 2020, Towards Scalable Multi-Domain Conversational Agents.",
+  "built_by": "tools/build_corpus.py (parsed from the fetched schema.json; never typed)",
+  "intents": [
+    {
+      "key": "CheckBalance",
+      "label": "Check a balance",
+      "required": [
+        "account_type"
+      ],
+      "optional": []
+    },
+    {
+      "key": "TransferMoney",
+      "label": "Transfer money",
+      "required": [
+        "account_type",
+        "amount",
+        "recipient_account_name"
+      ],
+      "optional": [
+        "recipient_account_type"
+      ]
+    }
+  ],
+  "states": [
+    {
+      "key": "collected",
+      "means": "A required fact is recorded as filled, together with the turn it was heard in.",
+      "costs": "A false collected is silent for the rest of the conversation. The fact is closed, so nothing will ask for it again and nothing downstream will know it was guessed."
+    },
+    {
+      "key": "still missing",
+      "means": "Named explicitly on every turn. Never a blank cell and never a zero.",
+      "costs": "Asking again for something already given, which is the most common reason a person abandons an intake flow part-way through."
+    },
+    {
+      "key": "wrong against gold",
+      "means": "A value was captured and the dialogue state says it is not that value.",
+      "costs": "The most, because the checklist reads as full. A mis-recorded recipient moves money to a name nobody confirmed."
+    },
+    {
+      "key": "the turn decision",
+      "means": "Not a fact state - the kit's actual output: ask again, or stop.",
+      "costs": "Stopping early hands a downstream process a record it believes is complete. Never stopping is cheaper and visible, which is exactly why the expensive failure is the one that needs its own number."
+    }
+  ]
+}

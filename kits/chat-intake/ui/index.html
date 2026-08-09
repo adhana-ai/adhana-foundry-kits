@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>chat-intake — collect a required set of facts across a conversation</title>
+<link rel="stylesheet" href="app.css">
+</head><body>
+<main class="wrap">
+  <p class="crumb">Use-Case Kit · UC009 · chat-intake</p>
+  <h1>Collect a required set of facts across a conversation, and know when you have enough</h1>
+  <p class="sub">The checklist is not ours. It is published by the corpus, so &ldquo;did it collect
+  enough&rdquo; is a comparison against ground truth somebody else committed to in advance.</p>
+
+  <div id="notbuilt" class="warn" hidden>
+    <b>The corpus is not built yet.</b> This kit is the only one here whose corpus does not ship:
+    Schema-Guided Dialogue is CC BY-SA 4.0 and this repo is MIT, so the conversations are fetched
+    and never committed. Two commands, once:
+    <pre id="buildcmds"></pre>
+  </div>
+
+  <div id="replay" class="warn" hidden>
+    <b>Replay mode &mdash; no API key configured.</b> The values appearing below are the
+    <em>dataset&rsquo;s own dialogue state</em>, not a model&rsquo;s answer. Nothing is being
+    predicted. Set <code>API_KEY</code> in <code>.env</code> to have a model read the same turns and
+    show its answer beside this one.
+  </div>
+
+  <section id="picker" hidden>
+    <label for="conv">Conversation</label>
+    <select id="conv"></select>
+    <button id="step" type="button">Next turn</button>
+    <button id="reset" type="button" class="ghost">Restart</button>
+  </section>
+
+  <section id="live" hidden>
+    <div class="cols">
+      <div class="col">
+        <h2>The conversation so far</h2>
+        <div id="turns" class="turns"></div>
+        <p id="decision" class="decision"></p>
+      </div>
+      <div class="col">
+        <h2>The checklist</h2>
+        <p class="hint" id="intent"></p>
+        <table class="checklist"><thead><tr>
+          <th>Required fact</th><th>Value</th><th>State</th>
+        </tr></thead><tbody id="slots"></tbody></table>
+        <p class="hint">A fact is <b>collected</b>, <b>still missing</b> (named, never blank), or
+        <b>wrong against gold</b>. The turn decision &mdash; ask again, or stop &mdash; is computed
+        in code from the first column, never asked of the model.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="statedoc" hidden>
+    <h2>What each state costs when it is wrong</h2>
+    <div id="states" class="cards"></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body></html>
