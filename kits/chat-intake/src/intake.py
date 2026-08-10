@@ -15,6 +15,31 @@ signal, not an inconvenience to work around.
 """
 from . import adapters, prompt, slots
 
+# ⚑ 400 STAYS, AND THE RECORDS ARE WHY — measured 2026-08-09, before spending anything on the
+# alternative. The obvious reading of r006 is that the ceiling is clipping answers: 51 of pro's 52
+# unparsed replies carry `finish_reason=length`, and pro pays 29.4% of its output bill for silence.
+# Raising it looks like the fix. It is not, and three numbers off the existing result files settle
+# it without a call:
+#
+#   the visible answer is 18 output tokens at p50 and 46 at its LARGEST, on both tiers. The
+#   ceiling has never once clipped a JSON answer — it sits at 8.7x the biggest one ever produced.
+#
+#   every unparsed reply spent essentially the whole budget on REASONING and emitted no visible
+#   content at all: 63 of 63 across both tiers carry `reasoning_tokens` of 378-400 out of 400.
+#   `token_details` is a genuine provider field, not a mirror of `output_tokens` — the two differ
+#   on 252 of r006's 298 records, where reasoning is ~85-95% and the answer is the remaining sliver.
+#
+#   and it was probed directly. `rt003-fakeline-400` vs `rt003-fakeline-1600` is the same failing
+#   case at 4x the ceiling: still `parsed: false`, still `finish_reason=length`, 1600 output tokens
+#   instead of 400. Four times the bill, the same silence.
+#
+# So the failure is a runaway reasoning pass that never reaches the answer, and a bigger budget buys
+# a longer one. Raising this constant would cost more on EVERY call to recover nothing measurable —
+# which is the opposite of what the number looks like it is asking for.
+#
+# ⚠︎ WHAT THIS IS NOT IS A CLAIM THAT THE UNPARSED REPLIES ARE FINE. They are 4.0% of flash and
+# 17.5% of pro, they are real failures, and `budget_exhausted` below exists to make them countable.
+# The fix is whatever stops the reasoning loop starting, and that is not a knob in this file.
 MAX_TOKENS = 400
 
 # ⚑ TWO UNANSWERED TURNS IN A ROW IS AN INCIDENT, NOT A THIRD QUESTION — added 2026-08-09 after the

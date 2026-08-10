@@ -69,6 +69,25 @@ def values(intent):
     return {}
 
 
+def descriptions(intent):
+    """{slot: the schema's own one-line description} for one intent's required slots.
+
+    ⚠︎ THE PROMPT NEEDS THIS AND r005/r006 PROVED IT, exactly as r001 proved `values()`. Without it
+    the checklist reaches the model as bare identifiers, and `account_type` beside a customer saying
+    the money goes "to their checking account" is genuinely ambiguous from the name alone — SGD
+    defines it as "The account type of the user" and carries a SEPARATE optional
+    `recipient_account_type` for the other one. Both tiers made that same substitution on the same
+    6 cases, which is the signature of a prompt defect rather than a model one.
+
+    Absent for a slot the schema leaves undescribed, so a caller must treat this as optional per
+    slot rather than assuming every required name is a key here.
+    """
+    for i in load()["intents"]:
+        if i["key"] == intent:
+            return dict(i.get("descriptions") or {})
+    return {}
+
+
 def states():
     """The four states the panel and the report share. Authored, unlike the checklist."""
     return load()["states"]

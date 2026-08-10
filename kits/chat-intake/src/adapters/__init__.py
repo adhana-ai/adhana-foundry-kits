@@ -26,11 +26,24 @@ from .. import budget
 
 class AdapterError(RuntimeError):
     """`status` is the HTTP code when there was one, else None — so a caller can tell a provider
-    being BUSY from a request being WRONG without parsing an error string."""
+    being BUSY from a request being WRONG without parsing an error string.
 
-    def __init__(self, msg, status=None):
+    ⚑ `transient` IS SEPARATE FROM `status` BECAUSE THE WORST FAILURES HAVE NO STATUS — added
+    2026-08-09 after a socket timeout at case 35 of a 298-case run discarded 34 paid calls. The
+    retry loop below has always encoded the right doctrine and only ever saw half the failures:
+    it catches AdapterError, `_post` raised AdapterError only for HTTPError, and a connection
+    that times out or is reset never produces an HTTP status at all. So `URLError` walked straight
+    past four perfectly good retries and killed the run. A transport failure is the CLEAREST case
+    of "ask again shortly" there is — no completion was returned and none was billed — which is
+    exactly what the 503 comment further down already argues.
+    """
+
+    def __init__(self, msg, status=None, transient=None):
         super().__init__(msg)
         self.status = status
+        # Default keeps the HTTP path behaving exactly as before: transience is read off the code.
+        # Only the transport path passes it explicitly, because there is no code to read.
+        self.transient = (status in TRANSIENT) if transient is None else transient
 
 
 # ⚑ TRANSIENT vs TERMINAL. 429 and 5xx mean "ask again shortly"; 400/401/403/404 mean "asking
@@ -52,6 +65,12 @@ def _post(url, headers, payload, timeout=120):
         # different model" into "400", which is the kind of error message that costs an afternoon.
         raise AdapterError("%s %s: %s" % (e.code, e.reason, e.read().decode("utf-8", "replace")),
                            status=e.code)
+    except (urllib.error.URLError, TimeoutError, OSError) as e:
+        # ⚠︎ THE CONNECTION NEVER GOT AN ANSWER, so there is no status to classify it by and
+        # nothing was billed. Marked transient explicitly and named as a transport failure, so a
+        # reader of the traceback can tell "the network dropped" from "the provider said no" —
+        # they are the same Errno 60 to urllib and completely different findings to a run.
+        raise AdapterError("transport failure, no HTTP response: %s" % e, transient=True)
 
 
 def openai_compatible(cfg, system, user, max_tokens, thinking=None):
@@ -183,7 +202,9 @@ def complete(cfg, system, user, max_tokens=1024, thinking=None):
                 return PROVIDERS[name](cfg, system, user, max_tokens, thinking=thinking)
             return PROVIDERS[name](cfg, system, user, max_tokens)
         except AdapterError as exc:
-            if exc.status not in TRANSIENT or attempt == RETRIES:
+            # Reads the flag, not the status — a transport failure has no status and is the most
+            # retryable thing that happens. See AdapterError's own note.
+            if not exc.transient or attempt == RETRIES:
                 raise
             last = exc
             time.sleep(2 ** attempt)

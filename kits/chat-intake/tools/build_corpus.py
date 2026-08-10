@@ -120,6 +120,21 @@ def _write_slots(svc):
     # typed, and never guessed at by the model.
     vals = {s["name"]: list(s.get("possible_values") or [])
             for s in svc.get("slots", []) if s.get("is_categorical")}
+    # ⚑ EVERY SLOT CARRIES THE SCHEMA'S OWN ONE-LINE DESCRIPTION — 2026-08-09, and r005/r006 are why.
+    # 6 of the 9 wrong facts on the full held-out split were the RECIPIENT's account type filed under
+    # `account_type`, on turns where the customer says the money "needs to go to their checking
+    # account". The schema has always distinguished the two — `account_type` is "The account type of
+    # the user" and there is a separate optional `recipient_account_type` — but the prompt rendered
+    # the checklist as bare slot names, so the only thing the model had to go on was the identifier.
+    # Two slots whose names differ by a prefix and whose meanings differ by WHOSE account it is are
+    # not distinguishable from the names alone, and it read them the only way the prompt allowed.
+    #
+    # ⚠︎ SAME PROVENANCE RULE AS THE VALUE SPACE ABOVE, AND THAT IS THE POINT. This is read out of
+    # the dataset's schema.json, never authored here. A hand-written gloss would be our explanation
+    # of what the dataset means, handed to the model and then graded against the dataset — which is
+    # the exact circularity `slots.json` is derived to avoid. It also means the unseen-schema probe
+    # gets Banks_2's own wording for free, with nothing to keep in step.
+    desc = {s["name"]: (s.get("description") or "").strip() for s in svc.get("slots", [])}
     intents = []
     for it in svc["intents"]:
         req = list(it.get("required_slots") or [])
@@ -132,6 +147,7 @@ def _write_slots(svc):
                         "label": LABELS.get(it["name"], it["name"]),
                         "required": req,
                         "values": {s: vals[s] for s in req if s in vals},
+                        "descriptions": {s: desc[s] for s in req if desc.get(s)},
                         "optional": sorted((it.get("optional_slots") or {}).keys())})
     out = {
         "source": "Schema-Guided Dialogue (SGD), service %s, %s split" % (SERVICE, SPLIT),

@@ -83,13 +83,30 @@ def render(intent, turns):
     """
     need = slots.required(intent)
     allowed = slots.values(intent)
+    about = slots.descriptions(intent)
     # ⚑ A CLOSED-VOCABULARY SLOT IS SHOWN WITH ITS VOCABULARY — added after r001, which scored 18
     # of 28 stated facts wrong purely because the model answered "savings account" and the schema
     # says "savings". A free-text slot (`amount`, `recipient_account_name`) has no list and still
     # takes the customer's own words, which is why the copy-verbatim rule below stays.
+    #
+    # ⚑ AND EVERY SLOT IS SHOWN WITH THE SCHEMA'S OWN DESCRIPTION — added after r005/r006, the same
+    # shape of finding one step further in. r001 was the model not knowing what a slot's ANSWERS may
+    # be; this is the model not knowing what the slot IS. 6 of the 9 wrong facts on the full 298 were
+    # the recipient's account type filed under `account_type` — a slot the schema defines as "the
+    # account type of the USER", beside a separate optional `recipient_account_type` the checklist
+    # never mentions. From the bare identifier that substitution is not a mistake, it is the only
+    # available reading, and both tiers made it on exactly the same cases.
+    #
+    # ⚠︎ THE DESCRIPTION IS THE DATASET'S, NOT A HINT WE WROTE. Nothing here says "do not confuse
+    # these two slots", which is what a fix tuned to the observed failure would say — that is
+    # teaching to the test, and it would not survive the corpus being swapped. Handing over the
+    # schema's own gloss is the general fix: it costs about 8 input tokens per slot, it needs no
+    # maintenance, and the unseen-schema probe picks up Banks_2's wording with no code change.
     need_lines = "\n".join(
-        "- %s%s" % (s, ("  (answer with exactly one of: %s)" % ", ".join(allowed[s]))
-                    if allowed.get(s) else "")
+        "- %s%s%s" % (s,
+                      ("  — %s" % about[s]) if about.get(s) else "",
+                      ("  (answer with exactly one of: %s)" % ", ".join(allowed[s]))
+                      if allowed.get(s) else "")
         for s in need)
     lines = "\n".join("%s: %s" % (t["speaker"].title(), one_line(t["utterance"])) for t in turns)
     return (
