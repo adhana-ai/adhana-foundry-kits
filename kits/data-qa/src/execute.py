@@ -77,11 +77,6 @@ def run(sql, path=DB, timeout_s=TIMEOUT_S, max_rows=MAX_ROWS):
 def signature(result):
     """A comparable form of a result set, for execution match.
 
-    ⚠︎ ORDER IS PRESERVED ONLY WHEN THE QUERY ASKED FOR IT. Two correct queries may return the same
-    rows in different orders when there is no ORDER BY, and calling those unequal would fail correct
-    answers. So rows are sorted for comparison unless the statement contains ORDER BY, in which case
-    the order IS part of the answer and is compared as given. The caller passes the SQL in.
-
     Floats are rounded to 4 decimals: two arithmetically identical aggregates can differ in the
     last bit depending on summation order, and a kit that fails a correct answer over 1e-15 is
     measuring float representation rather than SQL.
@@ -93,11 +88,30 @@ def signature(result):
     return [[norm(v) for v in row] for row in result["rows"]]
 
 
-def same(a, b, sql_a="", sql_b=""):
-    """Execution match between two result sets. Column NAMES are deliberately not compared —
-    `AS revenue` versus `AS total_revenue` is a labelling choice, not a different answer."""
+def same(a, b, ordered=False):
+    """Execution match between two result sets.
+
+    Column NAMES are deliberately not compared — `AS revenue` versus `AS total_revenue` is a
+    labelling choice, not a different answer.
+
+    ⚑ `ordered` IS DECLARED BY THE LABEL, NOT SNIFFED FROM THE SQL — corrected after the first run.
+    This used to read `"order by" in (sql_a + sql_b)`, i.e. compare row order whenever EITHER query
+    happened to sort. That is wrong in a way that quietly costs the model marks: a gold query may
+    carry `ORDER BY` as a presentation nicety for a question that never demanded one, and a model
+    answering "how many orders does each status have" without a gratuitous sort was then scored
+    wrong for returning the identical rows. It cost q-13 and q-17 on the first run.
+
+    Whether order is part of the answer is a property of the QUESTION — "top 10" needs it, "how
+    many per status" does not — so it belongs in the labelled set where the gold author can state
+    it, not in a string test over SQL somebody else wrote.
+
+    ⚠︎ COLUMN SETS ARE STILL COMPARED EXACTLY, AND THAT IS A REAL LIMITATION RATHER THAN A BUG.
+    "Which region has the most customers?" answered as `North` and as `North, 106` are both
+    defensible, and this returns False for that pair. It is left strict on purpose: loosening it
+    would mean guessing which columns a question implies, which is a judgement the harness has no
+    basis to make. It goes in `could_not_verify` on every published report instead.
+    """
     ra, rb = signature(a), signature(b)
-    ordered = "order by" in (sql_a + " " + sql_b).lower()
     if not ordered:
         ra = sorted(ra, key=lambda r: [(v is None, str(v)) for v in r])
         rb = sorted(rb, key=lambda r: [(v is None, str(v)) for v in r])

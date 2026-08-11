@@ -42,10 +42,21 @@ function renderRuns(d) {
     const acc = s.accuracy === undefined ? "&mdash;" : (100 * s.accuracy).toFixed(1) + "%";
     const causes = Object.entries(s.causes || {})
       .map(([c, n]) => `${esc(c)} ${n}`).join(" &middot; ") || "no failures recorded";
+    // ONE CARD PER RUN. A re-score is shown as a correction to this run's score, with the number
+    // it replaced still on screen — never as a second run, which is what a kit claiming `run once`
+    // must not appear to have done.
+    const rs = r.rescored
+      ? `<div class="causes">re-scored from
+         <b>${(100 * (r.rescored.accuracy_before || 0)).toFixed(1)}%</b> &mdash;
+         ${esc(r.rescored.note || "ruler corrected")}.
+         <b>No model was called;</b> the recorded statements were re-judged.
+         ${(r.rescored.rows_changed || []).length} row(s) moved.</div>`
+      : "";
     return `<div class="run">
       <div class="big">${acc} <span class="note">execution match &middot; ${s.rows || 0} questions
-        &middot; ${esc(r.model || "model not recorded")}</span></div>
+        &middot; ${esc(r.model || "model not recorded")} &middot; one run</span></div>
       <div class="causes">${causes}</div>
+      ${rs}
       ${(r.could_not_verify || []).map(c => `<div class="cnv">could not verify: ${esc(c)}</div>`)
         .join("")}
     </div>`;

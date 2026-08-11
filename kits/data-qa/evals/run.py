@@ -21,6 +21,7 @@ is NOT done is a fake offline path that scores the gold SQL against itself and r
 THE TAXONOMY. A single accuracy figure says the pipeline is wrong and nothing about where. Each
 cause below has a different owner:
 
+  empty_response    the model returned no statement at all.   Fix: max_tokens, or the model
   refused_by_guard  the model wrote a statement that writes.   Fix: src/prompt.py — SYSTEM
   invalid_sql       it ran and SQLite rejected it.             Fix: src/prompt.py, or the model
   wrong_result      it ran and the rows disagree with gold.    Fix: the model, or the schema card
@@ -54,6 +55,16 @@ def score_row(row, sql_text, card):
     answerable = bool(row.get("gold_sql"))
     refused = sql_text.strip().upper().startswith(pr.CANNOT)
 
+    # ⚑ AN EMPTY RESPONSE IS ITS OWN CAUSE, ADDED AFTER THE FIRST RUN BLAMED THE GUARD FOR IT.
+    # A reasoning model can spend its whole output budget thinking and return no content at all:
+    # q-03 and q-04 came back with 1,024 output tokens and an empty string. The guard refused them
+    # correctly — an empty statement is not a SELECT — but recording that as `refused_by_guard`
+    # says "the model tried to write to your database", which is the opposite of what happened and
+    # sends a reader to fix the wrong file. The taxonomy exists to name the stage that lost it.
+    if not sql_text.strip():
+        out["cause"] = "empty_response"
+        return out
+
     if refused:
         # A refusal is correct exactly when there is no gold answer.
         out["correct"] = not answerable
@@ -77,7 +88,7 @@ def score_row(row, sql_text, card):
         return out
 
     gold = ex.run(row["gold_sql"])
-    out["correct"] = ex.same(got, gold, sql_text, row["gold_sql"])
+    out["correct"] = ex.same(got, gold, ordered=bool(row.get("ordered")))
     out["rows_returned"] = got["row_count"]
     out["gold_rows"] = gold["row_count"]
     out["exec_ms"] = got["ms"]

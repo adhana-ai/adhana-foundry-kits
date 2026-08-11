@@ -128,17 +128,34 @@ def api_ask(question):
 
 
 def api_results():
+    """One card per RUN, never one per file.
+
+    ⚠︎ THIS USED TO LIST EVERY FILE, AND THAT MISREPRESENTED THE KIT'S CENTRAL CLAIM. A re-scored
+    run is a second FILE and the same run: same questions, same model, same statements, a corrected
+    ruler. Listed side by side they rendered as "70%" and "80%" one above the other, which reads as
+    two runs on a kit whose whole claim is `run once`. Grouping by run_id and folding the re-score
+    into its parent is the difference between a correction and a second attempt.
+    """
     files = sorted(glob.glob(os.path.join(RESULTS, "*.json")))
     if not files:
         return {"runs": [], "note": "No run recorded yet. `python3 evals/run.py --run-id <id>`."}
-    runs = []
+    by_run = {}
     for f in files:
         with open(f, encoding="utf-8") as fh:
             d = json.load(fh)
-        runs.append({"file": os.path.basename(f), "run_id": d.get("run_id"),
-                     "model": d.get("model"), "summary": d.get("summary"),
-                     "could_not_verify": d.get("could_not_verify", [])})
-    return {"runs": runs}
+        rid = d.get("run_id") or os.path.basename(f)
+        entry = by_run.setdefault(rid, {"run_id": rid, "model": d.get("model"),
+                                        "files": [], "rescored": None})
+        entry["files"].append(os.path.basename(f))
+        # The re-scored file supersedes the raw one for the headline number, and says so.
+        if d.get("rescored"):
+            entry["rescored"] = d["rescored"]
+            entry["summary"] = d.get("summary")
+            entry["could_not_verify"] = d.get("could_not_verify", [])
+        elif "summary" not in entry:
+            entry["summary"] = d.get("summary")
+            entry["could_not_verify"] = d.get("could_not_verify", [])
+    return {"runs": list(by_run.values())}
 
 
 class Handler(BaseHTTPRequestHandler):
