@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>data-qa — ask your database a question</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header>
+  <h1>data-qa</h1>
+  <p class="sub">Ask a question in English. The model writes SQL, the guard checks it, the pipeline
+    runs it read-only. <b>The model never sees a row of your data — only the schema.</b></p>
+  <div id="status" class="status"></div>
+</header>
+
+<main>
+  <section class="ask">
+    <label for="q">Your question</label>
+    <div class="row">
+      <input id="q" type="text" autocomplete="off"
+             placeholder="What were the top 10 customers by total revenue in 2024?">
+      <button id="go">Ask</button>
+    </div>
+    <div id="examples" class="examples"></div>
+  </section>
+
+  <section id="out" class="out hidden">
+    <div class="pane">
+      <h2>Generated SQL</h2>
+      <pre id="sql"></pre>
+      <div id="guard" class="note"></div>
+    </div>
+    <div class="pane">
+      <h2>Result</h2>
+      <div id="result"></div>
+      <div id="meta" class="note"></div>
+    </div>
+  </section>
+
+  <section class="recorded">
+    <h2>The recorded run</h2>
+    <p class="sub">Read off disk. This renders with no key configured, because a kit that shows
+      nothing until you pay is not showing you anything.</p>
+    <div id="runs"></div>
+  </section>
+
+  <section id="connect" class="connect hidden">
+    <h2>Connect your own provider</h2>
+    <p class="sub">Written to <code>.env</code> on this machine, which is gitignored. It is never
+      transmitted anywhere by this app.</p>
+    <div class="grid">
+      <label>PROVIDER <input id="c-provider" placeholder="openai-compatible"></label>
+      <label>BASE_URL <input id="c-base" placeholder="https://api.openai.com/v1"></label>
+      <label>MODEL <input id="c-model" placeholder="the model id"></label>
+      <label>API_KEY <input id="c-key" type="password" placeholder="your key"></label>
+    </div>
+    <button id="save">Save to .env</button>
+    <div id="saved" class="note"></div>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
