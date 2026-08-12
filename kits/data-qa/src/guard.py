@@ -92,8 +92,13 @@ def enforce(sql):
         return sql
 
     if lead in NAMED:
-        raise Refused("refused: this is a %s, not a query. The kit answers questions; it never "
-                      "changes your data." % lead.upper())
+        # "a UPDATE" and "a INSERT" both shipped onto the published threat page before anybody
+        # read the table out loud. The reason string is written for a PERSON — it is the whole
+        # justification for keeping NAMED separate from the allowlist that makes the decision —
+        # and a reason a person stumbles over is doing its one job badly.
+        article = "an" if lead[0] in "aeiou" else "a"
+        raise Refused("refused: this is %s %s, not a query. The kit answers questions; it never "
+                      "changes your data." % (article, lead.upper()))
     raise Refused("refused: statement starts with %r, which is not SELECT or WITH. Anything not "
                   "positively recognised as a read is refused." % lead)
 

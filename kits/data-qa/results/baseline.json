@@ -1,0 +1,53 @@
+{
+ "calls": 0,
+ "cost_usd": 0.0,
+ "dataset": {
+  "file": "data/labelled.jsonl",
+  "rows": 20
+ },
+ "floors": {
+  "always-refuse": {
+   "accuracy": 0.1,
+   "answer": "CANNOT ANSWER",
+   "causes": {
+    "false_refusal": 18
+   },
+   "correct": 2,
+   "correct_ids": [
+    "q-19",
+    "q-20"
+   ],
+   "rows": 20,
+   "why": "reads nothing, answers nothing, and banks the two unanswerable questions"
+  },
+  "count-star": {
+   "accuracy": 0.05,
+   "answer": "SELECT COUNT(*) FROM customers",
+   "causes": {
+    "missed_refusal": 2,
+    "wrong_result": 17
+   },
+   "correct": 1,
+   "correct_ids": [
+    "q-01"
+   ],
+   "rows": 20,
+   "why": "the most likely single query on this schema, guessed without reading the question"
+  },
+  "select-all": {
+   "accuracy": 0.0,
+   "answer": "SELECT * FROM orders",
+   "causes": {
+    "missed_refusal": 2,
+    "wrong_result": 18
+   },
+   "correct": 0,
+   "correct_ids": [],
+   "rows": 20,
+   "why": "a statement that runs and returns rows and is still wrong"
+  }
+ },
+ "highest_floor": 0.1,
+ "kind": "baseline",
+ "note": "Constant answers scored by evals/run.py::score_row. No model was called."
+}
