@@ -1,0 +1,14 @@
+# Nothing. Not "nothing yet" -- nothing.
+#
+# The corpus is CSV, the window cutter is arithmetic on timestamps, the rule floor is `re`, the HTTP
+# client is urllib, the server is http.server and the UI is three static files. All of that is the
+# Python standard library, so the fork test is `git clone` then
+# `python3 tools/build_corpus.py && python3 -m evals.baseline`, with no install step and no key.
+#
+# ⚑ THE ABSENCE IS LOAD-BEARING ON THIS KIT IN PARTICULAR. Alert triage has an enormous tooling
+# industry attached to it -- Prometheus, Alertmanager, PagerDuty's own event rules, half a dozen
+# anomaly-detection libraries -- and any of them would out-engineer src/rules.py. That is the point.
+# The floor is deliberately the cheapest thing a real rotation is actually running, so the bar the
+# model has to clear is one nobody can claim was tuned to lose. Swapping in a real alerting stack is
+# a seam (src/rules.py) and a re-run, which is the experiment this kit is set up to make easy rather
+# than the one it forecloses.

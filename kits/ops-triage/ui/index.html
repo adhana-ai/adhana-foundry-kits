@@ -1,0 +1,50 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>ops-triage — should this have woken somebody?</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- An empty data: icon, so the browser stops asking for /favicon.ico. Without it every load logs a
+     404 that the screenshot script counts as a page error — correctly, since it has no way to tell
+     a missing icon from a missing script, and a checker that ignores one class of 404 is a checker
+     that will one day ignore the one that mattered. -->
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="app.css">
+<body>
+<header>
+  <h1>It is 03:14. Your phone goes off. Should it have?</h1>
+  <p class="lead">Every card below is <b>five minutes of one system's logs</b> — the unit of work
+  this kit judges. The pager rules are an error count and a keyword regex, which is what most teams
+  are actually running. Drag the threshold: it re-decides all of them here, on your machine, for
+  nothing.</p>
+  <p class="lead"><b>There is no setting that gets all six traps right.</b> That is not an opinion
+  in a report, it is the control above the cards — move it and watch.</p>
+  <p class="cost" id="cost">checking what is configured…</p>
+</header>
+
+<section class="controls">
+  <div class="thr">
+    <span class="thrv" id="tv">20</span>
+    <input type="range" id="thr" min="0" max="60" step="1" value="20"
+           aria-label="error count that fires the pager">
+    <label class="opt"><input type="checkbox" id="kw" checked> keyword regex</label>
+    <label class="opt"><input type="checkbox" id="ab"> silence signal</label>
+  </div>
+  <p class="thrn">Error/fatal lines in a window that fire the pager. The two checkboxes are the
+  other halves of the free floor: a real SRE keyword pattern, and the one signal that has to be
+  computed rather than matched — a service that has stopped logging.</p>
+  <div class="tiles" id="tiles"></div>
+  <p class="recon" id="recon"></p>
+  <p class="traps" id="traps"></p>
+</section>
+
+<section id="windows" class="windows"></section>
+
+<footer>
+  <p><b>Gate</b> <span id="gate">…</span></p>
+  <p>A <b>false page</b> costs somebody a night and a little more of their trust in the pager. A
+  <b>missed incident</b> costs the whole of an outage and is found by a customer. They are counted
+  apart here and never averaged into one score — on this corpus, holding every window scores 84%
+  accurate while missing every incident in it.</p>
+  <p id="claim" class="claim"></p>
+</footer>
+<script src="app.js"></script>
+</body>

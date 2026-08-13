@@ -1,0 +1,1337 @@
+{
+ "calls": 0,
+ "claim": {
+  "asserted_at_stop_a": "no setting of the free rules gets all six traps right",
+  "best": {
+   "false_pages": 0,
+   "floor": "count+keyword+absence",
+   "missed_incidents": 8,
+   "threshold": 49,
+   "traps_handled": [
+    "cascade",
+    "deploy",
+    "flapping",
+    "retry-storm",
+    "silence"
+   ]
+  },
+  "holds": true,
+  "settings_getting_all_six": 0,
+  "settings_tested": 49,
+  "unreachable_traps": [
+   "quiet-killer"
+  ]
+ },
+ "cost_usd": 0.0,
+ "count_threshold_contributes": {
+  "best_with_count": {
+   "false_pages": 0,
+   "missed_incidents": 8,
+   "threshold": 49,
+   "traps_handled": [
+    "cascade",
+    "deploy",
+    "flapping",
+    "retry-storm",
+    "silence"
+   ]
+  },
+  "identical": true,
+  "without_count_at_all": {
+   "false_pages": 0,
+   "missed_incidents": 8,
+   "traps_handled": [
+    "cascade",
+    "deploy",
+    "flapping",
+    "retry-storm",
+    "silence"
+   ]
+  }
+ },
+ "dataset": {
+  "file": "data/labelled.jsonl",
+  "hold": 103,
+  "page": 20,
+  "windows": 123
+ },
+ "floors": {
+  "always-hold": {
+   "answered": 123,
+   "counts": {
+    "false_page": 0,
+    "held_correct": 103,
+    "missed_incident": 20,
+    "no_verdict": 0,
+    "paged_correct": 0
+   },
+   "coverage": 1.0,
+   "detection": 0.0,
+   "false_pages": 0,
+   "missed_incidents": 20,
+   "no_verdict": 0,
+   "page_precision": null,
+   "reconciles": true,
+   "traps_handled": [
+    "deploy",
+    "flapping",
+    "retry-storm"
+   ],
+   "why": "never wakes anybody: zero false pages, and every incident is found by a customer",
+   "windows": 123
+  },
+  "always-page": {
+   "answered": 123,
+   "counts": {
+    "false_page": 103,
+    "held_correct": 0,
+    "missed_incident": 0,
+    "no_verdict": 0,
+    "paged_correct": 20
+   },
+   "coverage": 1.0,
+   "detection": 1.0,
+   "false_pages": 103,
+   "missed_incidents": 0,
+   "no_verdict": 0,
+   "page_precision": 0.1626,
+   "reconciles": true,
+   "traps_handled": [
+    "cascade",
+    "quiet-killer",
+    "silence"
+   ],
+   "why": "wakes somebody every five minutes: zero missed incidents, and the pager is ignored by Tuesday",
+   "windows": 123
+  },
+  "count": [
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 70,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0789,
+    "reconciles": true,
+    "threshold": 1,
+    "traps_handled": [
+     "cascade"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 70,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0789,
+    "reconciles": true,
+    "threshold": 2,
+    "traps_handled": [
+     "cascade"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 70,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0789,
+    "reconciles": true,
+    "threshold": 5,
+    "traps_handled": [
+     "cascade"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 70,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0789,
+    "reconciles": true,
+    "threshold": 10,
+    "traps_handled": [
+     "cascade"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 70,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0789,
+    "reconciles": true,
+    "threshold": 16,
+    "traps_handled": [
+     "cascade"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 58,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0938,
+    "reconciles": true,
+    "threshold": 20,
+    "traps_handled": [
+     "cascade",
+     "deploy"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 58,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0938,
+    "reconciles": true,
+    "threshold": 25,
+    "traps_handled": [
+     "cascade",
+     "deploy"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 58,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0938,
+    "reconciles": true,
+    "threshold": 31,
+    "traps_handled": [
+     "cascade",
+     "deploy"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 58,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0938,
+    "reconciles": true,
+    "threshold": 40,
+    "traps_handled": [
+     "cascade",
+     "deploy"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 58,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0938,
+    "reconciles": true,
+    "threshold": 47,
+    "traps_handled": [
+     "cascade",
+     "deploy"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 18,
+     "held_correct": 85,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 18,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.25,
+    "reconciles": true,
+    "threshold": 48,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 0,
+    "floor": "count",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 49,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 17,
+     "no_verdict": 0,
+     "paged_correct": 3
+    },
+    "coverage": 1.0,
+    "detection": 0.15,
+    "false_pages": 0,
+    "floor": "count",
+    "missed_incidents": 17,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 54,
+    "traps_handled": [
+     "deploy",
+     "flapping",
+     "retry-storm"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 20,
+     "no_verdict": 0,
+     "paged_correct": 0
+    },
+    "coverage": 1.0,
+    "detection": 0.0,
+    "false_pages": 0,
+    "floor": "count",
+    "missed_incidents": 20,
+    "no_verdict": 0,
+    "page_precision": null,
+    "reconciles": true,
+    "threshold": 60,
+    "traps_handled": [
+     "deploy",
+     "flapping",
+     "retry-storm"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 20,
+     "no_verdict": 0,
+     "paged_correct": 0
+    },
+    "coverage": 1.0,
+    "detection": 0.0,
+    "false_pages": 0,
+    "floor": "count",
+    "missed_incidents": 20,
+    "no_verdict": 0,
+    "page_precision": null,
+    "reconciles": true,
+    "threshold": 100,
+    "traps_handled": [
+     "deploy",
+     "flapping",
+     "retry-storm"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 20,
+     "no_verdict": 0,
+     "paged_correct": 0
+    },
+    "coverage": 1.0,
+    "detection": 0.0,
+    "false_pages": 0,
+    "floor": "count",
+    "missed_incidents": 20,
+    "no_verdict": 0,
+    "page_precision": null,
+    "reconciles": true,
+    "threshold": 220,
+    "traps_handled": [
+     "deploy",
+     "flapping",
+     "retry-storm"
+    ],
+    "windows": 123
+   }
+  ],
+  "count+keyword": [
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 70,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0789,
+    "reconciles": true,
+    "threshold": 1,
+    "traps_handled": [
+     "cascade"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 70,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0789,
+    "reconciles": true,
+    "threshold": 2,
+    "traps_handled": [
+     "cascade"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 70,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0789,
+    "reconciles": true,
+    "threshold": 5,
+    "traps_handled": [
+     "cascade"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 70,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0789,
+    "reconciles": true,
+    "threshold": 10,
+    "traps_handled": [
+     "cascade"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 70,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0789,
+    "reconciles": true,
+    "threshold": 16,
+    "traps_handled": [
+     "cascade"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 58,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0938,
+    "reconciles": true,
+    "threshold": 20,
+    "traps_handled": [
+     "cascade",
+     "deploy"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 58,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0938,
+    "reconciles": true,
+    "threshold": 25,
+    "traps_handled": [
+     "cascade",
+     "deploy"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 58,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0938,
+    "reconciles": true,
+    "threshold": 31,
+    "traps_handled": [
+     "cascade",
+     "deploy"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 58,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0938,
+    "reconciles": true,
+    "threshold": 40,
+    "traps_handled": [
+     "cascade",
+     "deploy"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 58,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.0938,
+    "reconciles": true,
+    "threshold": 47,
+    "traps_handled": [
+     "cascade",
+     "deploy"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 18,
+     "held_correct": 85,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 18,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 0.25,
+    "reconciles": true,
+    "threshold": 48,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 0,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 49,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 0,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 54,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 0,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 60,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 0,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 100,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 14,
+     "no_verdict": 0,
+     "paged_correct": 6
+    },
+    "coverage": 1.0,
+    "detection": 0.3,
+    "false_pages": 0,
+    "floor": "count+keyword",
+    "missed_incidents": 14,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 220,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm"
+    ],
+    "windows": 123
+   }
+  ],
+  "count+keyword+absence": [
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 70,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 0.1463,
+    "reconciles": true,
+    "threshold": 1,
+    "traps_handled": [
+     "cascade",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 70,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 0.1463,
+    "reconciles": true,
+    "threshold": 2,
+    "traps_handled": [
+     "cascade",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 70,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 0.1463,
+    "reconciles": true,
+    "threshold": 5,
+    "traps_handled": [
+     "cascade",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 70,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 0.1463,
+    "reconciles": true,
+    "threshold": 10,
+    "traps_handled": [
+     "cascade",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 70,
+     "held_correct": 33,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 70,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 0.1463,
+    "reconciles": true,
+    "threshold": 16,
+    "traps_handled": [
+     "cascade",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 58,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 0.1714,
+    "reconciles": true,
+    "threshold": 20,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 58,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 0.1714,
+    "reconciles": true,
+    "threshold": 25,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 58,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 0.1714,
+    "reconciles": true,
+    "threshold": 31,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 58,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 0.1714,
+    "reconciles": true,
+    "threshold": 40,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 58,
+     "held_correct": 45,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 58,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 0.1714,
+    "reconciles": true,
+    "threshold": 47,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 18,
+     "held_correct": 85,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 18,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 0.4,
+    "reconciles": true,
+    "threshold": 48,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 0,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 49,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 0,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 54,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 0,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 60,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 0,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 100,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm",
+     "silence"
+    ],
+    "windows": 123
+   },
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 0,
+    "floor": "count+keyword+absence",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 220,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm",
+     "silence"
+    ],
+    "windows": 123
+   }
+  ],
+  "keyword+absence (no count at all)": [
+   {
+    "answered": 123,
+    "counts": {
+     "false_page": 0,
+     "held_correct": 103,
+     "missed_incident": 8,
+     "no_verdict": 0,
+     "paged_correct": 12
+    },
+    "coverage": 1.0,
+    "detection": 0.6,
+    "false_pages": 0,
+    "floor": "keyword+absence (no count at all)",
+    "missed_incidents": 8,
+    "no_verdict": 0,
+    "page_precision": 1.0,
+    "reconciles": true,
+    "threshold": 1,
+    "traps_handled": [
+     "cascade",
+     "deploy",
+     "flapping",
+     "retry-storm",
+     "silence"
+    ],
+    "windows": 123
+   }
+  ]
+ },
+ "gate": {
+  "candidates": 123,
+  "gate_recall": 1.0,
+  "lost_to_gate": [],
+  "lost_traps": [],
+  "reduction": 0.4875,
+  "should_page": 20,
+  "should_page_surviving": 20,
+  "windows": 240
+ },
+ "kind": "baseline",
+ "note": "Deterministic pagers scored by src/decide.py, the same module evals/run.py scores the model with. No model was called."
+}
