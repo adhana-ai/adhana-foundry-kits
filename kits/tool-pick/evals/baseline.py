@@ -40,7 +40,7 @@ def main():
               % (row["cap"],
                  "%.1f%%" % (100 * s["sequence_exact"]) if s["sequence_exact"] is not None else "n/a",
                  c["correct"], c["wrong_tool"], c["stopped_early"], c["kept_going"],
-                 c["should_have_declined"], s["calls_total"], s["calls_wasted"]))
+                 c["should_have_declined"], s["tool_calls_total"], s["tool_calls_wasted"]))
 
     best = max(sweep, key=lambda r: r["summary"]["counts"]["correct"])
     print("\nbest setting: cap %d — %d of %d exactly right (%.1f%%)"

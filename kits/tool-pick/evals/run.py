@@ -97,6 +97,7 @@ def main():
     s["input_tokens_total"] = sum(r["input_tokens"] for r in results)
     s["output_tokens_total"] = sum(r["output_tokens"] for r in results)
     s["model_calls_total"] = sum(r["model_calls"] for r in results)
+    s["model_calls_per_request"] = round(s["model_calls_total"] / max(1, s["requests"]), 3)
     s["wall_seconds"] = round(time.time() - t_start, 1)
 
     print("\nanswered %d of %d — every rate below is computed over those %d ONLY"
@@ -106,9 +107,11 @@ def main():
           % ("%.1f%%" % (100 * s["sequence_exact"]) if s["sequence_exact"] is not None else "n/a",
              s["counts"]["wrong_tool"], s["counts"]["stopped_early"], s["counts"]["kept_going"],
              s["counts"]["should_have_declined"], s["counts"]["no_verdict"]))
-    print("model calls %d (mean %.2f per request, max %d)   wasted tool calls %d   capped %d"
-          % (s["model_calls_total"], s["calls_per_request_mean"] or 0,
-             s["calls_per_request_max"] or 0, s["calls_wasted"], s["capped"]))
+    print("MODEL calls %d (%.2f per request)   TOOL calls %d (mean %.2f, max %d)   "
+          "wasted %d   capped %d"
+          % (s["model_calls_total"], s["model_calls_total"] / max(1, s["requests"]),
+             s["tool_calls_total"], s["tool_calls_per_request_mean"] or 0,
+             s["tool_calls_per_request_max"] or 0, s["tool_calls_wasted"], s["capped"]))
     if s["answered"] <= s["requests"] - s["answered"]:
         print("⚠︎  MORE REQUESTS FAILED THAN ANSWERED. Those rates describe the exception, not the")
         print("   run, and the ingest will refuse this record. Read `finish_reasons` first.")

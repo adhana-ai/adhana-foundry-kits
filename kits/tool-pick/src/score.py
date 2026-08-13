@@ -58,9 +58,13 @@ def tally(rows):
     """Counts per outcome, plus the numbers this kit publishes — kept apart on purpose.
 
     `sequence_exact` is the headline: of the requests that were answered, how many got exactly the
-    right tools in the right order. `calls_per_request` is the other half of the story and the one
-    no earlier kit had: the model chooses how many calls to make, so the cost is a distribution
-    rather than a constant.
+    right tools in the right order.
+
+    ⚠︎ EVERY COUNT HERE IS TOOL CALLS AND SAYS SO IN ITS NAME. r015 printed "model calls 210 (mean
+    0.78 per request)" — 210 is model calls, 0.78 is TOOL calls, and the sentence reads as one
+    quantity. The real figure was 1.75 model calls per request. A unit in a label is a claim, and
+    on this kit the two units differ by more than a factor of two: the model calls itself once more
+    than it calls a tool, because the last step of every well-behaved request is DONE.
     """
     c = {k: 0 for k in OUTCOMES}
     for r in rows:
@@ -75,10 +79,10 @@ def tally(rows):
         "answered": answered,
         "coverage": round(answered / len(rows), 4) if rows else None,
         "sequence_exact": round(c["correct"] / answered, 4) if answered else None,
-        "calls_total": sum(calls),
-        "calls_per_request_mean": round(sum(calls) / len(calls), 3) if calls else None,
-        "calls_per_request_max": max(calls) if calls else None,
-        "calls_wasted": wasted,
+        "tool_calls_total": sum(calls),
+        "tool_calls_per_request_mean": round(sum(calls) / len(calls), 3) if calls else None,
+        "tool_calls_per_request_max": max(calls) if calls else None,
+        "tool_calls_wasted": wasted,
         "no_verdict": c["no_verdict"],
         "reconciles": sum(c.values()) == len(rows),
     }
