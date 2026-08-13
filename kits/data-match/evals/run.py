@@ -145,7 +145,7 @@ def main():
     for row in rows:
         user = pr.render(records[row["a"]], records[row["b"]])
         t0 = time.time()
-        got = complete(cfg, pr.SYSTEM, user, max_tokens=16)
+        got = complete(cfg, pr.SYSTEM, user, max_tokens=pr.MAX_TOKENS)
         ms = round((time.time() - t0) * 1000, 2)
         verdict = pr.parse(got["text"])
         rec = score_pair(row, records, verdict, replied=verdict is not None,

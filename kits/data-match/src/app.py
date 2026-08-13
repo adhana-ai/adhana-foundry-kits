@@ -120,7 +120,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                                "score": similarity.score(a, b)}, 400)
         from src.adapters import complete
         user = pr.render(a, b)
-        got = complete(cfg, pr.SYSTEM, user, max_tokens=16)
+        got = complete(cfg, pr.SYSTEM, user, max_tokens=pr.MAX_TOKENS)
         verdict = pr.parse(got["text"])
         cmp = similarity.compare(a, b)
         return self._json({"verdict": verdict, "raw": got["text"], "score": cmp["score"],
