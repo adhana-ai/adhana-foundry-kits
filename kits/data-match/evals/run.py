@@ -78,7 +78,22 @@ def summarise(rows):
     lat = sorted(r.get("model_latency_ms", 0) for r in rows if r.get("model_latency_ms"))
     t = decide.tally(rows)
     pct = lambda xs, p: xs[min(len(xs) - 1, int(len(xs) * p))] if xs else 0
+    # ⚑ `answered` IS THE DENOMINATOR BOTH RATES WERE DIVIDED BY, AND IT SHIPS WITH THEM — added
+    # 2026-08-13, after r012 answered ONE pair of 78 and scored precision 100% / recall 100%.
+    #
+    # `no_verdict` is excluded from both rates on purpose, and that exclusion is still right: an
+    # empty reply is a reliability failure, not a cautious answer. But it means the rates describe
+    # only the pairs that replied, and nothing here said how many that was. One correct answer out
+    # of 78 produced two perfect numbers, a reconciling taxonomy, and a run that read as flawless.
+    #
+    # A rate without its denominator is not a small omission on this kit — it is the difference
+    # between "it matched everything correctly" and "it answered once". So it goes in the summary,
+    # it goes in the printed headline, and the ingest refuses to publish a record where the pairs
+    # that failed outnumber the pairs that answered.
+    answered = len(rows) - t.get("counts", {}).get("no_verdict", 0)
     t.update({"model_latency_p50_ms": pct(lat, 0.50), "model_latency_p95_ms": pct(lat, 0.95),
+              "answered": answered,
+              "coverage": round(answered / len(rows), 4) if rows else None,
               "input_tokens_total": sum(r.get("input_tokens", 0) or 0 for r in rows),
               "output_tokens_total": sum(r.get("output_tokens", 0) or 0 for r in rows),
               "by_trap": by_trap(rows)})
@@ -136,6 +151,12 @@ def main():
         rec = score_pair(row, records, verdict, replied=verdict is not None,
                          threshold=a.threshold)
         rec.update({"model_latency_ms": ms, "raw_response": got["text"],
+                    # Kept so an empty reply can be diagnosed from the RESULTS FILE rather than from
+                    # a second run. See the adapter's note: "length" is a truncation, "stop" is a
+                    # model that said nothing, and reasoning billed inside the output budget is how
+                    # a healthy-looking token count produces an empty string.
+                    "finish_reason": got.get("finish_reason"),
+                    "reasoning_chars": got.get("reasoning_chars"),
                     "input_tokens": got["input_tokens"], "output_tokens": got["output_tokens"],
                     "prompt_chars": len(user)})
         results.append(rec)
@@ -143,10 +164,26 @@ def main():
               % (row["id"], verdict or "(none)", rec["outcome"], rec["score"], row["trap"]))
 
     s = summarise(results)
-    print("\nprecision %s   recall %s   false merges %d   missed %d   no verdict %d"
+    # THE DENOMINATOR PRINTS FIRST, above the rates rather than beside them, because the terminal is
+    # where this run was first read as a success. `answered 1 of 78` on its own line is the sentence
+    # that would have stopped it.
+    print("\nanswered %d of %d pair(s) — the two rates below are computed over those %d ONLY"
+          % (s["answered"], s["pairs"], s["answered"]))
+    print("precision %s   recall %s   false merges %d   missed %d   no verdict %d"
           % ("%.1f%%" % (100 * s["precision"]) if s["precision"] is not None else "n/a",
              "%.1f%%" % (100 * s["recall"]) if s["recall"] is not None else "n/a",
              s["false_merges"], s["missed_matches"], s["no_verdict"]))
+    if s["answered"] <= s["pairs"] - s["answered"]:
+        # Not a warning about data quality — a refusal to let the run be read as a result at all.
+        print("⚠︎  MORE PAIRS FAILED THAN ANSWERED. Those rates describe the exception, not the run,")
+        print("   and the ingest will refuse this record. Check `finish_reason` on the rows before")
+        print("   changing anything: a truncated reply and a silent model need different fixes.")
+        bad = [r for r in results if r["outcome"] == "no_verdict"]
+        why = {}
+        for r in bad:
+            why[r.get("finish_reason")] = why.get(r.get("finish_reason"), 0) + 1
+        print("   finish_reason on the %d that gave no verdict: %s"
+              % (len(bad), ", ".join("%s %d" % (k, v) for k, v in sorted(why.items(), key=str))))
     print("tokens in/out %d/%d   p50 %.0f ms   p95 %.0f ms"
           % (s["input_tokens_total"], s["output_tokens_total"],
              s["model_latency_p50_ms"], s["model_latency_p95_ms"]))

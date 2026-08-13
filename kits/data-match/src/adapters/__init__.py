@@ -64,7 +64,26 @@ def openai_compatible(cfg, system, user, max_tokens):
                   "messages": [{"role": "system", "content": system},
                                {"role": "user", "content": user}]})
     usage = body.get("usage") or {}
-    return {"text": body["choices"][0]["message"]["content"],
+    choice = body["choices"][0]
+    msg = choice.get("message") or {}
+    # ⚑ WHY AN ANSWER CAME BACK EMPTY IS PART OF THE ANSWER — added 2026-08-13, the hard way.
+    #
+    # A run of 78 returned an empty string 77 times and the recorded rows could not say why, because
+    # the only thing kept was the text. `finish_reason` was on the wire the whole time and thrown
+    # away with the rest of the body, so telling the two candidate causes apart meant SPENDING AGAIN
+    # on a kit whose whole doctrine is run-once. An empty `content` with `finish_reason: "length"`
+    # is a TRUNCATED reply; with `"stop"` it is a model that genuinely said nothing. Different
+    # defects, different fixes, and the recorded evidence could not distinguish them.
+    #
+    # `reasoning_chars` is the other half. Several providers emit a reasoning field beside `content`
+    # and bill it inside `completion_tokens`, so a small `max_tokens` can be consumed entirely by
+    # reasoning and leave `content` empty while the usage numbers look perfectly healthy. Recording
+    # its LENGTH — never its text, which is neither useful here nor ours to publish — puts that in
+    # the results file instead of on a second invoice.
+    reasoning = msg.get("reasoning_content") or msg.get("reasoning") or ""
+    return {"text": msg.get("content") or "",
+            "finish_reason": choice.get("finish_reason"),
+            "reasoning_chars": len(reasoning),
             "input_tokens": usage.get("prompt_tokens"),
             "output_tokens": usage.get("completion_tokens"),
             "raw": body}
@@ -80,7 +99,14 @@ def anthropic(cfg, system, user, max_tokens):
                   "messages": [{"role": "user", "content": user}]})
     usage = body.get("usage") or {}
     text = "".join(b.get("text", "") for b in body.get("content", []) if b.get("type") == "text")
+    # Same two fields as above, under this API's names — `stop_reason: "max_tokens"` is its word for
+    # a truncated reply, and thinking blocks are a content block rather than a sibling field. The
+    # shape a caller receives must not depend on which provider answered.
+    thinking = "".join(b.get("thinking", "") for b in body.get("content", [])
+                       if b.get("type") == "thinking")
     return {"text": text,
+            "finish_reason": body.get("stop_reason"),
+            "reasoning_chars": len(thinking),
             "input_tokens": usage.get("input_tokens"),
             "output_tokens": usage.get("output_tokens"),
             "raw": body}
