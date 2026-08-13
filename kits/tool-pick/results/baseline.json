@@ -1,0 +1,355 @@
+{
+ "best_cap": 1,
+ "calls": 0,
+ "cost_usd": 0.0,
+ "requests": 120,
+ "rule_order_control": {
+  "swapped": [
+   "today",
+   "shop_sql",
+   "calc",
+   "doc_search"
+  ],
+  "wrong_surface": {
+   "outcomes": {
+    "wrong_tool": 12
+   },
+   "requests": 12,
+   "wrong": 12
+  }
+ },
+ "rules": [
+  [
+   "today",
+   "\\btoday\\b|\\bcurrent\\b|\\bdate\\b"
+  ],
+  [
+   "doc_search",
+   "\\bpolicy\\b|\\bpolicies\\b|\\brule\\b|\\ballowed\\b|\\bterms\\b|\\breturns?\\b|\\bwarranty\\b|\\bshipping\\b|\\bloyalty\\b|\\brefunds?\\b|\\bcancel"
+  ],
+  [
+   "calc",
+   "\\bpercent|%|\\baverage\\b|\\bmultiplied\\b|\\bdifference\\b"
+  ],
+  [
+   "shop_sql",
+   "\\border|\\bcustomer|\\brevenue\\b|\\bhow many\\b|\\btotal\\b|\\bspent\\b|\\bspend\\b|\\bsales\\b|\\bfile\\b"
+  ]
+ ],
+ "sweep": [
+  {
+   "by_trap": {
+    "ambiguous": {
+     "outcomes": {
+      "wrong_tool": 12
+     },
+     "requests": 12,
+     "wrong": 12
+    },
+    "needs-none": {
+     "outcomes": {
+      "correct": 4,
+      "kept_going": 12
+     },
+     "requests": 16,
+     "wrong": 12
+    },
+    "plain": {
+     "outcomes": {
+      "correct": 40
+     },
+     "requests": 40,
+     "wrong": 0
+    },
+    "two-step": {
+     "outcomes": {
+      "stopped_early": 12,
+      "wrong_tool": 12
+     },
+     "requests": 24,
+     "wrong": 24
+    },
+    "unanswerable": {
+     "outcomes": {
+      "should_have_declined": 16
+     },
+     "requests": 16,
+     "wrong": 16
+    },
+    "wrong-surface": {
+     "outcomes": {
+      "correct": 12
+     },
+     "requests": 12,
+     "wrong": 0
+    }
+   },
+   "cap": 1,
+   "summary": {
+    "answered": 120,
+    "calls_per_request_max": 1,
+    "calls_per_request_mean": 0.967,
+    "calls_total": 116,
+    "calls_wasted": 28,
+    "counts": {
+     "correct": 56,
+     "kept_going": 12,
+     "no_verdict": 0,
+     "should_have_declined": 16,
+     "stopped_early": 12,
+     "wrong_tool": 24
+    },
+    "coverage": 1.0,
+    "no_verdict": 0,
+    "reconciles": true,
+    "requests": 120,
+    "sequence_exact": 0.4667
+   },
+   "traps_handled": {
+    "ambiguous": false,
+    "needs-none": false,
+    "plain": true,
+    "two-step": false,
+    "unanswerable": false,
+    "wrong-surface": true
+   }
+  },
+  {
+   "by_trap": {
+    "ambiguous": {
+     "outcomes": {
+      "wrong_tool": 12
+     },
+     "requests": 12,
+     "wrong": 12
+    },
+    "needs-none": {
+     "outcomes": {
+      "correct": 4,
+      "kept_going": 12
+     },
+     "requests": 16,
+     "wrong": 12
+    },
+    "plain": {
+     "outcomes": {
+      "correct": 40
+     },
+     "requests": 40,
+     "wrong": 0
+    },
+    "two-step": {
+     "outcomes": {
+      "correct": 8,
+      "wrong_tool": 16
+     },
+     "requests": 24,
+     "wrong": 16
+    },
+    "unanswerable": {
+     "outcomes": {
+      "should_have_declined": 16
+     },
+     "requests": 16,
+     "wrong": 16
+    },
+    "wrong-surface": {
+     "outcomes": {
+      "kept_going": 12
+     },
+     "requests": 12,
+     "wrong": 12
+    }
+   },
+   "cap": 2,
+   "summary": {
+    "answered": 120,
+    "calls_per_request_max": 2,
+    "calls_per_request_mean": 1.4,
+    "calls_total": 168,
+    "calls_wasted": 56,
+    "counts": {
+     "correct": 52,
+     "kept_going": 24,
+     "no_verdict": 0,
+     "should_have_declined": 16,
+     "stopped_early": 0,
+     "wrong_tool": 28
+    },
+    "coverage": 1.0,
+    "no_verdict": 0,
+    "reconciles": true,
+    "requests": 120,
+    "sequence_exact": 0.4333
+   },
+   "traps_handled": {
+    "ambiguous": false,
+    "needs-none": false,
+    "plain": true,
+    "two-step": false,
+    "unanswerable": false,
+    "wrong-surface": false
+   }
+  },
+  {
+   "by_trap": {
+    "ambiguous": {
+     "outcomes": {
+      "wrong_tool": 12
+     },
+     "requests": 12,
+     "wrong": 12
+    },
+    "needs-none": {
+     "outcomes": {
+      "correct": 4,
+      "kept_going": 12
+     },
+     "requests": 16,
+     "wrong": 12
+    },
+    "plain": {
+     "outcomes": {
+      "correct": 40
+     },
+     "requests": 40,
+     "wrong": 0
+    },
+    "two-step": {
+     "outcomes": {
+      "correct": 8,
+      "wrong_tool": 16
+     },
+     "requests": 24,
+     "wrong": 16
+    },
+    "unanswerable": {
+     "outcomes": {
+      "should_have_declined": 16
+     },
+     "requests": 16,
+     "wrong": 16
+    },
+    "wrong-surface": {
+     "outcomes": {
+      "kept_going": 12
+     },
+     "requests": 12,
+     "wrong": 12
+    }
+   },
+   "cap": 3,
+   "summary": {
+    "answered": 120,
+    "calls_per_request_max": 3,
+    "calls_per_request_mean": 1.433,
+    "calls_total": 172,
+    "calls_wasted": 60,
+    "counts": {
+     "correct": 52,
+     "kept_going": 24,
+     "no_verdict": 0,
+     "should_have_declined": 16,
+     "stopped_early": 0,
+     "wrong_tool": 28
+    },
+    "coverage": 1.0,
+    "no_verdict": 0,
+    "reconciles": true,
+    "requests": 120,
+    "sequence_exact": 0.4333
+   },
+   "traps_handled": {
+    "ambiguous": false,
+    "needs-none": false,
+    "plain": true,
+    "two-step": false,
+    "unanswerable": false,
+    "wrong-surface": false
+   }
+  },
+  {
+   "by_trap": {
+    "ambiguous": {
+     "outcomes": {
+      "wrong_tool": 12
+     },
+     "requests": 12,
+     "wrong": 12
+    },
+    "needs-none": {
+     "outcomes": {
+      "correct": 4,
+      "kept_going": 12
+     },
+     "requests": 16,
+     "wrong": 12
+    },
+    "plain": {
+     "outcomes": {
+      "correct": 40
+     },
+     "requests": 40,
+     "wrong": 0
+    },
+    "two-step": {
+     "outcomes": {
+      "correct": 8,
+      "wrong_tool": 16
+     },
+     "requests": 24,
+     "wrong": 16
+    },
+    "unanswerable": {
+     "outcomes": {
+      "should_have_declined": 16
+     },
+     "requests": 16,
+     "wrong": 16
+    },
+    "wrong-surface": {
+     "outcomes": {
+      "kept_going": 12
+     },
+     "requests": 12,
+     "wrong": 12
+    }
+   },
+   "cap": 4,
+   "summary": {
+    "answered": 120,
+    "calls_per_request_max": 3,
+    "calls_per_request_mean": 1.433,
+    "calls_total": 172,
+    "calls_wasted": 60,
+    "counts": {
+     "correct": 52,
+     "kept_going": 24,
+     "no_verdict": 0,
+     "should_have_declined": 16,
+     "stopped_early": 0,
+     "wrong_tool": 28
+    },
+    "coverage": 1.0,
+    "no_verdict": 0,
+    "reconciles": true,
+    "requests": 120,
+    "sequence_exact": 0.4333
+   },
+   "traps_handled": {
+    "ambiguous": false,
+    "needs-none": false,
+    "plain": true,
+    "two-step": false,
+    "unanswerable": false,
+    "wrong-surface": false
+   }
+  }
+ ],
+ "unreachable_traps": [
+  "ambiguous",
+  "needs-none",
+  "two-step",
+  "unanswerable"
+ ]
+}
