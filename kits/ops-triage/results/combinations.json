@@ -1,0 +1,135 @@
+{
+ "beats_both_parents": "rules decide, model escalates the quiet ones",
+ "calls": 0,
+ "combinations": {
+  "both must agree (AND)": {
+   "answered": 123,
+   "counts": {
+    "false_page": 0,
+    "held_correct": 103,
+    "missed_incident": 10,
+    "no_verdict": 0,
+    "paged_correct": 10
+   },
+   "coverage": 1.0,
+   "detection": 0.5,
+   "false_pages": 0,
+   "missed_incidents": 10,
+   "no_verdict": 0,
+   "page_precision": 1.0,
+   "reconciles": true,
+   "traps_handled": [
+    "deploy",
+    "flapping",
+    "retry-storm",
+    "silence"
+   ],
+   "why": "page only when both agree \u2014 the quiet build",
+   "windows": 123
+  },
+  "either pages (OR)": {
+   "answered": 123,
+   "counts": {
+    "false_page": 25,
+    "held_correct": 78,
+    "missed_incident": 3,
+    "no_verdict": 0,
+    "paged_correct": 17
+   },
+   "coverage": 1.0,
+   "detection": 0.85,
+   "false_pages": 25,
+   "missed_incidents": 3,
+   "no_verdict": 0,
+   "page_precision": 0.4048,
+   "reconciles": true,
+   "traps_handled": [
+    "cascade",
+    "deploy",
+    "silence"
+   ],
+   "why": "page if either decider says so \u2014 the cautious build",
+   "windows": 123
+  },
+  "model alone": {
+   "answered": 123,
+   "counts": {
+    "false_page": 25,
+    "held_correct": 78,
+    "missed_incident": 5,
+    "no_verdict": 0,
+    "paged_correct": 15
+   },
+   "coverage": 1.0,
+   "detection": 0.75,
+   "false_pages": 25,
+   "missed_incidents": 5,
+   "no_verdict": 0,
+   "page_precision": 0.375,
+   "reconciles": true,
+   "traps_handled": [
+    "deploy",
+    "silence"
+   ],
+   "why": "the run as it was scored",
+   "windows": 123
+  },
+  "rules alone": {
+   "answered": 123,
+   "counts": {
+    "false_page": 0,
+    "held_correct": 103,
+    "missed_incident": 8,
+    "no_verdict": 0,
+    "paged_correct": 12
+   },
+   "coverage": 1.0,
+   "detection": 0.6,
+   "false_pages": 0,
+   "missed_incidents": 8,
+   "no_verdict": 0,
+   "page_precision": 1.0,
+   "reconciles": true,
+   "traps_handled": [
+    "cascade",
+    "deploy",
+    "flapping",
+    "retry-storm",
+    "silence"
+   ],
+   "why": "the free floor at its best setting, from results/baseline.json",
+   "windows": 123
+  },
+  "rules decide, model escalates the quiet ones": {
+   "answered": 123,
+   "counts": {
+    "false_page": 0,
+    "held_correct": 103,
+    "missed_incident": 3,
+    "no_verdict": 0,
+    "paged_correct": 17
+   },
+   "coverage": 1.0,
+   "detection": 0.85,
+   "false_pages": 0,
+   "missed_incidents": 3,
+   "no_verdict": 0,
+   "page_precision": 1.0,
+   "reconciles": true,
+   "traps_handled": [
+    "cascade",
+    "deploy",
+    "flapping",
+    "retry-storm",
+    "silence"
+   ],
+   "why": "the rules keep the windows they have evidence for; the model is asked ONLY about windows where the rules are structurally blind",
+   "windows": 123
+  }
+ },
+ "cost_usd": 0.0,
+ "floor_threshold": 49,
+ "kind": "combination",
+ "note": "Re-scored from recorded outputs through src/decide.py. No model was called.",
+ "run_id": "r014-ops-triage-flash"
+}

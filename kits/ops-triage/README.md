@@ -72,6 +72,57 @@ no-count control row rather than asserting it.
 That is why this kit publishes two numbers and never one, and why you will not find an accuracy
 figure anywhere in it.
 
+## The run — `r014-ops-triage-flash`, 123 calls, `deepseek-v4-flash`
+
+**123 of 123 windows answered. 0 no-verdict.**
+
+| | missed incidents | false pages | detection | traps handled |
+|---|---|---|---|---|
+| free floor, best setting | 8 | **0** | 60% | **5 of 6** |
+| **the model** | **5** | **25** | **75%** | 2 of 6 |
+
+⚑ **The model lost, and how it lost is the finding.** It caught three more incidents than the rules
+and paid **25 false pages** for them — 24 of those on `flapping`, the trap whose entire nature is
+being loud and meaningless. A rotation would have this pager switched off inside a week.
+
+⚠︎ **And it missed two `cascade` windows** — postgres FATAL, five services down, 200+ lines. The
+loudest, least ambiguous real outage in the corpus, and it held. A count threshold catches that
+trivially. **The failure is silent, which is the expensive kind.**
+
+⚑ **But look at where it won: `silence` 6 of 6, `quiet-killer` 5 of 8.** Those are precisely the two
+traps no rule in `src/rules.py` can reach. The model and the rules are not better and worse than
+each other — **they are blind in different places**, and the places do not overlap:
+
+| | `flapping` | `retry-storm` | `deploy` | `cascade` | `quiet-killer` | `silence` |
+|---|---|---|---|---|---|---|
+| rules | ✓ | ✓ | ✓ | ✓ | ✗ 0/8 | ✓ *(computed)* |
+| model | ✗ 24 false | ✗ 1 false | ✓ | ✗ 2 missed | **✓ 5/8** | **✓ 6/6** |
+
+## The architecture that beats both, for a third of the calls
+
+`evals/combine.py` re-scores the **already-recorded** outputs under five combination rules — no new
+calls, $0.00. Four of them lose. One does not:
+
+| | missed | false pages | detection |
+|---|---|---|---|
+| model alone | 5 | 25 | 75% |
+| rules alone | 8 | 0 | 60% |
+| either pages (OR) | 3 | 25 | 85% |
+| both must agree (AND) | 10 | 0 | 50% |
+| **rules decide, model escalates the quiet ones** | **3** | **0** | **85%** |
+
+⚑ **Rules where there is evidence, model where there is none.** A window with error lines in it is
+kept by the rules — they have something to grip and they are right about it. A window with *no* loud
+lines and no keyword is exactly where a threshold and a regex have nothing to say, and only those go
+to a model.
+
+⚑ **It is also the cheap one: 41 calls instead of 123**, 17% of the stream, 32% of the input tokens.
+The better architecture is a third of the price, because most windows never needed a model.
+
+⚠︎ **`evals/combine.py` declares all five rules before scoring any of them and prints every one,
+win or lose** — and it records, in the file, that fixing a bug in one predicate improved that
+predicate's result. Read the note there before trusting this table.
+
 ## The gate, and the pre-filter that nearly deleted the kit's own finding
 
 Nothing sane asks a model about every five-minute slice of a healthy system, so
