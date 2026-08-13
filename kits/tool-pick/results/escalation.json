@@ -1,0 +1,570 @@
+{
+ "beats_control_for_fewer_calls": null,
+ "calls": 0,
+ "cost_usd": 0.0,
+ "diagnostic": {
+  "model_outcomes_on_unanswerable": {
+   "correct": 9,
+   "no_verdict": 1,
+   "should_have_declined": 6
+  },
+  "reading": "Every unanswerable request fires exactly one rule, so a confidence signal built on rule count keeps all of them at the router \u2014 the one place the model was measurably better (9 of 16 correct against the router's 0).",
+  "rules_fired_by_trap": {
+   "ambiguous": {
+    "2": 12
+   },
+   "needs-none": {
+    "0": 4,
+    "1": 8,
+    "3": 4
+   },
+   "plain": {
+    "1": 40
+   },
+   "two-step": {
+    "2": 24
+   },
+   "unanswerable": {
+    "1": 16
+   },
+   "wrong-surface": {
+    "2": 12
+   }
+  },
+  "unanswerable_firing_exactly_one_rule": 16,
+  "unanswerable_requests": 16
+ },
+ "floor_cap": 1,
+ "floor_under_the_models_rule": {
+  "published_strict": 0.4667,
+  "same_rule_as_model": 0.5,
+  "why": "the published floor scores `calc` as required; the published model score treats it as optional. Both numbers are correct under their own rule and they were being printed side by side as if they shared one."
+ },
+ "kind": "escalation",
+ "note": "Re-scored from recorded outputs through src/score.py and evals/rescore.py's corrected label rule. No model was called.",
+ "policies": {
+  "escalate unless EXACTLY ONE rule fires": {
+   "answered": 120,
+   "by_trap": {
+    "ambiguous": {
+     "outcomes": {
+      "correct": 8,
+      "wrong_tool": 4
+     },
+     "requests": 12,
+     "wrong": 4
+    },
+    "needs-none": {
+     "outcomes": {
+      "correct": 4,
+      "kept_going": 12
+     },
+     "requests": 16,
+     "wrong": 12
+    },
+    "plain": {
+     "outcomes": {
+      "correct": 40
+     },
+     "requests": 40,
+     "wrong": 0
+    },
+    "two-step": {
+     "outcomes": {
+      "correct": 14,
+      "kept_going": 2,
+      "stopped_early": 8
+     },
+     "requests": 24,
+     "wrong": 10
+    },
+    "unanswerable": {
+     "outcomes": {
+      "should_have_declined": 16
+     },
+     "requests": 16,
+     "wrong": 16
+    },
+    "wrong-surface": {
+     "outcomes": {
+      "correct": 12
+     },
+     "requests": 12,
+     "wrong": 0
+    }
+   },
+   "calls_share": 0.5381,
+   "counts": {
+    "correct": 78,
+    "kept_going": 14,
+    "no_verdict": 0,
+    "should_have_declined": 16,
+    "stopped_early": 8,
+    "wrong_tool": 4
+   },
+   "coverage": 1.0,
+   "escalated_requests": 56,
+   "fallback_to_router_on_silence": true,
+   "model_calls": 113,
+   "no_verdict": 0,
+   "reconciles": true,
+   "requests": 120,
+   "sequence_exact": 0.65,
+   "tokens": 75101,
+   "tool_calls_per_request_max": 3,
+   "tool_calls_per_request_mean": 1.033,
+   "tool_calls_total": 124,
+   "tool_calls_wasted": 29,
+   "traps_clean": [
+    "plain",
+    "wrong-surface"
+   ],
+   "traps_handled": {
+    "ambiguous": false,
+    "needs-none": false,
+    "plain": true,
+    "two-step": false,
+    "unanswerable": false,
+    "wrong-surface": true
+   },
+   "usd_pro_rata": 0.03875,
+   "why": "the confident router: keep only the case a keyword router was designed for, buy the rest"
+  },
+  "escalate when NO rule fires": {
+   "answered": 120,
+   "by_trap": {
+    "ambiguous": {
+     "outcomes": {
+      "wrong_tool": 12
+     },
+     "requests": 12,
+     "wrong": 12
+    },
+    "needs-none": {
+     "outcomes": {
+      "correct": 4,
+      "kept_going": 12
+     },
+     "requests": 16,
+     "wrong": 12
+    },
+    "plain": {
+     "outcomes": {
+      "correct": 40
+     },
+     "requests": 40,
+     "wrong": 0
+    },
+    "two-step": {
+     "outcomes": {
+      "correct": 4,
+      "stopped_early": 20
+     },
+     "requests": 24,
+     "wrong": 20
+    },
+    "unanswerable": {
+     "outcomes": {
+      "should_have_declined": 16
+     },
+     "requests": 16,
+     "wrong": 16
+    },
+    "wrong-surface": {
+     "outcomes": {
+      "correct": 12
+     },
+     "requests": 12,
+     "wrong": 0
+    }
+   },
+   "calls_share": 0.019,
+   "counts": {
+    "correct": 60,
+    "kept_going": 12,
+    "no_verdict": 0,
+    "should_have_declined": 16,
+    "stopped_early": 20,
+    "wrong_tool": 12
+   },
+   "coverage": 1.0,
+   "escalated_requests": 4,
+   "fallback_to_router_on_silence": true,
+   "model_calls": 4,
+   "no_verdict": 0,
+   "reconciles": true,
+   "requests": 120,
+   "sequence_exact": 0.5,
+   "tokens": 1731,
+   "tool_calls_per_request_max": 1,
+   "tool_calls_per_request_mean": 0.967,
+   "tool_calls_total": 116,
+   "tool_calls_wasted": 28,
+   "traps_clean": [
+    "plain",
+    "wrong-surface"
+   ],
+   "traps_handled": {
+    "ambiguous": false,
+    "needs-none": false,
+    "plain": true,
+    "two-step": false,
+    "unanswerable": false,
+    "wrong-surface": true
+   },
+   "usd_pro_rata": 0.00089,
+   "why": "the router has nothing to grip and would call no tool; ask the model instead"
+  },
+  "escalate when RULES DISAGREE (2+ fire)": {
+   "answered": 120,
+   "by_trap": {
+    "ambiguous": {
+     "outcomes": {
+      "correct": 8,
+      "wrong_tool": 4
+     },
+     "requests": 12,
+     "wrong": 4
+    },
+    "needs-none": {
+     "outcomes": {
+      "correct": 4,
+      "kept_going": 12
+     },
+     "requests": 16,
+     "wrong": 12
+    },
+    "plain": {
+     "outcomes": {
+      "correct": 40
+     },
+     "requests": 40,
+     "wrong": 0
+    },
+    "two-step": {
+     "outcomes": {
+      "correct": 14,
+      "kept_going": 2,
+      "stopped_early": 8
+     },
+     "requests": 24,
+     "wrong": 10
+    },
+    "unanswerable": {
+     "outcomes": {
+      "should_have_declined": 16
+     },
+     "requests": 16,
+     "wrong": 16
+    },
+    "wrong-surface": {
+     "outcomes": {
+      "correct": 12
+     },
+     "requests": 12,
+     "wrong": 0
+    }
+   },
+   "calls_share": 0.519,
+   "counts": {
+    "correct": 78,
+    "kept_going": 14,
+    "no_verdict": 0,
+    "should_have_declined": 16,
+    "stopped_early": 8,
+    "wrong_tool": 4
+   },
+   "coverage": 1.0,
+   "escalated_requests": 52,
+   "fallback_to_router_on_silence": true,
+   "model_calls": 109,
+   "no_verdict": 0,
+   "reconciles": true,
+   "requests": 120,
+   "sequence_exact": 0.65,
+   "tokens": 73370,
+   "tool_calls_per_request_max": 3,
+   "tool_calls_per_request_mean": 1.033,
+   "tool_calls_total": 124,
+   "tool_calls_wasted": 29,
+   "traps_clean": [
+    "plain",
+    "wrong-surface"
+   ],
+   "traps_handled": {
+    "ambiguous": false,
+    "needs-none": false,
+    "plain": true,
+    "two-step": false,
+    "unanswerable": false,
+    "wrong-surface": true
+   },
+   "usd_pro_rata": 0.03785,
+   "why": "two patterns match and the router must guess an order its rules cannot know"
+  },
+  "model alone (as published)": {
+   "answered": 94,
+   "by_trap": {
+    "ambiguous": {
+     "outcomes": {
+      "correct": 8,
+      "no_verdict": 4
+     },
+     "requests": 12,
+     "wrong": 4
+    },
+    "needs-none": {
+     "outcomes": {
+      "correct": 12,
+      "kept_going": 2,
+      "no_verdict": 2
+     },
+     "requests": 16,
+     "wrong": 4
+    },
+    "plain": {
+     "outcomes": {
+      "correct": 35,
+      "no_verdict": 5
+     },
+     "requests": 40,
+     "wrong": 5
+    },
+    "two-step": {
+     "outcomes": {
+      "correct": 11,
+      "kept_going": 2,
+      "no_verdict": 11
+     },
+     "requests": 24,
+     "wrong": 13
+    },
+    "unanswerable": {
+     "outcomes": {
+      "correct": 9,
+      "no_verdict": 1,
+      "should_have_declined": 6
+     },
+     "requests": 16,
+     "wrong": 7
+    },
+    "wrong-surface": {
+     "outcomes": {
+      "correct": 9,
+      "no_verdict": 3
+     },
+     "requests": 12,
+     "wrong": 3
+    }
+   },
+   "calls_share": 1.0,
+   "counts": {
+    "correct": 84,
+    "kept_going": 4,
+    "no_verdict": 26,
+    "should_have_declined": 6,
+    "stopped_early": 0,
+    "wrong_tool": 0
+   },
+   "coverage": 0.7833,
+   "escalated_requests": 120,
+   "fallback_to_router_on_silence": false,
+   "model_calls": 210,
+   "no_verdict": 26,
+   "reconciles": true,
+   "requests": 120,
+   "sequence_exact": 0.8936,
+   "tokens": 125984,
+   "tool_calls_per_request_max": 3,
+   "tool_calls_per_request_mean": 0.777,
+   "tool_calls_total": 73,
+   "tool_calls_wasted": 9,
+   "traps_clean": [],
+   "traps_handled": {
+    "ambiguous": false,
+    "needs-none": false,
+    "plain": false,
+    "two-step": false,
+    "unanswerable": false,
+    "wrong-surface": false
+   },
+   "usd_pro_rata": 0.065,
+   "why": "r015 exactly as the kit publishes it, silences left as no_verdict"
+  },
+  "model alone, router catches the silences": {
+   "answered": 120,
+   "by_trap": {
+    "ambiguous": {
+     "outcomes": {
+      "correct": 8,
+      "wrong_tool": 4
+     },
+     "requests": 12,
+     "wrong": 4
+    },
+    "needs-none": {
+     "outcomes": {
+      "correct": 12,
+      "kept_going": 4
+     },
+     "requests": 16,
+     "wrong": 4
+    },
+    "plain": {
+     "outcomes": {
+      "correct": 40
+     },
+     "requests": 40,
+     "wrong": 0
+    },
+    "two-step": {
+     "outcomes": {
+      "correct": 14,
+      "kept_going": 2,
+      "stopped_early": 8
+     },
+     "requests": 24,
+     "wrong": 10
+    },
+    "unanswerable": {
+     "outcomes": {
+      "correct": 9,
+      "should_have_declined": 7
+     },
+     "requests": 16,
+     "wrong": 7
+    },
+    "wrong-surface": {
+     "outcomes": {
+      "correct": 12
+     },
+     "requests": 12,
+     "wrong": 0
+    }
+   },
+   "calls_share": 1.0,
+   "counts": {
+    "correct": 95,
+    "kept_going": 6,
+    "no_verdict": 0,
+    "should_have_declined": 7,
+    "stopped_early": 8,
+    "wrong_tool": 4
+   },
+   "coverage": 1.0,
+   "escalated_requests": 120,
+   "fallback_to_router_on_silence": true,
+   "model_calls": 210,
+   "no_verdict": 0,
+   "reconciles": true,
+   "requests": 120,
+   "sequence_exact": 0.7917,
+   "tokens": 125984,
+   "tool_calls_per_request_max": 3,
+   "tool_calls_per_request_mean": 0.825,
+   "tool_calls_total": 99,
+   "tool_calls_wasted": 12,
+   "traps_clean": [
+    "plain",
+    "wrong-surface"
+   ],
+   "traps_handled": {
+    "ambiguous": false,
+    "needs-none": false,
+    "plain": true,
+    "two-step": false,
+    "unanswerable": false,
+    "wrong-surface": true
+   },
+   "usd_pro_rata": 0.065,
+   "why": "THE CONTROL: same 210 calls, but the router answers the 26 that came back empty. Isolates the fallback from the escalation"
+  },
+  "router alone": {
+   "answered": 120,
+   "by_trap": {
+    "ambiguous": {
+     "outcomes": {
+      "wrong_tool": 12
+     },
+     "requests": 12,
+     "wrong": 12
+    },
+    "needs-none": {
+     "outcomes": {
+      "correct": 4,
+      "kept_going": 12
+     },
+     "requests": 16,
+     "wrong": 12
+    },
+    "plain": {
+     "outcomes": {
+      "correct": 40
+     },
+     "requests": 40,
+     "wrong": 0
+    },
+    "two-step": {
+     "outcomes": {
+      "correct": 4,
+      "stopped_early": 20
+     },
+     "requests": 24,
+     "wrong": 20
+    },
+    "unanswerable": {
+     "outcomes": {
+      "should_have_declined": 16
+     },
+     "requests": 16,
+     "wrong": 16
+    },
+    "wrong-surface": {
+     "outcomes": {
+      "correct": 12
+     },
+     "requests": 12,
+     "wrong": 0
+    }
+   },
+   "calls_share": 0.0,
+   "counts": {
+    "correct": 60,
+    "kept_going": 12,
+    "no_verdict": 0,
+    "should_have_declined": 16,
+    "stopped_early": 20,
+    "wrong_tool": 12
+   },
+   "coverage": 1.0,
+   "escalated_requests": 0,
+   "fallback_to_router_on_silence": false,
+   "model_calls": 0,
+   "no_verdict": 0,
+   "reconciles": true,
+   "requests": 120,
+   "sequence_exact": 0.5,
+   "tokens": 0,
+   "tool_calls_per_request_max": 1,
+   "tool_calls_per_request_mean": 0.967,
+   "tool_calls_total": 116,
+   "tool_calls_wasted": 28,
+   "traps_clean": [
+    "plain",
+    "wrong-surface"
+   ],
+   "traps_handled": {
+    "ambiguous": false,
+    "needs-none": false,
+    "plain": true,
+    "two-step": false,
+    "unanswerable": false,
+    "wrong-surface": true
+   },
+   "usd_pro_rata": 0.0,
+   "why": "the free floor at its best setting \u2014 0 model calls, the parent to beat on cost"
+  }
+ },
+ "reconciles_with_published_record": true,
+ "run_id": "r015-tool-pick-flash"
+}

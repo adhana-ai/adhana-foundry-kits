@@ -1,0 +1,382 @@
+{
+ "calls": 0,
+ "cost_usd": 0.0,
+ "kind": "holdout",
+ "note": "Re-scored from recorded outputs and the free matcher, through evals/run.py::score_pair and src/decide.py. No model was called.",
+ "reconciles_with_published_claim": {
+  "measured_against": "the free matcher at 0.70, which makes 18 false merges (12 relatives + 6 twins)",
+  "note": "Both hold. The gap the model closes depends entirely on where the free matcher's threshold is set, which is why this kit publishes a curve and not a point.",
+  "published": "the model buys 12 relative pairs kept apart",
+  "this_file_compares_against": "the free matcher at 0.85, its highest setting with zero false merges once the twins are held out"
+ },
+ "run_id": "r013-data-match-flash",
+ "subsets": {
+  "both held out": {
+   "answered": 65,
+   "floor_best": {
+    "missed_matches": 6,
+    "precision": 1.0,
+    "recall": 0.8868,
+    "threshold": 0.85
+   },
+   "floor_sweep": [
+    {
+     "false_merges": 12,
+     "missed_matches": 0,
+     "precision": 0.8154,
+     "recall": 1.0,
+     "threshold": 0.5
+    },
+    {
+     "false_merges": 12,
+     "missed_matches": 0,
+     "precision": 0.8154,
+     "recall": 1.0,
+     "threshold": 0.6
+    },
+    {
+     "false_merges": 12,
+     "missed_matches": 0,
+     "precision": 0.8154,
+     "recall": 1.0,
+     "threshold": 0.65
+    },
+    {
+     "false_merges": 12,
+     "missed_matches": 0,
+     "precision": 0.8154,
+     "recall": 1.0,
+     "threshold": 0.7
+    },
+    {
+     "false_merges": 11,
+     "missed_matches": 2,
+     "precision": 0.8226,
+     "recall": 0.9623,
+     "threshold": 0.75
+    },
+    {
+     "false_merges": 4,
+     "missed_matches": 2,
+     "precision": 0.9273,
+     "recall": 0.9623,
+     "threshold": 0.8
+    },
+    {
+     "false_merges": 0,
+     "missed_matches": 6,
+     "precision": 1.0,
+     "recall": 0.8868,
+     "threshold": 0.85
+    },
+    {
+     "false_merges": 0,
+     "missed_matches": 15,
+     "precision": 1.0,
+     "recall": 0.717,
+     "threshold": 0.9
+    },
+    {
+     "false_merges": 0,
+     "missed_matches": 33,
+     "precision": 1.0,
+     "recall": 0.3774,
+     "threshold": 0.95
+    }
+   ],
+   "held_out": [
+    "twin",
+    "transposed-dob"
+   ],
+   "model": {
+    "counts": {
+     "apart_correct": 12,
+     "false_merge": 0,
+     "merged_correct": 53,
+     "missed_match": 0,
+     "no_verdict": 0
+    },
+    "false_merges": 0,
+    "missed_matches": 0,
+    "no_verdict": 0,
+    "precision": 1.0,
+    "recall": 1.0
+   },
+   "pairs": 65,
+   "why": "the cleanest set this corpus can offer \u2014 and the least honest number in the file"
+  },
+  "everything (as published)": {
+   "answered": 78,
+   "floor_best": null,
+   "floor_sweep": [
+    {
+     "false_merges": 18,
+     "missed_matches": 0,
+     "precision": 0.7692,
+     "recall": 1.0,
+     "threshold": 0.5
+    },
+    {
+     "false_merges": 18,
+     "missed_matches": 0,
+     "precision": 0.7692,
+     "recall": 1.0,
+     "threshold": 0.6
+    },
+    {
+     "false_merges": 18,
+     "missed_matches": 0,
+     "precision": 0.7692,
+     "recall": 1.0,
+     "threshold": 0.65
+    },
+    {
+     "false_merges": 18,
+     "missed_matches": 0,
+     "precision": 0.7692,
+     "recall": 1.0,
+     "threshold": 0.7
+    },
+    {
+     "false_merges": 17,
+     "missed_matches": 2,
+     "precision": 0.7733,
+     "recall": 0.9667,
+     "threshold": 0.75
+    },
+    {
+     "false_merges": 10,
+     "missed_matches": 2,
+     "precision": 0.8529,
+     "recall": 0.9667,
+     "threshold": 0.8
+    },
+    {
+     "false_merges": 6,
+     "missed_matches": 7,
+     "precision": 0.8983,
+     "recall": 0.8833,
+     "threshold": 0.85
+    },
+    {
+     "false_merges": 6,
+     "missed_matches": 18,
+     "precision": 0.875,
+     "recall": 0.7,
+     "threshold": 0.9
+    },
+    {
+     "false_merges": 6,
+     "missed_matches": 40,
+     "precision": 0.7692,
+     "recall": 0.3333,
+     "threshold": 0.95
+    }
+   ],
+   "held_out": [],
+   "model": {
+    "counts": {
+     "apart_correct": 12,
+     "false_merge": 6,
+     "merged_correct": 54,
+     "missed_match": 6,
+     "no_verdict": 0
+    },
+    "false_merges": 6,
+    "missed_matches": 6,
+    "no_verdict": 0,
+    "precision": 0.9,
+    "recall": 0.9
+   },
+   "pairs": 78,
+   "why": "all 78 pairs \u2014 the run exactly as the kit publishes it"
+  },
+  "transposed dates held out": {
+   "answered": 71,
+   "floor_best": null,
+   "floor_sweep": [
+    {
+     "false_merges": 18,
+     "missed_matches": 0,
+     "precision": 0.7465,
+     "recall": 1.0,
+     "threshold": 0.5
+    },
+    {
+     "false_merges": 18,
+     "missed_matches": 0,
+     "precision": 0.7465,
+     "recall": 1.0,
+     "threshold": 0.6
+    },
+    {
+     "false_merges": 18,
+     "missed_matches": 0,
+     "precision": 0.7465,
+     "recall": 1.0,
+     "threshold": 0.65
+    },
+    {
+     "false_merges": 18,
+     "missed_matches": 0,
+     "precision": 0.7465,
+     "recall": 1.0,
+     "threshold": 0.7
+    },
+    {
+     "false_merges": 17,
+     "missed_matches": 2,
+     "precision": 0.75,
+     "recall": 0.9623,
+     "threshold": 0.75
+    },
+    {
+     "false_merges": 10,
+     "missed_matches": 2,
+     "precision": 0.8361,
+     "recall": 0.9623,
+     "threshold": 0.8
+    },
+    {
+     "false_merges": 6,
+     "missed_matches": 6,
+     "precision": 0.8868,
+     "recall": 0.8868,
+     "threshold": 0.85
+    },
+    {
+     "false_merges": 6,
+     "missed_matches": 15,
+     "precision": 0.8636,
+     "recall": 0.717,
+     "threshold": 0.9
+    },
+    {
+     "false_merges": 6,
+     "missed_matches": 33,
+     "precision": 0.7692,
+     "recall": 0.3774,
+     "threshold": 0.95
+    }
+   ],
+   "held_out": [
+    "transposed-dob"
+   ],
+   "model": {
+    "counts": {
+     "apart_correct": 12,
+     "false_merge": 6,
+     "merged_correct": 53,
+     "missed_match": 0,
+     "no_verdict": 0
+    },
+    "false_merges": 6,
+    "missed_matches": 0,
+    "no_verdict": 0,
+    "precision": 0.8983,
+    "recall": 1.0
+   },
+   "pairs": 71,
+   "why": "the 7 transposed-date pairs removed: every missed match in the run was one of them"
+  },
+  "twins held out": {
+   "answered": 72,
+   "floor_best": {
+    "missed_matches": 7,
+    "precision": 1.0,
+    "recall": 0.8833,
+    "threshold": 0.85
+   },
+   "floor_sweep": [
+    {
+     "false_merges": 12,
+     "missed_matches": 0,
+     "precision": 0.8333,
+     "recall": 1.0,
+     "threshold": 0.5
+    },
+    {
+     "false_merges": 12,
+     "missed_matches": 0,
+     "precision": 0.8333,
+     "recall": 1.0,
+     "threshold": 0.6
+    },
+    {
+     "false_merges": 12,
+     "missed_matches": 0,
+     "precision": 0.8333,
+     "recall": 1.0,
+     "threshold": 0.65
+    },
+    {
+     "false_merges": 12,
+     "missed_matches": 0,
+     "precision": 0.8333,
+     "recall": 1.0,
+     "threshold": 0.7
+    },
+    {
+     "false_merges": 11,
+     "missed_matches": 2,
+     "precision": 0.8406,
+     "recall": 0.9667,
+     "threshold": 0.75
+    },
+    {
+     "false_merges": 4,
+     "missed_matches": 2,
+     "precision": 0.9355,
+     "recall": 0.9667,
+     "threshold": 0.8
+    },
+    {
+     "false_merges": 0,
+     "missed_matches": 7,
+     "precision": 1.0,
+     "recall": 0.8833,
+     "threshold": 0.85
+    },
+    {
+     "false_merges": 0,
+     "missed_matches": 18,
+     "precision": 1.0,
+     "recall": 0.7,
+     "threshold": 0.9
+    },
+    {
+     "false_merges": 0,
+     "missed_matches": 40,
+     "precision": 1.0,
+     "recall": 0.3333,
+     "threshold": 0.95
+    }
+   ],
+   "held_out": [
+    "twin"
+   ],
+   "model": {
+    "counts": {
+     "apart_correct": 12,
+     "false_merge": 0,
+     "merged_correct": 54,
+     "missed_match": 6,
+     "no_verdict": 0
+    },
+    "false_merges": 0,
+    "missed_matches": 6,
+    "no_verdict": 0,
+    "precision": 1.0,
+    "recall": 0.9
+   },
+   "pairs": 72,
+   "why": "the 6 pairs of twins removed: every false merge in the run was one of them"
+  }
+ },
+ "warning": "A DIAGNOSTIC. The kit's published result is the 'everything' row and stays so; a score measured after removing the cases a system fails is not a result, it is a question about where the failures live.",
+ "what_the_model_buys_outside_the_twins": {
+  "extra_duplicates_found": 1,
+  "floor_threshold": 0.85,
+  "recall_points": 1.7
+ }
+}
