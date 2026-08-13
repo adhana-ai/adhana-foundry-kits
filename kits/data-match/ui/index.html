@@ -1,0 +1,33 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>data-match — is this one customer, or two?</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="app.css">
+<body>
+<header>
+  <h1>Is this one customer entered twice, or two customers who look alike?</h1>
+  <p class="lead">Every pair below shares a cheap key, so it is worth comparing. The score is
+  <b>weighted string similarity</b> — computed here, on your machine, for nothing. Drag the threshold:
+  nothing merges below it, and there is no setting that is simply correct.</p>
+  <p class="cost" id="cost">checking what is configured…</p>
+</header>
+
+<section class="controls">
+  <div class="thr">
+    <span class="thrv" id="tv">0.70</span>
+    <input type="range" id="thr" min="0" max="1" step="0.01" value="0.70">
+  </div>
+  <div class="tiles" id="tiles"></div>
+  <p class="recon" id="recon"></p>
+</section>
+
+<section id="pairs" class="pairs"></section>
+
+<footer>
+  <p><b>Blocking</b> <span id="blocking">…</span></p>
+  <p>A missed match leaves two rows where one belongs, and somebody fixes it later. A false merge
+  destroys records that <b>cannot be un-merged</b>. That is why the two are counted apart and never
+  averaged into one score.</p>
+</footer>
+<script src="app.js"></script>
+</body>

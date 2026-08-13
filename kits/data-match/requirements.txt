@@ -1,0 +1,12 @@
+# Nothing. Not "nothing yet" -- nothing.
+#
+# The corpus is CSV, the comparer is difflib, the HTTP client is urllib, the server is http.server
+# and the UI is three static files. All of that is the Python standard library, so the fork test is
+# `git clone` then `python3 tools/build_corpus.py && python3 -m evals.baseline`, with no install step
+# and no key.
+#
+# ⚑ THE ABSENCE IS LOAD-BEARING ON THIS KIT IN PARTICULAR. Entity resolution has excellent libraries
+# -- recordlinkage, dedupe, splink -- and any of them would beat this file's difflib comparer. That is
+# the point: the baseline is deliberately the cheapest thing that works, so the number the model has
+# to beat is one that nobody can claim was tuned to lose. Swapping in a real library is a seam
+# (src/similarity.py) and a re-run, which is the same experiment this kit is set up to make easy.
