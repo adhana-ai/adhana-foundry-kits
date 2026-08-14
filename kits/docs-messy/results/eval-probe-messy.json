@@ -1,0 +1,208 @@
+{
+ "answered": 3,
+ "by_field": {
+  "counterparty": {
+   "correct": 3,
+   "declined": 0,
+   "invented": 0,
+   "not_stated": 0,
+   "stated": 3
+  },
+  "currency": {
+   "correct": 3,
+   "declined": 0,
+   "invented": 0,
+   "not_stated": 0,
+   "stated": 3
+  },
+  "doc_date": {
+   "correct": 3,
+   "declined": 0,
+   "invented": 0,
+   "not_stated": 0,
+   "stated": 3
+  },
+  "doc_number": {
+   "correct": 3,
+   "declined": 0,
+   "invented": 0,
+   "not_stated": 0,
+   "stated": 3
+  },
+  "reference": {
+   "correct": 2,
+   "declined": 1,
+   "invented": 0,
+   "not_stated": 1,
+   "stated": 2
+  },
+  "total_amount": {
+   "correct": 2,
+   "declined": 0,
+   "invented": 0,
+   "not_stated": 0,
+   "stated": 3
+  }
+ },
+ "cells": [
+  {
+   "doc_id": "d000",
+   "field": "doc_number",
+   "gold": "INV-69527",
+   "ok": true,
+   "pred": "INV-69527"
+  },
+  {
+   "doc_id": "d000",
+   "field": "doc_date",
+   "gold": "2026-01-12",
+   "ok": true,
+   "pred": "2026-01-12"
+  },
+  {
+   "doc_id": "d000",
+   "field": "total_amount",
+   "gold": "40471.11",
+   "ok": false,
+   "pred": "4047.11"
+  },
+  {
+   "doc_id": "d000",
+   "field": "currency",
+   "gold": "GBP",
+   "ok": true,
+   "pred": "GBP"
+  },
+  {
+   "doc_id": "d000",
+   "field": "counterparty",
+   "gold": "ironbridge freight",
+   "ok": true,
+   "pred": "ironbridge freight"
+  },
+  {
+   "doc_id": "d000",
+   "field": "reference",
+   "gold": null,
+   "ok": true,
+   "pred": null
+  },
+  {
+   "doc_id": "d001",
+   "field": "doc_number",
+   "gold": "PO-07654",
+   "ok": true,
+   "pred": "PO-07654"
+  },
+  {
+   "doc_id": "d001",
+   "field": "doc_date",
+   "gold": "2026-06-09",
+   "ok": true,
+   "pred": "2026-06-09"
+  },
+  {
+   "doc_id": "d001",
+   "field": "total_amount",
+   "gold": "28374.56",
+   "ok": true,
+   "pred": "28374.56"
+  },
+  {
+   "doc_id": "d001",
+   "field": "currency",
+   "gold": "GBP",
+   "ok": true,
+   "pred": "GBP"
+  },
+  {
+   "doc_id": "d001",
+   "field": "counterparty",
+   "gold": "oakhurst electrical",
+   "ok": true,
+   "pred": "oakhurst electrical"
+  },
+  {
+   "doc_id": "d001",
+   "field": "reference",
+   "gold": "PO-171741",
+   "ok": true,
+   "pred": "PO-171741"
+  },
+  {
+   "doc_id": "d002",
+   "field": "doc_number",
+   "gold": "RA-02857",
+   "ok": true,
+   "pred": "RA-02857"
+  },
+  {
+   "doc_id": "d002",
+   "field": "doc_date",
+   "gold": "2026-02-19",
+   "ok": true,
+   "pred": "2026-02-19"
+  },
+  {
+   "doc_id": "d002",
+   "field": "total_amount",
+   "gold": "29486.45",
+   "ok": true,
+   "pred": "29486.45"
+  },
+  {
+   "doc_id": "d002",
+   "field": "currency",
+   "gold": "EUR",
+   "ok": true,
+   "pred": "EUR"
+  },
+  {
+   "doc_id": "d002",
+   "field": "counterparty",
+   "gold": "ironbridge freight",
+   "ok": true,
+   "pred": "ironbridge freight"
+  },
+  {
+   "doc_id": "d002",
+   "field": "reference",
+   "gold": "PO-588525",
+   "ok": true,
+   "pred": "PO-588525"
+  }
+ ],
+ "condition": "messy",
+ "documents": 3,
+ "failures": [],
+ "input_tokens_total": 1272,
+ "latency_p50_ms": 1853,
+ "latency_p95_ms": 2003,
+ "model": "deepseek-v4-flash",
+ "output_tokens_total": 189,
+ "prompt_parts": [
+  {
+   "chars": 939,
+   "name": "instruction and field shape"
+  },
+  {
+   "chars": 0,
+   "name": "the document"
+  }
+ ],
+ "provider": "openai-compatible",
+ "run_id": "probe-messy",
+ "scores": {
+  "extraction_accuracy": 0.9412,
+  "extraction_cells": 17,
+  "hallucinations": 0,
+  "refusal_accuracy": 1.0,
+  "refusal_cells": 1,
+  "values_returned": 17
+ },
+ "stub": false,
+ "thinking": {
+  "type": "disabled"
+ },
+ "wall_seconds": 5.47
+}
