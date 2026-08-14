@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>docs-apply &mdash; what else changed?</title>
+<link rel="stylesheet" href="/app.css">
+<body>
+<header>
+  <h1>What else changed?</h1>
+  <p>A change request against a policy document. Both methods either apply it or decline. The
+     question this kit asks is not only &ldquo;did the right change land&rdquo; &mdash; it is
+     <b>what moved that nobody asked to move</b>. The free floor is pure code and needs no key.</p>
+</header>
+
+<div class="bar">
+  <label>Document <select id="pick"></select></label>
+  <button id="floor">Run the free floor</button>
+  <button id="model" class="alt">Run the model &mdash; 1 call</button>
+  <span id="note"></span>
+</div>
+
+<div class="req"><span class="tag">Change request</span><p id="request"></p></div>
+
+<div class="cols">
+  <section>
+    <h2>The document</h2>
+    <pre id="before"></pre>
+  </section>
+  <section>
+    <h2>What happened <span id="verdict"></span></h2>
+    <div id="out" class="out"><p class="miss">Run a method.</p></div>
+  </section>
+</div>
+
+<p class="foot"><b>Intended</b> is the change the request asked for. <b>Collateral</b> is every
+   other line that moved &mdash; measured against the expected result, so the requested change is
+   never counted as damage. A refusal that leaves the file untouched is the right answer on some of
+   these, and the picker does not tell you which.</p>
+
+<script src="/app.js"></script>
+</body>
+</html>
