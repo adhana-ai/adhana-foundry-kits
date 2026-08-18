@@ -1,0 +1,5077 @@
+{
+ "run_id": "t000",
+ "stub": true,
+ "model": "stub",
+ "provider": "stub",
+ "batches": 40,
+ "no_answer_batches": 0,
+ "latency_p50_ms": 0,
+ "latency_p95_ms": 0,
+ "wall_seconds": 0.0,
+ "input_tokens_total": 21560,
+ "output_tokens_total": 3500,
+ "max_tokens": 2200,
+ "thinking": null,
+ "prompt_version": "v1",
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3336
+  },
+  {
+   "name": "items",
+   "chars": 465
+  },
+  {
+   "name": "notes",
+   "chars": 809
+  }
+ ],
+ "prompt_verbatim": "Batch EB-0001 -- Midwest, 2026-W05\n\nMATERIAL EXCEPTIONS (2)\n------------------------\n- IT-1 (cookware @ DC-East Pool): forecast=1865.0 | actual=2576.0 | prior_year_analog=1861.0 | spread 711.0 (38.1%) | lost_sales_oos_flag=False | promo_flag=False | unreliable_evidence=False\n- IT-4 (footwear @ Store 131): forecast=2278.0 | actual=1414.0 | prior_year_analog=2079.0 | spread -864.0 (-37.9%) | lost_sales_oos_flag=False | promo_flag=False | unreliable_evidence=False\n\nMERCHANT NOTES LOG\n-------------------\n- Merchant note on cookware -- confirmed the assortment change broke comparability with the forecast baseline.\n- Flagging footwear -- store ops confirmed the one-off driver; no planned recurrence next cycle.\n- footwear: a local event/weather swing drove an unusual move this week -- not expected to repeat.\n- cookware: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.\n- POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.\n- New planner onboarding starts next cycle; expect handoff notes on the shared items.\n- Store remodel schedule posted to the shared drive, unrelated to this week's numbers.\n- Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.\n\nReturn a JSON object with two keys: \"items\", a list with exactly 2 entries, one per exception above in the same order, each {\"item_id\": <id>, \"cause\": <one of: promo_uncaptured, oos_suppressed, onetime_event, assortment_shift, unknown>, \"citation_1\": <verbatim notes line, or \"\">, \"citation_2\": <verbatim notes line, or \"\">, \"unreliable_evidence\": <true or false>, \"note\": <one sentence>}; and \"narrative\", a string of 3-6 sentences.\nAnswer with the JSON object only.",
+ "raw_response_example": "{\"items\": [{\"item_id\": \"IT-1\", \"cause\": \"unknown\", \"citation_1\": \"\", \"citation_2\": \"\", \"unreliable_evidence\": false, \"note\": \"stub: exercising the pipeline only\"}, {\"item_id\": \"IT-4\", \"cause\": \"unknown\", \"citation_1\": \"\", \"citation_2\": \"\", \"unreliable_evidence\": false, \"note\": \"stub: exercising the pipeline only\"}], \"narrative\": \"Stub narrative exercising the pipeline only.\"}",
+ "scores": {
+  "batches_scored": 40,
+  "gold_material_total": 139,
+  "model_covered_total": 139,
+  "true_positive": 139,
+  "false_positive": 0,
+  "false_negative": 0,
+  "exception_completeness_recall_pct": 100.0,
+  "exception_completeness_precision_pct": 100.0,
+  "cause_tag_agreement_pct": 35.3,
+  "cause_tag_agreement_unknown_pct": 100.0,
+  "cause_tag_agreement_traceable_pct": 0.0,
+  "unknown_total": 49,
+  "traceable_total": 90,
+  "fabricated_cause": 0,
+  "fabricated_cause_rate_pct": 0.0,
+  "unreliable_evidence_echo_correct": 115,
+  "unreliable_evidence_echo_total": 139,
+  "unreliable_evidence_echo_pct": 82.7,
+  "narrative_faithful": 40,
+  "narrative_scored": 40,
+  "narrative_missing": 0,
+  "narrative_faithfulness_pct": 100.0
+ },
+ "per_batch": [
+  {
+   "batch_id": "EB-0001",
+   "gold_material": 2,
+   "model_covered": 2,
+   "true_positive": 2,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 0,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0002",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0003",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 3,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0004",
+   "gold_material": 5,
+   "model_covered": 5,
+   "true_positive": 5,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0005",
+   "gold_material": 5,
+   "model_covered": 5,
+   "true_positive": 5,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0006",
+   "gold_material": 5,
+   "model_covered": 5,
+   "true_positive": 5,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 0,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0007",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0008",
+   "gold_material": 2,
+   "model_covered": 2,
+   "true_positive": 2,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 0,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0009",
+   "gold_material": 5,
+   "model_covered": 5,
+   "true_positive": 5,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0010",
+   "gold_material": 3,
+   "model_covered": 3,
+   "true_positive": 3,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0011",
+   "gold_material": 2,
+   "model_covered": 2,
+   "true_positive": 2,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0012",
+   "gold_material": 3,
+   "model_covered": 3,
+   "true_positive": 3,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 0,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0013",
+   "gold_material": 0,
+   "model_covered": 0,
+   "true_positive": 0,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 0,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0014",
+   "gold_material": 3,
+   "model_covered": 3,
+   "true_positive": 3,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0015",
+   "gold_material": 3,
+   "model_covered": 3,
+   "true_positive": 3,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 0,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0016",
+   "gold_material": 2,
+   "model_covered": 2,
+   "true_positive": 2,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0017",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0018",
+   "gold_material": 2,
+   "model_covered": 2,
+   "true_positive": 2,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0019",
+   "gold_material": 3,
+   "model_covered": 3,
+   "true_positive": 3,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0020",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0021",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0022",
+   "gold_material": 5,
+   "model_covered": 5,
+   "true_positive": 5,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 0,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0023",
+   "gold_material": 2,
+   "model_covered": 2,
+   "true_positive": 2,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0024",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0025",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0026",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0027",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 3,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0028",
+   "gold_material": 3,
+   "model_covered": 3,
+   "true_positive": 3,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0029",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0030",
+   "gold_material": 3,
+   "model_covered": 3,
+   "true_positive": 3,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0031",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 0,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0032",
+   "gold_material": 2,
+   "model_covered": 2,
+   "true_positive": 2,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0033",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 0,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0034",
+   "gold_material": 3,
+   "model_covered": 3,
+   "true_positive": 3,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 2,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0035",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0036",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0037",
+   "gold_material": 5,
+   "model_covered": 5,
+   "true_positive": 5,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 3,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0038",
+   "gold_material": 2,
+   "model_covered": 2,
+   "true_positive": 2,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0039",
+   "gold_material": 4,
+   "model_covered": 4,
+   "true_positive": 4,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 0,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  },
+  {
+   "batch_id": "EB-0040",
+   "gold_material": 5,
+   "model_covered": 5,
+   "true_positive": 5,
+   "false_positive": 0,
+   "false_negative": 0,
+   "cause_correct": 1,
+   "fabricated_cause": 0,
+   "narrative_faithful": true,
+   "narrative_unmatched": []
+  }
+ ],
+ "fabricated_examples": [],
+ "records": [
+  {
+   "batch_id": "EB-0001",
+   "packed": {
+    "batch_id": "EB-0001",
+    "region": "Midwest",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "cookware",
+      "location": "DC-East Pool",
+      "forecast_units": 1865.0,
+      "actual_pos_units": 2576.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1861.0,
+      "unreliable_evidence": false,
+      "delta_units": 711.0,
+      "delta_pct": 38.1
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "footwear",
+      "location": "Store 131",
+      "forecast_units": 2278.0,
+      "actual_pos_units": 1414.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2079.0,
+      "unreliable_evidence": false,
+      "delta_units": -864.0,
+      "delta_pct": -37.9
+     }
+    ],
+    "notes": [
+     "Merchant note on cookware -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Flagging footwear -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "footwear: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "cookware: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 2,
+    "items_packed": 2,
+    "notes_total": 8,
+    "notes_packed": 8,
+    "truncated": false
+   },
+   "items_material": 2,
+   "items_answered": 2,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 436,
+   "output_tokens": 50,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0002",
+   "packed": {
+    "batch_id": "EB-0002",
+    "region": "Southeast",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "bath-textiles",
+      "location": "Store 147",
+      "forecast_units": 180.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 154.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "footwear",
+      "location": "Store 104",
+      "forecast_units": 2909.0,
+      "actual_pos_units": 4215.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2954.0,
+      "unreliable_evidence": false,
+      "delta_units": 1306.0,
+      "delta_pct": 44.9
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "home-goods",
+      "location": "DC-East Pool",
+      "forecast_units": 1234.0,
+      "actual_pos_units": 849.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1377.0,
+      "unreliable_evidence": false,
+      "delta_units": -385.0,
+      "delta_pct": -31.2
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "cookware",
+      "location": "Store 147",
+      "forecast_units": 2702.0,
+      "actual_pos_units": 3748.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2449.0,
+      "unreliable_evidence": false,
+      "delta_units": 1046.0,
+      "delta_pct": 38.7
+     }
+    ],
+    "notes": [
+     "footwear: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "cookware: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "Merchant note on cookware -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "Follow-up on footwear -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 574,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0003",
+   "packed": {
+    "batch_id": "EB-0003",
+    "region": "West Coast",
+    "review_week": "2026-W26",
+    "items": [
+     {
+      "item_id": "IT-2",
+      "item_label": "beverages",
+      "location": "Store 131",
+      "forecast_units": 2141.0,
+      "actual_pos_units": 1189.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2123.0,
+      "unreliable_evidence": false,
+      "delta_units": -952.0,
+      "delta_pct": -44.5
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "cookware",
+      "location": "Store 118",
+      "forecast_units": 734.0,
+      "actual_pos_units": 489.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 782.0,
+      "unreliable_evidence": false,
+      "delta_units": -245.0,
+      "delta_pct": -33.4
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "personal-care",
+      "location": "Store 122",
+      "forecast_units": 2486.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2345.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "small-appliances",
+      "location": "DC-East Pool",
+      "forecast_units": 2950.0,
+      "actual_pos_units": 2116.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2839.0,
+      "unreliable_evidence": false,
+      "delta_units": -834.0,
+      "delta_pct": -28.3
+     }
+    ],
+    "notes": [
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Follow-up on beverages -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "beverages: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Regional planner is out next week; route urgent items to the deputy instead."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 6,
+    "notes_packed": 6,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 504,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0004",
+   "packed": {
+    "batch_id": "EB-0004",
+    "region": "Midwest",
+    "review_week": "2026-W12",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "footwear",
+      "location": "DC-West Pool",
+      "forecast_units": 1902.0,
+      "actual_pos_units": 2414.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2011.0,
+      "unreliable_evidence": false,
+      "delta_units": 512.0,
+      "delta_pct": 26.9
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "seasonal-decor",
+      "location": "Store 118",
+      "forecast_units": 1763.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1977.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "snacks",
+      "location": "Store 131",
+      "forecast_units": 1703.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1857.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "apparel-basics",
+      "location": "Store 104",
+      "forecast_units": 1296.0,
+      "actual_pos_units": 726.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1171.0,
+      "unreliable_evidence": false,
+      "delta_units": -570.0,
+      "delta_pct": -44.0
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "cookware",
+      "location": "Store 122",
+      "forecast_units": 971.0,
+      "actual_pos_units": 670.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 947.0,
+      "unreliable_evidence": false,
+      "delta_units": -301.0,
+      "delta_pct": -31.0
+     }
+    ],
+    "notes": [
+     "apparel-basics: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "footwear: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Flagging cookware -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "Merchant note on apparel-basics -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "cookware: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Follow-up on footwear -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 5,
+    "items_packed": 5,
+    "notes_total": 11,
+    "notes_packed": 11,
+    "truncated": false
+   },
+   "items_material": 5,
+   "items_answered": 5,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 681,
+   "output_tokens": 125,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0005",
+   "packed": {
+    "batch_id": "EB-0005",
+    "region": "Midwest",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "seasonal-decor",
+      "location": "Store 104",
+      "forecast_units": 380.0,
+      "actual_pos_units": 219.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 358.0,
+      "unreliable_evidence": false,
+      "delta_units": -161.0,
+      "delta_pct": -42.4
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "home-goods",
+      "location": "Store 147",
+      "forecast_units": 2045.0,
+      "actual_pos_units": 3014.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2283.0,
+      "unreliable_evidence": false,
+      "delta_units": 969.0,
+      "delta_pct": 47.4
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "cookware",
+      "location": "DC-East Pool",
+      "forecast_units": 449.0,
+      "actual_pos_units": 342.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 418.0,
+      "unreliable_evidence": false,
+      "delta_units": -107.0,
+      "delta_pct": -23.8
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "outdoor-furniture",
+      "location": "Store 147",
+      "forecast_units": 2628.0,
+      "actual_pos_units": 3633.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2319.0,
+      "unreliable_evidence": false,
+      "delta_units": 1005.0,
+      "delta_pct": 38.2
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "footwear",
+      "location": "Store 118",
+      "forecast_units": 1211.0,
+      "actual_pos_units": 1622.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1048.0,
+      "unreliable_evidence": false,
+      "delta_units": 411.0,
+      "delta_pct": 33.9
+     }
+    ],
+    "notes": [
+     "Merchant note on seasonal-decor -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Flagging outdoor-furniture -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "Flagging cookware -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "cookware: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "outdoor-furniture: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "seasonal-decor: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 5,
+    "items_packed": 5,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 5,
+   "items_answered": 5,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 611,
+   "output_tokens": 125,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0006",
+   "packed": {
+    "batch_id": "EB-0006",
+    "region": "Southwest",
+    "review_week": "2026-W19",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "beverages",
+      "location": "DC-West Pool",
+      "forecast_units": 2681.0,
+      "actual_pos_units": 3396.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2854.0,
+      "unreliable_evidence": false,
+      "delta_units": 715.0,
+      "delta_pct": 26.7
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "small-appliances",
+      "location": "Store 131",
+      "forecast_units": 547.0,
+      "actual_pos_units": 746.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 565.0,
+      "unreliable_evidence": false,
+      "delta_units": 199.0,
+      "delta_pct": 36.4
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "outdoor-furniture",
+      "location": "DC-East Pool",
+      "forecast_units": 1427.0,
+      "actual_pos_units": 1055.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1508.0,
+      "unreliable_evidence": false,
+      "delta_units": -372.0,
+      "delta_pct": -26.1
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "personal-care",
+      "location": "Store 118",
+      "forecast_units": 300.0,
+      "actual_pos_units": 168.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 284.0,
+      "unreliable_evidence": false,
+      "delta_units": -132.0,
+      "delta_pct": -44.0
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "cookware",
+      "location": "Store 104",
+      "forecast_units": 100.0,
+      "actual_pos_units": 123.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 97.0,
+      "unreliable_evidence": false,
+      "delta_units": 23.0,
+      "delta_pct": 23.0
+     }
+    ],
+    "notes": [
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "cookware: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "Flagging outdoor-furniture -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "personal-care: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "outdoor-furniture: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "Flagging cookware -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "Follow-up on beverages -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "small-appliances: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "beverages: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Follow-up on personal-care -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live.",
+     "Follow-up on small-appliances -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 5,
+    "items_packed": 5,
+    "notes_total": 14,
+    "notes_packed": 14,
+    "truncated": false
+   },
+   "items_material": 5,
+   "items_answered": 5,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 793,
+   "output_tokens": 125,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0007",
+   "packed": {
+    "batch_id": "EB-0007",
+    "region": "Midwest",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "apparel-basics",
+      "location": "Store 131",
+      "forecast_units": 677.0,
+      "actual_pos_units": 906.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 763.0,
+      "unreliable_evidence": false,
+      "delta_units": 229.0,
+      "delta_pct": 33.8
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "home-goods",
+      "location": "DC-West Pool",
+      "forecast_units": 2210.0,
+      "actual_pos_units": 1237.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2467.0,
+      "unreliable_evidence": false,
+      "delta_units": -973.0,
+      "delta_pct": -44.0
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "personal-care",
+      "location": "Store 131",
+      "forecast_units": 1478.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1467.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "small-appliances",
+      "location": "Store 104",
+      "forecast_units": 977.0,
+      "actual_pos_units": 1194.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1070.0,
+      "unreliable_evidence": false,
+      "delta_units": 217.0,
+      "delta_pct": 22.2
+     }
+    ],
+    "notes": [
+     "small-appliances: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "Flagging apparel-basics -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "apparel-basics: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "Flagging small-appliances -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 7,
+    "notes_packed": 7,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 516,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0008",
+   "packed": {
+    "batch_id": "EB-0008",
+    "region": "Southwest",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-3",
+      "item_label": "personal-care",
+      "location": "Store 147",
+      "forecast_units": 2800.0,
+      "actual_pos_units": 4063.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2500.0,
+      "unreliable_evidence": false,
+      "delta_units": 1263.0,
+      "delta_pct": 45.1
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "snacks",
+      "location": "Store 131",
+      "forecast_units": 2281.0,
+      "actual_pos_units": 1415.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2196.0,
+      "unreliable_evidence": false,
+      "delta_units": -866.0,
+      "delta_pct": -38.0
+     }
+    ],
+    "notes": [
+     "Merchant note on personal-care -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "Follow-up on snacks -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "personal-care: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "snacks: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 2,
+    "items_packed": 2,
+    "notes_total": 7,
+    "notes_packed": 7,
+    "truncated": false
+   },
+   "items_material": 2,
+   "items_answered": 2,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 436,
+   "output_tokens": 50,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0009",
+   "packed": {
+    "batch_id": "EB-0009",
+    "region": "Southwest",
+    "review_week": "2026-W26",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "apparel-basics",
+      "location": "Store 147",
+      "forecast_units": 1165.0,
+      "actual_pos_units": 1578.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1195.0,
+      "unreliable_evidence": false,
+      "delta_units": 413.0,
+      "delta_pct": 35.5
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "footwear",
+      "location": "Store 131",
+      "forecast_units": 143.0,
+      "actual_pos_units": 195.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 145.0,
+      "unreliable_evidence": false,
+      "delta_units": 52.0,
+      "delta_pct": 36.4
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "beverages",
+      "location": "DC-West Pool",
+      "forecast_units": 2734.0,
+      "actual_pos_units": 3754.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2706.0,
+      "unreliable_evidence": false,
+      "delta_units": 1020.0,
+      "delta_pct": 37.3
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "snacks",
+      "location": "Store 118",
+      "forecast_units": 1491.0,
+      "actual_pos_units": 1838.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1567.0,
+      "unreliable_evidence": false,
+      "delta_units": 347.0,
+      "delta_pct": 23.3
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "cookware",
+      "location": "Store 122",
+      "forecast_units": 1367.0,
+      "actual_pos_units": 1734.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 1550.0,
+      "unreliable_evidence": false,
+      "delta_units": 367.0,
+      "delta_pct": 26.8
+     }
+    ],
+    "notes": [
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "beverages: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Follow-up on beverages -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "cookware: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "Merchant note on snacks -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "Follow-up on cookware -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "snacks: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 5,
+    "items_packed": 5,
+    "notes_total": 10,
+    "notes_packed": 10,
+    "truncated": false
+   },
+   "items_material": 5,
+   "items_answered": 5,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 665,
+   "output_tokens": 125,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0010",
+   "packed": {
+    "batch_id": "EB-0010",
+    "region": "Southwest",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "beverages",
+      "location": "DC-East Pool",
+      "forecast_units": 2968.0,
+      "actual_pos_units": 2141.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 3255.0,
+      "unreliable_evidence": false,
+      "delta_units": -827.0,
+      "delta_pct": -27.9
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "personal-care",
+      "location": "Store 131",
+      "forecast_units": 1730.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1907.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "apparel-basics",
+      "location": "Store 118",
+      "forecast_units": 1097.0,
+      "actual_pos_units": 1570.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 951.0,
+      "unreliable_evidence": false,
+      "delta_units": 473.0,
+      "delta_pct": 43.1
+     }
+    ],
+    "notes": [
+     "beverages: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "Replenishment note on apparel-basics -- confirmed the stockout window; POS this week does not reflect true demand.",
+     "apparel-basics: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Flagging beverages -- store ops confirmed the one-off driver; no planned recurrence next cycle."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 3,
+    "items_packed": 3,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 3,
+   "items_answered": 3,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 517,
+   "output_tokens": 75,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0011",
+   "packed": {
+    "batch_id": "EB-0011",
+    "region": "Southeast",
+    "review_week": "2026-W12",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "pet-supplies",
+      "location": "Store 122",
+      "forecast_units": 2589.0,
+      "actual_pos_units": 3201.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2561.0,
+      "unreliable_evidence": false,
+      "delta_units": 612.0,
+      "delta_pct": 23.6
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "beverages",
+      "location": "DC-East Pool",
+      "forecast_units": 122.0,
+      "actual_pos_units": 173.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 138.0,
+      "unreliable_evidence": false,
+      "delta_units": 51.0,
+      "delta_pct": 41.8
+     }
+    ],
+    "notes": [
+     "Merchant note on pet-supplies -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "pet-supplies: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 2,
+    "items_packed": 2,
+    "notes_total": 5,
+    "notes_packed": 5,
+    "truncated": false
+   },
+   "items_material": 2,
+   "items_answered": 2,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 370,
+   "output_tokens": 50,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0012",
+   "packed": {
+    "batch_id": "EB-0012",
+    "region": "Midwest",
+    "review_week": "2026-W12",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "bath-textiles",
+      "location": "Store 122",
+      "forecast_units": 1971.0,
+      "actual_pos_units": 1473.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1878.0,
+      "unreliable_evidence": false,
+      "delta_units": -498.0,
+      "delta_pct": -25.3
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "seasonal-decor",
+      "location": "DC-West Pool",
+      "forecast_units": 2971.0,
+      "actual_pos_units": 4363.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2870.0,
+      "unreliable_evidence": false,
+      "delta_units": 1392.0,
+      "delta_pct": 46.9
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "snacks",
+      "location": "Store 104",
+      "forecast_units": 1616.0,
+      "actual_pos_units": 1169.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 1375.0,
+      "unreliable_evidence": false,
+      "delta_units": -447.0,
+      "delta_pct": -27.7
+     }
+    ],
+    "notes": [
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "snacks: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Merchant note on bath-textiles -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "Follow-up on seasonal-decor -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "Follow-up on snacks -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live.",
+     "bath-textiles: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "seasonal-decor: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 3,
+    "items_packed": 3,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 3,
+   "items_answered": 3,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 555,
+   "output_tokens": 75,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0013",
+   "packed": {
+    "batch_id": "EB-0013",
+    "region": "Southwest",
+    "review_week": "2026-W05",
+    "items": [],
+    "notes": [
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 0,
+    "items_packed": 0,
+    "notes_total": 3,
+    "notes_packed": 3,
+    "truncated": false
+   },
+   "items_material": 0,
+   "items_answered": 0,
+   "answer": {
+    "items": [],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 216,
+   "output_tokens": 25,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0014",
+   "packed": {
+    "batch_id": "EB-0014",
+    "region": "Southeast",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "personal-care",
+      "location": "Store 122",
+      "forecast_units": 1062.0,
+      "actual_pos_units": 1415.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 996.0,
+      "unreliable_evidence": false,
+      "delta_units": 353.0,
+      "delta_pct": 33.2
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "outdoor-furniture",
+      "location": "DC-East Pool",
+      "forecast_units": 1259.0,
+      "actual_pos_units": 1713.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1382.0,
+      "unreliable_evidence": false,
+      "delta_units": 454.0,
+      "delta_pct": 36.1
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "home-goods",
+      "location": "Store 122",
+      "forecast_units": 2184.0,
+      "actual_pos_units": 1403.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1992.0,
+      "unreliable_evidence": false,
+      "delta_units": -781.0,
+      "delta_pct": -35.8
+     }
+    ],
+    "notes": [
+     "Flagging home-goods -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "home-goods: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "Follow-up on personal-care -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "personal-care: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 3,
+    "items_packed": 3,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 3,
+   "items_answered": 3,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 526,
+   "output_tokens": 75,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0015",
+   "packed": {
+    "batch_id": "EB-0015",
+    "region": "West Coast",
+    "review_week": "2026-W12",
+    "items": [
+     {
+      "item_id": "IT-2",
+      "item_label": "beverages",
+      "location": "Store 118",
+      "forecast_units": 2682.0,
+      "actual_pos_units": 3440.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2426.0,
+      "unreliable_evidence": false,
+      "delta_units": 758.0,
+      "delta_pct": 28.3
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "apparel-basics",
+      "location": "DC-West Pool",
+      "forecast_units": 2340.0,
+      "actual_pos_units": 3335.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 2682.0,
+      "unreliable_evidence": false,
+      "delta_units": 995.0,
+      "delta_pct": 42.5
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "small-appliances",
+      "location": "Store 118",
+      "forecast_units": 2037.0,
+      "actual_pos_units": 2915.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2282.0,
+      "unreliable_evidence": false,
+      "delta_units": 878.0,
+      "delta_pct": 43.1
+     }
+    ],
+    "notes": [
+     "small-appliances: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "Replenishment note on apparel-basics -- confirmed the stockout window; POS this week does not reflect true demand.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "apparel-basics: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Merchant note on small-appliances -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "beverages: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Follow-up on beverages -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 3,
+    "items_packed": 3,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 3,
+   "items_answered": 3,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 550,
+   "output_tokens": 75,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0016",
+   "packed": {
+    "batch_id": "EB-0016",
+    "region": "Southeast",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-3",
+      "item_label": "outdoor-furniture",
+      "location": "DC-West Pool",
+      "forecast_units": 2166.0,
+      "actual_pos_units": 2916.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2030.0,
+      "unreliable_evidence": false,
+      "delta_units": 750.0,
+      "delta_pct": 34.6
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "home-goods",
+      "location": "DC-West Pool",
+      "forecast_units": 796.0,
+      "actual_pos_units": 1061.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 706.0,
+      "unreliable_evidence": false,
+      "delta_units": 265.0,
+      "delta_pct": 33.3
+     }
+    ],
+    "notes": [
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Merchant note on home-goods -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "home-goods: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 2,
+    "items_packed": 2,
+    "notes_total": 6,
+    "notes_packed": 6,
+    "truncated": false
+   },
+   "items_material": 2,
+   "items_answered": 2,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 392,
+   "output_tokens": 50,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0017",
+   "packed": {
+    "batch_id": "EB-0017",
+    "region": "Midwest",
+    "review_week": "2026-W12",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "beverages",
+      "location": "DC-West Pool",
+      "forecast_units": 2057.0,
+      "actual_pos_units": 1509.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1908.0,
+      "unreliable_evidence": false,
+      "delta_units": -548.0,
+      "delta_pct": -26.6
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "seasonal-decor",
+      "location": "Store 147",
+      "forecast_units": 1568.0,
+      "actual_pos_units": 974.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 1594.0,
+      "unreliable_evidence": false,
+      "delta_units": -594.0,
+      "delta_pct": -37.9
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "bath-textiles",
+      "location": "Store 131",
+      "forecast_units": 1017.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1036.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "snacks",
+      "location": "Store 118",
+      "forecast_units": 2321.0,
+      "actual_pos_units": 1461.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2125.0,
+      "unreliable_evidence": false,
+      "delta_units": -860.0,
+      "delta_pct": -37.1
+     }
+    ],
+    "notes": [
+     "Follow-up on seasonal-decor -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live.",
+     "Merchant note on snacks -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "snacks: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "seasonal-decor: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 7,
+    "notes_packed": 7,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 537,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0018",
+   "packed": {
+    "batch_id": "EB-0018",
+    "region": "West Coast",
+    "review_week": "2026-W19",
+    "items": [
+     {
+      "item_id": "IT-3",
+      "item_label": "footwear",
+      "location": "Store 104",
+      "forecast_units": 841.0,
+      "actual_pos_units": 1103.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 934.0,
+      "unreliable_evidence": false,
+      "delta_units": 262.0,
+      "delta_pct": 31.2
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "seasonal-decor",
+      "location": "Store 147",
+      "forecast_units": 1370.0,
+      "actual_pos_units": 2025.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1275.0,
+      "unreliable_evidence": false,
+      "delta_units": 655.0,
+      "delta_pct": 47.8
+     }
+    ],
+    "notes": [
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "footwear: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "Merchant note on footwear -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 2,
+    "items_packed": 2,
+    "notes_total": 5,
+    "notes_packed": 5,
+    "truncated": false
+   },
+   "items_material": 2,
+   "items_answered": 2,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 365,
+   "output_tokens": 50,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0019",
+   "packed": {
+    "batch_id": "EB-0019",
+    "region": "Southeast",
+    "review_week": "2026-W12",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "seasonal-decor",
+      "location": "Store 104",
+      "forecast_units": 2454.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2799.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "beverages",
+      "location": "DC-East Pool",
+      "forecast_units": 1931.0,
+      "actual_pos_units": 1010.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1659.0,
+      "unreliable_evidence": false,
+      "delta_units": -921.0,
+      "delta_pct": -47.7
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "snacks",
+      "location": "Store 122",
+      "forecast_units": 883.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 846.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     }
+    ],
+    "notes": [
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Merchant note on beverages -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "beverages: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 3,
+    "items_packed": 3,
+    "notes_total": 6,
+    "notes_packed": 6,
+    "truncated": false
+   },
+   "items_material": 3,
+   "items_answered": 3,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 442,
+   "output_tokens": 75,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0020",
+   "packed": {
+    "batch_id": "EB-0020",
+    "region": "Northeast",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "footwear",
+      "location": "Store 122",
+      "forecast_units": 609.0,
+      "actual_pos_units": 871.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 549.0,
+      "unreliable_evidence": false,
+      "delta_units": 262.0,
+      "delta_pct": 43.0
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "cookware",
+      "location": "Store 118",
+      "forecast_units": 2633.0,
+      "actual_pos_units": 3402.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2887.0,
+      "unreliable_evidence": false,
+      "delta_units": 769.0,
+      "delta_pct": 29.2
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "home-goods",
+      "location": "Store 122",
+      "forecast_units": 522.0,
+      "actual_pos_units": 651.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 478.0,
+      "unreliable_evidence": false,
+      "delta_units": 129.0,
+      "delta_pct": 24.7
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "apparel-basics",
+      "location": "Store 147",
+      "forecast_units": 2124.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2151.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     }
+    ],
+    "notes": [
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "Flagging cookware -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "footwear: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "Merchant note on footwear -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "cookware: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 555,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0021",
+   "packed": {
+    "batch_id": "EB-0021",
+    "region": "West Coast",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "apparel-basics",
+      "location": "Store 118",
+      "forecast_units": 99.0,
+      "actual_pos_units": 142.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 89.0,
+      "unreliable_evidence": false,
+      "delta_units": 43.0,
+      "delta_pct": 43.4
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "personal-care",
+      "location": "Store 131",
+      "forecast_units": 2056.0,
+      "actual_pos_units": 1335.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 1886.0,
+      "unreliable_evidence": false,
+      "delta_units": -721.0,
+      "delta_pct": -35.1
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "cookware",
+      "location": "DC-West Pool",
+      "forecast_units": 2700.0,
+      "actual_pos_units": 3733.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2375.0,
+      "unreliable_evidence": false,
+      "delta_units": 1033.0,
+      "delta_pct": 38.3
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "small-appliances",
+      "location": "DC-West Pool",
+      "forecast_units": 1492.0,
+      "actual_pos_units": 915.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1633.0,
+      "unreliable_evidence": false,
+      "delta_units": -577.0,
+      "delta_pct": -38.7
+     }
+    ],
+    "notes": [
+     "Merchant note on small-appliances -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Follow-up on personal-care -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "personal-care: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "small-appliances: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 7,
+    "notes_packed": 7,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 537,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0022",
+   "packed": {
+    "batch_id": "EB-0022",
+    "region": "Southeast",
+    "review_week": "2026-W26",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "personal-care",
+      "location": "DC-West Pool",
+      "forecast_units": 1473.0,
+      "actual_pos_units": 877.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1654.0,
+      "unreliable_evidence": false,
+      "delta_units": -596.0,
+      "delta_pct": -40.5
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "cookware",
+      "location": "Store 147",
+      "forecast_units": 792.0,
+      "actual_pos_units": 594.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 813.0,
+      "unreliable_evidence": false,
+      "delta_units": -198.0,
+      "delta_pct": -25.0
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "seasonal-decor",
+      "location": "Store 147",
+      "forecast_units": 1057.0,
+      "actual_pos_units": 1312.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 904.0,
+      "unreliable_evidence": false,
+      "delta_units": 255.0,
+      "delta_pct": 24.1
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "snacks",
+      "location": "DC-East Pool",
+      "forecast_units": 2750.0,
+      "actual_pos_units": 4065.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2958.0,
+      "unreliable_evidence": false,
+      "delta_units": 1315.0,
+      "delta_pct": 47.8
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "footwear",
+      "location": "Store 122",
+      "forecast_units": 1801.0,
+      "actual_pos_units": 1166.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1682.0,
+      "unreliable_evidence": false,
+      "delta_units": -635.0,
+      "delta_pct": -35.3
+     }
+    ],
+    "notes": [
+     "personal-care: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "seasonal-decor: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Follow-up on seasonal-decor -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "Merchant note on cookware -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Flagging footwear -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "snacks: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "footwear: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Flagging snacks -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "cookware: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Merchant note on personal-care -- confirmed the assortment change broke comparability with the forecast baseline."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 5,
+    "items_packed": 5,
+    "notes_total": 13,
+    "notes_packed": 13,
+    "truncated": false
+   },
+   "items_material": 5,
+   "items_answered": 5,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 737,
+   "output_tokens": 125,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0023",
+   "packed": {
+    "batch_id": "EB-0023",
+    "region": "West Coast",
+    "review_week": "2026-W19",
+    "items": [
+     {
+      "item_id": "IT-2",
+      "item_label": "apparel-basics",
+      "location": "Store 118",
+      "forecast_units": 102.0,
+      "actual_pos_units": 148.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 103.0,
+      "unreliable_evidence": false,
+      "delta_units": 46.0,
+      "delta_pct": 45.1
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "small-appliances",
+      "location": "Store 118",
+      "forecast_units": 1113.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1152.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     }
+    ],
+    "notes": [
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "Replenishment note on apparel-basics -- confirmed the stockout window; POS this week does not reflect true demand.",
+     "apparel-basics: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 2,
+    "items_packed": 2,
+    "notes_total": 5,
+    "notes_packed": 5,
+    "truncated": false
+   },
+   "items_material": 2,
+   "items_answered": 2,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 375,
+   "output_tokens": 50,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0024",
+   "packed": {
+    "batch_id": "EB-0024",
+    "region": "Midwest",
+    "review_week": "2026-W19",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "home-goods",
+      "location": "Store 122",
+      "forecast_units": 1003.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 873.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "apparel-basics",
+      "location": "DC-West Pool",
+      "forecast_units": 1119.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1135.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "outdoor-furniture",
+      "location": "Store 122",
+      "forecast_units": 1406.0,
+      "actual_pos_units": 2023.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 1234.0,
+      "unreliable_evidence": false,
+      "delta_units": 617.0,
+      "delta_pct": 43.9
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "footwear",
+      "location": "Store 147",
+      "forecast_units": 1096.0,
+      "actual_pos_units": 1427.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 1002.0,
+      "unreliable_evidence": false,
+      "delta_units": 331.0,
+      "delta_pct": 30.2
+     }
+    ],
+    "notes": [
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Follow-up on outdoor-furniture -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "footwear: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand.",
+     "Replenishment note on footwear -- confirmed the stockout window; POS this week does not reflect true demand.",
+     "outdoor-furniture: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 590,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0025",
+   "packed": {
+    "batch_id": "EB-0025",
+    "region": "Midwest",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-2",
+      "item_label": "cookware",
+      "location": "DC-East Pool",
+      "forecast_units": 934.0,
+      "actual_pos_units": 714.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 922.0,
+      "unreliable_evidence": false,
+      "delta_units": -220.0,
+      "delta_pct": -23.6
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "personal-care",
+      "location": "DC-East Pool",
+      "forecast_units": 2489.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2387.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "outdoor-furniture",
+      "location": "Store 122",
+      "forecast_units": 750.0,
+      "actual_pos_units": 1032.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 650.0,
+      "unreliable_evidence": false,
+      "delta_units": 282.0,
+      "delta_pct": 37.6
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "snacks",
+      "location": "Store 147",
+      "forecast_units": 2753.0,
+      "actual_pos_units": 1622.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2531.0,
+      "unreliable_evidence": false,
+      "delta_units": -1131.0,
+      "delta_pct": -41.1
+     }
+    ],
+    "notes": [
+     "Replenishment note on outdoor-furniture -- confirmed the stockout window; POS this week does not reflect true demand.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "snacks: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "cookware: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "Follow-up on snacks -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live.",
+     "outdoor-furniture: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand.",
+     "Merchant note on cookware -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 11,
+    "notes_packed": 11,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 639,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0026",
+   "packed": {
+    "batch_id": "EB-0026",
+    "region": "Southeast",
+    "review_week": "2026-W19",
+    "items": [
+     {
+      "item_id": "IT-2",
+      "item_label": "apparel-basics",
+      "location": "Store 118",
+      "forecast_units": 1898.0,
+      "actual_pos_units": 1433.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2007.0,
+      "unreliable_evidence": false,
+      "delta_units": -465.0,
+      "delta_pct": -24.5
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "pet-supplies",
+      "location": "Store 147",
+      "forecast_units": 2571.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2553.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "personal-care",
+      "location": "Store 104",
+      "forecast_units": 2650.0,
+      "actual_pos_units": 3466.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2801.0,
+      "unreliable_evidence": false,
+      "delta_units": 816.0,
+      "delta_pct": 30.8
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "footwear",
+      "location": "DC-East Pool",
+      "forecast_units": 712.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 815.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     }
+    ],
+    "notes": [
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "Merchant note on personal-care -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "personal-care: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "apparel-basics: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "Follow-up on apparel-basics -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 588,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0027",
+   "packed": {
+    "batch_id": "EB-0027",
+    "region": "Northeast",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-2",
+      "item_label": "bath-textiles",
+      "location": "Store 118",
+      "forecast_units": 1477.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1273.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "personal-care",
+      "location": "Store 147",
+      "forecast_units": 2819.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2493.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "cookware",
+      "location": "DC-East Pool",
+      "forecast_units": 671.0,
+      "actual_pos_units": 889.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 696.0,
+      "unreliable_evidence": false,
+      "delta_units": 218.0,
+      "delta_pct": 32.5
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "outdoor-furniture",
+      "location": "Store 147",
+      "forecast_units": 2496.0,
+      "actual_pos_units": 3445.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2321.0,
+      "unreliable_evidence": false,
+      "delta_units": 949.0,
+      "delta_pct": 38.0
+     }
+    ],
+    "notes": [
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "Follow-up on outdoor-furniture -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "outdoor-furniture: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 7,
+    "notes_packed": 7,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 529,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0028",
+   "packed": {
+    "batch_id": "EB-0028",
+    "region": "West Coast",
+    "review_week": "2026-W26",
+    "items": [
+     {
+      "item_id": "IT-3",
+      "item_label": "small-appliances",
+      "location": "Store 104",
+      "forecast_units": 2577.0,
+      "actual_pos_units": 3502.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2683.0,
+      "unreliable_evidence": false,
+      "delta_units": 925.0,
+      "delta_pct": 35.9
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "beverages",
+      "location": "Store 147",
+      "forecast_units": 1448.0,
+      "actual_pos_units": 1050.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1551.0,
+      "unreliable_evidence": false,
+      "delta_units": -398.0,
+      "delta_pct": -27.5
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "seasonal-decor",
+      "location": "Store 104",
+      "forecast_units": 2613.0,
+      "actual_pos_units": 1701.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2500.0,
+      "unreliable_evidence": false,
+      "delta_units": -912.0,
+      "delta_pct": -34.9
+     }
+    ],
+    "notes": [
+     "beverages: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "Flagging beverages -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "small-appliances: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "Flagging small-appliances -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 3,
+    "items_packed": 3,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 3,
+   "items_answered": 3,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 507,
+   "output_tokens": 75,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0029",
+   "packed": {
+    "batch_id": "EB-0029",
+    "region": "Northeast",
+    "review_week": "2026-W12",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "bath-textiles",
+      "location": "DC-East Pool",
+      "forecast_units": 385.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 413.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "snacks",
+      "location": "Store 131",
+      "forecast_units": 1337.0,
+      "actual_pos_units": 1700.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 1515.0,
+      "unreliable_evidence": false,
+      "delta_units": 363.0,
+      "delta_pct": 27.2
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "seasonal-decor",
+      "location": "Store 131",
+      "forecast_units": 1986.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2150.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "outdoor-furniture",
+      "location": "DC-West Pool",
+      "forecast_units": 1067.0,
+      "actual_pos_units": 616.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1135.0,
+      "unreliable_evidence": false,
+      "delta_units": -451.0,
+      "delta_pct": -42.3
+     }
+    ],
+    "notes": [
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "outdoor-furniture: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "snacks: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Follow-up on snacks -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "Merchant note on outdoor-furniture -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 585,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0030",
+   "packed": {
+    "batch_id": "EB-0030",
+    "region": "Northeast",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "snacks",
+      "location": "Store 104",
+      "forecast_units": 139.0,
+      "actual_pos_units": 108.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 139.0,
+      "unreliable_evidence": false,
+      "delta_units": -31.0,
+      "delta_pct": -22.3
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "personal-care",
+      "location": "DC-West Pool",
+      "forecast_units": 2889.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2769.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "seasonal-decor",
+      "location": "Store 104",
+      "forecast_units": 1555.0,
+      "actual_pos_units": 963.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 1440.0,
+      "unreliable_evidence": false,
+      "delta_units": -592.0,
+      "delta_pct": -38.1
+     }
+    ],
+    "notes": [
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "seasonal-decor: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "snacks: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Follow-up on seasonal-decor -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live.",
+     "Follow-up on snacks -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live.",
+     "Regional planner is out next week; route urgent items to the deputy instead."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 3,
+    "items_packed": 3,
+    "notes_total": 7,
+    "notes_packed": 7,
+    "truncated": false
+   },
+   "items_material": 3,
+   "items_answered": 3,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 499,
+   "output_tokens": 75,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0031",
+   "packed": {
+    "batch_id": "EB-0031",
+    "region": "West Coast",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "bath-textiles",
+      "location": "Store 131",
+      "forecast_units": 1801.0,
+      "actual_pos_units": 1318.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1948.0,
+      "unreliable_evidence": false,
+      "delta_units": -483.0,
+      "delta_pct": -26.8
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "outdoor-furniture",
+      "location": "DC-West Pool",
+      "forecast_units": 117.0,
+      "actual_pos_units": 173.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 102.0,
+      "unreliable_evidence": false,
+      "delta_units": 56.0,
+      "delta_pct": 47.9
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "small-appliances",
+      "location": "Store 122",
+      "forecast_units": 1574.0,
+      "actual_pos_units": 848.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 1527.0,
+      "unreliable_evidence": false,
+      "delta_units": -726.0,
+      "delta_pct": -46.1
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "snacks",
+      "location": "DC-West Pool",
+      "forecast_units": 1863.0,
+      "actual_pos_units": 2323.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1672.0,
+      "unreliable_evidence": false,
+      "delta_units": 460.0,
+      "delta_pct": 24.7
+     }
+    ],
+    "notes": [
+     "outdoor-furniture: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Merchant note on bath-textiles -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Flagging snacks -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "small-appliances: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "bath-textiles: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "Follow-up on small-appliances -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live.",
+     "Merchant note on outdoor-furniture -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "snacks: a local event/weather swing drove an unusual move this week -- not expected to repeat."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 13,
+    "notes_packed": 13,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 691,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0032",
+   "packed": {
+    "batch_id": "EB-0032",
+    "region": "Southwest",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "pet-supplies",
+      "location": "Store 104",
+      "forecast_units": 1551.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1326.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "snacks",
+      "location": "Store 147",
+      "forecast_units": 983.0,
+      "actual_pos_units": 1447.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 934.0,
+      "unreliable_evidence": false,
+      "delta_units": 464.0,
+      "delta_pct": 47.2
+     }
+    ],
+    "notes": [
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "snacks: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Replenishment note on snacks -- confirmed the stockout window; POS this week does not reflect true demand."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 2,
+    "items_packed": 2,
+    "notes_total": 6,
+    "notes_packed": 6,
+    "truncated": false
+   },
+   "items_material": 2,
+   "items_answered": 2,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 391,
+   "output_tokens": 50,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0033",
+   "packed": {
+    "batch_id": "EB-0033",
+    "region": "Southeast",
+    "review_week": "2026-W26",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "personal-care",
+      "location": "Store 147",
+      "forecast_units": 810.0,
+      "actual_pos_units": 540.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 817.0,
+      "unreliable_evidence": false,
+      "delta_units": -270.0,
+      "delta_pct": -33.3
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "seasonal-decor",
+      "location": "DC-East Pool",
+      "forecast_units": 1525.0,
+      "actual_pos_units": 1962.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1298.0,
+      "unreliable_evidence": false,
+      "delta_units": 437.0,
+      "delta_pct": 28.7
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "cookware",
+      "location": "Store 122",
+      "forecast_units": 1380.0,
+      "actual_pos_units": 1896.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1559.0,
+      "unreliable_evidence": false,
+      "delta_units": 516.0,
+      "delta_pct": 37.4
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "beverages",
+      "location": "Store 104",
+      "forecast_units": 860.0,
+      "actual_pos_units": 666.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 756.0,
+      "unreliable_evidence": false,
+      "delta_units": -194.0,
+      "delta_pct": -22.6
+     }
+    ],
+    "notes": [
+     "beverages: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "cookware: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "Merchant note on personal-care -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "seasonal-decor: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "personal-care: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Merchant note on beverages -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "Merchant note on seasonal-decor -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Flagging cookware -- store ops confirmed the one-off driver; no planned recurrence next cycle."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 13,
+    "notes_packed": 13,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 672,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0034",
+   "packed": {
+    "batch_id": "EB-0034",
+    "region": "West Coast",
+    "review_week": "2026-W19",
+    "items": [
+     {
+      "item_id": "IT-2",
+      "item_label": "apparel-basics",
+      "location": "DC-East Pool",
+      "forecast_units": 384.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 388.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "footwear",
+      "location": "Store 104",
+      "forecast_units": 457.0,
+      "actual_pos_units": null,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 512.0,
+      "unreliable_evidence": true,
+      "delta_units": null,
+      "delta_pct": null
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "small-appliances",
+      "location": "Store 147",
+      "forecast_units": 785.0,
+      "actual_pos_units": 1031.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 862.0,
+      "unreliable_evidence": false,
+      "delta_units": 246.0,
+      "delta_pct": 31.3
+     }
+    ],
+    "notes": [
+     "Replenishment note on small-appliances -- confirmed the stockout window; POS this week does not reflect true demand.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "small-appliances: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 3,
+    "items_packed": 3,
+    "notes_total": 5,
+    "notes_packed": 5,
+    "truncated": false
+   },
+   "items_material": 3,
+   "items_answered": 3,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 428,
+   "output_tokens": 75,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0035",
+   "packed": {
+    "batch_id": "EB-0035",
+    "region": "Midwest",
+    "review_week": "2026-W26",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "apparel-basics",
+      "location": "Store 122",
+      "forecast_units": 317.0,
+      "actual_pos_units": 200.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 297.0,
+      "unreliable_evidence": false,
+      "delta_units": -117.0,
+      "delta_pct": -36.9
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "snacks",
+      "location": "Store 147",
+      "forecast_units": 884.0,
+      "actual_pos_units": 558.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 996.0,
+      "unreliable_evidence": false,
+      "delta_units": -326.0,
+      "delta_pct": -36.9
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "seasonal-decor",
+      "location": "Store 122",
+      "forecast_units": 1735.0,
+      "actual_pos_units": 2298.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 1545.0,
+      "unreliable_evidence": false,
+      "delta_units": 563.0,
+      "delta_pct": 32.4
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "outdoor-furniture",
+      "location": "Store 118",
+      "forecast_units": 1649.0,
+      "actual_pos_units": 924.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1645.0,
+      "unreliable_evidence": false,
+      "delta_units": -725.0,
+      "delta_pct": -44.0
+     }
+    ],
+    "notes": [
+     "Replenishment note on apparel-basics -- confirmed the stockout window; POS this week does not reflect true demand.",
+     "Flagging outdoor-furniture -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "apparel-basics: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand.",
+     "seasonal-decor: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "Follow-up on seasonal-decor -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "outdoor-furniture: a local event/weather swing drove an unusual move this week -- not expected to repeat."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 9,
+    "notes_packed": 9,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 590,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0036",
+   "packed": {
+    "batch_id": "EB-0036",
+    "region": "Southwest",
+    "review_week": "2026-W19",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "bath-textiles",
+      "location": "DC-East Pool",
+      "forecast_units": 586.0,
+      "actual_pos_units": 435.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 627.0,
+      "unreliable_evidence": false,
+      "delta_units": -151.0,
+      "delta_pct": -25.8
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "outdoor-furniture",
+      "location": "DC-East Pool",
+      "forecast_units": 1115.0,
+      "actual_pos_units": 812.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1100.0,
+      "unreliable_evidence": false,
+      "delta_units": -303.0,
+      "delta_pct": -27.2
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "beverages",
+      "location": "Store 118",
+      "forecast_units": 720.0,
+      "actual_pos_units": 975.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 766.0,
+      "unreliable_evidence": false,
+      "delta_units": 255.0,
+      "delta_pct": 35.4
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "personal-care",
+      "location": "Store 122",
+      "forecast_units": 1046.0,
+      "actual_pos_units": 637.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1025.0,
+      "unreliable_evidence": false,
+      "delta_units": -409.0,
+      "delta_pct": -39.1
+     }
+    ],
+    "notes": [
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "Follow-up on beverages -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running up of the stat forecast while it's live.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "beverages: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "outdoor-furniture: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "Merchant note on outdoor-furniture -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Merchant note on personal-care -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "personal-care: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 11,
+    "notes_packed": 11,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 637,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0037",
+   "packed": {
+    "batch_id": "EB-0037",
+    "region": "Northeast",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "apparel-basics",
+      "location": "Store 118",
+      "forecast_units": 1343.0,
+      "actual_pos_units": 917.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1326.0,
+      "unreliable_evidence": false,
+      "delta_units": -426.0,
+      "delta_pct": -31.7
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "cookware",
+      "location": "Store 147",
+      "forecast_units": 277.0,
+      "actual_pos_units": 180.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 290.0,
+      "unreliable_evidence": false,
+      "delta_units": -97.0,
+      "delta_pct": -35.0
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "bath-textiles",
+      "location": "DC-East Pool",
+      "forecast_units": 1510.0,
+      "actual_pos_units": 1864.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1606.0,
+      "unreliable_evidence": false,
+      "delta_units": 354.0,
+      "delta_pct": 23.4
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "pet-supplies",
+      "location": "Store 104",
+      "forecast_units": 2011.0,
+      "actual_pos_units": 1178.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2086.0,
+      "unreliable_evidence": false,
+      "delta_units": -833.0,
+      "delta_pct": -41.4
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "seasonal-decor",
+      "location": "Store 131",
+      "forecast_units": 115.0,
+      "actual_pos_units": 85.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 126.0,
+      "unreliable_evidence": false,
+      "delta_units": -30.0,
+      "delta_pct": -26.1
+     }
+    ],
+    "notes": [
+     "Flagging bath-textiles -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "bath-textiles: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "cookware: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "Replenishment note on cookware -- confirmed the stockout window; POS this week does not reflect true demand."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 5,
+    "items_packed": 5,
+    "notes_total": 7,
+    "notes_packed": 7,
+    "truncated": false
+   },
+   "items_material": 5,
+   "items_answered": 5,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 566,
+   "output_tokens": 125,
+   "reasoning_tokens": null,
+   "latency_ms": 1,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0038",
+   "packed": {
+    "batch_id": "EB-0038",
+    "region": "Midwest",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-4",
+      "item_label": "personal-care",
+      "location": "DC-East Pool",
+      "forecast_units": 2696.0,
+      "actual_pos_units": 1652.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": true,
+      "prior_year_analog_units": 2534.0,
+      "unreliable_evidence": false,
+      "delta_units": -1044.0,
+      "delta_pct": -38.7
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "footwear",
+      "location": "Store 131",
+      "forecast_units": 208.0,
+      "actual_pos_units": 305.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 199.0,
+      "unreliable_evidence": false,
+      "delta_units": 97.0,
+      "delta_pct": 46.6
+     }
+    ],
+    "notes": [
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "POS system maintenance window logged for Sunday overnight -- unrelated to weekday sell-through.",
+     "Follow-up on personal-care -- confirmed the promo calendar entry posted late this cycle; expect POS to keep running down of the stat forecast while it's live.",
+     "personal-care: a promo/ad placement was locked in after the statistical forecast was generated -- the baseline never saw it.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 2,
+    "items_packed": 2,
+    "notes_total": 7,
+    "notes_packed": 7,
+    "truncated": false
+   },
+   "items_material": 2,
+   "items_answered": 2,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 426,
+   "output_tokens": 50,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0039",
+   "packed": {
+    "batch_id": "EB-0039",
+    "region": "Northeast",
+    "review_week": "2026-W05",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "beverages",
+      "location": "DC-East Pool",
+      "forecast_units": 753.0,
+      "actual_pos_units": 506.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 733.0,
+      "unreliable_evidence": false,
+      "delta_units": -247.0,
+      "delta_pct": -32.8
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "cookware",
+      "location": "Store 147",
+      "forecast_units": 139.0,
+      "actual_pos_units": 194.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 137.0,
+      "unreliable_evidence": false,
+      "delta_units": 55.0,
+      "delta_pct": 39.6
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "home-goods",
+      "location": "Store 118",
+      "forecast_units": 1850.0,
+      "actual_pos_units": 1248.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1802.0,
+      "unreliable_evidence": false,
+      "delta_units": -602.0,
+      "delta_pct": -32.5
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "bath-textiles",
+      "location": "Store 104",
+      "forecast_units": 2580.0,
+      "actual_pos_units": 3225.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2453.0,
+      "unreliable_evidence": false,
+      "delta_units": 645.0,
+      "delta_pct": 25.0
+     }
+    ],
+    "notes": [
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "Flagging home-goods -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Replenishment note on beverages -- confirmed the stockout window; POS this week does not reflect true demand.",
+     "Flagging cookware -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "Flagging bath-textiles -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "beverages: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand.",
+     "Regional planner is out next week; route urgent items to the deputy instead.",
+     "Store remodel schedule posted to the shared drive, unrelated to this week's numbers.",
+     "Please use the new exception-review template for next cycle -- old one is deprecated.",
+     "home-goods: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "IT ticket open for the reporting tool's export button; workaround is CSV download.",
+     "bath-textiles: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "cookware: a local event/weather swing drove an unusual move this week -- not expected to repeat."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 4,
+    "items_packed": 4,
+    "notes_total": 13,
+    "notes_packed": 13,
+    "truncated": false
+   },
+   "items_material": 4,
+   "items_answered": 4,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 653,
+   "output_tokens": 100,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  },
+  {
+   "batch_id": "EB-0040",
+   "packed": {
+    "batch_id": "EB-0040",
+    "region": "Midwest",
+    "review_week": "2026-W12",
+    "items": [
+     {
+      "item_id": "IT-1",
+      "item_label": "snacks",
+      "location": "DC-West Pool",
+      "forecast_units": 2201.0,
+      "actual_pos_units": 1387.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 1981.0,
+      "unreliable_evidence": false,
+      "delta_units": -814.0,
+      "delta_pct": -37.0
+     },
+     {
+      "item_id": "IT-2",
+      "item_label": "apparel-basics",
+      "location": "Store 104",
+      "forecast_units": 2744.0,
+      "actual_pos_units": 3545.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2881.0,
+      "unreliable_evidence": false,
+      "delta_units": 801.0,
+      "delta_pct": 29.2
+     },
+     {
+      "item_id": "IT-3",
+      "item_label": "footwear",
+      "location": "Store 122",
+      "forecast_units": 838.0,
+      "actual_pos_units": 503.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 778.0,
+      "unreliable_evidence": false,
+      "delta_units": -335.0,
+      "delta_pct": -40.0
+     },
+     {
+      "item_id": "IT-4",
+      "item_label": "small-appliances",
+      "location": "Store 118",
+      "forecast_units": 2297.0,
+      "actual_pos_units": 2895.0,
+      "lost_sales_oos_flag": false,
+      "promo_flag": false,
+      "prior_year_analog_units": 2552.0,
+      "unreliable_evidence": false,
+      "delta_units": 598.0,
+      "delta_pct": 26.0
+     },
+     {
+      "item_id": "IT-5",
+      "item_label": "cookware",
+      "location": "Store 104",
+      "forecast_units": 890.0,
+      "actual_pos_units": 639.0,
+      "lost_sales_oos_flag": true,
+      "promo_flag": false,
+      "prior_year_analog_units": 771.0,
+      "unreliable_evidence": false,
+      "delta_units": -251.0,
+      "delta_pct": -28.2
+     }
+    ],
+    "notes": [
+     "Replenishment note on cookware -- confirmed the stockout window; POS this week does not reflect true demand.",
+     "Merchant note on small-appliances -- confirmed the assortment change broke comparability with the forecast baseline.",
+     "Reminder: exception review sign-off is due Friday EOD, no exceptions this quarter.",
+     "apparel-basics: a local event/weather swing drove an unusual move this week -- not expected to repeat.",
+     "Flagging apparel-basics -- store ops confirmed the one-off driver; no planned recurrence next cycle.",
+     "cookware: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand.",
+     "small-appliances: pack size/SKU changed this cycle -- the stat forecast's history is still keyed to the old item.",
+     "footwear: recorded lost-sales/OOS days this week -- registers show sell-through capped by empty shelf, not soft demand.",
+     "Vendor scorecard refresh landed in the shared drive, unrelated to this cycle's exceptions.",
+     "Replenishment note on footwear -- confirmed the stockout window; POS this week does not reflect true demand.",
+     "New planner onboarding starts next cycle; expect handoff notes on the shared items."
+    ]
+   },
+   "pack_meta": {
+    "items_total": 5,
+    "items_packed": 5,
+    "notes_total": 11,
+    "notes_packed": 11,
+    "truncated": false
+   },
+   "items_material": 5,
+   "items_answered": 5,
+   "answer": {
+    "items": [
+     {
+      "item_id": "IT-1",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-2",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-3",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-4",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     },
+     {
+      "item_id": "IT-5",
+      "cause": "unknown",
+      "citation_1": "",
+      "citation_2": "",
+      "unreliable_evidence": false,
+      "note": "stub: exercising the pipeline only"
+     }
+    ],
+    "narrative": "Stub narrative exercising the pipeline only."
+   },
+   "finish_reason": null,
+   "input_tokens": 679,
+   "output_tokens": 125,
+   "reasoning_tokens": null,
+   "latency_ms": 0,
+   "raw_text": null
+  }
+ ]
+}

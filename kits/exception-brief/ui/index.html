@@ -1,0 +1,48 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>exception-brief — assemble the evidence packet for a forecast exception</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Assemble the evidence packet and draft the exception brief</h1>
+    <p class="sub">One review batch, one drafting call. Code flags which item/location exceptions
+      are material -- recent POS versus the statistical forecast, or evidence itself flagged
+      unreliable -- and packs the evidence (recent POS, lost-sales/OOS flags, the promo calendar,
+      the prior-year analog) with the merchant notes log. The model tags a probable cause for
+      each -- or says <b>unknown</b> -- cites two source lines, and drafts the narrative for the
+      review meeting. Decision-free by design: nothing here recommends accepting or overriding the
+      statistical forecast.</p>
+    <p class="sub rb" id="rbline">The batches, their evidence packets and their merchant notes are
+      synthetic, generated at build time from a fixed seed — never written from memory.</p>
+  </header>
+
+  <div class="bar">
+    <select id="bid" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Draft brief</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Material exceptions</span><span class="hint" id="itemhint"></span></div>
+      <div id="item-box" class="src"></div>
+      <div class="ph"><span>Merchant notes log</span></div>
+      <div id="notes-box" class="src notesbox"></div>
+    </div>
+
+    <div class="panel">
+      <div class="ph"><span>Drafted brief</span></div>
+      <div id="out" class="out answer"></div>
+      <div id="narrative" class="narrative" hidden></div>
+      <div class="stats">
+        <div class="stat"><b id="s-material">—</b><span>material items</span></div>
+        <div class="stat"><b id="s-answered">—</b><span>answered</span></div>
+        <div class="stat"><b id="s-in">—</b><span>input tokens</span></div>
+        <div class="stat cost"><b id="s-out">—</b><span>output tokens</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>
