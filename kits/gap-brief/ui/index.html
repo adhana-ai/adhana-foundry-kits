@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>gap-brief — reconcile three plan views and draft the gap brief</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Reconcile three plan views and draft the gap brief</h1>
+    <p class="sub">One planning cycle, one drafting call. Code aligns the three independently-
+      maintained plan views for every line item and decides which gaps are material; the model
+      tags a probable cause for each — or says <b>unknown</b> — cites two source lines, and drafts
+      the narrative for the review meeting. Decision-free by design: nothing here ranks the plan
+      views or recommends which one is right.</p>
+    <p class="sub rb" id="rbline">The cycles, their plan views and their planning notes are
+      synthetic, generated at build time from a fixed seed — never written from memory.</p>
+  </header>
+
+  <div class="bar">
+    <select id="cid" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Draft brief</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Material gaps</span><span class="hint" id="gaphint"></span></div>
+      <div id="gap-box" class="src"></div>
+      <div class="ph"><span>Planning notes log</span></div>
+      <div id="notes-box" class="src notesbox"></div>
+    </div>
+
+    <div class="panel">
+      <div class="ph"><span>Drafted brief</span></div>
+      <div id="out" class="out answer"></div>
+      <div id="narrative" class="narrative" hidden></div>
+      <div class="stats">
+        <div class="stat"><b id="s-material">—</b><span>material gaps</span></div>
+        <div class="stat"><b id="s-answered">—</b><span>answered</span></div>
+        <div class="stat"><b id="s-in">—</b><span>input tokens</span></div>
+        <div class="stat cost"><b id="s-out">—</b><span>output tokens</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>
