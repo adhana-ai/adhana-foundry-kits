@@ -1,0 +1,218 @@
+{
+ "run_id": "t002-toe",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "parameters": 4,
+ "no_verdict": 0,
+ "latency_p50_ms": 1558,
+ "latency_p95_ms": 1611,
+ "wall_seconds": 6.1,
+ "input_tokens_total": 2491,
+ "output_tokens_total": 219,
+ "scores": {
+  "n": 4,
+  "n_drift": 4,
+  "n_no_drift": 0,
+  "counts": {
+   "correct_flag": 4,
+   "correct_hold": 0,
+   "false_flag": 0,
+   "missed_drift": 0,
+   "no_verdict": 0
+  },
+  "recall_pct": 100.0,
+  "precision_pct": 100.0,
+  "value_agreement_pct": 100.0,
+  "value_counts": {
+   "value_agrees": 4,
+   "value_disagrees": 0
+  },
+  "no_verdict": 0
+ },
+ "per_category": {
+  "lead_time": {
+   "n": 4,
+   "n_drift": 4,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 4,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 0,
+    "no_verdict": 0
+   },
+   "recall_pct": 100.0,
+   "precision_pct": 100.0,
+   "value_agreement_pct": 100.0,
+   "value_counts": {
+    "value_agrees": 4,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  },
+  "safety_margin": {
+   "n": 0,
+   "n_drift": 0,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 0,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 0,
+    "no_verdict": 0
+   },
+   "recall_pct": null,
+   "precision_pct": null,
+   "value_agreement_pct": null,
+   "value_counts": {
+    "value_agrees": 0,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  },
+  "service_target": {
+   "n": 0,
+   "n_drift": 0,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 0,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 0,
+    "no_verdict": 0
+   },
+   "recall_pct": null,
+   "precision_pct": null,
+   "value_agreement_pct": null,
+   "value_counts": {
+    "value_agrees": 0,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  }
+ },
+ "per_trap": {
+  "clean_drift": {
+   "n": 4,
+   "n_drift": 4,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 4,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 0,
+    "no_verdict": 0
+   },
+   "recall_pct": 100.0,
+   "precision_pct": 100.0,
+   "value_agreement_pct": 100.0,
+   "value_counts": {
+    "value_agrees": 4,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  }
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 654
+  },
+  {
+   "name": "parameter",
+   "chars": 132
+  },
+  {
+   "name": "window",
+   "chars": 229
+  },
+  {
+   "name": "facts",
+   "chars": 172
+  },
+  {
+   "name": "rules",
+   "chars": 1362
+  }
+ ],
+ "raw_text": "{\"verdict\": \"FLAG\", \"reason\": \"All 10 observed lead times (5.5–7.0 days) are consistently and substantially above the configured 4 days, with every reading 1.5–3.0 days higher, showing a sustained mismatch throughout the entire window.\"}",
+ "max_tokens": 4096,
+ "thinking": {
+  "type": "disabled"
+ },
+ "rows": [
+  {
+   "parameter_id": "PD-0001",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "All 10 observed lead times (5.5–7.0 days) are consistently and substantially above the configured 4 days, with every reading 1.5–3.0 days higher, showing a sustained mismatch throughout the entire window.",
+   "replied": true,
+   "proposed_value": 6.0,
+   "deviation": 51.2,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 6.0d vs configured 4d -- 51.2% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 622,
+   "output_tokens": 63,
+   "reasoning_chars": null,
+   "latency_ms": 1558
+  },
+  {
+   "parameter_id": "PD-0002",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "The configured lead time is 14 days, but every observed reading in the window is between 17.6 and 23.1 days, consistently well above the configured value with no trend or outliers to explain the mismatch.",
+   "replied": true,
+   "proposed_value": 20.5,
+   "deviation": 46.6,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 20.5d vs configured 14d -- 46.6% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 622,
+   "output_tokens": 58,
+   "reasoning_chars": null,
+   "latency_ms": 1453
+  },
+  {
+   "parameter_id": "PD-0003",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "Observed lead times consistently run ~17-19 days, well above the configured 13 days, a sustained mismatch across the entire window.",
+   "replied": true,
+   "proposed_value": 18.3,
+   "deviation": 41.1,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 18.3d vs configured 13d -- 41.1% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 625,
+   "output_tokens": 41,
+   "reasoning_chars": null,
+   "latency_ms": 1513
+  },
+  {
+   "parameter_id": "PD-0004",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "The configured lead time is 4 days, but every observed reading over the 10-day window is between 1.3 and 2.2 days, consistently well below the configured value despite no trend or outliers.",
+   "replied": true,
+   "proposed_value": 1.8,
+   "deviation": -56.0,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 1.8d vs configured 4d -- -56.0% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 622,
+   "output_tokens": 57,
+   "reasoning_chars": null,
+   "latency_ms": 1611
+  }
+ ]
+}

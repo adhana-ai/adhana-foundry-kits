@@ -1,0 +1,1286 @@
+{
+ "run_id": "r002-param-drift-pro",
+ "stub": false,
+ "model": "deepseek-v4-pro",
+ "provider": "openai-compatible",
+ "parameters": 60,
+ "no_verdict": 0,
+ "latency_p50_ms": 2398,
+ "latency_p95_ms": 3178,
+ "wall_seconds": 143.3,
+ "input_tokens_total": 37825,
+ "output_tokens_total": 3448,
+ "scores": {
+  "n": 60,
+  "n_drift": 27,
+  "n_no_drift": 33,
+  "counts": {
+   "correct_flag": 22,
+   "correct_hold": 20,
+   "false_flag": 13,
+   "missed_drift": 5,
+   "no_verdict": 0
+  },
+  "recall_pct": 81.5,
+  "precision_pct": 62.9,
+  "value_agreement_pct": 63.6,
+  "value_counts": {
+   "value_agrees": 14,
+   "value_disagrees": 8
+  },
+  "no_verdict": 0
+ },
+ "per_category": {
+  "lead_time": {
+   "n": 20,
+   "n_drift": 9,
+   "n_no_drift": 11,
+   "counts": {
+    "correct_flag": 9,
+    "correct_hold": 11,
+    "false_flag": 0,
+    "missed_drift": 0,
+    "no_verdict": 0
+   },
+   "recall_pct": 100.0,
+   "precision_pct": 100.0,
+   "value_agreement_pct": 66.7,
+   "value_counts": {
+    "value_agrees": 6,
+    "value_disagrees": 3
+   },
+   "no_verdict": 0
+  },
+  "safety_margin": {
+   "n": 20,
+   "n_drift": 9,
+   "n_no_drift": 11,
+   "counts": {
+    "correct_flag": 8,
+    "correct_hold": 2,
+    "false_flag": 9,
+    "missed_drift": 1,
+    "no_verdict": 0
+   },
+   "recall_pct": 88.9,
+   "precision_pct": 47.1,
+   "value_agreement_pct": 37.5,
+   "value_counts": {
+    "value_agrees": 3,
+    "value_disagrees": 5
+   },
+   "no_verdict": 0
+  },
+  "service_target": {
+   "n": 20,
+   "n_drift": 9,
+   "n_no_drift": 11,
+   "counts": {
+    "correct_flag": 5,
+    "correct_hold": 7,
+    "false_flag": 4,
+    "missed_drift": 4,
+    "no_verdict": 0
+   },
+   "recall_pct": 55.6,
+   "precision_pct": 55.6,
+   "value_agreement_pct": 100.0,
+   "value_counts": {
+    "value_agrees": 5,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  }
+ },
+ "per_trap": {
+  "clean_drift": {
+   "n": 15,
+   "n_drift": 15,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 11,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 4,
+    "no_verdict": 0
+   },
+   "recall_pct": 73.3,
+   "precision_pct": 100.0,
+   "value_agreement_pct": 81.8,
+   "value_counts": {
+    "value_agrees": 9,
+    "value_disagrees": 2
+   },
+   "no_verdict": 0
+  },
+  "clean_hold": {
+   "n": 21,
+   "n_drift": 0,
+   "n_no_drift": 21,
+   "counts": {
+    "correct_flag": 0,
+    "correct_hold": 10,
+    "false_flag": 11,
+    "missed_drift": 0,
+    "no_verdict": 0
+   },
+   "recall_pct": null,
+   "precision_pct": 0.0,
+   "value_agreement_pct": null,
+   "value_counts": {
+    "value_agrees": 0,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  },
+  "one_off_spike": {
+   "n": 12,
+   "n_drift": 0,
+   "n_no_drift": 12,
+   "counts": {
+    "correct_flag": 0,
+    "correct_hold": 10,
+    "false_flag": 2,
+    "missed_drift": 0,
+    "no_verdict": 0
+   },
+   "recall_pct": null,
+   "precision_pct": 0.0,
+   "value_agreement_pct": null,
+   "value_counts": {
+    "value_agrees": 0,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  },
+  "slow_creep": {
+   "n": 12,
+   "n_drift": 12,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 11,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 1,
+    "no_verdict": 0
+   },
+   "recall_pct": 91.7,
+   "precision_pct": 100.0,
+   "value_agreement_pct": 45.5,
+   "value_counts": {
+    "value_agrees": 5,
+    "value_disagrees": 6
+   },
+   "no_verdict": 0
+  }
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 654
+  },
+  {
+   "name": "parameter",
+   "chars": 132
+  },
+  {
+   "name": "window",
+   "chars": 229
+  },
+  {
+   "name": "facts",
+   "chars": 172
+  },
+  {
+   "name": "rules",
+   "chars": 1362
+  }
+ ],
+ "raw_text": "{\n  \"verdict\": \"FLAG\",\n  \"reason\": \"Configured lead time is 4 days, but observed readings consistently sit between 5.5 and 7.0 days across the entire window, a sustained mismatch of roughly 2 days.\"\n}",
+ "max_tokens": 4096,
+ "thinking": {
+  "type": "disabled"
+ },
+ "rows": [
+  {
+   "parameter_id": "PD-0001",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "Configured lead time is 4 days, but observed readings consistently sit between 5.5 and 7.0 days across the entire window, a sustained mismatch of roughly 2 days.",
+   "replied": true,
+   "proposed_value": 6.0,
+   "deviation": 51.2,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 6.0d vs configured 4d -- 51.2% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 622,
+   "output_tokens": 55,
+   "reasoning_chars": null,
+   "latency_ms": 1936
+  },
+  {
+   "parameter_id": "PD-0002",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "The observed lead times consistently sit well above the configured 14 days, with a window mean around 20.5 days, indicating a sustained mismatch.",
+   "replied": true,
+   "proposed_value": 20.5,
+   "deviation": 46.6,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 20.5d vs configured 14d -- 46.6% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 622,
+   "output_tokens": 46,
+   "reasoning_chars": null,
+   "latency_ms": 2552
+  },
+  {
+   "parameter_id": "PD-0003",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "The configured lead time of 13 days is far below every observed reading in the window, which ranges from 17.0 to 19.8 days, indicating a sustained mismatch rather than ordinary noise.",
+   "replied": true,
+   "proposed_value": 18.3,
+   "deviation": 41.1,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 18.3d vs configured 13d -- 41.1% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 625,
+   "output_tokens": 57,
+   "reasoning_chars": null,
+   "latency_ms": 2473
+  },
+  {
+   "parameter_id": "PD-0004",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "The configured lead time is 4 days, but every observed reading in the window is between 1.3 and 2.2 days—a consistent, sustained ~50% mismatch that requires human review.",
+   "replied": true,
+   "proposed_value": 1.8,
+   "deviation": -56.0,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 1.8d vs configured 4d -- -56.0% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 622,
+   "output_tokens": 62,
+   "reasoning_chars": null,
+   "latency_ms": 1661
+  },
+  {
+   "parameter_id": "PD-0005",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "All observed lead times are consistently 13.9–16.7 days versus the configured 10 days, a sustained ~5-day mismatch across the entire window.",
+   "replied": true,
+   "proposed_value": 15.6,
+   "deviation": 55.8,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 15.6d vs configured 10d -- 55.8% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 621,
+   "output_tokens": 49,
+   "reasoning_chars": null,
+   "latency_ms": 2364
+  },
+  {
+   "parameter_id": "PD-0006",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "The observed lead times are consistently close to the configured 9 days with only ordinary noise (range 8.3–10.5) and no material trend or outliers.",
+   "replied": true,
+   "proposed_value": 9.2,
+   "deviation": 2.3,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 9.2d vs configured 9d -- 2.3% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 621,
+   "output_tokens": 51,
+   "reasoning_chars": null,
+   "latency_ms": 2793
+  },
+  {
+   "parameter_id": "PD-0007",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "The configured lead time of 8 days closely matches the observed window, with readings ranging from 7.5 to 8.5 days and no material trend or outliers, so the difference is within ordinary noise.",
+   "replied": true,
+   "proposed_value": 7.9,
+   "deviation": -1.2,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 7.9d vs configured 8d -- -1.2% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 621,
+   "output_tokens": 59,
+   "reasoning_chars": null,
+   "latency_ms": 2568
+  },
+  {
+   "parameter_id": "PD-0008",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "The observed readings range from 5.9 to 7.7 days and average approximately 6.8 days, closely matching the configured 7-day lead time within ordinary noise.",
+   "replied": true,
+   "proposed_value": 6.8,
+   "deviation": -3.1,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 6.8d vs configured 7d -- -3.1% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 621,
+   "output_tokens": 53,
+   "reasoning_chars": null,
+   "latency_ms": 2211
+  },
+  {
+   "parameter_id": "PD-0009",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "All observed lead times are tightly clustered around the configured value of 11 days (range 10.2–11.5), with no material trend or outliers, indicating the configured value matches the actual behavior within ordinary noise.",
+   "replied": true,
+   "proposed_value": 10.9,
+   "deviation": -0.8,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 10.9d vs configured 11d -- -0.8% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 621,
+   "output_tokens": 61,
+   "reasoning_chars": null,
+   "latency_ms": 2279
+  },
+  {
+   "parameter_id": "PD-0010",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "The observed lead times are consistently close to the configured 10 days with only ordinary noise and no material trend or outliers.",
+   "replied": true,
+   "proposed_value": 9.7,
+   "deviation": -2.8,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 9.7d vs configured 10d -- -2.8% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 40,
+   "reasoning_chars": null,
+   "latency_ms": 2465
+  },
+  {
+   "parameter_id": "PD-0011",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "All observed lead times are near the configured 9 days with only ordinary noise and no outliers or material trend.",
+   "replied": true,
+   "proposed_value": 8.7,
+   "deviation": -3.4,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 8.7d vs configured 9d -- -3.4% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 621,
+   "output_tokens": 38,
+   "reasoning_chars": null,
+   "latency_ms": 2134
+  },
+  {
+   "parameter_id": "PD-0012",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "The observed readings cluster tightly around the configured lead time of 4 days (window mean 3.94, range 3.6–4.2), with no material trend or outliers, so this is ordinary noise rather than a sustained mismatch.",
+   "replied": true,
+   "proposed_value": 3.9,
+   "deviation": -1.5,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 3.9d vs configured 4d -- -1.5% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 621,
+   "output_tokens": 66,
+   "reasoning_chars": null,
+   "latency_ms": 3036
+  },
+  {
+   "parameter_id": "PD-0013",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "Aside from the single t-4 outlier with a logged one-time carrier disruption, the rest of the window readings are close to the 3-day configured lead time, showing only ordinary noise.",
+   "replied": true,
+   "proposed_value": 3.9,
+   "deviation": 30.3,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 3.9d vs configured 3d -- 30.3% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 659,
+   "output_tokens": 54,
+   "reasoning_chars": null,
+   "latency_ms": 2397
+  },
+  {
+   "parameter_id": "PD-0014",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "The configured 9 days matches the observed values, with the single 31.5 outlier at t-6 explained as a one-time carrier disruption resolved by the next cycle.",
+   "replied": true,
+   "proposed_value": 11.4,
+   "deviation": 27.2,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 11.4d vs configured 9d -- 27.2% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 659,
+   "output_tokens": 51,
+   "reasoning_chars": null,
+   "latency_ms": 2704
+  },
+  {
+   "parameter_id": "PD-0015",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "Ignoring the single logged one-time carrier disruption at t-3, the remaining readings cluster tightly around the configured 5 days, so there is no sustained mismatch.",
+   "replied": true,
+   "proposed_value": 6.1,
+   "deviation": 22.2,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 6.1d vs configured 5d -- 22.2% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 659,
+   "output_tokens": 49,
+   "reasoning_chars": null,
+   "latency_ms": 2387
+  },
+  {
+   "parameter_id": "PD-0016",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "The window's readings are close to the configured 12 days aside from the single noted one-time carrier disruption at t-6, so there is no sustained mismatch requiring review.",
+   "replied": true,
+   "proposed_value": 14.7,
+   "deviation": 22.5,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 14.7d vs configured 12d -- 22.5% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 658,
+   "output_tokens": 51,
+   "reasoning_chars": null,
+   "latency_ms": 2259
+  },
+  {
+   "parameter_id": "PD-0017",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "The observed lead times have consistently fallen from 8.2 to 4.1 days, now well below the configured 8 days, representing a sustained mismatch and a clear downward trend that a person should review.",
+   "replied": true,
+   "proposed_value": 6.0,
+   "deviation": -25.0,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 6.0d vs configured 8d -- -25.0% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 624,
+   "output_tokens": 59,
+   "reasoning_chars": null,
+   "latency_ms": 2564
+  },
+  {
+   "parameter_id": "PD-0018",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "The observed lead times have steadily fallen from around 4.7 days to 2.1 days over the window, with the most recent readings consistently well below the configured 5 days, indicating a sustained and growing mismatch.",
+   "replied": true,
+   "proposed_value": 3.7,
+   "deviation": -26.0,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 3.7d vs configured 5d -- -26.0% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 61,
+   "reasoning_chars": null,
+   "latency_ms": 2232
+  },
+  {
+   "parameter_id": "PD-0019",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "Observed lead times have fallen consistently from 4.3 to 2.0 days, ending well below the configured 4-day value, with a clear downward trend of -32.6% across the window.",
+   "replied": true,
+   "proposed_value": 3.1,
+   "deviation": -21.8,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 3.1d vs configured 4d -- -21.8% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 624,
+   "output_tokens": 60,
+   "reasoning_chars": null,
+   "latency_ms": 2407
+  },
+  {
+   "parameter_id": "PD-0020",
+   "category": "lead_time",
+   "verdict": "FLAG",
+   "reason": "The observed lead times consistently exceed the configured 5 days, with the most recent readings around 6.4 to 6.8 days and a rising trend of 17.1% across the window.",
+   "replied": true,
+   "proposed_value": 6.0,
+   "deviation": 19.4,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 6.0d vs configured 5d -- 19.4% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 624,
+   "output_tokens": 58,
+   "reasoning_chars": null,
+   "latency_ms": 2553
+  },
+  {
+   "parameter_id": "PD-0021",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The configured safety margin of 106 units is consistently mismatched against the observed window, with a falling trend (first-half mean 172.2 vs second-half mean 102.2) and individual readings ranging from 35 to 279, indicating the buffer is misaligned with actual variability.",
+   "replied": true,
+   "proposed_value": 163.1,
+   "deviation": -35.0,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "configured buffer 106 vs required (z*std) 163.1 -- -35.0% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 628,
+   "output_tokens": 76,
+   "reasoning_chars": null,
+   "latency_ms": 2686
+  },
+  {
+   "parameter_id": "PD-0022",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "Eight of ten readings sit well below the configured 68-unit margin, with several at or near 40-50 units; and the most recent reading is 0, falling far short of the configured value.",
+   "replied": true,
+   "proposed_value": 89.3,
+   "deviation": -23.8,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 68 vs required (z*std) 89.3 -- -23.8% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 628,
+   "output_tokens": 58,
+   "reasoning_chars": null,
+   "latency_ms": 1913
+  },
+  {
+   "parameter_id": "PD-0023",
+   "category": "safety_margin",
+   "verdict": "HOLD",
+   "reason": "The observed readings fluctuate around the configured 76-unit safety margin with no sustained mismatch, no material trend, and no outliers, indicating only ordinary noise.",
+   "replied": true,
+   "proposed_value": 111.2,
+   "deviation": -31.7,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 76 vs required (z*std) 111.2 -- -31.7% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 626,
+   "output_tokens": 46,
+   "reasoning_chars": null,
+   "latency_ms": 1616
+  },
+  {
+   "parameter_id": "PD-0024",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The observed safety margin readings consistently exceed the configured 103 units throughout the window, with all but two values well above that level and a window mean around 133 units, indicating a sustained mismatch.",
+   "replied": true,
+   "proposed_value": 109.3,
+   "deviation": -5.7,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 103 vs required (z*std) 109.3 -- -5.7% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 625,
+   "output_tokens": 55,
+   "reasoning_chars": null,
+   "latency_ms": 2376
+  },
+  {
+   "parameter_id": "PD-0025",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The configured safety margin is 57 units, but every observed reading in the window sits above 54 units and the window mean is approximately 63.5 units, indicating a sustained mismatch where actual variability consistently exceeds the configured buffer.",
+   "replied": true,
+   "proposed_value": 11.1,
+   "deviation": 411.5,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "configured buffer 57 vs required (z*std) 11.1 -- 411.5% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 626,
+   "output_tokens": 62,
+   "reasoning_chars": null,
+   "latency_ms": 2400
+  },
+  {
+   "parameter_id": "PD-0026",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The observed window values consistently deviate from the configured safety margin of 34 units, with a window mean of 68.80 and all readings except one above 34, indicating a sustained mismatch.",
+   "replied": true,
+   "proposed_value": 44.8,
+   "deviation": -24.1,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 34 vs required (z*std) 44.8 -- -24.1% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 628,
+   "output_tokens": 55,
+   "reasoning_chars": null,
+   "latency_ms": 2749
+  },
+  {
+   "parameter_id": "PD-0027",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The observed readings consistently sit well below the configured safety margin of 114 units, with most values near or under half that level and a window mean around 67.4, indicating a sustained mismatch rather than ordinary noise.",
+   "replied": true,
+   "proposed_value": 101.0,
+   "deviation": 12.8,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 114 vs required (z*std) 101.0 -- 12.8% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 628,
+   "output_tokens": 60,
+   "reasoning_chars": null,
+   "latency_ms": 2499
+  },
+  {
+   "parameter_id": "PD-0028",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The observed readings consistently sit below the configured 105 units in the second half of the window (mean 78.60) and the overall pattern shows a material mismatch against the safety margin, including a sharp falling trend of -32.9% across the window.",
+   "replied": true,
+   "proposed_value": 104.3,
+   "deviation": 0.6,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 105 vs required (z*std) 104.3 -- 0.6% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 628,
+   "output_tokens": 69,
+   "reasoning_chars": null,
+   "latency_ms": 2106
+  },
+  {
+   "parameter_id": "PD-0029",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "All 10 observed values are far above the configured safety margin of 35 units, with a window mean around 132, indicating a sustained, consistent mismatch between the configured buffer and actual observed demand variability.",
+   "replied": true,
+   "proposed_value": 46.7,
+   "deviation": -25.0,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 35 vs required (z*std) 46.7 -- -25.0% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 628,
+   "output_tokens": 57,
+   "reasoning_chars": null,
+   "latency_ms": 2456
+  },
+  {
+   "parameter_id": "PD-0030",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The observed readings consistently exceed the configured safety margin of 99 units, with the window mean around 157 units and even the lowest reading at 42, indicating a sustained mismatch.",
+   "replied": true,
+   "proposed_value": 121.1,
+   "deviation": -18.3,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 99 vs required (z*std) 121.1 -- -18.3% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 627,
+   "output_tokens": 52,
+   "reasoning_chars": null,
+   "latency_ms": 2296
+  },
+  {
+   "parameter_id": "PD-0031",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The configured safety margin of 39 units is consistently below most of the observed window, with 6 of 10 readings at 40 units or higher and only one reading matching the configured value, indicating a sustained mismatch.",
+   "replied": true,
+   "proposed_value": 27.4,
+   "deviation": 42.1,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "configured buffer 39 vs required (z*std) 27.4 -- 42.1% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 625,
+   "output_tokens": 60,
+   "reasoning_chars": null,
+   "latency_ms": 1722
+  },
+  {
+   "parameter_id": "PD-0032",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "Observed values consistently sit well above the configured safety margin of 64 units, with the lowest reading in the window still at 94 units, indicating a sustained mismatch.",
+   "replied": true,
+   "proposed_value": 72.4,
+   "deviation": -11.6,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 64 vs required (z*std) 72.4 -- -11.6% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 639,
+   "output_tokens": 50,
+   "reasoning_chars": null,
+   "latency_ms": 1852
+  },
+  {
+   "parameter_id": "PD-0033",
+   "category": "safety_margin",
+   "verdict": "HOLD",
+   "reason": "The window shows only one outlier at t-3 (354.0) that is explicitly logged as a one-time promotional demand surge not repeated, and the remaining readings sit close to the configured 117 units with ordinary noise.",
+   "replied": true,
+   "proposed_value": 151.7,
+   "deviation": -22.9,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 117 vs required (z*std) 151.7 -- -22.9% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 659,
+   "output_tokens": 61,
+   "reasoning_chars": null,
+   "latency_ms": 2398
+  },
+  {
+   "parameter_id": "PD-0034",
+   "category": "safety_margin",
+   "verdict": "HOLD",
+   "reason": "The configured value of 38 is close to the median and most readings, excluding the noted one-time promotional surge outlier at t-4, which accounts for the apparent trend.",
+   "replied": true,
+   "proposed_value": 62.8,
+   "deviation": -39.5,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "configured buffer 38 vs required (z*std) 62.8 -- -39.5% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 660,
+   "output_tokens": 51,
+   "reasoning_chars": null,
+   "latency_ms": 1989
+  },
+  {
+   "parameter_id": "PD-0035",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The configured safety margin is 76 units, but the observed window shows most readings well away from that value—including a sustained run of 0, 26, 44, 54, 65, and then 132–161 in recent weeks—indicating a real, sustained mismatch even after excluding the one-time promotional surge at t-6.",
+   "replied": true,
+   "proposed_value": 146.2,
+   "deviation": -48.0,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "configured buffer 76 vs required (z*std) 146.2 -- -48.0% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 642,
+   "output_tokens": 88,
+   "reasoning_chars": null,
+   "latency_ms": 2743
+  },
+  {
+   "parameter_id": "PD-0036",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "Configured safety margin of 61 units is below most of the observed window readings (16.0 to 224.0), with the first-half mean at 103.40 and second-half mean at 50.80, indicating a sustained mismatch throughout the window.",
+   "replied": true,
+   "proposed_value": 112.5,
+   "deviation": -45.8,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "configured buffer 61 vs required (z*std) 112.5 -- -45.8% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 641,
+   "output_tokens": 70,
+   "reasoning_chars": null,
+   "latency_ms": 2867
+  },
+  {
+   "parameter_id": "PD-0037",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The configured safety margin is 94 units, but most observed readings sit well below this value (window mean ≈ 77.9, with several readings in the 30–55 range), indicating a sustained mismatch between the configured buffer and actual observed variability.",
+   "replied": true,
+   "proposed_value": 42.7,
+   "deviation": 120.3,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "configured buffer 94 vs required (z*std) 42.7 -- 120.3% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 626,
+   "output_tokens": 67,
+   "reasoning_chars": null,
+   "latency_ms": 2582
+  },
+  {
+   "parameter_id": "PD-0038",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The configured safety margin of 89 units sits below the second-half mean of 99.40 units with a rising trend of 50.2% across the window, indicating sustained and worsening under-coverage.",
+   "replied": true,
+   "proposed_value": 120.1,
+   "deviation": -25.9,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 89 vs required (z*std) 120.1 -- -25.9% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 627,
+   "output_tokens": 58,
+   "reasoning_chars": null,
+   "latency_ms": 2245
+  },
+  {
+   "parameter_id": "PD-0039",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The configured safety margin is 23 units, but every observed reading in the entire window is between 116 and 170 units, consistently and substantially above the configured value, indicating a sustained mismatch with no trend or outliers.",
+   "replied": true,
+   "proposed_value": 28.1,
+   "deviation": -18.3,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 23 vs required (z*std) 28.1 -- -18.3% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 626,
+   "output_tokens": 60,
+   "reasoning_chars": null,
+   "latency_ms": 2487
+  },
+  {
+   "parameter_id": "PD-0040",
+   "category": "safety_margin",
+   "verdict": "FLAG",
+   "reason": "The configured safety margin of 88 units is consistently well below most observed values, which range from 0 to 176 with only two readings near or below the margin, indicating a sustained mismatch.",
+   "replied": true,
+   "proposed_value": 107.1,
+   "deviation": -17.9,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "configured buffer 88 vs required (z*std) 107.1 -- -17.9% gap, threshold 32%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 627,
+   "output_tokens": 55,
+   "reasoning_chars": null,
+   "latency_ms": 1861
+  },
+  {
+   "parameter_id": "PD-0041",
+   "category": "service_target",
+   "verdict": "HOLD",
+   "reason": "The observed readings consistently meet or exceed the configured 95% target with only ordinary noise, so there is no sustained mismatch to review.",
+   "replied": true,
+   "proposed_value": 99.7,
+   "deviation": 4.7,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 99.7% vs configured target 95% -- 4.7 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 43,
+   "reasoning_chars": null,
+   "latency_ms": 2007
+  },
+  {
+   "parameter_id": "PD-0042",
+   "category": "service_target",
+   "verdict": "HOLD",
+   "reason": "Observed values consistently sit at or near 100 pct, which is above the configured 95 pct target, but this is within ordinary performance variation for a service target where exceeding the threshold is not a mismatch requiring review.",
+   "replied": true,
+   "proposed_value": 99.7,
+   "deviation": 4.7,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 99.7% vs configured target 95% -- 4.7 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 59,
+   "reasoning_chars": null,
+   "latency_ms": 2513
+  },
+  {
+   "parameter_id": "PD-0043",
+   "category": "service_target",
+   "verdict": "FLAG",
+   "reason": "The configured target of 92 pct is consistently and materially below every observed reading, which ranges from 82.4 to 87.0 over the entire window, indicating a sustained mismatch rather than noise.",
+   "replied": true,
+   "proposed_value": 85.5,
+   "deviation": -6.5,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 85.5% vs configured target 92% -- -6.5 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 624,
+   "output_tokens": 58,
+   "reasoning_chars": null,
+   "latency_ms": 2914
+  },
+  {
+   "parameter_id": "PD-0044",
+   "category": "service_target",
+   "verdict": "FLAG",
+   "reason": "The observed values consistently sit around 90-91%, well below the configured target of 95%, with no trend or outliers to explain the persistent gap.",
+   "replied": true,
+   "proposed_value": 90.4,
+   "deviation": -4.6,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 90.4% vs configured target 95% -- -4.6 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 47,
+   "reasoning_chars": null,
+   "latency_ms": 1637
+  },
+  {
+   "parameter_id": "PD-0045",
+   "category": "service_target",
+   "verdict": "HOLD",
+   "reason": "The configured value of 95 pct is below all observed readings, which sit consistently at 98.6–100.0 with no trend or outliers, indicating the parameter is being exceeded rather than mismatched in a way that requires review.",
+   "replied": true,
+   "proposed_value": 99.4,
+   "deviation": 4.4,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 99.4% vs configured target 95% -- 4.4 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 625,
+   "output_tokens": 65,
+   "reasoning_chars": null,
+   "latency_ms": 3055
+  },
+  {
+   "parameter_id": "PD-0046",
+   "category": "service_target",
+   "verdict": "FLAG",
+   "reason": "The configured service target is 90 pct but the observed window consistently sits below 90 (88.1–89.6) with the sole exception of t-0 at 90.3, indicating a sustained mismatch despite the stable trend.",
+   "replied": true,
+   "proposed_value": 89.1,
+   "deviation": -0.9,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 89.1% vs configured target 90% -- -0.9 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 66,
+   "reasoning_chars": null,
+   "latency_ms": 3189
+  },
+  {
+   "parameter_id": "PD-0047",
+   "category": "service_target",
+   "verdict": "HOLD",
+   "reason": "The observed values cluster tightly around the configured target of 90 pct, with all readings between 89.9 and 92.3 and no material trend or outliers, so the parameter matches its configured value within ordinary noise.",
+   "replied": true,
+   "proposed_value": 91.0,
+   "deviation": 1.0,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 91.0% vs configured target 90% -- 1.0 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 62,
+   "reasoning_chars": null,
+   "latency_ms": 3178
+  },
+  {
+   "parameter_id": "PD-0048",
+   "category": "service_target",
+   "verdict": "FLAG",
+   "reason": "Readings consistently sit below the configured 99% target (window mean ≈98.5%), with only 3 of 10 points at or above 99%, indicating a sustained mismatch rather than random noise.",
+   "replied": true,
+   "proposed_value": 98.5,
+   "deviation": -0.5,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 98.5% vs configured target 99% -- -0.5 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 58,
+   "reasoning_chars": null,
+   "latency_ms": 2049
+  },
+  {
+   "parameter_id": "PD-0049",
+   "category": "service_target",
+   "verdict": "FLAG",
+   "reason": "The observed window consistently reads below the configured 94 pct target for the last five periods (93.0, 91.9, 92.7, 93.1), indicating a sustained mismatch rather than ordinary noise.",
+   "replied": true,
+   "proposed_value": 94.1,
+   "deviation": 0.1,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 94.1% vs configured target 94% -- 0.1 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 624,
+   "output_tokens": 63,
+   "reasoning_chars": null,
+   "latency_ms": 2724
+  },
+  {
+   "parameter_id": "PD-0050",
+   "category": "service_target",
+   "verdict": "FLAG",
+   "reason": "The configured value of 96 pct is consistently at or above the upper end of all recent readings, with the last five observations at 96.6, 95.3, 95.4, 97.0, and 96.8, showing a sustained gap below target despite no trend or outliers.",
+   "replied": true,
+   "proposed_value": 96.5,
+   "deviation": 0.5,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 96.5% vs configured target 96% -- 0.5 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 78,
+   "reasoning_chars": null,
+   "latency_ms": 3182
+  },
+  {
+   "parameter_id": "PD-0051",
+   "category": "service_target",
+   "verdict": "HOLD",
+   "reason": "The observed readings are close to the configured 97 pct target with only ordinary noise, and there is no material trend or outlier indicating a sustained mismatch.",
+   "replied": true,
+   "proposed_value": 97.8,
+   "deviation": 0.8,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 97.8% vs configured target 97% -- 0.8 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 51,
+   "reasoning_chars": null,
+   "latency_ms": 2079
+  },
+  {
+   "parameter_id": "PD-0052",
+   "category": "service_target",
+   "verdict": "HOLD",
+   "reason": "The configured value of 94% is close to the observed window mean of approximately 94.6%, with all readings falling within ordinary noise and no material trend or outliers.",
+   "replied": true,
+   "proposed_value": 94.6,
+   "deviation": 0.6,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 94.6% vs configured target 94% -- 0.6 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 48,
+   "reasoning_chars": null,
+   "latency_ms": 1813
+  },
+  {
+   "parameter_id": "PD-0053",
+   "category": "service_target",
+   "verdict": "HOLD",
+   "reason": "The window's readings are otherwise close to the configured 92% target, and the single 61.3 reading is a logged one-time platform outage, so there is no sustained mismatch.",
+   "replied": true,
+   "proposed_value": 88.8,
+   "deviation": -3.2,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 88.8% vs configured target 92% -- -3.2 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 654,
+   "output_tokens": 54,
+   "reasoning_chars": null,
+   "latency_ms": 1852
+  },
+  {
+   "parameter_id": "PD-0054",
+   "category": "service_target",
+   "verdict": "HOLD",
+   "reason": "The outlier at t-4 (73.3) has a logged one-time platform outage note, and the rest of the window sits close to the configured 98 pct with only ordinary noise.",
+   "replied": true,
+   "proposed_value": 94.3,
+   "deviation": -3.7,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 94.3% vs configured target 98% -- -3.7 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 654,
+   "output_tokens": 56,
+   "reasoning_chars": null,
+   "latency_ms": 3134
+  },
+  {
+   "parameter_id": "PD-0055",
+   "category": "service_target",
+   "verdict": "HOLD",
+   "reason": "The only significant deviation is t-5 at 62.8, which has a logged one-time platform outage note, while the rest of the window (91.1-93.6) sits near the configured 92% target.",
+   "replied": true,
+   "proposed_value": 89.3,
+   "deviation": -2.7,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 89.3% vs configured target 92% -- -2.7 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 654,
+   "output_tokens": 64,
+   "reasoning_chars": null,
+   "latency_ms": 2296
+  },
+  {
+   "parameter_id": "PD-0056",
+   "category": "service_target",
+   "verdict": "HOLD",
+   "reason": "The single large deviation at t-6 is attributed to a logged one-time platform outage and the rest of the window's readings are all near the configured 96 pct target, so there is no sustained mismatch.",
+   "replied": true,
+   "proposed_value": 93.6,
+   "deviation": -2.4,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 93.6% vs configured target 96% -- -2.4 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 654,
+   "output_tokens": 59,
+   "reasoning_chars": null,
+   "latency_ms": 2432
+  },
+  {
+   "parameter_id": "PD-0057",
+   "category": "service_target",
+   "verdict": "FLAG",
+   "reason": "The observed readings consistently sit above the configured 95% target throughout the entire window (all values ≥95.1%, second-half mean 98.8%), indicating a sustained mismatch rather than ordinary noise.",
+   "replied": true,
+   "proposed_value": 97.8,
+   "deviation": 2.8,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 97.8% vs configured target 95% -- 2.8 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 57,
+   "reasoning_chars": null,
+   "latency_ms": 2507
+  },
+  {
+   "parameter_id": "PD-0058",
+   "category": "service_target",
+   "verdict": "FLAG",
+   "reason": "The configured target of 96% is consistently below the observed window, which shows readings mostly in the high-90s to 100% range with a second-half mean of 98.88%, indicating a sustained mismatch between the set target and actual performance.",
+   "replied": true,
+   "proposed_value": 97.6,
+   "deviation": 1.6,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 97.6% vs configured target 96% -- 1.6 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 623,
+   "output_tokens": 68,
+   "reasoning_chars": null,
+   "latency_ms": 2386
+  },
+  {
+   "parameter_id": "PD-0059",
+   "category": "service_target",
+   "verdict": "HOLD",
+   "reason": "The observed service levels are consistently close to or above the configured 97% target, with only ordinary variation and no sustained mismatch.",
+   "replied": true,
+   "proposed_value": 98.4,
+   "deviation": 1.4,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 98.4% vs configured target 97% -- 1.4 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 624,
+   "output_tokens": 42,
+   "reasoning_chars": null,
+   "latency_ms": 2065
+  },
+  {
+   "parameter_id": "PD-0060",
+   "category": "service_target",
+   "verdict": "FLAG",
+   "reason": "The observed service rate has been consistently below the configured 94 pct target, with the most recent readings dropping to 88.3 and 87.5 pct, indicating a sustained mismatch rather than ordinary noise.",
+   "replied": true,
+   "proposed_value": 91.9,
+   "deviation": -2.1,
+   "floor_verdict": "HOLD",
+   "floor_reasons": [
+    "observed mean 91.9% vs configured target 94% -- -2.1 pt gap, threshold 3.0 pt"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 624,
+   "output_tokens": 60,
+   "reasoning_chars": null,
+   "latency_ms": 2397
+  }
+ ]
+}

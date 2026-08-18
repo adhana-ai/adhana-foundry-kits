@@ -1,0 +1,1312 @@
+{
+ "run_id": "b000-rule-threshold-floor",
+ "baseline": true,
+ "model": "rule-and-threshold floor",
+ "n": 60,
+ "scores": {
+  "n": 60,
+  "n_drift": 27,
+  "n_no_drift": 33,
+  "counts": {
+   "correct_flag": 16,
+   "correct_hold": 23,
+   "false_flag": 10,
+   "missed_drift": 11,
+   "no_verdict": 0
+  },
+  "recall_pct": 59.3,
+  "precision_pct": 61.5,
+  "value_agreement_pct": 68.8,
+  "value_counts": {
+   "value_agrees": 11,
+   "value_disagrees": 5
+  },
+  "no_verdict": 0
+ },
+ "per_category": {
+  "lead_time": {
+   "n": 20,
+   "n_drift": 9,
+   "n_no_drift": 11,
+   "counts": {
+    "correct_flag": 8,
+    "correct_hold": 7,
+    "false_flag": 4,
+    "missed_drift": 1,
+    "no_verdict": 0
+   },
+   "recall_pct": 88.9,
+   "precision_pct": 66.7,
+   "value_agreement_pct": 62.5,
+   "value_counts": {
+    "value_agrees": 5,
+    "value_disagrees": 3
+   },
+   "no_verdict": 0
+  },
+  "safety_margin": {
+   "n": 20,
+   "n_drift": 9,
+   "n_no_drift": 11,
+   "counts": {
+    "correct_flag": 3,
+    "correct_hold": 7,
+    "false_flag": 4,
+    "missed_drift": 6,
+    "no_verdict": 0
+   },
+   "recall_pct": 33.3,
+   "precision_pct": 42.9,
+   "value_agreement_pct": 33.3,
+   "value_counts": {
+    "value_agrees": 1,
+    "value_disagrees": 2
+   },
+   "no_verdict": 0
+  },
+  "service_target": {
+   "n": 20,
+   "n_drift": 9,
+   "n_no_drift": 11,
+   "counts": {
+    "correct_flag": 5,
+    "correct_hold": 9,
+    "false_flag": 2,
+    "missed_drift": 4,
+    "no_verdict": 0
+   },
+   "recall_pct": 55.6,
+   "precision_pct": 71.4,
+   "value_agreement_pct": 100.0,
+   "value_counts": {
+    "value_agrees": 5,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  }
+ },
+ "per_trap": {
+  "clean_drift": {
+   "n": 15,
+   "n_drift": 15,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 12,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 3,
+    "no_verdict": 0
+   },
+   "recall_pct": 80.0,
+   "precision_pct": 100.0,
+   "value_agreement_pct": 91.7,
+   "value_counts": {
+    "value_agrees": 11,
+    "value_disagrees": 1
+   },
+   "no_verdict": 0
+  },
+  "clean_hold": {
+   "n": 21,
+   "n_drift": 0,
+   "n_no_drift": 21,
+   "counts": {
+    "correct_flag": 0,
+    "correct_hold": 20,
+    "false_flag": 1,
+    "missed_drift": 0,
+    "no_verdict": 0
+   },
+   "recall_pct": null,
+   "precision_pct": 0.0,
+   "value_agreement_pct": null,
+   "value_counts": {
+    "value_agrees": 0,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  },
+  "one_off_spike": {
+   "n": 12,
+   "n_drift": 0,
+   "n_no_drift": 12,
+   "counts": {
+    "correct_flag": 0,
+    "correct_hold": 3,
+    "false_flag": 9,
+    "missed_drift": 0,
+    "no_verdict": 0
+   },
+   "recall_pct": null,
+   "precision_pct": 0.0,
+   "value_agreement_pct": null,
+   "value_counts": {
+    "value_agrees": 0,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  },
+  "slow_creep": {
+   "n": 12,
+   "n_drift": 12,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 4,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 8,
+    "no_verdict": 0
+   },
+   "recall_pct": 33.3,
+   "precision_pct": 100.0,
+   "value_agreement_pct": 0.0,
+   "value_counts": {
+    "value_agrees": 0,
+    "value_disagrees": 4
+   },
+   "no_verdict": 0
+  }
+ },
+ "rows": [
+  {
+   "parameter_id": "PD-0001",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 6.0d vs configured 4d -- 51.2% deviation, threshold 20%"
+   ],
+   "proposed_value": 6.0,
+   "deviation": 51.2,
+   "outcome": "correct_flag",
+   "value_outcome": "value_agrees",
+   "gold": {
+    "parameter_id": "PD-0001",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 6.3
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0002",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 20.5d vs configured 14d -- 46.6% deviation, threshold 20%"
+   ],
+   "proposed_value": 20.5,
+   "deviation": 46.6,
+   "outcome": "correct_flag",
+   "value_outcome": "value_agrees",
+   "gold": {
+    "parameter_id": "PD-0002",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 20.5
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0003",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 18.3d vs configured 13d -- 41.1% deviation, threshold 20%"
+   ],
+   "proposed_value": 18.3,
+   "deviation": 41.1,
+   "outcome": "correct_flag",
+   "value_outcome": "value_agrees",
+   "gold": {
+    "parameter_id": "PD-0003",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 17.6
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0004",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 1.8d vs configured 4d -- -56.0% deviation, threshold 20%"
+   ],
+   "proposed_value": 1.8,
+   "deviation": -56.0,
+   "outcome": "correct_flag",
+   "value_outcome": "value_agrees",
+   "gold": {
+    "parameter_id": "PD-0004",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 1.7
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0005",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 15.6d vs configured 10d -- 55.8% deviation, threshold 20%"
+   ],
+   "proposed_value": 15.6,
+   "deviation": 55.8,
+   "outcome": "correct_flag",
+   "value_outcome": "value_agrees",
+   "gold": {
+    "parameter_id": "PD-0005",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 15.3
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0006",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 9.2d vs configured 9d -- 2.3% deviation, threshold 20%"
+   ],
+   "proposed_value": 9.2,
+   "deviation": 2.3,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0006",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0007",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 7.9d vs configured 8d -- -1.2% deviation, threshold 20%"
+   ],
+   "proposed_value": 7.9,
+   "deviation": -1.2,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0007",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0008",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 6.8d vs configured 7d -- -3.1% deviation, threshold 20%"
+   ],
+   "proposed_value": 6.8,
+   "deviation": -3.1,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0008",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0009",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 10.9d vs configured 11d -- -0.8% deviation, threshold 20%"
+   ],
+   "proposed_value": 10.9,
+   "deviation": -0.8,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0009",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0010",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 9.7d vs configured 10d -- -2.8% deviation, threshold 20%"
+   ],
+   "proposed_value": 9.7,
+   "deviation": -2.8,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0010",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0011",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 8.7d vs configured 9d -- -3.4% deviation, threshold 20%"
+   ],
+   "proposed_value": 8.7,
+   "deviation": -3.4,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0011",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0012",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 3.9d vs configured 4d -- -1.5% deviation, threshold 20%"
+   ],
+   "proposed_value": 3.9,
+   "deviation": -1.5,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0012",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0013",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 3.9d vs configured 3d -- 30.3% deviation, threshold 20%"
+   ],
+   "proposed_value": 3.9,
+   "deviation": 30.3,
+   "outcome": "false_flag",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0013",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0014",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 11.4d vs configured 9d -- 27.2% deviation, threshold 20%"
+   ],
+   "proposed_value": 11.4,
+   "deviation": 27.2,
+   "outcome": "false_flag",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0014",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0015",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 6.1d vs configured 5d -- 22.2% deviation, threshold 20%"
+   ],
+   "proposed_value": 6.1,
+   "deviation": 22.2,
+   "outcome": "false_flag",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0015",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0016",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 14.7d vs configured 12d -- 22.5% deviation, threshold 20%"
+   ],
+   "proposed_value": 14.7,
+   "deviation": 22.5,
+   "outcome": "false_flag",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0016",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0017",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 6.0d vs configured 8d -- -25.0% deviation, threshold 20%"
+   ],
+   "proposed_value": 6.0,
+   "deviation": -25.0,
+   "outcome": "correct_flag",
+   "value_outcome": "value_disagrees",
+   "gold": {
+    "parameter_id": "PD-0017",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 3.7
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0018",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 3.7d vs configured 5d -- -26.0% deviation, threshold 20%"
+   ],
+   "proposed_value": 3.7,
+   "deviation": -26.0,
+   "outcome": "correct_flag",
+   "value_outcome": "value_disagrees",
+   "gold": {
+    "parameter_id": "PD-0018",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 2.6
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0019",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 3.1d vs configured 4d -- -21.8% deviation, threshold 20%"
+   ],
+   "proposed_value": 3.1,
+   "deviation": -21.8,
+   "outcome": "correct_flag",
+   "value_outcome": "value_disagrees",
+   "gold": {
+    "parameter_id": "PD-0019",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 2.2
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0020",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 6.0d vs configured 5d -- 19.4% deviation, threshold 20%"
+   ],
+   "proposed_value": 6.0,
+   "deviation": 19.4,
+   "outcome": "missed_drift",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0020",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 6.9
+   },
+   "category": "lead_time"
+  },
+  {
+   "parameter_id": "PD-0021",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 106 vs required (z*std) 163.1 -- -35.0% gap, threshold 32%"
+   ],
+   "proposed_value": 163.1,
+   "deviation": -35.0,
+   "outcome": "correct_flag",
+   "value_outcome": "value_agrees",
+   "gold": {
+    "parameter_id": "PD-0021",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 188.9
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0022",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 68 vs required (z*std) 89.3 -- -23.8% gap, threshold 32%"
+   ],
+   "proposed_value": 89.3,
+   "deviation": -23.8,
+   "outcome": "missed_drift",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0022",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 102.1
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0023",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 76 vs required (z*std) 111.2 -- -31.7% gap, threshold 32%"
+   ],
+   "proposed_value": 111.2,
+   "deviation": -31.7,
+   "outcome": "missed_drift",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0023",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 135.8
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0024",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 103 vs required (z*std) 109.3 -- -5.7% gap, threshold 32%"
+   ],
+   "proposed_value": 109.3,
+   "deviation": -5.7,
+   "outcome": "missed_drift",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0024",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 159.4
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0025",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 57 vs required (z*std) 11.1 -- 411.5% gap, threshold 32%"
+   ],
+   "proposed_value": 11.1,
+   "deviation": 411.5,
+   "outcome": "correct_flag",
+   "value_outcome": "value_disagrees",
+   "gold": {
+    "parameter_id": "PD-0025",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 13.9
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0026",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 34 vs required (z*std) 44.8 -- -24.1% gap, threshold 32%"
+   ],
+   "proposed_value": 44.8,
+   "deviation": -24.1,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0026",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0027",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 114 vs required (z*std) 101.0 -- 12.8% gap, threshold 32%"
+   ],
+   "proposed_value": 101.0,
+   "deviation": 12.8,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0027",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0028",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 105 vs required (z*std) 104.3 -- 0.6% gap, threshold 32%"
+   ],
+   "proposed_value": 104.3,
+   "deviation": 0.6,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0028",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0029",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 35 vs required (z*std) 46.7 -- -25.0% gap, threshold 32%"
+   ],
+   "proposed_value": 46.7,
+   "deviation": -25.0,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0029",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0030",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 99 vs required (z*std) 121.1 -- -18.3% gap, threshold 32%"
+   ],
+   "proposed_value": 121.1,
+   "deviation": -18.3,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0030",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0031",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 39 vs required (z*std) 27.4 -- 42.1% gap, threshold 32%"
+   ],
+   "proposed_value": 27.4,
+   "deviation": 42.1,
+   "outcome": "false_flag",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0031",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0032",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 64 vs required (z*std) 72.4 -- -11.6% gap, threshold 32%"
+   ],
+   "proposed_value": 72.4,
+   "deviation": -11.6,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0032",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0033",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 117 vs required (z*std) 151.7 -- -22.9% gap, threshold 32%"
+   ],
+   "proposed_value": 151.7,
+   "deviation": -22.9,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0033",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0034",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 38 vs required (z*std) 62.8 -- -39.5% gap, threshold 32%"
+   ],
+   "proposed_value": 62.8,
+   "deviation": -39.5,
+   "outcome": "false_flag",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0034",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0035",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 76 vs required (z*std) 146.2 -- -48.0% gap, threshold 32%"
+   ],
+   "proposed_value": 146.2,
+   "deviation": -48.0,
+   "outcome": "false_flag",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0035",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0036",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 61 vs required (z*std) 112.5 -- -45.8% gap, threshold 32%"
+   ],
+   "proposed_value": 112.5,
+   "deviation": -45.8,
+   "outcome": "false_flag",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0036",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0037",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 94 vs required (z*std) 42.7 -- 120.3% gap, threshold 32%"
+   ],
+   "proposed_value": 42.7,
+   "deviation": 120.3,
+   "outcome": "correct_flag",
+   "value_outcome": "value_disagrees",
+   "gold": {
+    "parameter_id": "PD-0037",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 22.5
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0038",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 89 vs required (z*std) 120.1 -- -25.9% gap, threshold 32%"
+   ],
+   "proposed_value": 120.1,
+   "deviation": -25.9,
+   "outcome": "missed_drift",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0038",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 139.0
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0039",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 23 vs required (z*std) 28.1 -- -18.3% gap, threshold 32%"
+   ],
+   "proposed_value": 28.1,
+   "deviation": -18.3,
+   "outcome": "missed_drift",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0039",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 40.7
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0040",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "configured buffer 88 vs required (z*std) 107.1 -- -17.9% gap, threshold 32%"
+   ],
+   "proposed_value": 107.1,
+   "deviation": -17.9,
+   "outcome": "missed_drift",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0040",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 153.8
+   },
+   "category": "safety_margin"
+  },
+  {
+   "parameter_id": "PD-0041",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 99.7% vs configured target 95% -- 4.7 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 99.7,
+   "deviation": 4.7,
+   "outcome": "correct_flag",
+   "value_outcome": "value_agrees",
+   "gold": {
+    "parameter_id": "PD-0041",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 100.0
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0042",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 99.7% vs configured target 95% -- 4.7 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 99.7,
+   "deviation": 4.7,
+   "outcome": "correct_flag",
+   "value_outcome": "value_agrees",
+   "gold": {
+    "parameter_id": "PD-0042",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 100.0
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0043",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 85.5% vs configured target 92% -- -6.5 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 85.5,
+   "deviation": -6.5,
+   "outcome": "correct_flag",
+   "value_outcome": "value_agrees",
+   "gold": {
+    "parameter_id": "PD-0043",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 85.8
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0044",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 90.4% vs configured target 95% -- -4.6 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 90.4,
+   "deviation": -4.6,
+   "outcome": "correct_flag",
+   "value_outcome": "value_agrees",
+   "gold": {
+    "parameter_id": "PD-0044",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 90.6
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0045",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 99.4% vs configured target 95% -- 4.4 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 99.4,
+   "deviation": 4.4,
+   "outcome": "correct_flag",
+   "value_outcome": "value_agrees",
+   "gold": {
+    "parameter_id": "PD-0045",
+    "label": "drift",
+    "trap": "clean_drift",
+    "gold_corrected_value": 99.3
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0046",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 89.1% vs configured target 90% -- -0.9 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 89.1,
+   "deviation": -0.9,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0046",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0047",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 91.0% vs configured target 90% -- 1.0 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 91.0,
+   "deviation": 1.0,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0047",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0048",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 98.5% vs configured target 99% -- -0.5 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 98.5,
+   "deviation": -0.5,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0048",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0049",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 94.1% vs configured target 94% -- 0.1 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 94.1,
+   "deviation": 0.1,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0049",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0050",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 96.5% vs configured target 96% -- 0.5 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 96.5,
+   "deviation": 0.5,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0050",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0051",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 97.8% vs configured target 97% -- 0.8 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 97.8,
+   "deviation": 0.8,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0051",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0052",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 94.6% vs configured target 94% -- 0.6 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 94.6,
+   "deviation": 0.6,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0052",
+    "label": "no_drift",
+    "trap": "clean_hold",
+    "gold_corrected_value": null
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0053",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 88.8% vs configured target 92% -- -3.2 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 88.8,
+   "deviation": -3.2,
+   "outcome": "false_flag",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0053",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0054",
+   "verdict": "FLAG",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 94.3% vs configured target 98% -- -3.7 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 94.3,
+   "deviation": -3.7,
+   "outcome": "false_flag",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0054",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0055",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 89.3% vs configured target 92% -- -2.7 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 89.3,
+   "deviation": -2.7,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0055",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0056",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 93.6% vs configured target 96% -- -2.4 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 93.6,
+   "deviation": -2.4,
+   "outcome": "correct_hold",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0056",
+    "label": "no_drift",
+    "trap": "one_off_spike",
+    "gold_corrected_value": null
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0057",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 97.8% vs configured target 95% -- 2.8 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 97.8,
+   "deviation": 2.8,
+   "outcome": "missed_drift",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0057",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 100.0
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0058",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 97.6% vs configured target 96% -- 1.6 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 97.6,
+   "deviation": 1.6,
+   "outcome": "missed_drift",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0058",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 100.0
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0059",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 98.4% vs configured target 97% -- 1.4 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 98.4,
+   "deviation": 1.4,
+   "outcome": "missed_drift",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0059",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 100.0
+   },
+   "category": "service_target"
+  },
+  {
+   "parameter_id": "PD-0060",
+   "verdict": "HOLD",
+   "replied": true,
+   "floor_reasons": [
+    "observed mean 91.9% vs configured target 94% -- -2.1 pt gap, threshold 3.0 pt"
+   ],
+   "proposed_value": 91.9,
+   "deviation": -2.1,
+   "outcome": "missed_drift",
+   "value_outcome": null,
+   "gold": {
+    "parameter_id": "PD-0060",
+    "label": "drift",
+    "trap": "slow_creep",
+    "gold_corrected_value": 89.1
+   },
+   "category": "service_target"
+  }
+ ]
+}

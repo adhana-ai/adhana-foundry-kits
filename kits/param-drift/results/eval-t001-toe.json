@@ -1,0 +1,182 @@
+{
+ "run_id": "t001-toe",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "parameters": 2,
+ "no_verdict": 0,
+ "latency_p50_ms": 1741,
+ "latency_p95_ms": 1741,
+ "wall_seconds": 3.3,
+ "input_tokens_total": 1016,
+ "output_tokens_total": 115,
+ "scores": {
+  "n": 2,
+  "n_drift": 2,
+  "n_no_drift": 0,
+  "counts": {
+   "correct_flag": 0,
+   "correct_hold": 0,
+   "false_flag": 0,
+   "missed_drift": 2,
+   "no_verdict": 0
+  },
+  "recall_pct": 0.0,
+  "precision_pct": null,
+  "value_agreement_pct": null,
+  "value_counts": {
+   "value_agrees": 0,
+   "value_disagrees": 0
+  },
+  "no_verdict": 0
+ },
+ "per_category": {
+  "lead_time": {
+   "n": 2,
+   "n_drift": 2,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 0,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 2,
+    "no_verdict": 0
+   },
+   "recall_pct": 0.0,
+   "precision_pct": null,
+   "value_agreement_pct": null,
+   "value_counts": {
+    "value_agrees": 0,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  },
+  "safety_margin": {
+   "n": 0,
+   "n_drift": 0,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 0,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 0,
+    "no_verdict": 0
+   },
+   "recall_pct": null,
+   "precision_pct": null,
+   "value_agreement_pct": null,
+   "value_counts": {
+    "value_agrees": 0,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  },
+  "service_target": {
+   "n": 0,
+   "n_drift": 0,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 0,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 0,
+    "no_verdict": 0
+   },
+   "recall_pct": null,
+   "precision_pct": null,
+   "value_agreement_pct": null,
+   "value_counts": {
+    "value_agrees": 0,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  }
+ },
+ "per_trap": {
+  "clean_drift": {
+   "n": 2,
+   "n_drift": 2,
+   "n_no_drift": 0,
+   "counts": {
+    "correct_flag": 0,
+    "correct_hold": 0,
+    "false_flag": 0,
+    "missed_drift": 2,
+    "no_verdict": 0
+   },
+   "recall_pct": 0.0,
+   "precision_pct": null,
+   "value_agreement_pct": null,
+   "value_counts": {
+    "value_agrees": 0,
+    "value_disagrees": 0
+   },
+   "no_verdict": 0
+  }
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 654
+  },
+  {
+   "name": "parameter",
+   "chars": 132
+  },
+  {
+   "name": "window",
+   "chars": 229
+  },
+  {
+   "name": "facts",
+   "chars": 172
+  },
+  {
+   "name": "rules",
+   "chars": 846
+  }
+ ],
+ "raw_text": "{\"verdict\": \"HOLD\", \"reason\": \"No outliers and only a 3.7% trend change are observed, with all readings clustered well above the configured 4 days but consistently so, making this a stable but understated lead time that is not a new or worsening mismatch.\"}",
+ "max_tokens": 4096,
+ "thinking": {
+  "type": "disabled"
+ },
+ "rows": [
+  {
+   "parameter_id": "PD-0001",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "No outliers and only a 3.7% trend change are observed, with all readings clustered well above the configured 4 days but consistently so, making this a stable but understated lead time that is not a new or worsening mismatch.",
+   "replied": true,
+   "proposed_value": 6.0,
+   "deviation": 51.2,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 6.0d vs configured 4d -- 51.2% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 508,
+   "output_tokens": 61,
+   "reasoning_chars": null,
+   "latency_ms": 1741
+  },
+  {
+   "parameter_id": "PD-0002",
+   "category": "lead_time",
+   "verdict": "HOLD",
+   "reason": "Lead times consistently exceed the configured 14 days by ~6-9 days, but there is no trend or outliers and the data may reflect a stable but different baseline rather than a sustained mismatch needing review.",
+   "replied": true,
+   "proposed_value": 20.5,
+   "deviation": 46.6,
+   "floor_verdict": "FLAG",
+   "floor_reasons": [
+    "observed mean 20.5d vs configured 14d -- 46.6% deviation, threshold 20%"
+   ],
+   "finish_reason": "stop",
+   "input_tokens": 508,
+   "output_tokens": 54,
+   "reasoning_chars": null,
+   "latency_ms": 1589
+  }
+ ]
+}
