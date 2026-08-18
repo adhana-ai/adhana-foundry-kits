@@ -1,0 +1,3976 @@
+{
+ "run_id": "r002-data-reconcile-pro",
+ "stub": false,
+ "model": "deepseek-v4-pro",
+ "provider": "openai-compatible",
+ "orders": 72,
+ "checks_per_order": 5,
+ "failures": 0,
+ "latency_p50_ms": 4111,
+ "latency_p95_ms": 5283,
+ "wall_seconds": 299.9,
+ "input_tokens_total": 56389,
+ "output_tokens_total": 26541,
+ "scores": {
+  "checks_scored": 360,
+  "answered": 360,
+  "answered_pct": 100.0,
+  "accuracy_pct": 83.9,
+  "false_clean": 1,
+  "false_clean_rate_pct": 2.0,
+  "false_alarm": 56,
+  "false_alarm_rate_pct": 22.4,
+  "gold_defect_total": 50,
+  "gold_clean_total": 250
+ },
+ "per_check": {
+  "cost": {
+   "gold_total": 72,
+   "correct": 72,
+   "accuracy_pct": 100.0,
+   "predicted_unverifiable": 0
+  },
+  "min_qty": {
+   "gold_total": 72,
+   "correct": 58,
+   "accuracy_pct": 80.6,
+   "predicted_unverifiable": 0
+  },
+  "lead_time": {
+   "gold_total": 72,
+   "correct": 28,
+   "accuracy_pct": 38.9,
+   "predicted_unverifiable": 1
+  },
+  "ship_to": {
+   "gold_total": 72,
+   "correct": 72,
+   "accuracy_pct": 100.0,
+   "predicted_unverifiable": 24
+  },
+  "order_value": {
+   "gold_total": 72,
+   "correct": 72,
+   "accuracy_pct": 100.0,
+   "predicted_unverifiable": 36
+  }
+ },
+ "matrix": {
+  "clean->clean": 193,
+  "clean->defect": 56,
+  "unverifiable->unverifiable": 60,
+  "defect->defect": 49,
+  "defect->clean": 1,
+  "clean->unverifiable": 1
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 1901
+  },
+  {
+   "name": "order",
+   "chars": 163
+  },
+  {
+   "name": "agreement",
+   "chars": 778
+  }
+ ],
+ "raw_text": "{\n  \"checks\": [\n    {\n      \"check\": \"cost\",\n      \"verdict\": \"clean\",\n      \"citation\": \"For SKU-1002, the price is fixed at $25.67 per unit.\",\n      \"expected\": \"$25.67 per unit\",\n      \"actual\": \"$25.67\"\n    },\n    {\n      \"check\": \"min_qty\",\n      \"verdict\": \"clean\",\n      \"citation\": \"No line may be ordered below a floor of 240 units, and quantities are packed 6 to a carton -- round any partial carton up.\",\n      \"expected\": \"Minimum 240 units and packed 6 to a carton rounded up\",\n      \"actual\": \"246 units\"\n    },\n    {\n      \"check\": \"lead_time\",\n      \"verdict\": \"defect\",\n      \"citation\": \"The supplier requires 21 business days between receiving a purchase order and releasing it for shipment.\",\n      \"expected\": \"21 business days\",\n      \"actual\": \"24 business days\"\n    },\n    {\n      \"check\": \"ship_to\",\n      \"verdict\": \"unverifiable\",\n      \"citation\": \"\",\n      \"expected\": null,\n      \"actual\": \"NA-EAST\"\n    },\n    {\n      \"check\": \"order_value\",\n      \"verdict\": \"clean\",\n      \"citation\": \"Orders under this agreement's standing authorization must total between $500 and $40000; orders outside this band require a separate approval this agreement does not cover.\",\n      \"expected\": \"Between $500 and $40000\",\n      \"actual\": \"$6314.82\"\n    }\n  ]\n}",
+ "max_tokens": 1500,
+ "thinking": {
+  "type": "disabled"
+ },
+ "prompt_version": "v1",
+ "records": [
+  {
+   "order_id": "ORD-00001",
+   "supplier_id": "SUP-0100",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1002, the price is fixed at $25.67 per unit.",
+     "expected": "$25.67 per unit",
+     "actual": "$25.67",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 6 to a carton -- round any partial carton up.",
+     "expected": "Minimum 240 units and packed 6 to a carton rounded up",
+     "actual": "246 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 21 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "21 business days",
+     "actual": "24 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-EAST",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $40000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "Between $500 and $40000",
+     "actual": "$6314.82",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 768,
+   "output_tokens": 340,
+   "reasoning_tokens": null,
+   "latency_ms": 4132
+  },
+  {
+   "order_id": "ORD-00002",
+   "supplier_id": "SUP-0100",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "For SKU-1002, the price is fixed at $25.67 per unit.",
+     "expected": "$25.67",
+     "actual": "$24.80",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 6 to a carton -- round any partial carton up.",
+     "expected": "at least 240 units and a multiple of 6",
+     "actual": "252 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "The supplier requires 21 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "21 business days",
+     "actual": "23 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "APAC-EAST",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $40000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 - $40000",
+     "actual": "$10732.68",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 785,
+   "output_tokens": 334,
+   "reasoning_tokens": null,
+   "latency_ms": 4117
+  },
+  {
+   "order_id": "ORD-00003",
+   "supplier_id": "SUP-0100",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1001, the price is fixed at $33.63 per unit.",
+     "expected": "$33.63",
+     "actual": "$33.63",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 6 to a carton -- round any partial carton up.",
+     "expected": "240 units (pack rounding 6)",
+     "actual": "138 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 21 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "21 business days",
+     "actual": "30 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "APAC-EAST",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $40000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 - $40000",
+     "actual": "$4640.94",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 769,
+   "output_tokens": 331,
+   "reasoning_tokens": null,
+   "latency_ms": 3929
+  },
+  {
+   "order_id": "ORD-00004",
+   "supplier_id": "SUP-0100",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1000, the price is fixed at $17.79 per unit.",
+     "expected": "$17.79",
+     "actual": "$17.79",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 6 to a carton -- round any partial carton up.",
+     "expected": "minimum 240 units",
+     "actual": "qty 240",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 21 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "21 business days",
+     "actual": "8 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-WEST",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $40000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $40000",
+     "actual": "$8539.20",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 784,
+   "output_tokens": 343,
+   "reasoning_tokens": null,
+   "latency_ms": 3976
+  },
+  {
+   "order_id": "ORD-00005",
+   "supplier_id": "SUP-0100",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1002, the price is fixed at $25.67 per unit.",
+     "expected": "$25.67",
+     "actual": "$25.67",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 6 to a carton -- round any partial carton up.",
+     "expected": "floor 240 units, pack 6 (round partial carton up)",
+     "actual": "line qty 246 (SKU-1002)",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "The supplier requires 21 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "21 business days",
+     "actual": "21 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $40000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $40000",
+     "actual": "$14789.58",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 785,
+   "output_tokens": 349,
+   "reasoning_tokens": null,
+   "latency_ms": 4111
+  },
+  {
+   "order_id": "ORD-00006",
+   "supplier_id": "SUP-0100",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1001, the price is fixed at $33.63 per unit.",
+     "expected": "$33.63",
+     "actual": "$33.63",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 6 to a carton -- round any partial carton up.",
+     "expected": ">=240 units and a multiple of 6",
+     "actual": "252 units (multiple of 6, >=240)",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "The supplier requires 21 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "21 business days",
+     "actual": "22 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "defect",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $40000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "between $500 and $40000",
+     "actual": "$387.16",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 768,
+   "output_tokens": 341,
+   "reasoning_tokens": null,
+   "latency_ms": 4074
+  },
+  {
+   "order_id": "ORD-00007",
+   "supplier_id": "SUP-0101",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1100 at $23.68/ea;",
+     "expected": "$23.68",
+     "actual": "$23.68",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "150 units, rounded up to next full carton of 24 (i.e., 168 units)",
+     "actual": "150 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 5 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "5 business days",
+     "actual": "7 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "EU-NORTH",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$3552.00",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 733,
+   "output_tokens": 312,
+   "reasoning_tokens": null,
+   "latency_ms": 3772
+  },
+  {
+   "order_id": "ORD-00008",
+   "supplier_id": "SUP-0101",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "Per-unit pricing under this agreement: SKU-1100 at $23.68/ea",
+     "expected": "$23.68",
+     "actual": "$20.85",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "216 units (198 rounded up to the next full carton of 24)",
+     "actual": "198 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "The supplier requires 5 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "5 business days",
+     "actual": "11 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$4128.30",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 733,
+   "output_tokens": 310,
+   "reasoning_tokens": null,
+   "latency_ms": 3715
+  },
+  {
+   "order_id": "ORD-00009",
+   "supplier_id": "SUP-0101",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1100 at $23.68/ea; SKU-1101 at $45.28/ea; SKU-1102 at $15.33/ea; SKU-1103 at $44.70/ea.",
+     "expected": "15.33",
+     "actual": "15.33",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "150",
+     "actual": "135",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 5 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "5",
+     "actual": "11",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-EAST",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "2069.55",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 732,
+   "output_tokens": 325,
+   "reasoning_tokens": null,
+   "latency_ms": 3624
+  },
+  {
+   "order_id": "ORD-00010",
+   "supplier_id": "SUP-0101",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1100 at $23.68/ea; SKU-1101 at $45.28/ea; SKU-1102 at $15.33/ea; SKU-1103 at $44.70/ea.",
+     "expected": "$15.33/ea",
+     "actual": "$15.33",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "216 units (150 MOQ rounded up to the next full carton of 24, since 150/24 = 6.25 cartons, so 7 cartons = 168 units is actually above MOQ but the calculation shows that 150 units itself is not a packed quantity; the clause states that partial cartons are rounded up to the next full carton, so the pack-rounded quantity is 7 * 24 = 168 units or more. However, the supplied qty is below the 150 MOQ.)",
+     "actual": "174 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 5 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "5 business days",
+     "actual": "2 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$2667.42",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 733,
+   "output_tokens": 456,
+   "reasoning_tokens": null,
+   "latency_ms": 5602
+  },
+  {
+   "order_id": "ORD-00011",
+   "supplier_id": "SUP-0101",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1100 at $23.68/ea;",
+     "expected": "$23.68",
+     "actual": "$23.68",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "198 units (150 minimum, rounded up to nearest multiple of 24)",
+     "actual": "198 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 5 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "5 business days",
+     "actual": "8 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "EU-NORTH",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$4688.64",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 733,
+   "output_tokens": 324,
+   "reasoning_tokens": null,
+   "latency_ms": 3722
+  },
+  {
+   "order_id": "ORD-00012",
+   "supplier_id": "SUP-0101",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1100 at $23.68/ea;",
+     "expected": "23.68",
+     "actual": "23.68",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "rounded up to next full carton of 24 after MOQ of 150 (≥ 168)",
+     "actual": "198",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 5 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "5 business days",
+     "actual": "12 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-WEST",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$4688.64",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 732,
+   "output_tokens": 325,
+   "reasoning_tokens": null,
+   "latency_ms": 3743
+  },
+  {
+   "order_id": "ORD-00013",
+   "supplier_id": "SUP-0102",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Contracted unit cost for SKU-1202 is $5.62.",
+     "expected": "$5.62",
+     "actual": "$5.62",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": ">= 300 units",
+     "actual": "301 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "14 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 - $25000",
+     "actual": "$1691.62",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 739,
+   "output_tokens": 327,
+   "reasoning_tokens": null,
+   "latency_ms": 3774
+  },
+  {
+   "order_id": "ORD-00014",
+   "supplier_id": "SUP-0102",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "Contracted unit cost for SKU-1202 is $5.62.",
+     "expected": "$5.62",
+     "actual": "$4.04",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": "300 units minimum",
+     "actual": "302 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "18 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $25000",
+     "actual": "$1220.08",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 739,
+   "output_tokens": 327,
+   "reasoning_tokens": null,
+   "latency_ms": 3226
+  },
+  {
+   "order_id": "ORD-00015",
+   "supplier_id": "SUP-0102",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Contracted unit cost for SKU-1202 is $5.62.",
+     "expected": "$5.62",
+     "actual": "$5.62",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": "300 units",
+     "actual": "249 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "14 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $25000",
+     "actual": "$1399.38",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 739,
+   "output_tokens": 326,
+   "reasoning_tokens": null,
+   "latency_ms": 3633
+  },
+  {
+   "order_id": "ORD-00016",
+   "supplier_id": "SUP-0102",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Contracted unit cost for SKU-1202 is $5.62.",
+     "expected": "$5.62",
+     "actual": "$5.62",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": "minimum 300 units",
+     "actual": "300 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "6 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $25000",
+     "actual": "$1686.00",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 739,
+   "output_tokens": 327,
+   "reasoning_tokens": null,
+   "latency_ms": 3659
+  },
+  {
+   "order_id": "ORD-00017",
+   "supplier_id": "SUP-0102",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Contracted unit cost for SKU-1200 is $34.32.",
+     "expected": 34.32,
+     "actual": 34.32,
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": "at least 300 units per line",
+     "actual": "SKU-1200: 300 units; SKU-1202: 302 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": 9,
+     "actual": 15,
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $25000",
+     "actual": "$11993.24",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 755,
+   "output_tokens": 343,
+   "reasoning_tokens": null,
+   "latency_ms": 4385
+  },
+  {
+   "order_id": "ORD-00018",
+   "supplier_id": "SUP-0102",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Contracted unit cost for SKU-1201 is $6.18.",
+     "expected": "$6.18",
+     "actual": "$6.18",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": "minimum 300 units",
+     "actual": "300 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "18 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "EU-NORTH",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "defect",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $25000",
+     "actual": "$319.07",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 738,
+   "output_tokens": 328,
+   "reasoning_tokens": null,
+   "latency_ms": 3778
+  },
+  {
+   "order_id": "ORD-00019",
+   "supplier_id": "SUP-0103",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1300 at $25.73/ea; SKU-1301 at $21.17/ea; SKU-1302 at $10.92/ea.",
+     "expected": "$21.17/ea",
+     "actual": "$21.17",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "minimum 150 units, rounded to full cartons of 24 (so 168)",
+     "actual": "150",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 7 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "7 business days",
+     "actual": "8 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, NA-CENTRAL. A destination outside that list is not served under these terms.",
+     "expected": "APAC-EAST, NA-CENTRAL",
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $40000. A total outside that range needs a separate sign-off not granted here.",
+     "expected": "$500 to $40000",
+     "actual": "$3175.50",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 791,
+   "output_tokens": 424,
+   "reasoning_tokens": null,
+   "latency_ms": 4592
+  },
+  {
+   "order_id": "ORD-00020",
+   "supplier_id": "SUP-0103",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "Per-unit pricing under this agreement: SKU-1300 at $25.73/ea; SKU-1301 at $21.17/ea; SKU-1302 at $10.92/ea.",
+     "expected": "$21.17",
+     "actual": "$24.29",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "150 units, rounded to full cartons of 24 (174 rounds up to 8 cartons = 192)",
+     "actual": "174",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "The supplier requires 7 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "7 business days",
+     "actual": "7 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, NA-CENTRAL.",
+     "expected": "APAC-EAST, NA-CENTRAL",
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $40000.",
+     "expected": "$500–$40000",
+     "actual": "$4226.46",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 791,
+   "output_tokens": 387,
+   "reasoning_tokens": null,
+   "latency_ms": 4477
+  },
+  {
+   "order_id": "ORD-00021",
+   "supplier_id": "SUP-0103",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1300 at $25.73/ea; SKU-1301 at $21.17/ea; SKU-1302 at $10.92/ea.",
+     "expected": "SKU-1300: $25.73/ea; SKU-1301: $21.17/ea",
+     "actual": "SKU-1300: $25.73/ea; SKU-1301: $21.17/ea",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "150 units per line, carton rounding to multiples of 24",
+     "actual": "SKU-1300: 96 units (4 cartons); SKU-1301: 174 units (8 cartons, rounded up from 168)",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 7 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "7 business days",
+     "actual": "9 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, NA-CENTRAL. A destination outside that list is not served under these terms.",
+     "expected": "APAC-EAST or NA-CENTRAL",
+     "actual": "APAC-EAST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $40000. A total outside that range needs a separate sign-off not granted here.",
+     "expected": "$500 to $40000",
+     "actual": "$6153.66",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 807,
+   "output_tokens": 494,
+   "reasoning_tokens": null,
+   "latency_ms": 5283
+  },
+  {
+   "order_id": "ORD-00022",
+   "supplier_id": "SUP-0103",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1300 at $25.73/ea; SKU-1301 at $21.17/ea; SKU-1302 at $10.92/ea.",
+     "expected": "$21.17/ea",
+     "actual": "$21.17",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "150 units per line, packed in cartons of 24; partial cartons rounded up to next full carton",
+     "actual": "150",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 7 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "7 business days",
+     "actual": "3 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, NA-CENTRAL. A destination outside that list is not served under these terms.",
+     "expected": "APAC-EAST, NA-CENTRAL",
+     "actual": "APAC-EAST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $40000.",
+     "expected": "$500 up to $40000",
+     "actual": "$3175.50",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 791,
+   "output_tokens": 418,
+   "reasoning_tokens": null,
+   "latency_ms": 4504
+  },
+  {
+   "order_id": "ORD-00023",
+   "supplier_id": "SUP-0103",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1300 at $25.73/ea; SKU-1301 at $21.17/ea; SKU-1302 at $10.92/ea.",
+     "expected": "$21.17/ea",
+     "actual": "$21.17",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "150 units per line rounded up to next full carton of 24",
+     "actual": "qty 174",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 7 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "7 business days",
+     "actual": "17 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "defect",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, NA-CENTRAL. A destination outside that list is not served under these terms.",
+     "expected": "APAC-EAST, NA-CENTRAL",
+     "actual": "NA-WEST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $40000. A total outside that range needs a separate sign-off not granted here.",
+     "expected": "$500 up to $40000",
+     "actual": "$3683.58",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 790,
+   "output_tokens": 426,
+   "reasoning_tokens": null,
+   "latency_ms": 4470
+  },
+  {
+   "order_id": "ORD-00024",
+   "supplier_id": "SUP-0103",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1300 at $25.73/ea; SKU-1301 at $21.17/ea; SKU-1302 at $10.92/ea.",
+     "expected": "SKU-1300 at $25.73/ea; SKU-1301 at $21.17/ea",
+     "actual": "SKU-1300 @ $25.73; SKU-1301 @ $21.17",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "Minimum order quantity is 150 units per line, packed in cartons of 24; partial cartons are rounded up to the next full carton.",
+     "expected": "Minimum 150 units per line, packed in cartons of 24",
+     "actual": "SKU-1300 qty 198 (meets min, 198/24 = 8.25 => rounded up to 9 cartons); SKU-1301 qty 150 (meets min, 150/24 = 6.25 => rounded up to 7 cartons)",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 7 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "7 business days",
+     "actual": "16 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, NA-CENTRAL.",
+     "expected": "APAC-EAST, NA-CENTRAL",
+     "actual": "APAC-EAST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "defect",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $40000.",
+     "expected": "$500 to $40000",
+     "actual": "$42024.12",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 807,
+   "output_tokens": 481,
+   "reasoning_tokens": null,
+   "latency_ms": 5574
+  },
+  {
+   "order_id": "ORD-00025",
+   "supplier_id": "SUP-0104",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Contracted unit cost for SKU-1402 is $33.76.",
+     "expected": "$33.76",
+     "actual": "$33.76",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "Minimum order quantity is 300 units per line, packed in cartons of 25; partial cartons are rounded up to the next full carton.",
+     "expected": "Minimum 300 units, rounded up to multiple of 25",
+     "actual": "350 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "At least 21 business days",
+     "actual": "26 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH, NA-CENTRAL. Shipments outside this list fall outside the supplier's standing distribution network.",
+     "expected": "EU-SOUTH or NA-CENTRAL",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$11816.00",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 775,
+   "output_tokens": 362,
+   "reasoning_tokens": null,
+   "latency_ms": 3587
+  },
+  {
+   "order_id": "ORD-00026",
+   "supplier_id": "SUP-0104",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "Contracted unit cost for SKU-1400 is $18.27.",
+     "expected": "$18.27",
+     "actual": "$17.64",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "Minimum order quantity is 300 units per line, packed in cartons of 25; partial cartons are rounded up to the next full carton.",
+     "expected": "at least 300 units per line, rounded up to full cartons of 25",
+     "actual": "350 units per line",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "21 business days",
+     "actual": "22 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH, NA-CENTRAL.",
+     "expected": "EU-SOUTH or NA-CENTRAL",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$19785.50",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 791,
+   "output_tokens": 352,
+   "reasoning_tokens": null,
+   "latency_ms": 3932
+  },
+  {
+   "order_id": "ORD-00027",
+   "supplier_id": "SUP-0104",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Contracted unit cost for SKU-1400 is $18.27. Contracted unit cost for SKU-1401 is $38.89.",
+     "expected": "SKU-1400: $18.27, SKU-1401: $38.89",
+     "actual": "SKU-1400: $18.27, SKU-1401: $38.89",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "Minimum order quantity is 300 units per line, packed in cartons of 25; partial cartons are rounded up to the next full carton.",
+     "expected": "Minimum 300 units per line, rounded up to the next full carton of 25",
+     "actual": "SKU-1401: 190 units; SKU-1400: 350 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "21 business days",
+     "actual": "29 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH, NA-CENTRAL.",
+     "expected": "EU-SOUTH, NA-CENTRAL",
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$13783.60",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 791,
+   "output_tokens": 420,
+   "reasoning_tokens": null,
+   "latency_ms": 4555
+  },
+  {
+   "order_id": "ORD-00028",
+   "supplier_id": "SUP-0104",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Contracted unit cost for SKU-1402 is $33.76.",
+     "expected": "$33.76",
+     "actual": "$33.76",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "Minimum order quantity is 300 units per line, packed in cartons of 25; partial cartons are rounded up to the next full carton.",
+     "expected": "300 units per line, cartons of 25",
+     "actual": "qty 300",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "21 business days",
+     "actual": "4 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH, NA-CENTRAL.",
+     "expected": "EU-SOUTH, NA-CENTRAL",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$10128.00",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 775,
+   "output_tokens": 345,
+   "reasoning_tokens": null,
+   "latency_ms": 3792
+  },
+  {
+   "order_id": "ORD-00029",
+   "supplier_id": "SUP-0104",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Contracted unit cost for SKU-1401 is $38.89.",
+     "expected": "$38.89",
+     "actual": "$38.89",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "Minimum order quantity is 300 units per line, packed in cartons of 25; partial cartons are rounded up to the next full carton.",
+     "expected": "300 units (cartons of 25, rounded up; 300 is a full carton multiple)",
+     "actual": "300 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "21 business days",
+     "actual": "25 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "defect",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH, NA-CENTRAL. Shipments outside this list fall outside the supplier's standing distribution network.",
+     "expected": "EU-SOUTH, NA-CENTRAL",
+     "actual": "APAC-EAST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$11667.00",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 775,
+   "output_tokens": 368,
+   "reasoning_tokens": null,
+   "latency_ms": 4138
+  },
+  {
+   "order_id": "ORD-00030",
+   "supplier_id": "SUP-0104",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Contracted unit cost for SKU-1400 is $18.27.",
+     "expected": "$18.27",
+     "actual": "$18.27",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "Minimum order quantity is 300 units per line, packed in cartons of 25; partial cartons are rounded up to the next full carton.",
+     "expected": "300 units minimum; cartons of 25 (325 units)",
+     "actual": "325 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "21 business days",
+     "actual": "31 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH, NA-CENTRAL.",
+     "expected": "EU-SOUTH, NA-CENTRAL",
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$5937.75",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 775,
+   "output_tokens": 345,
+   "reasoning_tokens": null,
+   "latency_ms": 4366
+  },
+  {
+   "order_id": "ORD-00031",
+   "supplier_id": "SUP-0105",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1503, the price is fixed at $17.26 per unit.",
+     "expected": "$17.26",
+     "actual": "$17.26",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": ">= 300",
+     "actual": "300",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 14 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "A requested ship window that is >= 14 business days",
+     "actual": "21 business days requested ship window",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH, NA-WEST.",
+     "expected": "EU-SOUTH is approved",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$5178.00",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 785,
+   "output_tokens": 326,
+   "reasoning_tokens": null,
+   "latency_ms": 4036
+  },
+  {
+   "order_id": "ORD-00032",
+   "supplier_id": "SUP-0105",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "For SKU-1503, the price is fixed at $17.26 per unit.",
+     "expected": "$17.26",
+     "actual": "$20.27",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": "300 units minimum",
+     "actual": "300 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 14 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "14 business days",
+     "actual": "19 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH, NA-WEST.",
+     "expected": "EU-NORTH, EU-SOUTH, NA-WEST",
+     "actual": "NA-WEST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$6081.00",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 784,
+   "output_tokens": 308,
+   "reasoning_tokens": null,
+   "latency_ms": 3062
+  },
+  {
+   "order_id": "ORD-00033",
+   "supplier_id": "SUP-0105",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1500, the price is fixed at $38.04 per unit.",
+     "expected": "$38.04",
+     "actual": "$38.04",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": "300 units",
+     "actual": "274 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 14 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "at least 14 business days",
+     "actual": "19 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH, NA-WEST.",
+     "expected": "EU-SOUTH",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$10422.96",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 785,
+   "output_tokens": 302,
+   "reasoning_tokens": null,
+   "latency_ms": 3737
+  },
+  {
+   "order_id": "ORD-00034",
+   "supplier_id": "SUP-0105",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1500, the price is fixed at $38.04 per unit.",
+     "expected": "$38.04",
+     "actual": "$38.04",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": ">= 300 units",
+     "actual": "301 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 14 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "14 business days",
+     "actual": "5 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH, NA-WEST.",
+     "expected": "NA-WEST",
+     "actual": "NA-WEST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$21747.25",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 800,
+   "output_tokens": 313,
+   "reasoning_tokens": null,
+   "latency_ms": 3734
+  },
+  {
+   "order_id": "ORD-00035",
+   "supplier_id": "SUP-0105",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1503, the price is fixed at $17.26 per unit.",
+     "expected": 17.26,
+     "actual": 17.26,
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": ">= 300 units",
+     "actual": 302,
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 14 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": 14,
+     "actual": 16,
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "defect",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH, NA-WEST.",
+     "expected": "EU-NORTH, EU-SOUTH, NA-WEST",
+     "actual": "APAC-EAST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": 5212.52,
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 785,
+   "output_tokens": 305,
+   "reasoning_tokens": null,
+   "latency_ms": 3516
+  },
+  {
+   "order_id": "ORD-00036",
+   "supplier_id": "SUP-0105",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1503, the price is fixed at $17.26 per unit.",
+     "expected": "$17.26 per unit",
+     "actual": "$17.26",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units.",
+     "expected": "minimum 300 units",
+     "actual": "300 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 14 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "14 business days",
+     "actual": "15 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH, NA-WEST.",
+     "expected": "EU-NORTH, EU-SOUTH, NA-WEST",
+     "actual": "EU-NORTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$5178.00",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 785,
+   "output_tokens": 311,
+   "reasoning_tokens": null,
+   "latency_ms": 3467
+  },
+  {
+   "order_id": "ORD-00037",
+   "supplier_id": "SUP-0106",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1600 at $43.09/ea; SKU-1601 at $14.53/ea; SKU-1602 at $38.34/ea; SKU-1603 at $9.36/ea.",
+     "expected": "$9.36/ea",
+     "actual": "$9.36/ea",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 50 units, and quantities are packed 24 to a carton -- round any partial carton up.",
+     "expected": "at least 50 units, rounded up to multiple of 24",
+     "actual": "74 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "Quoted lead time is 10 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "at least 10 business days",
+     "actual": "18 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH. Shipments outside this list fall outside the supplier's standing distribution network.",
+     "expected": "EU-NORTH or EU-SOUTH",
+     "actual": "EU-NORTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $50000. A total outside that range needs a separate sign-off not granted here.",
+     "expected": "$500 to $50000",
+     "actual": "$692.64",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 801,
+   "output_tokens": 443,
+   "reasoning_tokens": null,
+   "latency_ms": 4541
+  },
+  {
+   "order_id": "ORD-00038",
+   "supplier_id": "SUP-0106",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "Per-unit pricing under this agreement: SKU-1600 at $43.09/ea; SKU-1601 at $14.53/ea; SKU-1602 at $38.34/ea; SKU-1603 at $9.36/ea.",
+     "expected": "$9.36/ea",
+     "actual": "$10.01",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "No line may be ordered below a floor of 50 units, and quantities are packed 24 to a carton -- round any partial carton up.",
+     "expected": "50 units, rounded up to a multiple of 24",
+     "actual": "50 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "Quoted lead time is 10 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "10 business days or more",
+     "actual": "14 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH.",
+     "expected": "EU-NORTH or EU-SOUTH",
+     "actual": "EU-NORTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $50000.",
+     "expected": "$500 to $50000",
+     "actual": "$500.50",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 801,
+   "output_tokens": 412,
+   "reasoning_tokens": null,
+   "latency_ms": 4427
+  },
+  {
+   "order_id": "ORD-00039",
+   "supplier_id": "SUP-0106",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1600 at $43.09/ea; SKU-1601 at $14.53/ea; SKU-1602 at $38.34/ea; SKU-1603 at $9.36/ea.",
+     "expected": "$38.34/ea",
+     "actual": "$38.34",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "No line may be ordered below a floor of 50 units, and quantities are packed 24 to a carton -- round any partial carton up.",
+     "expected": "at least 50 units, rounded up to a multiple of 24",
+     "actual": "36 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 10 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "10 business days",
+     "actual": "15 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH. Shipments outside this list fall outside the supplier's standing distribution network.",
+     "expected": "EU-NORTH or EU-SOUTH",
+     "actual": "EU-NORTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $50000. A total outside that range needs a separate sign-off not granted here.",
+     "expected": "$500 up to $50000",
+     "actual": "$1380.24",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 802,
+   "output_tokens": 443,
+   "reasoning_tokens": null,
+   "latency_ms": 4587
+  },
+  {
+   "order_id": "ORD-00040",
+   "supplier_id": "SUP-0106",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1600 at $43.09/ea; SKU-1601 at $14.53/ea; SKU-1602 at $38.34/ea; SKU-1603 at $9.36/ea.",
+     "expected": "$14.53/ea",
+     "actual": "$14.53",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "No line may be ordered below a floor of 50 units, and quantities are packed 24 to a carton -- round any partial carton up.",
+     "expected": "At least 50 units, packed in multiples of 24",
+     "actual": "Line 1: 98 units (defect: 98 is not a multiple of 24); Line 2: 50 units (defect: 50 is not a multiple of 24)",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 10 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "10 business days",
+     "actual": "5 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH. Shipments outside this list fall outside the supplier's standing distribution network.",
+     "expected": "EU-NORTH or EU-SOUTH",
+     "actual": "EU-NORTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $50000. A total outside that range needs a separate sign-off not granted here.",
+     "expected": "$500 to $50000",
+     "actual": "$2150.44",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 818,
+   "output_tokens": 479,
+   "reasoning_tokens": null,
+   "latency_ms": 5152
+  },
+  {
+   "order_id": "ORD-00041",
+   "supplier_id": "SUP-0106",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1600 at $43.09/ea; SKU-1601 at $14.53/ea; SKU-1602 at $38.34/ea; SKU-1603 at $9.36/ea.",
+     "expected": "$9.36 for SKU-1603, $14.53 for SKU-1601",
+     "actual": "$9.36 for SKU-1603, $14.53 for SKU-1601",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 50 units, and quantities are packed 24 to a carton -- round any partial carton up.",
+     "expected": "minimum 50 units per line, packed in multiples of 24 (round up)",
+     "actual": "98 units for SKU-1603 and 98 units for SKU-1601",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 10 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "10 business days",
+     "actual": "18 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "defect",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH. Shipments outside this list fall outside the supplier's standing distribution network.",
+     "expected": "EU-NORTH, EU-SOUTH",
+     "actual": "APAC-EAST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $50000. A total outside that range needs a separate sign-off not granted here.",
+     "expected": "$500 to $50000",
+     "actual": "$2341.22",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 818,
+   "output_tokens": 492,
+   "reasoning_tokens": null,
+   "latency_ms": 5343
+  },
+  {
+   "order_id": "ORD-00042",
+   "supplier_id": "SUP-0106",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-1600 at $43.09/ea; SKU-1601 at $14.53/ea; SKU-1602 at $38.34/ea; SKU-1603 at $9.36/ea.",
+     "expected": "$9.36/ea",
+     "actual": "$9.36",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "No line may be ordered below a floor of 50 units, and quantities are packed 24 to a carton -- round any partial carton up.",
+     "expected": "at least 50 units, rounded up to a multiple of 24",
+     "actual": "98 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 10 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "10 business days",
+     "actual": "18 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-NORTH, EU-SOUTH.",
+     "expected": "EU-NORTH, EU-SOUTH",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "defect",
+     "citation": "Standing authorization under this contract covers order totals from $500 up to $50000.",
+     "expected": "$500 to $50000",
+     "actual": "$52091.86",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 802,
+   "output_tokens": 415,
+   "reasoning_tokens": null,
+   "latency_ms": 4451
+  },
+  {
+   "order_id": "ORD-00043",
+   "supplier_id": "SUP-0107",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1700, the price is fixed at $23.58 per unit.",
+     "expected": 23.58,
+     "actual": 23.58,
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 300 units.",
+     "expected": ">= 300 units",
+     "actual": "324 units and 348 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "21 business days",
+     "actual": "28 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-NORTH, NA-WEST.",
+     "expected": "APAC-EAST, EU-NORTH, NA-WEST",
+     "actual": "APAC-EAST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$18316.56",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 831,
+   "output_tokens": 336,
+   "reasoning_tokens": null,
+   "latency_ms": 3846
+  },
+  {
+   "order_id": "ORD-00044",
+   "supplier_id": "SUP-0107",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "For SKU-1701, the price is fixed at $29.18 per unit.",
+     "expected": "$29.18",
+     "actual": "$26.08",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "This agreement will not process a line quantity under 300 units. Carton size is 24 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "≥300 units and a carton multiple of 24",
+     "actual": "qty 300",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "≤21 business days",
+     "actual": "22 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-NORTH, NA-WEST.",
+     "expected": "APAC-EAST, EU-NORTH, or NA-WEST",
+     "actual": "APAC-EAST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$7824.00",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 815,
+   "output_tokens": 370,
+   "reasoning_tokens": null,
+   "latency_ms": 4149
+  },
+  {
+   "order_id": "ORD-00045",
+   "supplier_id": "SUP-0107",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1700, the price is fixed at $23.58 per unit.",
+     "expected": "$23.58",
+     "actual": "$23.58",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "This agreement will not process a line quantity under 300 units.",
+     "expected": "≥ 300 units",
+     "actual": "203 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "21 business days",
+     "actual": "29 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-NORTH, NA-WEST.",
+     "expected": "APAC-EAST, EU-NORTH, NA-WEST",
+     "actual": "NA-WEST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$12997.54",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 830,
+   "output_tokens": 431,
+   "reasoning_tokens": null,
+   "latency_ms": 4525
+  },
+  {
+   "order_id": "ORD-00046",
+   "supplier_id": "SUP-0107",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1700, the price is fixed at $23.58 per unit.",
+     "expected": "$23.58",
+     "actual": "$23.58",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 300 units. Carton size is 24 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "quantity ≥ 300 units and a carton multiple of 24 (rounding up applies)",
+     "actual": "324 units (≥ 300 and divisible by 24)",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "21 business days",
+     "actual": "10 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-NORTH, NA-WEST.",
+     "expected": "NA-WEST is included",
+     "actual": "NA-WEST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$7639.92",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 814,
+   "output_tokens": 371,
+   "reasoning_tokens": null,
+   "latency_ms": 4409
+  },
+  {
+   "order_id": "ORD-00047",
+   "supplier_id": "SUP-0107",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1701, the price is fixed at $29.18 per unit.",
+     "expected": "$29.18",
+     "actual": "$29.18",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 300 units. Carton size is 24 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "Minimum 300 units; carton multiple of 24",
+     "actual": "qty 300 (a carton multiple)",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "21 business days",
+     "actual": "24 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "defect",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-NORTH, NA-WEST. A destination outside that list is not served under these terms.",
+     "expected": "APAC-EAST, EU-NORTH, NA-WEST",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$8754.00",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 815,
+   "output_tokens": 384,
+   "reasoning_tokens": null,
+   "latency_ms": 4530
+  },
+  {
+   "order_id": "ORD-00048",
+   "supplier_id": "SUP-0107",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1700, the price is fixed at $23.58 per unit.",
+     "expected": "$23.58",
+     "actual": "$23.58",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 300 units. Carton size is 24 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "minimum 300 units, carton multiple 24 units",
+     "actual": "348 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 21 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "21 business days",
+     "actual": "26 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-NORTH, NA-WEST. A destination outside that list is not served under these terms.",
+     "expected": "APAC-EAST, EU-NORTH, NA-WEST",
+     "actual": "EU-NORTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$8205.84",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 815,
+   "output_tokens": 376,
+   "reasoning_tokens": null,
+   "latency_ms": 4437
+  },
+  {
+   "order_id": "ORD-00049",
+   "supplier_id": "SUP-0108",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1800, the price is fixed at $22.82 per unit. For SKU-1801, the price is fixed at $29.06 per unit.",
+     "expected": "$22.82 for SKU-1800, $29.06 for SKU-1801",
+     "actual": "SKU-1800 @ $22.82; SKU-1801 @ $29.06",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 12 to a carton -- round any partial carton up.",
+     "expected": "minimum 240 units per line; quantity in multiples of 12",
+     "actual": "SKU-1800 qty 264; SKU-1801 qty 264",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "The supplier requires 10 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "minimum 10 business days",
+     "actual": "14 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-EAST",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $50000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "between $500 and $50000",
+     "actual": "$13696.32",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 803,
+   "output_tokens": 424,
+   "reasoning_tokens": null,
+   "latency_ms": 4825
+  },
+  {
+   "order_id": "ORD-00050",
+   "supplier_id": "SUP-0108",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "For SKU-1802, the price is fixed at $24.89 per unit.",
+     "expected": "$24.89",
+     "actual": "$25.60",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 12 to a carton -- round any partial carton up.",
+     "expected": "minimum 240 units, packed in multiples of 12",
+     "actual": "240 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "The supplier requires 10 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "10 business days",
+     "actual": "11 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-EAST",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $50000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "between $500 and $50000",
+     "actual": "$6144.00",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 787,
+   "output_tokens": 350,
+   "reasoning_tokens": null,
+   "latency_ms": 3873
+  },
+  {
+   "order_id": "ORD-00051",
+   "supplier_id": "SUP-0108",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1802, the price is fixed at $24.89 per unit.",
+     "expected": "$24.89",
+     "actual": "$24.89",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 12 to a carton -- round any partial carton up.",
+     "expected": "240 units",
+     "actual": "134",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "The supplier requires 10 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "10 business days",
+     "actual": "16 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $50000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $50000",
+     "actual": "$3335.26",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 788,
+   "output_tokens": 324,
+   "reasoning_tokens": null,
+   "latency_ms": 3641
+  },
+  {
+   "order_id": "ORD-00052",
+   "supplier_id": "SUP-0108",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1803, the price is fixed at $34.89 per unit.",
+     "expected": 34.89,
+     "actual": 34.89,
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 12 to a carton -- round any partial carton up.",
+     "expected": 240,
+     "actual": 252,
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 10 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": 10,
+     "actual": 7,
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $50000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $50000",
+     "actual": "$8792.28",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 788,
+   "output_tokens": 319,
+   "reasoning_tokens": null,
+   "latency_ms": 3841
+  },
+  {
+   "order_id": "ORD-00053",
+   "supplier_id": "SUP-0108",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1802, the price is fixed at $24.89 per unit.",
+     "expected": "$24.89 per unit",
+     "actual": "$24.89 per unit",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 12 to a carton -- round any partial carton up.",
+     "expected": "minimum 240 units, packed 12 per carton",
+     "actual": "240 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "The supplier requires 10 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "10 business days",
+     "actual": "16 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-EAST",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $50000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $50000",
+     "actual": "$5973.60",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 787,
+   "output_tokens": 336,
+   "reasoning_tokens": null,
+   "latency_ms": 3680
+  },
+  {
+   "order_id": "ORD-00054",
+   "supplier_id": "SUP-0108",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1801, the price is fixed at $29.06 per unit. For SKU-1803, the price is fixed at $34.89 per unit.",
+     "expected": "$34.89 for SKU-1803, $29.06 for SKU-1801",
+     "actual": "SKU-1803 @ $34.89, SKU-1801 @ $29.06",
+     "citation_in_agreement": false
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 240 units, and quantities are packed 12 to a carton -- round any partial carton up.",
+     "expected": "minimum 240 units per line; multiples of 12",
+     "actual": "252 units per line",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "The supplier requires 10 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "at least 10 business days",
+     "actual": "15 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "order_value",
+     "verdict": "defect",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $50000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "between $500 and $50000",
+     "actual": "$53323.95",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 804,
+   "output_tokens": 395,
+   "reasoning_tokens": null,
+   "latency_ms": 4680
+  },
+  {
+   "order_id": "ORD-00055",
+   "supplier_id": "SUP-0109",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1901, the price is fixed at $4.85 per unit.",
+     "expected": "$4.85",
+     "actual": "$4.85",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 240 units. Carton size is 25 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "minimum 240 units and multiple of 25",
+     "actual": "240 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 9 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "9 business days",
+     "actual": "14 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: NA-CENTRAL, NA-EAST.",
+     "expected": "NA-CENTRAL, NA-EAST",
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 - $25000",
+     "actual": "$1164.00",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 809,
+   "output_tokens": 380,
+   "reasoning_tokens": null,
+   "latency_ms": 4553
+  },
+  {
+   "order_id": "ORD-00056",
+   "supplier_id": "SUP-0109",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "For SKU-1902, the price is fixed at $7.32 per unit.",
+     "expected": "$7.32",
+     "actual": "$6.72",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 240 units. Carton size is 25 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "minimum 240 units; carton multiple of 25",
+     "actual": "qty 265",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 9 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": "9 business days",
+     "actual": "16 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: NA-CENTRAL, NA-EAST.",
+     "expected": "NA-CENTRAL, NA-EAST",
+     "actual": "NA-EAST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $25000",
+     "actual": "$1780.80",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 808,
+   "output_tokens": 384,
+   "reasoning_tokens": null,
+   "latency_ms": 4248
+  },
+  {
+   "order_id": "ORD-00057",
+   "supplier_id": "SUP-0109",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1902, the price is fixed at $7.32 per unit.",
+     "expected": "$7.32",
+     "actual": "$7.32",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "This agreement will not process a line quantity under 240 units. Carton size is 25 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "minimum 240 units",
+     "actual": "223 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 9 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "9 business days",
+     "actual": "15 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: NA-CENTRAL, NA-EAST.",
+     "expected": "NA-CENTRAL or NA-EAST",
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $25000",
+     "actual": "$1632.36",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 809,
+   "output_tokens": 361,
+   "reasoning_tokens": null,
+   "latency_ms": 4003
+  },
+  {
+   "order_id": "ORD-00058",
+   "supplier_id": "SUP-0109",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1900, the price is fixed at $43.87 per unit.",
+     "expected": "$43.87 per unit",
+     "actual": "$43.87",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 240 units. Carton size is 25 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "Minimum 240 units; carton multiple of 25",
+     "actual": "qty 265",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 9 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "9 business days",
+     "actual": "6 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: NA-CENTRAL, NA-EAST.",
+     "expected": "NA-CENTRAL, NA-EAST",
+     "actual": "NA-CENTRAL",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500 to $25000",
+     "actual": "$11625.55",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 809,
+   "output_tokens": 371,
+   "reasoning_tokens": null,
+   "latency_ms": 4090
+  },
+  {
+   "order_id": "ORD-00059",
+   "supplier_id": "SUP-0109",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1901, the price is fixed at $4.85 per unit.",
+     "expected": "$4.85",
+     "actual": "$4.85",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 240 units. Carton size is 25 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": ">= 240 units, carton multiple of 25",
+     "actual": "265 units (≥240, on carton multiple)",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "The supplier requires 9 business days between receiving a purchase order and releasing it for shipment.",
+     "expected": "9 business days",
+     "actual": "13 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "defect",
+     "citation": "This agreement's distribution network covers the following regions only: NA-CENTRAL, NA-EAST.",
+     "expected": "NA-CENTRAL, NA-EAST",
+     "actual": "EU-NORTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "clean",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "$500–$25000",
+     "actual": "$1285.25",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 809,
+   "output_tokens": 376,
+   "reasoning_tokens": null,
+   "latency_ms": 3853
+  },
+  {
+   "order_id": "ORD-00060",
+   "supplier_id": "SUP-0109",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-1900, the price is fixed at $43.87 per unit.",
+     "expected": "$43.87",
+     "actual": "$43.87",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "This agreement will not process a line quantity under 240 units. Carton size is 25 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": ">=240 units, carton multiple of 25",
+     "actual": "265 units (not a carton multiple; would be rounded up)",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "The supplier requires 9 business days between receiving a purchase order and releasing it for shipment. A shorter requested window cannot be met under the standing terms of this agreement.",
+     "expected": ">=9 business days",
+     "actual": "13 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: NA-CENTRAL, NA-EAST.",
+     "expected": "NA-CENTRAL or NA-EAST",
+     "actual": "NA-EAST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "defect",
+     "citation": "Orders under this agreement's standing authorization must total between $500 and $25000; orders outside this band require a separate approval this agreement does not cover.",
+     "expected": "between $500 and $25000",
+     "actual": "$401.23",
+     "citation_in_agreement": true
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 807,
+   "output_tokens": 394,
+   "reasoning_tokens": null,
+   "latency_ms": 4616
+  },
+  {
+   "order_id": "ORD-00061",
+   "supplier_id": "SUP-0110",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-2002, the price is fixed at $36.10 per unit.",
+     "expected": "$36.10 per unit",
+     "actual": "$36.10",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units, and quantities are packed 25 to a carton -- round any partial carton up.",
+     "expected": "minimum 300 units, multiple of 25",
+     "actual": "325",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "12 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-SOUTH, NA-CENTRAL.",
+     "expected": "APAC-EAST, EU-SOUTH, NA-CENTRAL",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$11732.50",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 782,
+   "output_tokens": 358,
+   "reasoning_tokens": null,
+   "latency_ms": 3804
+  },
+  {
+   "order_id": "ORD-00062",
+   "supplier_id": "SUP-0110",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "For SKU-2002, the price is fixed at $36.10 per unit.",
+     "expected": "$36.10",
+     "actual": "$34.31",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units, and quantities are packed 25 to a carton -- round any partial carton up.",
+     "expected": "floor 300 units, carton qty 25",
+     "actual": "325 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "18 business days",
+     "citation_in_agreement": null
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-SOUTH, NA-CENTRAL.",
+     "expected": "APAC-EAST, EU-SOUTH, NA-CENTRAL",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$11150.75",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 782,
+   "output_tokens": 319,
+   "reasoning_tokens": null,
+   "latency_ms": 3795
+  },
+  {
+   "order_id": "ORD-00063",
+   "supplier_id": "SUP-0110",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-2000, the price is fixed at $37.67 per unit.",
+     "expected": "$37.67 per unit",
+     "actual": "$37.67",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "No line may be ordered below a floor of 300 units, and quantities are packed 25 to a carton -- round any partial carton up.",
+     "expected": "minimum 300 units, packed 25 to a carton",
+     "actual": "217",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "10 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-SOUTH, NA-CENTRAL. A destination outside that list is not served under these terms.",
+     "expected": "APAC-EAST, EU-SOUTH, NA-CENTRAL",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$8174.39",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 782,
+   "output_tokens": 374,
+   "reasoning_tokens": null,
+   "latency_ms": 4386
+  },
+  {
+   "order_id": "ORD-00064",
+   "supplier_id": "SUP-0110",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-2000, the price is fixed at $37.67 per unit.",
+     "expected": "$37.67",
+     "actual": "$37.67",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units, and quantities are packed 25 to a carton -- round any partial carton up.",
+     "expected": "minimum 300 units, multiples of 25",
+     "actual": "300 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "8 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-SOUTH, NA-CENTRAL.",
+     "expected": "APAC-EAST, EU-SOUTH, NA-CENTRAL",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$11301.00",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 782,
+   "output_tokens": 357,
+   "reasoning_tokens": null,
+   "latency_ms": 4095
+  },
+  {
+   "order_id": "ORD-00065",
+   "supplier_id": "SUP-0110",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-2002, the price is fixed at $36.10 per unit.",
+     "expected": "36.10",
+     "actual": "36.10",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units, and quantities are packed 25 to a carton -- round any partial carton up.",
+     "expected": "Minimum 300 units",
+     "actual": "300",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "17 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "defect",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-SOUTH, NA-CENTRAL. A destination outside that list is not served under these terms.",
+     "expected": "APAC-EAST, EU-SOUTH, NA-CENTRAL",
+     "actual": "NA-WEST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "10830.00",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 781,
+   "output_tokens": 363,
+   "reasoning_tokens": null,
+   "latency_ms": 4155
+  },
+  {
+   "order_id": "ORD-00066",
+   "supplier_id": "SUP-0110",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "For SKU-2002, the price is fixed at $36.10 per unit.",
+     "expected": 36.1,
+     "actual": 36.1,
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "No line may be ordered below a floor of 300 units, and quantities are packed 25 to a carton -- round any partial carton up.",
+     "expected": "minimum 300 units; quantities rounded up to a multiple of 25",
+     "actual": "350 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": 9,
+     "actual": 17,
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "This agreement's distribution network covers the following regions only: APAC-EAST, EU-SOUTH, NA-CENTRAL.",
+     "expected": "APAC-EAST, EU-SOUTH, NA-CENTRAL",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": 12635.0,
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 782,
+   "output_tokens": 358,
+   "reasoning_tokens": null,
+   "latency_ms": 4188
+  },
+  {
+   "order_id": "ORD-00067",
+   "supplier_id": "SUP-0111",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-2100 at $39.83/ea; SKU-2101 at $37.58/ea; SKU-2102 at $32.28/ea; SKU-2103 at $39.59/ea.",
+     "expected": "$39.83",
+     "actual": "$39.83",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 150 units. Carton size is 12 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "qty >= 150; multiple of 12",
+     "actual": "SKU-2100 qty 150; SKU-2103 qty 174",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "14 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH. Shipments outside this list fall outside the supplier's standing distribution network.",
+     "expected": "EU-SOUTH",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$12863.16",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 787,
+   "output_tokens": 414,
+   "reasoning_tokens": null,
+   "latency_ms": 4026
+  },
+  {
+   "order_id": "ORD-00068",
+   "supplier_id": "SUP-0111",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "defect",
+     "citation": "Per-unit pricing under this agreement: SKU-2100 at $39.83/ea; SKU-2101 at $37.58/ea; SKU-2102 at $32.28/ea; SKU-2103 at $39.59/ea.",
+     "expected": "$32.28/ea",
+     "actual": "$32.97",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 150 units. Carton size is 12 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "at least 150 units, carton multiple of 12",
+     "actual": "162 units (carton multiple of 12)",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "clean",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "14 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH.",
+     "expected": "EU-SOUTH",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$5341.14",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 771,
+   "output_tokens": 394,
+   "reasoning_tokens": null,
+   "latency_ms": 4562
+  },
+  {
+   "order_id": "ORD-00069",
+   "supplier_id": "SUP-0111",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "SKU-2100 at $39.83/ea",
+     "expected": "$39.83/ea",
+     "actual": "$39.83",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "This agreement will not process a line quantity under 150 units. Carton size is 12 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "minimum 150 units and carton multiple of 12",
+     "actual": "qty 99",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "12 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH.",
+     "expected": "EU-SOUTH",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$3943.17",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 771,
+   "output_tokens": 343,
+   "reasoning_tokens": null,
+   "latency_ms": 3871
+  },
+  {
+   "order_id": "ORD-00070",
+   "supplier_id": "SUP-0111",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-2100 at $39.83/ea; SKU-2101 at $37.58/ea; SKU-2102 at $32.28/ea; SKU-2103 at $39.59/ea.",
+     "expected": "$37.58/ea for SKU-2101",
+     "actual": "$37.58",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "defect",
+     "citation": "This agreement will not process a line quantity under 150 units. Carton size is 12 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "minimum 150 units; rounded up to carton multiple of 12",
+     "actual": "174 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "3 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH. Shipments outside this list fall outside the supplier's standing distribution network.",
+     "expected": "EU-SOUTH",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$6538.92",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 771,
+   "output_tokens": 410,
+   "reasoning_tokens": null,
+   "latency_ms": 4517
+  },
+  {
+   "order_id": "ORD-00071",
+   "supplier_id": "SUP-0111",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-2100 at $39.83/ea; SKU-2101 at $37.58/ea; SKU-2102 at $32.28/ea; SKU-2103 at $39.59/ea.",
+     "expected": "$37.58/ea",
+     "actual": "$37.58",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 150 units. Carton size is 12 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": ">= 150 units, carton multiple of 12",
+     "actual": "174 units",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date; requested ship windows shorter than this are not feasible without an expedite agreement, which this contract does not grant.",
+     "expected": "9 business days",
+     "actual": "17 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "defect",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH. Shipments outside this list fall outside the supplier's standing distribution network.",
+     "expected": "EU-SOUTH",
+     "actual": "NA-EAST",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$6538.92",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 770,
+   "output_tokens": 400,
+   "reasoning_tokens": null,
+   "latency_ms": 4490
+  },
+  {
+   "order_id": "ORD-00072",
+   "supplier_id": "SUP-0111",
+   "checks": [
+    {
+     "check": "cost",
+     "verdict": "clean",
+     "citation": "Per-unit pricing under this agreement: SKU-2100 at $39.83/ea;",
+     "expected": "$39.83/ea",
+     "actual": "$39.83",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "min_qty",
+     "verdict": "clean",
+     "citation": "This agreement will not process a line quantity under 150 units. Carton size is 12 units; orders not landing on a carton multiple are rounded up by the supplier before shipment.",
+     "expected": "qty >= 150 and carton multiple of 12",
+     "actual": "qty 174",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "lead_time",
+     "verdict": "defect",
+     "citation": "Quoted lead time is 9 business days from purchase-order receipt to ship date;",
+     "expected": "9 business days",
+     "actual": "18 business days",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "ship_to",
+     "verdict": "clean",
+     "citation": "Approved ship-to regions under this agreement: EU-SOUTH.",
+     "expected": "EU-SOUTH",
+     "actual": "EU-SOUTH",
+     "citation_in_agreement": true
+    },
+    {
+     "check": "order_value",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "$6930.42",
+     "citation_in_agreement": null
+    }
+   ],
+   "answered": 5,
+   "asked": 5,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 771,
+   "output_tokens": 330,
+   "reasoning_tokens": null,
+   "latency_ms": 3880
+  }
+ ]
+}
