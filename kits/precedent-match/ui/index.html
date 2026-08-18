@@ -1,0 +1,47 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>precedent-match — match a planned request to its prior comparable events</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Match a planned request to its prior comparable events</h1>
+    <p class="sub">One planned request, one model call. It decides which prior events in the same
+      category are genuine precedents — matching on mechanic, price band, ad placement and
+      season, allowing an adjacent price band and the circular-placement family — and a
+      deterministic calculator drafts the recommended lift from the analog set alone, never asked
+      of the model. Three verdicts per candidate: <b>ANALOG</b>, <b>NOT_ANALOG</b>, and
+      <b>UNSURE</b>. The third is the point: a candidate that could plausibly go either way is not
+      a coin flip — it is excluded from the estimate and left for a person.</p>
+    <p class="sub rb" id="rbline">The events and requests are synthetic, generated at build time
+      from a fixed seed — never written from memory.</p>
+  </header>
+
+  <div class="bar">
+    <select id="req" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Check</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Request &amp; candidates</span><span class="hint">the planned request, and every prior event blocking found in its category</span></div>
+      <div id="req-box" class="src"></div>
+      <div id="cand-box" class="src cand"></div>
+    </div>
+
+    <div class="panel">
+      <div class="ph"><span>Verdicts &amp; drafted lift</span></div>
+      <div id="out" class="out"></div>
+      <div class="stats">
+        <div class="stat"><b id="s-analogs">—</b><span>counted analogs</span></div>
+        <div class="stat cost"><b id="s-lift">—</b><span>recommended lift</span></div>
+        <div class="stat"><b id="s-range">—</b><span>range</span></div>
+        <div class="stat"><b id="s-conf">—</b><span>confidence</span></div>
+      </div>
+      <p class="decision" id="decision"></p>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>

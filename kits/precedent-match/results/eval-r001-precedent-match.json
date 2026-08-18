@@ -1,0 +1,3377 @@
+{
+ "run_id": "r001-precedent-match",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "requests": 15,
+ "failures": 0,
+ "latency_p50_ms": 6181,
+ "latency_p95_ms": 7630,
+ "wall_seconds": 93.8,
+ "input_tokens_total": 31416,
+ "output_tokens_total": 16774,
+ "blocking_stats": {
+  "requests": 15,
+  "history_events": 120,
+  "true_analog_pairs": 50,
+  "true_analog_pairs_surviving": 50,
+  "blocking_recall": 1.0,
+  "candidate_set_size_avg": 24.0,
+  "candidate_set_size_max": 24
+ },
+ "scores": {
+  "pairs_scored": 360,
+  "counts": {
+   "merged_correct": 36,
+   "false_merge": 2,
+   "missed_match": 14,
+   "apart_correct": 308,
+   "no_verdict": 0
+  },
+  "precision_pct": 94.7,
+  "recall_pct": 72.0,
+  "f1_pct": 81.8,
+  "accuracy_pct": 95.6,
+  "no_verdict": 0,
+  "true_positive": 36,
+  "false_positive": 2,
+  "false_negative": 14,
+  "true_negative": 308
+ },
+ "draft_tally": {
+  "counts": {
+   "draft_ready": 14,
+   "insufficient_precedent": 1
+  },
+  "total": 15,
+  "insufficient_pct": 6.7
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 1533
+  },
+  {
+   "name": "request",
+   "chars": 171
+  },
+  {
+   "name": "candidates",
+   "chars": 5412
+  }
+ ],
+ "raw_text": "{\n  \"verdicts\": [\n    {\n      \"event_id\": \"EVT-00001\",\n      \"verdict\": \"ANALOG\",\n      \"reason\": \"Mechanic, price_band, placement (circular_inside), and season all match exactly.\"\n    },\n    {\n      \"event_id\": \"EVT-00002\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Price band 10_25 is not identical nor adjacent to 25_plus (two bands apart).\"\n    },\n    {\n      \"event_id\": \"EVT-00003\",\n      \"verdict\": \"ANALOG\",\n      \"reason\": \"Mechanic, placement (circular family), price_band, and season all match.\"\n    },\n    {\n      \"event_id\": \"EVT-00004\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Mechanic gift_with_purchase differs from dollar_off.\"\n    },\n    {\n      \"event_id\": \"EVT-00005\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Price band 5_10 is not identical nor adjacent to 25_plus.\"\n    },\n    {\n      \"event_id\": \"EVT-00006\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Ad placement email_only is not equivalent to circular_inside.\"\n    },\n    {\n      \"event_id\": \"EVT-00007\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Season summer differs from holiday.\"\n    },\n    {\n      \"event_id\": \"EVT-00008\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Season none differs from holiday; also price band and placement differ.\"\n    },\n    {\n      \"event_id\": \"EVT-00009\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Season none and placement email_only both differ.\"\n    },\n    {\n      \"event_id\": \"EVT-00010\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Season none and placement email_only both differ.\"\n    },\n    {\n      \"event_id\": \"EVT-00011\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Mechanic bundle differs and season none differs.\"\n    },\n    {\n      \"event_id\": \"EVT-00012\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Multiple rules fail: price band, placement, season.\"\n    },\n    {\n      \"event_id\": \"EVT-00013\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Price band, placement, and season all differ.\"\n    },\n    {\n      \"event_id\": \"EVT-00014\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Season back_to_school differs; also price band and placement differ.\"\n    },\n    {\n      \"event_id\": \"EVT-00015\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Season summer differs from holiday.\"\n    },\n    {\n      \"event_id\": \"EVT-00016\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Price band and season differ.\"\n    },\n    {\n      \"event_id\": \"EVT-00017\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Season summer differs from holiday.\"\n    },\n    {\n      \"event_id\": \"EVT-00018\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Mechanic and season differ.\"\n    },\n    {\n      \"event_id\": \"EVT-00019\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Price band and season differ.\"\n    },\n    {\n      \"event_id\": \"EVT-00020\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Placement digital_only and season summer differ.\"\n    },\n    {\n      \"event_id\": \"EVT-00021\",\n      \"verdict\": \"ANALOG\",\n      \"reason\": \"Mechanic, price_band, placement (circular_front), and season all match.\"\n    },\n    {\n      \"event_id\": \"EVT-00022\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Mechanic bundle, price band, placement, and season all differ.\"\n    },\n    {\n      \"event_id\": \"EVT-00023\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Mechanic and season differ.\"\n    },\n    {\n      \"event_id\": \"EVT-00024\",\n      \"verdict\": \"NOT_ANALOG\",\n      \"reason\": \"Mechanic bundle, price band, placement, and season all differ.\"\n    }\n  ]\n}",
+ "max_tokens": 4096,
+ "thinking": {
+  "type": "disabled"
+ },
+ "records": [
+  {
+   "request_id": "REQ-00001",
+   "category": "snacks",
+   "candidates": [
+    "EVT-00001",
+    "EVT-00002",
+    "EVT-00003",
+    "EVT-00004",
+    "EVT-00005",
+    "EVT-00006",
+    "EVT-00007",
+    "EVT-00008",
+    "EVT-00009",
+    "EVT-00010",
+    "EVT-00011",
+    "EVT-00012",
+    "EVT-00013",
+    "EVT-00014",
+    "EVT-00015",
+    "EVT-00016",
+    "EVT-00017",
+    "EVT-00018",
+    "EVT-00019",
+    "EVT-00020",
+    "EVT-00021",
+    "EVT-00022",
+    "EVT-00023",
+    "EVT-00024"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00001",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price_band, placement (circular_inside), and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00002",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 10_25 is not identical nor adjacent to 25_plus (two bands apart).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00003",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, placement (circular family), price_band, and season all match.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00004",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic gift_with_purchase differs from dollar_off.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00005",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 5_10 is not identical nor adjacent to 25_plus.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00006",
+     "verdict": "NOT_ANALOG",
+     "reason": "Ad placement email_only is not equivalent to circular_inside.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00007",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season summer differs from holiday.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00008",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season none differs from holiday; also price band and placement differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00009",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season none and placement email_only both differ.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00010",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season none and placement email_only both differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00011",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bundle differs and season none differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00012",
+     "verdict": "NOT_ANALOG",
+     "reason": "Multiple rules fail: price band, placement, season.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00013",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band, placement, and season all differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00014",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season back_to_school differs; also price band and placement differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00015",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season summer differs from holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00016",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band and season differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00017",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season summer differs from holiday.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00018",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic and season differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00019",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band and season differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00020",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only and season summer differ.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00021",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price_band, placement (circular_front), and season all match.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00022",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bundle, price band, placement, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00023",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic and season differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00024",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bundle, price band, placement, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00001",
+    "EVT-00003",
+    "EVT-00021"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 3,
+    "recommended_lift_pct": 35.2,
+    "lift_low_pct": 29.6,
+    "lift_high_pct": 41.2,
+    "spread_pct": 11.6,
+    "confidence": "medium",
+    "why": "mean of 3 confirmed analogs, range 29.6-41.2 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2103,
+   "output_tokens": 1079,
+   "reasoning_tokens": null,
+   "latency_ms": 6124
+  },
+  {
+   "request_id": "REQ-00002",
+   "category": "snacks",
+   "candidates": [
+    "EVT-00001",
+    "EVT-00002",
+    "EVT-00003",
+    "EVT-00004",
+    "EVT-00005",
+    "EVT-00006",
+    "EVT-00007",
+    "EVT-00008",
+    "EVT-00009",
+    "EVT-00010",
+    "EVT-00011",
+    "EVT-00012",
+    "EVT-00013",
+    "EVT-00014",
+    "EVT-00015",
+    "EVT-00016",
+    "EVT-00017",
+    "EVT-00018",
+    "EVT-00019",
+    "EVT-00020",
+    "EVT-00021",
+    "EVT-00022",
+    "EVT-00023",
+    "EVT-00024"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00001",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs none) and price band is two steps apart.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00002",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs none).",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00003",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs none) and price band is two steps apart.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00004",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs (gift_with_purchase vs dollar_off) and season differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00005",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs none) and price band is adjacent but season rule fails.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00006",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs none) and price band is two steps apart.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00007",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (summer vs none) and price band is two steps apart.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00008",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, placement, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00009",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band differs (25_plus vs 10_25, two steps apart).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00010",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, placement, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00011",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs (bundle vs dollar_off).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00012",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band differs (under_5 vs 10_25, more than one step apart).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00013",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement differs (circular_front vs email_only, not in circular family).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00014",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (back_to_school vs none).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00015",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season and placement differ, price band two steps apart.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00016",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (summer vs none) and placement differs.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00017",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (summer vs none) and price band two steps apart.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00018",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs, season differs, price band two steps apart.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00019",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band differs (under_5 vs 10_25), season differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00020",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (summer vs none), price band two steps apart.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00021",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs none) and price band two steps apart.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00022",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs (bundle vs dollar_off), season differs, placement differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00023",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs, season differs, price band two steps apart.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00024",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs (bundle vs dollar_off), season and placement differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00008",
+    "EVT-00010"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 2,
+    "recommended_lift_pct": 13.5,
+    "lift_low_pct": 12.7,
+    "lift_high_pct": 14.3,
+    "spread_pct": 1.6,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed analogs, range 12.7-14.3 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2124,
+   "output_tokens": 1010,
+   "reasoning_tokens": null,
+   "latency_ms": 5675
+  },
+  {
+   "request_id": "REQ-00003",
+   "category": "snacks",
+   "candidates": [
+    "EVT-00001",
+    "EVT-00002",
+    "EVT-00003",
+    "EVT-00004",
+    "EVT-00005",
+    "EVT-00006",
+    "EVT-00007",
+    "EVT-00008",
+    "EVT-00009",
+    "EVT-00010",
+    "EVT-00011",
+    "EVT-00012",
+    "EVT-00013",
+    "EVT-00014",
+    "EVT-00015",
+    "EVT-00016",
+    "EVT-00017",
+    "EVT-00018",
+    "EVT-00019",
+    "EVT-00020",
+    "EVT-00021",
+    "EVT-00022",
+    "EVT-00023",
+    "EVT-00024"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00001",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs summer); season must be identical.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00002",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs summer) and price band not adjacent (10_25 vs 25_plus).",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00003",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs summer).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00004",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs (gift_with_purchase vs dollar_off).",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00005",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs summer) and price band not adjacent (5_10 vs 25_plus).",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00006",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs summer); placement also email_only not circular.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00007",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, circular family placement, and summer season all match.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00008",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (none vs summer) and placement email_only not circular.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00009",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (none vs summer) and placement not circular.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00010",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (none vs summer) and placement not circular.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00011",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs (bundle vs dollar_off); season also none vs summer.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00012",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (none vs summer) and price band under_5 too far from 25_plus.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00013",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (none vs summer) and price band 10_25 not adjacent to 25_plus.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00014",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (back_to_school vs summer) and placement email_only.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00015",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, placement, and summer season all identical.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00016",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band differs (10_25 vs 25_plus) and is not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00017",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, circular family placement, and summer season all match.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00018",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs (gift_with_purchase vs dollar_off).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00019",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band under_5 is not adjacent to 25_plus.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00020",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only is not in circular family.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00021",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season differs (holiday vs summer).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00022",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs (bundle vs dollar_off) and season spring vs summer.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00023",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs (gift_with_purchase vs dollar_off) and season spring vs summer.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00024",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic differs (bundle vs dollar_off) and price band 5_10 too far from 25_plus.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00007",
+    "EVT-00015",
+    "EVT-00017"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 3,
+    "recommended_lift_pct": 24.8,
+    "lift_low_pct": 19.7,
+    "lift_high_pct": 34.4,
+    "spread_pct": 14.7,
+    "confidence": "medium",
+    "why": "mean of 3 confirmed analogs, range 19.7-34.4 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2124,
+   "output_tokens": 1194,
+   "reasoning_tokens": null,
+   "latency_ms": 6292
+  },
+  {
+   "request_id": "REQ-00004",
+   "category": "beverages",
+   "candidates": [
+    "EVT-00025",
+    "EVT-00026",
+    "EVT-00027",
+    "EVT-00028",
+    "EVT-00029",
+    "EVT-00030",
+    "EVT-00031",
+    "EVT-00032",
+    "EVT-00033",
+    "EVT-00034",
+    "EVT-00035",
+    "EVT-00036",
+    "EVT-00037",
+    "EVT-00038",
+    "EVT-00039",
+    "EVT-00040",
+    "EVT-00041",
+    "EVT-00042",
+    "EVT-00043",
+    "EVT-00044",
+    "EVT-00045",
+    "EVT-00046",
+    "EVT-00047",
+    "EVT-00048"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00025",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, placement, and season all identical to request.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00026",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, placement, season identical; price band 5_10 is adjacent to under_5.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00027",
+     "verdict": "ANALOG",
+     "reason": "All key fields identical to request (duration difference ignored).",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00028",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bundle, not bogo.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00029",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 10_25 is two bands up from under_5, not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00030",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement endcap differs from email_only and is not in circular family.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00031",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season back_to_school differs from spring.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00032",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is dollar_off, not bogo; also other fields differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00033",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is dollar_off, not bogo.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00034",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is dollar_off, not bogo.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00035",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_front is not email_only nor in paper-circular pair; season none differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00036",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off and other fields fail.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00037",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off, placement digital_only, season none all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00038",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off and season holiday differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00039",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off, placement digital_only, season none differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00040",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off and other fields differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00041",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off, placement digital_only, season none differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00042",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic gift_with_purchase differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00043",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off and other fields differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00044",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off and placement not in circular pair with email_only.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00045",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off, placement digital_only, season summer differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00046",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic gift_with_purchase differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00047",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement endcap differs and season summer differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00048",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_inside not in circular pair with email_only; price band 25_plus is more than one band away.",
+     "similarity_score": 0.5,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00025",
+    "EVT-00026",
+    "EVT-00027"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 3,
+    "recommended_lift_pct": 51.5,
+    "lift_low_pct": 49.9,
+    "lift_high_pct": 52.4,
+    "spread_pct": 2.5,
+    "confidence": "medium",
+    "why": "mean of 3 confirmed analogs, range 49.9-52.4 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2064,
+   "output_tokens": 985,
+   "reasoning_tokens": null,
+   "latency_ms": 5848
+  },
+  {
+   "request_id": "REQ-00005",
+   "category": "beverages",
+   "candidates": [
+    "EVT-00025",
+    "EVT-00026",
+    "EVT-00027",
+    "EVT-00028",
+    "EVT-00029",
+    "EVT-00030",
+    "EVT-00031",
+    "EVT-00032",
+    "EVT-00033",
+    "EVT-00034",
+    "EVT-00035",
+    "EVT-00036",
+    "EVT-00037",
+    "EVT-00038",
+    "EVT-00039",
+    "EVT-00040",
+    "EVT-00041",
+    "EVT-00042",
+    "EVT-00043",
+    "EVT-00044",
+    "EVT-00045",
+    "EVT-00046",
+    "EVT-00047",
+    "EVT-00048"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00025",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo, not dollar_off",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00026",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo, not dollar_off",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00027",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo, not dollar_off",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00028",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bundle, not dollar_off",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00029",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo, not dollar_off",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00030",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo, not dollar_off",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00031",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo, not dollar_off",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00032",
+     "verdict": "ANALOG",
+     "reason": "Matches mechanic, band, placement, and season",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00033",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band under_5 is not adjacent to 5_10 (two steps away)",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00034",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, band, and season match; circular_inside is same circular family as front",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00035",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo, not dollar_off",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00036",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 25_plus is not adjacent to 5_10",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00037",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only does not match circular_front",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00038",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season holiday does not match none",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00039",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only does not match circular_front",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00040",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only and band 10_25 not adjacent",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00041",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only does not match circular_front",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00042",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is gift_with_purchase, not dollar_off",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00043",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only and band 25_plus not adjacent",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00044",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, band, and season match; circular_inside is same circular family as front",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00045",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season summer does not match none",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00046",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is gift_with_purchase, not dollar_off",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00047",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo, not dollar_off",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00048",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo, not dollar_off; season spring not none",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00032",
+    "EVT-00034",
+    "EVT-00044"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 3,
+    "recommended_lift_pct": 22.8,
+    "lift_low_pct": 20.7,
+    "lift_high_pct": 25.4,
+    "spread_pct": 4.7,
+    "confidence": "medium",
+    "why": "mean of 3 confirmed analogs, range 20.7-25.4 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2091,
+   "output_tokens": 959,
+   "reasoning_tokens": null,
+   "latency_ms": 5564
+  },
+  {
+   "request_id": "REQ-00006",
+   "category": "beverages",
+   "candidates": [
+    "EVT-00025",
+    "EVT-00026",
+    "EVT-00027",
+    "EVT-00028",
+    "EVT-00029",
+    "EVT-00030",
+    "EVT-00031",
+    "EVT-00032",
+    "EVT-00033",
+    "EVT-00034",
+    "EVT-00035",
+    "EVT-00036",
+    "EVT-00037",
+    "EVT-00038",
+    "EVT-00039",
+    "EVT-00040",
+    "EVT-00041",
+    "EVT-00042",
+    "EVT-00043",
+    "EVT-00044",
+    "EVT-00045",
+    "EVT-00046",
+    "EVT-00047",
+    "EVT-00048"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00025",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bogo differs from dollar_off.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00026",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bogo differs from dollar_off.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00027",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bogo differs from dollar_off.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00028",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bundle differs from dollar_off.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00029",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bogo differs from dollar_off.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00030",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bogo differs from dollar_off.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00031",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bogo differs from dollar_off.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00032",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_front not equivalent to digital_only.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00033",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_front not equivalent to digital_only and price_band under_5 not adjacent to 5_10.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00034",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_inside not equivalent to digital_only.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00035",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bogo differs from dollar_off.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00036",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price_band 25_plus is two bands away from 5_10.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00037",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price_band, placement, and season all match.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00038",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season holiday differs from none.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00039",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price_band, placement, and season all match.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00040",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price_band 10_25 is two bands away from 5_10.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00041",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price_band, placement, and season all match.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00042",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic gift_with_purchase differs from dollar_off.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00043",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price_band 25_plus is two bands away from 5_10.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00044",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_inside not equivalent to digital_only.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00045",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season summer differs from none.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00046",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic gift_with_purchase differs from dollar_off.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00047",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bogo differs from dollar_off.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00048",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bogo differs from dollar_off.",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00037",
+    "EVT-00039",
+    "EVT-00041"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 3,
+    "recommended_lift_pct": 16.8,
+    "lift_low_pct": 15.4,
+    "lift_high_pct": 17.5,
+    "spread_pct": 2.1,
+    "confidence": "medium",
+    "why": "mean of 3 confirmed analogs, range 15.4-17.5 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2090,
+   "output_tokens": 976,
+   "reasoning_tokens": null,
+   "latency_ms": 5889
+  },
+  {
+   "request_id": "REQ-00007",
+   "category": "personal-care",
+   "candidates": [
+    "EVT-00049",
+    "EVT-00050",
+    "EVT-00051",
+    "EVT-00052",
+    "EVT-00053",
+    "EVT-00054",
+    "EVT-00055",
+    "EVT-00056",
+    "EVT-00057",
+    "EVT-00058",
+    "EVT-00059",
+    "EVT-00060",
+    "EVT-00061",
+    "EVT-00062",
+    "EVT-00063",
+    "EVT-00064",
+    "EVT-00065",
+    "EVT-00066",
+    "EVT-00067",
+    "EVT-00068",
+    "EVT-00069",
+    "EVT-00070",
+    "EVT-00071",
+    "EVT-00072"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00049",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, placement, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00050",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, placement, and season match; price band 10_25 is adjacent to 25_plus.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00051",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, placement, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00052",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is dollar_off, not bogo.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00053",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, placement, and season match; price band 5_10 is not adjacent to 25_plus, so UNSURE due to band distance.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00054",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only differs from email_only and is not in circular family.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00055",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season spring differs from holiday.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00056",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement endcap differs from email_only and season spring differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00057",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement endcap differs from email_only and season spring differs from holiday, plus band not adjacent.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00058",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement endcap differs from email_only and season spring differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00059",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic pct_off differs from bogo and other mismatches.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00060",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement endcap differs from email_only and season spring differs from holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00061",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only differs from email_only and season spring differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00062",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season back_to_school differs from holiday and placement endcap differs from email_only.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00063",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement endcap differs from email_only and season none differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00064",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement endcap differs from email_only and season none differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00065",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement endcap differs from email_only and season none differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00066",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic gift_with_purchase differs from bogo and other mismatches.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00067",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement endcap differs from email_only and season none differs from holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00068",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_inside is not equivalent to email_only and season none differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00069",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement endcap differs from email_only and season summer differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00070",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season summer differs from holiday, and price band under_5 not adjacent.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00071",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season back_to_school differs from holiday and placement digital_only differs from email_only.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00072",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off differs from bogo and season spring differs from holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00049",
+    "EVT-00050",
+    "EVT-00051",
+    "EVT-00053"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 4,
+    "recommended_lift_pct": 59.4,
+    "lift_low_pct": 54.7,
+    "lift_high_pct": 62.6,
+    "spread_pct": 7.9,
+    "confidence": "high",
+    "why": "mean of 4 confirmed analogs, range 54.7-62.6 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2063,
+   "output_tokens": 1067,
+   "reasoning_tokens": null,
+   "latency_ms": 6181
+  },
+  {
+   "request_id": "REQ-00008",
+   "category": "personal-care",
+   "candidates": [
+    "EVT-00049",
+    "EVT-00050",
+    "EVT-00051",
+    "EVT-00052",
+    "EVT-00053",
+    "EVT-00054",
+    "EVT-00055",
+    "EVT-00056",
+    "EVT-00057",
+    "EVT-00058",
+    "EVT-00059",
+    "EVT-00060",
+    "EVT-00061",
+    "EVT-00062",
+    "EVT-00063",
+    "EVT-00064",
+    "EVT-00065",
+    "EVT-00066",
+    "EVT-00067",
+    "EVT-00068",
+    "EVT-00069",
+    "EVT-00070",
+    "EVT-00071",
+    "EVT-00072"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00049",
+     "verdict": "NOT_ANALOG",
+     "reason": "season differs (holiday vs spring) and ad_placement differs (email_only vs endcap)",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00050",
+     "verdict": "NOT_ANALOG",
+     "reason": "season differs (holiday vs spring) and ad_placement differs (email_only vs endcap)",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00051",
+     "verdict": "NOT_ANALOG",
+     "reason": "season differs (holiday vs spring) and ad_placement differs (email_only vs endcap)",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00052",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic differs (dollar_off vs bogo), price band too high, ad_placement differs, season differs",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00053",
+     "verdict": "NOT_ANALOG",
+     "reason": "season differs (holiday vs spring) and ad_placement differs (email_only vs endcap)",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00054",
+     "verdict": "NOT_ANALOG",
+     "reason": "season differs (holiday vs spring) and ad_placement differs (digital_only vs endcap)",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00055",
+     "verdict": "NOT_ANALOG",
+     "reason": "ad_placement differs (email_only vs endcap) and price band too high",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00056",
+     "verdict": "ANALOG",
+     "reason": "mechanic, price_band, ad_placement, and season all match",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00057",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band differs (5_10 vs under_5, not adjacent)",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00058",
+     "verdict": "ANALOG",
+     "reason": "mechanic, price_band, ad_placement, and season all match",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00059",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic differs (pct_off vs bogo)",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00060",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band differs (25_plus vs under_5, not adjacent)",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00061",
+     "verdict": "NOT_ANALOG",
+     "reason": "ad_placement differs (digital_only vs endcap)",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00062",
+     "verdict": "NOT_ANALOG",
+     "reason": "season differs (back_to_school vs spring)",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00063",
+     "verdict": "NOT_ANALOG",
+     "reason": "season differs (none vs spring)",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00064",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band differs (5_10 vs under_5, not adjacent) and season differs (none vs spring)",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00065",
+     "verdict": "NOT_ANALOG",
+     "reason": "season differs (none vs spring)",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00066",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic differs (gift_with_purchase vs bogo)",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00067",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band differs (25_plus vs under_5, not adjacent) and season differs (none vs spring)",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00068",
+     "verdict": "NOT_ANALOG",
+     "reason": "ad_placement differs (circular_inside vs endcap) and season differs (none vs spring)",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00069",
+     "verdict": "NOT_ANALOG",
+     "reason": "season differs (summer vs spring)",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00070",
+     "verdict": "NOT_ANALOG",
+     "reason": "season differs (summer vs spring) and ad_placement differs (email_only vs endcap)",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00071",
+     "verdict": "NOT_ANALOG",
+     "reason": "season differs (back_to_school vs spring) and ad_placement differs (digital_only vs endcap)",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00072",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic differs (dollar_off vs bogo), price band too high, ad_placement differs",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00056",
+    "EVT-00058"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 2,
+    "recommended_lift_pct": 58.3,
+    "lift_low_pct": 57.2,
+    "lift_high_pct": 59.4,
+    "spread_pct": 2.2,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed analogs, range 57.2-59.4 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2062,
+   "output_tokens": 1206,
+   "reasoning_tokens": null,
+   "latency_ms": 6228
+  },
+  {
+   "request_id": "REQ-00009",
+   "category": "personal-care",
+   "candidates": [
+    "EVT-00049",
+    "EVT-00050",
+    "EVT-00051",
+    "EVT-00052",
+    "EVT-00053",
+    "EVT-00054",
+    "EVT-00055",
+    "EVT-00056",
+    "EVT-00057",
+    "EVT-00058",
+    "EVT-00059",
+    "EVT-00060",
+    "EVT-00061",
+    "EVT-00062",
+    "EVT-00063",
+    "EVT-00064",
+    "EVT-00065",
+    "EVT-00066",
+    "EVT-00067",
+    "EVT-00068",
+    "EVT-00069",
+    "EVT-00070",
+    "EVT-00071",
+    "EVT-00072"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00049",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 25_plus is not adjacent to under_5, and season holiday differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00050",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 10_25 is not adjacent to under_5, and season holiday differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00051",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 25_plus is not adjacent to under_5, and season holiday differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00052",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off differs from bogo, and price band and season also differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00053",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season holiday differs from none, and price band 5_10 is not adjacent to under_5.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00054",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 25_plus is not adjacent to under_5, and season holiday differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00055",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 25_plus is not adjacent to under_5, and season spring differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00056",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season spring differs from none.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00057",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 5_10 is not adjacent to under_5, and season spring differs.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00058",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season spring differs from none.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00059",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic pct_off differs from bogo, and season spring differs.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00060",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 25_plus is not adjacent to under_5, and season spring differs.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00061",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only differs from endcap, and season spring differs.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00062",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season back_to_school differs from none.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00063",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, placement, and season all match.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00064",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 5_10 is not adjacent to under_5.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00065",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, placement, and season all match.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00066",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic gift_with_purchase differs from bogo.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00067",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 25_plus is not adjacent to under_5.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00068",
+     "verdict": "UNSURE",
+     "reason": "Placement circular_inside is not identical to endcap and not same circular family (endcap not in circular family).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00069",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season summer differs from none.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00070",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement email_only differs from endcap, and season summer differs.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00071",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only differs from endcap, and season back_to_school differs.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00072",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic dollar_off differs from bogo, and price band and season also differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00063",
+    "EVT-00065"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 2,
+    "recommended_lift_pct": 57.7,
+    "lift_low_pct": 57.5,
+    "lift_high_pct": 57.9,
+    "spread_pct": 0.4,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed analogs, range 57.5-57.9 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2063,
+   "output_tokens": 1171,
+   "reasoning_tokens": null,
+   "latency_ms": 6726
+  },
+  {
+   "request_id": "REQ-00010",
+   "category": "home-goods",
+   "candidates": [
+    "EVT-00073",
+    "EVT-00074",
+    "EVT-00075",
+    "EVT-00076",
+    "EVT-00077",
+    "EVT-00078",
+    "EVT-00079",
+    "EVT-00080",
+    "EVT-00081",
+    "EVT-00082",
+    "EVT-00083",
+    "EVT-00084",
+    "EVT-00085",
+    "EVT-00086",
+    "EVT-00087",
+    "EVT-00088",
+    "EVT-00089",
+    "EVT-00090",
+    "EVT-00091",
+    "EVT-00092",
+    "EVT-00093",
+    "EVT-00094",
+    "EVT-00095",
+    "EVT-00096"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00073",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, placement, and season all identical.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00074",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band is 10_25, not adjacent to 25_plus (two bands apart).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00075",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price band, placement, and season all identical.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00076",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is gift_with_purchase, not identical to pct_off.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00077",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band is 5_10, not adjacent to 25_plus.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00078",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_inside not in endcap family and not equivalent to endcap.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00079",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season is none, not identical to holiday.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00080",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo, not identical to pct_off.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00081",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo and season is back_to_school, both mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00082",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo and season is back_to_school, both mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00083",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is dollar_off and season is back_to_school, both mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00084",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo and season is back_to_school, both mismatch.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00085",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo and season is back_to_school, both mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00086",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo and season is none, both mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00087",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band is 10_25, not adjacent to 25_plus.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00088",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_inside not in endcap family and not equivalent to endcap.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00089",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_front not in endcap family and not equivalent to endcap.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00090",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is dollar_off and placement is circular_inside, both mismatch.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00091",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band is under_5, not adjacent to 25_plus.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00092",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement is digital_only, not endcap and not in circular family.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00093",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season is summer, not identical to holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00094",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is dollar_off, placement is email_only, and season is spring, all mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00095",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo and season is spring, both mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00096",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is bogo and season is none, both mismatch.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00073",
+    "EVT-00075"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 2,
+    "recommended_lift_pct": 39.5,
+    "lift_low_pct": 37.7,
+    "lift_high_pct": 41.2,
+    "spread_pct": 3.5,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed analogs, range 37.7-41.2 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2130,
+   "output_tokens": 1176,
+   "reasoning_tokens": null,
+   "latency_ms": 6314
+  },
+  {
+   "request_id": "REQ-00011",
+   "category": "home-goods",
+   "candidates": [
+    "EVT-00073",
+    "EVT-00074",
+    "EVT-00075",
+    "EVT-00076",
+    "EVT-00077",
+    "EVT-00078",
+    "EVT-00079",
+    "EVT-00080",
+    "EVT-00081",
+    "EVT-00082",
+    "EVT-00083",
+    "EVT-00084",
+    "EVT-00085",
+    "EVT-00086",
+    "EVT-00087",
+    "EVT-00088",
+    "EVT-00089",
+    "EVT-00090",
+    "EVT-00091",
+    "EVT-00092",
+    "EVT-00093",
+    "EVT-00094",
+    "EVT-00095",
+    "EVT-00096"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00073",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00074",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00075",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00076",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is gift_with_purchase, not bogo.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00077",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00078",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00079",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00080",
+     "verdict": "ANALOG",
+     "reason": "Mechanic identical, price band identical, placement in circular family, season identical.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00081",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 10_25 is two steps away from 5_10.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00082",
+     "verdict": "ANALOG",
+     "reason": "Mechanic identical, price band identical, placement in circular family, season identical.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00083",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is dollar_off, not bogo.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00084",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 25_plus is two steps away from 5_10.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00085",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only is not circular family.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00086",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season none does not match back_to_school.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00087",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00088",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00089",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00090",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is dollar_off, not bogo.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00091",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00092",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00093",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is pct_off, not bogo.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00094",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is dollar_off, not bogo.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00095",
+     "verdict": "NOT_ANALOG",
+     "reason": "Price band 10_25 is two steps away from 5_10.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00096",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season none does not match back_to_school.",
+     "similarity_score": 0.5,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00080",
+    "EVT-00082"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 2,
+    "recommended_lift_pct": 66.5,
+    "lift_low_pct": 64.6,
+    "lift_high_pct": 68.4,
+    "spread_pct": 3.8,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed analogs, range 64.6-68.4 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2110,
+   "output_tokens": 995,
+   "reasoning_tokens": null,
+   "latency_ms": 5373
+  },
+  {
+   "request_id": "REQ-00012",
+   "category": "home-goods",
+   "candidates": [
+    "EVT-00073",
+    "EVT-00074",
+    "EVT-00075",
+    "EVT-00076",
+    "EVT-00077",
+    "EVT-00078",
+    "EVT-00079",
+    "EVT-00080",
+    "EVT-00081",
+    "EVT-00082",
+    "EVT-00083",
+    "EVT-00084",
+    "EVT-00085",
+    "EVT-00086",
+    "EVT-00087",
+    "EVT-00088",
+    "EVT-00089",
+    "EVT-00090",
+    "EVT-00091",
+    "EVT-00092",
+    "EVT-00093",
+    "EVT-00094",
+    "EVT-00095",
+    "EVT-00096"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00073",
+     "verdict": "NOT_ANALOG",
+     "reason": "placement endcap not equivalent to circular_inside",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00074",
+     "verdict": "NOT_ANALOG",
+     "reason": "placement endcap not equivalent to circular_inside",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00075",
+     "verdict": "NOT_ANALOG",
+     "reason": "placement endcap not equivalent to circular_inside",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00076",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic gift_with_purchase not identical to pct_off",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00077",
+     "verdict": "NOT_ANALOG",
+     "reason": "placement endcap not equivalent to circular_inside",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00078",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band 25_plus is not adjacent to 10_25",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00079",
+     "verdict": "NOT_ANALOG",
+     "reason": "season none not identical to holiday",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00080",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic bogo not identical to pct_off",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00081",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic bogo not identical to pct_off",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00082",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic bogo not identical to pct_off",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00083",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic dollar_off not identical to pct_off",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00084",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic bogo not identical to pct_off",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00085",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic bogo not identical to pct_off",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00086",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic bogo not identical to pct_off",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00087",
+     "verdict": "ANALOG",
+     "reason": "mechanic, price_band, placement family, and season all match",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00088",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band 25_plus is not adjacent to 10_25",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00089",
+     "verdict": "UNSURE",
+     "reason": "price_band same, placement family same, season same; only placement circular_front vs inside but both are circular family, so it should be ANALOG",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00090",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic dollar_off not identical to pct_off",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00091",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band under_5 is not adjacent to 10_25",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00092",
+     "verdict": "NOT_ANALOG",
+     "reason": "placement digital_only not equivalent to circular_inside",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00093",
+     "verdict": "NOT_ANALOG",
+     "reason": "season summer not identical to holiday",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00094",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic dollar_off not identical to pct_off",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00095",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic bogo not identical to pct_off",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00096",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic bogo not identical to pct_off",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00087"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2133,
+   "output_tokens": 1105,
+   "reasoning_tokens": null,
+   "latency_ms": 6038
+  },
+  {
+   "request_id": "REQ-00013",
+   "category": "seasonal-decor",
+   "candidates": [
+    "EVT-00097",
+    "EVT-00098",
+    "EVT-00099",
+    "EVT-00100",
+    "EVT-00101",
+    "EVT-00102",
+    "EVT-00103",
+    "EVT-00104",
+    "EVT-00105",
+    "EVT-00106",
+    "EVT-00107",
+    "EVT-00108",
+    "EVT-00109",
+    "EVT-00110",
+    "EVT-00111",
+    "EVT-00112",
+    "EVT-00113",
+    "EVT-00114",
+    "EVT-00115",
+    "EVT-00116",
+    "EVT-00117",
+    "EVT-00118",
+    "EVT-00119",
+    "EVT-00120"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00097",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price_band, placement, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00098",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, placement, and season match; price_band 25_plus is adjacent to 10_25.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00099",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price_band, placement, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00100",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic is gift_with_purchase, not bogo.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00101",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, placement, and season match; price_band under_5 is adjacent to 10_25.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00102",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_inside does not match endcap and is not in the circular family equivalence pair.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00103",
+     "verdict": "NOT_ANALOG",
+     "reason": "Season back_to_school does not match holiday.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00104",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only does not match endcap and season none does not match holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00105",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only does not match endcap and season none does not match holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00106",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only does not match endcap and season none does not match holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00107",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bundle does not match bogo and placement digital_only does not match endcap.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00108",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only does not match endcap and season none does not match holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00109",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement email_only does not match endcap and season none does not match holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00110",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only does not match endcap and season spring does not match holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00111",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_inside does not match endcap and season back_to_school does not match holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00112",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_inside does not match endcap and season back_to_school does not match holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00113",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_front does not match endcap and season back_to_school does not match holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00114",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bundle does not match bogo, placement circular_inside does not match endcap, and season back_to_school does not match holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00115",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_inside does not match endcap and season back_to_school does not match holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00116",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement digital_only does not match endcap and season back_to_school does not match holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00117",
+     "verdict": "NOT_ANALOG",
+     "reason": "Placement circular_inside does not match endcap and season none does not match holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00118",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic bundle does not match bogo and placement digital_only does not match endcap.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00119",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic pct_off does not match bogo, placement circular_inside does not match endcap, and season none does not match holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00120",
+     "verdict": "NOT_ANALOG",
+     "reason": "Mechanic pct_off does not match bogo, placement circular_front does not match endcap, and season back_to_school does not match holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00097",
+    "EVT-00098",
+    "EVT-00099",
+    "EVT-00101"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 4,
+    "recommended_lift_pct": 65.8,
+    "lift_low_pct": 63.0,
+    "lift_high_pct": 67.6,
+    "spread_pct": 4.6,
+    "confidence": "high",
+    "why": "mean of 4 confirmed analogs, range 63.0-67.6 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2093,
+   "output_tokens": 1275,
+   "reasoning_tokens": null,
+   "latency_ms": 6385
+  },
+  {
+   "request_id": "REQ-00014",
+   "category": "seasonal-decor",
+   "candidates": [
+    "EVT-00097",
+    "EVT-00098",
+    "EVT-00099",
+    "EVT-00100",
+    "EVT-00101",
+    "EVT-00102",
+    "EVT-00103",
+    "EVT-00104",
+    "EVT-00105",
+    "EVT-00106",
+    "EVT-00107",
+    "EVT-00108",
+    "EVT-00109",
+    "EVT-00110",
+    "EVT-00111",
+    "EVT-00112",
+    "EVT-00113",
+    "EVT-00114",
+    "EVT-00115",
+    "EVT-00116",
+    "EVT-00117",
+    "EVT-00118",
+    "EVT-00119",
+    "EVT-00120"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00097",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is two bands apart (10_25 vs under_5) and season is holiday vs none.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00098",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is two+ bands apart (25_plus vs under_5) and season is holiday vs none.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00099",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is two bands apart (10_25 vs under_5) and season is holiday vs none.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00100",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is gift_with_purchase, not bogo; season also holiday vs none.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00101",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is holiday vs none.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00102",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is two bands apart (10_25 vs under_5) and season is holiday vs none.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00103",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is two bands apart (10_25 vs under_5) and season is back_to_school vs none.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00104",
+     "verdict": "ANALOG",
+     "reason": "Mechanic, price_band, ad_placement, and season all match request.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00105",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is 5_10, one band up from under_5 but ad_placement is same; however season none, but price_band adjacent allowed — wait, but this fails on season? No, season matches none. Let me reconsider: price_band 5_10 is adjacent to under_5, so that passes; ad_placement digital_only matches; season none matches; mechanic bogo matches. So this should be ANALOG. I'll correct.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00106",
+     "verdict": "ANALOG",
+     "reason": "All four key fields match request: bogo, under_5, digital_only, none.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00107",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is bundle, not bogo.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00108",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is 25_plus, over two bands from under_5.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00109",
+     "verdict": "NOT_ANALOG",
+     "reason": "ad_placement is email_only, not digital_only.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00110",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is spring vs none.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00111",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is 10_25 (two bands from under_5) and season is back_to_school.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00112",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is 5_10 (adjacent allowed) but season is back_to_school vs none.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00113",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is 10_25 (two bands from under_5) and season is back_to_school.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00114",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is bundle, not bogo; season also back_to_school.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00115",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is back_to_school vs none, and placement is circular_inside not digital_only.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00116",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is 10_25 (two bands from under_5) and season is back_to_school.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00117",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is 10_25 (two bands from under_5) and placement is circular_inside not digital_only.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00118",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is bundle, not bogo; season is holiday, price_band is 10_25.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00119",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is pct_off, not bogo; price_band is 10_25.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00120",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is pct_off, not bogo; season is back_to_school; placement is circular_front.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00104",
+    "EVT-00106"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 2,
+    "recommended_lift_pct": 49.3,
+    "lift_low_pct": 48.4,
+    "lift_high_pct": 50.3,
+    "spread_pct": 1.9,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed analogs, range 48.4-50.3 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2069,
+   "output_tokens": 1342,
+   "reasoning_tokens": null,
+   "latency_ms": 7630
+  },
+  {
+   "request_id": "REQ-00015",
+   "category": "seasonal-decor",
+   "candidates": [
+    "EVT-00097",
+    "EVT-00098",
+    "EVT-00099",
+    "EVT-00100",
+    "EVT-00101",
+    "EVT-00102",
+    "EVT-00103",
+    "EVT-00104",
+    "EVT-00105",
+    "EVT-00106",
+    "EVT-00107",
+    "EVT-00108",
+    "EVT-00109",
+    "EVT-00110",
+    "EVT-00111",
+    "EVT-00112",
+    "EVT-00113",
+    "EVT-00114",
+    "EVT-00115",
+    "EVT-00116",
+    "EVT-00117",
+    "EVT-00118",
+    "EVT-00119",
+    "EVT-00120"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00097",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is holiday, not back_to_school",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00098",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is holiday, not back_to_school",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00099",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is holiday, not back_to_school",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00100",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is gift_with_purchase, not bogo",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00101",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is holiday, not back_to_school",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00102",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is holiday, not back_to_school",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00103",
+     "verdict": "NOT_ANALOG",
+     "reason": "ad_placement is endcap, not circular_inside",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00104",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is none, not back_to_school",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00105",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is none, not back_to_school",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00106",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is none, not back_to_school",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00107",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is bundle, not bogo",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00108",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is none, not back_to_school",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00109",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is none, not back_to_school",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00110",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is spring, not back_to_school",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00111",
+     "verdict": "ANALOG",
+     "reason": "mechanic, price_band, placement (circular_inside), and season all match",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00112",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is 5_10, not adjacent to 10_25 (one band apart is allowed; 5_10 is adjacent? yes, so it would be ANALOG if placement also matches, but placement is circular_inside and matches; wait, actually 5_10 is adjacent to 10_25 so that is allowed; season matches; mechanic matches; placement matches; so it should be ANALOG? Let me re-check: the rule says price_band identical OR next band up/down. 5_10 is the next band down from 10_25, so it is allowed. Therefore this is ANALOG. I'll correct my answer to ANALOG with reason that all conditions hold except price_band is adjacent, which is acceptable.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00113",
+     "verdict": "ANALOG",
+     "reason": "mechanic, price_band, season match; circular_front is equivalent to circular_inside",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00114",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is bundle, not bogo",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00115",
+     "verdict": "NOT_ANALOG",
+     "reason": "price_band is under_5, which is two bands away from 10_25 (under_5 -> 5_10 -> 10_25)",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00116",
+     "verdict": "NOT_ANALOG",
+     "reason": "ad_placement is digital_only, not circular_inside",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00117",
+     "verdict": "NOT_ANALOG",
+     "reason": "season is none, not back_to_school",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00118",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is bundle, not bogo",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00119",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is pct_off, not bogo",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00120",
+     "verdict": "NOT_ANALOG",
+     "reason": "mechanic is pct_off, not bogo",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00111",
+    "EVT-00113"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_analogs": 2,
+    "recommended_lift_pct": 64.3,
+    "lift_low_pct": 63.8,
+    "lift_high_pct": 64.8,
+    "spread_pct": 1.0,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed analogs, range 63.8-64.8 pts"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2097,
+   "output_tokens": 1234,
+   "reasoning_tokens": null,
+   "latency_ms": 7550
+  }
+ ]
+}

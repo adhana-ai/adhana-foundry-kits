@@ -1,0 +1,3338 @@
+{
+ "run_id": "t000",
+ "stub": true,
+ "model": "stub",
+ "provider": "stub",
+ "requests": 15,
+ "failures": 0,
+ "latency_p50_ms": 0,
+ "latency_p95_ms": 0,
+ "wall_seconds": 0.0,
+ "input_tokens_total": 21806,
+ "output_tokens_total": 7200,
+ "blocking_stats": {
+  "requests": 15,
+  "history_events": 120,
+  "true_analog_pairs": 50,
+  "true_analog_pairs_surviving": 50,
+  "blocking_recall": 1.0,
+  "candidate_set_size_avg": 24.0,
+  "candidate_set_size_max": 24
+ },
+ "scores": {
+  "pairs_scored": 360,
+  "counts": {
+   "merged_correct": 5,
+   "false_merge": 10,
+   "missed_match": 45,
+   "apart_correct": 300,
+   "no_verdict": 0
+  },
+  "precision_pct": 33.3,
+  "recall_pct": 10.0,
+  "f1_pct": 15.4,
+  "accuracy_pct": 84.7,
+  "no_verdict": 0,
+  "true_positive": 5,
+  "false_positive": 10,
+  "false_negative": 45,
+  "true_negative": 300
+ },
+ "draft_tally": {
+  "counts": {
+   "draft_ready": 0,
+   "insufficient_precedent": 15
+  },
+  "total": 15,
+  "insufficient_pct": 100.0
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 1533
+  },
+  {
+   "name": "request",
+   "chars": 171
+  },
+  {
+   "name": "candidates",
+   "chars": 5412
+  }
+ ],
+ "raw_text": "{\"verdicts\": [{\"event_id\": \"EVT-00001\", \"verdict\": \"ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00002\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00003\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00004\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00005\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00006\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00007\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00008\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00009\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00010\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00011\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00012\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00013\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00014\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00015\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00016\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00017\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00018\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00019\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00020\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00021\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00022\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00023\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}, {\"event_id\": \"EVT-00024\", \"verdict\": \"NOT_ANALOG\", \"reason\": \"stub\"}]}",
+ "max_tokens": 4096,
+ "thinking": null,
+ "records": [
+  {
+   "request_id": "REQ-00001",
+   "category": "snacks",
+   "candidates": [
+    "EVT-00001",
+    "EVT-00002",
+    "EVT-00003",
+    "EVT-00004",
+    "EVT-00005",
+    "EVT-00006",
+    "EVT-00007",
+    "EVT-00008",
+    "EVT-00009",
+    "EVT-00010",
+    "EVT-00011",
+    "EVT-00012",
+    "EVT-00013",
+    "EVT-00014",
+    "EVT-00015",
+    "EVT-00016",
+    "EVT-00017",
+    "EVT-00018",
+    "EVT-00019",
+    "EVT-00020",
+    "EVT-00021",
+    "EVT-00022",
+    "EVT-00023",
+    "EVT-00024"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00001",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00002",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00003",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00004",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00005",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00006",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00007",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00008",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00009",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00010",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00011",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00012",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00013",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00014",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00015",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00016",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00017",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00018",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00019",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00020",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00021",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00022",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00023",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00024",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00001"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1463,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00002",
+   "category": "snacks",
+   "candidates": [
+    "EVT-00001",
+    "EVT-00002",
+    "EVT-00003",
+    "EVT-00004",
+    "EVT-00005",
+    "EVT-00006",
+    "EVT-00007",
+    "EVT-00008",
+    "EVT-00009",
+    "EVT-00010",
+    "EVT-00011",
+    "EVT-00012",
+    "EVT-00013",
+    "EVT-00014",
+    "EVT-00015",
+    "EVT-00016",
+    "EVT-00017",
+    "EVT-00018",
+    "EVT-00019",
+    "EVT-00020",
+    "EVT-00021",
+    "EVT-00022",
+    "EVT-00023",
+    "EVT-00024"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00001",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00002",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00003",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00004",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00005",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00006",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00007",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00008",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00009",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00010",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00011",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00012",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00013",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00014",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00015",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00016",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00017",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00018",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00019",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00020",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00021",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00022",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00023",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00024",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00001"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1486,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00003",
+   "category": "snacks",
+   "candidates": [
+    "EVT-00001",
+    "EVT-00002",
+    "EVT-00003",
+    "EVT-00004",
+    "EVT-00005",
+    "EVT-00006",
+    "EVT-00007",
+    "EVT-00008",
+    "EVT-00009",
+    "EVT-00010",
+    "EVT-00011",
+    "EVT-00012",
+    "EVT-00013",
+    "EVT-00014",
+    "EVT-00015",
+    "EVT-00016",
+    "EVT-00017",
+    "EVT-00018",
+    "EVT-00019",
+    "EVT-00020",
+    "EVT-00021",
+    "EVT-00022",
+    "EVT-00023",
+    "EVT-00024"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00001",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00002",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00003",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00004",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00005",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00006",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00007",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00008",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00009",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00010",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00011",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00012",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00013",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00014",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00015",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00016",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00017",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00018",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00019",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00020",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00021",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00022",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00023",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00024",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00001"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1489,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00004",
+   "category": "beverages",
+   "candidates": [
+    "EVT-00025",
+    "EVT-00026",
+    "EVT-00027",
+    "EVT-00028",
+    "EVT-00029",
+    "EVT-00030",
+    "EVT-00031",
+    "EVT-00032",
+    "EVT-00033",
+    "EVT-00034",
+    "EVT-00035",
+    "EVT-00036",
+    "EVT-00037",
+    "EVT-00038",
+    "EVT-00039",
+    "EVT-00040",
+    "EVT-00041",
+    "EVT-00042",
+    "EVT-00043",
+    "EVT-00044",
+    "EVT-00045",
+    "EVT-00046",
+    "EVT-00047",
+    "EVT-00048"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00025",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00026",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00027",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00028",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00029",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00030",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00031",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00032",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00033",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00034",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00035",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00036",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00037",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00038",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00039",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00040",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00041",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00042",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00043",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00044",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00045",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00046",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00047",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00048",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00025"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1431,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00005",
+   "category": "beverages",
+   "candidates": [
+    "EVT-00025",
+    "EVT-00026",
+    "EVT-00027",
+    "EVT-00028",
+    "EVT-00029",
+    "EVT-00030",
+    "EVT-00031",
+    "EVT-00032",
+    "EVT-00033",
+    "EVT-00034",
+    "EVT-00035",
+    "EVT-00036",
+    "EVT-00037",
+    "EVT-00038",
+    "EVT-00039",
+    "EVT-00040",
+    "EVT-00041",
+    "EVT-00042",
+    "EVT-00043",
+    "EVT-00044",
+    "EVT-00045",
+    "EVT-00046",
+    "EVT-00047",
+    "EVT-00048"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00025",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00026",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00027",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00028",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00029",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00030",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00031",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00032",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00033",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00034",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00035",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00036",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00037",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00038",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00039",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00040",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00041",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00042",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00043",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00044",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00045",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00046",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00047",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00048",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00025"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1459,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00006",
+   "category": "beverages",
+   "candidates": [
+    "EVT-00025",
+    "EVT-00026",
+    "EVT-00027",
+    "EVT-00028",
+    "EVT-00029",
+    "EVT-00030",
+    "EVT-00031",
+    "EVT-00032",
+    "EVT-00033",
+    "EVT-00034",
+    "EVT-00035",
+    "EVT-00036",
+    "EVT-00037",
+    "EVT-00038",
+    "EVT-00039",
+    "EVT-00040",
+    "EVT-00041",
+    "EVT-00042",
+    "EVT-00043",
+    "EVT-00044",
+    "EVT-00045",
+    "EVT-00046",
+    "EVT-00047",
+    "EVT-00048"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00025",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00026",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00027",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00028",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00029",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00030",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00031",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00032",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00033",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00034",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00035",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00036",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00037",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00038",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00039",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00040",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00041",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00042",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00043",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00044",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00045",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00046",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00047",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00048",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00025"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1458,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00007",
+   "category": "personal-care",
+   "candidates": [
+    "EVT-00049",
+    "EVT-00050",
+    "EVT-00051",
+    "EVT-00052",
+    "EVT-00053",
+    "EVT-00054",
+    "EVT-00055",
+    "EVT-00056",
+    "EVT-00057",
+    "EVT-00058",
+    "EVT-00059",
+    "EVT-00060",
+    "EVT-00061",
+    "EVT-00062",
+    "EVT-00063",
+    "EVT-00064",
+    "EVT-00065",
+    "EVT-00066",
+    "EVT-00067",
+    "EVT-00068",
+    "EVT-00069",
+    "EVT-00070",
+    "EVT-00071",
+    "EVT-00072"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00049",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00050",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00051",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00052",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00053",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00054",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00055",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00056",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00057",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00058",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00059",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00060",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00061",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00062",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00063",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00064",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00065",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00066",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00067",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00068",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00069",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00070",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00071",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00072",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00049"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1434,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00008",
+   "category": "personal-care",
+   "candidates": [
+    "EVT-00049",
+    "EVT-00050",
+    "EVT-00051",
+    "EVT-00052",
+    "EVT-00053",
+    "EVT-00054",
+    "EVT-00055",
+    "EVT-00056",
+    "EVT-00057",
+    "EVT-00058",
+    "EVT-00059",
+    "EVT-00060",
+    "EVT-00061",
+    "EVT-00062",
+    "EVT-00063",
+    "EVT-00064",
+    "EVT-00065",
+    "EVT-00066",
+    "EVT-00067",
+    "EVT-00068",
+    "EVT-00069",
+    "EVT-00070",
+    "EVT-00071",
+    "EVT-00072"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00049",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00050",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00051",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00052",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00053",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00054",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00055",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00056",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00057",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00058",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00059",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00060",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00061",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00062",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00063",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00064",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00065",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00066",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00067",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00068",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00069",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00070",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00071",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00072",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00049"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1433,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00009",
+   "category": "personal-care",
+   "candidates": [
+    "EVT-00049",
+    "EVT-00050",
+    "EVT-00051",
+    "EVT-00052",
+    "EVT-00053",
+    "EVT-00054",
+    "EVT-00055",
+    "EVT-00056",
+    "EVT-00057",
+    "EVT-00058",
+    "EVT-00059",
+    "EVT-00060",
+    "EVT-00061",
+    "EVT-00062",
+    "EVT-00063",
+    "EVT-00064",
+    "EVT-00065",
+    "EVT-00066",
+    "EVT-00067",
+    "EVT-00068",
+    "EVT-00069",
+    "EVT-00070",
+    "EVT-00071",
+    "EVT-00072"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00049",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00050",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00051",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00052",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00053",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00054",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00055",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00056",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00057",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00058",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00059",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00060",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00061",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00062",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00063",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00064",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00065",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00066",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00067",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00068",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00069",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00070",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00071",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00072",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00049"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1434,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00010",
+   "category": "home-goods",
+   "candidates": [
+    "EVT-00073",
+    "EVT-00074",
+    "EVT-00075",
+    "EVT-00076",
+    "EVT-00077",
+    "EVT-00078",
+    "EVT-00079",
+    "EVT-00080",
+    "EVT-00081",
+    "EVT-00082",
+    "EVT-00083",
+    "EVT-00084",
+    "EVT-00085",
+    "EVT-00086",
+    "EVT-00087",
+    "EVT-00088",
+    "EVT-00089",
+    "EVT-00090",
+    "EVT-00091",
+    "EVT-00092",
+    "EVT-00093",
+    "EVT-00094",
+    "EVT-00095",
+    "EVT-00096"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00073",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00074",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00075",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00076",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00077",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00078",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00079",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00080",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00081",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00082",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00083",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00084",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00085",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00086",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00087",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00088",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00089",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00090",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00091",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00092",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00093",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00094",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00095",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00096",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00073"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1468,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00011",
+   "category": "home-goods",
+   "candidates": [
+    "EVT-00073",
+    "EVT-00074",
+    "EVT-00075",
+    "EVT-00076",
+    "EVT-00077",
+    "EVT-00078",
+    "EVT-00079",
+    "EVT-00080",
+    "EVT-00081",
+    "EVT-00082",
+    "EVT-00083",
+    "EVT-00084",
+    "EVT-00085",
+    "EVT-00086",
+    "EVT-00087",
+    "EVT-00088",
+    "EVT-00089",
+    "EVT-00090",
+    "EVT-00091",
+    "EVT-00092",
+    "EVT-00093",
+    "EVT-00094",
+    "EVT-00095",
+    "EVT-00096"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00073",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00074",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00075",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00076",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00077",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00078",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00079",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00080",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00081",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00082",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00083",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00084",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00085",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00086",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00087",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00088",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00089",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00090",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00091",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00092",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00093",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00094",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00095",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00096",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00073"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1444,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00012",
+   "category": "home-goods",
+   "candidates": [
+    "EVT-00073",
+    "EVT-00074",
+    "EVT-00075",
+    "EVT-00076",
+    "EVT-00077",
+    "EVT-00078",
+    "EVT-00079",
+    "EVT-00080",
+    "EVT-00081",
+    "EVT-00082",
+    "EVT-00083",
+    "EVT-00084",
+    "EVT-00085",
+    "EVT-00086",
+    "EVT-00087",
+    "EVT-00088",
+    "EVT-00089",
+    "EVT-00090",
+    "EVT-00091",
+    "EVT-00092",
+    "EVT-00093",
+    "EVT-00094",
+    "EVT-00095",
+    "EVT-00096"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00073",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00074",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00075",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00076",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00077",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00078",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00079",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00080",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00081",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00082",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00083",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00084",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00085",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00086",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00087",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00088",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00089",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00090",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00091",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00092",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00093",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00094",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00095",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00096",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00073"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1466,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00013",
+   "category": "seasonal-decor",
+   "candidates": [
+    "EVT-00097",
+    "EVT-00098",
+    "EVT-00099",
+    "EVT-00100",
+    "EVT-00101",
+    "EVT-00102",
+    "EVT-00103",
+    "EVT-00104",
+    "EVT-00105",
+    "EVT-00106",
+    "EVT-00107",
+    "EVT-00108",
+    "EVT-00109",
+    "EVT-00110",
+    "EVT-00111",
+    "EVT-00112",
+    "EVT-00113",
+    "EVT-00114",
+    "EVT-00115",
+    "EVT-00116",
+    "EVT-00117",
+    "EVT-00118",
+    "EVT-00119",
+    "EVT-00120"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00097",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00098",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00099",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00100",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00101",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00102",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00103",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00104",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00105",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00106",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00107",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00108",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00109",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00110",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00111",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00112",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00113",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00114",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00115",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00116",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00117",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00118",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00119",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00120",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00097"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1453,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00014",
+   "category": "seasonal-decor",
+   "candidates": [
+    "EVT-00097",
+    "EVT-00098",
+    "EVT-00099",
+    "EVT-00100",
+    "EVT-00101",
+    "EVT-00102",
+    "EVT-00103",
+    "EVT-00104",
+    "EVT-00105",
+    "EVT-00106",
+    "EVT-00107",
+    "EVT-00108",
+    "EVT-00109",
+    "EVT-00110",
+    "EVT-00111",
+    "EVT-00112",
+    "EVT-00113",
+    "EVT-00114",
+    "EVT-00115",
+    "EVT-00116",
+    "EVT-00117",
+    "EVT-00118",
+    "EVT-00119",
+    "EVT-00120"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00097",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00098",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00099",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00100",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00101",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00102",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00103",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00104",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00105",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00106",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00107",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00108",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00109",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00110",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00111",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00112",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00113",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00114",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00115",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00116",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00117",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00118",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00119",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00120",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00097"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1431,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "REQ-00015",
+   "category": "seasonal-decor",
+   "candidates": [
+    "EVT-00097",
+    "EVT-00098",
+    "EVT-00099",
+    "EVT-00100",
+    "EVT-00101",
+    "EVT-00102",
+    "EVT-00103",
+    "EVT-00104",
+    "EVT-00105",
+    "EVT-00106",
+    "EVT-00107",
+    "EVT-00108",
+    "EVT-00109",
+    "EVT-00110",
+    "EVT-00111",
+    "EVT-00112",
+    "EVT-00113",
+    "EVT-00114",
+    "EVT-00115",
+    "EVT-00116",
+    "EVT-00117",
+    "EVT-00118",
+    "EVT-00119",
+    "EVT-00120"
+   ],
+   "per_candidate": [
+    {
+     "event_id": "EVT-00097",
+     "verdict": "ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": true
+    },
+    {
+     "event_id": "EVT-00098",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00099",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00100",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00101",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00102",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00103",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00104",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00105",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00106",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00107",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00108",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00109",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00110",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00111",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00112",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00113",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00114",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00115",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00116",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00117",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00118",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00119",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "event_id": "EVT-00120",
+     "verdict": "NOT_ANALOG",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "analog_event_ids": [
+    "EVT-00097"
+   ],
+   "draft": {
+    "decision": "insufficient_precedent",
+    "n_analogs": 1,
+    "recommended_lift_pct": null,
+    "lift_low_pct": null,
+    "lift_high_pct": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed analogs (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1457,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  }
+ ]
+}
