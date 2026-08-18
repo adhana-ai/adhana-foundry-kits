@@ -1,0 +1,1430 @@
+{
+ "run_id": "r001-change-impact",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "messages": 70,
+ "failures": 0,
+ "latency_p50_ms": 1216,
+ "latency_p95_ms": 1498,
+ "wall_seconds": 85.1,
+ "input_tokens_total": 40367,
+ "output_tokens_total": 4524,
+ "blocking_stats": {
+  "messages_with_a_true_match": 60,
+  "true_match_surviving_blocking": 60,
+  "blocking_recall": 1.0,
+  "candidate_set_size_avg": 2.15,
+  "candidate_set_size_max": 3
+ },
+ "scores": {
+  "messages_scored": 70,
+  "match_accuracy_pct": 100.0,
+  "impact_accuracy_pct": 100.0,
+  "false_none": 0,
+  "false_none_rate_pct": 0.0,
+  "false_match": 0,
+  "false_match_rate_pct": 0.0,
+  "abstained_unsure": 0,
+  "wrong_match": 0,
+  "no_verdict": 0,
+  "counts": {
+   "correct_none": 10,
+   "match_correct_impact_correct": 60,
+   "match_correct_impact_wrong": 0,
+   "wrong_match": 0,
+   "false_none": 0,
+   "false_match": 0,
+   "abstained_unsure": 0,
+   "no_verdict": 0
+  },
+  "n_real_gold": 60,
+  "n_none_gold": 10,
+  "ambiguous_match_accuracy_pct": 100.0,
+  "unambiguous_match_accuracy_pct": 100.0
+ },
+ "per_change_type": {
+  "expedite": {
+   "n": 12,
+   "match_accuracy_pct": 100.0,
+   "impact_accuracy_pct": 100.0
+  },
+  "delay": {
+   "n": 12,
+   "match_accuracy_pct": 100.0,
+   "impact_accuracy_pct": 100.0
+  },
+  "cancel": {
+   "n": 12,
+   "match_accuracy_pct": 100.0,
+   "impact_accuracy_pct": 100.0
+  },
+  "qty_change": {
+   "n": 12,
+   "match_accuracy_pct": 100.0,
+   "impact_accuracy_pct": 100.0
+  },
+  "price_change": {
+   "n": 12,
+   "match_accuracy_pct": 100.0,
+   "impact_accuracy_pct": 100.0
+  }
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 1711
+  },
+  {
+   "name": "correspondence",
+   "chars": 103
+  },
+  {
+   "name": "candidates",
+   "chars": 88
+  }
+ ],
+ "raw_text": "{\"match\": \"NONE\", \"change_type\": null, \"new_value\": null, \"citation\": null}",
+ "max_tokens": 2000,
+ "thinking": {
+  "type": "disabled"
+ },
+ "prompt_version": "v1",
+ "records": [
+  {
+   "message_id": "MSG-00001",
+   "vendor_id": "VEN-0100",
+   "candidates": [],
+   "match": "NONE",
+   "change_type": null,
+   "new_value": null,
+   "citation": null,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 498,
+   "output_tokens": 24,
+   "reasoning_tokens": null,
+   "latency_ms": 845
+  },
+  {
+   "message_id": "MSG-00002",
+   "vendor_id": "VEN-0100",
+   "candidates": [
+    "REC-00003",
+    "REC-00004"
+   ],
+   "match": "REC-00004",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-08-11"
+   },
+   "citation": "We need to expedite the split collars shipment. Please move the ship date up to August 11 if at all possible -- happy to cover a reasonable rush fee. (currently at 100 units on our records.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 597,
+   "output_tokens": 91,
+   "reasoning_tokens": null,
+   "latency_ms": 1920
+  },
+  {
+   "message_id": "MSG-00003",
+   "vendor_id": "VEN-0100",
+   "candidates": [
+    "REC-00001",
+    "REC-00002"
+   ],
+   "match": "REC-00002",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-10-20"
+   },
+   "citation": "We won't be able to receive the torque limiters order on the current schedule. Can you reschedule shipment for October 20? (PO reference REC-00002.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 576,
+   "output_tokens": 80,
+   "reasoning_tokens": null,
+   "latency_ms": 1089
+  },
+  {
+   "message_id": "MSG-00004",
+   "vendor_id": "VEN-0100",
+   "candidates": [
+    "REC-00003",
+    "REC-00004"
+   ],
+   "match": "REC-00004",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "the split collars order should be pulled entirely, effective immediately. (PO reference REC-00004.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 577,
+   "output_tokens": 54,
+   "reasoning_tokens": null,
+   "latency_ms": 1315
+  },
+  {
+   "message_id": "MSG-00005",
+   "vendor_id": "VEN-0100",
+   "candidates": [
+    "REC-00001",
+    "REC-00002"
+   ],
+   "match": "REC-00001",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 250
+   },
+   "citation": "Requesting a quantity change on the SKU-1000 line -- 250 units going forward. (currently scheduled to ship October 1.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 570,
+   "output_tokens": 70,
+   "reasoning_tokens": null,
+   "latency_ms": 1000
+  },
+  {
+   "message_id": "MSG-00006",
+   "vendor_id": "VEN-0100",
+   "candidates": [
+    "REC-00003",
+    "REC-00004"
+   ],
+   "match": "REC-00003",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 5.1
+   },
+   "citation": "new unit cost is $5.10. (currently scheduled to ship November 10.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 583,
+   "output_tokens": 64,
+   "reasoning_tokens": null,
+   "latency_ms": 1216
+  },
+  {
+   "message_id": "MSG-00007",
+   "vendor_id": "VEN-0100",
+   "candidates": [
+    "REC-00001",
+    "REC-00002"
+   ],
+   "match": "REC-00001",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-09-23"
+   },
+   "citation": "We need to expedite the SKU-1000 shipment. Please move the ship date up to September 23 if at all possible -- happy to cover a reasonable rush fee. (currently at 320 units on our records.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 587,
+   "output_tokens": 93,
+   "reasoning_tokens": null,
+   "latency_ms": 1217
+  },
+  {
+   "message_id": "MSG-00008",
+   "vendor_id": "VEN-0101",
+   "candidates": [],
+   "match": "NONE",
+   "change_type": null,
+   "new_value": null,
+   "citation": null,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 497,
+   "output_tokens": 24,
+   "reasoning_tokens": null,
+   "latency_ms": 1039
+  },
+  {
+   "message_id": "MSG-00009",
+   "vendor_id": "VEN-0101",
+   "candidates": [
+    "REC-00008",
+    "REC-00009"
+   ],
+   "match": "REC-00009",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-10-26"
+   },
+   "citation": "Requesting a delay on the SKU-1101 order -- new ship date of October 26, please. (currently at 60 units on our records.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 586,
+   "output_tokens": 78,
+   "reasoning_tokens": null,
+   "latency_ms": 1445
+  },
+  {
+   "message_id": "MSG-00010",
+   "vendor_id": "VEN-0101",
+   "candidates": [
+    "REC-00005",
+    "REC-00006",
+    "REC-00007"
+   ],
+   "match": "REC-00005",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "We need to cancel the SKU-1100 line. No replacement order planned at this time. (PO reference REC-00005.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 617,
+   "output_tokens": 61,
+   "reasoning_tokens": null,
+   "latency_ms": 1105
+  },
+  {
+   "message_id": "MSG-00011",
+   "vendor_id": "VEN-0101",
+   "candidates": [
+    "REC-00008",
+    "REC-00009"
+   ],
+   "match": "REC-00009",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 40
+   },
+   "citation": "We'd like to change the quantity on the SKU-1101 order to 40 units. (PO reference REC-00009.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 581,
+   "output_tokens": 69,
+   "reasoning_tokens": null,
+   "latency_ms": 1237
+  },
+  {
+   "message_id": "MSG-00012",
+   "vendor_id": "VEN-0101",
+   "candidates": [
+    "REC-00005",
+    "REC-00006",
+    "REC-00007"
+   ],
+   "match": "REC-00007",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 36.1
+   },
+   "citation": "Effective this order, unit cost on SKU-1100 should be $36.10, not what's currently quoted. (PO reference REC-00007.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 622,
+   "output_tokens": 75,
+   "reasoning_tokens": null,
+   "latency_ms": 1320
+  },
+  {
+   "message_id": "MSG-00013",
+   "vendor_id": "VEN-0101",
+   "candidates": [
+    "REC-00008",
+    "REC-00009"
+   ],
+   "match": "REC-00008",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-10-29"
+   },
+   "citation": "We need to expedite the strut channel shipment. Please move the ship date up to October 29 if at all possible -- happy to cover a reasonable rush fee. (PO reference REC-00008.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 595,
+   "output_tokens": 93,
+   "reasoning_tokens": null,
+   "latency_ms": 1407
+  },
+  {
+   "message_id": "MSG-00014",
+   "vendor_id": "VEN-0101",
+   "candidates": [
+    "REC-00005",
+    "REC-00006",
+    "REC-00007"
+   ],
+   "match": "REC-00007",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-09-26"
+   },
+   "citation": "We won't be able to receive the aluminium channel order on the current schedule. Can you reschedule shipment for September 26? (currently at 60 units on our records.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 625,
+   "output_tokens": 85,
+   "reasoning_tokens": null,
+   "latency_ms": 1503
+  },
+  {
+   "message_id": "MSG-00015",
+   "vendor_id": "VEN-0102",
+   "candidates": [],
+   "match": "NONE",
+   "change_type": null,
+   "new_value": null,
+   "citation": null,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 498,
+   "output_tokens": 30,
+   "reasoning_tokens": null,
+   "latency_ms": 1066
+  },
+  {
+   "message_id": "MSG-00016",
+   "vendor_id": "VEN-0102",
+   "candidates": [
+    "REC-00012",
+    "REC-00013"
+   ],
+   "match": "REC-00013",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "We need to cancel the shock mounts line. No replacement order planned at this time. (currently scheduled to ship September 16.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 587,
+   "output_tokens": 59,
+   "reasoning_tokens": null,
+   "latency_ms": 1027
+  },
+  {
+   "message_id": "MSG-00017",
+   "vendor_id": "VEN-0102",
+   "candidates": [
+    "REC-00010",
+    "REC-00011"
+   ],
+   "match": "REC-00010",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 90
+   },
+   "citation": "Please adjust the cotter pins order to 90 units instead of what's currently on file. (currently scheduled to ship September 20.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 571,
+   "output_tokens": 69,
+   "reasoning_tokens": null,
+   "latency_ms": 1193
+  },
+  {
+   "message_id": "MSG-00018",
+   "vendor_id": "VEN-0102",
+   "candidates": [
+    "REC-00012",
+    "REC-00013"
+   ],
+   "match": "REC-00012",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 23.85
+   },
+   "citation": "Pricing update for the SKU-1201 line: new unit cost is $23.85. (currently scheduled to ship September 29.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 591,
+   "output_tokens": 72,
+   "reasoning_tokens": null,
+   "latency_ms": 1239
+  },
+  {
+   "message_id": "MSG-00019",
+   "vendor_id": "VEN-0102",
+   "candidates": [
+    "REC-00010",
+    "REC-00011"
+   ],
+   "match": "REC-00010",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-09-06"
+   },
+   "citation": "Can you get the SKU-1200 order out earlier than scheduled? September 6 is the date we actually need it by. (PO reference REC-00010.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 578,
+   "output_tokens": 82,
+   "reasoning_tokens": null,
+   "latency_ms": 1069
+  },
+  {
+   "message_id": "MSG-00020",
+   "vendor_id": "VEN-0102",
+   "candidates": [
+    "REC-00012",
+    "REC-00013"
+   ],
+   "match": "REC-00012",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-10-21"
+   },
+   "citation": "Requesting a delay on the shock mounts order -- new ship date of October 21, please. (currently at 100 units on our records.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 591,
+   "output_tokens": 75,
+   "reasoning_tokens": null,
+   "latency_ms": 1248
+  },
+  {
+   "message_id": "MSG-00021",
+   "vendor_id": "VEN-0102",
+   "candidates": [
+    "REC-00010",
+    "REC-00011"
+   ],
+   "match": "REC-00010",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "We need to cancel the SKU-1200 line. No replacement order planned at this time. (currently scheduled to ship September 20.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 572,
+   "output_tokens": 62,
+   "reasoning_tokens": null,
+   "latency_ms": 1166
+  },
+  {
+   "message_id": "MSG-00022",
+   "vendor_id": "VEN-0103",
+   "candidates": [],
+   "match": "NONE",
+   "change_type": null,
+   "new_value": null,
+   "citation": null,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 497,
+   "output_tokens": 24,
+   "reasoning_tokens": null,
+   "latency_ms": 891
+  },
+  {
+   "message_id": "MSG-00023",
+   "vendor_id": "VEN-0103",
+   "candidates": [
+    "REC-00016",
+    "REC-00017"
+   ],
+   "match": "REC-00017",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 510
+   },
+   "citation": "Please adjust the ball bearings order to 510 units instead of what's currently on file. (PO reference REC-00017.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 566,
+   "output_tokens": 67,
+   "reasoning_tokens": null,
+   "latency_ms": 1081
+  },
+  {
+   "message_id": "MSG-00024",
+   "vendor_id": "VEN-0103",
+   "candidates": [
+    "REC-00014",
+    "REC-00015"
+   ],
+   "match": "REC-00015",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 97.7
+   },
+   "citation": "Effective this order, unit cost on gate valves should be $97.70, not what's currently quoted. (PO reference REC-00015.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 571,
+   "output_tokens": 72,
+   "reasoning_tokens": null,
+   "latency_ms": 1169
+  },
+  {
+   "message_id": "MSG-00025",
+   "vendor_id": "VEN-0103",
+   "candidates": [
+    "REC-00016",
+    "REC-00017"
+   ],
+   "match": "REC-00016",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-09-30"
+   },
+   "citation": "We need to expedite the ball bearings shipment. Please move the ship date up to September 30 if at all possible -- happy to cover a reasonable rush fee. (PO reference REC-00016.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 581,
+   "output_tokens": 88,
+   "reasoning_tokens": null,
+   "latency_ms": 1326
+  },
+  {
+   "message_id": "MSG-00026",
+   "vendor_id": "VEN-0103",
+   "candidates": [
+    "REC-00014",
+    "REC-00015"
+   ],
+   "match": "REC-00014",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-09-28"
+   },
+   "citation": "We won't be able to receive the gate valves order on the current schedule. Can you reschedule shipment for September 28? (currently at 200 units on our records.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 577,
+   "output_tokens": 81,
+   "reasoning_tokens": null,
+   "latency_ms": 1409
+  },
+  {
+   "message_id": "MSG-00027",
+   "vendor_id": "VEN-0103",
+   "candidates": [
+    "REC-00016",
+    "REC-00017"
+   ],
+   "match": "REC-00017",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "the ball bearings order should be pulled entirely, effective immediately. (PO reference REC-00017.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 563,
+   "output_tokens": 53,
+   "reasoning_tokens": null,
+   "latency_ms": 1404
+  },
+  {
+   "message_id": "MSG-00028",
+   "vendor_id": "VEN-0103",
+   "candidates": [
+    "REC-00014",
+    "REC-00015"
+   ],
+   "match": "REC-00014",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 220
+   },
+   "citation": "We'd like to change the quantity on the gate valves order to 220 units. (currently scheduled to ship September 12.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 567,
+   "output_tokens": 67,
+   "reasoning_tokens": null,
+   "latency_ms": 1126
+  },
+  {
+   "message_id": "MSG-00029",
+   "vendor_id": "VEN-0104",
+   "candidates": [],
+   "match": "NONE",
+   "change_type": null,
+   "new_value": null,
+   "citation": null,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 497,
+   "output_tokens": 24,
+   "reasoning_tokens": null,
+   "latency_ms": 1107
+  },
+  {
+   "message_id": "MSG-00030",
+   "vendor_id": "VEN-0104",
+   "candidates": [
+    "REC-00020",
+    "REC-00021"
+   ],
+   "match": "REC-00020",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 14.72
+   },
+   "citation": "Effective this order, unit cost on filter cartridges should be $14.72, not what's currently quoted. (PO reference REC-00020.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 585,
+   "output_tokens": 73,
+   "reasoning_tokens": null,
+   "latency_ms": 1457
+  },
+  {
+   "message_id": "MSG-00031",
+   "vendor_id": "VEN-0104",
+   "candidates": [
+    "REC-00018",
+    "REC-00019"
+   ],
+   "match": "REC-00018",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-09-18"
+   },
+   "citation": "We need to expedite the steel brackets shipment. Please move the ship date up to September 18 if at all possible -- happy to cover a reasonable rush fee. (PO reference REC-00018.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 604,
+   "output_tokens": 88,
+   "reasoning_tokens": null,
+   "latency_ms": 1245
+  },
+  {
+   "message_id": "MSG-00032",
+   "vendor_id": "VEN-0104",
+   "candidates": [
+    "REC-00020",
+    "REC-00021"
+   ],
+   "match": "REC-00020",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-09-14"
+   },
+   "citation": "Requesting a delay on the SKU-1401 order -- new ship date of September 14, please. (PO reference REC-00020.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 585,
+   "output_tokens": 80,
+   "reasoning_tokens": null,
+   "latency_ms": 1085
+  },
+  {
+   "message_id": "MSG-00033",
+   "vendor_id": "VEN-0104",
+   "candidates": [
+    "REC-00018",
+    "REC-00019"
+   ],
+   "match": "REC-00018",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "We need to cancel the SKU-1400 line. No replacement order planned at this time. (currently scheduled to ship October 1.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 592,
+   "output_tokens": 62,
+   "reasoning_tokens": null,
+   "latency_ms": 1236
+  },
+  {
+   "message_id": "MSG-00034",
+   "vendor_id": "VEN-0104",
+   "candidates": [
+    "REC-00020",
+    "REC-00021"
+   ],
+   "match": "REC-00021",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 430
+   },
+   "citation": "Requesting a quantity change on the SKU-1401 line -- 430 units going forward. (currently scheduled to ship August 18.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 583,
+   "output_tokens": 70,
+   "reasoning_tokens": null,
+   "latency_ms": 1115
+  },
+  {
+   "message_id": "MSG-00035",
+   "vendor_id": "VEN-0104",
+   "candidates": [
+    "REC-00018",
+    "REC-00019"
+   ],
+   "match": "REC-00018",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 25.59
+   },
+   "citation": "Pricing update for the steel brackets line: new unit cost is $25.59. (PO reference REC-00018.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 589,
+   "output_tokens": 68,
+   "reasoning_tokens": null,
+   "latency_ms": 1103
+  },
+  {
+   "message_id": "MSG-00036",
+   "vendor_id": "VEN-0105",
+   "candidates": [],
+   "match": "NONE",
+   "change_type": null,
+   "new_value": null,
+   "citation": "Any update on our wire mesh panels order? We're considering a quantity change depending on timing.",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 498,
+   "output_tokens": 48,
+   "reasoning_tokens": null,
+   "latency_ms": 1183
+  },
+  {
+   "message_id": "MSG-00037",
+   "vendor_id": "VEN-0105",
+   "candidates": [
+    "REC-00024",
+    "REC-00025"
+   ],
+   "match": "REC-00024",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-08-13"
+   },
+   "citation": "Any chance you can pull the ship date forward to August 13? ... (PO reference REC-00024.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 609,
+   "output_tokens": 70,
+   "reasoning_tokens": null,
+   "latency_ms": 1396
+  },
+  {
+   "message_id": "MSG-00038",
+   "vendor_id": "VEN-0105",
+   "candidates": [
+    "REC-00022",
+    "REC-00023"
+   ],
+   "match": "REC-00023",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-10-08"
+   },
+   "citation": "Push the ship date to October 8 instead. (currently at 40 units on our records.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 587,
+   "output_tokens": 65,
+   "reasoning_tokens": null,
+   "latency_ms": 1181
+  },
+  {
+   "message_id": "MSG-00039",
+   "vendor_id": "VEN-0105",
+   "candidates": [
+    "REC-00024",
+    "REC-00025"
+   ],
+   "match": "REC-00025",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "Please cancel the SKU-1501 order entirely -- our requirements changed and we no longer need it. (PO reference REC-00025.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 592,
+   "output_tokens": 62,
+   "reasoning_tokens": null,
+   "latency_ms": 1120
+  },
+  {
+   "message_id": "MSG-00040",
+   "vendor_id": "VEN-0105",
+   "candidates": [
+    "REC-00022",
+    "REC-00023"
+   ],
+   "match": "REC-00022",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 430
+   },
+   "citation": "Please adjust the SKU-1500 order to 430 units instead of what's currently on file.",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 581,
+   "output_tokens": 61,
+   "reasoning_tokens": null,
+   "latency_ms": 1079
+  },
+  {
+   "message_id": "MSG-00041",
+   "vendor_id": "VEN-0105",
+   "candidates": [
+    "REC-00024",
+    "REC-00025"
+   ],
+   "match": "REC-00025",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 0.1
+   },
+   "citation": "We need to revisit pricing on the lock washers order -- $0.10 per unit going forward. (PO reference REC-00025.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 592,
+   "output_tokens": 71,
+   "reasoning_tokens": null,
+   "latency_ms": 1472
+  },
+  {
+   "message_id": "MSG-00042",
+   "vendor_id": "VEN-0105",
+   "candidates": [
+    "REC-00022",
+    "REC-00023"
+   ],
+   "match": "REC-00022",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-10-29"
+   },
+   "citation": "We need to expedite the SKU-1500 shipment. Please move the ship date up to October 29 if at all possible -- happy to cover a reasonable rush fee. (PO reference REC-00022.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 595,
+   "output_tokens": 91,
+   "reasoning_tokens": null,
+   "latency_ms": 1214
+  },
+  {
+   "message_id": "MSG-00043",
+   "vendor_id": "VEN-0106",
+   "candidates": [],
+   "match": "NONE",
+   "change_type": null,
+   "new_value": null,
+   "citation": null,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 498,
+   "output_tokens": 24,
+   "reasoning_tokens": null,
+   "latency_ms": 1039
+  },
+  {
+   "message_id": "MSG-00044",
+   "vendor_id": "VEN-0106",
+   "candidates": [
+    "REC-00028",
+    "REC-00029"
+   ],
+   "match": "REC-00029",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-10-11"
+   },
+   "citation": "Can you reschedule shipment for October 11? (PO reference REC-00029.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 585,
+   "output_tokens": 63,
+   "reasoning_tokens": null,
+   "latency_ms": 1367
+  },
+  {
+   "message_id": "MSG-00045",
+   "vendor_id": "VEN-0106",
+   "candidates": [
+    "REC-00026",
+    "REC-00027"
+   ],
+   "match": "REC-00026",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "We need to cancel the pipe clamps line.",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 580,
+   "output_tokens": 42,
+   "reasoning_tokens": null,
+   "latency_ms": 932
+  },
+  {
+   "message_id": "MSG-00046",
+   "vendor_id": "VEN-0106",
+   "candidates": [
+    "REC-00028",
+    "REC-00029"
+   ],
+   "match": "REC-00028",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 210
+   },
+   "citation": "Requesting a quantity change on the union fittings line -- 210 units going forward. (PO reference REC-00028.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 576,
+   "output_tokens": 66,
+   "reasoning_tokens": null,
+   "latency_ms": 1226
+  },
+  {
+   "message_id": "MSG-00047",
+   "vendor_id": "VEN-0106",
+   "candidates": [
+    "REC-00026",
+    "REC-00027"
+   ],
+   "match": "REC-00027",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 6.31
+   },
+   "citation": "We need to revisit pricing on the pipe clamps order -- $6.31 per unit going forward. (PO reference REC-00027.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 583,
+   "output_tokens": 71,
+   "reasoning_tokens": null,
+   "latency_ms": 1305
+  },
+  {
+   "message_id": "MSG-00048",
+   "vendor_id": "VEN-0106",
+   "candidates": [
+    "REC-00028",
+    "REC-00029"
+   ],
+   "match": "REC-00028",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-10-04"
+   },
+   "citation": "Any chance you can pull the ship date forward to October 4? (PO reference REC-00028.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 599,
+   "output_tokens": 69,
+   "reasoning_tokens": null,
+   "latency_ms": 1278
+  },
+  {
+   "message_id": "MSG-00049",
+   "vendor_id": "VEN-0106",
+   "candidates": [
+    "REC-00026",
+    "REC-00027"
+   ],
+   "match": "REC-00026",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-09-23"
+   },
+   "citation": "Push the ship date to September 23 instead. (currently at 400 units on our records.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 588,
+   "output_tokens": 65,
+   "reasoning_tokens": null,
+   "latency_ms": 1151
+  },
+  {
+   "message_id": "MSG-00050",
+   "vendor_id": "VEN-0107",
+   "candidates": [],
+   "match": "NONE",
+   "change_type": null,
+   "new_value": null,
+   "citation": null,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 502,
+   "output_tokens": 30,
+   "reasoning_tokens": null,
+   "latency_ms": 937
+  },
+  {
+   "message_id": "MSG-00051",
+   "vendor_id": "VEN-0107",
+   "candidates": [
+    "REC-00032",
+    "REC-00033",
+    "REC-00034"
+   ],
+   "match": "REC-00034",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "Please cancel the insulated sleeving order entirely -- our requirements changed and we no longer need it. (currently scheduled to ship October 4.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 632,
+   "output_tokens": 61,
+   "reasoning_tokens": null,
+   "latency_ms": 1228
+  },
+  {
+   "message_id": "MSG-00052",
+   "vendor_id": "VEN-0107",
+   "candidates": [
+    "REC-00030",
+    "REC-00031"
+   ],
+   "match": "REC-00031",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 290
+   },
+   "citation": "We'd like to change the quantity on the pressure gauges order to 290 units. (currently scheduled to ship September 7.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 591,
+   "output_tokens": 72,
+   "reasoning_tokens": null,
+   "latency_ms": 1260
+  },
+  {
+   "message_id": "MSG-00053",
+   "vendor_id": "VEN-0107",
+   "candidates": [
+    "REC-00032",
+    "REC-00033",
+    "REC-00034"
+   ],
+   "match": "REC-00032",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 14.85
+   },
+   "citation": "We need to revisit pricing on the insulated sleeving order -- $14.85 per unit going forward. (currently scheduled to ship September 19.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 634,
+   "output_tokens": 72,
+   "reasoning_tokens": null,
+   "latency_ms": 1137
+  },
+  {
+   "message_id": "MSG-00054",
+   "vendor_id": "VEN-0107",
+   "candidates": [
+    "REC-00030",
+    "REC-00031"
+   ],
+   "match": "REC-00031",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-09-04"
+   },
+   "citation": "We need to expedite the SKU-1700 shipment. Please move the ship date up to September 4 if at all possible -- happy to cover a reasonable rush fee. (currently at 200 units on our records.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 610,
+   "output_tokens": 93,
+   "reasoning_tokens": null,
+   "latency_ms": 1211
+  },
+  {
+   "message_id": "MSG-00055",
+   "vendor_id": "VEN-0107",
+   "candidates": [
+    "REC-00032",
+    "REC-00033",
+    "REC-00034"
+   ],
+   "match": "REC-00034",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-10-13"
+   },
+   "citation": "We won't be able to receive the insulated sleeving order on the current schedule. Can you reschedule shipment for October 13? (PO reference REC-00034.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 639,
+   "output_tokens": 80,
+   "reasoning_tokens": null,
+   "latency_ms": 1307
+  },
+  {
+   "message_id": "MSG-00056",
+   "vendor_id": "VEN-0107",
+   "candidates": [
+    "REC-00030",
+    "REC-00031"
+   ],
+   "match": "REC-00031",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "We need to cancel the pressure gauges line. No replacement order planned at this time. (PO reference REC-00031.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 590,
+   "output_tokens": 63,
+   "reasoning_tokens": null,
+   "latency_ms": 1242
+  },
+  {
+   "message_id": "MSG-00057",
+   "vendor_id": "VEN-0108",
+   "candidates": [],
+   "match": "NONE",
+   "change_type": null,
+   "new_value": null,
+   "citation": null,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 498,
+   "output_tokens": 24,
+   "reasoning_tokens": null,
+   "latency_ms": 900
+  },
+  {
+   "message_id": "MSG-00058",
+   "vendor_id": "VEN-0108",
+   "candidates": [
+    "REC-00037",
+    "REC-00038"
+   ],
+   "match": "REC-00038",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 200
+   },
+   "citation": "Please adjust the threaded rod order to 200 units instead of what's currently on file. (currently scheduled to ship August 25.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 568,
+   "output_tokens": 68,
+   "reasoning_tokens": null,
+   "latency_ms": 1015
+  },
+  {
+   "message_id": "MSG-00059",
+   "vendor_id": "VEN-0108",
+   "candidates": [
+    "REC-00035",
+    "REC-00036"
+   ],
+   "match": "REC-00035",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 1.24
+   },
+   "citation": "new unit cost is $1.24. (currently scheduled to ship October 26.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 576,
+   "output_tokens": 60,
+   "reasoning_tokens": null,
+   "latency_ms": 1295
+  },
+  {
+   "message_id": "MSG-00060",
+   "vendor_id": "VEN-0108",
+   "candidates": [
+    "REC-00037",
+    "REC-00038"
+   ],
+   "match": "REC-00037",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-10-13"
+   },
+   "citation": "Any chance you can pull the ship date forward to October 13? ... (PO reference REC-00037.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 586,
+   "output_tokens": 70,
+   "reasoning_tokens": null,
+   "latency_ms": 1460
+  },
+  {
+   "message_id": "MSG-00061",
+   "vendor_id": "VEN-0108",
+   "candidates": [
+    "REC-00035",
+    "REC-00036"
+   ],
+   "match": "REC-00035",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-11-13"
+   },
+   "citation": "Push the ship date to November 13 instead. (PO reference REC-00035.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 580,
+   "output_tokens": 63,
+   "reasoning_tokens": null,
+   "latency_ms": 1165
+  },
+  {
+   "message_id": "MSG-00062",
+   "vendor_id": "VEN-0108",
+   "candidates": [
+    "REC-00037",
+    "REC-00038"
+   ],
+   "match": "REC-00037",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "We need to cancel the threaded rod line. (PO reference REC-00037.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 566,
+   "output_tokens": 54,
+   "reasoning_tokens": null,
+   "latency_ms": 1237
+  },
+  {
+   "message_id": "MSG-00063",
+   "vendor_id": "VEN-0108",
+   "candidates": [
+    "REC-00035",
+    "REC-00036"
+   ],
+   "match": "REC-00035",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 60
+   },
+   "citation": "Please adjust the rubber grommets order to 60 units instead of what's currently on file. (currently scheduled to ship October 26.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 576,
+   "output_tokens": 71,
+   "reasoning_tokens": null,
+   "latency_ms": 1415
+  },
+  {
+   "message_id": "MSG-00064",
+   "vendor_id": "VEN-0109",
+   "candidates": [],
+   "match": "NONE",
+   "change_type": null,
+   "new_value": null,
+   "citation": null,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 502,
+   "output_tokens": 30,
+   "reasoning_tokens": null,
+   "latency_ms": 1212
+  },
+  {
+   "message_id": "MSG-00065",
+   "vendor_id": "VEN-0109",
+   "candidates": [
+    "REC-00041",
+    "REC-00042",
+    "REC-00043"
+   ],
+   "match": "REC-00043",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 7.7
+   },
+   "citation": "Pricing update for the SKU-1901 line: new unit cost is $7.70. (PO reference REC-00043.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 613,
+   "output_tokens": 71,
+   "reasoning_tokens": null,
+   "latency_ms": 1069
+  },
+  {
+   "message_id": "MSG-00066",
+   "vendor_id": "VEN-0109",
+   "candidates": [
+    "REC-00039",
+    "REC-00040"
+   ],
+   "match": "REC-00040",
+   "change_type": "expedite",
+   "new_value": {
+    "new_ship_date": "2026-10-25"
+   },
+   "citation": "Any chance you can pull the ship date forward to October 25? ... (currently at 200 units on our records.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 600,
+   "output_tokens": 72,
+   "reasoning_tokens": null,
+   "latency_ms": 1278
+  },
+  {
+   "message_id": "MSG-00067",
+   "vendor_id": "VEN-0109",
+   "candidates": [
+    "REC-00041",
+    "REC-00042",
+    "REC-00043"
+   ],
+   "match": "REC-00041",
+   "change_type": "delay",
+   "new_value": {
+    "new_ship_date": "2026-10-19"
+   },
+   "citation": "Requesting a delay on the foam gaskets order -- new ship date of October 19, please. (currently at 40 units on our records.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 616,
+   "output_tokens": 77,
+   "reasoning_tokens": null,
+   "latency_ms": 1074
+  },
+  {
+   "message_id": "MSG-00068",
+   "vendor_id": "VEN-0109",
+   "candidates": [
+    "REC-00039",
+    "REC-00040"
+   ],
+   "match": "REC-00040",
+   "change_type": "cancel",
+   "new_value": null,
+   "citation": "the SKU-1900 order should be pulled entirely, effective immediately. (currently scheduled to ship October 31.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 577,
+   "output_tokens": 57,
+   "reasoning_tokens": null,
+   "latency_ms": 1249
+  },
+  {
+   "message_id": "MSG-00069",
+   "vendor_id": "VEN-0109",
+   "candidates": [
+    "REC-00041",
+    "REC-00042",
+    "REC-00043"
+   ],
+   "match": "REC-00041",
+   "change_type": "qty_change",
+   "new_value": {
+    "new_qty": 130
+   },
+   "citation": "Requesting a quantity change on the foam gaskets line -- 130 units going forward. (currently scheduled to ship September 26.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 612,
+   "output_tokens": 69,
+   "reasoning_tokens": null,
+   "latency_ms": 1541
+  },
+  {
+   "message_id": "MSG-00070",
+   "vendor_id": "VEN-0109",
+   "candidates": [
+    "REC-00039",
+    "REC-00040"
+   ],
+   "match": "REC-00039",
+   "change_type": "price_change",
+   "new_value": {
+    "new_unit_cost": 63.74
+   },
+   "citation": "Effective this order, unit cost on drive couplings should be $63.74, not what's currently quoted. (PO reference REC-00039.)",
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 580,
+   "output_tokens": 72,
+   "reasoning_tokens": null,
+   "latency_ms": 1498
+  }
+ ]
+}

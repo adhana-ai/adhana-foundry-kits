@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>change-impact — match a change request to the record it modifies</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Match a change request to the record it modifies</h1>
+    <p class="sub">One message, one model call. It picks which candidate record (if any) the
+      message is about, extracts the requested change, and a deterministic calculator turns that
+      into a dollar impact and a date impact — never asked of the model. Three match outcomes:
+      <b>a specific record</b>, <b>NONE</b>, and <b>UNSURE</b>. The third is the point: a message
+      that could plausibly be about more than one record, with nothing in the text to settle it,
+      is not a coin flip — it is a case for a person.</p>
+    <p class="sub rb" id="rbline">The records and correspondence are synthetic, generated at build
+      time from a fixed seed — never written from memory.</p>
+  </header>
+
+  <div class="bar">
+    <select id="msg" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Check</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Correspondence &amp; candidates</span><span class="hint">the message, and every open record blocking found for it</span></div>
+      <div id="msg-box" class="src"></div>
+      <div id="cand-box" class="src cand"></div>
+    </div>
+
+    <div class="panel">
+      <div class="ph"><span>Match &amp; impact</span></div>
+      <div id="out" class="out"></div>
+      <div class="stats">
+        <div class="stat"><b id="s-match">—</b><span>matched record</span></div>
+        <div class="stat"><b id="s-change">—</b><span>change type</span></div>
+        <div class="stat cost"><b id="s-cost">—</b><span>cost impact</span></div>
+        <div class="stat"><b id="s-date">—</b><span>ship-date delta</span></div>
+      </div>
+      <p class="decision" id="decision"></p>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>
