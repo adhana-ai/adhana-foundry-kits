@@ -1,0 +1,48 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>cold-start-match — seed a new item's forecast from its prior comparable items</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Seed a new item's forecast from prior comparable items</h1>
+    <p class="sub">One new-item setup request with no sales history, one model call. It decides
+      which prior items in the same category are genuine comparables — matching on material,
+      price tier, channel and season, allowing an adjacent price tier and the online-only channel
+      family — and a deterministic calculator drafts the recommended starting forecast from the
+      like-item set alone, never asked of the model. Three verdicts per candidate:
+      <b>LIKE_ITEM</b>, <b>NOT_LIKE_ITEM</b>, and <b>UNSURE</b>. The third is the point: a
+      candidate that could plausibly go either way is not a coin flip — it is excluded from the
+      estimate and left for a person.</p>
+    <p class="sub rb" id="rbline">The items and requests are synthetic, generated at build time
+      from a fixed seed — never written from memory.</p>
+  </header>
+
+  <div class="bar">
+    <select id="req" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Check</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Request &amp; candidates</span><span class="hint">the new-item setup request, and every prior item blocking found in its category</span></div>
+      <div id="req-box" class="src"></div>
+      <div id="cand-box" class="src cand"></div>
+    </div>
+
+    <div class="panel">
+      <div class="ph"><span>Verdicts &amp; drafted forecast</span></div>
+      <div id="out" class="out"></div>
+      <div class="stats">
+        <div class="stat"><b id="s-analogs">—</b><span>counted like items</span></div>
+        <div class="stat cost"><b id="s-lift">—</b><span>recommended wk13 units/store</span></div>
+        <div class="stat"><b id="s-range">—</b><span>range</span></div>
+        <div class="stat"><b id="s-conf">—</b><span>confidence</span></div>
+      </div>
+      <p class="decision" id="decision"></p>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>

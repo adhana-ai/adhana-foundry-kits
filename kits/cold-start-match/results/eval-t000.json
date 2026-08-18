@@ -1,0 +1,3338 @@
+{
+ "run_id": "t000",
+ "stub": true,
+ "model": "stub",
+ "provider": "stub",
+ "requests": 15,
+ "failures": 0,
+ "latency_p50_ms": 0,
+ "latency_p95_ms": 0,
+ "wall_seconds": 0.0,
+ "input_tokens_total": 22003,
+ "output_tokens_total": 7200,
+ "blocking_stats": {
+  "requests": 15,
+  "history_items": 120,
+  "true_like_item_pairs": 45,
+  "true_like_item_pairs_surviving": 45,
+  "blocking_recall": 1.0,
+  "candidate_set_size_avg": 24.0,
+  "candidate_set_size_max": 24
+ },
+ "scores": {
+  "pairs_scored": 360,
+  "counts": {
+   "merged_correct": 5,
+   "false_merge": 10,
+   "missed_match": 40,
+   "apart_correct": 305,
+   "no_verdict": 0
+  },
+  "precision_pct": 33.3,
+  "recall_pct": 11.1,
+  "f1_pct": 16.6,
+  "accuracy_pct": 86.1,
+  "no_verdict": 0,
+  "true_positive": 5,
+  "false_positive": 10,
+  "false_negative": 40,
+  "true_negative": 305
+ },
+ "draft_tally": {
+  "counts": {
+   "draft_ready": 0,
+   "insufficient_comps": 15
+  },
+  "total": 15,
+  "insufficient_pct": 100.0
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 1638
+  },
+  {
+   "name": "request",
+   "chars": 172
+  },
+  {
+   "name": "candidates",
+   "chars": 5363
+  }
+ ],
+ "raw_text": "{\"verdicts\": [{\"item_id\": \"ITM-00001\", \"verdict\": \"LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00002\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00003\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00004\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00005\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00006\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00007\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00008\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00009\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00010\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00011\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00012\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00013\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00014\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00015\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00016\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00017\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00018\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00019\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00020\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00021\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00022\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00023\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}, {\"item_id\": \"ITM-00024\", \"verdict\": \"NOT_LIKE_ITEM\", \"reason\": \"stub\"}]}",
+ "max_tokens": 4096,
+ "thinking": null,
+ "records": [
+  {
+   "request_id": "NEW-00001",
+   "category": "cookware",
+   "candidates": [
+    "ITM-00001",
+    "ITM-00002",
+    "ITM-00003",
+    "ITM-00004",
+    "ITM-00005",
+    "ITM-00006",
+    "ITM-00007",
+    "ITM-00008",
+    "ITM-00009",
+    "ITM-00010",
+    "ITM-00011",
+    "ITM-00012",
+    "ITM-00013",
+    "ITM-00014",
+    "ITM-00015",
+    "ITM-00016",
+    "ITM-00017",
+    "ITM-00018",
+    "ITM-00019",
+    "ITM-00020",
+    "ITM-00021",
+    "ITM-00022",
+    "ITM-00023",
+    "ITM-00024"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00001",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00002",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00003",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00004",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00005",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00006",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00007",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00008",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00009",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00010",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00011",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00012",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00013",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00014",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00015",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00016",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00017",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00018",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00019",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00020",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00021",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00022",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00023",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00024",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00001"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1452,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00002",
+   "category": "cookware",
+   "candidates": [
+    "ITM-00001",
+    "ITM-00002",
+    "ITM-00003",
+    "ITM-00004",
+    "ITM-00005",
+    "ITM-00006",
+    "ITM-00007",
+    "ITM-00008",
+    "ITM-00009",
+    "ITM-00010",
+    "ITM-00011",
+    "ITM-00012",
+    "ITM-00013",
+    "ITM-00014",
+    "ITM-00015",
+    "ITM-00016",
+    "ITM-00017",
+    "ITM-00018",
+    "ITM-00019",
+    "ITM-00020",
+    "ITM-00021",
+    "ITM-00022",
+    "ITM-00023",
+    "ITM-00024"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00001",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00002",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00003",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00004",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00005",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00006",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00007",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00008",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00009",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00010",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00011",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00012",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00013",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00014",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00015",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00016",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00017",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00018",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00019",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00020",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00021",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00022",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00023",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00024",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00001"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1481,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00003",
+   "category": "cookware",
+   "candidates": [
+    "ITM-00001",
+    "ITM-00002",
+    "ITM-00003",
+    "ITM-00004",
+    "ITM-00005",
+    "ITM-00006",
+    "ITM-00007",
+    "ITM-00008",
+    "ITM-00009",
+    "ITM-00010",
+    "ITM-00011",
+    "ITM-00012",
+    "ITM-00013",
+    "ITM-00014",
+    "ITM-00015",
+    "ITM-00016",
+    "ITM-00017",
+    "ITM-00018",
+    "ITM-00019",
+    "ITM-00020",
+    "ITM-00021",
+    "ITM-00022",
+    "ITM-00023",
+    "ITM-00024"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00001",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00002",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00003",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00004",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00005",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00006",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00007",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00008",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00009",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00010",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00011",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00012",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00013",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00014",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00015",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00016",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00017",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00018",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00019",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00020",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00021",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00022",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00023",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00024",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00001"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1477,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00004",
+   "category": "small-appliances",
+   "candidates": [
+    "ITM-00025",
+    "ITM-00026",
+    "ITM-00027",
+    "ITM-00028",
+    "ITM-00029",
+    "ITM-00030",
+    "ITM-00031",
+    "ITM-00032",
+    "ITM-00033",
+    "ITM-00034",
+    "ITM-00035",
+    "ITM-00036",
+    "ITM-00037",
+    "ITM-00038",
+    "ITM-00039",
+    "ITM-00040",
+    "ITM-00041",
+    "ITM-00042",
+    "ITM-00043",
+    "ITM-00044",
+    "ITM-00045",
+    "ITM-00046",
+    "ITM-00047",
+    "ITM-00048"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00025",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00026",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00027",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00028",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00029",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00030",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00031",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00032",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00033",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00034",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00035",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00036",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00037",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00038",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00039",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00040",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00041",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00042",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00043",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00044",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00045",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00046",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00047",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00048",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00025"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1470,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00005",
+   "category": "small-appliances",
+   "candidates": [
+    "ITM-00025",
+    "ITM-00026",
+    "ITM-00027",
+    "ITM-00028",
+    "ITM-00029",
+    "ITM-00030",
+    "ITM-00031",
+    "ITM-00032",
+    "ITM-00033",
+    "ITM-00034",
+    "ITM-00035",
+    "ITM-00036",
+    "ITM-00037",
+    "ITM-00038",
+    "ITM-00039",
+    "ITM-00040",
+    "ITM-00041",
+    "ITM-00042",
+    "ITM-00043",
+    "ITM-00044",
+    "ITM-00045",
+    "ITM-00046",
+    "ITM-00047",
+    "ITM-00048"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00025",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00026",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00027",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00028",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00029",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00030",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00031",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00032",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00033",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00034",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00035",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00036",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00037",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00038",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00039",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00040",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00041",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00042",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00043",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00044",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00045",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00046",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00047",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00048",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00025"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1444,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00006",
+   "category": "small-appliances",
+   "candidates": [
+    "ITM-00025",
+    "ITM-00026",
+    "ITM-00027",
+    "ITM-00028",
+    "ITM-00029",
+    "ITM-00030",
+    "ITM-00031",
+    "ITM-00032",
+    "ITM-00033",
+    "ITM-00034",
+    "ITM-00035",
+    "ITM-00036",
+    "ITM-00037",
+    "ITM-00038",
+    "ITM-00039",
+    "ITM-00040",
+    "ITM-00041",
+    "ITM-00042",
+    "ITM-00043",
+    "ITM-00044",
+    "ITM-00045",
+    "ITM-00046",
+    "ITM-00047",
+    "ITM-00048"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00025",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00026",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00027",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00028",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00029",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00030",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00031",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00032",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00033",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00034",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00035",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00036",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00037",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00038",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00039",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00040",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00041",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00042",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00043",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00044",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00045",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00046",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00047",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00048",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00025"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1474,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00007",
+   "category": "outdoor-furniture",
+   "candidates": [
+    "ITM-00049",
+    "ITM-00050",
+    "ITM-00051",
+    "ITM-00052",
+    "ITM-00053",
+    "ITM-00054",
+    "ITM-00055",
+    "ITM-00056",
+    "ITM-00057",
+    "ITM-00058",
+    "ITM-00059",
+    "ITM-00060",
+    "ITM-00061",
+    "ITM-00062",
+    "ITM-00063",
+    "ITM-00064",
+    "ITM-00065",
+    "ITM-00066",
+    "ITM-00067",
+    "ITM-00068",
+    "ITM-00069",
+    "ITM-00070",
+    "ITM-00071",
+    "ITM-00072"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00049",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00050",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00051",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00052",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00053",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00054",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00055",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00056",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00057",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00058",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00059",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00060",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00061",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00062",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00063",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00064",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00065",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00066",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00067",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00068",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00069",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00070",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00071",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00072",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00049"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1474,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00008",
+   "category": "outdoor-furniture",
+   "candidates": [
+    "ITM-00049",
+    "ITM-00050",
+    "ITM-00051",
+    "ITM-00052",
+    "ITM-00053",
+    "ITM-00054",
+    "ITM-00055",
+    "ITM-00056",
+    "ITM-00057",
+    "ITM-00058",
+    "ITM-00059",
+    "ITM-00060",
+    "ITM-00061",
+    "ITM-00062",
+    "ITM-00063",
+    "ITM-00064",
+    "ITM-00065",
+    "ITM-00066",
+    "ITM-00067",
+    "ITM-00068",
+    "ITM-00069",
+    "ITM-00070",
+    "ITM-00071",
+    "ITM-00072"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00049",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00050",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00051",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00052",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00053",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00054",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00055",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00056",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00057",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00058",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00059",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00060",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00061",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00062",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00063",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00064",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00065",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00066",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00067",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00068",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00069",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00070",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00071",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00072",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00049"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1473,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00009",
+   "category": "outdoor-furniture",
+   "candidates": [
+    "ITM-00049",
+    "ITM-00050",
+    "ITM-00051",
+    "ITM-00052",
+    "ITM-00053",
+    "ITM-00054",
+    "ITM-00055",
+    "ITM-00056",
+    "ITM-00057",
+    "ITM-00058",
+    "ITM-00059",
+    "ITM-00060",
+    "ITM-00061",
+    "ITM-00062",
+    "ITM-00063",
+    "ITM-00064",
+    "ITM-00065",
+    "ITM-00066",
+    "ITM-00067",
+    "ITM-00068",
+    "ITM-00069",
+    "ITM-00070",
+    "ITM-00071",
+    "ITM-00072"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00049",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00050",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00051",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00052",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00053",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00054",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00055",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00056",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00057",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00058",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00059",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00060",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00061",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00062",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00063",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00064",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00065",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00066",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00067",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00068",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00069",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00070",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00071",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00072",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00049"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1448,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00010",
+   "category": "bath-textiles",
+   "candidates": [
+    "ITM-00073",
+    "ITM-00074",
+    "ITM-00075",
+    "ITM-00076",
+    "ITM-00077",
+    "ITM-00078",
+    "ITM-00079",
+    "ITM-00080",
+    "ITM-00081",
+    "ITM-00082",
+    "ITM-00083",
+    "ITM-00084",
+    "ITM-00085",
+    "ITM-00086",
+    "ITM-00087",
+    "ITM-00088",
+    "ITM-00089",
+    "ITM-00090",
+    "ITM-00091",
+    "ITM-00092",
+    "ITM-00093",
+    "ITM-00094",
+    "ITM-00095",
+    "ITM-00096"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00073",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00074",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00075",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00076",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00077",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00078",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00079",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00080",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00081",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00082",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00083",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00084",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00085",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00086",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00087",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00088",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00089",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00090",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00091",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00092",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00093",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00094",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00095",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00096",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00073"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1465,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00011",
+   "category": "bath-textiles",
+   "candidates": [
+    "ITM-00073",
+    "ITM-00074",
+    "ITM-00075",
+    "ITM-00076",
+    "ITM-00077",
+    "ITM-00078",
+    "ITM-00079",
+    "ITM-00080",
+    "ITM-00081",
+    "ITM-00082",
+    "ITM-00083",
+    "ITM-00084",
+    "ITM-00085",
+    "ITM-00086",
+    "ITM-00087",
+    "ITM-00088",
+    "ITM-00089",
+    "ITM-00090",
+    "ITM-00091",
+    "ITM-00092",
+    "ITM-00093",
+    "ITM-00094",
+    "ITM-00095",
+    "ITM-00096"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00073",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00074",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00075",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00076",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00077",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00078",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00079",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00080",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00081",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00082",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00083",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00084",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00085",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00086",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00087",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00088",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00089",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00090",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00091",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00092",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00093",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00094",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00095",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00096",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00073"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1462,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00012",
+   "category": "bath-textiles",
+   "candidates": [
+    "ITM-00073",
+    "ITM-00074",
+    "ITM-00075",
+    "ITM-00076",
+    "ITM-00077",
+    "ITM-00078",
+    "ITM-00079",
+    "ITM-00080",
+    "ITM-00081",
+    "ITM-00082",
+    "ITM-00083",
+    "ITM-00084",
+    "ITM-00085",
+    "ITM-00086",
+    "ITM-00087",
+    "ITM-00088",
+    "ITM-00089",
+    "ITM-00090",
+    "ITM-00091",
+    "ITM-00092",
+    "ITM-00093",
+    "ITM-00094",
+    "ITM-00095",
+    "ITM-00096"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00073",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00074",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00075",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00076",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00077",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00078",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00079",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00080",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00081",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00082",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00083",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00084",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00085",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00086",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00087",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00088",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00089",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00090",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00091",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00092",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00093",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00094",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00095",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00096",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00073"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1491,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00013",
+   "category": "pet-supplies",
+   "candidates": [
+    "ITM-00097",
+    "ITM-00098",
+    "ITM-00099",
+    "ITM-00100",
+    "ITM-00101",
+    "ITM-00102",
+    "ITM-00103",
+    "ITM-00104",
+    "ITM-00105",
+    "ITM-00106",
+    "ITM-00107",
+    "ITM-00108",
+    "ITM-00109",
+    "ITM-00110",
+    "ITM-00111",
+    "ITM-00112",
+    "ITM-00113",
+    "ITM-00114",
+    "ITM-00115",
+    "ITM-00116",
+    "ITM-00117",
+    "ITM-00118",
+    "ITM-00119",
+    "ITM-00120"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00097",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00098",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00099",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00100",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00101",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00102",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00103",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00104",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00105",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00106",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00107",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00108",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00109",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00110",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00111",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00112",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00113",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00114",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00115",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00116",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00117",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00118",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00119",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00120",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00097"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1454,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00014",
+   "category": "pet-supplies",
+   "candidates": [
+    "ITM-00097",
+    "ITM-00098",
+    "ITM-00099",
+    "ITM-00100",
+    "ITM-00101",
+    "ITM-00102",
+    "ITM-00103",
+    "ITM-00104",
+    "ITM-00105",
+    "ITM-00106",
+    "ITM-00107",
+    "ITM-00108",
+    "ITM-00109",
+    "ITM-00110",
+    "ITM-00111",
+    "ITM-00112",
+    "ITM-00113",
+    "ITM-00114",
+    "ITM-00115",
+    "ITM-00116",
+    "ITM-00117",
+    "ITM-00118",
+    "ITM-00119",
+    "ITM-00120"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00097",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00098",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00099",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00100",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00101",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00102",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00103",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00104",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00105",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00106",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00107",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00108",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00109",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00110",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00111",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00112",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00113",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00114",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00115",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00116",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00117",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00118",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00119",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00120",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00097"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1484,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  },
+  {
+   "request_id": "NEW-00015",
+   "category": "pet-supplies",
+   "candidates": [
+    "ITM-00097",
+    "ITM-00098",
+    "ITM-00099",
+    "ITM-00100",
+    "ITM-00101",
+    "ITM-00102",
+    "ITM-00103",
+    "ITM-00104",
+    "ITM-00105",
+    "ITM-00106",
+    "ITM-00107",
+    "ITM-00108",
+    "ITM-00109",
+    "ITM-00110",
+    "ITM-00111",
+    "ITM-00112",
+    "ITM-00113",
+    "ITM-00114",
+    "ITM-00115",
+    "ITM-00116",
+    "ITM-00117",
+    "ITM-00118",
+    "ITM-00119",
+    "ITM-00120"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00097",
+     "verdict": "LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00098",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00099",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00100",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00101",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00102",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00103",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00104",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00105",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00106",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00107",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00108",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00109",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00110",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00111",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00112",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00113",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 1.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00114",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00115",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00116",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00117",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00118",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00119",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00120",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "stub",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00097"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": null,
+   "input_tokens": 1454,
+   "output_tokens": 480,
+   "reasoning_tokens": null,
+   "latency_ms": 0
+  }
+ ]
+}

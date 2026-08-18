@@ -1,0 +1,117 @@
+// Screenshot the running kit UI, for the use-case standard's UI lens.
+//
+// ⚑ WHY THIS IS A SCRIPT AND NOT A MANUAL STEP. A screenshot taken by hand is one nobody can
+// reproduce when the UI changes. Ported from change-impact's copy, same shape: this kit's UI is
+// also one request, one call, no multi-step flow to drive.
+//
+// ⚠︎ IT NEVER SPENDS ON ITS OWN. Both shots here are free -- /api/state, /api/request and
+// /api/candidates need nothing, and clicking Check with no API_KEY configured returns a calm 200
+// with no call made. The "nokey" shot IS the required failure shot: no key configured is the
+// state most forkers see first, and it is a real failure to complete the task, not staged.
+//
+//   node tools/shoot_ui.mjs               # the two free shots -- this is the only mode today
+import { spawn } from 'node:child_process'
+import { mkdirSync } from 'node:fs'
+import path from 'node:path'
+
+const HERE = path.dirname(path.dirname(new URL(import.meta.url).pathname))
+const OUT = path.join(HERE, 'docs', 'shots')
+const PORT = Number(process.env.PORT || 8785)
+
+function chromePath() {
+  if (process.env.PUPPETEER_EXECUTABLE_PATH) return process.env.PUPPETEER_EXECUTABLE_PATH
+  return '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+}
+
+const sleep = (ms) => new Promise(r => setTimeout(r, ms))
+
+mkdirSync(OUT, { recursive: true })
+
+async function portIsFree(port) {
+  const net = await import('node:net')
+  return new Promise((resolve) => {
+    const s = net.createConnection({ host: '127.0.0.1', port })
+    const done = (v) => { try { s.destroy() } catch {} ; resolve(v) }
+    s.setTimeout(1200)
+    s.on('connect', () => done(false))
+    s.on('timeout', () => done(true))
+    s.on('error', () => done(true))
+  })
+}
+if (!(await portIsFree(PORT))) {
+  console.error(`  !! something is ALREADY listening on 127.0.0.1:${PORT}.`)
+  console.error('     Refusing to start: this script blanks API_KEY so its shots are free, and a')
+  console.error('     server it did not start may hold a real key -- clicking would SPEND.')
+  console.error(`     Free the port (lsof -nP -iTCP:${PORT} -sTCP:LISTEN) or set PORT= to a spare one.`)
+  process.exit(4)
+}
+
+const env = { ...process.env, PORT: String(PORT), API_KEY: '', LLM_API_KEY: '', OPENAI_API_KEY: '' }
+const server = spawn('python3', ['-m', 'src.app'], { cwd: HERE, env, stdio: 'ignore' })
+process.on('exit', () => server.kill())
+
+async function proveItIsOurs() {
+  let last = 'no attempt completed'
+  for (let i = 0; i < 40; i++) {
+    try {
+      const r = await fetch(`http://127.0.0.1:${PORT}/api/state`)
+      if (!r.ok) {
+        last = `HTTP ${r.status} from /api/state`
+      } else {
+        const j = await r.json()
+        if (Array.isArray(j.requests) && j.requests.length === 15
+            && j.requests.every((d) => /^NEW-\d+$/.test(d))) return j
+        last = 'answered, but not with this kit\'s shape'
+      }
+    } catch (e) {
+      last = e.message
+    }
+    await sleep(250)
+  }
+  console.error(`  !! nothing recognisable as cold-start-match is serving 127.0.0.1:${PORT}.`)
+  console.error(`     Last: ${last}`)
+  console.error('     If another app owns that port, free it or set PORT= to a spare one.')
+  console.error('     Refusing to screenshot a page this script cannot identify.')
+  process.exit(3)
+}
+
+const PUP = process.env.PUPPETEER_MODULE || 'puppeteer'
+let puppeteer
+try {
+  puppeteer = (await import(PUP)).default
+} catch {
+  console.error('  !! puppeteer not resolvable as %s.', PUP)
+  console.error('     Set PUPPETEER_MODULE to an installed copy.')
+  process.exit(2)
+}
+let browser
+try {
+  await proveItIsOurs()
+  browser = await puppeteer.launch({ executablePath: chromePath(), args: ['--no-sandbox'] })
+  const page = await browser.newPage()
+  await page.setViewport({ width: 1280, height: 900, deviceScaleFactor: 2 })
+  await page.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: 'networkidle0' })
+  await sleep(700)
+
+  await page.select('#req', 'NEW-00002')
+  await sleep(400)
+  await page.screenshot({ path: path.join(OUT, 'cold-start-match-landing.png'), fullPage: true })
+  console.log('  wrote cold-start-match-landing.png')
+
+  const btn = await page.$('#go')
+  if (btn) {
+    await btn.click()
+    await page.waitForFunction(
+      () => !document.querySelector('#note').hidden,
+      { timeout: 15000 })
+    await sleep(300)
+    await page.screenshot({ path: path.join(OUT, 'cold-start-match-nokey.png'), fullPage: true })
+    console.log('  wrote cold-start-match-nokey.png')
+  } else {
+    console.log('  !! no #go control found -- the UI changed; fix the selector above')
+    process.exitCode = 1
+  }
+} finally {
+  if (browser) await browser.close()
+  server.kill()
+}

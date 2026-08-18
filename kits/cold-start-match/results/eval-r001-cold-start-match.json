@@ -1,0 +1,3373 @@
+{
+ "run_id": "r001-cold-start-match",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "requests": 15,
+ "failures": 0,
+ "latency_p50_ms": 6621,
+ "latency_p95_ms": 8940,
+ "wall_seconds": 100.6,
+ "input_tokens_total": 32626,
+ "output_tokens_total": 16662,
+ "blocking_stats": {
+  "requests": 15,
+  "history_items": 120,
+  "true_like_item_pairs": 45,
+  "true_like_item_pairs_surviving": 45,
+  "blocking_recall": 1.0,
+  "candidate_set_size_avg": 24.0,
+  "candidate_set_size_max": 24
+ },
+ "scores": {
+  "pairs_scored": 360,
+  "counts": {
+   "merged_correct": 33,
+   "false_merge": 1,
+   "missed_match": 12,
+   "apart_correct": 314,
+   "no_verdict": 0
+  },
+  "precision_pct": 97.1,
+  "recall_pct": 73.3,
+  "f1_pct": 83.5,
+  "accuracy_pct": 96.4,
+  "no_verdict": 0,
+  "true_positive": 33,
+  "false_positive": 1,
+  "false_negative": 12,
+  "true_negative": 314
+ },
+ "draft_tally": {
+  "counts": {
+   "draft_ready": 14,
+   "insufficient_comps": 1
+  },
+  "total": 15,
+  "insufficient_pct": 6.7
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 1638
+  },
+  {
+   "name": "request",
+   "chars": 172
+  },
+  {
+   "name": "candidates",
+   "chars": 5363
+  }
+ ],
+ "raw_text": "{\n  \"verdicts\": [\n    {\n      \"item_id\": \"ITM-00001\",\n      \"verdict\": \"LIKE_ITEM\",\n      \"reason\": \"Material, tier, channel, and season all identical to request.\"\n    },\n    {\n      \"item_id\": \"ITM-00002\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Price tier core is not adjacent to value (core is two tiers above value).\"\n    },\n    {\n      \"item_id\": \"ITM-00003\",\n      \"verdict\": \"LIKE_ITEM\",\n      \"reason\": \"Channel ecommerce_only is equivalent to marketplace, and all other key fields match.\"\n    },\n    {\n      \"item_id\": \"ITM-00004\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material hard_plastic differs from ceramic.\"\n    },\n    {\n      \"item_id\": \"ITM-00005\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Price tier premium is two tiers above value (not adjacent).\"\n    },\n    {\n      \"item_id\": \"ITM-00006\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Channel club_store is not in the online-only family and is not marketplace.\"\n    },\n    {\n      \"item_id\": \"ITM-00007\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Season holiday differs from year_round; no season equivalence.\"\n    },\n    {\n      \"item_id\": \"ITM-00008\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material stainless_steel, tier premium, and channel club_store all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00009\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material, tier, and channel all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00010\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material stainless_steel, tier premium, and channel club_store all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00011\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material hard_plastic, tier premium, and channel club_store all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00012\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material stainless_steel and channel club_store differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00013\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material stainless_steel and tier premium differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00014\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material, tier, channel, and season all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00015\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Tier core is two above value, channel big_box differs, and season spring differs.\"\n    },\n    {\n      \"item_id\": \"ITM-00016\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Tier premium, channel big_box, and season spring all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00017\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Tier core, channel big_box, and season spring all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00018\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material, tier, channel, and season all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00019\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Tier luxury, channel big_box, and season spring all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00020\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Tier core, channel club_store, and season spring all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00021\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Tier core, channel big_box, and season holiday all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00022\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material, tier, channel, and season all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00023\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material, tier, channel, and season all differ from request.\"\n    },\n    {\n      \"item_id\": \"ITM-00024\",\n      \"verdict\": \"NOT_LIKE_ITEM\",\n      \"reason\": \"Material, channel, and season all differ from request.\"\n    }\n  ]\n}",
+ "max_tokens": 4096,
+ "thinking": {
+  "type": "disabled"
+ },
+ "records": [
+  {
+   "request_id": "NEW-00001",
+   "category": "cookware",
+   "candidates": [
+    "ITM-00001",
+    "ITM-00002",
+    "ITM-00003",
+    "ITM-00004",
+    "ITM-00005",
+    "ITM-00006",
+    "ITM-00007",
+    "ITM-00008",
+    "ITM-00009",
+    "ITM-00010",
+    "ITM-00011",
+    "ITM-00012",
+    "ITM-00013",
+    "ITM-00014",
+    "ITM-00015",
+    "ITM-00016",
+    "ITM-00017",
+    "ITM-00018",
+    "ITM-00019",
+    "ITM-00020",
+    "ITM-00021",
+    "ITM-00022",
+    "ITM-00023",
+    "ITM-00024"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00001",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all identical to request.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00002",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier core is not adjacent to value (core is two tiers above value).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00003",
+     "verdict": "LIKE_ITEM",
+     "reason": "Channel ecommerce_only is equivalent to marketplace, and all other key fields match.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00004",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic differs from ceramic.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00005",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier premium is two tiers above value (not adjacent).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00006",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel club_store is not in the online-only family and is not marketplace.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00007",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season holiday differs from year_round; no season equivalence.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00008",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel, tier premium, and channel club_store all differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00009",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, and channel all differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00010",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel, tier premium, and channel club_store all differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00011",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic, tier premium, and channel club_store all differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00012",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel and channel club_store differ from request.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00013",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel and tier premium differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00014",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ from request.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00015",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Tier core is two above value, channel big_box differs, and season spring differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00016",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Tier premium, channel big_box, and season spring all differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00017",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Tier core, channel big_box, and season spring all differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00018",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ from request.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00019",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Tier luxury, channel big_box, and season spring all differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00020",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Tier core, channel club_store, and season spring all differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00021",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Tier core, channel big_box, and season holiday all differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00022",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ from request.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00023",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ from request.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00024",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, channel, and season all differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00001",
+    "ITM-00003"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 2,
+    "recommended_wk13_units": 24.8,
+    "wk13_low": 22.8,
+    "wk13_high": 26.7,
+    "spread_units": 3.9,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed like items, range 22.8-26.7 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2166,
+   "output_tokens": 1167,
+   "reasoning_tokens": null,
+   "latency_ms": 7984
+  },
+  {
+   "request_id": "NEW-00002",
+   "category": "cookware",
+   "candidates": [
+    "ITM-00001",
+    "ITM-00002",
+    "ITM-00003",
+    "ITM-00004",
+    "ITM-00005",
+    "ITM-00006",
+    "ITM-00007",
+    "ITM-00008",
+    "ITM-00009",
+    "ITM-00010",
+    "ITM-00011",
+    "ITM-00012",
+    "ITM-00013",
+    "ITM-00014",
+    "ITM-00015",
+    "ITM-00016",
+    "ITM-00017",
+    "ITM-00018",
+    "ITM-00019",
+    "ITM-00020",
+    "ITM-00021",
+    "ITM-00022",
+    "ITM-00023",
+    "ITM-00024"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00001",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00002",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00003",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00004",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic, not stainless_steel.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00005",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00006",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00007",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00008",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all match.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00009",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material matches, tier is core adjacent to premium, channel and season match.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00010",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all match.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00011",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic, not stainless_steel.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00012",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Tier is value, two tiers below premium, not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00013",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel is ecommerce_only, not online-equivalent to club_store.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00014",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season is back_to_school, not year_round.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00015",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00016",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00017",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00018",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel is big_box, not club_store; season is spring, not year_round.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00019",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00020",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00021",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic, not stainless_steel.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00022",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic, not stainless_steel.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00023",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is glass, not stainless_steel.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00024",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Tier is value, two tiers below premium; channel is big_box; season is back_to_school.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00008",
+    "ITM-00009",
+    "ITM-00010"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 3,
+    "recommended_wk13_units": 20.1,
+    "wk13_low": 17.9,
+    "wk13_high": 24.2,
+    "spread_units": 6.3,
+    "confidence": "medium",
+    "why": "mean of 3 confirmed like items, range 17.9-24.2 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2194,
+   "output_tokens": 983,
+   "reasoning_tokens": null,
+   "latency_ms": 5683
+  },
+  {
+   "request_id": "NEW-00003",
+   "category": "cookware",
+   "candidates": [
+    "ITM-00001",
+    "ITM-00002",
+    "ITM-00003",
+    "ITM-00004",
+    "ITM-00005",
+    "ITM-00006",
+    "ITM-00007",
+    "ITM-00008",
+    "ITM-00009",
+    "ITM-00010",
+    "ITM-00011",
+    "ITM-00012",
+    "ITM-00013",
+    "ITM-00014",
+    "ITM-00015",
+    "ITM-00016",
+    "ITM-00017",
+    "ITM-00018",
+    "ITM-00019",
+    "ITM-00020",
+    "ITM-00021",
+    "ITM-00022",
+    "ITM-00023",
+    "ITM-00024"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00001",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier value is two tiers below core and season is year_round not spring.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00002",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material and tier match but channel marketplace is not big_box and season is year_round not spring.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00003",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier value is two tiers below core, channel ecommerce_only not big_box, season year_round not spring.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00004",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material hard_plastic differs, price_tier value is two tiers below, channel and season mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00005",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier premium is two tiers above core, channel marketplace not big_box, season year_round not spring.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00006",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier value is two tiers below, channel club_store not big_box, season year_round not spring.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00007",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier value is two tiers below, channel marketplace not big_box, season holiday not spring.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00008",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs, price_tier premium is two tiers above, channel club_store not big_box, season mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00009",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs, channel club_store not big_box, season year_round not spring.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00010",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs, price_tier premium is two tiers above, channel club_store not big_box, season mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00011",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material hard_plastic differs, price_tier premium is two tiers above, channel club_store not big_box, season mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00012",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs, price_tier value is two tiers below, channel club_store not big_box, season mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00013",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs, price_tier premium is two tiers above, channel ecommerce_only not big_box, season mismatch.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00014",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs, price_tier premium is two tiers above, channel club_store not big_box, season back_to_school not spring.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00015",
+     "verdict": "LIKE_ITEM",
+     "reason": "material ceramic, tier core, channel big_box, and season spring all match.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00016",
+     "verdict": "LIKE_ITEM",
+     "reason": "material and season match, tier premium is one tier above core (adjacent), channel big_box matches.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00017",
+     "verdict": "LIKE_ITEM",
+     "reason": "material ceramic, tier core, channel big_box, and season spring all match.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00018",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs from ceramic, although tier, channel and season match.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00019",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material matches, season matches, channel matches, but price_tier luxury is two tiers above core (not adjacent).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00020",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material, tier and season match, but channel club_store not big_box (not online-only family).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00021",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material, tier and channel match, but season holiday not spring.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00022",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material hard_plastic differs, tier premium is two tiers above, channel specialty_store not big_box, season summer not spring.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00023",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material glass differs, channel specialty_store not big_box, season holiday not spring.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00024",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs, price_tier value is two tiers below, season back_to_school not spring.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00015",
+    "ITM-00016",
+    "ITM-00017"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 3,
+    "recommended_wk13_units": 20.2,
+    "wk13_low": 15.2,
+    "wk13_high": 24.1,
+    "spread_units": 8.9,
+    "confidence": "medium",
+    "why": "mean of 3 confirmed like items, range 15.2-24.1 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2184,
+   "output_tokens": 1345,
+   "reasoning_tokens": null,
+   "latency_ms": 8388
+  },
+  {
+   "request_id": "NEW-00004",
+   "category": "small-appliances",
+   "candidates": [
+    "ITM-00025",
+    "ITM-00026",
+    "ITM-00027",
+    "ITM-00028",
+    "ITM-00029",
+    "ITM-00030",
+    "ITM-00031",
+    "ITM-00032",
+    "ITM-00033",
+    "ITM-00034",
+    "ITM-00035",
+    "ITM-00036",
+    "ITM-00037",
+    "ITM-00038",
+    "ITM-00039",
+    "ITM-00040",
+    "ITM-00041",
+    "ITM-00042",
+    "ITM-00043",
+    "ITM-00044",
+    "ITM-00045",
+    "ITM-00046",
+    "ITM-00047",
+    "ITM-00048"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00025",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, price tier, channel, and season all identical to the request.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00026",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier premium is two tiers below luxury, so tier rule fails.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00027",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, price tier, channel, and season all identical to the request.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00028",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel differs from glass, so material rule fails.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00029",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier value is three tiers below luxury, so tier rule fails.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00030",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel specialty_store differs from big_box, and they are not both online-only.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00031",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season year_round differs from spring, so season rule fails.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00032",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from glass, so material rule fails.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00033",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from glass, so material rule fails.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00034",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from glass, so material rule fails.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00035",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic differs from glass, so material rule fails.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00036",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from glass, so material rule fails.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00037",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from glass, so material rule fails.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00038",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from glass, so material rule fails.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00039",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic and season back_to_school both differ from the request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00040",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic and season back_to_school both differ from the request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00041",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic and season back_to_school both differ from the request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00042",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material ceramic and season back_to_school both differ from the request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00043",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic and season back_to_school both differ from the request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00044",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic and season back_to_school both differ from the request.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00045",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic and season year_round both differ from the request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00046",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, price tier, channel, and season all differ from the request.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00047",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, price tier, channel, and season all differ from the request.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00048",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material ceramic differs from glass, so material rule fails.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00025",
+    "ITM-00027"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 2,
+    "recommended_wk13_units": 10.5,
+    "wk13_low": 9.1,
+    "wk13_high": 11.9,
+    "spread_units": 2.8,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed like items, range 9.1-11.9 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2179,
+   "output_tokens": 1169,
+   "reasoning_tokens": null,
+   "latency_ms": 6924
+  },
+  {
+   "request_id": "NEW-00005",
+   "category": "small-appliances",
+   "candidates": [
+    "ITM-00025",
+    "ITM-00026",
+    "ITM-00027",
+    "ITM-00028",
+    "ITM-00029",
+    "ITM-00030",
+    "ITM-00031",
+    "ITM-00032",
+    "ITM-00033",
+    "ITM-00034",
+    "ITM-00035",
+    "ITM-00036",
+    "ITM-00037",
+    "ITM-00038",
+    "ITM-00039",
+    "ITM-00040",
+    "ITM-00041",
+    "ITM-00042",
+    "ITM-00043",
+    "ITM-00044",
+    "ITM-00045",
+    "ITM-00046",
+    "ITM-00047",
+    "ITM-00048"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00025",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is glass, not cast_iron.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00026",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is glass, not cast_iron.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00027",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is glass, not cast_iron.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00028",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel, not cast_iron.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00029",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is glass, not cast_iron.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00030",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is glass and channel is specialty_store, not big_box.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00031",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is glass and season is year_round, not holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00032",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, price_tier, channel, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00033",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material matches, price_tier is adjacent (premium to luxury), channel and season match.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00034",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, price_tier, channel, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00035",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic, not cast_iron.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00036",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material matches, price_tier is adjacent (value to luxury), channel and season match.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00037",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel is specialty_store, not big_box.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00038",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season is summer, not holiday.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00039",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic and season is back_to_school, not holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00040",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic and season is back_to_school, not holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00041",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic and season is back_to_school, not holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00042",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic and season is back_to_school, not holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00043",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic and season is back_to_school, not holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00044",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic and season is back_to_school, not holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00045",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic and season is year_round, not holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00046",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel and season is year_round, not holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00047",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic and season is summer, not holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00048",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic and season is spring, not holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00032",
+    "ITM-00033",
+    "ITM-00034",
+    "ITM-00036"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 4,
+    "recommended_wk13_units": 20.2,
+    "wk13_low": 10.6,
+    "wk13_high": 33.1,
+    "spread_units": 22.5,
+    "confidence": "low",
+    "why": "mean of 4 confirmed like items, range 10.6-33.1 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2158,
+   "output_tokens": 1014,
+   "reasoning_tokens": null,
+   "latency_ms": 5590
+  },
+  {
+   "request_id": "NEW-00006",
+   "category": "small-appliances",
+   "candidates": [
+    "ITM-00025",
+    "ITM-00026",
+    "ITM-00027",
+    "ITM-00028",
+    "ITM-00029",
+    "ITM-00030",
+    "ITM-00031",
+    "ITM-00032",
+    "ITM-00033",
+    "ITM-00034",
+    "ITM-00035",
+    "ITM-00036",
+    "ITM-00037",
+    "ITM-00038",
+    "ITM-00039",
+    "ITM-00040",
+    "ITM-00041",
+    "ITM-00042",
+    "ITM-00043",
+    "ITM-00044",
+    "ITM-00045",
+    "ITM-00046",
+    "ITM-00047",
+    "ITM-00048"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00025",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (glass) differs from requested hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00026",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (glass) differs from requested hard_plastic.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00027",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (glass) differs from requested hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00028",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (stainless_steel) differs from requested hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00029",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (glass) differs from requested hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00030",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (glass) differs from requested hard_plastic.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00031",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (glass) differs from requested hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00032",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (cast_iron) differs from requested hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00033",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (cast_iron) differs from requested hard_plastic.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00034",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (cast_iron) differs from requested hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00035",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season (holiday) differs from requested back_to_school.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00036",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (cast_iron) differs from requested hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00037",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (cast_iron) differs from requested hard_plastic.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00038",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (cast_iron) differs from requested hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00039",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, tier (premium), channel (big_box), and season (back_to_school) all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00040",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier (core) is two tiers away from requested premium (value to premium).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00041",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, tier (premium), channel (big_box), and season (back_to_school) all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00042",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (ceramic) differs from requested hard_plastic.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00043",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier (value) is two tiers away from requested premium.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00044",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel (ecommerce_only) is not equivalent to big_box.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00045",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season (year_round) differs from requested back_to_school.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00046",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (stainless_steel) differs from requested hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00047",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier (value) is two tiers away from requested premium.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00048",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material (ceramic) differs from requested hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00039",
+    "ITM-00041"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 2,
+    "recommended_wk13_units": 23.0,
+    "wk13_low": 21.2,
+    "wk13_high": 24.8,
+    "spread_units": 3.6,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed like items, range 21.2-24.8 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2182,
+   "output_tokens": 1034,
+   "reasoning_tokens": null,
+   "latency_ms": 5797
+  },
+  {
+   "request_id": "NEW-00007",
+   "category": "outdoor-furniture",
+   "candidates": [
+    "ITM-00049",
+    "ITM-00050",
+    "ITM-00051",
+    "ITM-00052",
+    "ITM-00053",
+    "ITM-00054",
+    "ITM-00055",
+    "ITM-00056",
+    "ITM-00057",
+    "ITM-00058",
+    "ITM-00059",
+    "ITM-00060",
+    "ITM-00061",
+    "ITM-00062",
+    "ITM-00063",
+    "ITM-00064",
+    "ITM-00065",
+    "ITM-00066",
+    "ITM-00067",
+    "ITM-00068",
+    "ITM-00069",
+    "ITM-00070",
+    "ITM-00071",
+    "ITM-00072"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00049",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00050",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier premium is two tiers below luxury, not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00051",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00052",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel differs from glass.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00053",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier core is three tiers below luxury, not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00054",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel ecommerce_only is not specialty_store and not the online-only pair for specialty_store.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00055",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season back_to_school differs from spring.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00056",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season holiday differs from spring, and tier core is not adjacent to luxury.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00057",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season holiday and premium tier both fail the rules.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00058",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season holiday and core tier fail, plus channel ecommerce_only is not specialty_store.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00059",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron, core tier, marketplace channel, and holiday season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00060",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel marketplace is not specialty_store, and season holiday differs from spring.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00061",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel club_store, core tier, and holiday season all fail.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00062",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel marketplace and season back_to_school both differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00063",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel, value tier, and channel club_store all fail.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00064",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel, core tier, and club_store channel fail.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00065",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel, value tier, and channel club_store all fail.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00066",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material ceramic, value tier, and club_store channel all fail.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00067",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel and channel club_store fail.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00068",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel, value tier, and marketplace channel all fail.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00069",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel, value tier, club_store channel, and year_round season all fail.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00070",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic, ecommerce_only channel, and back_to_school season all fail.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00071",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Core tier, club_store channel, and year_round season all fail.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00072",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron, marketplace channel, and year_round season all fail.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00049",
+    "ITM-00051"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 2,
+    "recommended_wk13_units": 6.1,
+    "wk13_low": 5.0,
+    "wk13_high": 7.2,
+    "spread_units": 2.2,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed like items, range 5.0-7.2 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2166,
+   "output_tokens": 1041,
+   "reasoning_tokens": null,
+   "latency_ms": 6229
+  },
+  {
+   "request_id": "NEW-00008",
+   "category": "outdoor-furniture",
+   "candidates": [
+    "ITM-00049",
+    "ITM-00050",
+    "ITM-00051",
+    "ITM-00052",
+    "ITM-00053",
+    "ITM-00054",
+    "ITM-00055",
+    "ITM-00056",
+    "ITM-00057",
+    "ITM-00058",
+    "ITM-00059",
+    "ITM-00060",
+    "ITM-00061",
+    "ITM-00062",
+    "ITM-00063",
+    "ITM-00064",
+    "ITM-00065",
+    "ITM-00066",
+    "ITM-00067",
+    "ITM-00068",
+    "ITM-00069",
+    "ITM-00070",
+    "ITM-00071",
+    "ITM-00072"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00049",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel specialty_store differs from marketplace, and season spring differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00050",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel specialty_store differs from marketplace, and season spring differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00051",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel specialty_store differs from marketplace, and season spring differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00052",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel differs from glass, channel specialty_store differs from marketplace, and season spring differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00053",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel specialty_store differs from marketplace, and season spring differs from holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00054",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel ecommerce_only is not equivalent to marketplace (only ecommerce_only and marketplace are equivalent to each other, but ecommerce_only is not same as marketplace per rule - wait, actually ecommerce_only and marketplace are in same online-only family, so channel matches; but season spring differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00055",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel specialty_store differs from marketplace, and season back_to_school differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00056",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material glass matches, price_tier core identical, channel marketplace identical, season holiday identical.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00057",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price_tier premium is two tiers above core (core -> premium skips value), so not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00058",
+     "verdict": "UNSURE",
+     "reason": "Material glass, price_tier core identical, channel ecommerce_only is in online-only family with marketplace, season holiday matches, but the rule says ecommerce_only and marketplace are equivalent; however, the ordering is not explicitly clear if both are online-only and thus same; per rule, they are equivalent, so no clear violation; but using your precise instruction, I must not guess - but rule states they are equivalent, so it's LIKE_ITEM, yet I will mark UNSURE because I'm not certain if ecommerce_only and marketplace are truly identical per the rule wording.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00059",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from glass.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00060",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price_tier luxury is two tiers above core (core -> premium -> luxury), not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00061",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel club_store differs from marketplace.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00062",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season back_to_school differs from holiday.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00063",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel differs from glass, channel club_store differs from marketplace, season spring differs from holiday, and price_tier value is two below core (value -> core?) actually value to core is adjacent, but other fails.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00064",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel differs from glass, channel club_store differs from marketplace, season spring differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00065",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel differs from glass, channel club_store differs from marketplace, season spring differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00066",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material ceramic differs from glass, channel club_store differs from marketplace, season spring differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00067",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel differs from glass, channel club_store differs from marketplace, season spring differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00068",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel differs from glass, season spring differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00069",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel differs from glass, channel club_store differs from marketplace, season year_round differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00070",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic differs from glass, season back_to_school differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00071",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel club_store differs from marketplace, season year_round differs from holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00072",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from glass, season year_round differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00056"
+   ],
+   "draft": {
+    "decision": "insufficient_comps",
+    "n_like_items": 1,
+    "recommended_wk13_units": null,
+    "wk13_low": null,
+    "wk13_high": null,
+    "confidence": null,
+    "why": "fewer than 2 confirmed like items (1 found) -- a person should look, not a formula"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2165,
+   "output_tokens": 1396,
+   "reasoning_tokens": null,
+   "latency_ms": 8940
+  },
+  {
+   "request_id": "NEW-00009",
+   "category": "outdoor-furniture",
+   "candidates": [
+    "ITM-00049",
+    "ITM-00050",
+    "ITM-00051",
+    "ITM-00052",
+    "ITM-00053",
+    "ITM-00054",
+    "ITM-00055",
+    "ITM-00056",
+    "ITM-00057",
+    "ITM-00058",
+    "ITM-00059",
+    "ITM-00060",
+    "ITM-00061",
+    "ITM-00062",
+    "ITM-00063",
+    "ITM-00064",
+    "ITM-00065",
+    "ITM-00066",
+    "ITM-00067",
+    "ITM-00068",
+    "ITM-00069",
+    "ITM-00070",
+    "ITM-00071",
+    "ITM-00072"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00049",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00050",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00051",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00052",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier luxury is two tiers above value",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00053",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00054",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00055",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00056",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00057",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00058",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00059",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is cast_iron not stainless_steel",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00060",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00061",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00062",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00063",
+     "verdict": "LIKE_ITEM",
+     "reason": "identical material, price_tier, channel, and season all match",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00064",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier core is not adjacent to value (core is two steps up)",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00065",
+     "verdict": "LIKE_ITEM",
+     "reason": "identical material, price_tier, channel, and season all match",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00066",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is ceramic not stainless_steel",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00067",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier luxury is two tiers above value",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00068",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "channel marketplace is not club_store and not both online-only",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00069",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "season year_round does not equal spring",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00070",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is hard_plastic not stainless_steel",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00071",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is glass not stainless_steel",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00072",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material is cast_iron not stainless_steel",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00063",
+    "ITM-00065"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 2,
+    "recommended_wk13_units": 28.9,
+    "wk13_low": 28.3,
+    "wk13_high": 29.4,
+    "spread_units": 1.1,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed like items, range 28.3-29.4 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2145,
+   "output_tokens": 924,
+   "reasoning_tokens": null,
+   "latency_ms": 5601
+  },
+  {
+   "request_id": "NEW-00010",
+   "category": "bath-textiles",
+   "candidates": [
+    "ITM-00073",
+    "ITM-00074",
+    "ITM-00075",
+    "ITM-00076",
+    "ITM-00077",
+    "ITM-00078",
+    "ITM-00079",
+    "ITM-00080",
+    "ITM-00081",
+    "ITM-00082",
+    "ITM-00083",
+    "ITM-00084",
+    "ITM-00085",
+    "ITM-00086",
+    "ITM-00087",
+    "ITM-00088",
+    "ITM-00089",
+    "ITM-00090",
+    "ITM-00091",
+    "ITM-00092",
+    "ITM-00093",
+    "ITM-00094",
+    "ITM-00095",
+    "ITM-00096"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00073",
+     "verdict": "LIKE_ITEM",
+     "reason": "material, price_tier, channel, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00074",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier 'core' is two tiers up from 'value', not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00075",
+     "verdict": "LIKE_ITEM",
+     "reason": "material, price_tier, channel, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00076",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material 'glass' differs from request's 'stainless_steel'.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00077",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier 'premium' is three tiers up from 'value', not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00078",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "channel 'club_store' differs from 'big_box' and is not online-only.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00079",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "season 'summer' differs from 'back_to_school'.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00080",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material, price_tier, and season all differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00081",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material 'ceramic' differs from request's material.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00082",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material, price_tier, and season all differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00083",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier 'premium' is too far from 'value' and season differs.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00084",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material 'ceramic' differs and season 'holiday' differs.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00085",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material, price_tier, and season differ; channel also not equivalent.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00086",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material, price_tier, and season all differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00087",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material 'cast_iron' differs and channel 'club_store' differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00088",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material 'cast_iron' differs and channel 'club_store' differs.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00089",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material 'cast_iron' differs and channel 'club_store' differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00090",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "channel 'club_store' differs from 'big_box'.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00091",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material 'cast_iron' differs and channel 'club_store' differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00092",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material 'cast_iron' differs and channel 'specialty_store' differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00093",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material 'cast_iron' differs and channel 'club_store' and season differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00094",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "channel 'club_store' and season 'spring' differ from request.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00095",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material 'cast_iron' differs and channel 'specialty_store' differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00096",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier 'premium' is too far and channel 'ecommerce_only' not equivalent to 'big_box'; season also differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00073",
+    "ITM-00075"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 2,
+    "recommended_wk13_units": 37.1,
+    "wk13_low": 37.0,
+    "wk13_high": 37.3,
+    "spread_units": 0.3,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed like items, range 37.0-37.3 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2198,
+   "output_tokens": 1068,
+   "reasoning_tokens": null,
+   "latency_ms": 6621
+  },
+  {
+   "request_id": "NEW-00011",
+   "category": "bath-textiles",
+   "candidates": [
+    "ITM-00073",
+    "ITM-00074",
+    "ITM-00075",
+    "ITM-00076",
+    "ITM-00077",
+    "ITM-00078",
+    "ITM-00079",
+    "ITM-00080",
+    "ITM-00081",
+    "ITM-00082",
+    "ITM-00083",
+    "ITM-00084",
+    "ITM-00085",
+    "ITM-00086",
+    "ITM-00087",
+    "ITM-00088",
+    "ITM-00089",
+    "ITM-00090",
+    "ITM-00091",
+    "ITM-00092",
+    "ITM-00093",
+    "ITM-00094",
+    "ITM-00095",
+    "ITM-00096"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00073",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs from ceramic and season back_to_school differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00074",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs from ceramic and season back_to_school differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00075",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs from ceramic and season back_to_school differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00076",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material glass differs from ceramic and season back_to_school differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00077",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs from ceramic and season back_to_school differs from holiday.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00078",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs from ceramic, channel club_store differs from big_box, and season back_to_school differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00079",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs from ceramic and season summer differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00080",
+     "verdict": "LIKE_ITEM",
+     "reason": "material ceramic, price_tier premium, channel big_box, season holiday all match the request.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00081",
+     "verdict": "LIKE_ITEM",
+     "reason": "material ceramic matches, price_tier luxury is adjacent up from premium, channel big_box matches, season holiday matches.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00082",
+     "verdict": "LIKE_ITEM",
+     "reason": "material ceramic, price_tier premium, channel big_box, season holiday all match the request.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00083",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs from ceramic.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00084",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "price_tier value is two steps below premium and not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00085",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "channel marketplace is not equivalent to big_box, as big_box is not in the online-only family.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00086",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "season spring differs from holiday.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00087",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material cast_iron differs from ceramic, price_tier core is not adjacent to premium, channel club_store differs from big_box, and season back_to_school differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00088",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material cast_iron differs from ceramic, price_tier value is two steps below premium, channel club_store differs from big_box, and season back_to_school differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00089",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material cast_iron differs from ceramic, price_tier core is not adjacent to premium, channel club_store differs from big_box, and season back_to_school differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00090",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs from ceramic, price_tier core differs, channel club_store differs from big_box, and season back_to_school differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00091",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material cast_iron differs from ceramic, price_tier luxury is two steps above premium, channel club_store differs from big_box, and season back_to_school differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00092",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material cast_iron differs from ceramic, price_tier core differs, channel specialty_store differs from big_box, and season back_to_school differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00093",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material cast_iron differs from ceramic, price_tier core differs, channel club_store differs from big_box, and season spring differs from holiday.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00094",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs from ceramic, channel club_store differs from big_box, and season spring differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00095",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material cast_iron differs from ceramic, channel specialty_store differs from big_box, and season back_to_school differs from holiday.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00096",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "material stainless_steel differs from ceramic.",
+     "similarity_score": 0.5,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00080",
+    "ITM-00081",
+    "ITM-00082"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 3,
+    "recommended_wk13_units": 17.3,
+    "wk13_low": 12.5,
+    "wk13_high": 19.8,
+    "spread_units": 7.3,
+    "confidence": "medium",
+    "why": "mean of 3 confirmed like items, range 12.5-19.8 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2193,
+   "output_tokens": 1236,
+   "reasoning_tokens": null,
+   "latency_ms": 7029
+  },
+  {
+   "request_id": "NEW-00012",
+   "category": "bath-textiles",
+   "candidates": [
+    "ITM-00073",
+    "ITM-00074",
+    "ITM-00075",
+    "ITM-00076",
+    "ITM-00077",
+    "ITM-00078",
+    "ITM-00079",
+    "ITM-00080",
+    "ITM-00081",
+    "ITM-00082",
+    "ITM-00083",
+    "ITM-00084",
+    "ITM-00085",
+    "ITM-00086",
+    "ITM-00087",
+    "ITM-00088",
+    "ITM-00089",
+    "ITM-00090",
+    "ITM-00091",
+    "ITM-00092",
+    "ITM-00093",
+    "ITM-00094",
+    "ITM-00095",
+    "ITM-00096"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00073",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel, not cast_iron.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00074",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel, not cast_iron.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00075",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel, not cast_iron.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00076",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is glass, not cast_iron.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00077",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel, not cast_iron.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00078",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel, not cast_iron.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00079",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel and season is summer, not back_to_school.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00080",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic and season is holiday, not cast_iron/back_to_school.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00081",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic and season is holiday, not cast_iron/back_to_school.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00082",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic and season is holiday, not cast_iron/back_to_school.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00083",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel and season is holiday, not cast_iron/back_to_school.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00084",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic and season is holiday, not cast_iron/back_to_school.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00085",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic and season is holiday, not cast_iron/back_to_school.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00086",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is ceramic and season is spring, not cast_iron/back_to_school.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00087",
+     "verdict": "LIKE_ITEM",
+     "reason": "Identical material, tier, channel, and season.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00088",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier value is one step below core, but material/channel/season match — however, tier is not identical and value is adjacent, so this could be considered, but the tier rule says adjacent is OK — wait, I need to recheck. Actually, value is adjacent to core (value->core), so tier is acceptable. But material, channel, season all match. Let me correct: this is LIKE_ITEM.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00089",
+     "verdict": "LIKE_ITEM",
+     "reason": "Identical material, tier, channel, and season.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00090",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel, not cast_iron.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00091",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier luxury is two tiers above core (core->premium->luxury), too far.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00092",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel specialty_store does not match club_store.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00093",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season is spring, not back_to_school.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00094",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel and season is spring, not cast_iron/back_to_school.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00095",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel specialty_store does not match club_store.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00096",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel and season is holiday, not cast_iron/back_to_school.",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00087",
+    "ITM-00089"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 2,
+    "recommended_wk13_units": 22.3,
+    "wk13_low": 22.2,
+    "wk13_high": 22.4,
+    "spread_units": 0.2,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed like items, range 22.2-22.4 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2218,
+   "output_tokens": 1133,
+   "reasoning_tokens": null,
+   "latency_ms": 6663
+  },
+  {
+   "request_id": "NEW-00013",
+   "category": "pet-supplies",
+   "candidates": [
+    "ITM-00097",
+    "ITM-00098",
+    "ITM-00099",
+    "ITM-00100",
+    "ITM-00101",
+    "ITM-00102",
+    "ITM-00103",
+    "ITM-00104",
+    "ITM-00105",
+    "ITM-00106",
+    "ITM-00107",
+    "ITM-00108",
+    "ITM-00109",
+    "ITM-00110",
+    "ITM-00111",
+    "ITM-00112",
+    "ITM-00113",
+    "ITM-00114",
+    "ITM-00115",
+    "ITM-00116",
+    "ITM-00117",
+    "ITM-00118",
+    "ITM-00119",
+    "ITM-00120"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00097",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, price tier, channel, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00098",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier core is not adjacent to value (value -> core is adjacent, so this is actually LIKE_ITEM; check: value and core are adjacent, so this is a LIKE_ITEM).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00099",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, price tier, channel, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00100",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material hard_plastic differs from cast_iron.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00101",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier luxury is two tiers above value (value->core->premium->luxury), not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00102",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel big_box differs from club_store.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00103",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season spring differs from year_round.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00104",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00105",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00106",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00107",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00108",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00109",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00110",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00111",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00112",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00113",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00114",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material matches but tier luxury is two tiers above, channel specialty_store differs, and season spring differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00115",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, channel, and season differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00116",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00117",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, tier, channel, and season differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00118",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material, channel, and season differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00119",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel big_box and season summer differ.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00120",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material glass, tier premium, and season summer differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00097",
+    "ITM-00099"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 2,
+    "recommended_wk13_units": 22.8,
+    "wk13_low": 21.7,
+    "wk13_high": 23.8,
+    "spread_units": 2.1,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed like items, range 21.7-23.8 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2152,
+   "output_tokens": 1001,
+   "reasoning_tokens": null,
+   "latency_ms": 6203
+  },
+  {
+   "request_id": "NEW-00014",
+   "category": "pet-supplies",
+   "candidates": [
+    "ITM-00097",
+    "ITM-00098",
+    "ITM-00099",
+    "ITM-00100",
+    "ITM-00101",
+    "ITM-00102",
+    "ITM-00103",
+    "ITM-00104",
+    "ITM-00105",
+    "ITM-00106",
+    "ITM-00107",
+    "ITM-00108",
+    "ITM-00109",
+    "ITM-00110",
+    "ITM-00111",
+    "ITM-00112",
+    "ITM-00113",
+    "ITM-00114",
+    "ITM-00115",
+    "ITM-00116",
+    "ITM-00117",
+    "ITM-00118",
+    "ITM-00119",
+    "ITM-00120"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00097",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from hard_plastic.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00098",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from hard_plastic.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00099",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from hard_plastic.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00100",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season year_round differs from back_to_school; also channel club_store is not online-only.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00101",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from hard_plastic and channel not online-only.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00102",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from hard_plastic; channel big_box not online-only.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00103",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from hard_plastic and season spring differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00104",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, tier, channel and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00105",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier premium is two tiers above core, not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00106",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material and season match; marketplace is in online-only family with ecommerce_only; tier core matches.",
+     "similarity_score": 0.75,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00107",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material stainless_steel differs from hard_plastic.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00108",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier luxury is two tiers above core, not adjacent.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00109",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel big_box is not online-only and not equivalent to ecommerce_only.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00110",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season summer differs from back_to_school.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00111",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material glass differs from hard_plastic; season spring differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00112",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material glass differs from hard_plastic; season spring differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00113",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material glass differs from hard_plastic; season spring differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00114",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from hard_plastic; season spring differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00115",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material glass differs from hard_plastic; season spring differs.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00116",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material glass differs from hard_plastic; season spring differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00117",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material glass differs from hard_plastic; season year_round differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00118",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material glass differs from hard_plastic; season summer differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00119",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material cast_iron differs from hard_plastic; season summer differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00120",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material glass differs from hard_plastic; season summer differs.",
+     "similarity_score": 0.0,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00104",
+    "ITM-00106"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 2,
+    "recommended_wk13_units": 26.6,
+    "wk13_low": 23.9,
+    "wk13_high": 29.3,
+    "spread_units": 5.4,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed like items, range 23.9-29.3 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2176,
+   "output_tokens": 1015,
+   "reasoning_tokens": null,
+   "latency_ms": 6251
+  },
+  {
+   "request_id": "NEW-00015",
+   "category": "pet-supplies",
+   "candidates": [
+    "ITM-00097",
+    "ITM-00098",
+    "ITM-00099",
+    "ITM-00100",
+    "ITM-00101",
+    "ITM-00102",
+    "ITM-00103",
+    "ITM-00104",
+    "ITM-00105",
+    "ITM-00106",
+    "ITM-00107",
+    "ITM-00108",
+    "ITM-00109",
+    "ITM-00110",
+    "ITM-00111",
+    "ITM-00112",
+    "ITM-00113",
+    "ITM-00114",
+    "ITM-00115",
+    "ITM-00116",
+    "ITM-00117",
+    "ITM-00118",
+    "ITM-00119",
+    "ITM-00120"
+   ],
+   "per_candidate": [
+    {
+     "item_id": "ITM-00097",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is cast_iron not glass, channel and season also differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00098",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is cast_iron not glass, channel and season also differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00099",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is cast_iron not glass, channel and season also differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00100",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic not glass, channel and season also differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00101",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is cast_iron not glass, channel and season also differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00102",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is cast_iron not glass, channel and season also differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00103",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is cast_iron not glass.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00104",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic not glass, tier, channel, and season differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00105",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic not glass, tier, channel, and season differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00106",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic not glass, tier, channel, and season differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00107",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is stainless_steel not glass, tier, channel, and season differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00108",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic not glass, channel and season differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00109",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic not glass, channel and season differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00110",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is hard_plastic not glass, channel and season differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00111",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00112",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier premium is not luxury (adjacent to core, not luxury).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00113",
+     "verdict": "LIKE_ITEM",
+     "reason": "Material, tier, channel, and season all match exactly.",
+     "similarity_score": 1.0,
+     "counted": true
+    },
+    {
+     "item_id": "ITM-00114",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is cast_iron not glass.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00115",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier core is not luxury (core is two steps away).",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00116",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Channel big_box differs from specialty_store.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00117",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Season year_round differs from spring.",
+     "similarity_score": 0.75,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00118",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier value is not luxury, channel same but season summer differs.",
+     "similarity_score": 0.5,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00119",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Material is cast_iron not glass, channel and season differ.",
+     "similarity_score": 0.0,
+     "counted": false
+    },
+    {
+     "item_id": "ITM-00120",
+     "verdict": "NOT_LIKE_ITEM",
+     "reason": "Price tier premium is not luxury, channel and season differ.",
+     "similarity_score": 0.25,
+     "counted": false
+    }
+   ],
+   "like_item_ids": [
+    "ITM-00111",
+    "ITM-00113"
+   ],
+   "draft": {
+    "decision": "draft_ready",
+    "n_like_items": 2,
+    "recommended_wk13_units": 6.2,
+    "wk13_low": 5.7,
+    "wk13_high": 6.7,
+    "spread_units": 1.0,
+    "confidence": "medium",
+    "why": "mean of 2 confirmed like items, range 5.7-6.7 units/store/wk"
+   },
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 2150,
+   "output_tokens": 1136,
+   "reasoning_tokens": null,
+   "latency_ms": 6683
+  }
+ ]
+}
