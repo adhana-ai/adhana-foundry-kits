@@ -1,0 +1,59 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>fin-close — check a recurring JE and account reconciliation against its basis</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Check a recurring entry and its reconciliation against the documented basis</h1>
+    <p class="sub">One close cycle, one basis document, one model call, a verdict per check — with
+      the clause it relied on. Three verdicts: <b>clean</b>, <b>defect</b>, and
+      <b>unverifiable</b>. The third is the point: a basis document that never states a fact is not
+      a pass, it is a gap, and calling it clean is how a silently-changed basis or an unexplained
+      residual slips through unchecked.</p>
+    <p class="sub rb" id="rbline">This kit never posts, approves or clears anything — it only
+      drafts verdicts for a preparer/reviewer to act on. The basis documents are synthetic,
+      generated at build time from a fixed seed — never written from memory.</p>
+  </header>
+
+  <div class="bar">
+    <select id="cycle" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Check</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Entry &amp; basis</span><span class="hint">the drafted record being checked, and its source of truth</span></div>
+      <div id="cycle-box" class="src"></div>
+      <textarea id="basis" class="src agr" spellcheck="false" readonly></textarea>
+    </div>
+
+    <div class="panel">
+      <div class="ph">
+        <span>Checks</span>
+        <span class="seg" id="viewseg">
+          <button type="button" class="on" data-view="all">All</button>
+          <button type="button" data-view="clean">Clean</button>
+          <button type="button" data-view="defect">Defect</button>
+          <button type="button" data-view="unverifiable">Unverifiable</button>
+        </span>
+      </div>
+      <div id="checks" class="out"></div>
+      <!-- FOUR BOXES, NOT THREE. clean + defect + unverifiable + no verdict = checks asked. The
+           fourth is not a rounding slot: a model that answers three of four checks has told you
+           nothing about the fourth, and folding those into "clean" would award a silent model a
+           score it did not earn. -->
+      <div class="stats">
+        <div class="stat"><b id="s-total">—</b><span>checks asked</span></div>
+        <div class="stat cln"><b id="s-cln">—</b><span>clean</span></div>
+        <div class="stat dft"><b id="s-dft">—</b><span>defect</span></div>
+        <div class="stat unv"><b id="s-unv">—</b><span>unverifiable</span></div>
+        <div class="stat"><b id="s-nov">—</b><span>no verdict</span></div>
+      </div>
+      <p class="recon" id="recon"></p>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>

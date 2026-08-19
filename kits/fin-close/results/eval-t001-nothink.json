@@ -1,0 +1,310 @@
+{
+ "run_id": "t001-nothink",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "cycles": 5,
+ "checks_per_cycle": 4,
+ "failures": 0,
+ "latency_p50_ms": 2195,
+ "latency_p95_ms": 2269,
+ "wall_seconds": 10.9,
+ "input_tokens_total": 4256,
+ "output_tokens_total": 1439,
+ "scores": {
+  "checks_scored": 20,
+  "answered": 20,
+  "answered_pct": 100.0,
+  "accuracy_pct": 90.0,
+  "false_clean": 0,
+  "false_clean_rate_pct": 0.0,
+  "false_alarm": 1,
+  "false_alarm_rate_pct": 6.2,
+  "gold_defect_total": 4,
+  "gold_clean_total": 16
+ },
+ "per_check": {
+  "account": {
+   "gold_total": 5,
+   "correct": 5,
+   "accuracy_pct": 100.0,
+   "predicted_unverifiable": 0
+  },
+  "amount": {
+   "gold_total": 5,
+   "correct": 3,
+   "accuracy_pct": 60.0,
+   "predicted_unverifiable": 1
+  },
+  "basis": {
+   "gold_total": 5,
+   "correct": 5,
+   "accuracy_pct": 100.0,
+   "predicted_unverifiable": 0
+  },
+  "residual": {
+   "gold_total": 5,
+   "correct": 5,
+   "accuracy_pct": 100.0,
+   "predicted_unverifiable": 0
+  }
+ },
+ "matrix": {
+  "clean->clean": 14,
+  "defect->defect": 4,
+  "clean->unverifiable": 1,
+  "clean->defect": 1
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 2402
+  },
+  {
+   "name": "cycle",
+   "chars": 356
+  },
+  {
+   "name": "basis",
+   "chars": 760
+  }
+ ],
+ "raw_text": "{\n  \"checks\": [\n    {\n      \"check\": \"account\",\n      \"verdict\": \"clean\",\n      \"citation\": \"Last period's approved posting under this recurring template totaled $28563.79 against account 6410 (Facilities Rent Expense).\",\n      \"expected\": \"6410 (Facilities Rent Expense)\",\n      \"actual\": \"6410 (Facilities Rent Expense)\"\n    },\n    {\n      \"check\": \"amount\",\n      \"verdict\": \"clean\",\n      \"citation\": \"Last period's approved posting under this recurring template totaled $28563.79 against account 6410 (Facilities Rent Expense).\",\n      \"expected\": \"$28563.79\",\n      \"actual\": \"$28173.08\"\n    },\n    {\n      \"check\": \"basis\",\n      \"verdict\": \"clean\",\n      \"citation\": \"The amount is calculated using straight-line lease accrual over the remaining term.\",\n      \"expected\": \"straight-line lease accrual over the remaining term\",\n      \"actual\": \"straight-line lease accrual over the remaining term\"\n    },\n    {\n      \"check\": \"residual\",\n      \"verdict\": \"clean\",\n      \"citation\": \"Residuals up to $4000 on this account do not require explanation.\",\n      \"expected\": \"≤ $4000\",\n      \"actual\": \"$1915.21\"\n    }\n  ]\n}",
+ "max_tokens": 1200,
+ "thinking": {
+  "type": "disabled"
+ },
+ "prompt_version": "v1",
+ "records": [
+  {
+   "close_id": "CLS-00001",
+   "rje_id": "RJE-0100",
+   "checks": [
+    {
+     "check": "account",
+     "verdict": "clean",
+     "citation": "Last period's approved posting under this recurring template totaled $28563.79 against account 6410 (Facilities Rent Expense).",
+     "expected": "6410 (Facilities Rent Expense)",
+     "actual": "6410 (Facilities Rent Expense)",
+     "citation_in_basis": true
+    },
+    {
+     "check": "amount",
+     "verdict": "clean",
+     "citation": "Last period's approved posting under this recurring template totaled $28563.79 against account 6410 (Facilities Rent Expense).",
+     "expected": "$28563.79",
+     "actual": "$28173.08",
+     "citation_in_basis": true
+    },
+    {
+     "check": "basis",
+     "verdict": "clean",
+     "citation": "The amount is calculated using straight-line lease accrual over the remaining term.",
+     "expected": "straight-line lease accrual over the remaining term",
+     "actual": "straight-line lease accrual over the remaining term",
+     "citation_in_basis": true
+    },
+    {
+     "check": "residual",
+     "verdict": "clean",
+     "citation": "Residuals up to $4000 on this account do not require explanation.",
+     "expected": "≤ $4000",
+     "actual": "$1915.21",
+     "citation_in_basis": true
+    }
+   ],
+   "answered": 4,
+   "asked": 4,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 852,
+   "output_tokens": 289,
+   "reasoning_tokens": null,
+   "latency_ms": 2258
+  },
+  {
+   "close_id": "CLS-00002",
+   "rje_id": "RJE-0100",
+   "checks": [
+    {
+     "check": "account",
+     "verdict": "defect",
+     "citation": "Last period's approved posting under this recurring template totaled $28563.79 against account 6410 (Facilities Rent Expense).",
+     "expected": "6410",
+     "actual": "6720",
+     "citation_in_basis": true
+    },
+    {
+     "check": "amount",
+     "verdict": "unverifiable",
+     "citation": "",
+     "expected": null,
+     "actual": "29342.44",
+     "citation_in_basis": null
+    },
+    {
+     "check": "basis",
+     "verdict": "clean",
+     "citation": "The amount is calculated using straight-line lease accrual over the remaining term. This method has not changed since the template was established.",
+     "expected": "straight-line lease accrual over the remaining term",
+     "actual": "straight-line lease accrual over the remaining term",
+     "citation_in_basis": true
+    },
+    {
+     "check": "residual",
+     "verdict": "clean",
+     "citation": "Residuals up to $4000 on this account do not require explanation.",
+     "expected": "up to $4000",
+     "actual": "1442.86",
+     "citation_in_basis": true
+    }
+   ],
+   "answered": 4,
+   "asked": 4,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 853,
+   "output_tokens": 263,
+   "reasoning_tokens": null,
+   "latency_ms": 2115
+  },
+  {
+   "close_id": "CLS-00003",
+   "rje_id": "RJE-0100",
+   "checks": [
+    {
+     "check": "account",
+     "verdict": "clean",
+     "citation": "Last period's approved posting under this recurring template totaled $28563.79 against account 6410 (Facilities Rent Expense).",
+     "expected": "6410",
+     "actual": "6410",
+     "citation_in_basis": true
+    },
+    {
+     "check": "amount",
+     "verdict": "defect",
+     "citation": "Last period's approved posting under this recurring template totaled $28563.79 against account 6410 (Facilities Rent Expense).",
+     "expected": "$28563.79 (last period's approved amount)",
+     "actual": "$41757.87",
+     "citation_in_basis": true
+    },
+    {
+     "check": "basis",
+     "verdict": "clean",
+     "citation": "The amount is calculated using straight-line lease accrual over the remaining term.",
+     "expected": "straight-line lease accrual over the remaining term",
+     "actual": "straight-line lease accrual over the remaining term",
+     "citation_in_basis": true
+    },
+    {
+     "check": "residual",
+     "verdict": "clean",
+     "citation": "Residuals up to $4000 on this account do not require explanation.",
+     "expected": "≤ $4000",
+     "actual": "$883.62",
+     "citation_in_basis": true
+    }
+   ],
+   "answered": 4,
+   "asked": 4,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 851,
+   "output_tokens": 285,
+   "reasoning_tokens": null,
+   "latency_ms": 2195
+  },
+  {
+   "close_id": "CLS-00004",
+   "rje_id": "RJE-0100",
+   "checks": [
+    {
+     "check": "account",
+     "verdict": "clean",
+     "citation": "Last period's approved posting under this recurring template totaled $28563.79 against account 6410 (Facilities Rent Expense).",
+     "expected": "6410 (Facilities Rent Expense)",
+     "actual": "6410 (Facilities Rent Expense)",
+     "citation_in_basis": true
+    },
+    {
+     "check": "amount",
+     "verdict": "defect",
+     "citation": "Last period's approved posting under this recurring template totaled $28563.79 against account 6410 (Facilities Rent Expense).",
+     "expected": "$28563.79",
+     "actual": "$29279.24",
+     "citation_in_basis": true
+    },
+    {
+     "check": "basis",
+     "verdict": "defect",
+     "citation": "The amount is calculated using straight-line lease accrual over the remaining term.",
+     "expected": "straight-line lease accrual over the remaining term",
+     "actual": "monthly amortization of the annual licence prepay",
+     "citation_in_basis": true
+    },
+    {
+     "check": "residual",
+     "verdict": "clean",
+     "citation": "Residuals up to $4000 on this account do not require explanation.",
+     "expected": "up to $4000",
+     "actual": "$802.33",
+     "citation_in_basis": true
+    }
+   ],
+   "answered": 4,
+   "asked": 4,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 848,
+   "output_tokens": 291,
+   "reasoning_tokens": null,
+   "latency_ms": 2078
+  },
+  {
+   "close_id": "CLS-00005",
+   "rje_id": "RJE-0100",
+   "checks": [
+    {
+     "check": "account",
+     "verdict": "clean",
+     "citation": "Last period's approved posting under this recurring template totaled $28563.79 against account 6410 (Facilities Rent Expense).",
+     "expected": "6410 (Facilities Rent Expense)",
+     "actual": "6410 (Facilities Rent Expense)",
+     "citation_in_basis": true
+    },
+    {
+     "check": "amount",
+     "verdict": "clean",
+     "citation": "Last period's approved posting under this recurring template totaled $28563.79 against account 6410 (Facilities Rent Expense).",
+     "expected": "$28563.79",
+     "actual": "$28316.78",
+     "citation_in_basis": true
+    },
+    {
+     "check": "basis",
+     "verdict": "clean",
+     "citation": "The amount is calculated using straight-line lease accrual over the remaining term. This method has not changed since the template was established.",
+     "expected": "straight-line lease accrual over the remaining term",
+     "actual": "straight-line lease accrual over the remaining term",
+     "citation_in_basis": true
+    },
+    {
+     "check": "residual",
+     "verdict": "defect",
+     "citation": "Anything above $4000 must be documented with a write-off memo or flagged to the reviewer before the close can be signed off.",
+     "expected": "$4000 or less",
+     "actual": "$11219.56",
+     "citation_in_basis": true
+    }
+   ],
+   "answered": 4,
+   "asked": 4,
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 852,
+   "output_tokens": 311,
+   "reasoning_tokens": null,
+   "latency_ms": 2269
+  }
+ ]
+}
