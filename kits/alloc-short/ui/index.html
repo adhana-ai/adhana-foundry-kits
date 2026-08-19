@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>alloc-short — draft a constrained-supply allocation review brief</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Constrained supply allocation, drafted for review</h1>
+    <p class="sub">One shortage event, one written policy (protect promo commitments, protect
+      customer commitments, fair-share the rest by trailing velocity, check a 40% equity floor)
+      — all run in code. The model never proposes a unit count. It reads the flagged events and
+      the merchant notes log, tags a probable cause for each — or says <b>unknown</b> — cites two
+      source lines, and drafts the narrative for the review meeting. Decision-free by design.</p>
+    <p class="sub rb" id="rbline">The sessions, their events and their merchant notes are
+      synthetic, generated at build time from a fixed seed — never written from memory.</p>
+  </header>
+
+  <div class="bar">
+    <select id="sid" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Draft review brief</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Flagged events</span><span class="hint" id="evhint"></span></div>
+      <div id="ev-box" class="src"></div>
+      <div class="ph"><span>Merchant notes log</span></div>
+      <div id="notes-box" class="src notesbox"></div>
+    </div>
+
+    <div class="panel">
+      <div class="ph"><span>Drafted review brief</span></div>
+      <div id="out" class="out answer"></div>
+      <div id="narrative" class="narrative" hidden></div>
+      <div class="stats">
+        <div class="stat"><b id="s-flagged">—</b><span>flagged events</span></div>
+        <div class="stat"><b id="s-answered">—</b><span>answered</span></div>
+        <div class="stat"><b id="s-in">—</b><span>input tokens</span></div>
+        <div class="stat cost"><b id="s-out">—</b><span>output tokens</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>

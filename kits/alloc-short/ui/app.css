@@ -1,0 +1,63 @@
+:root{--bg:#0d1117;--pan:#151b23;--pan2:#1b2430;--line:#252f3d;--t1:#e6edf3;--t2:#9fb0c3;
+  --t3:#6b7d91;--ok:#3fb950;--bad:#f0685f;--acc:#58a6ff;--esc:#e0736a;--warn:#d29922;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace}
+@media(prefers-color-scheme:light){:root{--bg:#f6f8fa;--pan:#fff;--pan2:#f0f3f7;--line:#d7dee6;
+  --t1:#141a20;--t2:#4a5a6a;--t3:#6b7a8a;--ok:#1a7f37;--bad:#cf222e;--acc:#0969da;--esc:#b03426;
+  --warn:#9a6700}}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--t1);margin:0;line-height:1.5;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif}
+.wrap{max-width:1120px;margin:0 auto;padding:34px 20px 80px}
+h1{font-size:25px;letter-spacing:-.02em;margin:0 0 8px;text-wrap:balance}
+.sub{color:var(--t2);font-size:14px;max-width:78ch;margin:0 0 10px}
+.sub.rb{font:11.5px var(--mono);color:var(--t3);margin-bottom:22px}
+.bar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:0 0 14px}
+select{flex:0 1 340px;min-width:220px;background:var(--pan2);color:var(--t1);
+  border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-family:var(--mono);
+  font-size:12.5px}
+button{background:color-mix(in srgb,var(--acc) 12%,transparent);color:var(--acc);font-weight:700;
+  border:1px solid color-mix(in srgb,var(--acc) 50%,transparent);border-radius:8px;
+  padding:9px 18px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
+  text-transform:uppercase;cursor:pointer}
+button[disabled]{opacity:.5;cursor:default}
+.key{font-family:var(--mono);font-size:10.5px;color:var(--t3)}
+.note{background:color-mix(in srgb,var(--bad) 10%,transparent);
+  border:1px solid color-mix(in srgb,var(--bad) 35%,transparent);border-radius:9px;
+  padding:11px 14px;font-size:13px;margin:0 0 14px;color:var(--t2)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.panel{border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--pan);
+  display:flex;flex-direction:column}
+.ph{display:flex;gap:9px;align-items:center;justify-content:space-between;padding:10px 13px;
+  border-bottom:1px solid var(--line);background:var(--pan2);font:700 10px var(--mono);
+  letter-spacing:.1em;text-transform:uppercase;color:var(--t3);flex-wrap:wrap}
+.ph .hint{text-transform:none;letter-spacing:0;font-weight:400;font-size:11px;color:var(--t3)}
+.src, .out{margin:0;padding:14px 15px;font:12px/1.7 var(--mono);color:var(--t2);
+  min-height:120px;max-height:440px;overflow:auto;white-space:pre-wrap}
+.gaprow{border-top:1px solid var(--line);padding:9px 0;font-size:12px}
+.gaprow:first-child{border-top:none}
+.gaprow .gh{display:flex;justify-content:space-between;gap:10px;color:var(--t1);font-weight:700}
+.gaprow .gv{color:var(--t3);margin-top:3px}
+.gaprow .gm{color:var(--warn);font-size:10.5px;margin-top:3px}
+.notesbox{padding:6px 15px}
+.noterow{border-top:1px solid var(--line);padding:6px 0;font-size:11.5px;color:var(--t2)}
+.noterow:first-child{border-top:none}
+.answer .gaprow2{border-top:1px solid var(--line);padding:10px 0}
+.answer .gaprow2:first-child{border-top:none}
+.answer .gh2{display:flex;justify-content:space-between;gap:8px;color:var(--t1);font-weight:700}
+.cause{font:700 10px var(--mono);text-transform:uppercase;letter-spacing:.04em;padding:2px 7px;
+  border-radius:5px;background:color-mix(in srgb,var(--acc) 14%,transparent);color:var(--acc)}
+.cause.unknown{background:color-mix(in srgb,var(--t3) 18%,transparent);color:var(--t2)}
+.cite{font-size:11px;color:var(--t3);margin-top:4px;border-left:2px solid var(--line);
+  padding-left:8px;white-space:pre-wrap}
+.cite.bad{color:var(--bad);border-left-color:var(--bad)}
+.narrative{padding:12px 14px;font-size:13px;line-height:1.65;color:var(--t1);
+  border-top:1px solid var(--line);background:var(--pan2)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+  border-top:1px solid var(--line)}
+.stat{background:var(--pan2);padding:12px 8px;text-align:center}
+.stat b{display:block;font-size:16px;font-variant-numeric:tabular-nums;letter-spacing:-.01em;
+  color:var(--t1);word-break:break-word}
+.stat span{font:700 9px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--t3)}
+.stat.cost b{color:var(--acc)}
+.empty{color:var(--t3);font-size:13px;padding:14px 2px}
