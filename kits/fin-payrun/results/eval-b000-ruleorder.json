@@ -1,0 +1,83 @@
+{
+ "run_id": "b000-ruleorder",
+ "baseline": true,
+ "invoices": 35,
+ "scores": {
+  "invoices_scored": 35,
+  "stage_answered": 35,
+  "stage_answered_pct": 100.0,
+  "stage_accuracy_pct": 82.9,
+  "review_answered": 35,
+  "review_accuracy_pct": 82.9,
+  "false_paid": 4,
+  "false_paid_denominator": 4,
+  "false_paid_rate_pct": 100.0,
+  "date_scored": 35,
+  "date_accuracy_pct": 82.9
+ },
+ "per_stage": {
+  "match_exception": {
+   "gold_total": 6,
+   "correct": 5,
+   "accuracy_pct": 83.3
+  },
+  "approval_exception": {
+   "gold_total": 8,
+   "correct": 3,
+   "accuracy_pct": 37.5
+  },
+  "awaiting_run_inclusion": {
+   "gold_total": 6,
+   "correct": 6,
+   "accuracy_pct": 100.0
+  },
+  "in_scheduled_run": {
+   "gold_total": 8,
+   "correct": 8,
+   "accuracy_pct": 100.0
+  },
+  "remitted": {
+   "gold_total": 7,
+   "correct": 7,
+   "accuracy_pct": 100.0
+  }
+ },
+ "misses": [
+  {
+   "invoice_id": "INV-2024-1020",
+   "gold": "approval_exception",
+   "predicted": "remitted",
+   "trap_field": "remittance"
+  },
+  {
+   "invoice_id": "INV-2024-0127",
+   "gold": "approval_exception",
+   "predicted": "remitted",
+   "trap_field": "remittance"
+  },
+  {
+   "invoice_id": "INV-2024-1940",
+   "gold": "approval_exception",
+   "predicted": "in_scheduled_run",
+   "trap_field": "run_inclusion"
+  },
+  {
+   "invoice_id": "INV-2024-0807",
+   "gold": "match_exception",
+   "predicted": "remitted",
+   "trap_field": "remittance"
+  },
+  {
+   "invoice_id": "INV-2024-1565",
+   "gold": "approval_exception",
+   "predicted": "remitted",
+   "trap_field": "remittance"
+  },
+  {
+   "invoice_id": "INV-2024-1506",
+   "gold": "approval_exception",
+   "predicted": "in_scheduled_run",
+   "trap_field": "run_inclusion"
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>fin-payrun — trace a vendor invoice and draft its payment-status reply</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Trace one invoice and draft its payment-status reply</h1>
+    <p class="sub">One vendor inquiry, one 4-stage record — match, approval, run inclusion,
+      remittance — one model call, a traced stage and a grounded reply. The record is read
+      <b>in order</b>: the true current stage is the first stage that is not cleanly complete,
+      never whatever a downstream field happens to show.</p>
+    <p class="sub rb" id="rbline">This kit never releases a payment, changes a remittance detail,
+      or commits to a date beyond the scheduled run — the reply is informational only, and any
+      invoice with an open exception is flagged for AP review before it goes out. Every invoice is
+      synthetic, generated at build time from a fixed seed — never a real vendor.</p>
+  </header>
+
+  <div class="bar">
+    <select id="invoice" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Trace</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Invoice &amp; inquiry</span><span class="hint">the full 4-stage record being traced, read top to bottom, in order</span></div>
+      <div id="inv-box" class="src"></div>
+      <div id="stages" class="src stg"></div>
+      <p class="inquiry" id="inquiry-box"></p>
+    </div>
+
+    <div class="panel">
+      <div class="ph"><span>Traced result</span></div>
+      <div id="result" class="out"></div>
+      <div class="stats">
+        <div class="stat"><b id="s-stage">—</b><span>current stage</span></div>
+        <div class="stat rev"><b id="s-review">—</b><span>AP review</span></div>
+        <div class="stat"><b id="s-date">—</b><span>stated date</span></div>
+      </div>
+      <p class="reply" id="reply-box"></p>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>
