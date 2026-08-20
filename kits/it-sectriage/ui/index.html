@@ -1,0 +1,38 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>it-sectriage — should these alerts have been one case?</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- An empty data: icon, so the browser stops asking for /favicon.ico. -->
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="app.css">
+<body>
+<header>
+  <h1>Two alerts, one source IP. One incident, or two?</h1>
+  <p class="lead">Every card below is <b>one case window</b> — 2 to 4 security alerts a SOC
+  already bundled together because they happened close in time and/or share an entity. The job:
+  call each alert true or false positive, decide which true positives are genuinely the SAME
+  incident, and draft a containment recommendation for the named on-call analyst to approve —
+  citing the indicator that actually justifies it. Nothing here ever executes containment.</p>
+  <p class="lead"><b>Two failure modes are planted on purpose.</b> A calmly-worded true-positive
+  phishing report that a keyword scan waves through, and two unrelated alerts that merely share a
+  network address getting merged into one false incident. Both are marked below.</p>
+  <p class="cost" id="cost">checking what is configured…</p>
+</header>
+
+<section class="controls">
+  <div class="tiles" id="tiles"></div>
+  <p class="gate" id="gate">…</p>
+</section>
+
+<section id="windows" class="windows"></section>
+
+<footer>
+  <p><b>Missing a true positive</b> is an incident nobody worked. <b>Merging two unrelated alerts
+  into one case</b> hides the real second incident behind the first one's containment action and
+  wastes the analyst's read on a coincidence. They are scored apart here and never averaged — see
+  <code>evals/scoring.py</code>.</p>
+  <p>Free floor: <code>python -m evals.baseline</code> — a keyword-and-shared-indicator rule
+  anyone could free-text in five minutes, scored the same way.</p>
+</footer>
+<script src="app.js"></script>
+</body>

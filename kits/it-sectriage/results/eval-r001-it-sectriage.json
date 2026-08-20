@@ -1,0 +1,1148 @@
+{
+ "kind": "triage",
+ "run_id": "r001-it-sectriage",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "windows": 33,
+ "alerts": 82,
+ "failures": 0,
+ "latency_p50_ms": 9758,
+ "latency_p95_ms": 47346,
+ "wall_seconds": 486.2,
+ "input_tokens_total": 32892,
+ "output_tokens_total": 54550,
+ "max_tokens": 8192,
+ "prompt_version": "v1",
+ "scores": {
+  "windows_judged": 33,
+  "disposition": {
+   "total": 82,
+   "answered": 82,
+   "answered_pct": 100.0,
+   "accuracy_pct": 100.0
+  },
+  "missed_true_positive": {
+   "count": 0,
+   "of": 52,
+   "rate_pct": 0.0,
+   "trap_count": 0,
+   "trap_of": 3,
+   "trap_rate_pct": 0.0
+  },
+  "false_correlation": {
+   "count": 0,
+   "of": 47,
+   "rate_pct": 0.0,
+   "trap_count": 0,
+   "trap_of": 8,
+   "trap_rate_pct": 0.0
+  },
+  "citation_validity": {
+   "count": 109,
+   "of": 109,
+   "rate_pct": 100.0,
+   "fabricated": []
+  }
+ },
+ "records": [
+  {
+   "id": "cw001",
+   "alert_dispositions": {
+    "ALT-0001": "true_positive",
+    "ALT-0002": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0001",
+     "ALT-0002"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0001",
+      "ALT-0002"
+     ],
+     "action": "Isolate host crm-db-05 immediately and block outbound traffic to the external destination to contain the reverse shell and stop further data exfiltration. Preserve the endpoint for forensic collection.",
+     "citations": [
+      "file_hash=d1dc5e74f852a7c2750a5ea08317e789d25ecb0b",
+      "process_name=sysmaint.exe",
+      "dest_ip=203.0.113.106",
+      "source_host=crm-db-05"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 967,
+   "output_tokens": 506,
+   "reasoning_chars": 1194,
+   "latency_ms": 5110
+  },
+  {
+   "id": "cw002",
+   "alert_dispositions": {
+    "ALT-0003": "true_positive",
+    "ALT-0004": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0003",
+     "ALT-0004"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0003",
+      "ALT-0004"
+     ],
+     "action": "Draft recommendation: isolate host db-12 immediately to contain the active reverse shell, and block outbound traffic to the external destination to stop further data exfiltration. Awaiting Marcus Webb's approval before execution.",
+     "citations": [
+      "file_hash=705b10bbfc5641aee6bf795c8840e6f0ab0d4179",
+      "process_name=sysmaint.exe",
+      "source_host=db-12",
+      "dest_ip=203.0.113.221"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 959,
+   "output_tokens": 580,
+   "reasoning_chars": 1717,
+   "latency_ms": 5891
+  },
+  {
+   "id": "cw003",
+   "alert_dispositions": {
+    "ALT-0005": "true_positive",
+    "ALT-0006": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0005",
+     "ALT-0006"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0005",
+      "ALT-0006"
+     ],
+     "action": "Isolate endpoint vpn-gw-01 and block outbound traffic to dest_ip=203.0.113.135 pending forensic review of svc_update.exe and hash 4315c3cb2b7775e6bf0c83ed409f56aef074f814.",
+     "citations": [
+      "file_hash=4315c3cb2b7775e6bf0c83ed409f56aef074f814",
+      "process_name=svc_update.exe",
+      "host_ip=10.20.109",
+      "dest_ip=203.0.113.135",
+      "source_host=vpn-gw-01"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 969,
+   "output_tokens": 746,
+   "reasoning_chars": 1901,
+   "latency_ms": 5919
+  },
+  {
+   "id": "cw004",
+   "alert_dispositions": {
+    "ALT-0007": "true_positive",
+    "ALT-0008": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0007",
+     "ALT-0008"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0007",
+      "ALT-0008"
+     ],
+     "action": "Draft approval to lock the account target_account=cbennett, force a password reset and session revocation, and block the source IP source_ip=198.51.100.241 pending review.",
+     "citations": [
+      "source_ip=198.51.100.241",
+      "target_account=cbennett"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 932,
+   "output_tokens": 817,
+   "reasoning_chars": 3237,
+   "latency_ms": 8737
+  },
+  {
+   "id": "cw005",
+   "alert_dispositions": {
+    "ALT-0009": "true_positive",
+    "ALT-0010": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0009",
+     "ALT-0010"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0009",
+      "ALT-0010"
+     ],
+     "action": "Lock the account tnguyen and force a password reset, as the successful login followed a 22-attempt brute force from the same source IP. Block source_ip=198.51.100.166 at the authentication gateway pending review.",
+     "citations": [
+      "source_ip=198.51.100.166",
+      "target_account=tnguyen"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 932,
+   "output_tokens": 808,
+   "reasoning_chars": 2985,
+   "latency_ms": 7516
+  },
+  {
+   "id": "cw006",
+   "alert_dispositions": {
+    "ALT-0011": "true_positive",
+    "ALT-0012": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0011",
+     "ALT-0012"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0011",
+      "ALT-0012"
+     ],
+     "action": "Recommend a mail-flow block on inbound messages containing sender_domain=account-check-update.co or link_domain=account-check-update.co, and quarantine any mail that matches those indicators. This is a draft for Marcus Webb's approval, not an executed action.",
+     "citations": [
+      "sender_domain=account-check-update.co",
+      "link_domain=account-check-update.co"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 967,
+   "output_tokens": 2521,
+   "reasoning_chars": 10869,
+   "latency_ms": 23313
+  },
+  {
+   "id": "cw007",
+   "alert_dispositions": {
+    "ALT-0013": "true_positive",
+    "ALT-0014": "true_positive",
+    "ALT-0015": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0013",
+     "ALT-0014"
+    ],
+    [
+     "ALT-0015"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0013",
+      "ALT-0014"
+     ],
+     "action": "Lock the svargas account, force a password reset, and block the source IP pending approval.",
+     "citations": [
+      "source_ip=198.51.100.24",
+      "target_account=svargas"
+     ]
+    },
+    {
+     "case": [
+      "ALT-0015"
+     ],
+     "action": "Isolate host web-03 and quarantine/remove sysmaint.exe pending forensic review.",
+     "citations": [
+      "file_hash=48d636aabf052cc3aca612f6bdb0e59da11b2f68",
+      "process_name=sysmaint.exe",
+      "host_ip=10.20.142"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1037,
+   "output_tokens": 1563,
+   "reasoning_chars": 5577,
+   "latency_ms": 13417
+  },
+  {
+   "id": "cw008",
+   "alert_dispositions": {
+    "ALT-0016": "false_positive",
+    "ALT-0017": "false_positive"
+   },
+   "case_groups": [],
+   "recommendations": [],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 956,
+   "output_tokens": 105,
+   "reasoning_chars": 331,
+   "latency_ms": 1644
+  },
+  {
+   "id": "cw009",
+   "alert_dispositions": {
+    "ALT-0018": "false_positive",
+    "ALT-0019": "false_positive"
+   },
+   "case_groups": [],
+   "recommendations": [],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 945,
+   "output_tokens": 576,
+   "reasoning_chars": 2423,
+   "latency_ms": 5736
+  },
+  {
+   "id": "cw010",
+   "alert_dispositions": {
+    "ALT-0020": "false_positive",
+    "ALT-0021": "false_positive",
+    "ALT-0022": "false_positive"
+   },
+   "case_groups": [],
+   "recommendations": [],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1058,
+   "output_tokens": 479,
+   "reasoning_chars": 1816,
+   "latency_ms": 4247
+  },
+  {
+   "id": "cw011",
+   "alert_dispositions": {
+    "ALT-0023": "false_positive",
+    "ALT-0024": "false_positive"
+   },
+   "case_groups": [],
+   "recommendations": [],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 973,
+   "output_tokens": 431,
+   "reasoning_chars": 1781,
+   "latency_ms": 4068
+  },
+  {
+   "id": "cw012",
+   "alert_dispositions": {
+    "ALT-0025": "false_positive",
+    "ALT-0026": "false_positive",
+    "ALT-0027": "false_positive"
+   },
+   "case_groups": [],
+   "recommendations": [],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1046,
+   "output_tokens": 359,
+   "reasoning_chars": 1384,
+   "latency_ms": 3530
+  },
+  {
+   "id": "cw013",
+   "alert_dispositions": {
+    "ALT-0028": "false_positive",
+    "ALT-0029": "false_positive"
+   },
+   "case_groups": [],
+   "recommendations": [],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 950,
+   "output_tokens": 156,
+   "reasoning_chars": 565,
+   "latency_ms": 1972
+  },
+  {
+   "id": "cw014",
+   "alert_dispositions": {
+    "ALT-0031": "false_positive",
+    "ALT-0030": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0030"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0030"
+     ],
+     "action": "Block inbound messages from sender_domain=account-check-update.co and sender_ip=203.0.113.82 at the mail gateway, and deny access to link_domain=account-check-update.co in the web proxy.",
+     "citations": [
+      "sender_domain=account-check-update.co",
+      "sender_ip=203.0.113.82",
+      "link_domain=account-check-update.co"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 948,
+   "output_tokens": 1081,
+   "reasoning_chars": 4157,
+   "latency_ms": 9758
+  },
+  {
+   "id": "cw015",
+   "alert_dispositions": {
+    "ALT-0034": "false_positive",
+    "ALT-0032": "true_positive",
+    "ALT-0033": "false_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0032"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0032"
+     ],
+     "action": "Draft for approval: block/quarantine inbound email from sender_domain=invoice-billing-net.co and block the link domain at the mail gateway; advise the recipient not to click the link.",
+     "citations": [
+      "sender_domain=invoice-billing-net.co",
+      "link_domain=invoice-billing-net.co"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1044,
+   "output_tokens": 1415,
+   "reasoning_chars": 5377,
+   "latency_ms": 12540
+  },
+  {
+   "id": "cw016",
+   "alert_dispositions": {
+    "ALT-0035": "true_positive",
+    "ALT-0036": "false_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0035"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0035"
+     ],
+     "action": "Block inbound email from sender_domain=payr0ll-portal.net and sender_ip=203.0.113.218 at the mail gateway, and block link_domain=payr0ll-portal.net in web proxy access. Draft awaiting Tomas Rivera's approval.",
+     "citations": [
+      "sender_domain=payr0ll-portal.net",
+      "sender_ip=203.0.113.218",
+      "link_domain=payr0ll-portal.net"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 959,
+   "output_tokens": 563,
+   "reasoning_chars": 1634,
+   "latency_ms": 4900
+  },
+  {
+   "id": "cw017",
+   "alert_dispositions": {
+    "ALT-0037": "true_positive",
+    "ALT-0039": "false_positive",
+    "ALT-0038": "false_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0037"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0037"
+     ],
+     "action": "Recommend blocking email from sender_domain=payr0ll-portal.net and sender_ip=203.0.113.202 at the mail gateway, quarantining any messages containing link_domain=payr0ll-portal.net, and checking user lferreira for interaction with the attachment.",
+     "citations": [
+      "sender_domain=payr0ll-portal.net",
+      "sender_ip=203.0.113.202",
+      "link_domain=payr0ll-portal.net"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1069,
+   "output_tokens": 840,
+   "reasoning_chars": 2813,
+   "latency_ms": 7396
+  },
+  {
+   "id": "cw018",
+   "alert_dispositions": {
+    "ALT-0041": "false_positive",
+    "ALT-0040": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0040"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0040"
+     ],
+     "action": "Recommend isolating host:vpn-gw-01 and preserving the endpoint for forensic review, as netbridge.exe showed process injection and disabled local logging. This is a draft containment recommendation awaiting Marcus Webb's approval.",
+     "citations": [
+      "file_hash=614629d01524dce241c6b8e41046421bc7f3c9f8",
+      "process_name=netbridge.exe",
+      "host_ip=10.20.86"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 961,
+   "output_tokens": 1277,
+   "reasoning_chars": 4972,
+   "latency_ms": 12012
+  },
+  {
+   "id": "cw019",
+   "alert_dispositions": {
+    "ALT-0044": "false_positive",
+    "ALT-0043": "false_positive",
+    "ALT-0042": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0042"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0042"
+     ],
+     "action": "Isolate host mail-relay-04 and block outbound traffic to 203.0.113.216 to stop further data transfer while this draft is reviewed.",
+     "citations": [
+      "source_host=mail-relay-04",
+      "dest_ip=203.0.113.216",
+      "bytes_transferred=5219393428"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1042,
+   "output_tokens": 1135,
+   "reasoning_chars": 4059,
+   "latency_ms": 9803
+  },
+  {
+   "id": "cw020",
+   "alert_dispositions": {
+    "ALT-0046": "false_positive",
+    "ALT-0045": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0045"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0045"
+     ],
+     "action": "Disable cbennett's account, revoke the session from device_id=dev-b5510, and remove any newly added mailbox forwarding rule to stop potential data exfiltration.",
+     "citations": [
+      "source_ip=198.51.100.29",
+      "login_geo=Tallinn, EE",
+      "device_id=dev-b5510"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 942,
+   "output_tokens": 1028,
+   "reasoning_chars": 3571,
+   "latency_ms": 8335
+  },
+  {
+   "id": "cw021",
+   "alert_dispositions": {
+    "ALT-0047": "true_positive",
+    "ALT-0048": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0047"
+    ],
+    [
+     "ALT-0048"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0047"
+     ],
+     "action": "Isolate host:pos-term-19 immediately and block execution of netbridge.exe pending forensic review. Preserve endpoint artifacts for analysis.",
+     "citations": [
+      "file_hash=11fa5c0fdd15a724e361b0729ac8a3c61b05fe35",
+      "process_name=netbridge.exe",
+      "host_ip=10.20.223"
+     ]
+    },
+    {
+     "case": [
+      "ALT-0048"
+     ],
+     "action": "Block inbound email from the lookalike sender domain and source IP, and block the credential-harvesting link at the mail gateway or proxy. Notify user jrivera of the confirmed phishing attempt.",
+     "citations": [
+      "sender_domain=secure-mailer-verify.info",
+      "sender_ip=203.0.113.149",
+      "link_domain=secure-mailer-verify.info"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 974,
+   "output_tokens": 829,
+   "reasoning_chars": 2388,
+   "latency_ms": 7661
+  },
+  {
+   "id": "cw022",
+   "alert_dispositions": {
+    "ALT-0051": "true_positive",
+    "ALT-0049": "true_positive",
+    "ALT-0050": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0051",
+     "ALT-0050"
+    ],
+    [
+     "ALT-0049"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0051",
+      "ALT-0050"
+     ],
+     "action": "Recommend isolating fin-app-02 immediately to contain the reverse shell and prevent further data exfiltration, and block outbound traffic to the external destination observed in the exfiltration alert. Awaiting approval before executing.",
+     "citations": [
+      "source_host=fin-app-02",
+      "dest_ip=203.0.113.173",
+      "file_hash=af0f7ce5880293f4165761497b404425c5c8fdf1",
+      "process_name=wkr_helper.exe",
+      "host_ip=10.20.181"
+     ]
+    },
+    {
+     "case": [
+      "ALT-0049"
+     ],
+     "action": "Recommend blocking the phishing sender domain and quarantining related emails at the mail gateway, and verify whether the user opened or ran the attached executable. Awaiting approval before executing.",
+     "citations": [
+      "sender_domain=account-check-update.co",
+      "sender_ip=203.0.113.119",
+      "link_domain=account-check-update.co"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1054,
+   "output_tokens": 2257,
+   "reasoning_chars": 7904,
+   "latency_ms": 19200
+  },
+  {
+   "id": "cw023",
+   "alert_dispositions": {
+    "ALT-0052": "true_positive",
+    "ALT-0054": "true_positive",
+    "ALT-0053": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0052",
+     "ALT-0053"
+    ],
+    [
+     "ALT-0054"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0052",
+      "ALT-0053"
+     ],
+     "action": "Recommend isolating dev-jump-02 and blocking outbound traffic to the external destination to contain the malware and data exfiltration pending approval.",
+     "citations": [
+      "source_host=dev-jump-02",
+      "process_name=netbridge.exe",
+      "file_hash=4bb1012bfad384fbf0636e146b25a73390e44320",
+      "host_ip=10.20.73",
+      "dest_ip=203.0.113.204"
+     ]
+    },
+    {
+     "case": [
+      "ALT-0054"
+     ],
+     "action": "Recommend blocking email from this sender domain/IP and notifying the user not to install the attached executable, pending approval.",
+     "citations": [
+      "sender_domain=payr0ll-portal.net",
+      "sender_ip=203.0.113.245",
+      "link_domain=payr0ll-portal.net"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1062,
+   "output_tokens": 1819,
+   "reasoning_chars": 5830,
+   "latency_ms": 14627
+  },
+  {
+   "id": "cw024",
+   "alert_dispositions": {
+    "ALT-0055": "true_positive",
+    "ALT-0056": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0055"
+    ],
+    [
+     "ALT-0056"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0055"
+     ],
+     "action": "Isolate host fin-app-02 immediately and terminate the netbridge.exe process pending forensic review. Block outbound connections from this endpoint to prevent further reverse-shell activity.",
+     "citations": [
+      "file_hash=d8516efaab579f2be4328cacaf8f74f8dbdc6d9b",
+      "process_name=netbridge.exe",
+      "host_ip=10.20.141"
+     ]
+    },
+    {
+     "case": [
+      "ALT-0056"
+     ],
+     "action": "Lock the kwalsh account, force a password reset, and revoke the suspicious device session. Block the source IP and investigate the unauthorized password reset.",
+     "citations": [
+      "source_ip=198.51.100.236",
+      "login_geo=Lagos, NG",
+      "device_id=dev-b5510"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 958,
+   "output_tokens": 884,
+   "reasoning_chars": 2446,
+   "latency_ms": 8171
+  },
+  {
+   "id": "cw025",
+   "alert_dispositions": {
+    "ALT-0058": "true_positive",
+    "ALT-0057": "true_positive",
+    "ALT-0060": "true_positive",
+    "ALT-0059": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0058",
+     "ALT-0057"
+    ],
+    [
+     "ALT-0060",
+     "ALT-0059"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0058",
+      "ALT-0057"
+     ],
+     "action": "Recommend isolating hr-portal-01, terminating netbridge.exe, and blocking outbound traffic to dest_ip=203.0.113.85 while the reverse shell and archive exfiltration are investigated.",
+     "citations": [
+      "source_host=hr-portal-01",
+      "process_name=netbridge.exe",
+      "file_hash=158575682e1de031d8feba84966240363ee67c66",
+      "dest_ip=203.0.113.85"
+     ]
+    },
+    {
+     "case": [
+      "ALT-0060",
+      "ALT-0059"
+     ],
+     "action": "Recommend isolating mail-relay-04, terminating netbridge.exe, and blocking outbound traffic to dest_ip=203.0.113.94 while the reverse shell and archive exfiltration are investigated.",
+     "citations": [
+      "source_host=mail-relay-04",
+      "process_name=netbridge.exe",
+      "file_hash=dbeca66878c1b4f495b9d14a91f41f3ab596f5ef",
+      "dest_ip=203.0.113.94"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1161,
+   "output_tokens": 3681,
+   "reasoning_chars": 13842,
+   "latency_ms": 31962
+  },
+  {
+   "id": "cw026",
+   "alert_dispositions": {
+    "ALT-0062": "true_positive",
+    "ALT-0061": "true_positive",
+    "ALT-0063": "false_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0062",
+     "ALT-0061"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0062",
+      "ALT-0061"
+     ],
+     "action": "Lock target_account=bcollins and require a password reset; verify and revoke any active sessions associated with this login before approving.",
+     "citations": [
+      "source_ip=198.51.100.177",
+      "target_account=bcollins",
+      "attempt_count=18",
+      "device_id=dev-c2277"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1025,
+   "output_tokens": 5442,
+   "reasoning_chars": 22431,
+   "latency_ms": 47346
+  },
+  {
+   "id": "cw027",
+   "alert_dispositions": {
+    "ALT-0065": "true_positive",
+    "ALT-0064": "true_positive",
+    "ALT-0066": "false_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0064",
+     "ALT-0065"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0064",
+      "ALT-0065"
+     ],
+     "action": "Lock the kwalsh account, force a password reset and re-authentication, and block the source IP from further login attempts.",
+     "citations": [
+      "source_ip=198.51.100.87",
+      "target_account=kwalsh"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1025,
+   "output_tokens": 3365,
+   "reasoning_chars": 13593,
+   "latency_ms": 31455
+  },
+  {
+   "id": "cw028",
+   "alert_dispositions": {
+    "ALT-0069": "false_positive",
+    "ALT-0067": "true_positive",
+    "ALT-0068": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0067",
+     "ALT-0068"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0067",
+      "ALT-0068"
+     ],
+     "action": "Recommend locking the jrivera account, forcing a password reset, and revoking the session/device used in the successful login following the brute force.",
+     "citations": [
+      "target_account=jrivera",
+      "source_ip=198.51.100.218",
+      "device_id=dev-d9931"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1023,
+   "output_tokens": 2966,
+   "reasoning_chars": 11727,
+   "latency_ms": 24640
+  },
+  {
+   "id": "cw029",
+   "alert_dispositions": {
+    "ALT-0072": "true_positive",
+    "ALT-0071": "true_positive",
+    "ALT-0070": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0072"
+    ],
+    [
+     "ALT-0070",
+     "ALT-0071"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0072"
+     ],
+     "action": "Disable user jkowalski's account, remove any newly added mailbox forwarding rule, and require a password reset pending investigation of the unrecognized device and login.",
+     "citations": [
+      "source_ip=198.51.100.5",
+      "device_id=dev-c2277"
+     ]
+    },
+    {
+     "case": [
+      "ALT-0070",
+      "ALT-0071"
+     ],
+     "action": "Lock user rpatel's account, force a password reset, and block the source IP at the identity/mail gateway pending investigation of the successful post-brute-force login.",
+     "citations": [
+      "source_ip=198.51.100.5",
+      "target_account=rpatel",
+      "attempt_count=33",
+      "device_id=dev-d9931"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1025,
+   "output_tokens": 2840,
+   "reasoning_chars": 10836,
+   "latency_ms": 25573
+  },
+  {
+   "id": "cw030",
+   "alert_dispositions": {
+    "ALT-0074": "true_positive",
+    "ALT-0075": "false_positive",
+    "ALT-0073": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0074",
+     "ALT-0073"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0074",
+      "ALT-0073"
+     ],
+     "action": "Recommend temporarily locking the mhassan account and forcing a password reset, and blocking further login attempts from source_ip=198.51.100.145 pending review.",
+     "citations": [
+      "source_ip=198.51.100.145",
+      "target_account=mhassan",
+      "attempt_count=23"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1025,
+   "output_tokens": 3625,
+   "reasoning_chars": 14275,
+   "latency_ms": 31756
+  },
+  {
+   "id": "cw031",
+   "alert_dispositions": {
+    "ALT-0076": "true_positive",
+    "ALT-0077": "false_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0076"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0076"
+     ],
+     "action": "Lock out account asingh, force a password reset, and invalidate any existing sessions; block the source IP if it is not a shared egress/VPN address.",
+     "citations": [
+      "target_account=asingh",
+      "source_ip=198.51.100.237",
+      "attempt_count=32"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 941,
+   "output_tokens": 5364,
+   "reasoning_chars": 23475,
+   "latency_ms": 49633
+  },
+  {
+   "id": "cw032",
+   "alert_dispositions": {
+    "ALT-0078": "true_positive",
+    "ALT-0079": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0078"
+    ],
+    [
+     "ALT-0079"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0078"
+     ],
+     "action": "Lock the yamada account and force a password reset; block the source IP from further authentication attempts.",
+     "citations": [
+      "target_account=yamada",
+      "source_ip=198.51.100.238",
+      "attempt_count=39"
+     ]
+    },
+    {
+     "case": [
+      "ALT-0079"
+     ],
+     "action": "Disable the mailbox forwarding rule for lferreira, block external mail forwarding from the mailbox, revoke the suspicious session, and force a password reset.",
+     "citations": [
+      "source_ip=198.51.100.238",
+      "device_id=dev-c2277"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 938,
+   "output_tokens": 2797,
+   "reasoning_chars": 11449,
+   "latency_ms": 24393
+  },
+  {
+   "id": "cw033",
+   "alert_dispositions": {
+    "ALT-0080": "true_positive",
+    "ALT-0082": "false_positive",
+    "ALT-0081": "true_positive"
+   },
+   "case_groups": [
+    [
+     "ALT-0080",
+     "ALT-0081"
+    ]
+   ],
+   "recommendations": [
+    {
+     "case": [
+      "ALT-0080",
+      "ALT-0081"
+     ],
+     "action": "Draft for approval: force a password reset for target_account=jkowalski, revoke active sessions for device_id=dev-c2277, and block further authentication from source_ip=198.51.100.66.",
+     "citations": [
+      "target_account=jkowalski",
+      "device_id=dev-c2277",
+      "source_ip=198.51.100.66"
+     ]
+    }
+   ],
+   "parsed": true,
+   "finish_reason": "stop",
+   "input_tokens": 1025,
+   "output_tokens": 1695,
+   "reasoning_chars": 6172,
+   "latency_ms": 13874
+  }
+ ],
+ "could_not_verify": [
+  "Every window judged here is a pre-selected 2-4 alert candidate group; nothing in this kit chooses which alerts get bundled together in the first place. A real deployment's own entity/time correlation window governs that, and too loose or too tight a window changes what a model is even given the chance to get right.",
+  "Indicator coverage is assumed complete for every alert in this corpus. An alert from a security tool this deployment has no feed for would arrive with fewer or no indicators, and this kit does not model that gap.",
+  "The corpus is invented, so it contains the two failure modes planted on purpose and no others. A real alert stream carries noise and incident shapes this set does not."
+ ]
+}
