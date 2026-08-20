@@ -1,0 +1,45 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>mp-onboard — cross-check a seller onboarding application</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Cross-check one seller application against its documents</h1>
+    <p class="sub">One onboarding application, seven declared-vs-document field pairs — business
+      identity, banking details, owner identity — one model call, a match / mismatch /
+      mismatch_explained flag per field and a summary drafted for a verification analyst.</p>
+    <p class="sub rb" id="rbline">This kit never approves, denies, or escalates an application —
+      it only extracts and cross-checks, and no flagged inconsistency is ever auto-cleared, even
+      one that looks minor. Every application is synthetic, generated at build time from a fixed
+      seed — never a real business or person.</p>
+  </header>
+
+  <div class="bar">
+    <select id="application" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Cross-check</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Application &amp; documents</span><span class="hint">declared on the form, left of each row; the matching document value, right</span></div>
+      <div id="app-box" class="src"></div>
+      <div id="fields" class="src flds"></div>
+      <p class="inquiry" id="note-box"></p>
+    </div>
+
+    <div class="panel">
+      <div class="ph"><span>Cross-check result</span></div>
+      <div id="result" class="out"></div>
+      <div class="stats">
+        <div class="stat"><b id="s-match">—</b><span>match</span></div>
+        <div class="stat mis"><b id="s-mismatch">—</b><span>mismatch</span></div>
+        <div class="stat exp"><b id="s-explained">—</b><span>explained</span></div>
+      </div>
+      <p class="reply" id="summary-box"></p>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>
