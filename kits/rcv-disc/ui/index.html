@@ -1,0 +1,48 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>rcv-disc — resolve a receiving discrepancy against its BOL, scan and carrier exception</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Resolve one receiving discrepancy</h1>
+    <p class="sub">One case, one model call, a proposed liable party with a documentary citation.
+      Four values: <b>vendor</b>, <b>carrier</b>, <b>internal</b>, and <b>insufficient
+      evidence</b> when the three quantities don't resolve cleanly. A carrier exception note on
+      the case is only evidence for the SKU it actually names — not for the case in general.</p>
+    <p class="sub rb" id="rbline">This kit never issues a chargeback or a credit and never makes
+      the final call — every case still needs receiving/AP to confirm before anything is issued.
+      Every case is synthetic, generated at build time from a fixed seed — never a real vendor or
+      carrier.</p>
+  </header>
+
+  <div class="bar">
+    <select id="case" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Resolve</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Case &amp; evidence</span><span class="hint">PO, BOL and receiving quantities for every line, plus the carrier exception on file</span></div>
+      <div id="case-box" class="src"></div>
+      <div id="lines" class="src lns"></div>
+      <p class="exc" id="exc-box"></p>
+    </div>
+
+    <div class="panel">
+      <div class="ph"><span>Proposed determination</span></div>
+      <div id="result" class="out"></div>
+      <div class="stats">
+        <div class="stat"><b id="s-sku">—</b><span>discrepant SKU</span></div>
+        <div class="stat"><b id="s-qty">—</b><span>cited quantities</span></div>
+        <div class="stat"><b id="s-delta">—</b><span>delta</span></div>
+      </div>
+      <p class="notice" id="notice-box"></p>
+      <p class="guard">Proposal only — receiving/AP confirms the liable party and issues any
+        chargeback or credit. This kit never does either itself.</p>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>
