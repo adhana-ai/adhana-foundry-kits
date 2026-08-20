@@ -1,0 +1,2806 @@
+{
+ "run_id": "r001-inv-cycle",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "events": 36,
+ "no_answer_events": 2,
+ "latency_p50_ms": 13703,
+ "latency_p95_ms": 145302,
+ "wall_seconds": 1384.2,
+ "input_tokens_total": 33561,
+ "output_tokens_total": 149762,
+ "max_tokens": 16384,
+ "thinking": null,
+ "prompt_version": "v1",
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3052
+  },
+  {
+   "name": "event",
+   "chars": 153
+  },
+  {
+   "name": "log",
+   "chars": 420
+  }
+ ],
+ "prompt_verbatim": "Event VC-0001 -- item SKU-45991 (Cleaning Chemicals), location LOC-013, period 2026-W32\nsystem 772, counted 845, variance_qty -73 (system minus counted)\n\nTRANSACTION HISTORY LOG\n------------------------\n0: [receiving] Received 82 units against PO-58229.\n1: [transfer] Transfer in: 21 units received from LOC-025.\n2: [transfer] Transfer in: 17 units received from LOC-003.\n3: [transfer] Transfer in: 17 units received from LOC-024.\n4: [adjustment] Prior-period cycle count correction applied: +10 units.\n5: [adjustment] Prior-period cycle count correction applied: +12 units.\n\nReturn a JSON object with three keys: \"cause\" (one of: mis_receipt, unrecorded_transfer, uom_error, unscanned_movement, unresolved); \"citations\" (a list of integer log line indices -- empty for unresolved); and \"narrative\" (a string of 1-2 sentences).\nAnswer with the JSON object only.",
+ "raw_response_example": "{\n  \"cause\": \"unresolved\",\n  \"citations\": [],\n  \"narrative\": \"The transaction history contains only receiving, inbound transfers, and prior-period adjustments; none of these logged lines can be tied to the -73 variance as a receiving error, unrecorded transfer, unit-of-measure mix-up, or missing scan.\"\n}",
+ "scores": {
+  "events_scored": 36,
+  "cause_accuracy_pct": 77.8,
+  "cause_accuracy_unresolved_pct": 100.0,
+  "cause_accuracy_traceable_pct": 73.3,
+  "unresolved_total": 6,
+  "traceable_total": 30,
+  "citation_validity_pct": 91.7,
+  "citation_scored": 24,
+  "fabricated_cause": 2,
+  "fabricated_cause_rate_pct": 8.3,
+  "uom_transfer_confusion": 0,
+  "uom_transfer_confusion_rate_pct": 0.0,
+  "trap_total": 4,
+  "narrative_faithful": 12,
+  "narrative_scored": 34,
+  "narrative_missing": 2,
+  "narrative_faithfulness_pct": 35.3
+ },
+ "per_event": [
+  {
+   "event_id": "VC-0001",
+   "gold_cause": "unresolved",
+   "model_cause": "unresolved",
+   "correct": true,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0002",
+   "gold_cause": "unrecorded_transfer",
+   "model_cause": "unrecorded_transfer",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0003",
+   "gold_cause": "unresolved",
+   "model_cause": "unresolved",
+   "correct": true,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0004",
+   "gold_cause": "unrecorded_transfer",
+   "model_cause": "unrecorded_transfer",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": true,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0005",
+   "gold_cause": "unrecorded_transfer",
+   "model_cause": "unrecorded_transfer",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0006",
+   "gold_cause": "unrecorded_transfer",
+   "model_cause": "unrecorded_transfer",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0007",
+   "gold_cause": "unresolved",
+   "model_cause": "unresolved",
+   "correct": true,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0008",
+   "gold_cause": "mis_receipt",
+   "model_cause": "mis_receipt",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0009",
+   "gold_cause": "unrecorded_transfer",
+   "model_cause": "unrecorded_transfer",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": true,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0010",
+   "gold_cause": "uom_error",
+   "model_cause": null,
+   "correct": false,
+   "citation_valid": false,
+   "is_trap": false,
+   "narrative_faithful": null
+  },
+  {
+   "event_id": "VC-0011",
+   "gold_cause": "unscanned_movement",
+   "model_cause": "unresolved",
+   "correct": false,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0012",
+   "gold_cause": "unscanned_movement",
+   "model_cause": "unresolved",
+   "correct": false,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0013",
+   "gold_cause": "unrecorded_transfer",
+   "model_cause": "unrecorded_transfer",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": true,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0014",
+   "gold_cause": "uom_error",
+   "model_cause": "uom_error",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0015",
+   "gold_cause": "uom_error",
+   "model_cause": "uom_error",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0016",
+   "gold_cause": "uom_error",
+   "model_cause": "uom_error",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0017",
+   "gold_cause": "mis_receipt",
+   "model_cause": "mis_receipt",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0018",
+   "gold_cause": "unresolved",
+   "model_cause": "unresolved",
+   "correct": true,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0019",
+   "gold_cause": "mis_receipt",
+   "model_cause": null,
+   "correct": false,
+   "citation_valid": false,
+   "is_trap": false,
+   "narrative_faithful": null
+  },
+  {
+   "event_id": "VC-0020",
+   "gold_cause": "unrecorded_transfer",
+   "model_cause": "unrecorded_transfer",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0021",
+   "gold_cause": "unresolved",
+   "model_cause": "unresolved",
+   "correct": true,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0022",
+   "gold_cause": "uom_error",
+   "model_cause": "uom_error",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0023",
+   "gold_cause": "unscanned_movement",
+   "model_cause": "unscanned_movement",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0024",
+   "gold_cause": "unscanned_movement",
+   "model_cause": "unresolved",
+   "correct": false,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0025",
+   "gold_cause": "mis_receipt",
+   "model_cause": "mis_receipt",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0026",
+   "gold_cause": "mis_receipt",
+   "model_cause": "mis_receipt",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0027",
+   "gold_cause": "mis_receipt",
+   "model_cause": "mis_receipt",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0028",
+   "gold_cause": "unrecorded_transfer",
+   "model_cause": "unrecorded_transfer",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": true,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0029",
+   "gold_cause": "mis_receipt",
+   "model_cause": "mis_receipt",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0030",
+   "gold_cause": "uom_error",
+   "model_cause": "uom_error",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0031",
+   "gold_cause": "unscanned_movement",
+   "model_cause": "unresolved",
+   "correct": false,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0032",
+   "gold_cause": "unscanned_movement",
+   "model_cause": "unresolved",
+   "correct": false,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0033",
+   "gold_cause": "uom_error",
+   "model_cause": "uom_error",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0034",
+   "gold_cause": "unrecorded_transfer",
+   "model_cause": "unrecorded_transfer",
+   "correct": true,
+   "citation_valid": true,
+   "is_trap": false,
+   "narrative_faithful": true
+  },
+  {
+   "event_id": "VC-0035",
+   "gold_cause": "unscanned_movement",
+   "model_cause": "unresolved",
+   "correct": false,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": false
+  },
+  {
+   "event_id": "VC-0036",
+   "gold_cause": "unresolved",
+   "model_cause": "unresolved",
+   "correct": true,
+   "citation_valid": null,
+   "is_trap": false,
+   "narrative_faithful": false
+  }
+ ],
+ "fabricated_examples": [
+  {
+   "event_id": "VC-0010",
+   "cause": null,
+   "citations": [],
+   "gold_cause": "uom_error"
+  },
+  {
+   "event_id": "VC-0019",
+   "cause": null,
+   "citations": [],
+   "gold_cause": "mis_receipt"
+  }
+ ],
+ "confusion": {
+  "unresolved->unresolved": 6,
+  "unrecorded_transfer->unrecorded_transfer": 9,
+  "mis_receipt->mis_receipt": 6,
+  "uom_error->None": 1,
+  "unscanned_movement->unresolved": 6,
+  "uom_error->uom_error": 6,
+  "mis_receipt->None": 1,
+  "unscanned_movement->unscanned_movement": 1
+ },
+ "records": [
+  {
+   "event_id": "VC-0001",
+   "packed": {
+    "event_id": "VC-0001",
+    "item_id": "SKU-45991",
+    "item_label": "Cleaning Chemicals",
+    "location_id": "LOC-013",
+    "period": "2026-W32",
+    "system_qty": 772,
+    "counted_qty": 845,
+    "variance_qty": -73,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-26",
+      "type": "receiving",
+      "note": "Received 82 units against PO-58229."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-29",
+      "type": "transfer",
+      "note": "Transfer in: 21 units received from LOC-025."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-31",
+      "type": "transfer",
+      "note": "Transfer in: 17 units received from LOC-003."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-08-01",
+      "type": "transfer",
+      "note": "Transfer in: 17 units received from LOC-024."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-08-03",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +10 units."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-08-05",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +12 units."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "The transaction history contains only receiving, inbound transfers, and prior-period adjustments; none of these logged lines can be tied to the -73 variance as a receiving error, unrecorded transfer, unit-of-measure mix-up, or missing scan."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 926,
+   "output_tokens": 704,
+   "reasoning_tokens": 631,
+   "latency_ms": 6792,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0002",
+   "packed": {
+    "event_id": "VC-0002",
+    "item_id": "SKU-56549",
+    "item_label": "Paper Products",
+    "location_id": "LOC-025",
+    "period": "2026-W25",
+    "system_qty": 637,
+    "counted_qty": 658,
+    "variance_qty": -21,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-06-07",
+      "type": "adjustment",
+      "note": "Regional log shows LOC-015 posted a partial adjustment of 21 units around this same count window -- not logged here as a transfer."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-06-08",
+      "type": "transfer",
+      "note": "Transfer out: 32 units sent to LOC-028."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-06-09",
+      "type": "receiving",
+      "note": "Received 10 units against PO-92745."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-06-10",
+      "type": "scan",
+      "note": "POS scan/pick: 5 units moved out."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-06-18",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -15 units."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-06-19",
+      "type": "receiving",
+      "note": "Received 47 units against PO-57134."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unrecorded_transfer",
+    "citations": [
+     0
+    ],
+    "narrative": "Log line 0 shows a 21-unit adjustment at another location around the count window that was not logged here as a transfer, which matches the variance. This indicates an unrecorded transfer into LOC-025."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 938,
+   "output_tokens": 953,
+   "reasoning_tokens": 882,
+   "latency_ms": 8731,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0003",
+   "packed": {
+    "event_id": "VC-0003",
+    "item_id": "SKU-46247",
+    "item_label": "Automotive Fluids",
+    "location_id": "LOC-018",
+    "period": "2026-W08",
+    "system_qty": 840,
+    "counted_qty": 882,
+    "variance_qty": -42,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-02-08",
+      "type": "receiving",
+      "note": "Received 99 units against PO-99527."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-02-10",
+      "type": "transfer",
+      "note": "Transfer in: 16 units received from LOC-006."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-02-11",
+      "type": "receiving",
+      "note": "Receiving posted for PO-53038: 39 units logged to on-hand."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-02-13",
+      "type": "transfer",
+      "note": "Transfer out: 20 units sent to LOC-028."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-02-15",
+      "type": "receiving",
+      "note": "Receiving posted for PO-79406: 39 units logged to on-hand."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-02-17",
+      "type": "receiving",
+      "note": "Received 44 units against PO-65228."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "The supplied transaction history contains only receiving and transfer entries, none of which accounts for the 42-unit variance or shows a unit-of-measure error, mis-posted receipt, or missing transfer. Without a specific log line tying the variance to one of the named causes, the variance remains unresolved."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 938,
+   "output_tokens": 1071,
+   "reasoning_tokens": 995,
+   "latency_ms": 9863,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0004",
+   "packed": {
+    "event_id": "VC-0004",
+    "item_id": "SKU-75000",
+    "item_label": "Batteries",
+    "location_id": "LOC-007",
+    "period": "2026-W22",
+    "system_qty": 765,
+    "counted_qty": 909,
+    "variance_qty": -144,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-05-17",
+      "type": "adjustment",
+      "note": "Regional log shows LOC-022 posted a partial adjustment of 144 units around this same count window -- not logged here as a transfer."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-05-20",
+      "type": "receiving",
+      "note": "Received 58 units against PO-14050."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-05-24",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -14 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-05-27",
+      "type": "scan",
+      "note": "POS scan/pick: 41 units moved out."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-05-28",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -7 units."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-05-29",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: +6 units."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unrecorded_transfer",
+    "citations": [
+     0
+    ],
+    "narrative": "The cited regional log shows LOC-022 posted a 144-unit partial adjustment in the same count window, but no corresponding transfer was logged at LOC-007. This matches the 144-unit variance and indicates an unrecorded transfer between locations."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 938,
+   "output_tokens": 594,
+   "reasoning_tokens": 526,
+   "latency_ms": 5746,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0005",
+   "packed": {
+    "event_id": "VC-0005",
+    "item_id": "SKU-47117",
+    "item_label": "Garden Tools",
+    "location_id": "LOC-029",
+    "period": "2026-W33",
+    "system_qty": 971,
+    "counted_qty": 998,
+    "variance_qty": -27,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-08-04",
+      "type": "adjustment",
+      "note": "Regional log shows LOC-001 posted a partial adjustment of 27 units around this same count window -- not logged here as a transfer."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-08-09",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +12 units."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-08-10",
+      "type": "transfer",
+      "note": "Transfer out: 32 units sent to LOC-008."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-08-12",
+      "type": "transfer",
+      "note": "Transfer out: 19 units sent to LOC-026."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 4,
+    "log_packed": 4,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unrecorded_transfer",
+    "citations": [
+     0
+    ],
+    "narrative": "Log line 0 shows a 27-unit adjustment posted at LOC-001 in the same window that was not logged as a transfer to this location; the variance size matches exactly, indicating stock moved without a transfer record here."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 909,
+   "output_tokens": 740,
+   "reasoning_tokens": 667,
+   "latency_ms": 6688,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0006",
+   "packed": {
+    "event_id": "VC-0006",
+    "item_id": "SKU-30459",
+    "item_label": "Health & Wellness",
+    "location_id": "LOC-022",
+    "period": "2026-W32",
+    "system_qty": 194,
+    "counted_qty": 137,
+    "variance_qty": 57,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-25",
+      "type": "adjustment",
+      "note": "Regional log shows LOC-023 posted a partial adjustment of 57 units around this same count window -- not logged here as a transfer."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-26",
+      "type": "scan",
+      "note": "POS scan/pick: 38 units moved out."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-28",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: -11 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-07-30",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: -11 units."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-08-04",
+      "type": "scan",
+      "note": "POS scan/pick: 15 units moved out."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-08-07",
+      "type": "transfer",
+      "note": "Transfer in: 19 units received from LOC-025."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unrecorded_transfer",
+    "citations": [
+     0
+    ],
+    "narrative": "Log line 0 shows an adjustment at another location in the count window that was not recorded here as a transfer, which explains the system-versus-physical difference. Inventory control should confirm whether that adjustment represented an unrecorded transfer into or out of LOC-022."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 941,
+   "output_tokens": 754,
+   "reasoning_tokens": 681,
+   "latency_ms": 6746,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0007",
+   "packed": {
+    "event_id": "VC-0007",
+    "item_id": "SKU-48846",
+    "item_label": "Cleaning Chemicals",
+    "location_id": "LOC-002",
+    "period": "2026-W18",
+    "system_qty": 1297,
+    "counted_qty": 1274,
+    "variance_qty": 23,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-04-19",
+      "type": "receiving",
+      "note": "Received 116 units against PO-99419."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-04-20",
+      "type": "transfer",
+      "note": "Transfer in: 23 units received from LOC-005."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-04-21",
+      "type": "receiving",
+      "note": "Received 57 units against PO-95273."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-04-24",
+      "type": "receiving",
+      "note": "Received 24 units against PO-15995."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-04-30",
+      "type": "transfer",
+      "note": "Transfer in: 16 units received from LOC-023."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-05-01",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: +8 units."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "The 23-unit variance matches a recorded inbound transfer, but because that transfer is logged, unrecorded_transfer is not supported, and no line evidences a receiving, UoM, or scan/pick/sale discrepancy. No named cause is cleanly supported."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 925,
+   "output_tokens": 8488,
+   "reasoning_tokens": 8410,
+   "latency_ms": 72547,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0008",
+   "packed": {
+    "event_id": "VC-0008",
+    "item_id": "SKU-70966",
+    "item_label": "Automotive Fluids",
+    "location_id": "LOC-020",
+    "period": "2026-W30",
+    "system_qty": 230,
+    "counted_qty": 312,
+    "variance_qty": -82,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-11",
+      "type": "receiving",
+      "note": "Received 147 units against PO-70332."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-12",
+      "type": "adjustment",
+      "note": "Correction thread on PO-70332: PO called for 65 units; 147 were logged as received instead. Discrepancy of -82 units was never posted to on-hand."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-16",
+      "type": "transfer",
+      "note": "Transfer out: 16 units sent to LOC-011."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-07-17",
+      "type": "receiving",
+      "note": "Received 32 units against PO-36971."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-07-20",
+      "type": "scan",
+      "note": "44 units picked and scanned out per POS."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 5,
+    "log_packed": 5,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "mis_receipt",
+    "citations": [
+     1
+    ],
+    "narrative": "The correction thread for PO-70332 indicates 147 units were logged as received instead of 65, a -82 discrepancy that was never posted to on-hand. This matches the variance and was not applied."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 933,
+   "output_tokens": 459,
+   "reasoning_tokens": 390,
+   "latency_ms": 4492,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0009",
+   "packed": {
+    "event_id": "VC-0009",
+    "item_id": "SKU-83025",
+    "item_label": "Storage Containers",
+    "location_id": "LOC-021",
+    "period": "2026-W31",
+    "system_qty": 790,
+    "counted_qty": 718,
+    "variance_qty": 72,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-20",
+      "type": "adjustment",
+      "note": "Regional log shows LOC-028 posted a partial adjustment of 72 units around this same count window -- not logged here as a transfer."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-24",
+      "type": "transfer",
+      "note": "Transfer out: 11 units sent to LOC-016."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-25",
+      "type": "scan",
+      "note": "39 units picked and scanned out per POS."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-07-30",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -11 units."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-07-31",
+      "type": "transfer",
+      "note": "Transfer out: 33 units sent to LOC-025."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 5,
+    "log_packed": 5,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unrecorded_transfer",
+    "citations": [
+     0
+    ],
+    "narrative": "The log notes a 72-unit adjustment posted at LOC-028 during the same count window, with no corresponding transfer logged for LOC-021. This aligns with an unrecorded transfer rather than any other cause."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 923,
+   "output_tokens": 740,
+   "reasoning_tokens": 669,
+   "latency_ms": 7124,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0010",
+   "packed": {
+    "event_id": "VC-0010",
+    "item_id": "SKU-56679",
+    "item_label": "Pet Food",
+    "location_id": "LOC-009",
+    "period": "2026-W22",
+    "system_qty": 234,
+    "counted_qty": 162,
+    "variance_qty": 72,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-05-17",
+      "type": "receiving",
+      "note": "PO-75001 receiving shows 3 units entered; item's case pack is 24, so confirm whether this was keyed in eaches or cases."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-05-18",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -11 units."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-05-19",
+      "type": "receiving",
+      "note": "Received 6 units against PO-77242."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-05-22",
+      "type": "transfer",
+      "note": "Transfer in: 23 units received from LOC-025."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-05-24",
+      "type": "receiving",
+      "note": "Received 20 units against PO-89896."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 5,
+    "log_packed": 5,
+    "truncated": false
+   },
+   "answer": {
+    "cause": null,
+    "citations": [],
+    "narrative": null
+   },
+   "replied": false,
+   "finish_reason": "length",
+   "input_tokens": 927,
+   "output_tokens": 16384,
+   "reasoning_tokens": 16384,
+   "latency_ms": 145302,
+   "raw_text": ""
+  },
+  {
+   "event_id": "VC-0011",
+   "packed": {
+    "event_id": "VC-0011",
+    "item_id": "SKU-29357",
+    "item_label": "Storage Containers",
+    "location_id": "LOC-013",
+    "period": "2026-W31",
+    "system_qty": 147,
+    "counted_qty": 108,
+    "variance_qty": 39,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-19",
+      "type": "receiving",
+      "note": "Received 37 units against PO-65887."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-22",
+      "type": "scan",
+      "note": "POS scan/pick: 28 units moved out."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-24",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: +12 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-07-27",
+      "type": "receiving",
+      "note": "Receiving posted for PO-52920: 20 units logged to on-hand."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-07-31",
+      "type": "receiving",
+      "note": "Receiving posted for PO-17212: 17 units logged to on-hand."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 5,
+    "log_packed": 5,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "The transaction history does not clearly support any of the four specific causes; no line identifies a receiving discrepancy, a transfer, a unit-of-measure issue, or an unrecorded scan/pick. Therefore the variance is left unresolved."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 919,
+   "output_tokens": 6194,
+   "reasoning_tokens": 6130,
+   "latency_ms": 58044,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0012",
+   "packed": {
+    "event_id": "VC-0012",
+    "item_id": "SKU-92512",
+    "item_label": "Light Bulbs & Fixtures",
+    "location_id": "LOC-028",
+    "period": "2026-W18",
+    "system_qty": 1262,
+    "counted_qty": 1213,
+    "variance_qty": 49,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-04-19",
+      "type": "receiving",
+      "note": "Received 84 units against PO-26156."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-04-20",
+      "type": "scan",
+      "note": "POS scan/pick: 71 units moved out."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-04-23",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: +9 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-04-28",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +12 units."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-05-01",
+      "type": "scan",
+      "note": "POS scan/pick: 10 units moved out."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 5,
+    "log_packed": 5,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "The log entries do not support any of the four specific causes; the receiving, scan, and adjustment lines do not reconcile to a clear mis-receipt, transfer, UOM, or missing-scan pattern. Leaving as unresolved is the supported conclusion."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 911,
+   "output_tokens": 1274,
+   "reasoning_tokens": 1206,
+   "latency_ms": 13703,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0013",
+   "packed": {
+    "event_id": "VC-0013",
+    "item_id": "SKU-44795",
+    "item_label": "Garden Tools",
+    "location_id": "LOC-020",
+    "period": "2026-W08",
+    "system_qty": 975,
+    "counted_qty": 1095,
+    "variance_qty": -120,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-02-13",
+      "type": "adjustment",
+      "note": "LOC-024's own cycle count this period flagged 120 units of receiving/adjustment activity that lines up with this window, though no transfer was logged between the two locations."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-02-14",
+      "type": "transfer",
+      "note": "Transfer out: 24 units sent to LOC-029."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-02-15",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +6 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-02-16",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +13 units."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-02-18",
+      "type": "scan",
+      "note": "45 units picked and scanned out per POS."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 5,
+    "log_packed": 5,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unrecorded_transfer",
+    "citations": [
+     0
+    ],
+    "narrative": "Line 0 states that LOC-024's own cycle count flagged 120 units of receiving/adjustment activity matching this window, but no transfer was logged between LOC-024 and LOC-020. This supports an unrecorded transfer explaining the physical count exceeding system quantity at LOC-020."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 934,
+   "output_tokens": 861,
+   "reasoning_tokens": 774,
+   "latency_ms": 7844,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0014",
+   "packed": {
+    "event_id": "VC-0014",
+    "item_id": "SKU-44200",
+    "item_label": "Kitchen Textiles",
+    "location_id": "LOC-014",
+    "period": "2026-W05",
+    "system_qty": 596,
+    "counted_qty": 584,
+    "variance_qty": 12,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-01-17",
+      "type": "receiving",
+      "note": "Received 1 units against PO-48042, logged in cases (case pack = 12) -- worth confirming this posted as eaches, not cases."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-01-18",
+      "type": "receiving",
+      "note": "Receiving posted for PO-55668: 24 units logged to on-hand."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-01-21",
+      "type": "transfer",
+      "note": "Transfer out: 3 units sent to LOC-002."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-01-22",
+      "type": "transfer",
+      "note": "Transfer out: 37 units sent to LOC-016."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-01-25",
+      "type": "receiving",
+      "note": "Received 18 units against PO-65568."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-01-28",
+      "type": "receiving",
+      "note": "Received 43 units against PO-51476."
+     },
+     {
+      "idx": 6,
+      "ts": "2026-01-29",
+      "type": "scan",
+      "note": "7 units picked and scanned out per POS."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 7,
+    "log_packed": 7,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "uom_error",
+    "citations": [
+     0
+    ],
+    "narrative": "Line 0 logs a receipt in cases with a case pack of 12, revealing a unit-of-measure (eaches/cases) mismatch for this item. The +12 variance equals the case pack, so the discrepancy is consistent with that posting error."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 968,
+   "output_tokens": 4657,
+   "reasoning_tokens": 4588,
+   "latency_ms": 41226,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0015",
+   "packed": {
+    "event_id": "VC-0015",
+    "item_id": "SKU-33349",
+    "item_label": "Office Supplies",
+    "location_id": "LOC-005",
+    "period": "2026-W19",
+    "system_qty": 307,
+    "counted_qty": 319,
+    "variance_qty": -12,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-04-25",
+      "type": "receiving",
+      "note": "Received 1 units against PO-96637, logged in cases (case pack = 12) -- worth confirming this posted as eaches, not cases."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-04-27",
+      "type": "scan",
+      "note": "16 units picked and scanned out per POS."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-04-28",
+      "type": "scan",
+      "note": "28 units picked and scanned out per POS."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-04-29",
+      "type": "scan",
+      "note": "35 units picked and scanned out per POS."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-05-01",
+      "type": "receiving",
+      "note": "Receiving posted for PO-48212: 14 units logged to on-hand."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-05-04",
+      "type": "scan",
+      "note": "POS scan/pick: 22 units moved out."
+     },
+     {
+      "idx": 6,
+      "ts": "2026-05-06",
+      "type": "transfer",
+      "note": "Transfer in: 14 units received from LOC-008."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 7,
+    "log_packed": 7,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "uom_error",
+    "citations": [
+     0
+    ],
+    "narrative": "Line 0 records a receipt logged in cases with a case pack of 12 and explicitly flags that it may have been posted as eaches instead of cases. This is a unit-of-measure mismatch consistent with the variance."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 963,
+   "output_tokens": 3193,
+   "reasoning_tokens": 3122,
+   "latency_ms": 29047,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0016",
+   "packed": {
+    "event_id": "VC-0016",
+    "item_id": "SKU-29811",
+    "item_label": "Small Appliances",
+    "location_id": "LOC-002",
+    "period": "2026-W33",
+    "system_qty": 321,
+    "counted_qty": 441,
+    "variance_qty": -120,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-08-03",
+      "type": "receiving",
+      "note": "PO-17786 receiving shows 5 units entered; item's case pack is 24, so confirm whether this was keyed in eaches or cases."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-08-04",
+      "type": "transfer",
+      "note": "Transfer in: 39 units received from LOC-022."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-08-05",
+      "type": "transfer",
+      "note": "Transfer in: 21 units received from LOC-016."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-08-06",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -7 units."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-08-07",
+      "type": "scan",
+      "note": "POS scan/pick: 15 units moved out."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-08-08",
+      "type": "transfer",
+      "note": "Transfer in: 8 units received from LOC-026."
+     },
+     {
+      "idx": 6,
+      "ts": "2026-08-09",
+      "type": "transfer",
+      "note": "Transfer in: 37 units received from LOC-009."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 7,
+    "log_packed": 7,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "uom_error",
+    "citations": [
+     0
+    ],
+    "narrative": "The receiving entry at line 0 records 5 units while noting the item's 24-unit case pack and asking whether the entry was keyed in eaches or cases, indicating a unit-of-measure mix-up for this item."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 963,
+   "output_tokens": 9770,
+   "reasoning_tokens": 9697,
+   "latency_ms": 89252,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0017",
+   "packed": {
+    "event_id": "VC-0017",
+    "item_id": "SKU-42133",
+    "item_label": "Kitchen Textiles",
+    "location_id": "LOC-017",
+    "period": "2026-W29",
+    "system_qty": 1173,
+    "counted_qty": 1141,
+    "variance_qty": 32,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-04",
+      "type": "receiving",
+      "note": "Received 237 units against PO-49207."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-06",
+      "type": "adjustment",
+      "note": "PO-49207 discrepancy flagged: 237 units logged against a PO for 269; the +32-unit gap was never corrected on-hand."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-08",
+      "type": "scan",
+      "note": "14 units picked and scanned out per POS."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-07-09",
+      "type": "scan",
+      "note": "37 units picked and scanned out per POS."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-07-12",
+      "type": "transfer",
+      "note": "Transfer out: 5 units sent to LOC-019."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-07-13",
+      "type": "receiving",
+      "note": "Receiving posted for PO-54454: 26 units logged to on-hand."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "mis_receipt",
+    "citations": [
+     1
+    ],
+    "narrative": "Line 1 documents a PO-49207 receiving discrepancy: 237 units logged against a 269-unit PO, and the +32 gap was never corrected on-hand. That matches the +32 variance, so this is drafted as a mis-receipt."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 949,
+   "output_tokens": 1196,
+   "reasoning_tokens": 1126,
+   "latency_ms": 11562,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0018",
+   "packed": {
+    "event_id": "VC-0018",
+    "item_id": "SKU-55911",
+    "item_label": "Storage Containers",
+    "location_id": "LOC-018",
+    "period": "2026-W32",
+    "system_qty": 986,
+    "counted_qty": 900,
+    "variance_qty": 86,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-25",
+      "type": "receiving",
+      "note": "Received 39 units against PO-37354."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-26",
+      "type": "transfer",
+      "note": "Transfer in: 17 units received from LOC-022."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-30",
+      "type": "transfer",
+      "note": "Transfer in: 8 units received from LOC-002."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-08-04",
+      "type": "receiving",
+      "note": "Received 35 units against PO-64083."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 4,
+    "log_packed": 4,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "The transaction history contains only inbound receiving and transfer-in lines, with no logged outbound movement, unit-of-measure mismatch, or receiving correction that reconciles to the +86 variance. No specific cause is supported by the available evidence."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 891,
+   "output_tokens": 1656,
+   "reasoning_tokens": 1592,
+   "latency_ms": 15768,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0019",
+   "packed": {
+    "event_id": "VC-0019",
+    "item_id": "SKU-54568",
+    "item_label": "Kitchen Textiles",
+    "location_id": "LOC-018",
+    "period": "2026-W15",
+    "system_qty": 396,
+    "counted_qty": 378,
+    "variance_qty": 18,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-03-31",
+      "type": "receiving",
+      "note": "Received 101 units against PO-41919."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-04-02",
+      "type": "adjustment",
+      "note": "Correction thread on PO-41919: PO called for 119 units; 101 were logged as received instead. Discrepancy of +18 units was never posted to on-hand."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-04-05",
+      "type": "scan",
+      "note": "POS scan/pick: 20 units moved out."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-04-10",
+      "type": "scan",
+      "note": "28 units picked and scanned out per POS."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 4,
+    "log_packed": 4,
+    "truncated": false
+   },
+   "answer": {
+    "cause": null,
+    "citations": [],
+    "narrative": null
+   },
+   "replied": false,
+   "finish_reason": "length",
+   "input_tokens": 916,
+   "output_tokens": 16384,
+   "reasoning_tokens": 16384,
+   "latency_ms": 149107,
+   "raw_text": ""
+  },
+  {
+   "event_id": "VC-0020",
+   "packed": {
+    "event_id": "VC-0020",
+    "item_id": "SKU-98726",
+    "item_label": "Pet Food",
+    "location_id": "LOC-028",
+    "period": "2026-W22",
+    "system_qty": 559,
+    "counted_qty": 579,
+    "variance_qty": -20,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-05-16",
+      "type": "adjustment",
+      "note": "Regional log shows LOC-011 posted a partial adjustment of 20 units around this same count window -- not logged here as a transfer."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-05-17",
+      "type": "receiving",
+      "note": "Receiving posted for PO-62896: 10 units logged to on-hand."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-05-18",
+      "type": "receiving",
+      "note": "Receiving posted for PO-24425: 19 units logged to on-hand."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-05-24",
+      "type": "transfer",
+      "note": "Transfer out: 15 units sent to LOC-015."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-05-25",
+      "type": "transfer",
+      "note": "Transfer in: 3 units received from LOC-009."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-05-29",
+      "type": "transfer",
+      "note": "Transfer in: 20 units received from LOC-029."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unrecorded_transfer",
+    "citations": [
+     0
+    ],
+    "narrative": "Log line 0 shows an adjustment of 20 units posted at LOC-011 around the same count window, but it was not logged here as a transfer. This unrecorded transfer matches the variance and explains the system quantity being lower than the physical count."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 954,
+   "output_tokens": 970,
+   "reasoning_tokens": 899,
+   "latency_ms": 8592,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0021",
+   "packed": {
+    "event_id": "VC-0021",
+    "item_id": "SKU-99744",
+    "item_label": "Light Bulbs & Fixtures",
+    "location_id": "LOC-006",
+    "period": "2026-W23",
+    "system_qty": 294,
+    "counted_qty": 325,
+    "variance_qty": -31,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-05-24",
+      "type": "receiving",
+      "note": "Received 74 units against PO-99871."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-05-27",
+      "type": "transfer",
+      "note": "Transfer in: 18 units received from LOC-026."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-05-30",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -10 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-06-01",
+      "type": "transfer",
+      "note": "Transfer in: 16 units received from LOC-013."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-06-03",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +10 units."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-06-04",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: -6 units."
+     },
+     {
+      "idx": 6,
+      "ts": "2026-06-05",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -13 units."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 7,
+    "log_packed": 7,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "No log line in the provided history accounts for the -31 unit difference. The evidence is insufficient to identify a specific cause."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 944,
+   "output_tokens": 2980,
+   "reasoning_tokens": 2938,
+   "latency_ms": 27698,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0022",
+   "packed": {
+    "event_id": "VC-0022",
+    "item_id": "SKU-49871",
+    "item_label": "Pet Food",
+    "location_id": "LOC-008",
+    "period": "2026-W33",
+    "system_qty": 524,
+    "counted_qty": 620,
+    "variance_qty": -96,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-08-01",
+      "type": "receiving",
+      "note": "Received 8 units against PO-86587, logged in cases (case pack = 12) -- worth confirming this posted as eaches, not cases."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-08-04",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: -11 units."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-08-05",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: +2 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-08-14",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: +15 units."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 4,
+    "log_packed": 4,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "uom_error",
+    "citations": [
+     0
+    ],
+    "narrative": "Receiving log line 0 is logged in cases with a case pack of 12 and flags that the posting needs to be confirmed as eaches rather than cases; the variance is an exact 8-case multiple, so the shortfall aligns with that unit-of-measure mixup on this receipt."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 911,
+   "output_tokens": 9346,
+   "reasoning_tokens": 9269,
+   "latency_ms": 81909,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0023",
+   "packed": {
+    "event_id": "VC-0023",
+    "item_id": "SKU-13115",
+    "item_label": "Garden Tools",
+    "location_id": "LOC-009",
+    "period": "2026-W16",
+    "system_qty": 1331,
+    "counted_qty": 1262,
+    "variance_qty": 69,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-04-06",
+      "type": "receiving",
+      "note": "Received 105 units against PO-35406."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-04-13",
+      "type": "scan",
+      "note": "POS scan/pick: 56 units moved out."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-04-14",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -9 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-04-15",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +5 units."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-04-17",
+      "type": "scan",
+      "note": "36 units picked and scanned out per POS."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 5,
+    "log_packed": 5,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unscanned_movement",
+    "citations": [
+     1,
+     4
+    ],
+    "narrative": "The scan/pick-out lines, combined with the rest of the recorded activity, do not bring system on-hand down to the physical count, leaving an unexplained shortage. This indicates units moved out without a corresponding scan or log entry."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 907,
+   "output_tokens": 12782,
+   "reasoning_tokens": 12705,
+   "latency_ms": 125822,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0024",
+   "packed": {
+    "event_id": "VC-0024",
+    "item_id": "SKU-47028",
+    "item_label": "Garden Tools",
+    "location_id": "LOC-012",
+    "period": "2026-W17",
+    "system_qty": 648,
+    "counted_qty": 585,
+    "variance_qty": 63,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-04-12",
+      "type": "receiving",
+      "note": "Received 86 units against PO-83370."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-04-18",
+      "type": "scan",
+      "note": "POS scan/pick: 45 units moved out."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-04-19",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: +2 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-04-20",
+      "type": "scan",
+      "note": "POS scan/pick: 41 units moved out."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-04-23",
+      "type": "scan",
+      "note": "7 units picked and scanned out per POS."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-04-24",
+      "type": "scan",
+      "note": "POS scan/pick: 25 units moved out."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "The transaction history does not contain a line that clearly evidences a receiving miscount, unrecorded transfer, unit-of-measure mix-up, or unrecorded movement matching the variance. The discrepancy is unexplained by the log, so no specific cause is supported."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 920,
+   "output_tokens": 10592,
+   "reasoning_tokens": 10523,
+   "latency_ms": 99604,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0025",
+   "packed": {
+    "event_id": "VC-0025",
+    "item_id": "SKU-63350",
+    "item_label": "Pet Food",
+    "location_id": "LOC-007",
+    "period": "2026-W27",
+    "system_qty": 1071,
+    "counted_qty": 1114,
+    "variance_qty": -43,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-06-21",
+      "type": "receiving",
+      "note": "Received 183 units against PO-11474."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-06-23",
+      "type": "adjustment",
+      "note": "PO-11474 discrepancy flagged: 183 units logged against a PO for 140; the -43-unit gap was never corrected on-hand."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-06-27",
+      "type": "transfer",
+      "note": "Transfer out: 29 units sent to LOC-009."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-06-29",
+      "type": "receiving",
+      "note": "Received 22 units against PO-60636."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-06-30",
+      "type": "receiving",
+      "note": "Received 17 units against PO-37786."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-07-01",
+      "type": "scan",
+      "note": "11 units picked and scanned out per POS."
+     },
+     {
+      "idx": 6,
+      "ts": "2026-07-03",
+      "type": "receiving",
+      "note": "Receiving posted for PO-47496: 49 units logged to on-hand."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 7,
+    "log_packed": 7,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "mis_receipt",
+    "citations": [
+     1
+    ],
+    "narrative": "Line 1 records that the PO-11474 receiving discrepancy was flagged but the -43-unit gap was never corrected on-hand, which directly accounts for the variance."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 964,
+   "output_tokens": 730,
+   "reasoning_tokens": 679,
+   "latency_ms": 6357,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0026",
+   "packed": {
+    "event_id": "VC-0026",
+    "item_id": "SKU-23466",
+    "item_label": "Storage Containers",
+    "location_id": "LOC-004",
+    "period": "2026-W05",
+    "system_qty": 1307,
+    "counted_qty": 1257,
+    "variance_qty": 50,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-01-18",
+      "type": "receiving",
+      "note": "Received 314 units against PO-42760."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-01-19",
+      "type": "adjustment",
+      "note": "PO-42760 discrepancy flagged: 314 units logged against a PO for 364; the +50-unit gap was never corrected on-hand."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-01-21",
+      "type": "scan",
+      "note": "33 units picked and scanned out per POS."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-01-23",
+      "type": "receiving",
+      "note": "Received 15 units against PO-50323."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-01-26",
+      "type": "transfer",
+      "note": "Transfer out: 38 units sent to LOC-007."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-01-27",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: -2 units."
+     },
+     {
+      "idx": 6,
+      "ts": "2026-01-29",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: +6 units."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 7,
+    "log_packed": 7,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "mis_receipt",
+    "citations": [
+     1
+    ],
+    "narrative": "The receiving log for PO-42760 recorded 314 units against a PO for 364, and the flagged +50-unit discrepancy was never corrected on-hand. This matches the +50 variance."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 959,
+   "output_tokens": 664,
+   "reasoning_tokens": 607,
+   "latency_ms": 6265,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0027",
+   "packed": {
+    "event_id": "VC-0027",
+    "item_id": "SKU-56854",
+    "item_label": "Kitchen Textiles",
+    "location_id": "LOC-023",
+    "period": "2026-W07",
+    "system_qty": 1224,
+    "counted_qty": 1167,
+    "variance_qty": 57,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-02-01",
+      "type": "receiving",
+      "note": "Received 182 units against PO-55373."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-02-02",
+      "type": "adjustment",
+      "note": "PO-55373 discrepancy flagged: 182 units logged against a PO for 239; the +57-unit gap was never corrected on-hand."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-02-06",
+      "type": "receiving",
+      "note": "Received 48 units against PO-20119."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-02-12",
+      "type": "scan",
+      "note": "7 units picked and scanned out per POS."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 4,
+    "log_packed": 4,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "mis_receipt",
+    "citations": [
+     1
+    ],
+    "narrative": "Receiving log line 1 flags a PO-55373 discrepancy where 182 units were logged against a PO for 239, and the +57-unit gap was never corrected on-hand; this matches the +57 variance."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 910,
+   "output_tokens": 363,
+   "reasoning_tokens": 300,
+   "latency_ms": 3949,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0028",
+   "packed": {
+    "event_id": "VC-0028",
+    "item_id": "SKU-11969",
+    "item_label": "Storage Containers",
+    "location_id": "LOC-023",
+    "period": "2026-W21",
+    "system_qty": 1110,
+    "counted_qty": 1158,
+    "variance_qty": -48,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-05-11",
+      "type": "adjustment",
+      "note": "Regional log shows LOC-020 posted a partial adjustment of 48 units around this same count window -- not logged here as a transfer."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-05-13",
+      "type": "scan",
+      "note": "POS scan/pick: 21 units moved out."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-05-17",
+      "type": "scan",
+      "note": "24 units picked and scanned out per POS."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-05-22",
+      "type": "receiving",
+      "note": "Receiving posted for PO-37727: 40 units logged to on-hand."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 4,
+    "log_packed": 4,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unrecorded_transfer",
+    "citations": [
+     0
+    ],
+    "narrative": "Log line 0 reports a 48-unit adjustment at LOC-020 in the same count window that was not logged here as a transfer, which matches the 48-unit overage at this location."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 914,
+   "output_tokens": 681,
+   "reasoning_tokens": 622,
+   "latency_ms": 6857,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0029",
+   "packed": {
+    "event_id": "VC-0029",
+    "item_id": "SKU-14332",
+    "item_label": "Garden Tools",
+    "location_id": "LOC-025",
+    "period": "2026-W32",
+    "system_qty": 1229,
+    "counted_qty": 1198,
+    "variance_qty": 31,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-25",
+      "type": "receiving",
+      "note": "Received 201 units against PO-92032."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-26",
+      "type": "adjustment",
+      "note": "PO-92032 discrepancy flagged: 201 units logged against a PO for 232; the +31-unit gap was never corrected on-hand."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-28",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +11 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-07-30",
+      "type": "receiving",
+      "note": "Receiving posted for PO-79894: 50 units logged to on-hand."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-08-03",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +4 units."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-08-05",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: -6 units."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "mis_receipt",
+    "citations": [
+     1
+    ],
+    "narrative": "Log line 1 flags that 201 units were logged against PO-92032 for a PO of 232, and the +31-unit gap was never corrected on-hand. This directly accounts for the +31 variance."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 952,
+   "output_tokens": 418,
+   "reasoning_tokens": 347,
+   "latency_ms": 4349,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0030",
+   "packed": {
+    "event_id": "VC-0030",
+    "item_id": "SKU-87837",
+    "item_label": "Cleaning Chemicals",
+    "location_id": "LOC-027",
+    "period": "2026-W24",
+    "system_qty": 909,
+    "counted_qty": 789,
+    "variance_qty": 120,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-06-01",
+      "type": "receiving",
+      "note": "Received 5 units against PO-30005, logged in cases (case pack = 24) -- worth confirming this posted as eaches, not cases."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-06-03",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: +14 units."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-06-05",
+      "type": "receiving",
+      "note": "Received 13 units against PO-77155."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-06-07",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: -5 units."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-06-08",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: -4 units."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-06-10",
+      "type": "receiving",
+      "note": "Receiving posted for PO-86199: 4 units logged to on-hand."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "uom_error",
+    "citations": [
+     0
+    ],
+    "narrative": "Log line 0 records a receipt logged in cases with a case pack of 24 and flags a possible eaches-versus-cases posting error; if it posted as cases instead of eaches, on-hand would be overstated. This is a unit-of-measure mismatch consistent with the variance."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 952,
+   "output_tokens": 9290,
+   "reasoning_tokens": 9205,
+   "latency_ms": 86310,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0031",
+   "packed": {
+    "event_id": "VC-0031",
+    "item_id": "SKU-45558",
+    "item_label": "Garden Tools",
+    "location_id": "LOC-005",
+    "period": "2026-W31",
+    "system_qty": 1377,
+    "counted_qty": 1380,
+    "variance_qty": -3,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-18",
+      "type": "receiving",
+      "note": "Received 37 units against PO-87177."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-19",
+      "type": "scan",
+      "note": "POS scan/pick: 71 units moved out."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-20",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -3 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-07-21",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -8 units."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-07-22",
+      "type": "scan",
+      "note": "31 units picked and scanned out per POS."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-07-26",
+      "type": "scan",
+      "note": "POS scan/pick: 42 units moved out."
+     },
+     {
+      "idx": 6,
+      "ts": "2026-07-27",
+      "type": "transfer",
+      "note": "Transfer in: 8 units received from LOC-025."
+     },
+     {
+      "idx": 7,
+      "ts": "2026-07-28",
+      "type": "receiving",
+      "note": "Received 17 units against PO-29594."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 8,
+    "log_packed": 8,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "The log contains a manual adjustment matching the variance, but none of the named causes is supported by the transaction lines. The variance remains unresolved."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 955,
+   "output_tokens": 2301,
+   "reasoning_tokens": 2256,
+   "latency_ms": 21937,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0032",
+   "packed": {
+    "event_id": "VC-0032",
+    "item_id": "SKU-17393",
+    "item_label": "Automotive Fluids",
+    "location_id": "LOC-018",
+    "period": "2026-W29",
+    "system_qty": 245,
+    "counted_qty": 221,
+    "variance_qty": 24,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-04",
+      "type": "receiving",
+      "note": "Received 54 units against PO-21122."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-06",
+      "type": "scan",
+      "note": "POS scan/pick: 53 units moved out."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-08",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -4 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-07-12",
+      "type": "scan",
+      "note": "11 units picked and scanned out per POS."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-07-13",
+      "type": "receiving",
+      "note": "Receiving posted for PO-82367: 60 units logged to on-hand."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-07-14",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +7 units."
+     },
+     {
+      "idx": 6,
+      "ts": "2026-07-15",
+      "type": "scan",
+      "note": "POS scan/pick: 21 units moved out."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 7,
+    "log_packed": 7,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "No transaction line in the provided history accounts for the +24 system-over-count variance. The available entries do not clearly support a specific receipt, transfer, UOM, or missing-scan cause."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 945,
+   "output_tokens": 10828,
+   "reasoning_tokens": 10772,
+   "latency_ms": 101240,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0033",
+   "packed": {
+    "event_id": "VC-0033",
+    "item_id": "SKU-66639",
+    "item_label": "Office Supplies",
+    "location_id": "LOC-002",
+    "period": "2026-W31",
+    "system_qty": 562,
+    "counted_qty": 490,
+    "variance_qty": 72,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-23",
+      "type": "receiving",
+      "note": "Received 6 units against PO-38051, logged in cases (case pack = 12) -- worth confirming this posted as eaches, not cases."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-25",
+      "type": "transfer",
+      "note": "Transfer out: 13 units sent to LOC-030."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-28",
+      "type": "transfer",
+      "note": "Transfer out: 33 units sent to LOC-010."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-07-29",
+      "type": "receiving",
+      "note": "Received 43 units against PO-25279."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 4,
+    "log_packed": 4,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "uom_error",
+    "citations": [
+     0
+    ],
+    "narrative": "Log line 0 records a receipt logged in cases with a case pack of 12, indicating a case-versus-eaches unit-of-measure mix-up for this item. This UOM error is the drafted cause for the variance."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 912,
+   "output_tokens": 1154,
+   "reasoning_tokens": 1090,
+   "latency_ms": 11221,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0034",
+   "packed": {
+    "event_id": "VC-0034",
+    "item_id": "SKU-52914",
+    "item_label": "Health & Wellness",
+    "location_id": "LOC-030",
+    "period": "2026-W05",
+    "system_qty": 648,
+    "counted_qty": 677,
+    "variance_qty": -29,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-01-17",
+      "type": "adjustment",
+      "note": "LOC-014's own cycle count this period flagged 29 units of receiving/adjustment activity that lines up with this window, though no transfer was logged between the two locations."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-01-19",
+      "type": "transfer",
+      "note": "Transfer out: 38 units sent to LOC-013."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-01-20",
+      "type": "transfer",
+      "note": "Transfer in: 28 units received from LOC-005."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-01-27",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: -3 units."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 4,
+    "log_packed": 4,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unrecorded_transfer",
+    "citations": [
+     0
+    ],
+    "narrative": "Line 0 reports that LOC-014's cycle count flagged 29 units of matching activity for this window, with no transfer logged between the two locations. This aligns with the variance as an unrecorded transfer."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 918,
+   "output_tokens": 804,
+   "reasoning_tokens": 742,
+   "latency_ms": 7392,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0035",
+   "packed": {
+    "event_id": "VC-0035",
+    "item_id": "SKU-55014",
+    "item_label": "Health & Wellness",
+    "location_id": "LOC-018",
+    "period": "2026-W22",
+    "system_qty": 152,
+    "counted_qty": 166,
+    "variance_qty": -14,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-05-16",
+      "type": "receiving",
+      "note": "Received 24 units against PO-53792."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-05-22",
+      "type": "scan",
+      "note": "POS scan/pick: 48 units moved out."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-05-25",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: -5 units."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-05-26",
+      "type": "transfer",
+      "note": "Transfer in: 38 units received from LOC-022."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-05-27",
+      "type": "adjustment",
+      "note": "Manual on-hand correction posted: +4 units."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 5,
+    "log_packed": 5,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "The transaction history does not clearly support any of the four named causes; no logged line or combination of lines accounts for the variance."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 906,
+   "output_tokens": 5187,
+   "reasoning_tokens": 5144,
+   "latency_ms": 47779,
+   "raw_text": null
+  },
+  {
+   "event_id": "VC-0036",
+   "packed": {
+    "event_id": "VC-0036",
+    "item_id": "SKU-31082",
+    "item_label": "Hardware Fasteners",
+    "location_id": "LOC-015",
+    "period": "2026-W31",
+    "system_qty": 829,
+    "counted_qty": 909,
+    "variance_qty": -80,
+    "log": [
+     {
+      "idx": 0,
+      "ts": "2026-07-21",
+      "type": "receiving",
+      "note": "Received 35 units against PO-67475."
+     },
+     {
+      "idx": 1,
+      "ts": "2026-07-22",
+      "type": "transfer",
+      "note": "Transfer in: 17 units received from LOC-001."
+     },
+     {
+      "idx": 2,
+      "ts": "2026-07-25",
+      "type": "transfer",
+      "note": "Transfer in: 34 units received from LOC-019."
+     },
+     {
+      "idx": 3,
+      "ts": "2026-07-26",
+      "type": "adjustment",
+      "note": "Prior-period cycle count correction applied: +6 units."
+     },
+     {
+      "idx": 4,
+      "ts": "2026-07-28",
+      "type": "receiving",
+      "note": "Received 27 units against PO-97613."
+     },
+     {
+      "idx": 5,
+      "ts": "2026-07-29",
+      "type": "transfer",
+      "note": "Transfer out: 34 units sent to LOC-021."
+     }
+    ]
+   },
+   "pack_meta": {
+    "log_total": 6,
+    "log_packed": 6,
+    "truncated": false
+   },
+   "answer": {
+    "cause": "unresolved",
+    "citations": [],
+    "narrative": "The transaction history does not clearly support any of the four named causes. The logged receiving, transfer, and adjustment entries do not align with the variance as described."
+   },
+   "replied": true,
+   "finish_reason": "stop",
+   "input_tokens": 926,
+   "output_tokens": 4600,
+   "reasoning_tokens": 4551,
+   "latency_ms": 47362,
+   "raw_text": null
+  }
+ ]
+}

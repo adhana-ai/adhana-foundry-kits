@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>inv-cycle — draft a cycle-count variance's likely cause</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Draft a cycle-count variance's likely cause</h1>
+    <p class="sub">One variance event, one drafting call. The item/location's own transaction
+      history log — receiving, transfers, scans, adjustments — is all the model sees. It tags a
+      probable cause from a fixed vocabulary — or says <b>unresolved</b> — cites the exact log
+      line, and drafts a short note for inventory control. Decision-free by design: nothing here
+      posts an adjustment or closes the variance.</p>
+    <p class="sub rb" id="rbline">The events, their transaction logs and their gold causes are
+      synthetic, generated at build time from a fixed seed — never written from memory.</p>
+  </header>
+
+  <div class="bar">
+    <select id="eid" aria-label="Load a shipped example"></select>
+    <button id="go" type="button">Draft cause</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="ph"><span>Variance</span><span class="hint" id="varhint"></span></div>
+      <div id="var-box" class="src"></div>
+      <div class="ph"><span>Transaction history log</span></div>
+      <div id="log-box" class="src logbox"></div>
+    </div>
+
+    <div class="panel">
+      <div class="ph"><span>Drafted cause</span></div>
+      <div id="out" class="out answer"></div>
+      <div id="narrative" class="narrative" hidden></div>
+      <div class="stats">
+        <div class="stat"><b id="s-cause">—</b><span>cause</span></div>
+        <div class="stat"><b id="s-cite">—</b><span>citation</span></div>
+        <div class="stat"><b id="s-in">—</b><span>input tokens</span></div>
+        <div class="stat cost"><b id="s-out">—</b><span>output tokens</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>
