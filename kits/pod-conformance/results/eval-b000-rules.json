@@ -1,0 +1,6414 @@
+{
+ "run_id": "b000-rules",
+ "stub": false,
+ "model": "rules-baseline",
+ "provider": "none",
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 0,
+ "latency_p95_ms": 0,
+ "latency_ms_all": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "wall_seconds": 0.0,
+ "input_tokens_total": 0,
+ "output_tokens_total": 0,
+ "scores": {
+  "extraction_cells": 550,
+  "extraction_accuracy": 0.96,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 385,
+  "values_with_span": 0,
+  "non_spannable_fields": [
+   "condition_code",
+   "delivery_complete",
+   "recipient_signature_present"
+  ],
+  "span_rate": 0.0
+ },
+ "by_field": {
+  "shipment_id": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "carrier_name": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "delivery_date": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "ordered_quantity": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "delivered_quantity": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "condition_code": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "recipient_signature_present": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "driver_exception_note": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "pod_timestamp": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "delivery_complete": {
+   "hit": 33,
+   "miss": 0,
+   "wrong": 22,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "POD-0001",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-KW-88753",
+   "want": "SHP-KW-88753",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0001",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Northvale Freight Lines",
+   "want": "Northvale Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0001",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-07-21",
+   "want": "2026-07-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0001",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 480,
+   "want": 480,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0001",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 480,
+   "want": 480,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0001",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0001",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0001",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "want": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0001",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-07-21T13:30:18",
+   "want": "2026-07-21T13:30:18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0001",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0002",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-RE-64847",
+   "want": "SHP-RE-64847",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0002",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Brightpath Haulage",
+   "want": "Brightpath Haulage",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0002",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-02-05",
+   "want": "2026-02-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0002",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 60,
+   "want": 60,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0002",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 55,
+   "want": 55,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0002",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0002",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0002",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "All good on my end. Left with the receiving clerk, no issues to report.",
+   "want": "All good on my end. Left with the receiving clerk, no issues to report.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0002",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-02-05T19:54:58",
+   "want": "2026-02-05T19:54:58",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0002",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0003",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-MV-44127",
+   "want": "SHP-MV-44127",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0003",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Ambermoor Logistics",
+   "want": "Ambermoor Logistics",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0003",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-08-20",
+   "want": "2026-08-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0003",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 144,
+   "want": 144,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0003",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 145,
+   "want": 145,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0003",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0003",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0003",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "want": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0003",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-08-20T08:14:20",
+   "want": "2026-08-20T08:14:20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0003",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0004",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-LL-23571",
+   "want": "SHP-LL-23571",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0004",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Ironline Carriage",
+   "want": "Ironline Carriage",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0004",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-05-23",
+   "want": "2026-05-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0004",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0004",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 46,
+   "want": 46,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0004",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "damaged",
+   "want": "damaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0004",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0004",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "want": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0004",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-05-23T19:26:56",
+   "want": "2026-05-23T19:26:56",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0004",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0005",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-DE-15020",
+   "want": "SHP-DE-15020",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0005",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Calderon Cartage Group",
+   "want": "Calderon Cartage Group",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0005",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-07-16",
+   "want": "2026-07-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0005",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0005",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0005",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "unknown",
+   "want": "unknown",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0005",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0005",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "want": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0005",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-07-16T13:07:36",
+   "want": "2026-07-16T13:07:36",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0005",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0006",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-BD-61649",
+   "want": "SHP-BD-61649",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0006",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Northvale Freight Lines",
+   "want": "Northvale Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0006",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-04-19",
+   "want": "2026-04-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0006",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 72,
+   "want": 72,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0006",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 72,
+   "want": 72,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0006",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "damaged",
+   "want": "damaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0006",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0006",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "want": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0006",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-04-19T06:02:04",
+   "want": "2026-04-19T06:02:04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0006",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0007",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-JT-11853",
+   "want": "SHP-JT-11853",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0007",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Verrow Freight Services",
+   "want": "Verrow Freight Services",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0007",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-07-26",
+   "want": "2026-07-26",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0007",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0007",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 168,
+   "want": 168,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0007",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0007",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0007",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0007",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-07-26T11:46:39",
+   "want": "2026-07-26T11:46:39",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0007",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0008",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-EP-95956",
+   "want": "SHP-EP-95956",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0008",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Verrow Freight Services",
+   "want": "Verrow Freight Services",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0008",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-02-09",
+   "want": "2026-02-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0008",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0008",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0008",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "damaged",
+   "want": "damaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0008",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0008",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "want": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0008",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-02-09T19:52:55",
+   "want": "2026-02-09T19:52:55",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0008",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0009",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-DC-95468",
+   "want": "SHP-DC-95468",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0009",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Stonebridge Transport Co.",
+   "want": "Stonebridge Transport Co.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0009",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-02-27",
+   "want": "2026-02-27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0009",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 300,
+   "want": 300,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0009",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 300,
+   "want": 300,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0009",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "unknown",
+   "want": "unknown",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0009",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0009",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "want": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0009",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-02-27T13:00:36",
+   "want": "2026-02-27T13:00:36",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0009",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0010",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-SA-28267",
+   "want": "SHP-SA-28267",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0010",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Larkspur Distribution",
+   "want": "Larkspur Distribution",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0010",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-07-14",
+   "want": "2026-07-14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0010",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 240,
+   "want": 240,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0010",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 240,
+   "want": 240,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0010",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0010",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0010",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "want": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0010",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-07-14T11:35:21",
+   "want": "2026-07-14T11:35:21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0010",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0011",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-VW-88103",
+   "want": "SHP-VW-88103",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0011",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Havenport Delivery Network",
+   "want": "Havenport Delivery Network",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0011",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-02-24",
+   "want": "2026-02-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0011",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0011",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0011",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0011",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0011",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "want": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0011",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-02-24T12:33:27",
+   "want": "2026-02-24T12:33:27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0011",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0012",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-FB-30907",
+   "want": "SHP-FB-30907",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0012",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Ironline Carriage",
+   "want": "Ironline Carriage",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0012",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-06-27",
+   "want": "2026-06-27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0012",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 60,
+   "want": 60,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0012",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 60,
+   "want": 60,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0012",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0012",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0012",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0012",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-06-27T12:02:05",
+   "want": "2026-06-27T12:02:05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0012",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0013",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-GE-60138",
+   "want": "SHP-GE-60138",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0013",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Brightpath Haulage",
+   "want": "Brightpath Haulage",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0013",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-05-29",
+   "want": "2026-05-29",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0013",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 120,
+   "want": 120,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0013",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 120,
+   "want": 120,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0013",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "unknown",
+   "want": "unknown",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0013",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0013",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0013",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-05-29T10:10:00",
+   "want": "2026-05-29T10:10:00",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0013",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0014",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-PA-34926",
+   "want": "SHP-PA-34926",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0014",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Brightpath Haulage",
+   "want": "Brightpath Haulage",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0014",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-06-16",
+   "want": "2026-06-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0014",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 300,
+   "want": 300,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0014",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 300,
+   "want": 300,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0014",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0014",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0014",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "want": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0014",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-06-16T08:29:21",
+   "want": "2026-06-16T08:29:21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0014",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0015",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-RJ-89199",
+   "want": "SHP-RJ-89199",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0015",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Verrow Freight Services",
+   "want": "Verrow Freight Services",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0015",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-05-27",
+   "want": "2026-05-27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0015",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 24,
+   "want": 24,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0015",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 24,
+   "want": 24,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0015",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0015",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0015",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Apologies, ran late and the receiving office had already closed when I arrived.",
+   "want": "Apologies, ran late and the receiving office had already closed when I arrived.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0015",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-05-27T09:11:08",
+   "want": "2026-05-27T09:11:08",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0015",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0016",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-TS-80062",
+   "want": "SHP-TS-80062",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0016",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Northvale Freight Lines",
+   "want": "Northvale Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0016",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-07-17",
+   "want": "2026-07-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0016",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 60,
+   "want": 60,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0016",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 60,
+   "want": 60,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0016",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "damaged",
+   "want": "damaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0016",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0016",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "want": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0016",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-07-17T10:51:43",
+   "want": "2026-07-17T10:51:43",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0016",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0017",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-WD-86639",
+   "want": "SHP-WD-86639",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0017",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Brightpath Haulage",
+   "want": "Brightpath Haulage",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0017",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-06-18",
+   "want": "2026-06-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0017",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 36,
+   "want": 36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0017",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 36,
+   "want": 36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0017",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "damaged",
+   "want": "damaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0017",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0017",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0017",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-06-18T15:39:57",
+   "want": "2026-06-18T15:39:57",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0017",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0018",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-CE-72126",
+   "want": "SHP-CE-72126",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0018",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Kestrel Freightways",
+   "want": "Kestrel Freightways",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0018",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-06-03",
+   "want": "2026-06-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0018",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 60,
+   "want": 60,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0018",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 60,
+   "want": 60,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0018",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0018",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0018",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0018",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-06-03T17:48:35",
+   "want": "2026-06-03T17:48:35",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0018",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0019",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-FF-31323",
+   "want": "SHP-FF-31323",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0019",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Havenport Delivery Network",
+   "want": "Havenport Delivery Network",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0019",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-06-03",
+   "want": "2026-06-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0019",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0019",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0019",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "damaged",
+   "want": "damaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0019",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0019",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "want": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0019",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-06-03T08:57:05",
+   "want": "2026-06-03T08:57:05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0019",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0020",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-RG-63441",
+   "want": "SHP-RG-63441",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0020",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Kestrel Freightways",
+   "want": "Kestrel Freightways",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0020",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-03-28",
+   "want": "2026-03-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0020",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 240,
+   "want": 240,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0020",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 240,
+   "want": 240,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0020",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0020",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0020",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0020",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-03-28T07:12:12",
+   "want": "2026-03-28T07:12:12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0020",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0021",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-TD-44242",
+   "want": "SHP-TD-44242",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0021",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Kestrel Freightways",
+   "want": "Kestrel Freightways",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0021",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-06-24",
+   "want": "2026-06-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0021",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 360,
+   "want": 360,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0021",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 337,
+   "want": 337,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0021",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0021",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0021",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0021",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-06-24T18:09:16",
+   "want": "2026-06-24T18:09:16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0021",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0022",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-VC-16524",
+   "want": "SHP-VC-16524",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0022",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Verrow Freight Services",
+   "want": "Verrow Freight Services",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0022",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-03-11",
+   "want": "2026-03-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0022",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 72,
+   "want": 72,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0022",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 72,
+   "want": 72,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0022",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0022",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0022",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "want": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0022",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-03-11T06:08:13",
+   "want": "2026-03-11T06:08:13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0022",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0023",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-BP-35914",
+   "want": "SHP-BP-35914",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0023",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Verrow Freight Services",
+   "want": "Verrow Freight Services",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0023",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-03-22",
+   "want": "2026-03-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0023",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 36,
+   "want": 36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0023",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 36,
+   "want": 36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0023",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0023",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0023",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "want": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0023",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-03-22T06:25:10",
+   "want": "2026-03-22T06:25:10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0023",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0024",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-DD-26925",
+   "want": "SHP-DD-26925",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0024",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Calderon Cartage Group",
+   "want": "Calderon Cartage Group",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0024",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-06-13",
+   "want": "2026-06-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0024",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0024",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0024",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0024",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0024",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "want": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0024",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-06-13T15:34:20",
+   "want": "2026-06-13T15:34:20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0024",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0025",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-VE-87965",
+   "want": "SHP-VE-87965",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0025",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Stonebridge Transport Co.",
+   "want": "Stonebridge Transport Co.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0025",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-05-29",
+   "want": "2026-05-29",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0025",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0025",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0025",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0025",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0025",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "want": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0025",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-05-29T18:15:34",
+   "want": "2026-05-29T18:15:34",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0025",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0026",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-NF-83904",
+   "want": "SHP-NF-83904",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0026",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Ironline Carriage",
+   "want": "Ironline Carriage",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0026",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-04-02",
+   "want": "2026-04-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0026",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 240,
+   "want": 240,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0026",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 222,
+   "want": 222,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0026",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0026",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0026",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "All good on my end. Left with the receiving clerk, no issues to report.",
+   "want": "All good on my end. Left with the receiving clerk, no issues to report.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0026",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-04-02T07:47:55",
+   "want": "2026-04-02T07:47:55",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0026",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0027",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-PN-40574",
+   "want": "SHP-PN-40574",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0027",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Calderon Cartage Group",
+   "want": "Calderon Cartage Group",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0027",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-02-16",
+   "want": "2026-02-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0027",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 300,
+   "want": 300,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0027",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 300,
+   "want": 300,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0027",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0027",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0027",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "want": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0027",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-02-16T15:01:45",
+   "want": "2026-02-16T15:01:45",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0027",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0028",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-KD-57268",
+   "want": "SHP-KD-57268",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0028",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Larkspur Distribution",
+   "want": "Larkspur Distribution",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0028",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-05-28",
+   "want": "2026-05-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0028",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 24,
+   "want": 24,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0028",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 26,
+   "want": 26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0028",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0028",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0028",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Apologies, ran late and the receiving office had already closed when I arrived.",
+   "want": "Apologies, ran late and the receiving office had already closed when I arrived.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0028",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-05-28T15:04:00",
+   "want": "2026-05-28T15:04:00",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0028",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0029",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-RB-73379",
+   "want": "SHP-RB-73379",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0029",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Northvale Freight Lines",
+   "want": "Northvale Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0029",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-07-06",
+   "want": "2026-07-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0029",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0029",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 172,
+   "want": 172,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0029",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0029",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0029",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0029",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-07-06T17:57:05",
+   "want": "2026-07-06T17:57:05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0029",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0030",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-RC-92694",
+   "want": "SHP-RC-92694",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0030",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Ambermoor Logistics",
+   "want": "Ambermoor Logistics",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0030",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-02-25",
+   "want": "2026-02-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0030",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 60,
+   "want": 60,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0030",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 60,
+   "want": 60,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0030",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0030",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0030",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "want": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0030",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-02-25T06:59:21",
+   "want": "2026-02-25T06:59:21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0030",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0031",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-GG-74339",
+   "want": "SHP-GG-74339",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0031",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Havenport Delivery Network",
+   "want": "Havenport Delivery Network",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0031",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-05-25",
+   "want": "2026-05-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0031",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0031",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0031",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0031",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0031",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "All good on my end. Left with the receiving clerk, no issues to report.",
+   "want": "All good on my end. Left with the receiving clerk, no issues to report.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0031",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-05-25T17:31:48",
+   "want": "2026-05-25T17:31:48",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0031",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0032",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-KC-67000",
+   "want": "SHP-KC-67000",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0032",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Kestrel Freightways",
+   "want": "Kestrel Freightways",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0032",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-03-14",
+   "want": "2026-03-14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0032",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 144,
+   "want": 144,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0032",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 133,
+   "want": 133,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0032",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0032",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0032",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0032",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-03-14T08:04:07",
+   "want": "2026-03-14T08:04:07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0032",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0033",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-AE-66843",
+   "want": "SHP-AE-66843",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0033",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Ironline Carriage",
+   "want": "Ironline Carriage",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0033",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-05-02",
+   "want": "2026-05-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0033",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0033",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 170,
+   "want": 170,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0033",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0033",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0033",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "want": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0033",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-05-02T15:46:38",
+   "want": "2026-05-02T15:46:38",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0033",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0034",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-DW-70088",
+   "want": "SHP-DW-70088",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0034",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Northvale Freight Lines",
+   "want": "Northvale Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0034",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-02-28",
+   "want": "2026-02-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0034",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0034",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0034",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0034",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0034",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "want": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0034",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-02-28T16:14:39",
+   "want": "2026-02-28T16:14:39",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0034",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0035",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-BJ-63177",
+   "want": "SHP-BJ-63177",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0035",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Stonebridge Transport Co.",
+   "want": "Stonebridge Transport Co.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0035",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-03-02",
+   "want": "2026-03-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0035",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 60,
+   "want": 60,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0035",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 60,
+   "want": 60,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0035",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0035",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0035",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "want": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0035",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-03-02T18:58:12",
+   "want": "2026-03-02T18:58:12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0035",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0036",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-NG-26875",
+   "want": "SHP-NG-26875",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0036",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Calderon Cartage Group",
+   "want": "Calderon Cartage Group",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0036",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-06-19",
+   "want": "2026-06-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0036",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 144,
+   "want": 144,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0036",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 136,
+   "want": 136,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0036",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0036",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0036",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "want": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0036",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-06-19T06:33:48",
+   "want": "2026-06-19T06:33:48",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0036",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0037",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-FB-50335",
+   "want": "SHP-FB-50335",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0037",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Kestrel Freightways",
+   "want": "Kestrel Freightways",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0037",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-07-14",
+   "want": "2026-07-14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0037",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 120,
+   "want": 120,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0037",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 120,
+   "want": 120,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0037",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0037",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0037",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "want": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0037",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-07-14T08:14:03",
+   "want": "2026-07-14T08:14:03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0037",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0038",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-VD-13238",
+   "want": "SHP-VD-13238",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0038",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Northvale Freight Lines",
+   "want": "Northvale Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0038",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-03-19",
+   "want": "2026-03-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0038",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 72,
+   "want": 72,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0038",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 72,
+   "want": 72,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0038",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0038",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0038",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "want": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0038",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-03-19T12:23:03",
+   "want": "2026-03-19T12:23:03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0038",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0039",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-AE-76996",
+   "want": "SHP-AE-76996",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0039",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Larkspur Distribution",
+   "want": "Larkspur Distribution",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0039",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-02-13",
+   "want": "2026-02-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0039",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 120,
+   "want": 120,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0039",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 120,
+   "want": 120,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0039",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0039",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0039",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "want": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0039",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-02-13T11:32:03",
+   "want": "2026-02-13T11:32:03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0039",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0040",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-CN-79594",
+   "want": "SHP-CN-79594",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0040",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Calderon Cartage Group",
+   "want": "Calderon Cartage Group",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0040",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-03-28",
+   "want": "2026-03-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0040",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0040",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 168,
+   "want": 168,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0040",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0040",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0040",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "want": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0040",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-03-28T19:23:34",
+   "want": "2026-03-28T19:23:34",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0040",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0041",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-WK-25120",
+   "want": "SHP-WK-25120",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0041",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Larkspur Distribution",
+   "want": "Larkspur Distribution",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0041",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-08-17",
+   "want": "2026-08-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0041",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 300,
+   "want": 300,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0041",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 300,
+   "want": 300,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0041",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0041",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0041",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "want": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0041",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-08-17T08:30:49",
+   "want": "2026-08-17T08:30:49",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0041",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0042",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-NJ-10534",
+   "want": "SHP-NJ-10534",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0042",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Ironline Carriage",
+   "want": "Ironline Carriage",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0042",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-03-26",
+   "want": "2026-03-26",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0042",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 480,
+   "want": 480,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0042",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 480,
+   "want": 480,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0042",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "unknown",
+   "want": "unknown",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0042",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0042",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "want": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0042",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-03-26T14:00:31",
+   "want": "2026-03-26T14:00:31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0042",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0043",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-PA-60391",
+   "want": "SHP-PA-60391",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0043",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Havenport Delivery Network",
+   "want": "Havenport Delivery Network",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0043",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-04-16",
+   "want": "2026-04-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0043",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 144,
+   "want": 144,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0043",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 144,
+   "want": 144,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0043",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0043",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0043",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0043",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-04-16T16:27:59",
+   "want": "2026-04-16T16:27:59",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0043",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0044",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-PD-75714",
+   "want": "SHP-PD-75714",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0044",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Verrow Freight Services",
+   "want": "Verrow Freight Services",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0044",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-05-22",
+   "want": "2026-05-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0044",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 144,
+   "want": 144,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0044",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 144,
+   "want": 144,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0044",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0044",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0044",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "want": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0044",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-05-22T19:09:56",
+   "want": "2026-05-22T19:09:56",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0044",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0045",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-NL-34552",
+   "want": "SHP-NL-34552",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0045",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Ambermoor Logistics",
+   "want": "Ambermoor Logistics",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0045",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-06-27",
+   "want": "2026-06-27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0045",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 96,
+   "want": 96,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0045",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 98,
+   "want": 98,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0045",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0045",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0045",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0045",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-06-27T10:27:43",
+   "want": "2026-06-27T10:27:43",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0045",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0046",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-VB-73621",
+   "want": "SHP-VB-73621",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0046",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Brightpath Haulage",
+   "want": "Brightpath Haulage",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0046",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-02-17",
+   "want": "2026-02-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0046",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 300,
+   "want": 300,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0046",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 300,
+   "want": 300,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0046",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "damaged",
+   "want": "damaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0046",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0046",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0046",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-02-17T07:29:42",
+   "want": "2026-02-17T07:29:42",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0046",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0047",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-TG-41557",
+   "want": "SHP-TG-41557",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0047",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Ambermoor Logistics",
+   "want": "Ambermoor Logistics",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0047",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-03-21",
+   "want": "2026-03-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0047",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 96,
+   "want": 96,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0047",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 96,
+   "want": 96,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0047",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0047",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0047",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "want": "Fine delivery, minor scuff on one of the outer boxes but nothing to worry about.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0047",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-03-21T06:13:33",
+   "want": "2026-03-21T06:13:33",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0047",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0048",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-EW-53867",
+   "want": "SHP-EW-53867",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0048",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Kestrel Freightways",
+   "want": "Kestrel Freightways",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0048",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-07-19",
+   "want": "2026-07-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0048",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 240,
+   "want": 240,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0048",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 240,
+   "want": 240,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0048",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "damaged",
+   "want": "damaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0048",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0048",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Apologies, ran late and the receiving office had already closed when I arrived.",
+   "want": "Apologies, ran late and the receiving office had already closed when I arrived.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0048",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-07-19T15:14:01",
+   "want": "2026-07-19T15:14:01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0048",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0049",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-PC-90553",
+   "want": "SHP-PC-90553",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0049",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Brightpath Haulage",
+   "want": "Brightpath Haulage",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0049",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-03-12",
+   "want": "2026-03-12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0049",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0049",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 180,
+   "want": 180,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0049",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0049",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0049",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "want": "Easy stop, everything handed over at the bay. No concerns from me.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0049",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-03-12T11:38:26",
+   "want": "2026-03-12T11:38:26",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0049",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0050",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-TW-90173",
+   "want": "SHP-TW-90173",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0050",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Ambermoor Logistics",
+   "want": "Ambermoor Logistics",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0050",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-04-04",
+   "want": "2026-04-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0050",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 144,
+   "want": 144,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0050",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 144,
+   "want": 144,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0050",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0050",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0050",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "All good on my end. Left with the receiving clerk, no issues to report.",
+   "want": "All good on my end. Left with the receiving clerk, no issues to report.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0050",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-04-04T12:14:21",
+   "want": "2026-04-04T12:14:21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0050",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0051",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-NR-11070",
+   "want": "SHP-NR-11070",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0051",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Larkspur Distribution",
+   "want": "Larkspur Distribution",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0051",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-03-19",
+   "want": "2026-03-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0051",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 36,
+   "want": 36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0051",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 35,
+   "want": 35,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0051",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0051",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0051",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "want": "Sorry for the mix-up, had to leave it at the gate because the dock was full.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0051",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-03-19T08:08:52",
+   "want": "2026-03-19T08:08:52",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0051",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0052",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-BG-85532",
+   "want": "SHP-BG-85532",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0052",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Havenport Delivery Network",
+   "want": "Havenport Delivery Network",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0052",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-04-23",
+   "want": "2026-04-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0052",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 300,
+   "want": 300,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0052",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 297,
+   "want": 297,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0052",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "damaged",
+   "want": "damaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0052",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0052",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "All good on my end. Left with the receiving clerk, no issues to report.",
+   "want": "All good on my end. Left with the receiving clerk, no issues to report.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0052",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-04-23T07:07:40",
+   "want": "2026-04-23T07:07:40",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0052",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0053",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-SK-25695",
+   "want": "SHP-SK-25695",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0053",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Havenport Delivery Network",
+   "want": "Havenport Delivery Network",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0053",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-08-06",
+   "want": "2026-08-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0053",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 36,
+   "want": 36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0053",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 36,
+   "want": 36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0053",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0053",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0053",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "want": "Straightforward drop. Dock crew were quick, nothing worth flagging.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0053",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-08-06T14:36:55",
+   "want": "2026-08-06T14:36:55",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0053",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0054",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-TD-33368",
+   "want": "SHP-TD-33368",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0054",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Verrow Freight Services",
+   "want": "Verrow Freight Services",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0054",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-07-20",
+   "want": "2026-07-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0054",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 480,
+   "want": 480,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0054",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 461,
+   "want": 461,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0054",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0054",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0054",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "want": "Not happy with how this one went. Site was chaotic and I was rushed through the drop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0054",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-07-20T07:36:59",
+   "want": "2026-07-20T07:36:59",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0054",
+   "field": "delivery_complete",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0055",
+   "field": "shipment_id",
+   "verdict": "hit",
+   "got": "SHP-EC-27693",
+   "want": "SHP-EC-27693",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0055",
+   "field": "carrier_name",
+   "verdict": "hit",
+   "got": "Calderon Cartage Group",
+   "want": "Calderon Cartage Group",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0055",
+   "field": "delivery_date",
+   "verdict": "hit",
+   "got": "2026-05-30",
+   "want": "2026-05-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0055",
+   "field": "ordered_quantity",
+   "verdict": "hit",
+   "got": 96,
+   "want": 96,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0055",
+   "field": "delivered_quantity",
+   "verdict": "hit",
+   "got": 96,
+   "want": 96,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0055",
+   "field": "condition_code",
+   "verdict": "hit",
+   "got": "undamaged",
+   "want": "undamaged",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0055",
+   "field": "recipient_signature_present",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "POD-0055",
+   "field": "driver_exception_note",
+   "verdict": "hit",
+   "got": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "want": "Bit of a mess at the bay. Flagging it so someone takes a look at this stop.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0055",
+   "field": "pod_timestamp",
+   "verdict": "hit",
+   "got": "2026-05-30T10:45:15",
+   "want": "2026-05-30T10:45:15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "POD-0055",
+   "field": "delivery_complete",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "positive_class": "no (the delivery did not arrive as booked)",
+  "true_positive": 17,
+  "false_positive": 12,
+  "true_negative": 16,
+  "false_negative": 10,
+  "unanswered": 0,
+  "not_applicable": 0,
+  "accuracy": 0.6,
+  "recall": 0.6296,
+  "precision": 0.5862,
+  "review_flag": {
+   "true_positive": 6,
+   "false_positive": 4,
+   "true_negative": 41,
+   "false_negative": 4,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 0.8545,
+   "recall": 0.6,
+   "precision": 0.6,
+   "positive_class": "yes (incomplete and unsigned)",
+   "note": "needs_review compares the run's own delivery_complete and recipient_signature_present against the same two-boolean rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the extraction grade, which does too, and unlike the consistency diagnostic below, which does not.",
+   "rows": [
+    {
+     "doc": "POD-0001",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0002",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0003",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0004",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "POD-0005",
+     "want": "yes",
+     "got": "no",
+     "verdict": "false_negative"
+    },
+    {
+     "doc": "POD-0006",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0007",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0008",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0009",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0010",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0011",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0012",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0013",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "POD-0014",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0015",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0016",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0017",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0018",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0019",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0020",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0021",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0022",
+     "want": "no",
+     "got": "yes",
+     "verdict": "false_positive"
+    },
+    {
+     "doc": "POD-0023",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0024",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0025",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0026",
+     "want": "yes",
+     "got": "no",
+     "verdict": "false_negative"
+    },
+    {
+     "doc": "POD-0027",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0028",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0029",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "POD-0030",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0031",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0032",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0033",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0034",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0035",
+     "want": "no",
+     "got": "yes",
+     "verdict": "false_positive"
+    },
+    {
+     "doc": "POD-0036",
+     "want": "yes",
+     "got": "no",
+     "verdict": "false_negative"
+    },
+    {
+     "doc": "POD-0037",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0038",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0039",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0040",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "POD-0041",
+     "want": "no",
+     "got": "yes",
+     "verdict": "false_positive"
+    },
+    {
+     "doc": "POD-0042",
+     "want": "yes",
+     "got": "no",
+     "verdict": "false_negative"
+    },
+    {
+     "doc": "POD-0043",
+     "want": "no",
+     "got": "yes",
+     "verdict": "false_positive"
+    },
+    {
+     "doc": "POD-0044",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0045",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0046",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "POD-0047",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0048",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0049",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0050",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0051",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "POD-0052",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0053",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0054",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "POD-0055",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_numbers": 22,
+   "verdict_errors": 22,
+   "errors_visible_without_gold": 22,
+   "errors_invisible_without_gold": 0,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the completeness comparison over the run's OWN extracted quantities and condition code and counts the replies whose stated verdict disagrees with it. It uses no gold, so a forker can compute it on unlabelled records -- but it is blind to a reply that misreads a quantity and then judges that misreading correctly."
+  },
+  "rows": [
+   {
+    "doc": "POD-0001",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0002",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0003",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0004",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": true
+   },
+   {
+    "doc": "POD-0005",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0006",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0007",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0008",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0009",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0010",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0011",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0012",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0013",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": true
+   },
+   {
+    "doc": "POD-0014",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0015",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0016",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0017",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0018",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0019",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0020",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0021",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0022",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": true
+   },
+   {
+    "doc": "POD-0023",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0024",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0025",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0026",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0027",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0028",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0029",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": true
+   },
+   {
+    "doc": "POD-0030",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0031",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0032",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0033",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0034",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0035",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": true
+   },
+   {
+    "doc": "POD-0036",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0037",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0038",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0039",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0040",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": true
+   },
+   {
+    "doc": "POD-0041",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": true
+   },
+   {
+    "doc": "POD-0042",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0043",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": true
+   },
+   {
+    "doc": "POD-0044",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0045",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0046",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": true
+   },
+   {
+    "doc": "POD-0047",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0048",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0049",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0050",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0051",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": true
+   },
+   {
+    "doc": "POD-0052",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0053",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0054",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "POD-0055",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_positive",
+    "needs_review": false
+   }
+  ]
+ },
+ "prompt_parts": [],
+ "sections_used": [],
+ "raw_text": "",
+ "max_tokens": 4000
+}

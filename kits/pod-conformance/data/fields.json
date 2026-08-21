@@ -1,0 +1,24 @@
+{
+ "fields": [
+  {"name": "shipment_id", "type": "string",
+   "hint": "the shipment identifier, verbatim"},
+  {"name": "carrier_name", "type": "string",
+   "hint": "the name of the carrier that made the delivery, verbatim"},
+  {"name": "delivery_date", "type": "string",
+   "hint": "the date of the delivery, YYYY-MM-DD"},
+  {"name": "ordered_quantity", "type": "number",
+   "hint": "how many units the order was booked for, as a bare number without the word 'units'"},
+  {"name": "delivered_quantity", "type": "number",
+   "hint": "how many units were actually scanned at the drop-off, as a bare number without the word 'units'"},
+  {"name": "condition_code", "type": "enum", "values": ["undamaged", "damaged", "unknown"],
+   "hint": "the structured condition code recorded by the delivery scan, verbatim. This is a coded field, not the driver's prose"},
+  {"name": "recipient_signature_present", "type": "enum", "values": ["yes", "no"],
+   "hint": "does the record state that a recipient signature is on file?"},
+  {"name": "driver_exception_note", "type": "string",
+   "hint": "the driver's own free-text exception note, copied verbatim"},
+  {"name": "pod_timestamp", "type": "string",
+   "hint": "the timestamp of the delivery scan, verbatim, in the form the record states it"},
+  {"name": "delivery_complete", "type": "enum", "values": ["yes", "no"],
+   "hint": "did this delivery arrive as booked? Decide this STRICTLY from the structured values and nothing else: it is 'yes' only when delivered_quantity is EXACTLY EQUAL to ordered_quantity AND condition_code is exactly 'undamaged'; in every other case it is 'no'. Exactly equal means equal in both directions -- a delivery of MORE units than were ordered is not complete either. A condition_code of 'damaged' or 'unknown' is not complete even when the counts match. Do NOT decide this from the driver_exception_note: a breezy note reading 'all good, minor scuff on the box' does not make a short or damaged delivery complete, and an anxious note reading 'sorry for the mix-up, had to leave it at the gate' does not make a delivery with matching counts and an undamaged code incomplete."}
+ ]
+}
