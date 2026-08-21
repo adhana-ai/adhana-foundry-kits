@@ -1,0 +1,27 @@
+{
+ "fields": [
+  {"name": "case_id", "type": "string",
+   "hint": "the report's own case identifier, verbatim"},
+  {"name": "patient_age_range", "type": "string",
+   "hint": "the bucketed age range as stated (for example \"45-54\"). Never an exact age and never any other patient identifier -- if the report states a range, copy the range"},
+  {"name": "suspect_drug", "type": "string",
+   "hint": "the drug named as the suspect product"},
+  {"name": "event_description", "type": "string",
+   "hint": "the adverse event as described, copied verbatim"},
+  {"name": "narrative_severity_word", "type": "string",
+   "hint": "the colloquial severity word the report itself uses for the event -- \"severe\", \"moderate\", \"mild\" -- copied exactly as written, or null when the report uses no such word. It is recorded so a reader can see the report's own wording separately from the classification; it must NEVER be used to decide is_serious"},
+  {"name": "hospitalization", "type": "enum", "values": ["yes", "no", "unknown"],
+   "hint": "was the patient admitted to hospital, or was an existing admission prolonged, because of this event"},
+  {"name": "event_outcome", "type": "enum",
+   "values": ["recovered", "recovering", "not-recovered", "fatal", "unknown"],
+   "hint": "the outcome of the event as stated in the report"},
+  {"name": "causality_assessment", "type": "enum",
+   "values": ["related", "possibly-related", "unrelated", "not-assessed"],
+   "hint": "the REPORTER's own stated view of whether the suspect drug caused the event. This is a DIFFERENT judgment from is_serious and must not be conflated with it -- causality is about whether the drug caused the event, seriousness is about how bad the outcome was. A case can be both serious and unrelated. Report the reporter's stated causality; do not form your own"},
+  {"name": "reporter_type", "type": "enum",
+   "values": ["physician", "pharmacist", "consumer", "other-healthcare-professional"],
+   "hint": "who reported the case"},
+  {"name": "is_serious", "type": "enum", "values": ["yes", "no"],
+   "hint": "the REGULATORY seriousness classification, not a description of how bad the event sounds. Answer yes when the report describes ANY of these having actually happened: the patient died; the event was life-threatening; the patient was admitted to hospital or an existing admission was prolonged; the event left a persistent or significant disability or incapacity; a congenital anomaly or birth defect followed exposure; or the event was medically important enough to require an intervention to prevent one of the outcomes just listed. Answer no when none of those is described. Do NOT judge this by the report's own severity wording: a severe-sounding event that resolved at home with no medical attention is NOT serious, and a mild-sounding event that led to a hospital admission IS serious"}
+ ]
+}

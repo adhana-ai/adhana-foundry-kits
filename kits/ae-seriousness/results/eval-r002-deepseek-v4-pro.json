@@ -1,0 +1,6063 @@
+{
+ "run_id": "r002-deepseek-v4-pro",
+ "stub": false,
+ "model": "deepseek-v4-pro",
+ "provider": "openai-compatible",
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 7084,
+ "latency_p95_ms": 19770,
+ "latency_ms_all": [
+  6616,
+  7084,
+  4875,
+  9350,
+  17860,
+  10636,
+  5331,
+  10295,
+  4354,
+  6310,
+  11733,
+  7586,
+  5034,
+  8147,
+  8582,
+  5550,
+  6380,
+  10091,
+  5645,
+  7287,
+  4942,
+  10351,
+  5820,
+  5303,
+  5986,
+  15022,
+  38987,
+  19770,
+  13635,
+  7838,
+  8562,
+  15605,
+  4501,
+  8199,
+  6500,
+  7737,
+  5682,
+  6454,
+  7178,
+  15621,
+  6641,
+  7118,
+  5817,
+  6121,
+  10832,
+  29860,
+  6361,
+  5298,
+  7367,
+  13479,
+  5623,
+  4369,
+  6293,
+  4989,
+  4724
+ ],
+ "wall_seconds": 497.4,
+ "input_tokens_total": 71716,
+ "output_tokens_total": 30191,
+ "scores": {
+  "extraction_cells": 550,
+  "extraction_accuracy": 0.9982,
+  "refusal_cells": 7,
+  "refusal_accuracy": 1.0,
+  "hallucinations": 0,
+  "values_returned": 268,
+  "values_with_span": 268,
+  "non_spannable_fields": [
+   "causality_assessment",
+   "event_outcome",
+   "hospitalization",
+   "is_serious",
+   "reporter_type"
+  ],
+  "span_rate": 1.0
+ },
+ "by_field": {
+  "case_id": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "patient_age_range": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "suspect_drug": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "event_description": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "narrative_severity_word": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 7,
+   "hallucinated": 0
+  },
+  "hospitalization": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "event_outcome": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "causality_assessment": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "reporter_type": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "is_serious": {
+   "hit": 54,
+   "miss": 0,
+   "wrong": 1,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "AE-0001",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0001",
+   "want": "AE-2026-0001",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0001",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "30-44",
+   "want": "30-44",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0001",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Orbadanil",
+   "want": "Orbadanil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0001",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe swelling of the lips and tongue",
+   "want": "severe swelling of the lips and tongue",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0001",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0001",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0001",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0001",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "not-assessed",
+   "want": "not-assessed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0001",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0001",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0002",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0002",
+   "want": "AE-2026-0002",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0002",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "55-64",
+   "want": "55-64",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0002",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Ivoraxine",
+   "want": "Ivoraxine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0002",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate shortness of breath",
+   "want": "moderate shortness of breath",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0002",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0002",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0002",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0002",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0002",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "other-healthcare-professional",
+   "want": "other-healthcare-professional",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0002",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0003",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0003",
+   "want": "AE-2026-0003",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0003",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "45-54",
+   "want": "45-54",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0003",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Cantrivane",
+   "want": "Cantrivane",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0003",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe abdominal pain",
+   "want": "severe abdominal pain",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0003",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0003",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0003",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "not-recovered",
+   "want": "not-recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0003",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0003",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0003",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0004",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0004",
+   "want": "AE-2026-0004",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0004",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "30-44",
+   "want": "30-44",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0004",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Velmerix",
+   "want": "Velmerix",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0004",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe swelling of the lips and tongue",
+   "want": "severe swelling of the lips and tongue",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0004",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0004",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0004",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0004",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0004",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0004",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0005",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0005",
+   "want": "AE-2026-0005",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0005",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "30-44",
+   "want": "30-44",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0005",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Mycolarin",
+   "want": "Mycolarin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0005",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild headache with photophobia",
+   "want": "mild headache with photophobia",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0005",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0005",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0005",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0005",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0005",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0005",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0006",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0006",
+   "want": "AE-2026-0006",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0006",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "30-44",
+   "want": "30-44",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0006",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Kelvaprine",
+   "want": "Kelvaprine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0006",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild nausea and vomiting",
+   "want": "mild nausea and vomiting",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0006",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0006",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0006",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0006",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "not-assessed",
+   "want": "not-assessed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0006",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0006",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0007",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0007",
+   "want": "AE-2026-0007",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0007",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "18-29",
+   "want": "18-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0007",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Suvexatine",
+   "want": "Suvexatine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0007",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate abdominal pain",
+   "want": "moderate abdominal pain",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0007",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0007",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0007",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0007",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0007",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0007",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0008",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0008",
+   "want": "AE-2026-0008",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0008",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "18-29",
+   "want": "18-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0008",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Nabrexil",
+   "want": "Nabrexil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0008",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe dizziness on standing",
+   "want": "severe dizziness on standing",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0008",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0008",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0008",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0008",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0008",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0008",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0009",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0009",
+   "want": "AE-2026-0009",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0009",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "18-29",
+   "want": "18-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0009",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Suvexatine",
+   "want": "Suvexatine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0009",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate nausea and vomiting",
+   "want": "moderate nausea and vomiting",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0009",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0009",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0009",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "fatal",
+   "want": "fatal",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0009",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "related",
+   "want": "related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0009",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0009",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0010",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0010",
+   "want": "AE-2026-0010",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0010",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "65-74",
+   "want": "65-74",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0010",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Velmerix",
+   "want": "Velmerix",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0010",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe rash on both forearms",
+   "want": "severe rash on both forearms",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0010",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0010",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0010",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0010",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0010",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0010",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0011",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0011",
+   "want": "AE-2026-0011",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0011",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "0-17",
+   "want": "0-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0011",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Orbadanil",
+   "want": "Orbadanil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0011",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild abdominal pain",
+   "want": "mild abdominal pain",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0011",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0011",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0011",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0011",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0011",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0011",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0012",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0012",
+   "want": "AE-2026-0012",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0012",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "75+",
+   "want": "75+",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0012",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Nabrexil",
+   "want": "Nabrexil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0012",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "confusion and disorientation",
+   "want": "confusion and disorientation",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0012",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0012",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0012",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "not-recovered",
+   "want": "not-recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0012",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0012",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0012",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0013",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0013",
+   "want": "AE-2026-0013",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0013",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "45-54",
+   "want": "45-54",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0013",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Velmerix",
+   "want": "Velmerix",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0013",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate palpitations",
+   "want": "moderate palpitations",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0013",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0013",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0013",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0013",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "not-assessed",
+   "want": "not-assessed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0013",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0013",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0014",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0014",
+   "want": "AE-2026-0014",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0014",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "45-54",
+   "want": "45-54",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0014",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Cantrivane",
+   "want": "Cantrivane",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0014",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe shortness of breath",
+   "want": "severe shortness of breath",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0014",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0014",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0014",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0014",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0014",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0014",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0015",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0015",
+   "want": "AE-2026-0015",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0015",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "0-17",
+   "want": "0-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0015",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Nabrexil",
+   "want": "Nabrexil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0015",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate swelling of the lips and tongue",
+   "want": "moderate swelling of the lips and tongue",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0015",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0015",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0015",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "not-recovered",
+   "want": "not-recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0015",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0015",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0015",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0016",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0016",
+   "want": "AE-2026-0016",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0016",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "30-44",
+   "want": "30-44",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0016",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Zorvatide",
+   "want": "Zorvatide",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0016",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "confusion and disorientation",
+   "want": "confusion and disorientation",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0016",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0016",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0016",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0016",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0016",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0016",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0017",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0017",
+   "want": "AE-2026-0017",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0017",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "45-54",
+   "want": "45-54",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0017",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Cantrivane",
+   "want": "Cantrivane",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0017",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate joint pain in both knees",
+   "want": "moderate joint pain in both knees",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0017",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0017",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0017",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0017",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "related",
+   "want": "related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0017",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0017",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0018",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0018",
+   "want": "AE-2026-0018",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0018",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "18-29",
+   "want": "18-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0018",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Velmerix",
+   "want": "Velmerix",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0018",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate dizziness on standing",
+   "want": "moderate dizziness on standing",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0018",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0018",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0018",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0018",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "related",
+   "want": "related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0018",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0018",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0019",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0019",
+   "want": "AE-2026-0019",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0019",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "0-17",
+   "want": "0-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0019",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Cantrivane",
+   "want": "Cantrivane",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0019",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild headache with photophobia",
+   "want": "mild headache with photophobia",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0019",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0019",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0019",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0019",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "related",
+   "want": "related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0019",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0019",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0020",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0020",
+   "want": "AE-2026-0020",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0020",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "18-29",
+   "want": "18-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0020",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Velmerix",
+   "want": "Velmerix",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0020",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate nausea and vomiting",
+   "want": "moderate nausea and vomiting",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0020",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0020",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0020",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0020",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0020",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0020",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0021",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0021",
+   "want": "AE-2026-0021",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0021",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "30-44",
+   "want": "30-44",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0021",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Cantrivane",
+   "want": "Cantrivane",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0021",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild palpitations",
+   "want": "mild palpitations",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0021",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0021",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0021",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0021",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "not-assessed",
+   "want": "not-assessed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0021",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0021",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0022",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0022",
+   "want": "AE-2026-0022",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0022",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "18-29",
+   "want": "18-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0022",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Ivoraxine",
+   "want": "Ivoraxine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0022",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate rash on both forearms",
+   "want": "moderate rash on both forearms",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0022",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0022",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0022",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0022",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "not-assessed",
+   "want": "not-assessed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0022",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0022",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0023",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0023",
+   "want": "AE-2026-0023",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0023",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "45-54",
+   "want": "45-54",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0023",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Mycolarin",
+   "want": "Mycolarin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0023",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe itching of the trunk and back",
+   "want": "severe itching of the trunk and back",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0023",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0023",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0023",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0023",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0023",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0023",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0024",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0024",
+   "want": "AE-2026-0024",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0024",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "0-17",
+   "want": "0-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0024",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Orbadanil",
+   "want": "Orbadanil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0024",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe palpitations",
+   "want": "severe palpitations",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0024",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0024",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0024",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0024",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0024",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0024",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0025",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0025",
+   "want": "AE-2026-0025",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0025",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "65-74",
+   "want": "65-74",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0025",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Mycolarin",
+   "want": "Mycolarin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0025",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "nausea and vomiting",
+   "want": "nausea and vomiting",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0025",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0025",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0025",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0025",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0025",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0025",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0026",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0026",
+   "want": "AE-2026-0026",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0026",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "0-17",
+   "want": "0-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0026",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Suvexatine",
+   "want": "Suvexatine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0026",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild itching of the trunk and back",
+   "want": "mild itching of the trunk and back",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0026",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0026",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0026",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0026",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "not-assessed",
+   "want": "not-assessed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0026",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "other-healthcare-professional",
+   "want": "other-healthcare-professional",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0026",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0027",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0027",
+   "want": "AE-2026-0027",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0027",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "18-29",
+   "want": "18-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0027",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Orbadanil",
+   "want": "Orbadanil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0027",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate swelling of the lips and tongue",
+   "want": "moderate swelling of the lips and tongue",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0027",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0027",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0027",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0027",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0027",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "other-healthcare-professional",
+   "want": "other-healthcare-professional",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0027",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0028",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0028",
+   "want": "AE-2026-0028",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0028",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "0-17",
+   "want": "0-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0028",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Kelvaprine",
+   "want": "Kelvaprine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0028",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate blurred vision",
+   "want": "moderate blurred vision",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0028",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0028",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0028",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0028",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "related",
+   "want": "related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0028",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0028",
+   "field": "is_serious",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0029",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0029",
+   "want": "AE-2026-0029",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0029",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "18-29",
+   "want": "18-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0029",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Nabrexil",
+   "want": "Nabrexil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0029",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe nausea and vomiting",
+   "want": "severe nausea and vomiting",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0029",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0029",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0029",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0029",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "related",
+   "want": "related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0029",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0029",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0030",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0030",
+   "want": "AE-2026-0030",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0030",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "45-54",
+   "want": "45-54",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0030",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Orbadanil",
+   "want": "Orbadanil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0030",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe headache with photophobia",
+   "want": "severe headache with photophobia",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0030",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0030",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0030",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "fatal",
+   "want": "fatal",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0030",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "related",
+   "want": "related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0030",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0030",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0031",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0031",
+   "want": "AE-2026-0031",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0031",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "18-29",
+   "want": "18-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0031",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Cantrivane",
+   "want": "Cantrivane",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0031",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe dizziness on standing",
+   "want": "severe dizziness on standing",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0031",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0031",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0031",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0031",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "not-assessed",
+   "want": "not-assessed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0031",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "other-healthcare-professional",
+   "want": "other-healthcare-professional",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0031",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0032",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0032",
+   "want": "AE-2026-0032",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0032",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "65-74",
+   "want": "65-74",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0032",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Velmerix",
+   "want": "Velmerix",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0032",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate ringing in the ears",
+   "want": "moderate ringing in the ears",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0032",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0032",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0032",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0032",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0032",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0032",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0033",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0033",
+   "want": "AE-2026-0033",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0033",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "30-44",
+   "want": "30-44",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0033",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Suvexatine",
+   "want": "Suvexatine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0033",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild headache with photophobia",
+   "want": "mild headache with photophobia",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0033",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0033",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0033",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "not-recovered",
+   "want": "not-recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0033",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "related",
+   "want": "related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0033",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0033",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0034",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0034",
+   "want": "AE-2026-0034",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0034",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "55-64",
+   "want": "55-64",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0034",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Orbadanil",
+   "want": "Orbadanil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0034",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "dizziness on standing",
+   "want": "dizziness on standing",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0034",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0034",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0034",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "not-recovered",
+   "want": "not-recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0034",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "related",
+   "want": "related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0034",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0034",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0035",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0035",
+   "want": "AE-2026-0035",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0035",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "55-64",
+   "want": "55-64",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0035",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Kelvaprine",
+   "want": "Kelvaprine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0035",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild nausea and vomiting",
+   "want": "mild nausea and vomiting",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0035",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0035",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0035",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0035",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0035",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0035",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0036",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0036",
+   "want": "AE-2026-0036",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0036",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "30-44",
+   "want": "30-44",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0036",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Mycolarin",
+   "want": "Mycolarin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0036",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe confusion and disorientation",
+   "want": "severe confusion and disorientation",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0036",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0036",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0036",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0036",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0036",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0036",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0037",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0037",
+   "want": "AE-2026-0037",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0037",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "45-54",
+   "want": "45-54",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0037",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Mycolarin",
+   "want": "Mycolarin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0037",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate headache with photophobia",
+   "want": "moderate headache with photophobia",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0037",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0037",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0037",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0037",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0037",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "other-healthcare-professional",
+   "want": "other-healthcare-professional",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0037",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0038",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0038",
+   "want": "AE-2026-0038",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0038",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "65-74",
+   "want": "65-74",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0038",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Cantrivane",
+   "want": "Cantrivane",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0038",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe confusion and disorientation",
+   "want": "severe confusion and disorientation",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0038",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0038",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0038",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0038",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0038",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0038",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0039",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0039",
+   "want": "AE-2026-0039",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0039",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "30-44",
+   "want": "30-44",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0039",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Nabrexil",
+   "want": "Nabrexil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0039",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "muscle weakness in both legs",
+   "want": "muscle weakness in both legs",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0039",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0039",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0039",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0039",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "not-assessed",
+   "want": "not-assessed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0039",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0039",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0040",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0040",
+   "want": "AE-2026-0040",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0040",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "45-54",
+   "want": "45-54",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0040",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Cantrivane",
+   "want": "Cantrivane",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0040",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe itching of the trunk and back",
+   "want": "severe itching of the trunk and back",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0040",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0040",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0040",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "fatal",
+   "want": "fatal",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0040",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "related",
+   "want": "related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0040",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "other-healthcare-professional",
+   "want": "other-healthcare-professional",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0040",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0041",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0041",
+   "want": "AE-2026-0041",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0041",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "65-74",
+   "want": "65-74",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0041",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Suvexatine",
+   "want": "Suvexatine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0041",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe confusion and disorientation",
+   "want": "severe confusion and disorientation",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0041",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0041",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0041",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0041",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0041",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0041",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0042",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0042",
+   "want": "AE-2026-0042",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0042",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "0-17",
+   "want": "0-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0042",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Mycolarin",
+   "want": "Mycolarin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0042",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild swelling of the lips and tongue",
+   "want": "mild swelling of the lips and tongue",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0042",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0042",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0042",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "not-recovered",
+   "want": "not-recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0042",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0042",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0042",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0043",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0043",
+   "want": "AE-2026-0043",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0043",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "75+",
+   "want": "75+",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0043",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Orbadanil",
+   "want": "Orbadanil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0043",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate muscle weakness in both legs",
+   "want": "moderate muscle weakness in both legs",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0043",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0043",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0043",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0043",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "not-assessed",
+   "want": "not-assessed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0043",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0043",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0044",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0044",
+   "want": "AE-2026-0044",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0044",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "0-17",
+   "want": "0-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0044",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Zorvatide",
+   "want": "Zorvatide",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0044",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe ringing in the ears",
+   "want": "severe ringing in the ears",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0044",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0044",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0044",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "not-recovered",
+   "want": "not-recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0044",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0044",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "other-healthcare-professional",
+   "want": "other-healthcare-professional",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0044",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0045",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0045",
+   "want": "AE-2026-0045",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0045",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "30-44",
+   "want": "30-44",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0045",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Mycolarin",
+   "want": "Mycolarin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0045",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "headache with photophobia",
+   "want": "headache with photophobia",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0045",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0045",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0045",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0045",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0045",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0045",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0046",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0046",
+   "want": "AE-2026-0046",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0046",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "75+",
+   "want": "75+",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0046",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Orbadanil",
+   "want": "Orbadanil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0046",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild confusion and disorientation",
+   "want": "mild confusion and disorientation",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0046",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0046",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0046",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0046",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0046",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0046",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0047",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0047",
+   "want": "AE-2026-0047",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0047",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "55-64",
+   "want": "55-64",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0047",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Velmerix",
+   "want": "Velmerix",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0047",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe muscle weakness in both legs",
+   "want": "severe muscle weakness in both legs",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0047",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0047",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0047",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "not-recovered",
+   "want": "not-recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0047",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0047",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0047",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0048",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0048",
+   "want": "AE-2026-0048",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0048",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "65-74",
+   "want": "65-74",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0048",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Zorvatide",
+   "want": "Zorvatide",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0048",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild palpitations",
+   "want": "mild palpitations",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0048",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0048",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0048",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0048",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0048",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "pharmacist",
+   "want": "pharmacist",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0048",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0049",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0049",
+   "want": "AE-2026-0049",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0049",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "18-29",
+   "want": "18-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0049",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Zorvatide",
+   "want": "Zorvatide",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0049",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate confusion and disorientation",
+   "want": "moderate confusion and disorientation",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0049",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0049",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0049",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "fatal",
+   "want": "fatal",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0049",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0049",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0049",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0050",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0050",
+   "want": "AE-2026-0050",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0050",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "55-64",
+   "want": "55-64",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0050",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Suvexatine",
+   "want": "Suvexatine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0050",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild blurred vision",
+   "want": "mild blurred vision",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0050",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0050",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0050",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0050",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "related",
+   "want": "related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0050",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "other-healthcare-professional",
+   "want": "other-healthcare-professional",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0050",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0051",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0051",
+   "want": "AE-2026-0051",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0051",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "75+",
+   "want": "75+",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0051",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Orbadanil",
+   "want": "Orbadanil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0051",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "mild abdominal pain",
+   "want": "mild abdominal pain",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0051",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "mild",
+   "want": "mild",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0051",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0051",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovering",
+   "want": "recovering",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0051",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0051",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0051",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0052",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0052",
+   "want": "AE-2026-0052",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0052",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "0-17",
+   "want": "0-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0052",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Suvexatine",
+   "want": "Suvexatine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0052",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "palpitations",
+   "want": "palpitations",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0052",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0052",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0052",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0052",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0052",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0052",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0053",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0053",
+   "want": "AE-2026-0053",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0053",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "75+",
+   "want": "75+",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0053",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Palmirozan",
+   "want": "Palmirozan",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0053",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe palpitations",
+   "want": "severe palpitations",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0053",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0053",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0053",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0053",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0053",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "other-healthcare-professional",
+   "want": "other-healthcare-professional",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0053",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0054",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0054",
+   "want": "AE-2026-0054",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0054",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "75+",
+   "want": "75+",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0054",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Nabrexil",
+   "want": "Nabrexil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0054",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "moderate abdominal pain",
+   "want": "moderate abdominal pain",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0054",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "moderate",
+   "want": "moderate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0054",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0054",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0054",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "unrelated",
+   "want": "unrelated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0054",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "other-healthcare-professional",
+   "want": "other-healthcare-professional",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0054",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0055",
+   "field": "case_id",
+   "verdict": "hit",
+   "got": "AE-2026-0055",
+   "want": "AE-2026-0055",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0055",
+   "field": "patient_age_range",
+   "verdict": "hit",
+   "got": "65-74",
+   "want": "65-74",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0055",
+   "field": "suspect_drug",
+   "verdict": "hit",
+   "got": "Ivoraxine",
+   "want": "Ivoraxine",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0055",
+   "field": "event_description",
+   "verdict": "hit",
+   "got": "severe itching of the trunk and back",
+   "want": "severe itching of the trunk and back",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0055",
+   "field": "narrative_severity_word",
+   "verdict": "hit",
+   "got": "severe",
+   "want": "severe",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AE-0055",
+   "field": "hospitalization",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0055",
+   "field": "event_outcome",
+   "verdict": "hit",
+   "got": "recovered",
+   "want": "recovered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0055",
+   "field": "causality_assessment",
+   "verdict": "hit",
+   "got": "possibly-related",
+   "want": "possibly-related",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0055",
+   "field": "reporter_type",
+   "verdict": "hit",
+   "got": "consumer",
+   "want": "consumer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AE-0055",
+   "field": "is_serious",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "true_positive": 14,
+  "false_positive": 0,
+  "true_negative": 40,
+  "false_negative": 1,
+  "not_applicable": 0,
+  "recall": 0.9333,
+  "precision": 1.0,
+  "rows": [
+   {
+    "doc": "AE-0001",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0002",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0003",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0004",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0005",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0006",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0007",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0008",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0009",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0010",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0011",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0012",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0013",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0014",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0015",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0016",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0017",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0018",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0019",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0020",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0021",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0022",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0023",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0024",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0025",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0026",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0027",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0028",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "AE-0029",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0030",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0031",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0032",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0033",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0034",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0035",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0036",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0037",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0038",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0039",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0040",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0041",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0042",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0043",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0044",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0045",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0046",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0047",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0048",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0049",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0050",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AE-0051",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0052",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0053",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0054",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AE-0055",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   }
+  ]
+ },
+ "seriousness_scores": {
+  "overall": {
+   "n": 55,
+   "correct": 54,
+   "accuracy": 0.9818
+  },
+  "by_register": {
+   "confusable": {
+    "n": 25,
+    "correct": 24,
+    "accuracy": 0.96
+   },
+   "matching": {
+    "n": 23,
+    "correct": 23,
+    "accuracy": 1.0
+   },
+   "no-word": {
+    "n": 7,
+    "correct": 7,
+    "accuracy": 1.0
+   }
+  },
+  "wrong": [
+   {
+    "doc": "AE-0028",
+    "got": "no",
+    "want": "yes",
+    "register": "confusable",
+    "criterion": "other-medically-important",
+    "severity_word": "moderate"
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 2287
+  },
+  {
+   "name": "field schema",
+   "chars": 2442
+  },
+  {
+   "name": "report sections",
+   "chars": 605
+  }
+ ],
+ "sections_used": [
+  "Case ID",
+  "Patient Age Range",
+  "Suspect Drug",
+  "Event Description",
+  "Hospitalization",
+  "Event Outcome",
+  "Reporter Causality Assessment",
+  "Reporter Type",
+  "Case Narrative"
+ ],
+ "raw_text": "{\n  \"case_id\": \"AE-2026-0001\",\n  \"patient_age_range\": \"30-44\",\n  \"suspect_drug\": \"Orbadanil\",\n  \"event_description\": \"severe swelling of the lips and tongue\",\n  \"narrative_severity_word\": \"severe\",\n  \"hospitalization\": \"no\",\n  \"event_outcome\": \"recovering\",\n  \"causality_assessment\": \"not-assessed\",\n  \"reporter_type\": \"consumer\",\n  \"is_serious\": \"no\"\n}",
+ "max_tokens": 4000
+}
