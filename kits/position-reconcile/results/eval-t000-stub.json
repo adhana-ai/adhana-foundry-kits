@@ -1,0 +1,6024 @@
+{
+ "run_id": "t000-stub",
+ "stub": true,
+ "model": "stub",
+ "provider": "stub",
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 0,
+ "latency_p95_ms": 0,
+ "latency_ms_all": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "wall_seconds": 0.0,
+ "input_tokens_total": 28077,
+ "output_tokens_total": 917,
+ "scores": {
+  "extraction_cells": 550,
+  "extraction_accuracy": 0.2,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 110,
+  "values_with_span": 110,
+  "non_spannable_fields": [
+   "is_true_break"
+  ],
+  "span_rate": 1.0
+ },
+ "by_field": {
+  "account_id": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "security_id": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "security_name": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "as_of_date": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "internal_quantity": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "custodian_quantity": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "break_age_days": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "assigned_analyst": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "reconciling_memo": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "is_true_break": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "PB-0001",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-571716",
+   "want": "ACCT-571716",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0001",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US92826C8394",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0001",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sunhaven Financial",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0001",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-05-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0001",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 43508,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0001",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 43124,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0001",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 7,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0001",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Casey D. Rossi",
+   "want": "Casey D. Rossi",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0001",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Mismatch flagged by overnight reconciliation. Investigation found the difference is a corporate action (2-for-1 split) processing lag; custodian confirms shares will post by settlement date. Fully accounted for.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0001",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0002",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-596368",
+   "want": "ACCT-596368",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0002",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US1912161007",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0002",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Coastal Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0002",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-06-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0002",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 9591,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0002",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 10543,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0002",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 7,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0002",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Nadia N. Petrov",
+   "want": "Nadia N. Petrov",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0002",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Internal system shows a trade the custodian has no record of receiving. Unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0002",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0003",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-439117",
+   "want": "ACCT-439117",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0003",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0378331005",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0003",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Apple-style Common Stock A",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0003",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-02-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0003",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 13750,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0003",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 14375,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0003",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0003",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Morgan R. Alvarez",
+   "want": "Morgan R. Alvarez",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0003",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Mismatch flagged by overnight reconciliation. Investigation found the difference is a corporate action (2-for-1 split) processing lag; custodian confirms shares will post by settlement date. Fully accounted for.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0003",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0004",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-780239",
+   "want": "ACCT-780239",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0004",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US30303M1027",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0004",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Bluepeak Media Corp",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0004",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-08-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0004",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 3520,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0004",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 3473,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0004",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0004",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Ines C. Reyes",
+   "want": "Ines C. Reyes",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0004",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Internal system shows a trade the custodian has no record of receiving. Unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0004",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0005",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-391855",
+   "want": "ACCT-391855",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0005",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US5949181045",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0005",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northline Software Corp",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0005",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-07-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0005",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 32670,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0005",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 31243,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0005",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0005",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Ines C. Petrov",
+   "want": "Ines C. Petrov",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0005",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Internal system shows a trade the custodian has no record of receiving. Unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0005",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0006",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-718916",
+   "want": "ACCT-718916",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0006",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US92826C8394",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0006",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sunhaven Financial",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0006",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-07-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0006",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 48584,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0006",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 48632,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0006",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0006",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Grace H. Duarte",
+   "want": "Grace H. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0006",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0006",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0007",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-452650",
+   "want": "ACCT-452650",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0007",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0231351067",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0007",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Riverbend Commerce Group",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0007",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-05-08",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0007",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 30292,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0007",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 29503,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0007",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0007",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Avery W. Whitfield",
+   "want": "Avery W. Whitfield",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0007",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Originally logged as trade pending T+2 settlement; settlement date has now passed with no confirmation from custodian and no correction submitted. Escalated to trade support, unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0007",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0008",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-300209",
+   "want": "ACCT-300209",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0008",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US88160R1014",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0008",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Voltway Motors Inc",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0008",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-05-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0008",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 12871,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0008",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 13083,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0008",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0008",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Priya S. Alvarez",
+   "want": "Priya S. Alvarez",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0008",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0008",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0009",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-739547",
+   "want": "ACCT-739547",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0009",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US1912161007",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0009",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Coastal Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0009",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-06-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0009",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 11014,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0009",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 11799,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0009",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0009",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Priya A. Nakamura",
+   "want": "Priya A. Nakamura",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0009",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0009",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0010",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-793076",
+   "want": "ACCT-793076",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0010",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US02079K3059",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0010",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridian Search Holdings",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0010",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-08-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0010",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 41679,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0010",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 42086,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0010",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0010",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Renata A. Novak",
+   "want": "Renata A. Novak",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0010",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corporate action (cash dividend) processing; custodian will book on pay date per the announcement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0010",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0011",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-999354",
+   "want": "ACCT-999354",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0011",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0378331005",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0011",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Apple-style Common Stock A",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0011",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0011",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 40012,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0011",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 39639,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0011",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0011",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Renata S. Reyes",
+   "want": "Renata S. Reyes",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0011",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0011",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0012",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-717968",
+   "want": "ACCT-717968",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0012",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US1912161007",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0012",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Coastal Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0012",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-08-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0012",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 24291,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0012",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 24584,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0012",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 8,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0012",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Jordan O. Larsen",
+   "want": "Jordan O. Larsen",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0012",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Trade pending T+2 settlement, confirmed with custodian trade desk. Expected to clear on schedule.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0012",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0013",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-253918",
+   "want": "ACCT-253918",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0013",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US4581401001",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0013",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ironclad Industrials",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0013",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-05-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0013",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 8717,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0013",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 8049,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0013",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0013",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Fatima O. Correa",
+   "want": "Fatima O. Correa",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0013",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corporate action (cash dividend) processing; custodian will book on pay date per the announcement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0013",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0014",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-208570",
+   "want": "ACCT-208570",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0014",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US30303M1027",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0014",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Bluepeak Media Corp",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0014",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-03-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0014",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 17964,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0014",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 18417,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0014",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 12,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0014",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Riley O. Osei",
+   "want": "Riley O. Osei",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0014",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Mismatch flagged by overnight reconciliation. Investigation found the difference is a corporate action (2-for-1 split) processing lag; custodian confirms shares will post by settlement date. Fully accounted for.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0014",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0015",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-861514",
+   "want": "ACCT-861514",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0015",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0378331005",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0015",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Apple-style Common Stock A",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0015",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0015",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 7903,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0015",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 7091,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0015",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0015",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Tobias S. Nakamura",
+   "want": "Tobias S. Nakamura",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0015",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Internal system shows a trade the custodian has no record of receiving. Unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0015",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0016",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-382166",
+   "want": "ACCT-382166",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0016",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US92826C8394",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0016",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sunhaven Financial",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0016",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0016",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 22258,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0016",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 23513,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0016",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0016",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Kenji C. Correa",
+   "want": "Kenji C. Correa",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0016",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "URGENT -- system-flagged quantity mismatch. Reviewed same day: confirmed as a T+1 settlement timing difference, trade has since settled, custodian position now agrees. No action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0016",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0017",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-952396",
+   "want": "ACCT-952396",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0017",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US02079K3059",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0017",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridian Search Holdings",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0017",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-07-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0017",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 16472,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0017",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 17044,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0017",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0017",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Anton N. Alvarez",
+   "want": "Anton N. Alvarez",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0017",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Dividend receivable posted internally ahead of custodian's pay-date posting; timing difference only, no discrepancy.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0017",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0018",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-649339",
+   "want": "ACCT-649339",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0018",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US67066G1040",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0018",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Novacore Semiconductor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0018",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0018",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 41688,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0018",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 41012,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0018",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 10,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0018",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Malik R. Duarte",
+   "want": "Malik R. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0018",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Mismatch flagged by overnight reconciliation. Investigation found the difference is a corporate action (2-for-1 split) processing lag; custodian confirms shares will post by settlement date. Fully accounted for.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0018",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0019",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-724829",
+   "want": "ACCT-724829",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0019",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US5949181045",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0019",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northline Software Corp",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0019",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-07-14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0019",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 8686,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0019",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 7250,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0019",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 7,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0019",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Casey T. Whitfield",
+   "want": "Casey T. Whitfield",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0019",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "URGENT -- system-flagged quantity mismatch. Reviewed same day: confirmed as a T+1 settlement timing difference, trade has since settled, custodian position now agrees. No action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0019",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0020",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-339453",
+   "want": "ACCT-339453",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0020",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0378331005",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0020",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Apple-style Common Stock A",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0020",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-03-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0020",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 13035,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0020",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 14746,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0020",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 12,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0020",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Tobias F. Okafor",
+   "want": "Tobias F. Okafor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0020",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Originally logged as trade pending T+2 settlement; settlement date has now passed with no confirmation from custodian and no correction submitted. Escalated to trade support, unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0020",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0021",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-967904",
+   "want": "ACCT-967904",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0021",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0378331005",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0021",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Apple-style Common Stock A",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0021",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-07-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0021",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 12563,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0021",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 13645,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0021",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0021",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Sofia O. Nakamura",
+   "want": "Sofia O. Nakamura",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0021",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Mismatch flagged by overnight reconciliation. Investigation found the difference is a corporate action (2-for-1 split) processing lag; custodian confirms shares will post by settlement date. Fully accounted for.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0021",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0022",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-295842",
+   "want": "ACCT-295842",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0022",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US02079K3059",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0022",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridian Search Holdings",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0022",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0022",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 2544,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0022",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 876,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0022",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0022",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Diego C. Duarte",
+   "want": "Diego C. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0022",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corporate action (cash dividend) processing; custodian will book on pay date per the announcement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0022",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0023",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-220053",
+   "want": "ACCT-220053",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0023",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US1912161007",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0023",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Coastal Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0023",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-02-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0023",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 1631,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0023",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 2178,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0023",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0023",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Priya P. Whitfield",
+   "want": "Priya P. Whitfield",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0023",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0023",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0024",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-113362",
+   "want": "ACCT-113362",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0024",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US02079K3059",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0024",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridian Search Holdings",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0024",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-03-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0024",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 31303,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0024",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 31662,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0024",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0024",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Ines A. Osei",
+   "want": "Ines A. Osei",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0024",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "URGENT -- system-flagged quantity mismatch. Reviewed same day: confirmed as a T+1 settlement timing difference, trade has since settled, custodian position now agrees. No action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0024",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0025",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-323936",
+   "want": "ACCT-323936",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0025",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US5949181045",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0025",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northline Software Corp",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0025",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0025",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 8267,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0025",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 8823,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0025",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0025",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Liam K. Novak",
+   "want": "Liam K. Novak",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0025",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "URGENT -- system-flagged quantity mismatch. Reviewed same day: confirmed as a T+1 settlement timing difference, trade has since settled, custodian position now agrees. No action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0025",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0026",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-274226",
+   "want": "ACCT-274226",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0026",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US92826C8394",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0026",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sunhaven Financial",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0026",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-02-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0026",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 9759,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0026",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 9780,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0026",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0026",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Malik C. Abara",
+   "want": "Malik C. Abara",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0026",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Internal system shows a trade the custodian has no record of receiving. Unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0026",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0027",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-299013",
+   "want": "ACCT-299013",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0027",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0378331005",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0027",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Apple-style Common Stock A",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0027",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-03-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0027",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 35548,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0027",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 37040,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0027",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0027",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Morgan N. Kowalski",
+   "want": "Morgan N. Kowalski",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0027",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "URGENT -- system-flagged quantity mismatch. Reviewed same day: confirmed as a T+1 settlement timing difference, trade has since settled, custodian position now agrees. No action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0027",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0028",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-686117",
+   "want": "ACCT-686117",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0028",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US1912161007",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0028",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Coastal Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0028",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-08-07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0028",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 31237,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0028",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 32347,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0028",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 10,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0028",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Kenji T. Osei",
+   "want": "Kenji T. Osei",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0028",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0028",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0029",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-523462",
+   "want": "ACCT-523462",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0029",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US02079K3059",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0029",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridian Search Holdings",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0029",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0029",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 39673,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0029",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 38052,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0029",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0029",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Diego R. Osei",
+   "want": "Diego R. Osei",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0029",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corporate action (cash dividend) processing; custodian will book on pay date per the announcement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0029",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0030",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-653986",
+   "want": "ACCT-653986",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0030",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US02079K3059",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0030",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridian Search Holdings",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0030",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-08-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0030",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 49334,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0030",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 49969,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0030",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0030",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Owen H. Chen",
+   "want": "Owen H. Chen",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0030",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Originally logged as trade pending T+2 settlement; settlement date has now passed with no confirmation from custodian and no correction submitted. Escalated to trade support, unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0030",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0031",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-420865",
+   "want": "ACCT-420865",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0031",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US67066G1040",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0031",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Novacore Semiconductor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0031",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0031",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 39547,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0031",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 41529,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0031",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0031",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Avery L. Alvarez",
+   "want": "Avery L. Alvarez",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0031",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Originally logged as trade pending T+2 settlement; settlement date has now passed with no confirmation from custodian and no correction submitted. Escalated to trade support, unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0031",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0032",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-761559",
+   "want": "ACCT-761559",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0032",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US5949181045",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0032",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northline Software Corp",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0032",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0032",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 14769,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0032",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 16291,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0032",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0032",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Liam D. Okafor",
+   "want": "Liam D. Okafor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0032",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Dividend receivable posted internally ahead of custodian's pay-date posting; timing difference only, no discrepancy.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0032",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0033",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-808402",
+   "want": "ACCT-808402",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0033",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US92826C8394",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0033",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sunhaven Financial",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0033",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-02-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0033",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 24588,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0033",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 23066,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0033",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0033",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Wei B. Duarte",
+   "want": "Wei B. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0033",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "URGENT -- system-flagged quantity mismatch. Reviewed same day: confirmed as a T+1 settlement timing difference, trade has since settled, custodian position now agrees. No action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0033",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0034",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-922850",
+   "want": "ACCT-922850",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0034",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0378331005",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0034",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Apple-style Common Stock A",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0034",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0034",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 28521,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0034",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 27797,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0034",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0034",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Amara C. Reyes",
+   "want": "Amara C. Reyes",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0034",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corporate action (cash dividend) processing; custodian will book on pay date per the announcement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0034",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0035",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-671195",
+   "want": "ACCT-671195",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0035",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US88160R1014",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0035",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Voltway Motors Inc",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0035",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0035",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 42297,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0035",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 43773,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0035",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0035",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Riley C. Correa",
+   "want": "Riley C. Correa",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0035",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "URGENT -- system-flagged quantity mismatch. Reviewed same day: confirmed as a T+1 settlement timing difference, trade has since settled, custodian position now agrees. No action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0035",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0036",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-845392",
+   "want": "ACCT-845392",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0036",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US30303M1027",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0036",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Bluepeak Media Corp",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0036",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0036",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 35360,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0036",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 35289,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0036",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 10,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0036",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Fatima D. Petrov",
+   "want": "Fatima D. Petrov",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0036",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Originally logged as trade pending T+2 settlement; settlement date has now passed with no confirmation from custodian and no correction submitted. Escalated to trade support, unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0036",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0037",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-162143",
+   "want": "ACCT-162143",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0037",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0231351067",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0037",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Riverbend Commerce Group",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0037",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-03-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0037",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 28242,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0037",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 29097,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0037",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0037",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Malik S. Correa",
+   "want": "Malik S. Correa",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0037",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "URGENT -- system-flagged quantity mismatch. Reviewed same day: confirmed as a T+1 settlement timing difference, trade has since settled, custodian position now agrees. No action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0037",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0038",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-532116",
+   "want": "ACCT-532116",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0038",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US67066G1040",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0038",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Novacore Semiconductor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0038",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0038",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 33598,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0038",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 33499,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0038",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0038",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Nadia C. Larsen",
+   "want": "Nadia C. Larsen",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0038",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0038",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0039",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-933624",
+   "want": "ACCT-933624",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0039",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US30303M1027",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0039",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Bluepeak Media Corp",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0039",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0039",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 36667,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0039",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 35172,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0039",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0039",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Grace O. Okafor",
+   "want": "Grace O. Okafor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0039",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Quantity discrepancy unresolved after three inquiries; custodian has not responded to the last two requests.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0039",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0040",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-508022",
+   "want": "ACCT-508022",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0040",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US88160R1014",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0040",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Voltway Motors Inc",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0040",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-07-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0040",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 43283,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0040",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 43826,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0040",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0040",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Riley N. Nakamura",
+   "want": "Riley N. Nakamura",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0040",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Quantity discrepancy unresolved after three inquiries; custodian has not responded to the last two requests.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0040",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0041",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-503133",
+   "want": "ACCT-503133",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0041",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0231351067",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0041",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Riverbend Commerce Group",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0041",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-08-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0041",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 36759,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0041",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 38374,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0041",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0041",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Wei N. Alvarez",
+   "want": "Wei N. Alvarez",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0041",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Internal system shows a trade the custodian has no record of receiving. Unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0041",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0042",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-947511",
+   "want": "ACCT-947511",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0042",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US1912161007",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0042",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Coastal Freight Lines",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0042",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0042",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 21895,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0042",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 21507,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0042",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0042",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Sofia D. Reyes",
+   "want": "Sofia D. Reyes",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0042",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0042",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0043",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-134160",
+   "want": "ACCT-134160",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0043",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US67066G1040",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0043",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Novacore Semiconductor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0043",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0043",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 43407,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0043",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 44694,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0043",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 10,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0043",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Avery T. Tanaka",
+   "want": "Avery T. Tanaka",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0043",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0043",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0044",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-644580",
+   "want": "ACCT-644580",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0044",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US4581401001",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0044",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ironclad Industrials",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0044",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-06-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0044",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 9868,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0044",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 11338,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0044",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 10,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0044",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Fatima S. Alvarez",
+   "want": "Fatima S. Alvarez",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0044",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Internal system shows a trade the custodian has no record of receiving. Unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0044",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0045",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-323326",
+   "want": "ACCT-323326",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0045",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US30303M1027",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0045",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Bluepeak Media Corp",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0045",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-02-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0045",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 9881,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0045",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 9200,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0045",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0045",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Tobias O. Nakamura",
+   "want": "Tobias O. Nakamura",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0045",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Internal system shows a trade the custodian has no record of receiving. Unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0045",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0046",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-456791",
+   "want": "ACCT-456791",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0046",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US67066G1040",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0046",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Novacore Semiconductor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0046",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-02-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0046",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 29209,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0046",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 27267,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0046",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 12,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0046",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Yara H. Fischer",
+   "want": "Yara H. Fischer",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0046",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Originally logged as trade pending T+2 settlement; settlement date has now passed with no confirmation from custodian and no correction submitted. Escalated to trade support, unresolved.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0046",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0047",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-728176",
+   "want": "ACCT-728176",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0047",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0378331005",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0047",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Apple-style Common Stock A",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0047",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-06-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0047",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 39014,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0047",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 39112,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0047",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 10,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0047",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Avery P. Rossi",
+   "want": "Avery P. Rossi",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0047",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0047",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0048",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-923052",
+   "want": "ACCT-923052",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0048",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US67066G1040",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0048",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Novacore Semiconductor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0048",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-08-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0048",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 7947,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0048",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 9822,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0048",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0048",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Fatima A. Fischer",
+   "want": "Fatima A. Fischer",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0048",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "URGENT -- system-flagged quantity mismatch. Reviewed same day: confirmed as a T+1 settlement timing difference, trade has since settled, custodian position now agrees. No action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0048",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0049",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-329060",
+   "want": "ACCT-329060",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0049",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US88160R1014",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0049",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Voltway Motors Inc",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0049",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-02-12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0049",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 9994,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0049",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 10147,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0049",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 8,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0049",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Priya P. Fischer",
+   "want": "Priya P. Fischer",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0049",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corporate action (cash dividend) processing; custodian will book on pay date per the announcement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0049",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0050",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-266827",
+   "want": "ACCT-266827",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0050",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US30303M1027",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0050",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Bluepeak Media Corp",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0050",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-02-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0050",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 2130,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0050",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 2535,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0050",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0050",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Owen N. Okafor",
+   "want": "Owen N. Okafor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0050",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0050",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0051",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-615326",
+   "want": "ACCT-615326",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0051",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US0231351067",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0051",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Riverbend Commerce Group",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0051",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-06-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0051",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 49377,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0051",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 49361,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0051",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0051",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Kenji N. Novak",
+   "want": "Kenji N. Novak",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0051",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Trade pending T+2 settlement, confirmed with custodian trade desk. Expected to clear on schedule.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0051",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0052",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-703172",
+   "want": "ACCT-703172",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0052",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US92826C8394",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0052",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sunhaven Financial",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0052",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-02-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0052",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 22439,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0052",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 23536,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0052",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0052",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Morgan A. Correa",
+   "want": "Morgan A. Correa",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0052",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0052",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0053",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-582562",
+   "want": "ACCT-582562",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0053",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US88160R1014",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0053",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Voltway Motors Inc",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0053",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-05-12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0053",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 38879,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0053",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 40631,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0053",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0053",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Fatima P. Fischer",
+   "want": "Fatima P. Fischer",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0053",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0053",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0054",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-320088",
+   "want": "ACCT-320088",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0054",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US88160R1014",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0054",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Voltway Motors Inc",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0054",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-07-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0054",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 25741,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0054",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 25443,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0054",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0054",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Diego C. Duarte",
+   "want": "Diego C. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0054",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "No explanation on file. Custodian confirms a fail with no correction submitted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0054",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "PB-0055",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "ACCT-947543",
+   "want": "ACCT-947543",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0055",
+   "field": "security_id",
+   "verdict": "miss",
+   "got": null,
+   "want": "US88160R1014",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0055",
+   "field": "security_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Voltway Motors Inc",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0055",
+   "field": "as_of_date",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04-07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0055",
+   "field": "internal_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 4996,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0055",
+   "field": "custodian_quantity",
+   "verdict": "miss",
+   "got": null,
+   "want": 6070,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0055",
+   "field": "break_age_days",
+   "verdict": "miss",
+   "got": null,
+   "want": 10,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0055",
+   "field": "assigned_analyst",
+   "verdict": "hit",
+   "got": "Renata H. Alvarez",
+   "want": "Renata H. Alvarez",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0055",
+   "field": "reconciling_memo",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corporate action (cash dividend) processing; custodian will book on pay date per the announcement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "PB-0055",
+   "field": "is_true_break",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "true_positive": 0,
+  "false_positive": 0,
+  "true_negative": 30,
+  "false_negative": 25,
+  "not_applicable": 0,
+  "recall": 0.0,
+  "precision": null,
+  "rows": [
+   {
+    "doc": "PB-0001",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0002",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0003",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0004",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0005",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0006",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0007",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0008",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0009",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0010",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0011",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0012",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0013",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0014",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0015",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0016",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0017",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0018",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0019",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0020",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0021",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0022",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0023",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0024",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0025",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0026",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0027",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0028",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0029",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0030",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0031",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0032",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0033",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0034",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0035",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0036",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0037",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0038",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0039",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0040",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0041",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0042",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0043",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0044",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0045",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0046",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0047",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0048",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0049",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0050",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0051",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "PB-0052",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0053",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0054",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "PB-0055",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 1231
+  },
+  {
+   "name": "field schema",
+   "chars": 1264
+  },
+  {
+   "name": "record sections",
+   "chars": 555
+  }
+ ],
+ "sections_used": [
+  "Account",
+  "Security",
+  "As Of Date",
+  "Internal Quantity",
+  "Custodian Quantity",
+  "Break Age (Business Days)",
+  "Assigned Analyst",
+  "Reconciling Memo"
+ ],
+ "raw_text": "{\"account_id\": \"ACCT-571716\", \"assigned_analyst\": \"Casey D. Rossi\"}",
+ "max_tokens": 4000
+}

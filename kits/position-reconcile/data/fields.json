@@ -1,0 +1,24 @@
+{
+ "fields": [
+  {"name": "account_id", "type": "string",
+   "hint": "the account identifier, verbatim"},
+  {"name": "security_id", "type": "string",
+   "hint": "the security identifier (CUSIP-style)"},
+  {"name": "security_name", "type": "string",
+   "hint": "the security's name"},
+  {"name": "as_of_date", "type": "string",
+   "hint": "the position date, YYYY-MM-DD"},
+  {"name": "internal_quantity", "type": "number",
+   "hint": "the firm's internal book quantity"},
+  {"name": "custodian_quantity", "type": "number",
+   "hint": "the custodian's reported quantity"},
+  {"name": "break_age_days", "type": "integer",
+   "hint": "how many business days the break has been open"},
+  {"name": "assigned_analyst", "type": "string",
+   "hint": "the analyst assigned to this break"},
+  {"name": "reconciling_memo", "type": "string",
+   "hint": "the reconciling memo, copied verbatim"},
+  {"name": "is_true_break", "type": "enum", "values": ["yes", "no"],
+   "hint": "does the memo describe a GENUINE, unresolved discrepancy (no explanation on file, custodian unresponsive, no correction submitted), or a BENIGN, explainable and self-resolving timing difference (a trade pending settlement that is on track, a corporate action in process, a dividend timing difference)? Judge by what the memo says actually HAPPENED, not by which words it uses -- a memo that still says 'pending settlement' after the settlement date has passed with no confirmation is a true break despite using settlement language; a memo that opens with an alarming word ('URGENT', 'mismatch flagged') but is fully accounted for by its own end is not."}
+ ]
+}
