@@ -41,6 +41,7 @@ import os
 import re
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, HERE)
@@ -87,25 +88,44 @@ def retrieval_pass(rows, index, docs, k):
 
 
 def answer_pass(rows, index, results, cfg, k, limit=None):
-    """Needs a key. Adds the model's answer and whether the expected content is in it."""
+    """Needs a key. Adds the model's answer and whether the expected content is in it.
+
+    ⚑ CONCURRENT, BOUNDED — added 2026-08-21, operator direction. One call per row, run through a
+    small worker pool instead of one at a time; this is real HTTP calls and was the long pole in a
+    kit build. Safe because each row only ever writes its OWN result dict (looked up by id, never
+    shared across rows) and `complete()` in src/adapters already retries transient failures
+    (429/5xx) with backoff — concurrency just makes hitting that path more likely than the old
+    one-at-a-time loop ever did, so nothing new was added here for that. `pool.map` preserves row
+    order for the prints below even though completion order is not guaranteed. EVAL_WORKERS is the
+    one knob to raise if a real run shows headroom — no rate limit for this provider is documented
+    anywhere in this repo, so the default stays conservative rather than guessed high.
+    """
     from src.adapters import complete
+    workers = int(os.environ.get("EVAL_WORKERS", "5"))
     by_id = {r["id"]: r for r in results}
-    for row in rows[:limit] if limit else rows:
+    todo = rows[:limit] if limit else rows
+
+    def call_one(row):
         _, hits = rt.retrieve(row["question"], index, k=k)
         system, user, parts = pr.assemble(row["question"], hits)
         t0 = time.time()
         got = complete(cfg, system, user)
-        ms = (time.time() - t0) * 1000
-        r = by_id[row["id"]]
-        correct = _present(row["answer_contains"], got["text"])
-        r.update({"answered": True, "model_latency_ms": round(ms, 2),
-                  "answer": got["text"], "correct": correct,
-                  "input_tokens": got["input_tokens"], "output_tokens": got["output_tokens"],
-                  "prompt_chars": len(user), "prompt_parts": len(parts)})
-        # A wrong answer whose evidence WAS in the prompt is a different defect from one whose
-        # evidence never arrived, and only this order of checks can tell them apart.
-        if not correct and r["answer_in_context"]:
-            r["cause"] = "answered_wrong"
+        return row, user, parts, got, (time.time() - t0) * 1000
+
+    if workers > 1:
+        print("  answering %d rows with %d concurrent workers" % (len(todo), workers))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for row, user, parts, got, ms in pool.map(call_one, todo):
+            r = by_id[row["id"]]
+            correct = _present(row["answer_contains"], got["text"])
+            r.update({"answered": True, "model_latency_ms": round(ms, 2),
+                      "answer": got["text"], "correct": correct,
+                      "input_tokens": got["input_tokens"], "output_tokens": got["output_tokens"],
+                      "prompt_chars": len(user), "prompt_parts": len(parts)})
+            # A wrong answer whose evidence WAS in the prompt is a different defect from one whose
+            # evidence never arrived, and only this order of checks can tell them apart.
+            if not correct and r["answer_in_context"]:
+                r["cause"] = "answered_wrong"
     return results
 
 

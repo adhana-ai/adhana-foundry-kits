@@ -10,6 +10,7 @@ import json
 import os
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -63,12 +64,9 @@ def main():
         BUDGET.check(len(docs))
 
     complete = stub_complete if a.stub else None
-    records, flags, lat = {}, {}, []
-    tin = tout = 0
-    failures = []
-    first = None
-    t_all = time.time()
-    for i, stmt_id in enumerate(docs, 1):
+
+    def process_one(item):
+        i, stmt_id = item
         t0 = time.time()
         try:
             if a.baseline:
@@ -77,29 +75,55 @@ def main():
             else:
                 r = EX.extract(cfg, EX.load_doc(stmt_id), fields, complete=complete)
         except Exception as exc:
-            failures.append({"doc": stmt_id, "error": str(exc)[:300]})
-            print("  !! %-10s %s" % (stmt_id, str(exc)[:90]))
-            continue
-        if not r.get("parsed", True):
-            why = r.get("finish_reason")
-            cut = (why == "length") or (r.get("output_tokens") or 0) >= MAX_TOKENS
-            failures.append({"doc": stmt_id,
-                             "error": "reply did not parse as JSON — %s, %d output tokens (cap %d)"
-                                      % ("CUT OFF AT THE CEILING" if cut else "cause unclear",
-                                         r.get("output_tokens") or 0, MAX_TOKENS),
-                             "output_tokens": r.get("output_tokens"), "max_tokens": MAX_TOKENS,
-                             "finish_reason": why, "at_ceiling": cut,
-                             "raw_text": (r.get("raw_text") or "")[:4000]})
-            print("  !! %-10s reply did not parse (finish_reason=%s)" % (stmt_id, why))
-            continue
-        lat.append(int((time.time() - t0) * 1000))
-        tin += r.get("input_tokens") or 0
-        tout += r.get("output_tokens") or 0
-        records[stmt_id] = r["fields"]
-        flags[stmt_id] = r.get("needs_review")
-        if first is None:
-            first = r
-        print("  %3d/%-3d %-10s %d ms" % (i, len(docs), stmt_id, lat[-1] if lat else 0))
+            return i, stmt_id, None, str(exc)[:300], time.time() - t0
+        return i, stmt_id, r, None, time.time() - t0
+
+    records, flags, lat = {}, {}, []
+    tin = tout = 0
+    failures = []
+    first = None
+    t_all = time.time()
+
+    # ⚑ CONCURRENT, LIVE RUNS ONLY — added 2026-08-21, operator direction. --stub and --baseline
+    # are already free/instant (no HTTP call) and stay sequential (workers=1); a live run is ~110
+    # real HTTP calls and was the long pole in a kit build. `EX.extract` is a pure function with no
+    # shared mutable state, and `complete()` in src/adapters already retries transient failures
+    # (429/5xx) with backoff, so nothing new was added here for that — concurrency just makes
+    # hitting that path more likely than the old one-at-a-time loop ever did. `pool.map` preserves
+    # doc order for the prints/`first` sample below even though completion order is not
+    # guaranteed. EVAL_WORKERS is the one knob to raise if a real run shows headroom — no rate
+    # limit for this provider is documented anywhere in this repo, so the default stays
+    # conservative rather than guessed high.
+    workers = 1 if (a.stub or a.baseline) else int(os.environ.get("EVAL_WORKERS", "5"))
+    items = list(enumerate(docs, 1))
+    if workers > 1:
+        print("  running %d docs with %d concurrent workers" % (len(items), workers))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for i, stmt_id, r, err, dt in pool.map(process_one, items):
+            if err is not None:
+                failures.append({"doc": stmt_id, "error": err})
+                print("  !! %-10s %s" % (stmt_id, err))
+                continue
+            if not r.get("parsed", True):
+                why = r.get("finish_reason")
+                cut = (why == "length") or (r.get("output_tokens") or 0) >= MAX_TOKENS
+                failures.append({"doc": stmt_id,
+                                 "error": "reply did not parse as JSON — %s, %d output tokens (cap %d)"
+                                          % ("CUT OFF AT THE CEILING" if cut else "cause unclear",
+                                             r.get("output_tokens") or 0, MAX_TOKENS),
+                                 "output_tokens": r.get("output_tokens"), "max_tokens": MAX_TOKENS,
+                                 "finish_reason": why, "at_ceiling": cut,
+                                 "raw_text": (r.get("raw_text") or "")[:4000]})
+                print("  !! %-10s reply did not parse (finish_reason=%s)" % (stmt_id, why))
+                continue
+            lat.append(int(dt * 1000))
+            tin += r.get("input_tokens") or 0
+            tout += r.get("output_tokens") or 0
+            records[stmt_id] = r["fields"]
+            flags[stmt_id] = r.get("needs_review")
+            if first is None:
+                first = r
+            print("  %3d/%-3d %-10s %d ms" % (i, len(docs), stmt_id, lat[-1] if lat else 0))
 
     golds = load_gold()
     scored = J.score(fields, records, golds)
