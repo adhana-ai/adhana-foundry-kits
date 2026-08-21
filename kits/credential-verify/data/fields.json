@@ -1,0 +1,25 @@
+{
+ "fields": [
+  {"name": "provider_name", "type": "string",
+   "hint": "the provider's name, verbatim"},
+  {"name": "npi", "type": "string",
+   "hint": "the provider's National Provider Identifier"},
+  {"name": "license_number", "type": "string",
+   "hint": "the provider's license number"},
+  {"name": "provider_type", "type": "enum",
+   "values": ["physician", "nurse_practitioner", "physician_assistant"],
+   "hint": "the provider type stated on the file"},
+  {"name": "license_expiration_date", "type": "string",
+   "hint": "the license's expiration date, YYYY-MM-DD"},
+  {"name": "credentialing_effective_date", "type": "string",
+   "hint": "the date the credentialing file must be current as of, YYYY-MM-DD"},
+  {"name": "psv_check_date", "type": "string",
+   "hint": "the date the primary source verification check was actually performed, YYYY-MM-DD"},
+  {"name": "psv_source", "type": "string",
+   "hint": "the primary source the PSV check queried"},
+  {"name": "psv_raw_finding", "type": "string",
+   "hint": "the PSV finding, copied verbatim"},
+  {"name": "sanction_or_adverse_action_found", "type": "enum", "values": ["yes", "no"],
+   "hint": "does the PSV finding describe ANY adverse action against the provider -- a reprimand, consent order, letter of concern, restriction, suspension, revocation or exclusion -- however mildly it is worded? A finding that says the license is 'otherwise active' or imposes no practice restriction is still 'yes' if any adverse action is named at all. Only a finding with NO adverse action of any kind is 'no'."}
+ ]
+}

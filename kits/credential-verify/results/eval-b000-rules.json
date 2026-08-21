@@ -1,0 +1,6137 @@
+{
+ "run_id": "b000-rules",
+ "stub": false,
+ "model": "rules-baseline",
+ "provider": "none",
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 0,
+ "latency_p95_ms": 0,
+ "latency_ms_all": [
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "wall_seconds": 0.0,
+ "input_tokens_total": 0,
+ "output_tokens_total": 0,
+ "scores": {
+  "extraction_cells": 550,
+  "extraction_accuracy": 0.9691,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 440,
+  "values_with_span": 0,
+  "non_spannable_fields": [
+   "provider_type",
+   "sanction_or_adverse_action_found"
+  ],
+  "span_rate": 0.0
+ },
+ "by_field": {
+  "provider_name": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "npi": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "license_number": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "provider_type": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "license_expiration_date": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "credentialing_effective_date": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "psv_check_date": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "psv_source": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "psv_raw_finding": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "sanction_or_adverse_action_found": {
+   "hit": 38,
+   "miss": 0,
+   "wrong": 17,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "CR-0001",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Casey D. Rossi",
+   "want": "Casey D. Rossi",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0001",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1985767922",
+   "want": "1985767922",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0001",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-083692",
+   "want": "NP-083692",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0001",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0001",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-06-15",
+   "want": "2027-06-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0001",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-08-06",
+   "want": "2026-08-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0001",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-06-21",
+   "want": "2026-06-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0001",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "OIG-LEIE exclusion database",
+   "want": "OIG-LEIE exclusion database",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0001",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "No adverse action found. License current and unrestricted.",
+   "want": "No adverse action found. License current and unrestricted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0001",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0002",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Nadia N. Petrov",
+   "want": "Nadia N. Petrov",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0002",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1508281015",
+   "want": "1508281015",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0002",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-052690",
+   "want": "PA-052690",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0002",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0002",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-12-09",
+   "want": "2026-12-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0002",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-06-18",
+   "want": "2026-06-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0002",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-05-31",
+   "want": "2026-05-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0002",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0002",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Board action: license revoked 2025-03-15 following a disciplinary hearing.",
+   "want": "Board action: license revoked 2025-03-15 following a disciplinary hearing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0002",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0003",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Jordan O. Chen",
+   "want": "Jordan O. Chen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0003",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1085779312",
+   "want": "1085779312",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0003",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-037301",
+   "want": "MD-037301",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0003",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0003",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-01-22",
+   "want": "2027-01-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0003",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-17",
+   "want": "2026-03-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0003",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-03-06",
+   "want": "2026-03-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0003",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0003",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "No adverse action found. License current and unrestricted.",
+   "want": "No adverse action found. License current and unrestricted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0003",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0004",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Amara R. Chen",
+   "want": "Amara R. Chen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0004",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1022408650",
+   "want": "1022408650",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0004",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-097913",
+   "want": "PA-097913",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0004",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0004",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-09-12",
+   "want": "2027-09-12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0004",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-08-24",
+   "want": "2026-08-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0004",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-07-23",
+   "want": "2026-07-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0004",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0004",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "want": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0004",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0005",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Amara F. Haddad",
+   "want": "Amara F. Haddad",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0005",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1220905101",
+   "want": "1220905101",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0005",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-097664",
+   "want": "PA-097664",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0005",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0005",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-07-03",
+   "want": "2027-07-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0005",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-06-19",
+   "want": "2026-06-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0005",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-04-29",
+   "want": "2026-04-29",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0005",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0005",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "No adverse action found. License current and unrestricted.",
+   "want": "No adverse action found. License current and unrestricted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0005",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0006",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Priya N. Whitfield",
+   "want": "Priya N. Whitfield",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0006",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1622715057",
+   "want": "1622715057",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0006",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-047498",
+   "want": "NP-047498",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0006",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0006",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-09-15",
+   "want": "2026-09-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0006",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-04-15",
+   "want": "2026-04-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0006",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2025-07-10",
+   "want": "2025-07-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0006",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "OIG-LEIE exclusion database",
+   "want": "OIG-LEIE exclusion database",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0006",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "want": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0006",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0007",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Jordan K. Haddad",
+   "want": "Jordan K. Haddad",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0007",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1838505831",
+   "want": "1838505831",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0007",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-048188",
+   "want": "PA-048188",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0007",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0007",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-08-04",
+   "want": "2026-08-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0007",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-22",
+   "want": "2026-03-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0007",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-03-19",
+   "want": "2026-03-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0007",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0007",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "want": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0007",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0008",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Avery C. Correa",
+   "want": "Avery C. Correa",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0008",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1876054058",
+   "want": "1876054058",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0008",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-024458",
+   "want": "NP-024458",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0008",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0008",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-01-09",
+   "want": "2026-01-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0008",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-18",
+   "want": "2026-03-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0008",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2025-04-18",
+   "want": "2025-04-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0008",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Board of Nursing licensure lookup",
+   "want": "State Board of Nursing licensure lookup",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0008",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "want": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0008",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0009",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Amara A. Kowalski",
+   "want": "Amara A. Kowalski",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0009",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1021999803",
+   "want": "1021999803",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0009",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-083348",
+   "want": "NP-083348",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0009",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0009",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-12-01",
+   "want": "2026-12-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0009",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-08-06",
+   "want": "2026-08-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0009",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-05-24",
+   "want": "2026-05-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0009",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Board of Nursing licensure lookup",
+   "want": "State Board of Nursing licensure lookup",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0009",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Consent order entered 2025-02-03 requiring a continuing-education course on documentation practices; no practice restriction imposed.",
+   "want": "Consent order entered 2025-02-03 requiring a continuing-education course on documentation practices; no practice restriction imposed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0009",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0010",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Avery D. Okafor",
+   "want": "Avery D. Okafor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0010",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1903774533",
+   "want": "1903774533",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0010",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-020388",
+   "want": "MD-020388",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0010",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0010",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-09-02",
+   "want": "2026-09-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0010",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-05-25",
+   "want": "2026-05-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0010",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-04-17",
+   "want": "2026-04-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0010",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Board of Nursing licensure lookup",
+   "want": "State Board of Nursing licensure lookup",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0010",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "want": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0010",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0011",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Fatima O. Correa",
+   "want": "Fatima O. Correa",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0011",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1157612654",
+   "want": "1157612654",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0011",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-083272",
+   "want": "NP-083272",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0011",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0011",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-03-02",
+   "want": "2026-03-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0011",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-05-16",
+   "want": "2026-05-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0011",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-04-16",
+   "want": "2026-04-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0011",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0011",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "want": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0011",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0012",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Sofia S. Bergstrom",
+   "want": "Sofia S. Bergstrom",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0012",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1292698337",
+   "want": "1292698337",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0012",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-021053",
+   "want": "MD-021053",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0012",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0012",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-05-01",
+   "want": "2027-05-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0012",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-04-02",
+   "want": "2026-04-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0012",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-02-22",
+   "want": "2026-02-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0012",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0012",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "want": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0012",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0013",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Riley R. Larsen",
+   "want": "Riley R. Larsen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0013",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1002880393",
+   "want": "1002880393",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0013",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-044572",
+   "want": "MD-044572",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0013",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0013",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-01-05",
+   "want": "2027-01-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0013",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-09-20",
+   "want": "2026-09-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0013",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-06-25",
+   "want": "2026-06-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0013",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0013",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "want": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0013",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0014",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Jordan A. Abara",
+   "want": "Jordan A. Abara",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0014",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1146270774",
+   "want": "1146270774",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0014",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-067125",
+   "want": "PA-067125",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0014",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0014",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-04-21",
+   "want": "2027-04-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0014",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-09-06",
+   "want": "2026-09-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0014",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-08-14",
+   "want": "2026-08-14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0014",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0014",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "want": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0014",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0015",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Malik R. Duarte",
+   "want": "Malik R. Duarte",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0015",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1562524084",
+   "want": "1562524084",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0015",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-090288",
+   "want": "NP-090288",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0015",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0015",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-04-05",
+   "want": "2027-04-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0015",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-08-11",
+   "want": "2026-08-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0015",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-07-21",
+   "want": "2026-07-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0015",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0015",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License suspended 2025-05-01 pending investigation of a standard-of-care complaint.",
+   "want": "License suspended 2025-05-01 pending investigation of a standard-of-care complaint.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0015",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0016",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Owen N. Nakamura",
+   "want": "Owen N. Nakamura",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0016",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1750707908",
+   "want": "1750707908",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0016",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-060590",
+   "want": "NP-060590",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0016",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0016",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-04-01",
+   "want": "2027-04-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0016",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-06",
+   "want": "2026-03-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0016",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-01-06",
+   "want": "2026-01-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0016",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0016",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Query returned no disciplinary history. License status: active.",
+   "want": "Query returned no disciplinary history. License status: active.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0016",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0017",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Wei N. Reyes",
+   "want": "Wei N. Reyes",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0017",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1487694755",
+   "want": "1487694755",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0017",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-010348",
+   "want": "MD-010348",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0017",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0017",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-11-15",
+   "want": "2026-11-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0017",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-08-05",
+   "want": "2026-08-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0017",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-04-17",
+   "want": "2026-04-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0017",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0017",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Query returned no disciplinary history. License status: active.",
+   "want": "Query returned no disciplinary history. License status: active.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0017",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0018",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Avery O. Fischer",
+   "want": "Avery O. Fischer",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0018",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1964221476",
+   "want": "1964221476",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0018",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-078456",
+   "want": "PA-078456",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0018",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0018",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-02-07",
+   "want": "2027-02-07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0018",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-08-20",
+   "want": "2026-08-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0018",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-01-23",
+   "want": "2026-01-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0018",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "OIG-LEIE exclusion database",
+   "want": "OIG-LEIE exclusion database",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0018",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Board action: license revoked 2025-03-15 following a disciplinary hearing.",
+   "want": "Board action: license revoked 2025-03-15 following a disciplinary hearing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0018",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0019",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Ines L. Kowalski",
+   "want": "Ines L. Kowalski",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0019",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1501590291",
+   "want": "1501590291",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0019",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-024656",
+   "want": "MD-024656",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0019",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0019",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-10-13",
+   "want": "2027-10-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0019",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-09-19",
+   "want": "2026-09-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0019",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-04-23",
+   "want": "2026-04-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0019",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0019",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Query returned no disciplinary history. License status: active.",
+   "want": "Query returned no disciplinary history. License status: active.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0019",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0020",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Casey N. Bergstrom",
+   "want": "Casey N. Bergstrom",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0020",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1511546556",
+   "want": "1511546556",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0020",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-082891",
+   "want": "PA-082891",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0020",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0020",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-10-31",
+   "want": "2026-10-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0020",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-05-01",
+   "want": "2026-05-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0020",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-04-07",
+   "want": "2026-04-07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0020",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0020",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "No adverse action found. License current and unrestricted.",
+   "want": "No adverse action found. License current and unrestricted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0020",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0021",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Diego S. Duarte",
+   "want": "Diego S. Duarte",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0021",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1224968294",
+   "want": "1224968294",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0021",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-037992",
+   "want": "NP-037992",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0021",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0021",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-07-06",
+   "want": "2027-07-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0021",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-07-04",
+   "want": "2026-07-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0021",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-06-09",
+   "want": "2026-06-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0021",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0021",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Query returned no disciplinary history. License status: active.",
+   "want": "Query returned no disciplinary history. License status: active.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0021",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0022",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Diego K. Chen",
+   "want": "Diego K. Chen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0022",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1889878496",
+   "want": "1889878496",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0022",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-031778",
+   "want": "PA-031778",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0022",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0022",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-01-21",
+   "want": "2026-01-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0022",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-05",
+   "want": "2026-03-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0022",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-02-19",
+   "want": "2026-02-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0022",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0022",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "want": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0022",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0023",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Jordan S. Okafor",
+   "want": "Jordan S. Okafor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0023",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1580793837",
+   "want": "1580793837",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0023",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-026517",
+   "want": "PA-026517",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0023",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0023",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2025-12-13",
+   "want": "2025-12-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0023",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-04",
+   "want": "2026-03-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0023",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2025-10-30",
+   "want": "2025-10-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0023",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0023",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "want": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0023",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0024",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Avery C. Duarte",
+   "want": "Avery C. Duarte",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0024",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1771466952",
+   "want": "1771466952",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0024",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-031363",
+   "want": "PA-031363",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0024",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0024",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-12-17",
+   "want": "2026-12-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0024",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-05-13",
+   "want": "2026-05-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0024",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2025-05-24",
+   "want": "2025-05-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0024",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Board of Nursing licensure lookup",
+   "want": "State Board of Nursing licensure lookup",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0024",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "want": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0024",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0025",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Liam N. Reyes",
+   "want": "Liam N. Reyes",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0025",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1250463706",
+   "want": "1250463706",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0025",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-079248",
+   "want": "MD-079248",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0025",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0025",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-04-29",
+   "want": "2027-04-29",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0025",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-08-15",
+   "want": "2026-08-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0025",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-05-14",
+   "want": "2026-05-14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0025",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0025",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "want": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0025",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0026",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Jordan N. Larsen",
+   "want": "Jordan N. Larsen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0026",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1005292770",
+   "want": "1005292770",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0026",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-070936",
+   "want": "NP-070936",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0026",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0026",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-05-21",
+   "want": "2026-05-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0026",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-07-23",
+   "want": "2026-07-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0026",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0026",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Board of Nursing licensure lookup",
+   "want": "State Board of Nursing licensure lookup",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0026",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "want": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0026",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0027",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Morgan O. Haddad",
+   "want": "Morgan O. Haddad",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0027",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1795514801",
+   "want": "1795514801",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0027",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-032729",
+   "want": "PA-032729",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0027",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0027",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-08-12",
+   "want": "2027-08-12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0027",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-09-22",
+   "want": "2026-09-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0027",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-05-06",
+   "want": "2026-05-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0027",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0027",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "No adverse action found. License current and unrestricted.",
+   "want": "No adverse action found. License current and unrestricted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0027",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0028",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Anton L. Okafor",
+   "want": "Anton L. Okafor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0028",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1466951271",
+   "want": "1466951271",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0028",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-025951",
+   "want": "MD-025951",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0028",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0028",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-09-11",
+   "want": "2026-09-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0028",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-09-23",
+   "want": "2026-09-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0028",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-02-03",
+   "want": "2026-02-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0028",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Board of Nursing licensure lookup",
+   "want": "State Board of Nursing licensure lookup",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0028",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "want": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0028",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0029",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Ines W. Bergstrom",
+   "want": "Ines W. Bergstrom",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0029",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1027414554",
+   "want": "1027414554",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0029",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-024499",
+   "want": "PA-024499",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0029",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0029",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-10-08",
+   "want": "2026-10-08",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0029",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-20",
+   "want": "2026-03-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0029",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-03-05",
+   "want": "2026-03-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0029",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Board of Nursing licensure lookup",
+   "want": "State Board of Nursing licensure lookup",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0029",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "No adverse action found. License current and unrestricted.",
+   "want": "No adverse action found. License current and unrestricted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0029",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0030",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Riley K. Haddad",
+   "want": "Riley K. Haddad",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0030",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1772820905",
+   "want": "1772820905",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0030",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-023600",
+   "want": "NP-023600",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0030",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0030",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-02-03",
+   "want": "2027-02-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0030",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-08-22",
+   "want": "2026-08-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0030",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-04-21",
+   "want": "2026-04-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0030",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Board of Nursing licensure lookup",
+   "want": "State Board of Nursing licensure lookup",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0030",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "want": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0030",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0031",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Priya C. Chen",
+   "want": "Priya C. Chen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0031",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1913765597",
+   "want": "1913765597",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0031",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-093271",
+   "want": "NP-093271",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0031",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0031",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-03-11",
+   "want": "2026-03-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0031",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-06-14",
+   "want": "2026-06-14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0031",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-06-07",
+   "want": "2026-06-07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0031",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0031",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "want": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0031",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0032",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Elena N. Bergstrom",
+   "want": "Elena N. Bergstrom",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0032",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1561261636",
+   "want": "1561261636",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0032",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-026577",
+   "want": "MD-026577",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0032",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0032",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-10-18",
+   "want": "2026-10-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0032",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-05-02",
+   "want": "2026-05-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0032",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-04-11",
+   "want": "2026-04-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0032",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0032",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "want": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0032",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0033",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Ines D. Kowalski",
+   "want": "Ines D. Kowalski",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0033",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1488525728",
+   "want": "1488525728",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0033",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-086130",
+   "want": "MD-086130",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0033",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0033",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-02-19",
+   "want": "2027-02-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0033",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-09-05",
+   "want": "2026-09-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0033",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-05-26",
+   "want": "2026-05-26",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0033",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0033",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "want": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0033",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0034",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Amara B. Osei",
+   "want": "Amara B. Osei",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0034",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1376959810",
+   "want": "1376959810",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0034",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-063712",
+   "want": "MD-063712",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0034",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0034",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-05-24",
+   "want": "2027-05-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0034",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-06-10",
+   "want": "2026-06-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0034",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2025-05-05",
+   "want": "2025-05-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0034",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0034",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "want": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0034",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0035",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Grace P. Abara",
+   "want": "Grace P. Abara",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0035",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1459430967",
+   "want": "1459430967",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0035",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-059874",
+   "want": "NP-059874",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0035",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0035",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-07-06",
+   "want": "2027-07-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0035",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-06-11",
+   "want": "2026-06-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0035",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-03-08",
+   "want": "2026-03-08",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0035",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0035",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "want": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0035",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0036",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Ines T. Chen",
+   "want": "Ines T. Chen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0036",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1521183536",
+   "want": "1521183536",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0036",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-021490",
+   "want": "MD-021490",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0036",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0036",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-07-18",
+   "want": "2027-07-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0036",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-07-15",
+   "want": "2026-07-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0036",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-05-14",
+   "want": "2026-05-14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0036",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0036",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "want": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0036",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0037",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Marcus F. Larsen",
+   "want": "Marcus F. Larsen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0037",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1160039722",
+   "want": "1160039722",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0037",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-029635",
+   "want": "PA-029635",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0037",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0037",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-05-25",
+   "want": "2026-05-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0037",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-08-18",
+   "want": "2026-08-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0037",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-06-24",
+   "want": "2026-06-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0037",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "OIG-LEIE exclusion database",
+   "want": "OIG-LEIE exclusion database",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0037",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "want": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0037",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0038",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Yara N. Osei",
+   "want": "Yara N. Osei",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0038",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1447708427",
+   "want": "1447708427",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0038",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-059179",
+   "want": "PA-059179",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0038",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0038",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-10-11",
+   "want": "2026-10-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0038",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-05-11",
+   "want": "2026-05-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0038",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-02-11",
+   "want": "2026-02-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0038",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0038",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License suspended 2025-05-01 pending investigation of a standard-of-care complaint.",
+   "want": "License suspended 2025-05-01 pending investigation of a standard-of-care complaint.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0038",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0039",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Avery P. Rossi",
+   "want": "Avery P. Rossi",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0039",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1643252989",
+   "want": "1643252989",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0039",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-096870",
+   "want": "MD-096870",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0039",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0039",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-01-19",
+   "want": "2027-01-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0039",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-07-02",
+   "want": "2026-07-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0039",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-06-15",
+   "want": "2026-06-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0039",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0039",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "want": "Public reprimand issued 2025-04-12 for recordkeeping violation; license otherwise active and in good standing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0039",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0040",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Nadia D. Bergstrom",
+   "want": "Nadia D. Bergstrom",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0040",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1932083277",
+   "want": "1932083277",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0040",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-025695",
+   "want": "NP-025695",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0040",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0040",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-09-13",
+   "want": "2026-09-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0040",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-04-18",
+   "want": "2026-04-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0040",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-03-24",
+   "want": "2026-03-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0040",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0040",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License suspended 2025-05-01 pending investigation of a standard-of-care complaint.",
+   "want": "License suspended 2025-05-01 pending investigation of a standard-of-care complaint.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0040",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0041",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Wei O. Fischer",
+   "want": "Wei O. Fischer",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0041",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1162116275",
+   "want": "1162116275",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0041",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-027693",
+   "want": "MD-027693",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0041",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0041",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-08-30",
+   "want": "2026-08-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0041",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-04-12",
+   "want": "2026-04-12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0041",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-01-05",
+   "want": "2026-01-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0041",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "OIG-LEIE exclusion database",
+   "want": "OIG-LEIE exclusion database",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0041",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "want": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0041",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0042",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Wei C. Alvarez",
+   "want": "Wei C. Alvarez",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0042",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1291023025",
+   "want": "1291023025",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0042",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-021270",
+   "want": "PA-021270",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0042",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0042",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-04-01",
+   "want": "2027-04-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0042",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-06-16",
+   "want": "2026-06-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0042",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-06-14",
+   "want": "2026-06-14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0042",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0042",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Board action: license revoked 2025-03-15 following a disciplinary hearing.",
+   "want": "Board action: license revoked 2025-03-15 following a disciplinary hearing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0042",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0043",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Casey A. Nakamura",
+   "want": "Casey A. Nakamura",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0043",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1261702676",
+   "want": "1261702676",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0043",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-011891",
+   "want": "MD-011891",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0043",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0043",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-08-01",
+   "want": "2026-08-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0043",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-11",
+   "want": "2026-03-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0043",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-01-25",
+   "want": "2026-01-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0043",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0043",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "No adverse action found. License current and unrestricted.",
+   "want": "No adverse action found. License current and unrestricted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0043",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0044",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Liam K. Abara",
+   "want": "Liam K. Abara",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0044",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1327689889",
+   "want": "1327689889",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0044",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-087559",
+   "want": "NP-087559",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0044",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0044",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-05-10",
+   "want": "2027-05-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0044",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-09-19",
+   "want": "2026-09-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0044",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-09-03",
+   "want": "2026-09-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0044",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0044",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "want": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0044",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0045",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Owen R. Reyes",
+   "want": "Owen R. Reyes",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0045",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1154100997",
+   "want": "1154100997",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0045",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-052197",
+   "want": "NP-052197",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0045",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0045",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-08-18",
+   "want": "2026-08-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0045",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-05-06",
+   "want": "2026-05-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0045",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-03-05",
+   "want": "2026-03-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0045",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Board of Nursing licensure lookup",
+   "want": "State Board of Nursing licensure lookup",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0045",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Query returned no disciplinary history. License status: active.",
+   "want": "Query returned no disciplinary history. License status: active.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0045",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0046",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Yara A. Petrov",
+   "want": "Yara A. Petrov",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0046",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1616416492",
+   "want": "1616416492",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0046",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-014077",
+   "want": "MD-014077",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0046",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0046",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-01-17",
+   "want": "2027-01-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0046",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-05-23",
+   "want": "2026-05-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0046",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2025-12-28",
+   "want": "2025-12-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0046",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0046",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "want": "License active and in good standing. No board actions, sanctions or exclusions on file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0046",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0047",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Diego A. Correa",
+   "want": "Diego A. Correa",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0047",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1904896955",
+   "want": "1904896955",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0047",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-029058",
+   "want": "NP-029058",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0047",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0047",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-06-26",
+   "want": "2026-06-26",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0047",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-16",
+   "want": "2026-03-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0047",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-01-04",
+   "want": "2026-01-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0047",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "OIG-LEIE exclusion database",
+   "want": "OIG-LEIE exclusion database",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0047",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Query returned no disciplinary history. License status: active.",
+   "want": "Query returned no disciplinary history. License status: active.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0047",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0048",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Marcus O. Alvarez",
+   "want": "Marcus O. Alvarez",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0048",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1268896093",
+   "want": "1268896093",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0048",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-025624",
+   "want": "PA-025624",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0048",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0048",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-11-12",
+   "want": "2026-11-12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0048",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-11",
+   "want": "2026-03-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0048",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2025-12-13",
+   "want": "2025-12-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0048",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0048",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "want": "Excluded from federal healthcare program participation per OIG-LEIE, effective 2025-01-10.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0048",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0049",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Nadia B. Correa",
+   "want": "Nadia B. Correa",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0049",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1102978133",
+   "want": "1102978133",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0049",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-040449",
+   "want": "PA-040449",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0049",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0049",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-08-22",
+   "want": "2026-08-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0049",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-18",
+   "want": "2026-03-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0049",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2025-10-31",
+   "want": "2025-10-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0049",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0049",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Consent order entered 2025-02-03 requiring a continuing-education course on documentation practices; no practice restriction imposed.",
+   "want": "Consent order entered 2025-02-03 requiring a continuing-education course on documentation practices; no practice restriction imposed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0049",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0050",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Owen T. Rossi",
+   "want": "Owen T. Rossi",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0050",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1316157177",
+   "want": "1316157177",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0050",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-011586",
+   "want": "NP-011586",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0050",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0050",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-09-22",
+   "want": "2026-09-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0050",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-04",
+   "want": "2026-03-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0050",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2025-11-20",
+   "want": "2025-11-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0050",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "State Medical Board online licensure portal",
+   "want": "State Medical Board online licensure portal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0050",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Consent order entered 2025-02-03 requiring a continuing-education course on documentation practices; no practice restriction imposed.",
+   "want": "Consent order entered 2025-02-03 requiring a continuing-education course on documentation practices; no practice restriction imposed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0050",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0051",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Ines A. Silva",
+   "want": "Ines A. Silva",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0051",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1463804195",
+   "want": "1463804195",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0051",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-028003",
+   "want": "MD-028003",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0051",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0051",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-08-06",
+   "want": "2026-08-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0051",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-10",
+   "want": "2026-03-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0051",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-01-18",
+   "want": "2026-01-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0051",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0051",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "No adverse action found. License current and unrestricted.",
+   "want": "No adverse action found. License current and unrestricted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0051",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0052",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Liam B. Novak",
+   "want": "Liam B. Novak",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0052",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1897299028",
+   "want": "1897299028",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0052",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "MD-084758",
+   "want": "MD-084758",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0052",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0052",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-03-30",
+   "want": "2027-03-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0052",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-05-02",
+   "want": "2026-05-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0052",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-03-09",
+   "want": "2026-03-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0052",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0052",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Board action: license revoked 2025-03-15 following a disciplinary hearing.",
+   "want": "Board action: license revoked 2025-03-15 following a disciplinary hearing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0052",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0053",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Malik A. Chen",
+   "want": "Malik A. Chen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0053",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1463568804",
+   "want": "1463568804",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0053",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-079062",
+   "want": "NP-079062",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0053",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician_assistant",
+   "want": "physician_assistant",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0053",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2026-11-21",
+   "want": "2026-11-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0053",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0053",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-01-10",
+   "want": "2026-01-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0053",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "OIG-LEIE exclusion database",
+   "want": "OIG-LEIE exclusion database",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0053",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "want": "Letter of concern issued 2025-06-20 regarding a single late chart-completion pattern; no further board action taken.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0053",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0054",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Riley N. Rossi",
+   "want": "Riley N. Rossi",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0054",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1540456152",
+   "want": "1540456152",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0054",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "NP-049806",
+   "want": "NP-049806",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0054",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "physician",
+   "want": "physician",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0054",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-07-19",
+   "want": "2027-07-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0054",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-07-12",
+   "want": "2026-07-12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0054",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-06-17",
+   "want": "2026-06-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0054",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0054",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "No adverse action found. License current and unrestricted.",
+   "want": "No adverse action found. License current and unrestricted.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0054",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0055",
+   "field": "provider_name",
+   "verdict": "hit",
+   "got": "Elena H. Novak",
+   "want": "Elena H. Novak",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0055",
+   "field": "npi",
+   "verdict": "hit",
+   "got": "1523278267",
+   "want": "1523278267",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0055",
+   "field": "license_number",
+   "verdict": "hit",
+   "got": "PA-075707",
+   "want": "PA-075707",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0055",
+   "field": "provider_type",
+   "verdict": "hit",
+   "got": "nurse_practitioner",
+   "want": "nurse_practitioner",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CR-0055",
+   "field": "license_expiration_date",
+   "verdict": "hit",
+   "got": "2027-03-22",
+   "want": "2027-03-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0055",
+   "field": "credentialing_effective_date",
+   "verdict": "hit",
+   "got": "2026-03-10",
+   "want": "2026-03-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0055",
+   "field": "psv_check_date",
+   "verdict": "hit",
+   "got": "2026-02-15",
+   "want": "2026-02-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0055",
+   "field": "psv_source",
+   "verdict": "hit",
+   "got": "NPDB self-query report",
+   "want": "NPDB self-query report",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0055",
+   "field": "psv_raw_finding",
+   "verdict": "hit",
+   "got": "Query returned no disciplinary history. License status: active.",
+   "want": "Query returned no disciplinary history. License status: active.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CR-0055",
+   "field": "sanction_or_adverse_action_found",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "true_positive": 23,
+  "false_positive": 0,
+  "true_negative": 20,
+  "false_negative": 12,
+  "not_applicable": 0,
+  "recall": 0.6571,
+  "precision": 1.0,
+  "rows": [
+   {
+    "doc": "CR-0001",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0002",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0003",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0004",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0005",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0006",
+    "want": true,
+    "want_reasons": [
+     "psv_stale"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0007",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0008",
+    "want": true,
+    "want_reasons": [
+     "license_expired",
+     "psv_stale"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0009",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0010",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0011",
+    "want": true,
+    "want_reasons": [
+     "license_expired"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0012",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0013",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0014",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0015",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0016",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0017",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0018",
+    "want": true,
+    "want_reasons": [
+     "psv_stale",
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0019",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0020",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0021",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0022",
+    "want": true,
+    "want_reasons": [
+     "license_expired",
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0023",
+    "want": true,
+    "want_reasons": [
+     "license_expired",
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0024",
+    "want": true,
+    "want_reasons": [
+     "psv_stale",
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0025",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0026",
+    "want": true,
+    "want_reasons": [
+     "license_expired",
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0027",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0028",
+    "want": true,
+    "want_reasons": [
+     "license_expired",
+     "psv_stale",
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0029",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0030",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0031",
+    "want": true,
+    "want_reasons": [
+     "license_expired"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0032",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0033",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0034",
+    "want": true,
+    "want_reasons": [
+     "psv_stale",
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0035",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0036",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0037",
+    "want": true,
+    "want_reasons": [
+     "license_expired"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0038",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0039",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0040",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0041",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0042",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0043",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0044",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0045",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0046",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0047",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0048",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0049",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0050",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0051",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0052",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "CR-0053",
+    "want": true,
+    "want_reasons": [
+     "adverse_action"
+    ],
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "CR-0054",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "CR-0055",
+    "want": false,
+    "want_reasons": [],
+    "got": false,
+    "verdict": "true_negative"
+   }
+  ]
+ },
+ "prompt_parts": [],
+ "sections_used": [],
+ "raw_text": "",
+ "max_tokens": 4000
+}
