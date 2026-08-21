@@ -1,0 +1,6439 @@
+{
+ "run_id": "t000-stub",
+ "stub": true,
+ "model": "stub",
+ "provider": "stub",
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 0,
+ "latency_p95_ms": 0,
+ "latency_ms_all": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "wall_seconds": 0.0,
+ "input_tokens_total": 34370,
+ "output_tokens_total": 853,
+ "scores": {
+  "extraction_cells": 550,
+  "extraction_accuracy": 0.2236,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 55,
+  "values_with_span": 55,
+  "non_spannable_fields": [
+   "applied_rate_code",
+   "bill_status",
+   "meter_type",
+   "rate_correct",
+   "service_class"
+  ],
+  "span_rate": 1.0
+ },
+ "by_field": {
+  "account_id": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "service_class": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "meter_type": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "billing_period": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "metered_usage_kwh": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "peak_demand_kw": {
+   "hit": 13,
+   "miss": 42,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "applied_rate_code": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "bill_status": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "account_notes": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "rate_correct": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "UTL-0001",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-TB-90158",
+   "want": "UTL-TB-90158",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0001",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0001",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0001",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0001",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 1346,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0001",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0001",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0001",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0001",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0001",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0002",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-VG-92064",
+   "want": "UTL-VG-92064",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0002",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0002",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0002",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0002",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 11486,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0002",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 33,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0002",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0002",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0002",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0002",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0003",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-NH-46313",
+   "want": "UTL-NH-46313",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0003",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0003",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0003",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0003",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 16414,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0003",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 66,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0003",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0003",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0003",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Usage looks normal for this account type, all in order.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0003",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0004",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-TS-90288",
+   "want": "UTL-TS-90288",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0004",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0004",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0004",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0004",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 13747,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0004",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 53,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0004",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "TOU-8",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0004",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0004",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this account is billed correctly -- needs a second look before it goes out.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0004",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0005",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-CV-85507",
+   "want": "UTL-CV-85507",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0005",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0005",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0005",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0005",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 15000,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0005",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0005",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0005",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0005",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Routine account. No concerns from billing on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0005",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0006",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-FB-30907",
+   "want": "UTL-FB-30907",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0006",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0006",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0006",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0006",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 15000,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0006",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0006",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0006",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0006",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Rate schedule confirmed correct at last review.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0006",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0007",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-NR-42123",
+   "want": "UTL-NR-42123",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0007",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0007",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0007",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0007",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 3128,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0007",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 33,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0007",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0007",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0007",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Customer disputed their rate class; account under manual audit.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0007",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0008",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-PA-34926",
+   "want": "UTL-PA-34926",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0008",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0008",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0008",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0008",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 9111,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0008",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 50,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0008",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0008",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0008",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Usage looks normal for this account type, all in order.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0008",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0009",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-RF-28177",
+   "want": "UTL-RF-28177",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0009",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0009",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0009",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0009",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 15000,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0009",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 84,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0009",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0009",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0009",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off on this account during the last rate review, revisit before closing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0009",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0010",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-GR-31121",
+   "want": "UTL-GR-31121",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0010",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0010",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0010",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0010",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 15000,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0010",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 84,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0010",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "TOU-8",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0010",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0010",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0010",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0011",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-CE-72126",
+   "want": "UTL-CE-72126",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0011",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0011",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0011",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0011",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 1717,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0011",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0011",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0011",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0011",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Rate schedule confirmed correct at last review.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0011",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0012",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-LA-34521",
+   "want": "UTL-LA-34521",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0012",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0012",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0012",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0012",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 10800,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0012",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 50,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0012",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0012",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0012",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Customer disputed their rate class; account under manual audit.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0012",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0013",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-FW-62372",
+   "want": "UTL-FW-62372",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0013",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0013",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0013",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0013",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 15000,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0013",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 66,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0013",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0013",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0013",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Customer disputed their rate class; account under manual audit.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0013",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0014",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-GD-45266",
+   "want": "UTL-GD-45266",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0014",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0014",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0014",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0014",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 19281,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0014",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0014",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "TOU-8",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0014",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0014",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0014",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0015",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-VC-16524",
+   "want": "UTL-VC-16524",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0015",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0015",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0015",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0015",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 316,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0015",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0015",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0015",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0015",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Customer disputed their rate class; account under manual audit.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0015",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0016",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-GV-88440",
+   "want": "UTL-GV-88440",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0016",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0016",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0016",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0016",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 6239,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0016",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 52,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0016",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0016",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0016",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Customer disputed their rate class; account under manual audit.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0016",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0017",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-VE-21503",
+   "want": "UTL-VE-21503",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0017",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0017",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0017",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0017",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 5115,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0017",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 50,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0017",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0017",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0017",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this account is billed correctly -- needs a second look before it goes out.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0017",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0018",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-GS-80770",
+   "want": "UTL-GS-80770",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0018",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0018",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0018",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0018",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 1518,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0018",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0018",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0018",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0018",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off on this account during the last rate review, revisit before closing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0018",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0019",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-JN-54414",
+   "want": "UTL-JN-54414",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0019",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0019",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0019",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0019",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 17803,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0019",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 46,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0019",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0019",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0019",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Routine account. No concerns from billing on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0019",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0020",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-CR-64197",
+   "want": "UTL-CR-64197",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0020",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0020",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0020",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0020",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 3896,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0020",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 50,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0020",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0020",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0020",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Customer disputed their rate class; account under manual audit.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0020",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0021",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-KD-57268",
+   "want": "UTL-KD-57268",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0021",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0021",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0021",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0021",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 3214,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0021",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0021",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0021",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0021",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this account is billed correctly -- needs a second look before it goes out.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0021",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0022",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-KR-18146",
+   "want": "UTL-KR-18146",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0022",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0022",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0022",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0022",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 23248,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0022",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 25,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0022",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "TOU-8",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0022",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0022",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off on this account during the last rate review, revisit before closing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0022",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0023",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-CC-17590",
+   "want": "UTL-CC-17590",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0023",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0023",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0023",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0023",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 5841,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0023",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 50,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0023",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0023",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0023",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this account is billed correctly -- needs a second look before it goes out.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0023",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0024",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-GS-67431",
+   "want": "UTL-GS-67431",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0024",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0024",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0024",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0024",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 19516,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0024",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 47,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0024",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "TOU-8",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0024",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0024",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Escalated last cycle for a possible rate misclassification -- pending manager review.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0024",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0025",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-FD-24991",
+   "want": "UTL-FD-24991",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0025",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0025",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0025",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0025",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 15000,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0025",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 10,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0025",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "TOU-8",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0025",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0025",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Rate schedule confirmed correct at last review.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0025",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0026",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-MW-88828",
+   "want": "UTL-MW-88828",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0026",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0026",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0026",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0026",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 10974,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0026",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 23,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0026",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0026",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0026",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Usage looks normal for this account type, all in order.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0026",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0027",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-VG-97117",
+   "want": "UTL-VG-97117",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0027",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0027",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0027",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0027",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 19325,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0027",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 24,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0027",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "TOU-8",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0027",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0027",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Customer disputed their rate class; account under manual audit.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0027",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0028",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-RD-62578",
+   "want": "UTL-RD-62578",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0028",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0028",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0028",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0028",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 11815,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0028",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 14,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0028",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "TOU-8",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0028",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0028",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off on this account during the last rate review, revisit before closing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0028",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0029",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-RJ-98031",
+   "want": "UTL-RJ-98031",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0029",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0029",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0029",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0029",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 8041,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0029",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 59,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0029",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0029",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0029",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Escalated last cycle for a possible rate misclassification -- pending manager review.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0029",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0030",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-PB-32296",
+   "want": "UTL-PB-32296",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0030",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0030",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0030",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0030",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 15000,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0030",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 57,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0030",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "TOU-8",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0030",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0030",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0030",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0031",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-PS-78513",
+   "want": "UTL-PS-78513",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0031",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0031",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0031",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0031",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 11374,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0031",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 50,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0031",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0031",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0031",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0031",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0032",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-BP-93244",
+   "want": "UTL-BP-93244",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0032",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0032",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0032",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0032",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 1708,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0032",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0032",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0032",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0032",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Escalated last cycle for a possible rate misclassification -- pending manager review.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0032",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0033",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-TG-81466",
+   "want": "UTL-TG-81466",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0033",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0033",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0033",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0033",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 5184,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0033",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 24,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0033",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0033",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0033",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Escalated last cycle for a possible rate misclassification -- pending manager review.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0033",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0034",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-DE-94697",
+   "want": "UTL-DE-94697",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0034",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0034",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0034",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0034",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 7364,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0034",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 101,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0034",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0034",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0034",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Routine account. No concerns from billing on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0034",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0035",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-GS-75500",
+   "want": "UTL-GS-75500",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0035",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0035",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0035",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0035",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 7714,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0035",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0035",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0035",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0035",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off on this account during the last rate review, revisit before closing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0035",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0036",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-SA-83318",
+   "want": "UTL-SA-83318",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0036",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0036",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0036",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0036",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 11841,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0036",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 30,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0036",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0036",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0036",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0036",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0037",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-RN-87587",
+   "want": "UTL-RN-87587",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0037",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0037",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0037",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0037",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 9448,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0037",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 74,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0037",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0037",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0037",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Routine account. No concerns from billing on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0037",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0038",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-FA-28051",
+   "want": "UTL-FA-28051",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0038",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0038",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0038",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0038",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 1402,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0038",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0038",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0038",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0038",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0038",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0039",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-BC-96614",
+   "want": "UTL-BC-96614",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0039",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0039",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0039",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0039",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 2155,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0039",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0039",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0039",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0039",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0039",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0040",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-TG-41557",
+   "want": "UTL-TG-41557",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0040",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0040",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0040",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0040",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 10509,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0040",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 37,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0040",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0040",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0040",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this account is billed correctly -- needs a second look before it goes out.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0040",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0041",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-KE-29635",
+   "want": "UTL-KE-29635",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0041",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0041",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0041",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0041",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 1639,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0041",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0041",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0041",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0041",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Escalated last cycle for a possible rate misclassification -- pending manager review.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0041",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0042",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-EG-67067",
+   "want": "UTL-EG-67067",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0042",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0042",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0042",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0042",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 15000,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0042",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 75,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0042",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0042",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0042",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Usage looks normal for this account type, all in order.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0042",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0043",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-ML-73888",
+   "want": "UTL-ML-73888",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0043",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0043",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0043",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0043",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 19496,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0043",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 95,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0043",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0043",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0043",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off on this account during the last rate review, revisit before closing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0043",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0044",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-AF-26462",
+   "want": "UTL-AF-26462",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0044",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0044",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0044",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0044",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 11858,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0044",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0044",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0044",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0044",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0044",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0045",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-GW-51270",
+   "want": "UTL-GW-51270",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0045",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Industrial",
+   "want": "Industrial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0045",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0045",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0045",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 3035,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0045",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 38,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0045",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "TOU-8",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0045",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0045",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Escalated last cycle for a possible rate misclassification -- pending manager review.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0045",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0046",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-RS-49210",
+   "want": "UTL-RS-49210",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0046",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0046",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "interval",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0046",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0046",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 23269,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0046",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 46,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0046",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0046",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0046",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Customer disputed their rate class; account under manual audit.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0046",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0047",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-TD-33368",
+   "want": "UTL-TD-33368",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0047",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0047",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0047",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0047",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 2189,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0047",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0047",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0047",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0047",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Routine account. No concerns from billing on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0047",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0048",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-GC-56151",
+   "want": "UTL-GC-56151",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0048",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Small Commercial",
+   "want": "Small Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0048",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0048",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0048",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 5211,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0048",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 50,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0048",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0048",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0048",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off on this account during the last rate review, revisit before closing.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0048",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0049",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-HM-62785",
+   "want": "UTL-HM-62785",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0049",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0049",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0049",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0049",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 1872,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0049",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0049",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0049",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0049",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0049",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0050",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-NC-30343",
+   "want": "UTL-NC-30343",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0050",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0050",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0050",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0050",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 700,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0050",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0050",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0050",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0050",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0050",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0051",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-JC-26301",
+   "want": "UTL-JC-26301",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0051",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0051",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0051",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0051",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 9859,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0051",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 46,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0051",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0051",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0051",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this account is billed correctly -- needs a second look before it goes out.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0051",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0052",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-AK-18454",
+   "want": "UTL-AK-18454",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0052",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0052",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0052",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0052",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 4815,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0052",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0052",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "TOU-8",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0052",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0052",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard account, nothing unusual to flag this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0052",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0053",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-LV-92959",
+   "want": "UTL-LV-92959",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0053",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0053",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0053",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0053",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 736,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0053",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0053",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "R-1",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0053",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "sent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0053",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Rate schedule confirmed correct at last review.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0053",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0054",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-HD-56885",
+   "want": "UTL-HD-56885",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0054",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Residential",
+   "want": "Residential",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0054",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0054",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2027-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0054",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 785,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0054",
+   "field": "peak_demand_kw",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0054",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0054",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0054",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this account is billed correctly -- needs a second look before it goes out.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0054",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0055",
+   "field": "account_id",
+   "verdict": "hit",
+   "got": "UTL-TC-85901",
+   "want": "UTL-TC-85901",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0055",
+   "field": "service_class",
+   "verdict": "hit",
+   "got": "Large Commercial",
+   "want": "Large Commercial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0055",
+   "field": "meter_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "standard",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0055",
+   "field": "billing_period",
+   "verdict": "miss",
+   "got": null,
+   "want": "2026-08",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0055",
+   "field": "metered_usage_kwh",
+   "verdict": "miss",
+   "got": null,
+   "want": 7277,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0055",
+   "field": "peak_demand_kw",
+   "verdict": "miss",
+   "got": null,
+   "want": 50,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0055",
+   "field": "applied_rate_code",
+   "verdict": "miss",
+   "got": null,
+   "want": "GS-2",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0055",
+   "field": "bill_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "UTL-0055",
+   "field": "account_notes",
+   "verdict": "miss",
+   "got": null,
+   "want": "Escalated last cycle for a possible rate misclassification -- pending manager review.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "UTL-0055",
+   "field": "rate_correct",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "positive_class": "no (the applied rate does not match what the account qualifies for)",
+  "true_positive": 0,
+  "false_positive": 0,
+  "true_negative": 0,
+  "false_negative": 0,
+  "unanswered": 55,
+  "not_applicable": 0,
+  "accuracy": 0.0,
+  "recall": 0.0,
+  "precision": null,
+  "review_flag": {
+   "true_positive": 0,
+   "false_positive": 0,
+   "true_negative": 0,
+   "false_negative": 0,
+   "unanswered": 55,
+   "not_applicable": 0,
+   "accuracy": 0.0,
+   "recall": 0.0,
+   "precision": null,
+   "positive_class": "yes (misrated and already sent)",
+   "note": "needs_review compares the run's own rate_correct and bill_status against the same two-boolean rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the extraction grade, which does too, and unlike the consistency diagnostic below, which does not.",
+   "rows": [
+    {
+     "doc": "UTL-0001",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0002",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0003",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0004",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0005",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0006",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0007",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0008",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0009",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0010",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0011",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0012",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0013",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0014",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0015",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0016",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0017",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0018",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0019",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0020",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0021",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0022",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0023",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0024",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0025",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0026",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0027",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0028",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0029",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0030",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0031",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0032",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0033",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0034",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0035",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0036",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0037",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0038",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0039",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0040",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0041",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0042",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0043",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0044",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0045",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0046",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0047",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0048",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0049",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0050",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0051",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0052",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0053",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0054",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "UTL-0055",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_numbers": 0,
+   "verdict_errors": 55,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 55,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the rate-correctness comparison over the run's OWN extracted values and counts the replies whose stated verdict disagrees with it. It uses no gold, so a forker can compute it on unlabelled records -- but it is blind to a reply that misreads a value and then judges that misreading correctly."
+  },
+  "rows": [
+   {
+    "doc": "UTL-0001",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0002",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0003",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0004",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0005",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0006",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0007",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0008",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0009",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0010",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0011",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0012",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0013",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0014",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0015",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0016",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0017",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0018",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0019",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0020",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0021",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0022",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0023",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0024",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0025",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0026",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0027",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0028",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0029",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0030",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0031",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0032",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0033",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0034",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0035",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0036",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0037",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0038",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0039",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0040",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0041",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0042",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0043",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0044",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0045",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0046",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0047",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0048",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0049",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0050",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0051",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0052",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0053",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0054",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   },
+   {
+    "doc": "UTL-0055",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "needs_review": false
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 2072
+  },
+  {
+   "name": "field schema",
+   "chars": 1778
+  },
+  {
+   "name": "record sections",
+   "chars": 391
+  }
+ ],
+ "sections_used": [
+  "Account",
+  "Service Class",
+  "Meter Type",
+  "Billing Period",
+  "Metered Usage",
+  "Peak Demand",
+  "Applied Rate Code",
+  "Bill Status",
+  "Account Notes"
+ ],
+ "raw_text": "{\"account_id\": \"UTL-TB-90158\", \"service_class\": \"Residential\"}",
+ "max_tokens": 4000
+}

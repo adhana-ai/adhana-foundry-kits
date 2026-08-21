@@ -1,0 +1,25 @@
+{
+ "fields": [
+  {"name": "account_id", "type": "string",
+   "hint": "the account identifier, verbatim"},
+  {"name": "service_class", "type": "enum",
+   "values": ["Residential", "Small Commercial", "Large Commercial", "Industrial"],
+   "hint": "the structured customer classification on the account record, verbatim"},
+  {"name": "meter_type", "type": "enum", "values": ["standard", "interval"],
+   "hint": "whether the meter is a standard meter or an interval (time-of-use capable) meter, verbatim"},
+  {"name": "billing_period", "type": "string",
+   "hint": "the billing period, YYYY-MM"},
+  {"name": "metered_usage_kwh", "type": "number",
+   "hint": "the metered usage for the billing period, as a bare number without the unit"},
+  {"name": "peak_demand_kw", "type": "number",
+   "hint": "the peak demand reading for the billing period, as a bare number without the unit. Residential accounts are not demand-metered and this is null for them -- return null rather than 0 or a guess"},
+  {"name": "applied_rate_code", "type": "enum", "values": ["R-1", "GS-1", "GS-2", "TOU-8"],
+   "hint": "the rate code actually applied on this bill, verbatim"},
+  {"name": "bill_status", "type": "enum", "values": ["draft", "sent"],
+   "hint": "has this bill already been sent to the customer, or is it still a draft?"},
+  {"name": "account_notes", "type": "string",
+   "hint": "the billing rep's own free-text note on the account, copied verbatim"},
+  {"name": "rate_correct", "type": "enum", "values": ["yes", "no"],
+   "hint": "does the applied rate code match what this account actually qualifies for? Decide this STRICTLY from service_class, meter_type, metered_usage_kwh and peak_demand_kw -- never from account_notes. The rule: a Residential account always qualifies for R-1. A Small Commercial, Large Commercial or Industrial account on an interval meter with metered_usage_kwh >= 15000 qualifies for TOU-8, regardless of demand. Otherwise, a Small Commercial, Large Commercial or Industrial account with peak_demand_kw >= 50 qualifies for GS-2; otherwise it qualifies for GS-1. Answer 'yes' when applied_rate_code is EXACTLY the code this rule computes, 'no' in every other case."}
+ ]
+}

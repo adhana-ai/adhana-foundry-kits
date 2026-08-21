@@ -1,0 +1,95 @@
+{
+ "doc": "UTL-0005",
+ "model": "deepseek-v4-pro",
+ "input_tokens": 1204,
+ "output_tokens": 226,
+ "finish_reason": "stop",
+ "raw_text": "{\n  \"account_id\": \"UTL-CV-85507\",\n  \"service_class\": \"Industrial\",\n  \"meter_type\": \"interval\",\n  \"billing_period\": \"2026-03\",\n  \"metered_usage_kwh\": 15000,\n  \"peak_demand_kw\": 48,\n  \"applied_rate_code\": \"GS-1\",\n  \"bill_status\": \"sent\",\n  \"account_notes\": \"Routine account. No concerns from billing on this one.\",\n  \"rate_correct\": \"no\"\n}",
+ "prompt_parts": [
+  {
+   "name": "system",
+   "text": "You extract structured fields from a utility billing-account record for one account. You return JSON and nothing else.\n\nRULES, in order of importance:\n1. If the record does not state a field, return null for it. Do not infer it and do not use what you know about the world.\n2. `rate_correct` is decided by COMPARING FOUR STRUCTURED VALUES -- service_class, meter_type, metered_usage_kwh, peak_demand_kw -- against the applied_rate_code, never by how the account note reads. Compute the correct code yourself, in this order:\n   a. If service_class is 'Residential', the correct code is 'R-1'. Usage and demand never change this.\n   b. Otherwise, if meter_type is 'interval' AND metered_usage_kwh is 15000 or more, the correct code is 'TOU-8' -- REGARDLESS of the demand reading. Check this before you check demand.\n   c. Otherwise, if peak_demand_kw is 50 or more, the correct code is 'GS-2'. Exactly 50 qualifies for GS-2, not GS-1.\n   d. Otherwise, the correct code is 'GS-1'.\n   Answer 'yes' when applied_rate_code EXACTLY equals the code you computed. Answer 'no' in every other case.\n3. THE TOU-8 CHECK COMES BEFORE THE DEMAND CHECK. An interval-metered account using 15,000 kWh or more qualifies for TOU-8 even when its demand reading looks like a GS-2 case -- do not stop at the demand threshold without first checking meter type and usage.\n4. THE ACCOUNT NOTE IS A FIELD TO COPY, NOT EVIDENCE ABOUT CORRECTNESS. A note that sounds concerned or flags a past review does NOT mean the applied rate is wrong, and a note that sounds routine does NOT mean the applied rate is right. The four structured values decide; the note is the billing rep's own remark and may disagree with them.\n5. Copy values verbatim from the record wherever possible, and report metered_usage_kwh and peak_demand_kw as bare numbers with the unit left out of them. peak_demand_kw is null for a Residential account -- return null for it rather than 0 or a guess.\n6. Use the exact allowed value for a field that lists them.\n7. Return every field named in the schema, even when the answer is null."
+  },
+  {
+   "name": "field schema",
+   "text": "- account_id (string) -- the account identifier, verbatim\n- service_class (enum) one of: Residential, Small Commercial, Large Commercial, Industrial -- the structured customer classification on the account record, verbatim\n- meter_type (enum) one of: standard, interval -- whether the meter is a standard meter or an interval (time-of-use capable) meter, verbatim\n- billing_period (string) -- the billing period, YYYY-MM\n- metered_usage_kwh (number) -- the metered usage for the billing period, as a bare number without the unit\n- peak_demand_kw (number) -- the peak demand reading for the billing period, as a bare number without the unit. Residential accounts are not demand-metered and this is null for them -- return null rather than 0 or a guess\n- applied_rate_code (enum) one of: R-1, GS-1, GS-2, TOU-8 -- the rate code actually applied on this bill, verbatim\n- bill_status (enum) one of: draft, sent -- has this bill already been sent to the customer, or is it still a draft?\n- account_notes (string) -- the billing rep's own free-text note on the account, copied verbatim\n- rate_correct (enum) one of: yes, no -- does the applied rate code match what this account actually qualifies for? Decide this STRICTLY from service_class, meter_type, metered_usage_kwh and peak_demand_kw -- never from account_notes. The rule: a Residential account always qualifies for R-1. A Small Commercial, Large Commercial or Industrial account on an interval meter with metered_usage_kwh >= 15000 qualifies for TOU-8, regardless of demand. Otherwise, a Small Commercial, Large Commercial or Industrial account with peak_demand_kw >= 50 qualifies for GS-2; otherwise it qualifies for GS-1. Answer 'yes' when applied_rate_code is EXACTLY the code this rule computes, 'no' in every other case."
+  },
+  {
+   "name": "record sections",
+   "text": "Account\n-------\nUTL-CV-85507\n\nService Class\n-------------\nIndustrial\n\nMeter Type\n----------\ninterval\n\nBilling Period\n--------------\n2026-03\n\nMetered Usage\n-------------\n15000 kWh\n\nPeak Demand\n-----------\n48 kW\n\nApplied Rate Code\n-----------------\nGS-1\n\nBill Status\n-----------\nsent\n\nAccount Notes\n-------------\nRoutine account. No concerns from billing on this one."
+  }
+ ],
+ "fields": {
+  "account_id": {
+   "value": "UTL-CV-85507",
+   "spannable": true,
+   "span": {
+    "start": 16,
+    "end": 28,
+    "section": "Account"
+   }
+  },
+  "service_class": {
+   "value": "Industrial",
+   "spannable": false,
+   "span": null
+  },
+  "meter_type": {
+   "value": "interval",
+   "spannable": false,
+   "span": null
+  },
+  "billing_period": {
+   "value": "2026-03",
+   "spannable": true,
+   "span": {
+    "start": 191,
+    "end": 198,
+    "section": "Billing Period"
+   }
+  },
+  "metered_usage_kwh": {
+   "value": 15000,
+   "spannable": true,
+   "span": {
+    "start": 228,
+    "end": 233,
+    "section": "Metered Usage"
+   }
+  },
+  "peak_demand_kw": {
+   "value": 48,
+   "spannable": true,
+   "span": {
+    "start": 263,
+    "end": 265,
+    "section": "Peak Demand"
+   }
+  },
+  "applied_rate_code": {
+   "value": "GS-1",
+   "spannable": false,
+   "span": null
+  },
+  "bill_status": {
+   "value": "sent",
+   "spannable": false,
+   "span": null
+  },
+  "account_notes": {
+   "value": "Routine account. No concerns from billing on this one.",
+   "spannable": true,
+   "span": {
+    "start": 370,
+    "end": 424,
+    "section": "Account Notes"
+   }
+  },
+  "rate_correct": {
+   "value": "no",
+   "spannable": false,
+   "span": null
+  }
+ },
+ "needs_review": true
+}
