@@ -1,0 +1,25 @@
+{
+ "fields": [
+  {"name": "account_holder", "type": "string",
+   "hint": "the name on the statement, verbatim"},
+  {"name": "institution", "type": "string",
+   "hint": "the bank or brokerage that issued the statement"},
+  {"name": "account_type", "type": "enum",
+   "values": ["checking", "savings", "money_market", "brokerage"],
+   "hint": "the account type stated on the statement"},
+  {"name": "period_start", "type": "string",
+   "hint": "the statement period's first date, YYYY-MM-DD"},
+  {"name": "period_end", "type": "string",
+   "hint": "the statement period's last date, YYYY-MM-DD"},
+  {"name": "beginning_balance", "type": "number",
+   "hint": "the stated beginning balance, no currency symbol"},
+  {"name": "ending_balance", "type": "number",
+   "hint": "the stated ending balance, no currency symbol"},
+  {"name": "largest_deposit_amount", "type": "number",
+   "hint": "the dollar amount of the single largest deposit line this period, or null if no deposits posted"},
+  {"name": "largest_deposit_description", "type": "string",
+   "hint": "that deposit's description, copied verbatim, or null if no deposits posted"},
+  {"name": "deposit_documented", "type": "enum", "values": ["yes", "no"],
+   "hint": "does that deposit's description name a specific, verifiable INSTITUTIONAL counterparty (a named employer, IRS, a named pension fund, SSA, or a named bank/brokerage on a transfer)? A personal P2P transfer, cash deposit, or generic description is 'no' even if it uses the word payroll or direct deposit with no employer named. null if no deposits posted."}
+ ]
+}

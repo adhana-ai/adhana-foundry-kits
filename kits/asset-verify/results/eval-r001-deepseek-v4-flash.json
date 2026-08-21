@@ -1,0 +1,6023 @@
+{
+ "run_id": "r001-deepseek-v4-flash",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 2490,
+ "latency_p95_ms": 3278,
+ "latency_ms_all": [
+  2487,
+  2944,
+  2804,
+  2490,
+  2507,
+  1902,
+  2338,
+  2559,
+  2493,
+  2928,
+  3107,
+  1834,
+  2528,
+  1876,
+  3052,
+  2156,
+  1731,
+  2478,
+  2820,
+  2334,
+  2087,
+  2621,
+  2630,
+  2377,
+  2477,
+  1852,
+  2289,
+  3058,
+  3148,
+  3228,
+  2254,
+  2199,
+  3033,
+  1952,
+  2228,
+  2564,
+  1933,
+  2417,
+  3050,
+  1631,
+  2351,
+  2817,
+  4020,
+  3278,
+  2451,
+  2899,
+  1421,
+  3816,
+  3066,
+  2756,
+  2718,
+  2815,
+  2173,
+  2445,
+  2168
+ ],
+ "wall_seconds": 139.6,
+ "input_tokens_total": 46204,
+ "output_tokens_total": 16230,
+ "scores": {
+  "extraction_cells": 523,
+  "extraction_accuracy": 0.9847,
+  "refusal_cells": 27,
+  "refusal_accuracy": 1.0,
+  "hallucinations": 0,
+  "values_returned": 422,
+  "values_with_span": 410,
+  "non_spannable_fields": [
+   "account_type",
+   "deposit_documented"
+  ],
+  "span_rate": 0.9716
+ },
+ "by_field": {
+  "account_holder": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "institution": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "account_type": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "period_start": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "period_end": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "beginning_balance": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "ending_balance": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "largest_deposit_amount": {
+   "hit": 46,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 9,
+   "hallucinated": 0
+  },
+  "largest_deposit_description": {
+   "hit": 46,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 9,
+   "hallucinated": 0
+  },
+  "deposit_documented": {
+   "hit": 38,
+   "miss": 0,
+   "wrong": 8,
+   "abstained": 9,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "AV-0001",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Amara W. Haddad",
+   "want": "Amara W. Haddad",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0001",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Beacon Point Bank",
+   "want": "Beacon Point Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0001",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0001",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0001",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0001",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 18941.17,
+   "want": 18941.17,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0001",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 18099.2,
+   "want": 18099.2,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0001",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 238.78,
+   "want": 238.78,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0001",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Zelle from Amara N.",
+   "want": "Zelle from Amara N.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0001",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0002",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Kenji N. Larsen",
+   "want": "Kenji N. Larsen",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0002",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ridgeway National Bank",
+   "want": "Ridgeway National Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0002",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0002",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0002",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-01-30",
+   "want": "2026-01-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0002",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 36298.81,
+   "want": 36298.81,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0002",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 43018.5,
+   "want": 43018.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0002",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 7244.73,
+   "want": 7244.73,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0002",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Wire Transfer from Harborline Bank",
+   "want": "Wire Transfer from Harborline Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0002",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0003",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Casey C. Reyes",
+   "want": "Casey C. Reyes",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0003",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Meridian Trust Bank",
+   "want": "Meridian Trust Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0003",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0003",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0003",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0003",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 1837.79,
+   "want": 1837.79,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0003",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 1014.31,
+   "want": 1014.31,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0003",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 371.71,
+   "want": 371.71,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0003",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Interest Payment",
+   "want": "Interest Payment",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0003",
+   "field": "deposit_documented",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0004",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Yara T. Petrov",
+   "want": "Yara T. Petrov",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0004",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Copper Valley Bank",
+   "want": "Copper Valley Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0004",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0004",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0004",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-01-30",
+   "want": "2026-01-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0004",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 16686.41,
+   "want": 16686.41,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0004",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 16855.39,
+   "want": 16855.39,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0004",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 267.17,
+   "want": 267.17,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0004",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Interest Payment",
+   "want": "Interest Payment",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0004",
+   "field": "deposit_documented",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0005",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Diego O. Alvarez",
+   "want": "Diego O. Alvarez",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0005",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Beacon Point Bank",
+   "want": "Beacon Point Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0005",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "money_market",
+   "want": "money_market",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0005",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0005",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0005",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 36542.58,
+   "want": 36542.58,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0005",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 69006.56,
+   "want": 69006.56,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0005",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 34242.75,
+   "want": 34242.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0005",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Direct Deposit - Payroll BLUE HARBOR LOGISTICS",
+   "want": "Direct Deposit - Payroll BLUE HARBOR LOGISTICS",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0005",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0006",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Grace R. Correa",
+   "want": "Grace R. Correa",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0006",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Sterling Gate Brokerage",
+   "want": "Sterling Gate Brokerage",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0006",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "brokerage",
+   "want": "brokerage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0006",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0006",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0006",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 10712.6,
+   "want": 10712.6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0006",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 8781.3,
+   "want": 8781.3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0006",
+   "field": "largest_deposit_amount",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0006",
+   "field": "largest_deposit_description",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0006",
+   "field": "deposit_documented",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0007",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Marcus B. Haddad",
+   "want": "Marcus B. Haddad",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0007",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Beacon Point Bank",
+   "want": "Beacon Point Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0007",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0007",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0007",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0007",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 41168.36,
+   "want": 41168.36,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0007",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 40532.82,
+   "want": 40532.82,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0007",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 102.92,
+   "want": 102.92,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0007",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Mobile Check Deposit",
+   "want": "Mobile Check Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0007",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0008",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Tobias A. Bergstrom",
+   "want": "Tobias A. Bergstrom",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0008",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Cascade Federal Credit Union",
+   "want": "Cascade Federal Credit Union",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0008",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "brokerage",
+   "want": "brokerage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0008",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0008",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0008",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 40323.21,
+   "want": 40323.21,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0008",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 70141.29,
+   "want": 70141.29,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0008",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 30433.32,
+   "want": 30433.32,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0008",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "IRS TREAS 310 TAX REF",
+   "want": "IRS TREAS 310 TAX REF",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0008",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0009",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Riley F. Silva",
+   "want": "Riley F. Silva",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0009",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ashcroft Federal Bank",
+   "want": "Ashcroft Federal Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0009",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0009",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0009",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0009",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 6107.35,
+   "want": 6107.35,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0009",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 15764.86,
+   "want": 15764.86,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0009",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 10562.81,
+   "want": 10562.81,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0009",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Wire Transfer from Beacon Point Bank",
+   "want": "Wire Transfer from Beacon Point Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0009",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0010",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Renata K. Novak",
+   "want": "Renata K. Novak",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0010",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Beacon Point Bank",
+   "want": "Beacon Point Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0010",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0010",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0010",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0010",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 38863.3,
+   "want": 38863.3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0010",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 36921.35,
+   "want": 36921.35,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0010",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 314.11,
+   "want": 314.11,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0010",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "ATM Deposit",
+   "want": "ATM Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0010",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0011",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Renata C. Petrov",
+   "want": "Renata C. Petrov",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0011",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Harborline Bank",
+   "want": "Harborline Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0011",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "brokerage",
+   "want": "brokerage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0011",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0011",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0011",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 36430.16,
+   "want": 36430.16,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0011",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 34512.37,
+   "want": 34512.37,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0011",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 193.01,
+   "want": 193.01,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0011",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Zelle from Anton O.",
+   "want": "Zelle from Anton O.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0011",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0012",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Nadia C. Abara",
+   "want": "Nadia C. Abara",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0012",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Copper Valley Bank",
+   "want": "Copper Valley Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0012",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0012",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0012",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0012",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 3847.42,
+   "want": 3847.42,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0012",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 1005.61,
+   "want": 1005.61,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0012",
+   "field": "largest_deposit_amount",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0012",
+   "field": "largest_deposit_description",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0012",
+   "field": "deposit_documented",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0013",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Owen A. Duarte",
+   "want": "Owen A. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0013",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Cascade Federal Credit Union",
+   "want": "Cascade Federal Credit Union",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0013",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0013",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0013",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-01-30",
+   "want": "2026-01-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0013",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 39967.11,
+   "want": 39967.11,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0013",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 43124.19,
+   "want": 43124.19,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0013",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 3450.24,
+   "want": 3450.24,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0013",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Deposit",
+   "want": "Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0013",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0014",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Grace C. Novak",
+   "want": "Grace C. Novak",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0014",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Northfield Savings",
+   "want": "Northfield Savings",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0014",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0014",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0014",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0014",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 22970.11,
+   "want": 22970.11,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0014",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 21470.46,
+   "want": 21470.46,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0014",
+   "field": "largest_deposit_amount",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0014",
+   "field": "largest_deposit_description",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0014",
+   "field": "deposit_documented",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0015",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Nadia P. Tanaka",
+   "want": "Nadia P. Tanaka",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0015",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Sterling Gate Brokerage",
+   "want": "Sterling Gate Brokerage",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0015",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0015",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0015",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0015",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 11594.52,
+   "want": 11594.52,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0015",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 17783.67,
+   "want": 17783.67,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0015",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 8428.29,
+   "want": 8428.29,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0015",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Direct Deposit - Payroll BRIGHTPATH HEALTH SYSTEMS",
+   "want": "Direct Deposit - Payroll BRIGHTPATH HEALTH SYSTEMS",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0015",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0016",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Owen F. Larsen",
+   "want": "Owen F. Larsen",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0016",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ridgeway National Bank",
+   "want": "Ridgeway National Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0016",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0016",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0016",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0016",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 36517.41,
+   "want": 36517.41,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0016",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 56118.19,
+   "want": 56118.19,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0016",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 22064.45,
+   "want": 22064.45,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0016",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Mobile Check Deposit",
+   "want": "Mobile Check Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0016",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0017",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Priya K. Petrov",
+   "want": "Priya K. Petrov",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0017",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Meridian Trust Bank",
+   "want": "Meridian Trust Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0017",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "brokerage",
+   "want": "brokerage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0017",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0017",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0017",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 12672.38,
+   "want": 12672.38,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0017",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 11687.33,
+   "want": 11687.33,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0017",
+   "field": "largest_deposit_amount",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0017",
+   "field": "largest_deposit_description",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0017",
+   "field": "deposit_documented",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0018",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Jordan R. Bergstrom",
+   "want": "Jordan R. Bergstrom",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0018",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Pinehurst Brokerage",
+   "want": "Pinehurst Brokerage",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0018",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0018",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0018",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0018",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 17240.24,
+   "want": 17240.24,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0018",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 44238.18,
+   "want": 44238.18,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0018",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 28934.53,
+   "want": 28934.53,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0018",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Wire Transfer from Copper Valley Bank",
+   "want": "Wire Transfer from Copper Valley Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0018",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0019",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Yara P. Bergstrom",
+   "want": "Yara P. Bergstrom",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0019",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Copper Valley Bank",
+   "want": "Copper Valley Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0019",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0019",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0019",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-01-30",
+   "want": "2026-01-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0019",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 13617.37,
+   "want": 13617.37,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0019",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 13599.14,
+   "want": 13599.14,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0019",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 253.22,
+   "want": 253.22,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0019",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Mobile Check Deposit",
+   "want": "Mobile Check Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0019",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0020",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Morgan R. Rossi",
+   "want": "Morgan R. Rossi",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0020",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Cascade Federal Credit Union",
+   "want": "Cascade Federal Credit Union",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0020",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0020",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0020",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-01-30",
+   "want": "2026-01-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0020",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 8948.38,
+   "want": 8948.38,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0020",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 5963.15,
+   "want": 5963.15,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0020",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 270.72,
+   "want": 270.72,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0020",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "ATM Deposit",
+   "want": "ATM Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0020",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0021",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Marcus B. Petrov",
+   "want": "Marcus B. Petrov",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0021",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ashcroft Federal Bank",
+   "want": "Ashcroft Federal Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0021",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "brokerage",
+   "want": "brokerage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0021",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-02-01",
+   "want": "2026-02-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0021",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-02-28",
+   "want": "2026-02-28",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0021",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 28418.47,
+   "want": 28418.47,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0021",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 27903.66,
+   "want": 27903.66,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0021",
+   "field": "largest_deposit_amount",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0021",
+   "field": "largest_deposit_description",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0021",
+   "field": "deposit_documented",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0022",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Fatima C. Duarte",
+   "want": "Fatima C. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0022",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ridgeway National Bank",
+   "want": "Ridgeway National Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0022",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0022",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0022",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0022",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 35435.96,
+   "want": 35435.96,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0022",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 72720.54,
+   "want": 72720.54,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0022",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 40198.34,
+   "want": 40198.34,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0022",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Mobile Check Deposit",
+   "want": "Mobile Check Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0022",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0023",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Renata S. Osei",
+   "want": "Renata S. Osei",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0023",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Sterling Gate Brokerage",
+   "want": "Sterling Gate Brokerage",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0023",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0023",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0023",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0023",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 38825.57,
+   "want": 38825.57,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0023",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 36803.94,
+   "want": 36803.94,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0023",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 168.39,
+   "want": 168.39,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0023",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Mobile Check Deposit",
+   "want": "Mobile Check Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0023",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0024",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Grace K. Osei",
+   "want": "Grace K. Osei",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0024",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Cascade Federal Credit Union",
+   "want": "Cascade Federal Credit Union",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0024",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0024",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0024",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0024",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 14119.87,
+   "want": 14119.87,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0024",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 48073.02,
+   "want": 48073.02,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0024",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 36708.55,
+   "want": 36708.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0024",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Wire Transfer from Sterling Gate Brokerage",
+   "want": "Wire Transfer from Sterling Gate Brokerage",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0024",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0025",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Anton B. Petrov",
+   "want": "Anton B. Petrov",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0025",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ashcroft Federal Bank",
+   "want": "Ashcroft Federal Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0025",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0025",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0025",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0025",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 39529.23,
+   "want": 39529.23,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0025",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 43700.43,
+   "want": 43700.43,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0025",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 6084.72,
+   "want": 6084.72,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0025",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "IRS TREAS 310 TAX REF",
+   "want": "IRS TREAS 310 TAX REF",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0025",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0026",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Liam D. Larsen",
+   "want": "Liam D. Larsen",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0026",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Copper Valley Bank",
+   "want": "Copper Valley Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0026",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "money_market",
+   "want": "money_market",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0026",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0026",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-01-30",
+   "want": "2026-01-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0026",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 22693.52,
+   "want": 22693.52,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0026",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 20710.31,
+   "want": 20710.31,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0026",
+   "field": "largest_deposit_amount",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0026",
+   "field": "largest_deposit_description",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0026",
+   "field": "deposit_documented",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0027",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Sofia F. Osei",
+   "want": "Sofia F. Osei",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0027",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Harborline Bank",
+   "want": "Harborline Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0027",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0027",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-02-01",
+   "want": "2026-02-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0027",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-02-28",
+   "want": "2026-02-28",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0027",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 14174.76,
+   "want": 14174.76,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0027",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 24861.98,
+   "want": 24861.98,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0027",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 10925.12,
+   "want": 10925.12,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0027",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Deposit",
+   "want": "Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0027",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0028",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Morgan C. Larsen",
+   "want": "Morgan C. Larsen",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0028",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ashcroft Federal Bank",
+   "want": "Ashcroft Federal Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0028",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "brokerage",
+   "want": "brokerage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0028",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0028",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0028",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 7219.32,
+   "want": 7219.32,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0028",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 5498.58,
+   "want": 5498.58,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0028",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 488.22,
+   "want": 488.22,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0028",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Interest Payment",
+   "want": "Interest Payment",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0028",
+   "field": "deposit_documented",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0029",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Jordan B. Bergstrom",
+   "want": "Jordan B. Bergstrom",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0029",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Beacon Point Bank",
+   "want": "Beacon Point Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0029",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0029",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-05-01",
+   "want": "2026-05-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0029",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-05-30",
+   "want": "2026-05-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0029",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 19980.26,
+   "want": 19980.26,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0029",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 17059.16,
+   "want": 17059.16,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0029",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 291.23,
+   "want": 291.23,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0029",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Mobile Check Deposit",
+   "want": "Mobile Check Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0029",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0030",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Liam R. Chen",
+   "want": "Liam R. Chen",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0030",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Sterling Gate Brokerage",
+   "want": "Sterling Gate Brokerage",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0030",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0030",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0030",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0030",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 14094.37,
+   "want": 14094.37,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0030",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 33470.21,
+   "want": 33470.21,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0030",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 22206.63,
+   "want": 22206.63,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0030",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Wire Transfer from Ridgeway National Bank",
+   "want": "Wire Transfer from Ridgeway National Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0030",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0031",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Yara W. Silva",
+   "want": "Yara W. Silva",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0031",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Northfield Savings",
+   "want": "Northfield Savings",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0031",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "money_market",
+   "want": "money_market",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0031",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0031",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0031",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 35541.6,
+   "want": 35541.6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0031",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 34798.89,
+   "want": 34798.89,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0031",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 395.09,
+   "want": 395.09,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0031",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Interest Payment",
+   "want": "Interest Payment",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0031",
+   "field": "deposit_documented",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0032",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Wei W. Duarte",
+   "want": "Wei W. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0032",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Harborline Bank",
+   "want": "Harborline Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0032",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "money_market",
+   "want": "money_market",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0032",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0032",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-01-30",
+   "want": "2026-01-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0032",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 20120.53,
+   "want": 20120.53,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0032",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 24193.69,
+   "want": 24193.69,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0032",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 6526.24,
+   "want": 6526.24,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0032",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Deposit",
+   "want": "Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0032",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0033",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Sofia T. Duarte",
+   "want": "Sofia T. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0033",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Meridian Trust Bank",
+   "want": "Meridian Trust Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0033",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0033",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-02-01",
+   "want": "2026-02-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0033",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-02-28",
+   "want": "2026-02-28",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0033",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 22320.14,
+   "want": 22320.14,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0033",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 23513.34,
+   "want": 23513.34,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0033",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 2783.15,
+   "want": 2783.15,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0033",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Zelle from Jordan A.",
+   "want": "Zelle from Jordan A.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0033",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0034",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Amara N. Chen",
+   "want": "Amara N. Chen",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0034",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ashcroft Federal Bank",
+   "want": "Ashcroft Federal Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0034",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0034",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0034",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0034",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 31776.82,
+   "want": 31776.82,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0034",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 51640.82,
+   "want": 51640.82,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0034",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 20254.17,
+   "want": 20254.17,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0034",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "SOCIAL SECURITY ADMINISTRATION SSA BENEFIT",
+   "want": "SOCIAL SECURITY ADMINISTRATION SSA BENEFIT",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0034",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0035",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Yara R. Kowalski",
+   "want": "Yara R. Kowalski",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0035",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Northfield Savings",
+   "want": "Northfield Savings",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0035",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0035",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0035",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0035",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 10966.32,
+   "want": 10966.32,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0035",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 8528.59,
+   "want": 8528.59,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0035",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 295.38,
+   "want": 295.38,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0035",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Mobile Check Deposit",
+   "want": "Mobile Check Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0035",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0036",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Casey F. Rossi",
+   "want": "Casey F. Rossi",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0036",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Cascade Federal Credit Union",
+   "want": "Cascade Federal Credit Union",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0036",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0036",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0036",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-01-30",
+   "want": "2026-01-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0036",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 26606.99,
+   "want": 26606.99,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0036",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 32884.75,
+   "want": 32884.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0036",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 6425.94,
+   "want": 6425.94,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0036",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Deposit - Cash",
+   "want": "Deposit - Cash",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0036",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0037",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Sofia O. Duarte",
+   "want": "Sofia O. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0037",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Northfield Savings",
+   "want": "Northfield Savings",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0037",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "brokerage",
+   "want": "brokerage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0037",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0037",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0037",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 23747.06,
+   "want": 23747.06,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0037",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 21953.35,
+   "want": 21953.35,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0037",
+   "field": "largest_deposit_amount",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0037",
+   "field": "largest_deposit_description",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0037",
+   "field": "deposit_documented",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0038",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Tobias N. Bergstrom",
+   "want": "Tobias N. Bergstrom",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0038",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Copper Valley Bank",
+   "want": "Copper Valley Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0038",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0038",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-02-01",
+   "want": "2026-02-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0038",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-02-28",
+   "want": "2026-02-28",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0038",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 23144.1,
+   "want": 23144.1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0038",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 23255.74,
+   "want": 23255.74,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0038",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 317.69,
+   "want": 317.69,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0038",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "ATM Deposit",
+   "want": "ATM Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0038",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0039",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Casey A. Kowalski",
+   "want": "Casey A. Kowalski",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0039",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ashcroft Federal Bank",
+   "want": "Ashcroft Federal Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0039",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0039",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0039",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0039",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 16040.98,
+   "want": 16040.98,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0039",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 21901.8,
+   "want": 21901.8,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0039",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 6491.28,
+   "want": 6491.28,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0039",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "ACH Credit - Payroll",
+   "want": "ACH Credit - Payroll",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0039",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0040",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Jordan B. Okafor",
+   "want": "Jordan B. Okafor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0040",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ashcroft Federal Bank",
+   "want": "Ashcroft Federal Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0040",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0040",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0040",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0040",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 22876.17,
+   "want": 22876.17,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0040",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 20556.69,
+   "want": 20556.69,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0040",
+   "field": "largest_deposit_amount",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0040",
+   "field": "largest_deposit_description",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0040",
+   "field": "deposit_documented",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0041",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Grace F. Duarte",
+   "want": "Grace F. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0041",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Meridian Trust Bank",
+   "want": "Meridian Trust Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0041",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0041",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0041",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0041",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 10115.58,
+   "want": 10115.58,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0041",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 8112.64,
+   "want": 8112.64,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0041",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 396.29,
+   "want": 396.29,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0041",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Interest Payment",
+   "want": "Interest Payment",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0041",
+   "field": "deposit_documented",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0042",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Fatima H. Alvarez",
+   "want": "Fatima H. Alvarez",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0042",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Copper Valley Bank",
+   "want": "Copper Valley Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0042",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0042",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0042",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0042",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 34631.0,
+   "want": 34631.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0042",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 70340.84,
+   "want": 70340.84,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0042",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 37783.76,
+   "want": 37783.76,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0042",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "ACH CREDIT CRESTLINE SCHOOL DISTRICT",
+   "want": "ACH CREDIT CRESTLINE SCHOOL DISTRICT",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0042",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0043",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Nadia R. Petrov",
+   "want": "Nadia R. Petrov",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0043",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Harborline Bank",
+   "want": "Harborline Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0043",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0043",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-02-01",
+   "want": "2026-02-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0043",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-02-28",
+   "want": "2026-02-28",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0043",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 6173.58,
+   "want": 6173.58,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0043",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 5844.18,
+   "want": 5844.18,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0043",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 176.15,
+   "want": 176.15,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0043",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Zelle from Priya F.",
+   "want": "Zelle from Priya F.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0043",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0044",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Grace O. Osei",
+   "want": "Grace O. Osei",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0044",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Cascade Federal Credit Union",
+   "want": "Cascade Federal Credit Union",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0044",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0044",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0044",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-01-30",
+   "want": "2026-01-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0044",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 21438.11,
+   "want": 21438.11,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0044",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 18946.64,
+   "want": 18946.64,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0044",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 276.67,
+   "want": 276.67,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0044",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Interest Payment",
+   "want": "Interest Payment",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0044",
+   "field": "deposit_documented",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0045",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Wei R. Petrov",
+   "want": "Wei R. Petrov",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0045",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Copper Valley Bank",
+   "want": "Copper Valley Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0045",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0045",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0045",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0045",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 19545.22,
+   "want": 19545.22,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0045",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 55746.73,
+   "want": 55746.73,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0045",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 38719.2,
+   "want": 38719.2,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0045",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Wire Transfer from Cascade Federal Credit Union",
+   "want": "Wire Transfer from Cascade Federal Credit Union",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0045",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0046",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Fatima C. Duarte",
+   "want": "Fatima C. Duarte",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0046",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Harborline Bank",
+   "want": "Harborline Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0046",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0046",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-05-01",
+   "want": "2026-05-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0046",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-05-30",
+   "want": "2026-05-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0046",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 22607.89,
+   "want": 22607.89,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0046",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 19555.92,
+   "want": 19555.92,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0046",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 179.78,
+   "want": 179.78,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0046",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Mobile Check Deposit",
+   "want": "Mobile Check Deposit",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0046",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0047",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Riley N. Nakamura",
+   "want": "Riley N. Nakamura",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0047",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Beacon Point Bank",
+   "want": "Beacon Point Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0047",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0047",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-06-01",
+   "want": "2026-06-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0047",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0047",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 36618.91,
+   "want": 36618.91,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0047",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 35058.69,
+   "want": 35058.69,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0047",
+   "field": "largest_deposit_amount",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0047",
+   "field": "largest_deposit_description",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0047",
+   "field": "deposit_documented",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0048",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Fatima O. Whitfield",
+   "want": "Fatima O. Whitfield",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0048",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ridgeway National Bank",
+   "want": "Ridgeway National Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0048",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0048",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-05-01",
+   "want": "2026-05-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0048",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-05-30",
+   "want": "2026-05-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0048",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 6968.19,
+   "want": 6968.19,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0048",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 45948.77,
+   "want": 45948.77,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0048",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 41939.25,
+   "want": 41939.25,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0048",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "ACH CREDIT SUMMIT RETAIL GROUP",
+   "want": "ACH CREDIT SUMMIT RETAIL GROUP",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0048",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0049",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Fatima H. Bergstrom",
+   "want": "Fatima H. Bergstrom",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0049",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Ridgeway National Bank",
+   "want": "Ridgeway National Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0049",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0049",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0049",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-01-30",
+   "want": "2026-01-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0049",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 39020.48,
+   "want": 39020.48,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0049",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 36578.85,
+   "want": 36578.85,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0049",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 397.37,
+   "want": 397.37,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0049",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Interest Payment",
+   "want": "Interest Payment",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0049",
+   "field": "deposit_documented",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0050",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Amara R. Nakamura",
+   "want": "Amara R. Nakamura",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0050",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Northfield Savings",
+   "want": "Northfield Savings",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0050",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "brokerage",
+   "want": "brokerage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0050",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0050",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0050",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 13899.74,
+   "want": 13899.74,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0050",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 38195.59,
+   "want": 38195.59,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0050",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 24907.03,
+   "want": 24907.03,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0050",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Pension Payment - Ironworkers Local 47 Pension Trust",
+   "want": "Pension Payment - Ironworkers Local 47 Pension Trust",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0050",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0051",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Wei F. Chen",
+   "want": "Wei F. Chen",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0051",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Northfield Savings",
+   "want": "Northfield Savings",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0051",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "checking",
+   "want": "checking",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0051",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0051",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-01-30",
+   "want": "2026-01-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0051",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 34957.41,
+   "want": 34957.41,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0051",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 44803.02,
+   "want": 44803.02,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0051",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 10080.7,
+   "want": 10080.7,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0051",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Zelle from Amara T.",
+   "want": "Zelle from Amara T.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0051",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0052",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Tobias C. Correa",
+   "want": "Tobias C. Correa",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0052",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Cascade Federal Credit Union",
+   "want": "Cascade Federal Credit Union",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0052",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "brokerage",
+   "want": "brokerage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0052",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0052",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0052",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 24635.11,
+   "want": 24635.11,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0052",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 22153.96,
+   "want": 22153.96,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0052",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 423.71,
+   "want": 423.71,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0052",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Interest Payment",
+   "want": "Interest Payment",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0052",
+   "field": "deposit_documented",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0053",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Jordan T. Okafor",
+   "want": "Jordan T. Okafor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0053",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Pinehurst Brokerage",
+   "want": "Pinehurst Brokerage",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0053",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "money_market",
+   "want": "money_market",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0053",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0053",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0053",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 16527.77,
+   "want": 16527.77,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0053",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 27871.89,
+   "want": 27871.89,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0053",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 13312.37,
+   "want": 13312.37,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0053",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Wire Transfer from Sterling Gate Brokerage",
+   "want": "Wire Transfer from Sterling Gate Brokerage",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0053",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0054",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Kenji N. Okafor",
+   "want": "Kenji N. Okafor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0054",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Cascade Federal Credit Union",
+   "want": "Cascade Federal Credit Union",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0054",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "savings",
+   "want": "savings",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0054",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0054",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0054",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 15285.81,
+   "want": 15285.81,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0054",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 19588.51,
+   "want": 19588.51,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0054",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 6675.96,
+   "want": 6675.96,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0054",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "IRS TREAS 310 TAX REF",
+   "want": "IRS TREAS 310 TAX REF",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0054",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0055",
+   "field": "account_holder",
+   "verdict": "hit",
+   "got": "Nadia D. Larsen",
+   "want": "Nadia D. Larsen",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0055",
+   "field": "institution",
+   "verdict": "hit",
+   "got": "Harborline Bank",
+   "want": "Harborline Bank",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0055",
+   "field": "account_type",
+   "verdict": "hit",
+   "got": "brokerage",
+   "want": "brokerage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "AV-0055",
+   "field": "period_start",
+   "verdict": "hit",
+   "got": "2026-05-01",
+   "want": "2026-05-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0055",
+   "field": "period_end",
+   "verdict": "hit",
+   "got": "2026-05-30",
+   "want": "2026-05-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0055",
+   "field": "beginning_balance",
+   "verdict": "hit",
+   "got": 6230.36,
+   "want": 6230.36,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0055",
+   "field": "ending_balance",
+   "verdict": "hit",
+   "got": 26716.3,
+   "want": 26716.3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0055",
+   "field": "largest_deposit_amount",
+   "verdict": "hit",
+   "got": 21660.88,
+   "want": 21660.88,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0055",
+   "field": "largest_deposit_description",
+   "verdict": "hit",
+   "got": "Wire Transfer from Cascade Federal Credit Union",
+   "want": "Wire Transfer from Cascade Federal Credit Union",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "AV-0055",
+   "field": "deposit_documented",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "true_positive": 9,
+  "false_positive": 0,
+  "true_negative": 37,
+  "false_negative": 0,
+  "not_applicable": 9,
+  "recall": 1.0,
+  "precision": 1.0,
+  "rows": [
+   {
+    "doc": "AV-0001",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0002",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0003",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0004",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0005",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0006",
+    "want": false,
+    "got": null,
+    "verdict": "not_applicable"
+   },
+   {
+    "doc": "AV-0007",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0008",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0009",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0010",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0011",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0012",
+    "want": false,
+    "got": null,
+    "verdict": "not_applicable"
+   },
+   {
+    "doc": "AV-0013",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AV-0014",
+    "want": false,
+    "got": null,
+    "verdict": "not_applicable"
+   },
+   {
+    "doc": "AV-0015",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0016",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AV-0017",
+    "want": false,
+    "got": null,
+    "verdict": "not_applicable"
+   },
+   {
+    "doc": "AV-0018",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0019",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0020",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0021",
+    "want": false,
+    "got": null,
+    "verdict": "not_applicable"
+   },
+   {
+    "doc": "AV-0022",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AV-0023",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0024",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0025",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0026",
+    "want": false,
+    "got": null,
+    "verdict": "not_applicable"
+   },
+   {
+    "doc": "AV-0027",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AV-0028",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0029",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0030",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0031",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0032",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AV-0033",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AV-0034",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0035",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0036",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AV-0037",
+    "want": false,
+    "got": null,
+    "verdict": "not_applicable"
+   },
+   {
+    "doc": "AV-0038",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0039",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AV-0040",
+    "want": false,
+    "got": null,
+    "verdict": "not_applicable"
+   },
+   {
+    "doc": "AV-0041",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0042",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0043",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0044",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0045",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0046",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0047",
+    "want": false,
+    "got": null,
+    "verdict": "not_applicable"
+   },
+   {
+    "doc": "AV-0048",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0049",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0050",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0051",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "AV-0052",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0053",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0054",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "AV-0055",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 1163
+  },
+  {
+   "name": "field schema",
+   "chars": 1204
+  },
+  {
+   "name": "statement sections",
+   "chars": 484
+  }
+ ],
+ "sections_used": [
+  "Statement Holder",
+  "Institution",
+  "Account Type",
+  "Statement Period",
+  "Account Summary",
+  "Deposits This Period"
+ ],
+ "raw_text": "{\n  \"account_holder\": \"Amara W. Haddad\",\n  \"institution\": \"Beacon Point Bank\",\n  \"account_type\": \"savings\",\n  \"period_start\": \"2026-06-01\",\n  \"period_end\": \"2026-06-30\",\n  \"beginning_balance\": 18941.17,\n  \"ending_balance\": 18099.20,\n  \"largest_deposit_amount\": 238.78,\n  \"largest_deposit_description\": \"Zelle from Amara N.\",\n  \"deposit_documented\": \"no\"\n}",
+ "max_tokens": 4000
+}
