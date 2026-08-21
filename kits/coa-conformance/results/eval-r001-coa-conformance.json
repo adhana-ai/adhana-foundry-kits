@@ -1,0 +1,6089 @@
+{
+ "run_id": "r001-coa-conformance",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 2415,
+ "latency_p95_ms": 3225,
+ "latency_ms_all": [
+  2433,
+  2482,
+  1789,
+  2042,
+  2052,
+  2719,
+  2169,
+  2436,
+  2339,
+  2623,
+  3225,
+  2304,
+  2385,
+  1910,
+  2672,
+  2150,
+  2415,
+  2091,
+  2505,
+  3289,
+  2615,
+  2096,
+  2370,
+  2207,
+  2621,
+  2330,
+  2031,
+  2601,
+  2430,
+  2403,
+  2259,
+  1801,
+  2485,
+  2750,
+  2357,
+  2261,
+  2758,
+  3108,
+  2689,
+  2203,
+  1787,
+  2460,
+  2222,
+  2444,
+  2018,
+  1847,
+  2162,
+  2974,
+  2498,
+  2355,
+  2742,
+  3340,
+  2434,
+  2682,
+  2938
+ ],
+ "wall_seconds": 133.3,
+ "input_tokens_total": 52969,
+ "output_tokens_total": 14132,
+ "scores": {
+  "extraction_cells": 550,
+  "extraction_accuracy": 0.9982,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 464,
+  "values_with_span": 463,
+  "non_spannable_fields": [
+   "conforms_to_spec"
+  ],
+  "span_rate": 0.9978
+ },
+ "by_field": {
+  "batch_id": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "product_name": {
+   "hit": 54,
+   "miss": 0,
+   "wrong": 1,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "test_parameter": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "measured_value": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "unit": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "spec_lower_limit": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "spec_upper_limit": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "analyst_disposition_note": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "test_date": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "conforms_to_spec": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "COA-0001",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-E-5330",
+   "want": "BATCH-E-5330",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0001",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Brindle Alkalised Cocoa Powder",
+   "want": "Brindle Alkalised Cocoa Powder",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0001",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "bulk density",
+   "want": "bulk density",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0001",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.61,
+   "want": 0.61,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0001",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "g/mL",
+   "want": "g/mL",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0001",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 0.55,
+   "want": 0.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0001",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.75,
+   "want": 0.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0001",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "want": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0001",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-06-24",
+   "want": "2026-06-24",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0001",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0002",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-H-6336",
+   "want": "BATCH-H-6336",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0002",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Orlash Dextrose Monohydrate",
+   "want": "Orlash Dextrose Monohydrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0002",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "moisture content",
+   "want": "moisture content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0002",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 7.6,
+   "want": 7.6,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0002",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0002",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 8.0,
+   "want": 8.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0002",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 12.0,
+   "want": 12.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0002",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Within normal range for this product line. Released to finished-goods inventory.",
+   "want": "Within normal range for this product line. Released to finished-goods inventory.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0002",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-06-06",
+   "want": "2026-06-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0002",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0003",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-A-2308",
+   "want": "BATCH-A-2308",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0003",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Aurelin Grade Maize Starch",
+   "want": "Aurelin Grade Maize Starch",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0003",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "particle size D50",
+   "want": "particle size D50",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0003",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 71.3,
+   "want": 71.3,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0003",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "microns",
+   "want": "microns",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0003",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 45.0,
+   "want": 45.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0003",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 75.0,
+   "want": 75.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0003",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "want": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0003",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-02-22",
+   "want": "2026-02-22",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0003",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0004",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-G-8997",
+   "want": "BATCH-G-8997",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0004",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Aurelin Grade Maize Starch",
+   "want": "Aurelin Grade Maize Starch",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0004",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "total plate count",
+   "want": "total plate count",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0004",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 978,
+   "want": 978,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0004",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "CFU/g",
+   "want": "CFU/g",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0004",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0004",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 1000,
+   "want": 1000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0004",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Within normal range for this product line. Released to finished-goods inventory.",
+   "want": "Within normal range for this product line. Released to finished-goods inventory.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0004",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-03-15",
+   "want": "2026-03-15",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0004",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0005",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-B-7392",
+   "want": "BATCH-B-7392",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0005",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Corvane Food-Grade Citric Acid",
+   "want": "Corvane Food-Grade Citric Acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0005",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "particle size D50",
+   "want": "particle size D50",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0005",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 55.6,
+   "want": 55.6,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0005",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "microns",
+   "want": "microns",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0005",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 45.0,
+   "want": 45.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0005",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 75.0,
+   "want": 75.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0005",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "want": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0005",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-06-06",
+   "want": "2026-06-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0005",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0006",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-A-4258",
+   "want": "BATCH-A-4258",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0006",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Orlash Dextrose Monohydrate",
+   "want": "Orlash Dextrose Monohydrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0006",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "bulk density",
+   "want": "bulk density",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0006",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.7,
+   "want": 0.7,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0006",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "g/mL",
+   "want": "g/mL",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0006",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 0.55,
+   "want": 0.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0006",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.75,
+   "want": 0.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0006",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "want": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0006",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-03-08",
+   "want": "2026-03-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0006",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0007",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-H-7273",
+   "want": "BATCH-H-7273",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0007",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Halvette Whey Protein Concentrate",
+   "want": "Halvette Whey Protein Concentrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0007",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0007",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.71,
+   "want": 98.71,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0007",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0007",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0007",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0007",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "want": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0007",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-03-29",
+   "want": "2026-03-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0007",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0008",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-2662",
+   "want": "BATCH-D-2662",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0008",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Halvette Whey Protein Concentrate",
+   "want": "Halvette Whey Protein Concentrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0008",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "total plate count",
+   "want": "total plate count",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0008",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 645,
+   "want": 645,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0008",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "CFU/g",
+   "want": "CFU/g",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0008",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0008",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 1000,
+   "want": 1000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0008",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "want": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0008",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0008",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0009",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-F-2807",
+   "want": "BATCH-F-2807",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0009",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Meltwood Refined Palm Olein",
+   "want": "Meltwood Refined Palm Olein",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0009",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "bulk density",
+   "want": "bulk density",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0009",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.72,
+   "want": 0.72,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0009",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "g/mL",
+   "want": "g/mL",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0009",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 0.55,
+   "want": 0.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0009",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.75,
+   "want": 0.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0009",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Not comfortable signing this one off on a single determination. Suggest re-testing.",
+   "want": "Not comfortable signing this one off on a single determination. Suggest re-testing.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0009",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-02-17",
+   "want": "2026-02-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0009",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0010",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-1335",
+   "want": "BATCH-D-1335",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0010",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Meltwood Refined Palm Olein",
+   "want": "Meltwood Refined Palm Olein",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0010",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "total plate count",
+   "want": "total plate count",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0010",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 1066,
+   "want": 1066,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0010",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "CFU/g",
+   "want": "CFU/g",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0010",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0010",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 1000,
+   "want": 1000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0010",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "want": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0010",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-03-11",
+   "want": "2026-03-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0010",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0011",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-C-6721",
+   "want": "BATCH-C-6721",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0011",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Halvette Whey Protein Concentrate",
+   "want": "Halvette Whey Protein Concentrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0011",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "bulk density",
+   "want": "bulk density",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0011",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.64,
+   "want": 0.64,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0011",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "g/mL",
+   "want": "g/mL",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0011",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 0.55,
+   "want": 0.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0011",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.75,
+   "want": 0.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0011",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Borderline in my judgement. Recommend a re-test on a second sample before release.",
+   "want": "Borderline in my judgement. Recommend a re-test on a second sample before release.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0011",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-03-31",
+   "want": "2026-03-31",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0011",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0012",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-H-5664",
+   "want": "BATCH-H-5664",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0012",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Tarnwick Sodium Bicarbonate",
+   "want": "Tarnwick Sodium Bicarbonate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0012",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "ash content",
+   "want": "ash content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0012",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.31,
+   "want": 0.31,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0012",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0012",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0012",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.5,
+   "want": 0.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0012",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Routine result, nothing unusual for this material. Cleared for release.",
+   "want": "Routine result, nothing unusual for this material. Cleared for release.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0012",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-07-23",
+   "want": "2026-07-23",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0012",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0013",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-F-5265",
+   "want": "BATCH-F-5265",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0013",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Tarnwick Sodium Bicarbonate",
+   "want": "Tarnwick Sodium Bicarbonate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0013",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0013",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.24,
+   "want": 98.24,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0013",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0013",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0013",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0013",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Borderline in my judgement. Recommend a re-test on a second sample before release.",
+   "want": "Borderline in my judgement. Recommend a re-test on a second sample before release.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0013",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-07-24",
+   "want": "2026-07-24",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0013",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0014",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-F-6161",
+   "want": "BATCH-F-6161",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0014",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Orlash Dextrose Monohydrate",
+   "want": "Orlash Dextrose Monohydrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0014",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "moisture content",
+   "want": "moisture content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0014",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 11.4,
+   "want": 11.4,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0014",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0014",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 8.0,
+   "want": 8.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0014",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 12.0,
+   "want": 12.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0014",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "want": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0014",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-02-01",
+   "want": "2026-02-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0014",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0015",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-G-3709",
+   "want": "BATCH-G-3709",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0015",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Aurelin Grade Maize Starch",
+   "want": "Aurelin Grade Maize Starch",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0015",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "ash content",
+   "want": "ash content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0015",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.31,
+   "want": 0.31,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0015",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0015",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0015",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.5,
+   "want": 0.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0015",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Within normal range for this product line. Released to finished-goods inventory.",
+   "want": "Within normal range for this product line. Released to finished-goods inventory.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0015",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-07-12",
+   "want": "2026-07-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0015",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0016",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-C-9700",
+   "want": "BATCH-C-9700",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0016",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Corvane Food-Grade Citric Acid",
+   "want": "Corvane Food-Grade Citric Acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0016",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "particle size D50",
+   "want": "particle size D50",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0016",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 43.6,
+   "want": 43.6,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0016",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "microns",
+   "want": "microns",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0016",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 45.0,
+   "want": 45.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0016",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 75.0,
+   "want": 75.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0016",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "want": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0016",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-01-14",
+   "want": "2026-01-14",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0016",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0017",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-C-8140",
+   "want": "BATCH-C-8140",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0017",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Aurelin Grade Maize Starch",
+   "want": "Aurelin Grade Maize Starch",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0017",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "ash content",
+   "want": "ash content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0017",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.53,
+   "want": 0.53,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0017",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0017",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0017",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.5,
+   "want": 0.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0017",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "want": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0017",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-06-22",
+   "want": "2026-06-22",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0017",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0018",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-G-8490",
+   "want": "BATCH-G-8490",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0018",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Corvane Food-Grade Citric Acid",
+   "want": "Corvane Food-Grade Citric Acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0018",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "total plate count",
+   "want": "total plate count",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0018",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 841,
+   "want": 841,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0018",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "CFU/g",
+   "want": "CFU/g",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0018",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0018",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 1000,
+   "want": 1000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0018",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "want": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0018",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-05-20",
+   "want": "2026-05-20",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0018",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0019",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-B-7300",
+   "want": "BATCH-B-7300",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0019",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Kestrelin Xanthan Gum",
+   "want": "Kestrelin Xanthan Gum",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0019",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "moisture content",
+   "want": "moisture content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0019",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 12.2,
+   "want": 12.2,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0019",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0019",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 8.0,
+   "want": 8.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0019",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 12.0,
+   "want": 12.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0019",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "want": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0019",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-04-25",
+   "want": "2026-04-25",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0019",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0020",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-1481",
+   "want": "BATCH-D-1481",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0020",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Kestrelin Xanthan Gum",
+   "want": "Kestrelin Xanthan Gum",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0020",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "moisture content",
+   "want": "moisture content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0020",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 7.5,
+   "want": 7.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0020",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0020",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 8.0,
+   "want": 8.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0020",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 12.0,
+   "want": 12.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0020",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Not comfortable signing this one off on a single determination. Suggest re-testing.",
+   "want": "Not comfortable signing this one off on a single determination. Suggest re-testing.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0020",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-02-09",
+   "want": "2026-02-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0020",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0021",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-C-1068",
+   "want": "BATCH-C-1068",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0021",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Corvane Food-Grade Citric Acid",
+   "want": "Corvane Food-Grade Citric Acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0021",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "ash content",
+   "want": "ash content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0021",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.34,
+   "want": 0.34,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0021",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0021",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0021",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.5,
+   "want": 0.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0021",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "want": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0021",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-08-12",
+   "want": "2026-08-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0021",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0022",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-H-4060",
+   "want": "BATCH-H-4060",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0022",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Halvette Whey Protein Concentrate",
+   "want": "Halvette Whey Protein Concentrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0022",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "ash content",
+   "want": "ash content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0022",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.32,
+   "want": 0.32,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0022",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0022",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0022",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.5,
+   "want": 0.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0022",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Routine result, nothing unusual for this material. Cleared for release.",
+   "want": "Routine result, nothing unusual for this material. Cleared for release.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0022",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-02-10",
+   "want": "2026-02-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0022",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0023",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-B-2875",
+   "want": "BATCH-B-2875",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0023",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Brindle Alkalised Cocoa Powder",
+   "want": "Brindle Alkalised Cocoa Powder",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0023",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0023",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.31,
+   "want": 98.31,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0023",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0023",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0023",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0023",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "want": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0023",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-08-12",
+   "want": "2026-08-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0023",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0024",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-1043",
+   "want": "BATCH-D-1043",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0024",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Brindle Alkalised Cocoa Powder",
+   "want": "Brindle Alkalised Cocoa Powder",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0024",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "total plate count",
+   "want": "total plate count",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0024",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 683,
+   "want": 683,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0024",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "CFU/g",
+   "want": "CFU/g",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0024",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0024",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 1000,
+   "want": 1000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0024",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Within normal range for this product line. Released to finished-goods inventory.",
+   "want": "Within normal range for this product line. Released to finished-goods inventory.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0024",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-04-03",
+   "want": "2026-04-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0024",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0025",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-H-4432",
+   "want": "BATCH-H-4432",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0025",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Halvette Whey Protein Concentrate",
+   "want": "Halvette Whey Protein Concentrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0025",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0025",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.84,
+   "want": 98.84,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0025",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0025",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0025",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0025",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Borderline in my judgement. Recommend a re-test on a second sample before release.",
+   "want": "Borderline in my judgement. Recommend a re-test on a second sample before release.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0025",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-04-20",
+   "want": "2026-04-20",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0025",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0026",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-A-9435",
+   "want": "BATCH-A-9435",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0026",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Pellovan Industrial Calcium Carbonate",
+   "want": "Pellovan Industrial Calcium Carbonate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0026",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "ash content",
+   "want": "ash content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0026",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.53,
+   "want": 0.53,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0026",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0026",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0026",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.5,
+   "want": 0.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0026",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "want": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0026",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-02-17",
+   "want": "2026-02-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0026",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0027",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-G-4239",
+   "want": "BATCH-G-4239",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0027",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Tarnwick Sodium Bicarbonate",
+   "want": "Tarnwick Sodium Bicarbonate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0027",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "moisture content",
+   "want": "moisture content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0027",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 8.5,
+   "want": 8.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0027",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0027",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 8.0,
+   "want": 8.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0027",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 12.0,
+   "want": 12.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0027",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "want": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0027",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-02-23",
+   "want": "2026-02-23",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0027",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0028",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-F-8993",
+   "want": "BATCH-F-8993",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0028",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Corvane Food-Grade Citric Acid",
+   "want": "Corvane Food-Grade Citric Acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0028",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0028",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.32,
+   "want": 98.32,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0028",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0028",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0028",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0028",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "want": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0028",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-08-07",
+   "want": "2026-08-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0028",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0029",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-2727",
+   "want": "BATCH-D-2727",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0029",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Orlash Dextrose Monohydrate",
+   "want": "Orlash Dextrose Monohydrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0029",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0029",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.42,
+   "want": 98.42,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0029",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0029",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0029",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0029",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Not comfortable signing this one off on a single determination. Suggest re-testing.",
+   "want": "Not comfortable signing this one off on a single determination. Suggest re-testing.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0029",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-06-09",
+   "want": "2026-06-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0029",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0030",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-C-8614",
+   "want": "BATCH-C-8614",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0030",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Vaneer Industrial Silica Filler",
+   "want": "Vaneer Industrial Silica Filler",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0030",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "ash content",
+   "want": "ash content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0030",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.52,
+   "want": 0.52,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0030",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0030",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0030",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.5,
+   "want": 0.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0030",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Not comfortable signing this one off on a single determination. Suggest re-testing.",
+   "want": "Not comfortable signing this one off on a single determination. Suggest re-testing.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0030",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-07-16",
+   "want": "2026-07-16",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0030",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0031",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-A-6013",
+   "want": "BATCH-A-6013",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0031",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Meltwood Refined Palm Olein",
+   "want": "Meltwood Refined Palm Olein",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0031",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "particle size D50",
+   "want": "particle size D50",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0031",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 62.9,
+   "want": 62.9,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0031",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "microns",
+   "want": "microns",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0031",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 45.0,
+   "want": 45.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0031",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 75.0,
+   "want": 75.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0031",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Within normal range for this product line. Released to finished-goods inventory.",
+   "want": "Within normal range for this product line. Released to finished-goods inventory.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0031",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-05-05",
+   "want": "2026-05-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0031",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0032",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-H-2094",
+   "want": "BATCH-H-2094",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0032",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Tarnwick Sodium Bicarbonate",
+   "want": "Tarnwick Sodium Bicarbonate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0032",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "total plate count",
+   "want": "total plate count",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0032",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 741,
+   "want": 741,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0032",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "CFU/g",
+   "want": "CFU/g",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0032",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0032",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 1000,
+   "want": 1000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0032",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "want": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0032",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-06-16",
+   "want": "2026-06-16",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0032",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0033",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-B-5515",
+   "want": "BATCH-B-5515",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0033",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Brindle Alkalised Cocoa Powder",
+   "want": "Brindle Alkalised Cocoa Powder",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0033",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "total plate count",
+   "want": "total plate count",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0033",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 1025,
+   "want": 1025,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0033",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "CFU/g",
+   "want": "CFU/g",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0033",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0033",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 1000,
+   "want": 1000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0033",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Within normal range for this product line. Released to finished-goods inventory.",
+   "want": "Within normal range for this product line. Released to finished-goods inventory.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0033",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-04-11",
+   "want": "2026-04-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0033",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0034",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-C-8105",
+   "want": "BATCH-C-8105",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0034",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Aurelin Grade Maize Starch",
+   "want": "Aurelin Grade Maize Starch",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0034",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "moisture content",
+   "want": "moisture content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0034",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 12.4,
+   "want": 12.4,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0034",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0034",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 8.0,
+   "want": 8.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0034",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 12.0,
+   "want": 12.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0034",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Within normal range for this product line. Released to finished-goods inventory.",
+   "want": "Within normal range for this product line. Released to finished-goods inventory.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0034",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-04-05",
+   "want": "2026-04-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0034",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0035",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-4151",
+   "want": "BATCH-D-4151",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0035",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Corvane Food-Grade Citric Acid",
+   "want": "Corvane Food-Grade Citric Acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0035",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "bulk density",
+   "want": "bulk density",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0035",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.76,
+   "want": 0.76,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0035",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "g/mL",
+   "want": "g/mL",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0035",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 0.55,
+   "want": 0.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0035",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.75,
+   "want": 0.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0035",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "want": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0035",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-06-25",
+   "want": "2026-06-25",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0035",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0036",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-3109",
+   "want": "BATCH-D-3109",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0036",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Orlash Dextrose Monohydrate",
+   "want": "Orlash Dextrose Monohydrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0036",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "ash content",
+   "want": "ash content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0036",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.4,
+   "want": 0.4,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0036",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0036",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0036",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.5,
+   "want": 0.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0036",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "want": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0036",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-05-23",
+   "want": "2026-05-23",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0036",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0037",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-C-1829",
+   "want": "BATCH-C-1829",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0037",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Aurelin Grade Maize Starch",
+   "want": "Aurelin Grade Maize Starch",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0037",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "particle size D50",
+   "want": "particle size D50",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0037",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 50.6,
+   "want": 50.6,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0037",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "microns",
+   "want": "microns",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0037",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 45.0,
+   "want": 45.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0037",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 75.0,
+   "want": 75.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0037",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Within normal range for this product line. Released to finished-goods inventory.",
+   "want": "Within normal range for this product line. Released to finished-goods inventory.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0037",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-04-25",
+   "want": "2026-04-25",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0037",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0038",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-H-9564",
+   "want": "BATCH-H-9564",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0038",
+   "field": "product_name",
+   "verdict": "wrong",
+   "got": "Halcotte Whey Protein Concentrate",
+   "want": "Halvette Whey Protein Concentrate",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0038",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "total plate count",
+   "want": "total plate count",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0038",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 637,
+   "want": 637,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0038",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "CFU/g",
+   "want": "CFU/g",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0038",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0038",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 1000,
+   "want": 1000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0038",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "want": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0038",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-01-13",
+   "want": "2026-01-13",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0038",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0039",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-9933",
+   "want": "BATCH-D-9933",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0039",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Orlash Dextrose Monohydrate",
+   "want": "Orlash Dextrose Monohydrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0039",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "bulk density",
+   "want": "bulk density",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0039",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.53,
+   "want": 0.53,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0039",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "g/mL",
+   "want": "g/mL",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0039",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 0.55,
+   "want": 0.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0039",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.75,
+   "want": 0.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0039",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "want": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0039",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-05-28",
+   "want": "2026-05-28",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0039",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0040",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-G-5304",
+   "want": "BATCH-G-5304",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0040",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Orlash Dextrose Monohydrate",
+   "want": "Orlash Dextrose Monohydrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0040",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0040",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 99.25,
+   "want": 99.25,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0040",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0040",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0040",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0040",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "want": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0040",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-01-07",
+   "want": "2026-01-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0040",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0041",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-H-1232",
+   "want": "BATCH-H-1232",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0041",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Orlash Dextrose Monohydrate",
+   "want": "Orlash Dextrose Monohydrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0041",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "particle size D50",
+   "want": "particle size D50",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0041",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 76.1,
+   "want": 76.1,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0041",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "microns",
+   "want": "microns",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0041",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 45.0,
+   "want": 45.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0041",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 75.0,
+   "want": 75.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0041",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Borderline in my judgement. Recommend a re-test on a second sample before release.",
+   "want": "Borderline in my judgement. Recommend a re-test on a second sample before release.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0041",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-05-29",
+   "want": "2026-05-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0041",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0042",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-7608",
+   "want": "BATCH-D-7608",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0042",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Orlash Dextrose Monohydrate",
+   "want": "Orlash Dextrose Monohydrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0042",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "bulk density",
+   "want": "bulk density",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0042",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.66,
+   "want": 0.66,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0042",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "g/mL",
+   "want": "g/mL",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0042",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 0.55,
+   "want": 0.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0042",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.75,
+   "want": 0.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0042",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "want": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0042",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-04-01",
+   "want": "2026-04-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0042",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0043",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-A-8952",
+   "want": "BATCH-A-8952",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0043",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Meltwood Refined Palm Olein",
+   "want": "Meltwood Refined Palm Olein",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0043",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "bulk density",
+   "want": "bulk density",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0043",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.67,
+   "want": 0.67,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0043",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "g/mL",
+   "want": "g/mL",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0043",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 0.55,
+   "want": 0.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0043",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.75,
+   "want": 0.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0043",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Within normal range for this product line. Released to finished-goods inventory.",
+   "want": "Within normal range for this product line. Released to finished-goods inventory.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0043",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-01-21",
+   "want": "2026-01-21",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0043",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0044",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-C-1217",
+   "want": "BATCH-C-1217",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0044",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Pellovan Industrial Calcium Carbonate",
+   "want": "Pellovan Industrial Calcium Carbonate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0044",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0044",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.34,
+   "want": 98.34,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0044",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0044",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0044",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0044",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "want": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0044",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-05-18",
+   "want": "2026-05-18",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0044",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0045",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-F-3409",
+   "want": "BATCH-F-3409",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0045",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Aurelin Grade Maize Starch",
+   "want": "Aurelin Grade Maize Starch",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0045",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "bulk density",
+   "want": "bulk density",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0045",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.73,
+   "want": 0.73,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0045",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "g/mL",
+   "want": "g/mL",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0045",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 0.55,
+   "want": 0.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0045",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.75,
+   "want": 0.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0045",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "want": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0045",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0045",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0046",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-6996",
+   "want": "BATCH-D-6996",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0046",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Orlash Dextrose Monohydrate",
+   "want": "Orlash Dextrose Monohydrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0046",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "bulk density",
+   "want": "bulk density",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0046",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.58,
+   "want": 0.58,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0046",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "g/mL",
+   "want": "g/mL",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0046",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 0.55,
+   "want": 0.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0046",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.75,
+   "want": 0.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0046",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Looks fine against typical line performance. Dispositioned released by day shift.",
+   "want": "Looks fine against typical line performance. Dispositioned released by day shift.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0046",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-04-03",
+   "want": "2026-04-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0046",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0047",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-C-2781",
+   "want": "BATCH-C-2781",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0047",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Aurelin Grade Maize Starch",
+   "want": "Aurelin Grade Maize Starch",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0047",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0047",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.28,
+   "want": 98.28,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0047",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0047",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0047",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0047",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "want": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0047",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-03-18",
+   "want": "2026-03-18",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0047",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0048",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-A-6826",
+   "want": "BATCH-A-6826",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0048",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Aurelin Grade Maize Starch",
+   "want": "Aurelin Grade Maize Starch",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0048",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0048",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.32,
+   "want": 98.32,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0048",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0048",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0048",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0048",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Within normal range for this product line. Released to finished-goods inventory.",
+   "want": "Within normal range for this product line. Released to finished-goods inventory.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0048",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-07-25",
+   "want": "2026-07-25",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0048",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0049",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-C-2547",
+   "want": "BATCH-C-2547",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0049",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Vaneer Industrial Silica Filler",
+   "want": "Vaneer Industrial Silica Filler",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0049",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "moisture content",
+   "want": "moisture content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0049",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 7.8,
+   "want": 7.8,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0049",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0049",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 8.0,
+   "want": 8.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0049",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 12.0,
+   "want": 12.0,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0049",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "want": "Result consistent with the last twelve batches of this grade. No concerns; pass.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0049",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-08-12",
+   "want": "2026-08-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0049",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0050",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-F-7598",
+   "want": "BATCH-F-7598",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0050",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Halvette Whey Protein Concentrate",
+   "want": "Halvette Whey Protein Concentrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0050",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0050",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.39,
+   "want": 98.39,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0050",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0050",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0050",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0050",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Within normal range for this product line. Released to finished-goods inventory.",
+   "want": "Within normal range for this product line. Released to finished-goods inventory.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0050",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-04-25",
+   "want": "2026-04-25",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0050",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0051",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-B-3037",
+   "want": "BATCH-B-3037",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0051",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Halvette Whey Protein Concentrate",
+   "want": "Halvette Whey Protein Concentrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0051",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "ash content",
+   "want": "ash content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0051",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.52,
+   "want": 0.52,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0051",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0051",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0051",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.5,
+   "want": 0.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0051",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "want": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0051",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-05-16",
+   "want": "2026-05-16",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0051",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0052",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-1907",
+   "want": "BATCH-D-1907",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0052",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Vaneer Industrial Silica Filler",
+   "want": "Vaneer Industrial Silica Filler",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0052",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0052",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.2,
+   "want": 98.2,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0052",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0052",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0052",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0052",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "want": "Marginal result. Flagged for the quality supervisor to look at before any disposition.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0052",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-01-09",
+   "want": "2026-01-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0052",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0053",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-C-4993",
+   "want": "BATCH-C-4993",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0053",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Pellovan Industrial Calcium Carbonate",
+   "want": "Pellovan Industrial Calcium Carbonate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0053",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "ash content",
+   "want": "ash content",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0053",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.39,
+   "want": 0.39,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0053",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0053",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0053",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.5,
+   "want": 0.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0053",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Looks fine against typical line performance. Dispositioned released by day shift.",
+   "want": "Looks fine against typical line performance. Dispositioned released by day shift.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0053",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-02-04",
+   "want": "2026-02-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0053",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0054",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-D-3937",
+   "want": "BATCH-D-3937",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0054",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Corvane Food-Grade Citric Acid",
+   "want": "Corvane Food-Grade Citric Acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0054",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "bulk density",
+   "want": "bulk density",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0054",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 0.52,
+   "want": 0.52,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0054",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "g/mL",
+   "want": "g/mL",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0054",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 0.55,
+   "want": 0.55,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0054",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": 0.75,
+   "want": 0.75,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0054",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "want": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0054",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-03-13",
+   "want": "2026-03-13",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0054",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "COA-0055",
+   "field": "batch_id",
+   "verdict": "hit",
+   "got": "BATCH-G-6274",
+   "want": "BATCH-G-6274",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0055",
+   "field": "product_name",
+   "verdict": "hit",
+   "got": "Orlash Dextrose Monohydrate",
+   "want": "Orlash Dextrose Monohydrate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0055",
+   "field": "test_parameter",
+   "verdict": "hit",
+   "got": "assay purity",
+   "want": "assay purity",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0055",
+   "field": "measured_value",
+   "verdict": "hit",
+   "got": 98.36,
+   "want": 98.36,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0055",
+   "field": "unit",
+   "verdict": "hit",
+   "got": "%",
+   "want": "%",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0055",
+   "field": "spec_lower_limit",
+   "verdict": "hit",
+   "got": 98.5,
+   "want": 98.5,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0055",
+   "field": "spec_upper_limit",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0055",
+   "field": "analyst_disposition_note",
+   "verdict": "hit",
+   "got": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "want": "Value sits near the edge of where this line normally runs. Batch placed on hold pending review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0055",
+   "field": "test_date",
+   "verdict": "hit",
+   "got": "2026-04-16",
+   "want": "2026-04-16",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "COA-0055",
+   "field": "conforms_to_spec",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "positive_class": "no (out of specification)",
+  "true_positive": 26,
+  "false_positive": 0,
+  "true_negative": 29,
+  "false_negative": 0,
+  "unanswered": 0,
+  "not_applicable": 0,
+  "accuracy": 1.0,
+  "recall": 1.0,
+  "precision": 1.0,
+  "self_consistency": {
+   "needs_review_fired": 0,
+   "verdict_errors": 0,
+   "errors_caught_by_needs_review": 0,
+   "errors_missed_by_needs_review": 0,
+   "note": "needs_review compares the run's own conforms_to_spec against the same arithmetic re-run over the run's OWN extracted numbers. It uses no gold, so a forker can compute it on unlabelled certificates."
+  },
+  "rows": [
+   {
+    "doc": "COA-0001",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0002",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0003",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0004",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0005",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0006",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0007",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0008",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0009",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0010",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0011",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0012",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0013",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0014",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0015",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0016",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0017",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0018",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0019",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0020",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0021",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0022",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0023",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0024",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0025",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0026",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0027",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0028",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0029",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0030",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0031",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0032",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0033",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0034",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0035",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0036",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0037",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0038",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0039",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0040",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0041",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0042",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0043",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0044",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0045",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0046",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0047",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0048",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0049",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0050",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0051",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0052",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0053",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0054",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   },
+   {
+    "doc": "COA-0055",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": false
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 1529
+  },
+  {
+   "name": "field schema",
+   "chars": 1585
+  },
+  {
+   "name": "certificate sections",
+   "chars": 449
+  }
+ ],
+ "sections_used": [
+  "Batch",
+  "Product",
+  "Test Parameter",
+  "Measured Result",
+  "Specification Lower Limit",
+  "Specification Upper Limit",
+  "Test Date",
+  "Analyst Disposition Note"
+ ],
+ "raw_text": "{\n  \"batch_id\": \"BATCH-E-5330\",\n  \"product_name\": \"Brindle Alkalised Cocoa Powder\",\n  \"test_parameter\": \"bulk density\",\n  \"measured_value\": 0.61,\n  \"unit\": \"g/mL\",\n  \"spec_lower_limit\": 0.55,\n  \"spec_upper_limit\": 0.75,\n  \"analyst_disposition_note\": \"Result consistent with the last twelve batches of this grade. No concerns; pass.\",\n  \"test_date\": \"2026-06-24\",\n  \"conforms_to_spec\": \"yes\"\n}",
+ "max_tokens": 4000
+}

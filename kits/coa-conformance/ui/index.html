@@ -1,0 +1,55 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>coa-conformance — check a certificate of analysis against its own specification limits</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Check a certificate of analysis against its own specification limits</h1>
+    <p class="sub">One certificate, one model call, a field table &mdash; plus a check run
+      afterwards, in pure code, on the model&rsquo;s own answer: re-run the comparison over the
+      numbers the model itself extracted, and see whether it lands on the verdict the model itself
+      gave. Conformance is arithmetic. The analyst&rsquo;s disposition note is an opinion, and on
+      this corpus it often disagrees with the numbers.</p>
+  </header>
+
+  <div class="bar">
+    <select id="doc" aria-label="Certificate of analysis"></select>
+    <button id="go" type="button">Extract</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="panel">
+    <div class="ph"><span>Field table</span>
+      <span class="k kf" id="k-filled">&mdash;</span>
+      <span class="k kn" id="k-missing">&mdash;</span>
+      <span class="k ks" id="k-span">&mdash;</span></div>
+    <table id="tbl">
+      <thead><tr><th>Field</th><th>Value</th><th>Source span</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>Recomputed, downstream, pure code</span></div>
+    <table>
+      <tbody>
+        <tr><td class="n">Model&rsquo;s stated verdict</td><td id="c-model">&mdash;</td></tr>
+        <tr><td class="n">Recomputed from the model&rsquo;s own numbers</td><td id="c-recomp">&mdash;</td></tr>
+        <tr><td class="n">Needs review</td><td id="c-flag">&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot">The guardrail is a <strong>self-consistency</strong> check, not a business rule:
+    <code>needs_review</code> fires when the model&rsquo;s stated <code>conforms_to_spec</code>
+    disagrees with the same comparison re-run over the model&rsquo;s own
+    <code>measured_value</code> and limits. It needs no gold label, so it works the same way on a
+    certificate nobody has ever scored.</p>
+
+  <details class="doc">
+    <summary>The certificate this was read from</summary>
+    <pre id="text"></pre>
+  </details>
+</div>
+<script src="/app.js"></script>

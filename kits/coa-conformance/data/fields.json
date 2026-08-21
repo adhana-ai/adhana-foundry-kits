@@ -1,0 +1,24 @@
+{
+ "fields": [
+  {"name": "batch_id", "type": "string",
+   "hint": "the batch or lot identifier, verbatim"},
+  {"name": "product_name", "type": "string",
+   "hint": "the name of the material the certificate is for"},
+  {"name": "test_parameter", "type": "string",
+   "hint": "what was measured, verbatim (for example: moisture content, assay purity)"},
+  {"name": "measured_value", "type": "number",
+   "hint": "the numeric laboratory result, without its unit"},
+  {"name": "unit", "type": "string",
+   "hint": "the unit the result is reported in, verbatim (for example: %, ppm, CFU/g, microns)"},
+  {"name": "spec_lower_limit", "type": "number",
+   "hint": "the lower specification limit as a number, or null when the certificate states the specification is one-sided and gives no lower limit"},
+  {"name": "spec_upper_limit", "type": "number",
+   "hint": "the upper specification limit as a number, or null when the certificate states the specification is one-sided and gives no upper limit"},
+  {"name": "analyst_disposition_note", "type": "string",
+   "hint": "the analyst's own free-text disposition note, copied verbatim"},
+  {"name": "test_date", "type": "string",
+   "hint": "the date the test was performed, YYYY-MM-DD"},
+  {"name": "conforms_to_spec", "type": "enum", "values": ["yes", "no"],
+   "hint": "does the measured value fall within the stated specification limits? Decide this by ARITHMETIC ONLY: it is 'yes' when measured_value is greater than or equal to spec_lower_limit AND less than or equal to spec_upper_limit, treating a limit the certificate does not state as no constraint on that side; otherwise 'no'. Both limits are inclusive -- a value exactly on a limit conforms. Do NOT decide this from the analyst's disposition note: a note reading 'within normal range, released' does not make an out-of-limits value conform, and a note reading 'borderline, recommend re-test' does not make an in-limits value fail."}
+ ]
+}
