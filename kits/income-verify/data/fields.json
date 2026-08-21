@@ -1,0 +1,25 @@
+{
+ "fields": [
+  {"name": "employee_name", "type": "string",
+   "hint": "the name on the pay stub, verbatim"},
+  {"name": "employer_name", "type": "string",
+   "hint": "the employer that issued the stub"},
+  {"name": "pay_frequency", "type": "enum",
+   "values": ["weekly", "biweekly", "semimonthly", "monthly"],
+   "hint": "the pay frequency stated on the stub"},
+  {"name": "pay_period_end", "type": "string",
+   "hint": "the stub's pay period end date, YYYY-MM-DD"},
+  {"name": "ytd_base_pay", "type": "number",
+   "hint": "year-to-date base pay, no currency symbol"},
+  {"name": "ytd_overtime_pay", "type": "number",
+   "hint": "year-to-date overtime pay, or null if the stub states none"},
+  {"name": "overtime_periods_paid", "type": "integer",
+   "hint": "how many pay periods this year paid overtime, or null if none was paid"},
+  {"name": "overtime_periods_total", "type": "integer",
+   "hint": "how many pay periods have elapsed this year, or null if no overtime was paid"},
+  {"name": "ytd_bonus_pay", "type": "number",
+   "hint": "year-to-date bonus pay, or null if the stub states none"},
+  {"name": "bonus_recurring", "type": "enum", "values": ["yes", "no"],
+   "hint": "does the Bonus History section describe an actual history of the bonus recurring across two or more prior payments (an annual/quarterly bonus with stated payment history), or a one-time/discretionary payment? A note that merely uses the word 'annual' or 'recurring' with no stated payment history is 'no' -- the label alone is not history. null if no bonus this year."}
+ ]
+}

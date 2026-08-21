@@ -1,0 +1,6003 @@
+{
+ "run_id": "b000-rules",
+ "stub": false,
+ "model": "rules-baseline",
+ "provider": "none",
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 0,
+ "latency_p95_ms": 0,
+ "latency_ms_all": [
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "wall_seconds": 0.0,
+ "input_tokens_total": 0,
+ "output_tokens_total": 0,
+ "scores": {
+  "extraction_cells": 448,
+  "extraction_accuracy": 0.9732,
+  "refusal_cells": 102,
+  "refusal_accuracy": 1.0,
+  "hallucinations": 0,
+  "values_returned": 362,
+  "values_with_span": 0,
+  "non_spannable_fields": [
+   "bonus_recurring",
+   "pay_frequency"
+  ],
+  "span_rate": 0.0
+ },
+ "by_field": {
+  "employee_name": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "employer_name": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "pay_frequency": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "pay_period_end": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "ytd_base_pay": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "ytd_overtime_pay": {
+   "hit": 37,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 18,
+   "hallucinated": 0
+  },
+  "overtime_periods_paid": {
+   "hit": 37,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 18,
+   "hallucinated": 0
+  },
+  "overtime_periods_total": {
+   "hit": 37,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 18,
+   "hallucinated": 0
+  },
+  "ytd_bonus_pay": {
+   "hit": 31,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 24,
+   "hallucinated": 0
+  },
+  "bonus_recurring": {
+   "hit": 19,
+   "miss": 0,
+   "wrong": 12,
+   "abstained": 24,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "IV-0001",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Casey D. Rossi",
+   "want": "Casey D. Rossi",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0001",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BLUE HARBOR LOGISTICS",
+   "want": "BLUE HARBOR LOGISTICS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0001",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0001",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-07-25",
+   "want": "2026-07-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0001",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 33738.27,
+   "want": 33738.27,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0001",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0001",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0001",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0001",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 3433.34,
+   "want": 3433.34,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0001",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0002",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Riley B. Correa",
+   "want": "Riley B. Correa",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0002",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "VANTAGE FOOD SERVICES",
+   "want": "VANTAGE FOOD SERVICES",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0002",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0002",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-10-23",
+   "want": "2026-10-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0002",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 87266.38,
+   "want": 87266.38,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0002",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 9950.77,
+   "want": 9950.77,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0002",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 3,
+   "want": 3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0002",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 22,
+   "want": 22,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0002",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 16890.93,
+   "want": 16890.93,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0002",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0003",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Grace C. Okafor",
+   "want": "Grace C. Okafor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0003",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "NORTHWIND MFG CO",
+   "want": "NORTHWIND MFG CO",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0003",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0003",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-07-23",
+   "want": "2026-07-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0003",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 29437.26,
+   "want": 29437.26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0003",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 7853.72,
+   "want": 7853.72,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0003",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 14,
+   "want": 14,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0003",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 15,
+   "want": 15,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0003",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 16097.48,
+   "want": 16097.48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0003",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0004",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Amara R. Chen",
+   "want": "Amara R. Chen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0004",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "ACME LOGISTICS INC",
+   "want": "ACME LOGISTICS INC",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0004",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0004",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-11-15",
+   "want": "2026-11-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0004",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 104753.16,
+   "want": 104753.16,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0004",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 9614.85,
+   "want": 9614.85,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0004",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 17,
+   "want": 17,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0004",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 22,
+   "want": 22,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0004",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 2470.09,
+   "want": 2470.09,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0004",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0005",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Fatima K. Correa",
+   "want": "Fatima K. Correa",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0005",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "MERIDIAN HEALTHCARE PARTNERS",
+   "want": "MERIDIAN HEALTHCARE PARTNERS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0005",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0005",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-10-24",
+   "want": "2026-10-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0005",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 76789.25,
+   "want": 76789.25,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0005",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 3424.97,
+   "want": 3424.97,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0005",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 17,
+   "want": 17,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0005",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 22,
+   "want": 22,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0005",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0005",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0006",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Priya N. Whitfield",
+   "want": "Priya N. Whitfield",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0006",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "PINEHURST FINANCIAL",
+   "want": "PINEHURST FINANCIAL",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0006",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0006",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-07-23",
+   "want": "2026-07-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0006",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 80925.47,
+   "want": 80925.47,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0006",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 5074.13,
+   "want": 5074.13,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0006",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 12,
+   "want": 12,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0006",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 14,
+   "want": 14,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0006",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0006",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0007",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Elena B. Silva",
+   "want": "Elena B. Silva",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0007",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "NORTHWIND MFG CO",
+   "want": "NORTHWIND MFG CO",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0007",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0007",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-06-18",
+   "want": "2026-06-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0007",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 60779.19,
+   "want": 60779.19,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0007",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0007",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0007",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0007",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0007",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0008",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Malik A. Tanaka",
+   "want": "Malik A. Tanaka",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0008",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BRIGHTPATH HEALTH SYSTEMS",
+   "want": "BRIGHTPATH HEALTH SYSTEMS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0008",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0008",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-03-25",
+   "want": "2026-03-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0008",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 13205.93,
+   "want": 13205.93,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0008",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0008",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0008",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0008",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0008",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0009",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Yara F. Petrov",
+   "want": "Yara F. Petrov",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0009",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "NORTHWIND MFG CO",
+   "want": "NORTHWIND MFG CO",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0009",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "monthly",
+   "want": "monthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0009",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-03-23",
+   "want": "2026-03-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0009",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 12893.49,
+   "want": 12893.49,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0009",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 6442.81,
+   "want": 6442.81,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0009",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 3,
+   "want": 3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0009",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 3,
+   "want": 3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0009",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0009",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0010",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Amara A. Kowalski",
+   "want": "Amara A. Kowalski",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0010",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "ACME LOGISTICS INC",
+   "want": "ACME LOGISTICS INC",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0010",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0010",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-11-27",
+   "want": "2026-11-27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0010",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 67595.39,
+   "want": 67595.39,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0010",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 6070.07,
+   "want": 6070.07,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0010",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 15,
+   "want": 15,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0010",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 22,
+   "want": 22,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0010",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0010",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0011",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Morgan L. Correa",
+   "want": "Morgan L. Correa",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0011",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "NORTHWIND MFG CO",
+   "want": "NORTHWIND MFG CO",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0011",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0011",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-08-20",
+   "want": "2026-08-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0011",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 35756.61,
+   "want": 35756.61,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0011",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 4912.09,
+   "want": 4912.09,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0011",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 16,
+   "want": 16,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0011",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 16,
+   "want": 16,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0011",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 8079.48,
+   "want": 8079.48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0011",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0012",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Avery N. Alvarez",
+   "want": "Avery N. Alvarez",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0012",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "SUMMIT RETAIL GROUP",
+   "want": "SUMMIT RETAIL GROUP",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0012",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0012",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-05-20",
+   "want": "2026-05-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0012",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 50212.24,
+   "want": 50212.24,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0012",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 12040.31,
+   "want": 12040.31,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0012",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 10,
+   "want": 10,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0012",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 22,
+   "want": 22,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0012",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0012",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0013",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Amara A. Abara",
+   "want": "Amara A. Abara",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0013",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "CLEARVIEW CONSULTING LLC",
+   "want": "CLEARVIEW CONSULTING LLC",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0013",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "monthly",
+   "want": "monthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0013",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-04-20",
+   "want": "2026-04-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0013",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 23902.56,
+   "want": 23902.56,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0013",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 3689.28,
+   "want": 3689.28,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0013",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 4,
+   "want": 4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0013",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 4,
+   "want": 4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0013",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 14681.62,
+   "want": 14681.62,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0013",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0014",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Priya N. Alvarez",
+   "want": "Priya N. Alvarez",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0014",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "SUMMIT RETAIL GROUP",
+   "want": "SUMMIT RETAIL GROUP",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0014",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0014",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-04-21",
+   "want": "2026-04-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0014",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 23274.9,
+   "want": 23274.9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0014",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0014",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0014",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0014",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 13350.45,
+   "want": 13350.45,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0014",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0015",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Anton A. Osei",
+   "want": "Anton A. Osei",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0015",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "PINEHURST FINANCIAL",
+   "want": "PINEHURST FINANCIAL",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0015",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0015",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-03-25",
+   "want": "2026-03-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0015",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 23002.32,
+   "want": 23002.32,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0015",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0015",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0015",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0015",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 11907.64,
+   "want": 11907.64,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0015",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0016",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Grace H. Rossi",
+   "want": "Grace H. Rossi",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0016",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BRIGHTPATH HEALTH SYSTEMS",
+   "want": "BRIGHTPATH HEALTH SYSTEMS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0016",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0016",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-04-21",
+   "want": "2026-04-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0016",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 33124.63,
+   "want": 33124.63,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0016",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 13984.9,
+   "want": 13984.9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0016",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 6,
+   "want": 6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0016",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 17,
+   "want": 17,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0016",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0016",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0017",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Grace O. Osei",
+   "want": "Grace O. Osei",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0017",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "PINEHURST FINANCIAL",
+   "want": "PINEHURST FINANCIAL",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0017",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0017",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-08-16",
+   "want": "2026-08-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0017",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 84690.31,
+   "want": 84690.31,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0017",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 13235.67,
+   "want": 13235.67,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0017",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 14,
+   "want": 14,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0017",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 16,
+   "want": 16,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0017",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0017",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0018",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Elena R. Silva",
+   "want": "Elena R. Silva",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0018",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "ACME LOGISTICS INC",
+   "want": "ACME LOGISTICS INC",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0018",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0018",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-08-16",
+   "want": "2026-08-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0018",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 41623.04,
+   "want": 41623.04,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0018",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0018",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0018",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0018",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0018",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0019",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Malik N. Reyes",
+   "want": "Malik N. Reyes",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0019",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BLUE HARBOR LOGISTICS",
+   "want": "BLUE HARBOR LOGISTICS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0019",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0019",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-03-21",
+   "want": "2026-03-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0019",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 26816.48,
+   "want": 26816.48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0019",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 855.47,
+   "want": 855.47,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0019",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 6,
+   "want": 6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0019",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 6,
+   "want": 6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0019",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 7874.26,
+   "want": 7874.26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0019",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0020",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Kenji A. Duarte",
+   "want": "Kenji A. Duarte",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0020",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "CLEARVIEW CONSULTING LLC",
+   "want": "CLEARVIEW CONSULTING LLC",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0020",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "monthly",
+   "want": "monthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0020",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-05-17",
+   "want": "2026-05-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0020",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 17502.83,
+   "want": 17502.83,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0020",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0020",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0020",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0020",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 9360.88,
+   "want": 9360.88,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0020",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0021",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Wei D. Silva",
+   "want": "Wei D. Silva",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0021",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BRIGHTPATH HEALTH SYSTEMS",
+   "want": "BRIGHTPATH HEALTH SYSTEMS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0021",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0021",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-11-24",
+   "want": "2026-11-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0021",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 122954.25,
+   "want": 122954.25,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0021",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 1816.57,
+   "want": 1816.57,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0021",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 23,
+   "want": 23,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0021",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0021",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 12554.44,
+   "want": 12554.44,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0021",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0022",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Jordan S. Silva",
+   "want": "Jordan S. Silva",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0022",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "NORTHWIND MFG CO",
+   "want": "NORTHWIND MFG CO",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0022",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "monthly",
+   "want": "monthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0022",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-05-16",
+   "want": "2026-05-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0022",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 23784.1,
+   "want": 23784.1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0022",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 12413.99,
+   "want": 12413.99,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0022",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 4,
+   "want": 4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0022",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 5,
+   "want": 5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0022",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 1557.14,
+   "want": 1557.14,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0022",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "yes",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0023",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Diego T. Rossi",
+   "want": "Diego T. Rossi",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0023",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "MERIDIAN HEALTHCARE PARTNERS",
+   "want": "MERIDIAN HEALTHCARE PARTNERS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0023",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0023",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-03-28",
+   "want": "2026-03-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0023",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 23272.88,
+   "want": 23272.88,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0023",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0023",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0023",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0023",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 1470.47,
+   "want": 1470.47,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0023",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0024",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Sofia K. Kowalski",
+   "want": "Sofia K. Kowalski",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0024",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "ACME LOGISTICS INC",
+   "want": "ACME LOGISTICS INC",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0024",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0024",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-04-23",
+   "want": "2026-04-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0024",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 38580.17,
+   "want": 38580.17,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0024",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 11522.68,
+   "want": 11522.68,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0024",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 9,
+   "want": 9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0024",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 9,
+   "want": 9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0024",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 2359.75,
+   "want": 2359.75,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0024",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0025",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Tobias B. Kowalski",
+   "want": "Tobias B. Kowalski",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0025",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BLUE HARBOR LOGISTICS",
+   "want": "BLUE HARBOR LOGISTICS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0025",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0025",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-10-26",
+   "want": "2026-10-26",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0025",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 79074.08,
+   "want": 79074.08,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0025",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0025",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0025",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0025",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 17853.81,
+   "want": 17853.81,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0025",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0026",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Yara O. Alvarez",
+   "want": "Yara O. Alvarez",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0026",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BRIGHTPATH HEALTH SYSTEMS",
+   "want": "BRIGHTPATH HEALTH SYSTEMS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0026",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "monthly",
+   "want": "monthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0026",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-09-21",
+   "want": "2026-09-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0026",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 47219.32,
+   "want": 47219.32,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0026",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 9862.95,
+   "want": 9862.95,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0026",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 7,
+   "want": 7,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0026",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 9,
+   "want": 9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0026",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 13597.22,
+   "want": 13597.22,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0026",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0027",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Ines A. Alvarez",
+   "want": "Ines A. Alvarez",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0027",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "NORTHWIND MFG CO",
+   "want": "NORTHWIND MFG CO",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0027",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0027",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-03-19",
+   "want": "2026-03-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0027",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 21936.33,
+   "want": 21936.33,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0027",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 6281.97,
+   "want": 6281.97,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0027",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 4,
+   "want": 4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0027",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 6,
+   "want": 6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0027",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0027",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0028",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Liam D. Okafor",
+   "want": "Liam D. Okafor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0028",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "MERIDIAN HEALTHCARE PARTNERS",
+   "want": "MERIDIAN HEALTHCARE PARTNERS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0028",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0028",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-03-20",
+   "want": "2026-03-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0028",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 15487.49,
+   "want": 15487.49,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0028",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 13797.9,
+   "want": 13797.9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0028",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 5,
+   "want": 5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0028",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 13,
+   "want": 13,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0028",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 8988.48,
+   "want": 8988.48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0028",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0029",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Nadia L. Okafor",
+   "want": "Nadia L. Okafor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0029",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "IRONGATE CONSTRUCTION",
+   "want": "IRONGATE CONSTRUCTION",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0029",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0029",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-04-16",
+   "want": "2026-04-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0029",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 29594.9,
+   "want": 29594.9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0029",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 12657.82,
+   "want": 12657.82,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0029",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 5,
+   "want": 5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0029",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 9,
+   "want": 9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0029",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0029",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0030",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Avery N. Fischer",
+   "want": "Avery N. Fischer",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0030",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "PINEHURST FINANCIAL",
+   "want": "PINEHURST FINANCIAL",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0030",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "monthly",
+   "want": "monthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0030",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-03-23",
+   "want": "2026-03-23",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0030",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 12459.25,
+   "want": 12459.25,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0030",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 7990.5,
+   "want": 7990.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0030",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 3,
+   "want": 3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0030",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 3,
+   "want": 3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0030",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 3826.29,
+   "want": 3826.29,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0030",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0031",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Diego R. Petrov",
+   "want": "Diego R. Petrov",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0031",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "SUMMIT RETAIL GROUP",
+   "want": "SUMMIT RETAIL GROUP",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0031",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0031",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-10-16",
+   "want": "2026-10-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0031",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 118209.43,
+   "want": 118209.43,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0031",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 12253.76,
+   "want": 12253.76,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0031",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 16,
+   "want": 16,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0031",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 22,
+   "want": 22,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0031",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 13801.57,
+   "want": 13801.57,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0031",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0032",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Priya C. Chen",
+   "want": "Priya C. Chen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0032",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "CLEARVIEW CONSULTING LLC",
+   "want": "CLEARVIEW CONSULTING LLC",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0032",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0032",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-03-21",
+   "want": "2026-03-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0032",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 20611.06,
+   "want": 20611.06,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0032",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0032",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0032",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0032",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 737.28,
+   "want": 737.28,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0032",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0033",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Renata B. Abara",
+   "want": "Renata B. Abara",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0033",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "ACME LOGISTICS INC",
+   "want": "ACME LOGISTICS INC",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0033",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0033",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-11-15",
+   "want": "2026-11-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0033",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 66647.76,
+   "want": 66647.76,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0033",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 9233.23,
+   "want": 9233.23,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0033",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 18,
+   "want": 18,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0033",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 24,
+   "want": 24,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0033",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 14371.61,
+   "want": 14371.61,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0033",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0034",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Anton D. Kowalski",
+   "want": "Anton D. Kowalski",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0034",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BLUE HARBOR LOGISTICS",
+   "want": "BLUE HARBOR LOGISTICS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0034",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0034",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-07-27",
+   "want": "2026-07-27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0034",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 29366.92,
+   "want": 29366.92,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0034",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0034",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0034",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0034",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 16198.52,
+   "want": 16198.52,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0034",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0035",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Jordan K. Bergstrom",
+   "want": "Jordan K. Bergstrom",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0035",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BLUE HARBOR LOGISTICS",
+   "want": "BLUE HARBOR LOGISTICS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0035",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0035",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-08-18",
+   "want": "2026-08-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0035",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 54565.54,
+   "want": 54565.54,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0035",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0035",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0035",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0035",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 11140.88,
+   "want": 11140.88,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0035",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0036",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Grace N. Correa",
+   "want": "Grace N. Correa",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0036",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "MERIDIAN HEALTHCARE PARTNERS",
+   "want": "MERIDIAN HEALTHCARE PARTNERS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0036",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0036",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-11-21",
+   "want": "2026-11-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0036",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 110460.5,
+   "want": 110460.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0036",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 5190.01,
+   "want": 5190.01,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0036",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 34,
+   "want": 34,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0036",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 48,
+   "want": 48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0036",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 16502.59,
+   "want": 16502.59,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0036",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0037",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Jordan N. Tanaka",
+   "want": "Jordan N. Tanaka",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0037",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "CRESTLINE SCHOOL DISTRICT",
+   "want": "CRESTLINE SCHOOL DISTRICT",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0037",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0037",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-10-15",
+   "want": "2026-10-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0037",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 39483.77,
+   "want": 39483.77,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0037",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 8553.4,
+   "want": 8553.4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0037",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 33,
+   "want": 33,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0037",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 43,
+   "want": 43,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0037",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 9584.24,
+   "want": 9584.24,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0037",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0038",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Kenji O. Fischer",
+   "want": "Kenji O. Fischer",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0038",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "CLEARVIEW CONSULTING LLC",
+   "want": "CLEARVIEW CONSULTING LLC",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0038",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0038",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-05-24",
+   "want": "2026-05-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0038",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 30754.72,
+   "want": 30754.72,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0038",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 2741.33,
+   "want": 2741.33,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0038",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 8,
+   "want": 8,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0038",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 11,
+   "want": 11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0038",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 17161.16,
+   "want": 17161.16,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0038",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0039",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Tobias W. Abara",
+   "want": "Tobias W. Abara",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0039",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "PINEHURST FINANCIAL",
+   "want": "PINEHURST FINANCIAL",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0039",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0039",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-08-20",
+   "want": "2026-08-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0039",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 60103.43,
+   "want": 60103.43,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0039",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0039",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0039",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0039",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 6430.5,
+   "want": 6430.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0039",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0040",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Diego C. Chen",
+   "want": "Diego C. Chen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0040",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "MERIDIAN HEALTHCARE PARTNERS",
+   "want": "MERIDIAN HEALTHCARE PARTNERS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0040",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0040",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-04-24",
+   "want": "2026-04-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0040",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 14298.49,
+   "want": 14298.49,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0040",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 9068.77,
+   "want": 9068.77,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0040",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 6,
+   "want": 6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0040",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 8,
+   "want": 8,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0040",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0040",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0041",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Jordan F. Duarte",
+   "want": "Jordan F. Duarte",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0041",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BLUE HARBOR LOGISTICS",
+   "want": "BLUE HARBOR LOGISTICS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0041",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0041",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-04-26",
+   "want": "2026-04-26",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0041",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 45661.14,
+   "want": 45661.14,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0041",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 13082.08,
+   "want": 13082.08,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0041",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 8,
+   "want": 8,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0041",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 8,
+   "want": 8,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0041",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0041",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0042",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Riley S. Petrov",
+   "want": "Riley S. Petrov",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0042",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "VANTAGE FOOD SERVICES",
+   "want": "VANTAGE FOOD SERVICES",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0042",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0042",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-06-16",
+   "want": "2026-06-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0042",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 37837.95,
+   "want": 37837.95,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0042",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0042",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0042",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0042",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0042",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0043",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Diego H. Fischer",
+   "want": "Diego H. Fischer",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0043",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "IRONGATE CONSTRUCTION",
+   "want": "IRONGATE CONSTRUCTION",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0043",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "monthly",
+   "want": "monthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0043",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-04-17",
+   "want": "2026-04-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0043",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 44457.35,
+   "want": 44457.35,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0043",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 1578.34,
+   "want": 1578.34,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0043",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 3,
+   "want": 3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0043",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 4,
+   "want": 4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0043",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0043",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0044",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Anton O. Petrov",
+   "want": "Anton O. Petrov",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0044",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "CRESTLINE SCHOOL DISTRICT",
+   "want": "CRESTLINE SCHOOL DISTRICT",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0044",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0044",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-09-22",
+   "want": "2026-09-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0044",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 52216.45,
+   "want": 52216.45,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0044",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 12487.51,
+   "want": 12487.51,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0044",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 19,
+   "want": 19,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0044",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 20,
+   "want": 20,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0044",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0044",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0045",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Casey A. Nakamura",
+   "want": "Casey A. Nakamura",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0045",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "SUMMIT RETAIL GROUP",
+   "want": "SUMMIT RETAIL GROUP",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0045",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0045",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-03-26",
+   "want": "2026-03-26",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0045",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 32252.9,
+   "want": 32252.9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0045",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 13167.19,
+   "want": 13167.19,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0045",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 10,
+   "want": 10,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0045",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 13,
+   "want": 13,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0045",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0045",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0046",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Grace O. Kowalski",
+   "want": "Grace O. Kowalski",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0046",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "SUMMIT RETAIL GROUP",
+   "want": "SUMMIT RETAIL GROUP",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0046",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0046",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-06-16",
+   "want": "2026-06-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0046",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 38137.38,
+   "want": 38137.38,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0046",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 12376.26,
+   "want": 12376.26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0046",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 9,
+   "want": 9,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0046",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 13,
+   "want": 13,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0046",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 4721.92,
+   "want": 4721.92,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0046",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0047",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Diego C. Duarte",
+   "want": "Diego C. Duarte",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0047",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "SUMMIT RETAIL GROUP",
+   "want": "SUMMIT RETAIL GROUP",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0047",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0047",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-09-21",
+   "want": "2026-09-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0047",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 103315.88,
+   "want": 103315.88,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0047",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0047",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0047",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0047",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0047",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0048",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Sofia L. Silva",
+   "want": "Sofia L. Silva",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0048",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "SUMMIT RETAIL GROUP",
+   "want": "SUMMIT RETAIL GROUP",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0048",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0048",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-06-18",
+   "want": "2026-06-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0048",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 30377.13,
+   "want": 30377.13,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0048",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 12343.95,
+   "want": 12343.95,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0048",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 18,
+   "want": 18,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0048",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 26,
+   "want": 26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0048",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 4834.64,
+   "want": 4834.64,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0048",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0049",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Diego N. Abara",
+   "want": "Diego N. Abara",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0049",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "PINEHURST FINANCIAL",
+   "want": "PINEHURST FINANCIAL",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0049",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0049",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-07-18",
+   "want": "2026-07-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0049",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 38116.41,
+   "want": 38116.41,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0049",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 6514.26,
+   "want": 6514.26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0049",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 11,
+   "want": 11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0049",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 15,
+   "want": 15,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0049",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 6321.51,
+   "want": 6321.51,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0049",
+   "field": "bonus_recurring",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0050",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Malik C. Rossi",
+   "want": "Malik C. Rossi",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0050",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "VANTAGE FOOD SERVICES",
+   "want": "VANTAGE FOOD SERVICES",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0050",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0050",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-08-15",
+   "want": "2026-08-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0050",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 43197.27,
+   "want": 43197.27,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0050",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0050",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0050",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0050",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0050",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0051",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Morgan O. Osei",
+   "want": "Morgan O. Osei",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0051",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "SUMMIT RETAIL GROUP",
+   "want": "SUMMIT RETAIL GROUP",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0051",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "semimonthly",
+   "want": "semimonthly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0051",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-08-26",
+   "want": "2026-08-26",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0051",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 49635.39,
+   "want": 49635.39,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0051",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 7208.23,
+   "want": 7208.23,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0051",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 11,
+   "want": 11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0051",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 16,
+   "want": 16,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0051",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0051",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0052",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Fatima H. Chen",
+   "want": "Fatima H. Chen",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0052",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "CRESTLINE SCHOOL DISTRICT",
+   "want": "CRESTLINE SCHOOL DISTRICT",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0052",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0052",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-07-16",
+   "want": "2026-07-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0052",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 40147.11,
+   "want": 40147.11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0052",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 5803.57,
+   "want": 5803.57,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0052",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 13,
+   "want": 13,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0052",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 15,
+   "want": 15,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0052",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0052",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0053",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Marcus A. Tanaka",
+   "want": "Marcus A. Tanaka",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0053",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "PINEHURST FINANCIAL",
+   "want": "PINEHURST FINANCIAL",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0053",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0053",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-04-27",
+   "want": "2026-04-27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0053",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 46968.83,
+   "want": 46968.83,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0053",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0053",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0053",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0053",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0053",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0054",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Renata R. Petrov",
+   "want": "Renata R. Petrov",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0054",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BLUE HARBOR LOGISTICS",
+   "want": "BLUE HARBOR LOGISTICS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0054",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "weekly",
+   "want": "weekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0054",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-05-21",
+   "want": "2026-05-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0054",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 58923.94,
+   "want": 58923.94,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0054",
+   "field": "ytd_overtime_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0054",
+   "field": "overtime_periods_paid",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0054",
+   "field": "overtime_periods_total",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0054",
+   "field": "ytd_bonus_pay",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0054",
+   "field": "bonus_recurring",
+   "verdict": "abstained",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0055",
+   "field": "employee_name",
+   "verdict": "hit",
+   "got": "Jordan L. Correa",
+   "want": "Jordan L. Correa",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0055",
+   "field": "employer_name",
+   "verdict": "hit",
+   "got": "BRIGHTPATH HEALTH SYSTEMS",
+   "want": "BRIGHTPATH HEALTH SYSTEMS",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0055",
+   "field": "pay_frequency",
+   "verdict": "hit",
+   "got": "biweekly",
+   "want": "biweekly",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IV-0055",
+   "field": "pay_period_end",
+   "verdict": "hit",
+   "got": "2026-06-15",
+   "want": "2026-06-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0055",
+   "field": "ytd_base_pay",
+   "verdict": "hit",
+   "got": 39982.21,
+   "want": 39982.21,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0055",
+   "field": "ytd_overtime_pay",
+   "verdict": "hit",
+   "got": 2525.57,
+   "want": 2525.57,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0055",
+   "field": "overtime_periods_paid",
+   "verdict": "hit",
+   "got": 7,
+   "want": 7,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0055",
+   "field": "overtime_periods_total",
+   "verdict": "hit",
+   "got": 13,
+   "want": 13,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0055",
+   "field": "ytd_bonus_pay",
+   "verdict": "hit",
+   "got": 316.81,
+   "want": 316.81,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IV-0055",
+   "field": "bonus_recurring",
+   "verdict": "wrong",
+   "got": "no",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "true_positive": 6,
+  "false_positive": 8,
+  "true_negative": 38,
+  "false_negative": 3,
+  "not_applicable": 0,
+  "recall": 0.6667,
+  "precision": 0.4286,
+  "rows": [
+   {
+    "doc": "IV-0001",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "IV-0002",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0003",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "IV-0004",
+    "want": false,
+    "got": true,
+    "verdict": "false_positive"
+   },
+   {
+    "doc": "IV-0005",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0006",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0007",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0008",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0009",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0010",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0011",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "IV-0012",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0013",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0014",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0015",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0016",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0017",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0018",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0019",
+    "want": false,
+    "got": true,
+    "verdict": "false_positive"
+   },
+   {
+    "doc": "IV-0020",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "IV-0021",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0022",
+    "want": true,
+    "got": false,
+    "verdict": "false_negative"
+   },
+   {
+    "doc": "IV-0023",
+    "want": false,
+    "got": true,
+    "verdict": "false_positive"
+   },
+   {
+    "doc": "IV-0024",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0025",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0026",
+    "want": false,
+    "got": true,
+    "verdict": "false_positive"
+   },
+   {
+    "doc": "IV-0027",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0028",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "IV-0029",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0030",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0031",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "IV-0032",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0033",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "IV-0034",
+    "want": false,
+    "got": true,
+    "verdict": "false_positive"
+   },
+   {
+    "doc": "IV-0035",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0036",
+    "want": true,
+    "got": true,
+    "verdict": "true_positive"
+   },
+   {
+    "doc": "IV-0037",
+    "want": false,
+    "got": true,
+    "verdict": "false_positive"
+   },
+   {
+    "doc": "IV-0038",
+    "want": false,
+    "got": true,
+    "verdict": "false_positive"
+   },
+   {
+    "doc": "IV-0039",
+    "want": false,
+    "got": true,
+    "verdict": "false_positive"
+   },
+   {
+    "doc": "IV-0040",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0041",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0042",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0043",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0044",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0045",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0046",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0047",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0048",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0049",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0050",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0051",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0052",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0053",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0054",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   },
+   {
+    "doc": "IV-0055",
+    "want": false,
+    "got": false,
+    "verdict": "true_negative"
+   }
+  ]
+ },
+ "prompt_parts": [],
+ "sections_used": [],
+ "raw_text": "",
+ "max_tokens": 4000
+}
