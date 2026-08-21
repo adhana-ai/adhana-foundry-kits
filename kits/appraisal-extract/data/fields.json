@@ -1,0 +1,25 @@
+{
+ "fields": [
+  {"name": "property_address", "type": "string",
+   "hint": "the subject property's address, verbatim"},
+  {"name": "appraiser_name", "type": "string",
+   "hint": "the appraiser's name"},
+  {"name": "effective_date", "type": "string",
+   "hint": "the appraisal's effective (value) date, YYYY-MM-DD"},
+  {"name": "report_date", "type": "string",
+   "hint": "the date the report was written, YYYY-MM-DD"},
+  {"name": "approach_used", "type": "enum",
+   "values": ["sales_comparison", "cost", "income"],
+   "hint": "the valuation approach stated on the report"},
+  {"name": "reconciled_value", "type": "number",
+   "hint": "the final reconciled value opinion, no currency symbol or commas"},
+  {"name": "gross_living_area_sqft", "type": "integer",
+   "hint": "the subject's gross living area in square feet"},
+  {"name": "comparable_count", "type": "integer",
+   "hint": "how many comparable sales the report states it used"},
+  {"name": "extraordinary_assumption_present", "type": "enum", "values": ["yes", "no"],
+   "hint": "does the report state an extraordinary assumption ANYWHERE in its text -- under a dedicated 'Extraordinary Assumptions' heading, OR embedded in the prose of another section (Scope of Work, Comments, etc.)? Read the whole report; do not check only a labelled section."},
+  {"name": "extraordinary_assumption_text", "type": "string",
+   "hint": "the extraordinary assumption's text, copied verbatim from wherever it appears, or null if the report states none"}
+ ]
+}
