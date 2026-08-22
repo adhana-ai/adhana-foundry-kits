@@ -1,0 +1,95 @@
+{
+ "doc": "LWP-0005",
+ "gold": {
+  "parties_uncovered": 2,
+  "first_gap_party": "Linden Sheet Metal",
+  "first_gap_reason": "notice_after_waiver"
+ },
+ "model": "deepseek-v4-flash",
+ "why": "Both scored runs answered LWP-0005 correctly. The FIRST replay captured for the LLM lens did not -- it named Stanton Fixtures / conditional_stale (the package's SECOND gap) and missed Linden Sheet Metal / notice_after_waiver entirely, reporting 1 uncovered party instead of 2. Three further calls were then made, same model, same prompt, same package, to find out whether that was a one-off. All three were correct.",
+ "trials": [
+  {
+   "trial": 0,
+   "output_tokens": 152,
+   "input_tokens": 2049,
+   "finish_reason": "stop",
+   "parties_uncovered": 1,
+   "first_gap_party": "Stanton Fixtures",
+   "first_gap_reason": "conditional_stale",
+   "matches_gold": false,
+   "needs_hold": true,
+   "self_check": {
+    "party_agrees": true,
+    "reason_agrees": true,
+    "party_exists": true
+   },
+   "raw_text": "{\n  \"package_id\": \"PA-2027-188\",\n  \"project_name\": \"Cedar Point Transit Center\",\n  \"pay_app_number\": \"Application 08\",\n  \"period_through\": \"2027-01-31\",\n  \"payment_amount_usd\": 316504.01,\n  \"prior_payment_cleared\": \"no\",\n  \"release_status\": \"scheduled\",\n  \"coordinator_note\": \"Waiver file reviewed at intake and it looked complete.\",\n  \"parties_uncovered\": 1,\n  \"first_gap_party\": \"Stanton Fixtures\",\n  \"first_gap_reason\": \"conditional_stale\"\n}"
+  },
+  {
+   "trial": 1,
+   "output_tokens": 937,
+   "input_tokens": 2049,
+   "finish_reason": "stop",
+   "parties_uncovered": 2,
+   "first_gap_party": "Linden Sheet Metal",
+   "first_gap_reason": "notice_after_waiver",
+   "matches_gold": true,
+   "needs_hold": true,
+   "self_check": {
+    "party_agrees": true,
+    "reason_agrees": true,
+    "party_exists": true
+   },
+   "raw_text": "{\n  \"package_id\": \"PA-2027-188\",\n  \"project_name\": \"Cedar Point Transit Center\",\n  \"pay_app_number\": \"Application 08\",\n  \"period_through\": \"2027-01-31\",\n  \"payment_amount_usd\": 316504.01,\n  \"prior_payment_cleared\": \"no\",\n  \"release_status\": \"scheduled\",\n  \"coordinator_note\": \"Waiver file reviewed at intake and it looked complete.\",\n  \"parties_uncovered\": 2,\n  \"first_gap_party\": \"Linden Sheet Metal\",\n  \"first_gap_reason\": \"notice_after_waiver\"\n}"
+  },
+  {
+   "trial": 2,
+   "output_tokens": 1001,
+   "input_tokens": 2049,
+   "finish_reason": "stop",
+   "parties_uncovered": 2,
+   "first_gap_party": "Linden Sheet Metal",
+   "first_gap_reason": "notice_after_waiver",
+   "matches_gold": true,
+   "needs_hold": true,
+   "self_check": {
+    "party_agrees": true,
+    "reason_agrees": true,
+    "party_exists": true
+   },
+   "raw_text": "{\n  \"package_id\": \"PA-2027-188\",\n  \"project_name\": \"Cedar Point Transit Center\",\n  \"pay_app_number\": \"Application 08\",\n  \"period_through\": \"2027-01-31\",\n  \"payment_amount_usd\": 316504.01,\n  \"prior_payment_cleared\": \"no\",\n  \"release_status\": \"scheduled\",\n  \"coordinator_note\": \"Waiver file reviewed at intake and it looked complete.\",\n  \"parties_uncovered\": 2,\n  \"first_gap_party\": \"Linden Sheet Metal\",\n  \"first_gap_reason\": \"notice_after_waiver\"\n}"
+  },
+  {
+   "trial": 3,
+   "output_tokens": 1015,
+   "input_tokens": 2049,
+   "finish_reason": "stop",
+   "parties_uncovered": 2,
+   "first_gap_party": "Linden Sheet Metal",
+   "first_gap_reason": "notice_after_waiver",
+   "matches_gold": true,
+   "needs_hold": true,
+   "self_check": {
+    "party_agrees": true,
+    "reason_agrees": true,
+    "party_exists": true
+   },
+   "raw_text": "{\"package_id\":\"PA-2027-188\",\"project_name\":\"Cedar Point Transit Center\",\"pay_app_number\":\"Application 08\",\"period_through\":\"2027-01-31\",\"payment_amount_usd\":316504.01,\"prior_payment_cleared\":\"no\",\"release_status\":\"scheduled\",\"coordinator_note\":\"Waiver file reviewed at intake and it looked complete.\",\"parties_uncovered\":2,\"first_gap_party\":\"Linden Sheet Metal\",\"first_gap_reason\":\"notice_after_waiver\"}"
+  }
+ ],
+ "finding": "Four replays, one wrong. The wrong one is the ONLY one that did not work the rule in the open: 152 output tokens against 937, 1001 and 1015 on the three correct ones. Reply length is the visible difference, and it is available with no gold at all -- unlike the kit's own self_check, which passed cleanly on the wrong answer (the party named does exist in the package, and the count, the party and the reason all agreed with each other). That is the exact blindness src/extract.py::self_check documents, demonstrated live.",
+ "counts": {
+  "replays": 4,
+  "replays_matching_gold": 3,
+  "scored_runs_on_this_package": 2,
+  "scored_runs_matching_gold": 2,
+  "output_tokens_correct": [
+   937,
+   1001,
+   1015
+  ],
+  "output_tokens_wrong": [
+   152
+  ]
+ }
+}

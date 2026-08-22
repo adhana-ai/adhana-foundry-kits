@@ -1,0 +1,7365 @@
+{
+ "run_id": "b000-rules",
+ "stub": false,
+ "model": "rules-baseline",
+ "provider": "none",
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 0,
+ "latency_p95_ms": 0,
+ "latency_ms_all": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "wall_seconds": 0.0,
+ "input_tokens_total": 0,
+ "output_tokens_total": 0,
+ "output_tokens_max": null,
+ "output_tokens_min": null,
+ "scores": {
+  "extraction_cells": 605,
+  "extraction_accuracy": 0.8281,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 363,
+  "values_with_span": 0,
+  "non_spannable_fields": [
+   "first_gap_reason",
+   "parties_uncovered",
+   "prior_payment_cleared",
+   "release_status"
+  ],
+  "span_rate": 0.0
+ },
+ "by_field": {
+  "package_id": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "project_name": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "pay_app_number": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "period_through": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "payment_amount_usd": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "prior_payment_cleared": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "release_status": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "coordinator_note": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "parties_uncovered": {
+   "hit": 28,
+   "miss": 0,
+   "wrong": 27,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "first_gap_party": {
+   "hit": 17,
+   "miss": 10,
+   "wrong": 28,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "first_gap_reason": {
+   "hit": 16,
+   "miss": 0,
+   "wrong": 39,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "LWP-0001",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-350",
+   "want": "PA-2026-350",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0001",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0001",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 14",
+   "want": "Application 14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0001",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-01-31",
+   "want": "2026-01-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0001",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 524467.17,
+   "want": 524467.17,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0001",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0001",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0001",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "want": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0001",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0001",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Marchand Roofing",
+   "want": "Truxton Hoisting",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0001",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "period_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0002",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-956",
+   "want": "PA-2026-956",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0002",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0002",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 05",
+   "want": "Application 05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0002",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-01-31",
+   "want": "2026-01-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0002",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 161203.27,
+   "want": 161203.27,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0002",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0002",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0002",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "want": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0002",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0002",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Halden Concrete",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0002",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0003",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-697",
+   "want": "PA-2027-697",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0003",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Merritt Avenue Parking Structure",
+   "want": "Merritt Avenue Parking Structure",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0003",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 15",
+   "want": "Application 15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0003",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-02-28",
+   "want": "2027-02-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0003",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 175244.74,
+   "want": 175244.74,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0003",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0003",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0003",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Routine package. No concerns from the coordinator on this one.",
+   "want": "Routine package. No concerns from the coordinator on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0003",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0003",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0003",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0004",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-330",
+   "want": "PA-2027-330",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0004",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Merritt Avenue Parking Structure",
+   "want": "Merritt Avenue Parking Structure",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0004",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 05",
+   "want": "Application 05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0004",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-05-31",
+   "want": "2027-05-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0004",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 552060.69,
+   "want": 552060.69,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0004",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0004",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0004",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "want": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0004",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0004",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Ridgeline Mechanical",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0004",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0005",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-188",
+   "want": "PA-2027-188",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0005",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Cedar Point Transit Center",
+   "want": "Cedar Point Transit Center",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0005",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 08",
+   "want": "Application 08",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0005",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-01-31",
+   "want": "2027-01-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0005",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 316504.01,
+   "want": 316504.01,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0005",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0005",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0005",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file reviewed at intake and it looked complete.",
+   "want": "Waiver file reviewed at intake and it looked complete.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0005",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 0,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0005",
+   "field": "first_gap_party",
+   "verdict": "miss",
+   "got": null,
+   "want": "Linden Sheet Metal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0005",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "none",
+   "want": "notice_after_waiver",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0006",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-747",
+   "want": "PA-2027-747",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0006",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Northline Water Treatment Plant",
+   "want": "Northline Water Treatment Plant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0006",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 18",
+   "want": "Application 18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0006",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-01-31",
+   "want": "2027-01-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0006",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 218826.76,
+   "want": 218826.76,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0006",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0006",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0006",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "All waivers received and filed, nothing outstanding on this one.",
+   "want": "All waivers received and filed, nothing outstanding on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0006",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0006",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0006",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0007",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-447",
+   "want": "PA-2027-447",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0007",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Merritt Avenue Parking Structure",
+   "want": "Merritt Avenue Parking Structure",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0007",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 05",
+   "want": "Application 05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0007",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-03-31",
+   "want": "2027-03-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0007",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 149368.26,
+   "want": 149368.26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0007",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0007",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0007",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "want": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0007",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0007",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": "Ironwood Structural",
+   "want": "Ironwood Structural",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0007",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "no_waiver_on_file",
+   "want": "no_waiver_on_file",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0008",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-683",
+   "want": "PA-2026-683",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0008",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Cedar Point Transit Center",
+   "want": "Cedar Point Transit Center",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0008",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 11",
+   "want": "Application 11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0008",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-11-30",
+   "want": "2026-11-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0008",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 297018.44,
+   "want": 297018.44,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0008",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0008",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0008",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "want": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0008",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0008",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Oakfield Drywall",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0008",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0009",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-228",
+   "want": "PA-2026-228",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0009",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Vista Ridge Middle School",
+   "want": "Vista Ridge Middle School",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0009",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 16",
+   "want": "Application 16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0009",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-08-31",
+   "want": "2026-08-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0009",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 574430.85,
+   "want": 574430.85,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0009",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0009",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0009",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "want": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0009",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0009",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Marchand Roofing",
+   "want": "Hollis Fire Protection Supply",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0009",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "no_waiver_on_file",
+   "want": "no_waiver_on_file",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0010",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-955",
+   "want": "PA-2027-955",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0010",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Fallbrook Regional Hospital Wing",
+   "want": "Fallbrook Regional Hospital Wing",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0010",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 04",
+   "want": "Application 04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0010",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-06-30",
+   "want": "2027-06-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0010",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 111795.71,
+   "want": 111795.71,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0010",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0010",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0010",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Standard progress draw, paperwork came in clean this cycle.",
+   "want": "Standard progress draw, paperwork came in clean this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0010",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 0,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0010",
+   "field": "first_gap_party",
+   "verdict": "miss",
+   "got": null,
+   "want": "Delmar Elevator Parts",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0010",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "none",
+   "want": "conditional_stale",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0011",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-314",
+   "want": "PA-2026-314",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0011",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0011",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 14",
+   "want": "Application 14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0011",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-03-31",
+   "want": "2026-03-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0011",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 330746.89,
+   "want": 330746.89,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0011",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0011",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0011",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Standard progress draw, paperwork came in clean this cycle.",
+   "want": "Standard progress draw, paperwork came in clean this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0011",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 0,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0011",
+   "field": "first_gap_party",
+   "verdict": "miss",
+   "got": null,
+   "want": "Stanton Fixtures",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0011",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "none",
+   "want": "notice_after_waiver",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0012",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-457",
+   "want": "PA-2027-457",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0012",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Cedar Point Transit Center",
+   "want": "Cedar Point Transit Center",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0012",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 17",
+   "want": "Application 17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0012",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-05-31",
+   "want": "2027-05-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0012",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 626191.32,
+   "want": 626191.32,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0012",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0012",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0012",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "All waivers received and filed, nothing outstanding on this one.",
+   "want": "All waivers received and filed, nothing outstanding on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0012",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0012",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0012",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0013",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-415",
+   "want": "PA-2026-415",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0013",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Merritt Avenue Parking Structure",
+   "want": "Merritt Avenue Parking Structure",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0013",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 14",
+   "want": "Application 14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0013",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0013",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 359129.04,
+   "want": 359129.04,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0013",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0013",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0013",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "want": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0013",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0013",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": "Ridgeline Mechanical",
+   "want": "Ridgeline Mechanical",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0013",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "period_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0014",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-244",
+   "want": "PA-2026-244",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0014",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0014",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 19",
+   "want": "Application 19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0014",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-01-31",
+   "want": "2026-01-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0014",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 430278.34,
+   "want": 430278.34,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0014",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0014",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0014",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "want": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0014",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0014",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Oakfield Drywall",
+   "want": "Pinebrook Rebar",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0014",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "notice_after_waiver",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0015",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-444",
+   "want": "PA-2026-444",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0015",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Cedar Point Transit Center",
+   "want": "Cedar Point Transit Center",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0015",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 08",
+   "want": "Application 08",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0015",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-01-31",
+   "want": "2026-01-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0015",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 323875.82,
+   "want": 323875.82,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0015",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0015",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0015",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "want": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0015",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0015",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Beacon Electrical Contractors",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0015",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0016",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-249",
+   "want": "PA-2026-249",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0016",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Northline Water Treatment Plant",
+   "want": "Northline Water Treatment Plant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0016",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 14",
+   "want": "Application 14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0016",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-02-28",
+   "want": "2026-02-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0016",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 127859.23,
+   "want": 127859.23,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0016",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0016",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0016",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "want": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0016",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0016",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Torrey Glazing Systems",
+   "want": "Quarry Road Concrete Supply",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0016",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "period_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0017",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-309",
+   "want": "PA-2026-309",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0017",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Fallbrook Regional Hospital Wing",
+   "want": "Fallbrook Regional Hospital Wing",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0017",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 07",
+   "want": "Application 07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0017",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-11-30",
+   "want": "2026-11-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0017",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 597262.95,
+   "want": 597262.95,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0017",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0017",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0017",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "All waivers received and filed, nothing outstanding on this one.",
+   "want": "All waivers received and filed, nothing outstanding on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0017",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 0,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0017",
+   "field": "first_gap_party",
+   "verdict": "miss",
+   "got": null,
+   "want": "Pinebrook Rebar",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0017",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "none",
+   "want": "amount_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0018",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-586",
+   "want": "PA-2026-586",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0018",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Vista Ridge Middle School",
+   "want": "Vista Ridge Middle School",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0018",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 07",
+   "want": "Application 07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0018",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-11-30",
+   "want": "2026-11-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0018",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 619825.01,
+   "want": 619825.01,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0018",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0018",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0018",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Something looked off in the waiver file at intake, revisit before this one goes out.",
+   "want": "Something looked off in the waiver file at intake, revisit before this one goes out.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0018",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0018",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Torrey Glazing Systems",
+   "want": "Quarry Road Concrete Supply",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0018",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "amount_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0019",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-646",
+   "want": "PA-2026-646",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0019",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Cedar Point Transit Center",
+   "want": "Cedar Point Transit Center",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0019",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 19",
+   "want": "Application 19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0019",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-09-30",
+   "want": "2026-09-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0019",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 159846.69,
+   "want": 159846.69,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0019",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0019",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0019",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Routine package. No concerns from the coordinator on this one.",
+   "want": "Routine package. No concerns from the coordinator on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0019",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0019",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0019",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0020",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-975",
+   "want": "PA-2026-975",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0020",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0020",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 06",
+   "want": "Application 06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0020",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0020",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 86384.75,
+   "want": 86384.75,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0020",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0020",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0020",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "want": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0020",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0020",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Kestrel Plumbing",
+   "want": "Truxton Hoisting",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0020",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "period_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0021",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-717",
+   "want": "PA-2026-717",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0021",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Fallbrook Regional Hospital Wing",
+   "want": "Fallbrook Regional Hospital Wing",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0021",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 11",
+   "want": "Application 11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0021",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-05-31",
+   "want": "2026-05-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0021",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 494341.91,
+   "want": 494341.91,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0021",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0021",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0021",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Standard progress draw, paperwork came in clean this cycle.",
+   "want": "Standard progress draw, paperwork came in clean this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0021",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0021",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0021",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0022",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-782",
+   "want": "PA-2026-782",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0022",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Cedar Point Transit Center",
+   "want": "Cedar Point Transit Center",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0022",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 13",
+   "want": "Application 13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0022",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-07-31",
+   "want": "2026-07-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0022",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 537396.73,
+   "want": 537396.73,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0022",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0022",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0022",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Standard progress draw, paperwork came in clean this cycle.",
+   "want": "Standard progress draw, paperwork came in clean this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0022",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 0,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0022",
+   "field": "first_gap_party",
+   "verdict": "miss",
+   "got": null,
+   "want": "Calder Aggregates",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0022",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "none",
+   "want": "period_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0023",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-851",
+   "want": "PA-2026-851",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0023",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Harbor Gate Mixed-Use Block",
+   "want": "Harbor Gate Mixed-Use Block",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0023",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 04",
+   "want": "Application 04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0023",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0023",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 412844.26,
+   "want": 412844.26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0023",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0023",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0023",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Routine package. No concerns from the coordinator on this one.",
+   "want": "Routine package. No concerns from the coordinator on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0023",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0023",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0023",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0024",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-754",
+   "want": "PA-2027-754",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0024",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0024",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 19",
+   "want": "Application 19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0024",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-05-31",
+   "want": "2027-05-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0024",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 353562.74,
+   "want": 353562.74,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0024",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0024",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0024",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "want": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0024",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0024",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Beacon Electrical Contractors",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0024",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0025",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-745",
+   "want": "PA-2026-745",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0025",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Cedar Point Transit Center",
+   "want": "Cedar Point Transit Center",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0025",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 10",
+   "want": "Application 10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0025",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-12-31",
+   "want": "2026-12-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0025",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 218641.6,
+   "want": 218641.6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0025",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0025",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0025",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "All waivers received and filed, nothing outstanding on this one.",
+   "want": "All waivers received and filed, nothing outstanding on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0025",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 0,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0025",
+   "field": "first_gap_party",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ashby Insulation",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0025",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "none",
+   "want": "no_waiver_on_file",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0026",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-653",
+   "want": "PA-2026-653",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0026",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Merritt Avenue Parking Structure",
+   "want": "Merritt Avenue Parking Structure",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0026",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 17",
+   "want": "Application 17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0026",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-04-30",
+   "want": "2026-04-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0026",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 417488.68,
+   "want": 417488.68,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0026",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0026",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0026",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "want": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0026",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0026",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Halden Concrete",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0026",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0027",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-679",
+   "want": "PA-2027-679",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0027",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Harbor Gate Mixed-Use Block",
+   "want": "Harbor Gate Mixed-Use Block",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0027",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 13",
+   "want": "Application 13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0027",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-03-31",
+   "want": "2027-03-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0027",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 194752.32,
+   "want": 194752.32,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0027",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0027",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0027",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "want": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0027",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0027",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Beacon Electrical Contractors",
+   "want": "Truxton Hoisting",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0027",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "amount_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0028",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-273",
+   "want": "PA-2027-273",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0028",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Northline Water Treatment Plant",
+   "want": "Northline Water Treatment Plant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0028",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 16",
+   "want": "Application 16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0028",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-01-31",
+   "want": "2027-01-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0028",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 560172.35,
+   "want": 560172.35,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0028",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0028",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0028",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "want": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0028",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0028",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Oakfield Drywall",
+   "want": "Vance Steel Supply",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0028",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "no_waiver_on_file",
+   "want": "no_waiver_on_file",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0029",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-382",
+   "want": "PA-2026-382",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0029",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Harbor Gate Mixed-Use Block",
+   "want": "Harbor Gate Mixed-Use Block",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0029",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 06",
+   "want": "Application 06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0029",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-11-30",
+   "want": "2026-11-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0029",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 522661.62,
+   "want": 522661.62,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0029",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0029",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0029",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "want": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0029",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0029",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Torrey Glazing Systems",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0029",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0030",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-437",
+   "want": "PA-2026-437",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0030",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Vista Ridge Middle School",
+   "want": "Vista Ridge Middle School",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0030",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 16",
+   "want": "Application 16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0030",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-01-31",
+   "want": "2026-01-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0030",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 482034.35,
+   "want": 482034.35,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0030",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0030",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0030",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "want": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0030",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0030",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Oakfield Drywall",
+   "want": "Delmar Elevator Parts",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0030",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "no_waiver_on_file",
+   "want": "no_waiver_on_file",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0031",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-255",
+   "want": "PA-2026-255",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0031",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Northline Water Treatment Plant",
+   "want": "Northline Water Treatment Plant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0031",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 16",
+   "want": "Application 16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0031",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-05-31",
+   "want": "2026-05-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0031",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 594690.15,
+   "want": 594690.15,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0031",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0031",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0031",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "want": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0031",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0031",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": "Kestrel Plumbing",
+   "want": "Kestrel Plumbing",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0031",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "conditional_stale",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0032",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-166",
+   "want": "PA-2027-166",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0032",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0032",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 15",
+   "want": "Application 15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0032",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-04-30",
+   "want": "2027-04-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0032",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 294222.85,
+   "want": 294222.85,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0032",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0032",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0032",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "want": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0032",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0032",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Kestrel Plumbing",
+   "want": "Delmar Elevator Parts",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0032",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "conditional_stale",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0033",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-315",
+   "want": "PA-2026-315",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0033",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Northline Water Treatment Plant",
+   "want": "Northline Water Treatment Plant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0033",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 16",
+   "want": "Application 16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0033",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-05-31",
+   "want": "2026-05-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0033",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 637473.3,
+   "want": 637473.3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0033",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0033",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0033",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "want": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0033",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0033",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Marchand Roofing",
+   "want": "Truxton Hoisting",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0033",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "conditional_stale",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0034",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-147",
+   "want": "PA-2026-147",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0034",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Fallbrook Regional Hospital Wing",
+   "want": "Fallbrook Regional Hospital Wing",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0034",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 12",
+   "want": "Application 12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0034",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-03-31",
+   "want": "2026-03-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0034",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 101268.22,
+   "want": 101268.22,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0034",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0034",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0034",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "want": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0034",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0034",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Kestrel Plumbing",
+   "want": "Linden Sheet Metal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0034",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "conditional_stale",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0035",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-352",
+   "want": "PA-2026-352",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0035",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0035",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 12",
+   "want": "Application 12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0035",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-06-30",
+   "want": "2026-06-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0035",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 514355.29,
+   "want": 514355.29,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0035",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0035",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0035",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file reviewed at intake and it looked complete.",
+   "want": "Waiver file reviewed at intake and it looked complete.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0035",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0035",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0035",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0036",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-907",
+   "want": "PA-2026-907",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0036",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Cedar Point Transit Center",
+   "want": "Cedar Point Transit Center",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0036",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 12",
+   "want": "Application 12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0036",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-02-28",
+   "want": "2026-02-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0036",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 614079.11,
+   "want": 614079.11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0036",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0036",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0036",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Standard progress draw, paperwork came in clean this cycle.",
+   "want": "Standard progress draw, paperwork came in clean this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0036",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 0,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0036",
+   "field": "first_gap_party",
+   "verdict": "miss",
+   "got": null,
+   "want": "Calder Aggregates",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0036",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "none",
+   "want": "no_waiver_on_file",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0037",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-917",
+   "want": "PA-2027-917",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0037",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Merritt Avenue Parking Structure",
+   "want": "Merritt Avenue Parking Structure",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0037",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 13",
+   "want": "Application 13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0037",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-06-30",
+   "want": "2027-06-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0037",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 119909.23,
+   "want": 119909.23,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0037",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0037",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0037",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "want": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0037",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0037",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Kestrel Plumbing",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0037",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0038",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-632",
+   "want": "PA-2027-632",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0038",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Ardmore Street Bridge Replacement",
+   "want": "Ardmore Street Bridge Replacement",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0038",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 05",
+   "want": "Application 05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0038",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-04-30",
+   "want": "2027-04-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0038",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 235072.96,
+   "want": 235072.96,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0038",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0038",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0038",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "All waivers received and filed, nothing outstanding on this one.",
+   "want": "All waivers received and filed, nothing outstanding on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0038",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0038",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0038",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0039",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-573",
+   "want": "PA-2027-573",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0039",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0039",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 11",
+   "want": "Application 11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0039",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-01-31",
+   "want": "2027-01-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0039",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 376590.8,
+   "want": 376590.8,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0039",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0039",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0039",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file reviewed at intake and it looked complete.",
+   "want": "Waiver file reviewed at intake and it looked complete.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0039",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 0,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0039",
+   "field": "first_gap_party",
+   "verdict": "miss",
+   "got": null,
+   "want": "Hollis Fire Protection Supply",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0039",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "none",
+   "want": "period_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0040",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-377",
+   "want": "PA-2027-377",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0040",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Northline Water Treatment Plant",
+   "want": "Northline Water Treatment Plant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0040",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 08",
+   "want": "Application 08",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0040",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-06-30",
+   "want": "2027-06-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0040",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 379395.75,
+   "want": 379395.75,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0040",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0040",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0040",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Something looked off in the waiver file at intake, revisit before this one goes out.",
+   "want": "Something looked off in the waiver file at intake, revisit before this one goes out.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0040",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0040",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Marchand Roofing",
+   "want": "Linden Sheet Metal",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0040",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "notice_after_waiver",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0041",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-850",
+   "want": "PA-2026-850",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0041",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Vista Ridge Middle School",
+   "want": "Vista Ridge Middle School",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0041",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 19",
+   "want": "Application 19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0041",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-12-31",
+   "want": "2026-12-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0041",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 594467.58,
+   "want": 594467.58,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0041",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0041",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0041",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "want": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0041",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0041",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Beacon Electrical Contractors",
+   "want": "Truxton Hoisting",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0041",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "notice_after_waiver",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0042",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-176",
+   "want": "PA-2026-176",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0042",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Fallbrook Regional Hospital Wing",
+   "want": "Fallbrook Regional Hospital Wing",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0042",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 02",
+   "want": "Application 02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0042",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-01-31",
+   "want": "2026-01-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0042",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 185034.1,
+   "want": 185034.1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0042",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0042",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0042",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Standard progress draw, paperwork came in clean this cycle.",
+   "want": "Standard progress draw, paperwork came in clean this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0042",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0042",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0042",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0043",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-120",
+   "want": "PA-2027-120",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0043",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Vista Ridge Middle School",
+   "want": "Vista Ridge Middle School",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0043",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 04",
+   "want": "Application 04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0043",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-06-30",
+   "want": "2027-06-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0043",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 586180.75,
+   "want": 586180.75,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0043",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0043",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0043",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "want": "Lower-tier paperwork is disputed; package under manual audit this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0043",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0043",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Beacon Electrical Contractors",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0043",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0044",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-463",
+   "want": "PA-2026-463",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0044",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Harbor Gate Mixed-Use Block",
+   "want": "Harbor Gate Mixed-Use Block",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0044",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 19",
+   "want": "Application 19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0044",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-10-31",
+   "want": "2026-10-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0044",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 238181.16,
+   "want": 238181.16,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0044",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0044",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0044",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Standard progress draw, paperwork came in clean this cycle.",
+   "want": "Standard progress draw, paperwork came in clean this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0044",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 0,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0044",
+   "field": "first_gap_party",
+   "verdict": "miss",
+   "got": null,
+   "want": "Delmar Elevator Parts",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0044",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "none",
+   "want": "period_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0045",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-897",
+   "want": "PA-2026-897",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0045",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0045",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 17",
+   "want": "Application 17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0045",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-01-31",
+   "want": "2026-01-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0045",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 438428.68,
+   "want": 438428.68,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0045",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0045",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0045",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "want": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0045",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0045",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Ironwood Structural",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0045",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0046",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-828",
+   "want": "PA-2026-828",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0046",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Cedar Point Transit Center",
+   "want": "Cedar Point Transit Center",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0046",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 02",
+   "want": "Application 02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0046",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-11-30",
+   "want": "2026-11-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0046",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 466357.65,
+   "want": 466357.65,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0046",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0046",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0046",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Routine package. No concerns from the coordinator on this one.",
+   "want": "Routine package. No concerns from the coordinator on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0046",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0046",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0046",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0047",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-923",
+   "want": "PA-2027-923",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0047",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Vista Ridge Middle School",
+   "want": "Vista Ridge Middle School",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0047",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 18",
+   "want": "Application 18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0047",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-02-28",
+   "want": "2027-02-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0047",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 89608.14,
+   "want": 89608.14,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0047",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0047",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0047",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "want": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0047",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0047",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Ridgeline Mechanical",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0047",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0048",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-281",
+   "want": "PA-2027-281",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0048",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Vista Ridge Middle School",
+   "want": "Vista Ridge Middle School",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0048",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 14",
+   "want": "Application 14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0048",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-03-31",
+   "want": "2027-03-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0048",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 211067.93,
+   "want": 211067.93,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0048",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0048",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0048",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "want": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0048",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0048",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Oakfield Drywall",
+   "want": "Calder Aggregates",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0048",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "amount_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0049",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-809",
+   "want": "PA-2026-809",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0049",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0049",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 12",
+   "want": "Application 12",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0049",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-08-31",
+   "want": "2026-08-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0049",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 70252.21,
+   "want": 70252.21,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0049",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0049",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0049",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Standard progress draw, paperwork came in clean this cycle.",
+   "want": "Standard progress draw, paperwork came in clean this cycle.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0049",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0049",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0049",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0050",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-126",
+   "want": "PA-2026-126",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0050",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Cedar Point Transit Center",
+   "want": "Cedar Point Transit Center",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0050",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 05",
+   "want": "Application 05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0050",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-10-31",
+   "want": "2026-10-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0050",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 335591.92,
+   "want": 335591.92,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0050",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0050",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0050",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file reviewed at intake and it looked complete.",
+   "want": "Waiver file reviewed at intake and it looked complete.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0050",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 0,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0050",
+   "field": "first_gap_party",
+   "verdict": "miss",
+   "got": null,
+   "want": "Quarry Road Concrete Supply",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0050",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "none",
+   "want": "amount_short",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0051",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-604",
+   "want": "PA-2026-604",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0051",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Stonebridge Logistics Campus",
+   "want": "Stonebridge Logistics Campus",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0051",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 13",
+   "want": "Application 13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0051",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-03-31",
+   "want": "2026-03-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0051",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 138462.13,
+   "want": 138462.13,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0051",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0051",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0051",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Something looked off in the waiver file at intake, revisit before this one goes out.",
+   "want": "Something looked off in the waiver file at intake, revisit before this one goes out.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0051",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0051",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Ridgeline Mechanical",
+   "want": "Ashby Insulation",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0051",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "conditional_stale",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0052",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-816",
+   "want": "PA-2027-816",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0052",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Vista Ridge Middle School",
+   "want": "Vista Ridge Middle School",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0052",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 05",
+   "want": "Application 05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0052",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-03-31",
+   "want": "2027-03-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0052",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 151332.02,
+   "want": 151332.02,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0052",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0052",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "scheduled",
+   "want": "scheduled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0052",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "want": "Waiver file looked thin on this one -- escalated for a second pass before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0052",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0052",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": "Ironwood Structural",
+   "want": "Ironwood Structural",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0052",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "notice_after_waiver",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0053",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-478",
+   "want": "PA-2026-478",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0053",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Merritt Avenue Parking Structure",
+   "want": "Merritt Avenue Parking Structure",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0053",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 03",
+   "want": "Application 03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0053",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-09-30",
+   "want": "2026-09-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0053",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 620042.36,
+   "want": 620042.36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0053",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0053",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0053",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "All waivers received and filed, nothing outstanding on this one.",
+   "want": "All waivers received and filed, nothing outstanding on this one.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0053",
+   "field": "parties_uncovered",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0053",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0053",
+   "field": "first_gap_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0054",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2027-882",
+   "want": "PA-2027-882",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0054",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Northline Water Treatment Plant",
+   "want": "Northline Water Treatment Plant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0054",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 19",
+   "want": "Application 19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0054",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2027-04-30",
+   "want": "2027-04-30",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0054",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 366504.53,
+   "want": 366504.53,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0054",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0054",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0054",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "want": "Not confident the waiver coverage is complete here -- needs a second look before release.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0054",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0054",
+   "field": "first_gap_party",
+   "verdict": "wrong",
+   "got": "Torrey Glazing Systems",
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0054",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0055",
+   "field": "package_id",
+   "verdict": "hit",
+   "got": "PA-2026-540",
+   "want": "PA-2026-540",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0055",
+   "field": "project_name",
+   "verdict": "hit",
+   "got": "Merritt Avenue Parking Structure",
+   "want": "Merritt Avenue Parking Structure",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0055",
+   "field": "pay_app_number",
+   "verdict": "hit",
+   "got": "Application 13",
+   "want": "Application 13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0055",
+   "field": "period_through",
+   "verdict": "hit",
+   "got": "2026-08-31",
+   "want": "2026-08-31",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0055",
+   "field": "payment_amount_usd",
+   "verdict": "hit",
+   "got": 67716.52,
+   "want": 67716.52,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0055",
+   "field": "prior_payment_cleared",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0055",
+   "field": "release_status",
+   "verdict": "hit",
+   "got": "on_hold",
+   "want": "on_hold",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0055",
+   "field": "coordinator_note",
+   "verdict": "hit",
+   "got": "Something looked off in the waiver file at intake, revisit before this one goes out.",
+   "want": "Something looked off in the waiver file at intake, revisit before this one goes out.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0055",
+   "field": "parties_uncovered",
+   "verdict": "wrong",
+   "got": 1,
+   "want": 2,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "LWP-0055",
+   "field": "first_gap_party",
+   "verdict": "hit",
+   "got": "Halden Concrete",
+   "want": "Halden Concrete",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "LWP-0055",
+   "field": "first_gap_reason",
+   "verdict": "wrong",
+   "got": "no_waiver_on_file",
+   "want": "notice_after_waiver",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "positive_class": "yes (at least one party on this package is not covered by a waiver)",
+  "true_positive": 21,
+  "false_positive": 12,
+  "true_negative": 12,
+  "false_negative": 10,
+  "unanswered": 0,
+  "not_applicable": 0,
+  "accuracy": 0.6,
+  "recall": 0.6774,
+  "precision": 0.6364,
+  "count_exact": 28,
+  "count_exact_rate": 0.5091,
+  "attribution": {
+   "scored_on": 31,
+   "note": "Scored only on the packages gold says really have a gap -- a fully covered package has no party and no reason to attribute, and padding the denominator with rows nobody can get wrong would make this look better than it is.",
+   "party_correct": 5,
+   "reason_correct": 4,
+   "both_correct": 1,
+   "both_correct_rate": 0.0323,
+   "party_correct_rate": 0.1613,
+   "reason_correct_rate": 0.129,
+   "reason_confusion": {
+    "notice_after_waiver -> no_waiver_on_file": 5,
+    "conditional_stale -> no_waiver_on_file": 5,
+    "period_short -> no_waiver_on_file": 4,
+    "amount_short -> no_waiver_on_file": 3,
+    "period_short -> none": 3,
+    "notice_after_waiver -> none": 2,
+    "amount_short -> none": 2,
+    "no_waiver_on_file -> none": 2,
+    "conditional_stale -> none": 1
+   },
+   "rows": [
+    {
+     "doc": "LWP-0001",
+     "want_party": "Truxton Hoisting",
+     "got_party": "Marchand Roofing",
+     "party_ok": false,
+     "want_reason": "period_short",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0005",
+     "want_party": "Linden Sheet Metal",
+     "got_party": null,
+     "party_ok": false,
+     "want_reason": "notice_after_waiver",
+     "got_reason": "none",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0007",
+     "want_party": "Ironwood Structural",
+     "got_party": "Ironwood Structural",
+     "party_ok": true,
+     "want_reason": "no_waiver_on_file",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": true,
+     "both_ok": true
+    },
+    {
+     "doc": "LWP-0009",
+     "want_party": "Hollis Fire Protection Supply",
+     "got_party": "Marchand Roofing",
+     "party_ok": false,
+     "want_reason": "no_waiver_on_file",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": true,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0010",
+     "want_party": "Delmar Elevator Parts",
+     "got_party": null,
+     "party_ok": false,
+     "want_reason": "conditional_stale",
+     "got_reason": "none",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0011",
+     "want_party": "Stanton Fixtures",
+     "got_party": null,
+     "party_ok": false,
+     "want_reason": "notice_after_waiver",
+     "got_reason": "none",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0013",
+     "want_party": "Ridgeline Mechanical",
+     "got_party": "Ridgeline Mechanical",
+     "party_ok": true,
+     "want_reason": "period_short",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0014",
+     "want_party": "Pinebrook Rebar",
+     "got_party": "Oakfield Drywall",
+     "party_ok": false,
+     "want_reason": "notice_after_waiver",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0016",
+     "want_party": "Quarry Road Concrete Supply",
+     "got_party": "Torrey Glazing Systems",
+     "party_ok": false,
+     "want_reason": "period_short",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0017",
+     "want_party": "Pinebrook Rebar",
+     "got_party": null,
+     "party_ok": false,
+     "want_reason": "amount_short",
+     "got_reason": "none",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0018",
+     "want_party": "Quarry Road Concrete Supply",
+     "got_party": "Torrey Glazing Systems",
+     "party_ok": false,
+     "want_reason": "amount_short",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0020",
+     "want_party": "Truxton Hoisting",
+     "got_party": "Kestrel Plumbing",
+     "party_ok": false,
+     "want_reason": "period_short",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0022",
+     "want_party": "Calder Aggregates",
+     "got_party": null,
+     "party_ok": false,
+     "want_reason": "period_short",
+     "got_reason": "none",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0025",
+     "want_party": "Ashby Insulation",
+     "got_party": null,
+     "party_ok": false,
+     "want_reason": "no_waiver_on_file",
+     "got_reason": "none",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0027",
+     "want_party": "Truxton Hoisting",
+     "got_party": "Beacon Electrical Contractors",
+     "party_ok": false,
+     "want_reason": "amount_short",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0028",
+     "want_party": "Vance Steel Supply",
+     "got_party": "Oakfield Drywall",
+     "party_ok": false,
+     "want_reason": "no_waiver_on_file",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": true,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0030",
+     "want_party": "Delmar Elevator Parts",
+     "got_party": "Oakfield Drywall",
+     "party_ok": false,
+     "want_reason": "no_waiver_on_file",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": true,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0031",
+     "want_party": "Kestrel Plumbing",
+     "got_party": "Kestrel Plumbing",
+     "party_ok": true,
+     "want_reason": "conditional_stale",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0032",
+     "want_party": "Delmar Elevator Parts",
+     "got_party": "Kestrel Plumbing",
+     "party_ok": false,
+     "want_reason": "conditional_stale",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0033",
+     "want_party": "Truxton Hoisting",
+     "got_party": "Marchand Roofing",
+     "party_ok": false,
+     "want_reason": "conditional_stale",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0034",
+     "want_party": "Linden Sheet Metal",
+     "got_party": "Kestrel Plumbing",
+     "party_ok": false,
+     "want_reason": "conditional_stale",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0036",
+     "want_party": "Calder Aggregates",
+     "got_party": null,
+     "party_ok": false,
+     "want_reason": "no_waiver_on_file",
+     "got_reason": "none",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0039",
+     "want_party": "Hollis Fire Protection Supply",
+     "got_party": null,
+     "party_ok": false,
+     "want_reason": "period_short",
+     "got_reason": "none",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0040",
+     "want_party": "Linden Sheet Metal",
+     "got_party": "Marchand Roofing",
+     "party_ok": false,
+     "want_reason": "notice_after_waiver",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0041",
+     "want_party": "Truxton Hoisting",
+     "got_party": "Beacon Electrical Contractors",
+     "party_ok": false,
+     "want_reason": "notice_after_waiver",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0044",
+     "want_party": "Delmar Elevator Parts",
+     "got_party": null,
+     "party_ok": false,
+     "want_reason": "period_short",
+     "got_reason": "none",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0048",
+     "want_party": "Calder Aggregates",
+     "got_party": "Oakfield Drywall",
+     "party_ok": false,
+     "want_reason": "amount_short",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0050",
+     "want_party": "Quarry Road Concrete Supply",
+     "got_party": null,
+     "party_ok": false,
+     "want_reason": "amount_short",
+     "got_reason": "none",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0051",
+     "want_party": "Ashby Insulation",
+     "got_party": "Ridgeline Mechanical",
+     "party_ok": false,
+     "want_reason": "conditional_stale",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0052",
+     "want_party": "Ironwood Structural",
+     "got_party": "Ironwood Structural",
+     "party_ok": true,
+     "want_reason": "notice_after_waiver",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    },
+    {
+     "doc": "LWP-0055",
+     "want_party": "Halden Concrete",
+     "got_party": "Halden Concrete",
+     "party_ok": true,
+     "want_reason": "notice_after_waiver",
+     "got_reason": "no_waiver_on_file",
+     "reason_ok": false,
+     "both_ok": false
+    }
+   ]
+  },
+  "hold_flag": {
+   "true_positive": 12,
+   "false_positive": 7,
+   "true_negative": 31,
+   "false_negative": 5,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 0.7818,
+   "recall": 0.7059,
+   "precision": 0.6316,
+   "positive_class": "yes (a gap, and scheduled for release)",
+   "note": "needs_hold compares the run's own parties_uncovered and release_status against the same two-value rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the extraction grade, which does too, and unlike the consistency diagnostic below, which does not.",
+   "rows": [
+    {
+     "doc": "LWP-0001",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0002",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0003",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0004",
+     "want": "no",
+     "got": "yes",
+     "verdict": "false_positive"
+    },
+    {
+     "doc": "LWP-0005",
+     "want": "yes",
+     "got": "no",
+     "verdict": "false_negative"
+    },
+    {
+     "doc": "LWP-0006",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0007",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0008",
+     "want": "no",
+     "got": "yes",
+     "verdict": "false_positive"
+    },
+    {
+     "doc": "LWP-0009",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0010",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0011",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0012",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0013",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0014",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0015",
+     "want": "no",
+     "got": "yes",
+     "verdict": "false_positive"
+    },
+    {
+     "doc": "LWP-0016",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0017",
+     "want": "yes",
+     "got": "no",
+     "verdict": "false_negative"
+    },
+    {
+     "doc": "LWP-0018",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0019",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0020",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0021",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0022",
+     "want": "yes",
+     "got": "no",
+     "verdict": "false_negative"
+    },
+    {
+     "doc": "LWP-0023",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0024",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0025",
+     "want": "yes",
+     "got": "no",
+     "verdict": "false_negative"
+    },
+    {
+     "doc": "LWP-0026",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0027",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0028",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0029",
+     "want": "no",
+     "got": "yes",
+     "verdict": "false_positive"
+    },
+    {
+     "doc": "LWP-0030",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0031",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0032",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0033",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0034",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0035",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0036",
+     "want": "yes",
+     "got": "no",
+     "verdict": "false_negative"
+    },
+    {
+     "doc": "LWP-0037",
+     "want": "no",
+     "got": "yes",
+     "verdict": "false_positive"
+    },
+    {
+     "doc": "LWP-0038",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0039",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0040",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0041",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0042",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0043",
+     "want": "no",
+     "got": "yes",
+     "verdict": "false_positive"
+    },
+    {
+     "doc": "LWP-0044",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0045",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0046",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0047",
+     "want": "no",
+     "got": "yes",
+     "verdict": "false_positive"
+    },
+    {
+     "doc": "LWP-0048",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0049",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0050",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0051",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0052",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "LWP-0053",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0054",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "LWP-0055",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_themselves": 0,
+   "replies_naming_a_party_not_in_the_package": 0,
+   "verdict_errors": 22,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 22,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. src/extract.py::self_check asks three questions of the reply alone: is a party named exactly when the count is non-zero, is the reason 'none' exactly when the count is zero, and does the package actually list the party named. It uses no gold, so a forker can compute it on unlabelled packages -- but it is blind to a reply that applies the coverage rule wrongly and then reports that wrong answer consistently."
+  },
+  "rows": [
+   {
+    "doc": "LWP-0001",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0002",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0003",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0004",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0005",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_negative",
+    "want_count": 2,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0006",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0007",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0008",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0009",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0010",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_negative",
+    "want_count": 1,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0011",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_negative",
+    "want_count": 1,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0012",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0013",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0014",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0015",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0016",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0017",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_negative",
+    "want_count": 1,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0018",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 2,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0019",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0020",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0021",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0022",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_negative",
+    "want_count": 1,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0023",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0024",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0025",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_negative",
+    "want_count": 2,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0026",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0027",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0028",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 2,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0029",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0030",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0031",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0032",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 2,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0033",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0034",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 2,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0035",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0036",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_negative",
+    "want_count": 2,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0037",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0038",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0039",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_negative",
+    "want_count": 1,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0040",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0041",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0042",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0043",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0044",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_negative",
+    "want_count": 1,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0045",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0046",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0047",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0048",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0049",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0050",
+    "want": "yes",
+    "got": "no",
+    "verdict": "false_negative",
+    "want_count": 2,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0051",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0052",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 1,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0053",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_negative",
+    "want_count": 0,
+    "got_count": 0
+   },
+   {
+    "doc": "LWP-0054",
+    "want": "no",
+    "got": "yes",
+    "verdict": "false_positive",
+    "want_count": 0,
+    "got_count": 1
+   },
+   {
+    "doc": "LWP-0055",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_positive",
+    "want_count": 2,
+    "got_count": 1
+   }
+  ]
+ },
+ "prompt_parts": [],
+ "sections_used": [],
+ "raw_text": "",
+ "max_tokens": 3000
+}

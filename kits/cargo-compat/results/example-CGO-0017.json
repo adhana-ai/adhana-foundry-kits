@@ -1,0 +1,73 @@
+{
+ "doc": "CGO-0017",
+ "beside_run": "r001-cargo-compat",
+ "note": "A fresh single call replayed after the scored run, to capture one reply verbatim. It is NOT a 56th scored sheet and is not counted in any denominator.",
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "max_tokens": 4000,
+ "input_tokens": 2093,
+ "output_tokens": 593,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 461
+ },
+ "raw_text": "{\n  \"tank_id\": \"TNK-WP-42393\",\n  \"incoming_product\": \"refined sunflower oil\",\n  \"incoming_grade\": \"food_grade\",\n  \"prior_cargo\": \"refined rapeseed oil\",\n  \"two_back_cargo\": \"gas oil\",\n  \"wash_performed\": \"caustic_wash\",\n  \"wash_certified_for\": \"caustic_wash\",\n  \"load_status\": \"loaded\",\n  \"inspector_notes\": \"Standard changeover, nothing unusual about this unit at all.\",\n  \"verdict\": \"refuse\"\n}",
+ "sections_used": [
+  "Tank",
+  "Incoming Product",
+  "Incoming Grade",
+  "Prior Cargo",
+  "Two-Back Cargo",
+  "Wash Performed",
+  "Cleaning Certificate",
+  "Load Status",
+  "Inspector Notes"
+ ],
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3000
+  },
+  {
+   "name": "compatibility matrix",
+   "chars": 1700
+  },
+  {
+   "name": "field schema",
+   "chars": 2642
+  },
+  {
+   "name": "check sheet sections",
+   "chars": 460
+  }
+ ],
+ "values": {
+  "tank_id": "TNK-WP-42393",
+  "incoming_product": "refined sunflower oil",
+  "incoming_grade": "food_grade",
+  "prior_cargo": "refined rapeseed oil",
+  "two_back_cargo": "gas oil",
+  "wash_performed": "caustic_wash",
+  "wash_certified_for": "caustic_wash",
+  "load_status": "loaded",
+  "inspector_notes": "Standard changeover, nothing unusual about this unit at all.",
+  "verdict": "refuse"
+ },
+ "spans": {
+  "tank_id": "Tank",
+  "incoming_product": "Incoming Product",
+  "incoming_grade": null,
+  "prior_cargo": "Prior Cargo",
+  "two_back_cargo": "Two-Back Cargo",
+  "wash_performed": null,
+  "wash_certified_for": null,
+  "load_status": null,
+  "inspector_notes": "Inspector Notes",
+  "verdict": null
+ },
+ "needs_hold": true,
+ "recomputed_verdict": "refuse",
+ "recomputed_reason": "Restricted predecessor: gas oil is barred before a food grade load, and the cargo before the prior one is gas oil. A predecessor ban is not a cleaning problem and no cleaning regime clears it.",
+ "recomputed_required_wash": null,
+ "document_text": "Tank\n----\nTNK-WP-42393\n\nTerminal and Berth\n------------------\nNorth Quay Terminal, Berth 4\n\nIncoming Product\n----------------\nrefined sunflower oil\n\nIncoming Grade\n--------------\nfood_grade\n\nPrior Cargo\n-----------\nrefined rapeseed oil\n\nTwo-Back Cargo\n--------------\ngas oil\n\nWash Performed\n--------------\ncaustic_wash\n\nCleaning Certificate\n--------------------\nCLC-53016 -- certified for: caustic_wash\n\nLoad Status\n-----------\nloaded\n\nInspector Notes\n---------------\nStandard changeover, nothing unusual about this unit at all.\n\n"
+}

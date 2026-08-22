@@ -1,0 +1,129 @@
+{
+ "doc": "TLV-0052",
+ "model": "deepseek-v4-flash",
+ "input_tokens": 1799,
+ "output_tokens": 502,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 390
+ },
+ "raw_text": "{\"line_id\":\"TL-RA-64456\",\"service_type\":\"data\",\"billing_period\":\"2027-05\",\"mediated_quantity\":1170495,\"invoiced_quantity\":1143808,\"unrated_quantity\":29496,\"prior_period_quantity\":26783,\"confirmed_duplicate_quantity\":22632,\"invoice_status\":\"issued\",\"analyst_note\":\"Traffic landed after the collection cutoff; I think last month's usage slipped onto this bill.\",\"variance_cause\":\"duplicate_records\"}",
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3343
+  },
+  {
+   "name": "field schema",
+   "chars": 2989
+  },
+  {
+   "name": "record sections",
+   "chars": 544
+  }
+ ],
+ "fields": {
+  "line_id": {
+   "value": "TL-RA-64456",
+   "spannable": true,
+   "span": {
+    "start": 26,
+    "end": 37,
+    "section": "Invoice Line"
+   }
+  },
+  "service_type": {
+   "value": "data",
+   "spannable": false,
+   "span": null
+  },
+  "billing_period": {
+   "value": "2027-05",
+   "spannable": true,
+   "span": {
+    "start": 145,
+    "end": 152,
+    "section": "Billing Period"
+   }
+  },
+  "mediated_quantity": {
+   "value": 1170495,
+   "spannable": true,
+   "span": {
+    "start": 184,
+    "end": 191,
+    "section": "Mediated Usage"
+   }
+  },
+  "invoiced_quantity": {
+   "value": 1143808,
+   "spannable": true,
+   "span": {
+    "start": 232,
+    "end": 239,
+    "section": "Invoiced Quantity"
+   }
+  },
+  "unrated_quantity": {
+   "value": 29496,
+   "spannable": true,
+   "span": {
+    "start": 272,
+    "end": 277,
+    "section": "Unrated Usage"
+   }
+  },
+  "prior_period_quantity": {
+   "value": 26783,
+   "spannable": true,
+   "span": {
+    "start": 320,
+    "end": 325,
+    "section": "Prior Period Usage"
+   }
+  },
+  "confirmed_duplicate_quantity": {
+   "value": 22632,
+   "spannable": true,
+   "span": {
+    "start": 420,
+    "end": 425,
+    "section": "Confirmed Duplicates"
+   }
+  },
+  "invoice_status": {
+   "value": "issued",
+   "spannable": false,
+   "span": null
+  },
+  "analyst_note": {
+   "value": "Traffic landed after the collection cutoff; I think last month's usage slipped onto this bill.",
+   "spannable": true,
+   "span": {
+    "start": 494,
+    "end": 588,
+    "section": "Analyst Note"
+   }
+  },
+  "variance_cause": {
+   "value": "duplicate_records",
+   "spannable": false,
+   "span": null
+  }
+ },
+ "needs_credit": true,
+ "recomputed_variance_cause": "duplicate_records",
+ "sections_used": [
+  "Invoice Line",
+  "Service Type",
+  "Billing Period",
+  "Mediated Usage",
+  "Invoiced Quantity",
+  "Unrated Usage",
+  "Prior Period Usage",
+  "Duplicate Suspects",
+  "Confirmed Duplicates",
+  "Invoice Status",
+  "Analyst Note"
+ ]
+}

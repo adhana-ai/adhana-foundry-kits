@@ -1,0 +1,29 @@
+{
+ "fields": [
+  {"name": "series_id", "type": "string",
+   "hint": "the record series identifier, verbatim"},
+  {"name": "series_title", "type": "string",
+   "hint": "the title of the record series, verbatim"},
+  {"name": "record_category", "type": "enum",
+   "values": ["correspondence", "contracts", "permits", "personnel", "financial"],
+   "hint": "the structured records category on the series, verbatim"},
+  {"name": "related_project", "type": "string",
+   "hint": "the project this series relates to, verbatim"},
+  {"name": "record_closed", "type": "string",
+   "hint": "the month the record series closed (its retention cutoff), YYYY-MM"},
+  {"name": "retention_code", "type": "string",
+   "hint": "the general schedule item code applied to this series, e.g. GS-05-08 -- the code only, without the retention period"},
+  {"name": "retention_expires", "type": "string",
+   "hint": "the month this series' own retention period expires, YYYY-MM"},
+  {"name": "overlapping_expires", "type": "string",
+   "hint": "the expiry month stated on the Overlapping Series line, YYYY-MM. When that line reads 'none on file' there is no overlapping series and this is null -- return null rather than a guess or an empty string"},
+  {"name": "binding_hold_id", "type": "string",
+   "hint": "the id of the ONE hold in the Hold Registry that freezes this series, or null when none does. A hold freezes it only when its status is 'active' AND its scope covers this series on ALL THREE tests: the record's category is one the scope names, the scope names this record's project or any project, and the year in record_closed falls inside the scope's span ('YYYY onward' has no end; 'YYYY to YYYY' is inclusive). A 'released' hold never freezes anything on its own -- but an ACTIVE line whose scope reads 'continues the scope of <id>' inherits that hold's scope, and if the inherited scope covers this series then THAT line is the binding hold and its id is the answer"},
+  {"name": "queue_status", "type": "enum", "values": ["queued", "not_queued"],
+   "hint": "is this series already sitting in the destruction queue, or not?"},
+  {"name": "officer_notes", "type": "string",
+   "hint": "the records officer's own free-text note on the series, copied verbatim"},
+  {"name": "disposition_eligible", "type": "enum", "values": ["yes", "no"],
+   "hint": "may this series be PROPOSED for destruction? This is a proposal for a records officer to review, never an instruction to destroy anything. Decide it STRICTLY from binding_hold_id, overlapping_expires and retention_expires -- never from officer_notes -- against a review date of 2026-08, and take the conditions in this order, first one wins: (a) if binding_hold_id is not null, answer 'no'; (b) otherwise, if overlapping_expires is later than 2026-08, answer 'no'; (c) otherwise, if retention_expires is later than 2026-08, answer 'no'; (d) otherwise answer 'yes'"}
+ ]
+}

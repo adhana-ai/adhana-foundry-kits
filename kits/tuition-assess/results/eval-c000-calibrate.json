@@ -1,0 +1,625 @@
+{
+ "run_id": "c000-calibrate",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "assessments": 3,
+ "failures": [],
+ "latency_p50_ms": 3814,
+ "latency_p95_ms": 11817,
+ "latency_ms_all": [
+  11817,
+  3814,
+  3742
+ ],
+ "wall_seconds": 19.4,
+ "input_tokens_total": 5828,
+ "output_tokens_total": 2001,
+ "output_tokens_max": 1209,
+ "output_tokens_min": 382,
+ "finish_reasons": {
+  "stop": 3
+ },
+ "scores": {
+  "extraction_cells": 36,
+  "extraction_accuracy": 1.0,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 18,
+  "values_with_span": 18,
+  "non_spannable_fields": [
+   "assessment_correct",
+   "bill_status",
+   "course_level",
+   "residency_tier",
+   "variance_reason",
+   "waiver_type"
+  ],
+  "span_rate": 1.0
+ },
+ "by_field": {
+  "student_account_id": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "term_code": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "residency_tier": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "enrolled_credits": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "course_level": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "waiver_type": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "assessed_total_usd": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "bill_status": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "residency_action": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "bursar_notes": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "assessment_correct": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "variance_reason": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "STU-0001",
+   "field": "student_account_id",
+   "verdict": "hit",
+   "got": "SA-WM-87980",
+   "want": "SA-WM-87980",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0001",
+   "field": "term_code",
+   "verdict": "hit",
+   "got": "2026-SU",
+   "want": "2026-SU",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0001",
+   "field": "residency_tier",
+   "verdict": "hit",
+   "got": "In-State",
+   "want": "In-State",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0001",
+   "field": "enrolled_credits",
+   "verdict": "hit",
+   "got": 16,
+   "want": 16,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0001",
+   "field": "course_level",
+   "verdict": "hit",
+   "got": "Lower Division",
+   "want": "Lower Division",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0001",
+   "field": "waiver_type",
+   "verdict": "hit",
+   "got": "Staff Dependent Waiver",
+   "want": "Staff Dependent Waiver",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0001",
+   "field": "assessed_total_usd",
+   "verdict": "hit",
+   "got": 3520,
+   "want": 3520,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0001",
+   "field": "bill_status",
+   "verdict": "hit",
+   "got": "posted",
+   "want": "posted",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0001",
+   "field": "residency_action",
+   "verdict": "hit",
+   "got": "None on file for this term.",
+   "want": "None on file for this term.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0001",
+   "field": "bursar_notes",
+   "verdict": "hit",
+   "got": "Student disputed their residency classification; account under manual audit.",
+   "want": "Student disputed their residency classification; account under manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0001",
+   "field": "assessment_correct",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0001",
+   "field": "variance_reason",
+   "verdict": "hit",
+   "got": "differential fee",
+   "want": "differential fee",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0002",
+   "field": "student_account_id",
+   "verdict": "hit",
+   "got": "SA-EL-19776",
+   "want": "SA-EL-19776",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0002",
+   "field": "term_code",
+   "verdict": "hit",
+   "got": "2027-SP",
+   "want": "2027-SP",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0002",
+   "field": "residency_tier",
+   "verdict": "hit",
+   "got": "Out-of-State",
+   "want": "Out-of-State",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0002",
+   "field": "enrolled_credits",
+   "verdict": "hit",
+   "got": 12,
+   "want": 12,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0002",
+   "field": "course_level",
+   "verdict": "hit",
+   "got": "Graduate",
+   "want": "Graduate",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0002",
+   "field": "waiver_type",
+   "verdict": "hit",
+   "got": "None",
+   "want": "None",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0002",
+   "field": "assessed_total_usd",
+   "verdict": "hit",
+   "got": 14592,
+   "want": 14592,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0002",
+   "field": "bill_status",
+   "verdict": "hit",
+   "got": "draft",
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0002",
+   "field": "residency_action",
+   "verdict": "hit",
+   "got": "None on file for this term.",
+   "want": "None on file for this term.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0002",
+   "field": "bursar_notes",
+   "verdict": "hit",
+   "got": "Escalated last term for a possible mis-assessment -- pending bursar review.",
+   "want": "Escalated last term for a possible mis-assessment -- pending bursar review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0002",
+   "field": "assessment_correct",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0002",
+   "field": "variance_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0003",
+   "field": "student_account_id",
+   "verdict": "hit",
+   "got": "SA-CJ-10758",
+   "want": "SA-CJ-10758",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0003",
+   "field": "term_code",
+   "verdict": "hit",
+   "got": "2026-SP",
+   "want": "2026-SP",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0003",
+   "field": "residency_tier",
+   "verdict": "hit",
+   "got": "Out-of-State",
+   "want": "Out-of-State",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0003",
+   "field": "enrolled_credits",
+   "verdict": "hit",
+   "got": 12,
+   "want": 12,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0003",
+   "field": "course_level",
+   "verdict": "hit",
+   "got": "Upper Division",
+   "want": "Upper Division",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0003",
+   "field": "waiver_type",
+   "verdict": "hit",
+   "got": "Employee Tuition Remission",
+   "want": "Employee Tuition Remission",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0003",
+   "field": "assessed_total_usd",
+   "verdict": "hit",
+   "got": 1068,
+   "want": 1068,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0003",
+   "field": "bill_status",
+   "verdict": "hit",
+   "got": "posted",
+   "want": "posted",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0003",
+   "field": "residency_action",
+   "verdict": "hit",
+   "got": "None on file for this term.",
+   "want": "None on file for this term.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0003",
+   "field": "bursar_notes",
+   "verdict": "hit",
+   "got": "Standard assessment, nothing unusual to flag this term.",
+   "want": "Standard assessment, nothing unusual to flag this term.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "STU-0003",
+   "field": "assessment_correct",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "STU-0003",
+   "field": "variance_reason",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "positive_class": "no (the assessed total is not what the rate table entitles the account to)",
+  "true_positive": 1,
+  "false_positive": 0,
+  "true_negative": 2,
+  "false_negative": 0,
+  "unanswered": 0,
+  "not_applicable": 0,
+  "accuracy": 1.0,
+  "recall": 1.0,
+  "precision": 1.0,
+  "review_flag": {
+   "true_positive": 1,
+   "false_positive": 0,
+   "true_negative": 2,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (mis-assessed and already posted)",
+   "note": "needs_review compares the run's own assessment_correct and bill_status against the same two-boolean rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the extraction grade, which does too, and unlike the consistency diagnostic below, which does not.",
+   "rows": [
+    {
+     "doc": "STU-0001",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "STU-0002",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "STU-0003",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_numbers": 0,
+   "verdict_errors": 0,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 0,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the rate table over the run's OWN extracted values and counts the replies whose stated verdict disagrees with it. It uses no gold, so a forker can compute it on unlabelled records -- but it is blind to a reply that misreads a value and then judges that misreading correctly."
+  },
+  "rows": [
+   {
+    "doc": "STU-0001",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "needs_review": true
+   },
+   {
+    "doc": "STU-0002",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   },
+   {
+    "doc": "STU-0003",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "needs_review": false
+   }
+  ]
+ },
+ "reason_scores": {
+  "of": 1,
+  "of_label": "records gold says carry a variance",
+  "correct": 1,
+  "accuracy": 1.0,
+  "named_on_correct": 0,
+  "named_on_correct_of": 2,
+  "confusions": {},
+  "rows": [
+   {
+    "doc": "STU-0001",
+    "want": "differential fee",
+    "got": "differential fee",
+    "correct": true
+   }
+  ]
+ },
+ "variance_sizes": {
+  "n": 1,
+  "smallest_usd": 608,
+  "largest_usd": 608,
+  "median_usd": 608,
+  "caught": 1,
+  "missed_usd": [],
+  "rows": [
+   {
+    "doc": "STU-0001",
+    "reason": "differential fee",
+    "usd": 608,
+    "caught": true
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3456
+  },
+  {
+   "name": "field schema",
+   "chars": 3401
+  },
+  {
+   "name": "record sections",
+   "chars": 472
+  }
+ ],
+ "sections_used": [
+  "Student Account",
+  "Term",
+  "Residency Tier",
+  "Enrolled Credits",
+  "Course Level",
+  "Waiver",
+  "Assessed Total",
+  "Bill Status",
+  "Residency Action",
+  "Bursar Notes"
+ ],
+ "raw_text": "{\n  \"student_account_id\": \"SA-WM-87980\",\n  \"term_code\": \"2026-SU\",\n  \"residency_tier\": \"In-State\",\n  \"enrolled_credits\": 16,\n  \"course_level\": \"Lower Division\",\n  \"waiver_type\": \"Staff Dependent Waiver\",\n  \"assessed_total_usd\": 3520,\n  \"bill_status\": \"posted\",\n  \"residency_action\": \"None on file for this term.\",\n  \"bursar_notes\": \"Student disputed their residency classification; account under manual audit.\",\n  \"assessment_correct\": \"no\",\n  \"variance_reason\": \"differential fee\"\n}",
+ "max_tokens": 8000
+}

@@ -1,0 +1,70 @@
+{
+ "_README": [
+  "⚠︎ THIS MATRIX IS ILLUSTRATIVE AND WAS WRITTEN FOR THIS KIT. IT IS NOT AN AUTHORITY.",
+  "It reproduces no commercial, industry-body or proprietary compatibility chart, no carrier's",
+  "own prior-cargo list and no regulatory schedule. It is a small, deliberately readable",
+  "construction whose only job is to make the DECISION SHAPE measurable: a class lookup, a",
+  "reactive-pair check, a grade-driven predecessor ban with a look-back depth, and a minimum",
+  "cleaning standard that only a CERTIFICATE can satisfy.",
+  "",
+  "Replace every table below with your own before you route anything real by it. The real",
+  "authority for any load is the product's safety data sheet, the tank's own cleaning record and",
+  "a competent person's assessment -- none of which this file is."
+ ],
+
+ "version": "cargo-compat-matrix-v1",
+
+ "wash_ladder": ["none", "water_rinse", "hot_detergent_wash", "caustic_wash", "steam_and_dry"],
+ "wash_ladder_note": "A strict severity ladder, which is itself a simplification: in a real terminal a solvent flush and a caustic boil are not two rungs of one ladder, they are different regimes for different residues. One ordered ladder is used here so 'did the certified wash meet the minimum' is a comparison a reader can check by eye.",
+
+ "classes": {
+  "food_oil": ["refined soybean oil", "refined sunflower oil", "refined rapeseed oil", "refined coconut oil"],
+  "alcohol": ["methanol", "ethanol", "isopropanol", "ethylene glycol", "propylene glycol"],
+  "acid": ["sulphuric acid", "hydrochloric acid", "acetic acid", "phosphoric acid"],
+  "caustic": ["sodium hydroxide solution", "potassium hydroxide solution"],
+  "oxidiser": ["sodium hypochlorite solution", "hydrogen peroxide solution"],
+  "mineral_oil": ["base oil", "gas oil", "white mineral oil"],
+  "solvent": ["toluene", "xylene", "acetone", "methyl ethyl ketone"]
+ },
+
+ "reactive_pairs": [
+  {"a": "acid", "b": "caustic",
+   "why": "an acid heel meeting a caustic load (or the reverse) neutralises exothermically in an enclosed tank -- a heat and pressure event, not a purity problem, so no cleaning regime in this matrix clears it"},
+  {"a": "acid", "b": "oxidiser",
+   "why": "a hypochlorite heel acidified, or an acid heel meeting a hypochlorite load, evolves chlorine gas into the tank"},
+  {"a": "oxidiser", "b": "solvent",
+   "why": "an oxidiser residue with an organic solvent load is an ignition and peroxide-formation risk"},
+  {"a": "oxidiser", "b": "alcohol",
+   "why": "an oxidiser residue with an alcohol load can run away exothermically"}
+ ],
+ "reactive_pairs_note": "Symmetric: the pair is checked in both directions, because a residue heel and an incoming bulk are both present in the same space and which one arrived first does not settle the chemistry. This is the FIRST check and it outranks everything below it -- a reactive pair is refused outright rather than cleaned, because in this matrix the hazard is the heel itself.",
+
+ "lookback": {"technical": 1, "food_grade": 2, "high_purity": 2},
+ "lookback_note": "How many cargoes back the predecessor ban looks. Technical grade looks at the prior cargo only. Food grade and high purity look at the prior cargo AND the one before it -- which is the case a reader is most likely to miss, because the prior cargo can be entirely innocuous while the one behind it is not.",
+
+ "banned_predecessor_classes": {
+  "technical": [],
+  "food_grade": ["solvent", "mineral_oil", "oxidiser"],
+  "high_purity": ["solvent"]
+ },
+ "banned_predecessor_cargoes": {
+  "technical": [],
+  "food_grade": ["methanol"],
+  "high_purity": []
+ },
+ "banned_predecessor_note": "A BAN IS NOT A CLEANING PROBLEM AND CLEANING DOES NOT CURE IT. methanol is the clearest case in this matrix: it is water-miscible, it is not reactive with any food-grade product listed here, and a water rinse genuinely removes it -- and it is still banned as a predecessor to a food-grade load, on toxicity, whatever the cleaning record says. A reader who reasons only about chemistry and cleaning gets this one wrong.",
+
+ "minimum_wash": {
+  "food_oil": "hot_detergent_wash",
+  "alcohol": "water_rinse",
+  "acid": "water_rinse",
+  "caustic": "water_rinse",
+  "oxidiser": "water_rinse",
+  "mineral_oil": "caustic_wash",
+  "solvent": "caustic_wash"
+ },
+ "grade_uplift": {"technical": 0, "food_grade": 1, "high_purity": 1},
+ "minimum_wash_note": "The minimum certified wash for the PRIOR cargo's class, raised one rung when the incoming product is food grade or high purity, capped at the top of the ladder. Note that caustic, acid and oxidiser heels all sit at water_rinse: they are water-soluble, so the residue that sounds most alarming is often the one a rinse genuinely clears. What is expensive to clean here is fat and hydrocarbon, not corrosives.",
+
+ "certificate_governs": "Only a CERTIFIED wash counts. The tank log's own 'wash performed' line is recorded, is extracted, and is never an input to the decision -- if the certificate names a lower regime than the log claims was performed, the lower one is what the tank is credited with. An uncertified tank is credited with no wash at all."
+}

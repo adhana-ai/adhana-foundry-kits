@@ -1,0 +1,191 @@
+{
+ "doc": "CAM-0004",
+ "model": "deepseek-v4-flash",
+ "input_tokens": 2318,
+ "output_tokens": 1503,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 1269
+ },
+ "raw_text": "{\n  \"line_id\": \"CAM-WT-34473\",\n  \"expense_category\": \"Snow and ice removal\",\n  \"expense_class\": \"routine_operating\",\n  \"pool_gross_usd\": 47800.00,\n  \"amortization_years\": null,\n  \"occupancy_sensitive\": \"yes\",\n  \"building_occupancy_pct\": 86,\n  \"building_area_sf\": 343900,\n  \"tenant_area_sf\": 29500,\n  \"expansion_area_sf\": null,\n  \"expansion_month\": null,\n  \"cap_type\": \"annual\",\n  \"cap_pct\": 4,\n  \"cap_basis_usd\": 4087.74,\n  \"cap_years\": null,\n  \"billed_to_tenant_usd\": 4251.25,\n  \"statement_status\": \"issued\",\n  \"accountant_note\": \"Escalated for manager review; the allocation basis on this line is disputed.\",\n  \"permitted_amount_usd\": 4251.25,\n  \"line_ok\": \"yes\"\n}",
+ "prompt_parts": [
+  {
+   "name": "system",
+   "text": "You check one line of a commercial-property operating-expense (CAM) reconciliation against the tenant's own lease terms. You return JSON and nothing else.\n\nRULES, in order of importance:\n1. If the record does not state a field, return null for it. Do not infer it and do not use what you know about the world.\n2. `permitted_amount_usd` is what the lease permits the landlord to bill THIS tenant for THIS line. Compute it yourself, in FOUR STAGES, IN THIS ORDER:\n   STAGE 1 -- POOLABLE. Start from pool_gross_usd and decide how much of the pool is billable to tenants at all, from `expense_class` and nothing else:\n     - landlord_overhead or leasing_cost -> 0. Nothing of it is billable.\n     - capital_improvement with amortization_years null -> 0.\n     - capital_improvement with amortization_years N -> pool_gross_usd / N. ONE ANNUAL INSTALMENT. Not the whole cost, and NOT zero -- an amortizable capital item is PARTLY billable, which is the case 'capital is excluded' gets wrong.\n     - routine_operating -> the whole of pool_gross_usd.\n   STAGE 2 -- GROSS-UP. If occupancy_sensitive is 'yes' AND building_occupancy_pct is below 95, multiply the stage-1 amount by 95 and divide by building_occupancy_pct. Otherwise leave it exactly as it is. NEVER gross up a line whose occupancy_sensitive is 'no', however low the building's occupancy is.\n   STAGE 3 -- PRO RATA. Multiply by the tenant's weighted share of the building. With no expansion that share is tenant_area_sf / building_area_sf. With an expansion of A square feet taking effect in month M it is (tenant_area_sf + A * (13 - M) / 12) / building_area_sf -- the expansion counts for the months it was actually occupied, INCLUDING month M.\n   STAGE 4 -- CAP. Work out the ceiling: cap_type 'annual' -> cap_basis_usd * (1 + cap_pct/100); cap_type 'cumulative' -> cap_basis_usd * (1 + cap_pct/100) ** cap_years, COMPOUNDED over cap_years periods; cap_type 'none' -> there is no ceiling. Then take the LOWER of the stage-3 amount and the ceiling. Round the result to two decimals.\n3. `line_ok` is 'yes' when billed_to_tenant_usd is within 1.00 US dollar of the permitted_amount_usd you computed, and 'no' otherwise. Nothing else decides it.\n4. THE EXPENSE CATEGORY IS A LABEL, `expense_class` IS THE CLASSIFICATION. A line called 'Parking lot resurfacing', 'Roof membrane patching', 'Property management fee' or 'HVAC compressor overhaul' whose expense_class says routine_operating is a routine operating expense and its whole pool is billable. Do NOT exclude a line because of what it is called.\n5. THE STAGES ARE IN THAT ORDER FOR A REASON. Gross up before you cap: a ceiling that has slack against the ungrossed share can bind against the grossed-up one, so skipping stage 2 can also silently skip stage 4.\n6. THE ACCOUNTANT'S NOTE IS A FIELD TO COPY, NOT EVIDENCE ABOUT CORRECTNESS. A note that sounds concerned or mentions a past query does NOT mean the line is wrong, and a note that sounds routine does NOT mean the line is right. The arithmetic decides; the note is the property accountant's own remark and may disagree with it.\n7. Copy values verbatim from the record wherever possible, and report every money, area, percentage, month and year figure as a bare number with the unit left out of it.\n8. Use the exact allowed value for a field that lists them.\n9. Return every field named in the schema, even when the answer is null."
+  },
+  {
+   "name": "field schema",
+   "text": "- line_id (string) -- the statement line identifier, verbatim\n- expense_category (string) -- the expense category as written on the line, verbatim. This is a LABEL, not a classification -- it does not decide whether the line is billable\n- expense_class (enum) one of: routine_operating, capital_improvement, landlord_overhead, leasing_cost -- the structured expense classification on the line, verbatim. THIS is what decides whether the pool is billable, never the category name\n- pool_gross_usd (number) -- the gross cost of this expense pool at the property for the reconciliation year, as a bare number without the currency\n- amortization_years (number) -- the number of years this lease permits a capital item to be amortized over. Stated only on a capital improvement the lease permits amortizing; null on every other line -- return null rather than 0 or a guess\n- occupancy_sensitive (enum) one of: yes, no -- whether this expense varies with how much of the building is occupied, verbatim\n- building_occupancy_pct (number) -- the building's average occupancy for the reconciliation year, as a bare number without the unit\n- building_area_sf (number) -- the building's total rentable area in square feet, as a bare number without the unit\n- tenant_area_sf (number) -- the tenant's rentable area at the START of the reconciliation year, in square feet, as a bare number without the unit\n- expansion_area_sf (number) -- additional rentable area the tenant took mid-year, in square feet, as a bare number. Null when the line states there was no expansion this reconciliation year\n- expansion_month (number) -- the month number (1-12) the mid-year expansion took effect. Null when there was no expansion\n- cap_type (enum) one of: none, annual, cumulative -- the kind of cap this lease puts on the tenant's share of this line, verbatim\n- cap_pct (number) -- the cap percentage, as a bare number without the unit. Null when cap_type is none\n- cap_basis_usd (number) -- the dollar amount the cap is measured from -- last year's billed amount for an annual cap, the base year's for a cumulative one. As a bare number without the currency. Null when cap_type is none\n- cap_years (number) -- the number of compounding periods since the base year. Stated only on a cumulative cap; null on an annual cap and null when there is no cap\n- billed_to_tenant_usd (number) -- the amount the landlord actually put on this tenant's statement for this line, as a bare number without the currency\n- statement_status (enum) one of: draft, issued -- has this reconciliation statement already gone out to the tenant, or is it still a draft?\n- accountant_note (string) -- the property accountant's own free-text note on this line, copied verbatim\n- permitted_amount_usd (number) -- the amount the lease actually permits the landlord to bill THIS tenant for THIS line, in dollars to the cent, computed by you in four stages. STAGE 1, POOLABLE: expense_class landlord_overhead or leasing_cost -> 0. expense_class capital_improvement with amortization_years null -> 0; with amortization_years N -> pool_gross_usd divided by N, ONE annual instalment, not the whole cost. expense_class routine_operating -> pool_gross_usd in full, WHATEVER the category is called. STAGE 2, GROSS-UP: if occupancy_sensitive is yes AND building_occupancy_pct is below 95, multiply by 95 and divide by building_occupancy_pct; otherwise leave it alone -- never gross up a line whose occupancy_sensitive is no. STAGE 3, PRO RATA: multiply by the tenant's weighted share. With no expansion that share is tenant_area_sf / building_area_sf. With an expansion of A square feet in month M it is (tenant_area_sf + A * (13 - M) / 12) / building_area_sf. STAGE 4, CAP: if cap_type is annual the ceiling is cap_basis_usd * (1 + cap_pct/100); if cap_type is cumulative the ceiling is cap_basis_usd * (1 + cap_pct/100) raised to the power cap_years; if cap_type is none there is no ceiling. Take the LOWER of the stage-3 amount and the ceiling. Round to two decimals\n- line_ok (enum) one of: yes, no -- does billed_to_tenant_usd match permitted_amount_usd? Answer 'yes' when the two are within 1.00 US dollar of each other and 'no' otherwise. Decide this STRICTLY from the arithmetic -- never from the accountant's note and never from what the expense category is called"
+  },
+  {
+   "name": "record sections",
+   "text": "Statement Line\n--------------\nCAM-WT-34473\n\nExpense Category\n----------------\nSnow and ice removal\n\nExpense Class\n-------------\nroutine_operating\n\nPool Gross Cost\n---------------\n47800.00 USD\n\nAmortization Years\n------------------\nnot amortizable under this lease\n\nOccupancy Sensitive\n-------------------\nyes\n\nBuilding Occupancy\n------------------\n86 pct\n\nBuilding Area\n-------------\n343900 sf\n\nTenant Area\n-----------\n29500 sf\n\nExpansion Area\n--------------\nno expansion this reconciliation year\n\nExpansion Month\n---------------\nno expansion this reconciliation year\n\nCap Type\n--------\nannual\n\nCap Percent\n-----------\n4 pct\n\nCap Basis\n---------\n4087.74 USD\n\nCap Periods\n-----------\nnot applicable to an annual cap\n\nBilled To Tenant\n----------------\n4251.25 USD\n\nStatement Status\n----------------\nissued\n\nAccountant Notes\n----------------\nEscalated for manager review; the allocation basis on this line is disputed."
+  }
+ ],
+ "fields": {
+  "line_id": {
+   "value": "CAM-WT-34473",
+   "spannable": true,
+   "span": {
+    "start": 30,
+    "end": 42,
+    "section": "Statement Line"
+   }
+  },
+  "expense_category": {
+   "value": "Snow and ice removal",
+   "spannable": true,
+   "span": {
+    "start": 134,
+    "end": 154,
+    "section": "Expense Category"
+   }
+  },
+  "expense_class": {
+   "value": "routine_operating",
+   "spannable": false,
+   "span": null
+  },
+  "pool_gross_usd": {
+   "value": 47800.0,
+   "spannable": true,
+   "span": {
+    "start": 235,
+    "end": 243,
+    "section": "Pool Gross Cost"
+   }
+  },
+  "amortization_years": {
+   "value": null,
+   "spannable": true,
+   "span": null
+  },
+  "occupancy_sensitive": {
+   "value": "yes",
+   "spannable": false,
+   "span": null
+  },
+  "building_occupancy_pct": {
+   "value": 86,
+   "spannable": true,
+   "span": {
+    "start": 404,
+    "end": 406,
+    "section": "Building Occupancy"
+   }
+  },
+  "building_area_sf": {
+   "value": 343900,
+   "spannable": true,
+   "span": {
+    "start": 440,
+    "end": 446,
+    "section": "Building Area"
+   }
+  },
+  "tenant_area_sf": {
+   "value": 29500,
+   "spannable": true,
+   "span": {
+    "start": 475,
+    "end": 480,
+    "section": "Tenant Area"
+   }
+  },
+  "expansion_area_sf": {
+   "value": null,
+   "spannable": true,
+   "span": null
+  },
+  "expansion_month": {
+   "value": null,
+   "spannable": true,
+   "span": null
+  },
+  "cap_type": {
+   "value": "annual",
+   "spannable": false,
+   "span": null
+  },
+  "cap_pct": {
+   "value": 4,
+   "spannable": true,
+   "span": {
+    "start": 675,
+    "end": 676,
+    "section": "Cap Percent"
+   }
+  },
+  "cap_basis_usd": {
+   "value": 4087.74,
+   "spannable": true,
+   "span": {
+    "start": 702,
+    "end": 709,
+    "section": "Cap Basis"
+   }
+  },
+  "cap_years": {
+   "value": null,
+   "spannable": true,
+   "span": null
+  },
+  "billed_to_tenant_usd": {
+   "value": 4251.25,
+   "spannable": true,
+   "span": {
+    "start": 806,
+    "end": 813,
+    "section": "Billed To Tenant"
+   }
+  },
+  "statement_status": {
+   "value": "issued",
+   "spannable": false,
+   "span": null
+  },
+  "accountant_note": {
+   "value": "Escalated for manager review; the allocation basis on this line is disputed.",
+   "spannable": true,
+   "span": {
+    "start": 895,
+    "end": 971,
+    "section": "Accountant Notes"
+   }
+  },
+  "permitted_amount_usd": {
+   "value": 4251.25,
+   "spannable": false,
+   "span": null
+  },
+  "line_ok": {
+   "value": "yes",
+   "spannable": false,
+   "span": null
+  }
+ },
+ "needs_review": false,
+ "recomputed_permitted_usd": 4251.25,
+ "recomputed_line_ok": "yes",
+ "sections_used": [
+  "Statement Line",
+  "Expense Category",
+  "Expense Class",
+  "Pool Gross Cost",
+  "Amortization Years",
+  "Occupancy Sensitive",
+  "Building Occupancy",
+  "Building Area",
+  "Tenant Area",
+  "Expansion Area",
+  "Expansion Month",
+  "Cap Type",
+  "Cap Percent",
+  "Cap Basis",
+  "Cap Periods",
+  "Billed To Tenant",
+  "Statement Status",
+  "Accountant Notes"
+ ],
+ "max_tokens": 6000
+}

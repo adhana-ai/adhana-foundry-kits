@@ -1,0 +1,75 @@
+{
+ "run_id": "c001-coverage-check",
+ "what_it_is": "A MEASUREMENT of the completion budget this workload consumes, taken at a deliberately generous ceiling so nothing is truncated. It is what src/extract.py::MAX_TOKENS was set from.",
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "ceiling_used": 16000,
+ "calls": [
+  {
+   "doc": "WCL-0002",
+   "class": "exclusion_in_narrative",
+   "input_tokens": 2185,
+   "output_tokens": 469,
+   "reasoning_tokens": 251,
+   "finish_reason": "stop",
+   "parsed": true,
+   "answer_chars": 732
+  },
+  {
+   "doc": "WCL-0005",
+   "class": "plan_limit_beats_basic",
+   "input_tokens": 2182,
+   "output_tokens": 534,
+   "reasoning_tokens": 322,
+   "finish_reason": "stop",
+   "parsed": true,
+   "answer_chars": 695
+  },
+  {
+   "doc": "WCL-0004",
+   "class": "wear_early",
+   "input_tokens": 2191,
+   "output_tokens": 645,
+   "reasoning_tokens": 425,
+   "finish_reason": "stop",
+   "parsed": true,
+   "answer_chars": 713
+  },
+  {
+   "doc": "WCL-0007",
+   "class": "past_limit",
+   "input_tokens": 2188,
+   "output_tokens": 647,
+   "reasoning_tokens": 430,
+   "finish_reason": "stop",
+   "parsed": true,
+   "answer_chars": 720
+  },
+  {
+   "doc": "WCL-0024",
+   "class": "labor_op_mismatch",
+   "input_tokens": 2189,
+   "output_tokens": 523,
+   "reasoning_tokens": 305,
+   "finish_reason": "stop",
+   "parsed": true,
+   "answer_chars": 702
+  },
+  {
+   "doc": "WCL-0001",
+   "class": "boundary_covered",
+   "input_tokens": 2180,
+   "output_tokens": 442,
+   "reasoning_tokens": 233,
+   "finish_reason": "stop",
+   "parsed": true,
+   "answer_chars": 691
+  }
+ ],
+ "output_tokens_peak": 647,
+ "output_tokens_mean": 543.3,
+ "reasoning_tokens_peak": 430,
+ "reasoning_share_of_output_pct": 60.3,
+ "any_truncated": false,
+ "thinking": null
+}

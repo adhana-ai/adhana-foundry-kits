@@ -1,0 +1,656 @@
+{
+ "run_id": "a001-cargo-compat",
+ "kind": "ablation",
+ "not_a_scored_run": "This run uses a SYSTEM PROMPT THE KIT DOES NOT SHIP -- the four ordered checks, the certificate-governs rule and the note-is-not-evidence rule are removed -- over a SUBSET of the corpus selected by a predicate over gold. It exists to answer 'where does the accuracy come from', and it must never be quoted as this kit's score.",
+ "ablated": [
+  "the four ordered checks and their stopping rule (system rule 2 a-d)",
+  "the certificate-governs rule (system rule 3)",
+  "the note-is-not-evidence rule (system rule 4)"
+ ],
+ "kept": [
+  "the compatibility matrix itself, in full, in the user message",
+  "the field schema and its per-field hints",
+  "the JSON format rules"
+ ],
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 26,
+ "subset": {
+  "CGO-0001": "banned_prior",
+  "CGO-0003": "certificate_below_log",
+  "CGO-0004": "alarming_but_fine",
+  "CGO-0008": "certificate_below_log",
+  "CGO-0012": "alarming_but_fine",
+  "CGO-0013": "banned_prior",
+  "CGO-0015": "certificate_below_log",
+  "CGO-0016": "banned_prior",
+  "CGO-0017": "banned_two_back",
+  "CGO-0018": "banned_two_back",
+  "CGO-0019": "alarming_but_fine",
+  "CGO-0020": "banned_prior",
+  "CGO-0022": "banned_prior",
+  "CGO-0023": "certificate_below_log",
+  "CGO-0024": "alarming_but_fine",
+  "CGO-0026": "alarming_but_fine",
+  "CGO-0027": "banned_two_back",
+  "CGO-0029": "certificate_below_log",
+  "CGO-0037": "certificate_below_log",
+  "CGO-0039": "banned_prior",
+  "CGO-0043": "alarming_but_fine",
+  "CGO-0044": "banned_prior",
+  "CGO-0045": "certificate_below_log",
+  "CGO-0046": "certificate_below_log",
+  "CGO-0048": "banned_two_back",
+  "CGO-0050": "banned_two_back"
+ },
+ "failures": [],
+ "latency_p50_ms": 5374,
+ "latency_p95_ms": 6778,
+ "latency_ms_all": [
+  5197,
+  6644,
+  6351,
+  5727,
+  4643,
+  5671,
+  7512,
+  6389,
+  5187,
+  4489,
+  5077,
+  5351,
+  5517,
+  4456,
+  5804,
+  5710,
+  3911,
+  5719,
+  6778,
+  4563,
+  4460,
+  4556,
+  6362,
+  5173,
+  5374,
+  5118
+ ],
+ "wall_seconds": 141.8,
+ "input_tokens_total": 42492,
+ "output_tokens_total": 15851,
+ "scores": {
+  "extraction_cells": 260,
+  "extraction_accuracy": 1.0,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 116,
+  "values_with_span": 116,
+  "non_spannable_fields": [
+   "incoming_grade",
+   "load_status",
+   "verdict",
+   "wash_certified_for",
+   "wash_performed"
+  ],
+  "span_rate": 1.0,
+  "verdict_accuracy_pct": 100.0,
+  "unsafe_release_count": 0,
+  "hold_flag_recall_pct": 100.0,
+  "hold_flag_precision_pct": 100.0,
+  "self_consistency_disagreements": 0,
+  "unsafe_release_rate_pct": 0.0
+ },
+ "verdict_scores": {
+  "verdict_accuracy": 1.0,
+  "verdict_correct": 26,
+  "verdict_rows": 26,
+  "verdict_unanswered": 0,
+  "confusion": {
+   "refuse": {
+    "refuse": 12
+   },
+   "clean_then_load": {
+    "clean_then_load": 8
+   },
+   "accept": {
+    "accept": 6
+   }
+  },
+  "blocked": {
+   "true_positive": 20,
+   "false_positive": 0,
+   "true_negative": 6,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (this tank must NOT be loaded as it stands)",
+   "note": "The four-way verdict collapsed onto the one distinction that is safety-relevant. A false negative here is a tank the shipped matrix would have stopped and the run cleared.",
+   "rows": [
+    {
+     "doc": "CGO-0001",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0004",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0008",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0012",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0013",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0015",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0016",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0017",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0018",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0019",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0020",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0022",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0023",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0024",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0026",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0027",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0029",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0037",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0039",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0043",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0044",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0045",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0046",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0048",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0050",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    }
+   ]
+  },
+  "unsafe_release": [],
+  "unsafe_release_count": 0,
+  "unsafe_release_rate_pct": 0.0,
+  "over_block": [],
+  "over_block_count": 0,
+  "hold_flag": {
+   "true_positive": 9,
+   "false_positive": 0,
+   "true_negative": 17,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (not clear-to-load and already loaded)",
+   "note": "needs_hold compares the run's own verdict and load_status against the same rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the consistency diagnostic below, which does not.",
+   "rows": [
+    {
+     "doc": "CGO-0001",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0004",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0008",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0012",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0013",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0015",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0016",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0017",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0018",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0019",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0020",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0022",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0023",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0024",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0026",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0027",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0029",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0037",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0039",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0043",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0044",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0045",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0046",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0048",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0050",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_values": 0,
+   "verdict_errors": 0,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 0,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the matrix lookup over the run's OWN extracted values and counts the replies whose stated verdict disagrees with it. It uses no gold, so a forker can compute it on unlabelled sheets -- but it is blind to a reply that misreads a cargo name or a certificate and then reasons correctly from the misreading."
+  },
+  "rows": [
+   {
+    "doc": "CGO-0001",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0003",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0004",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0008",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0012",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0013",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0015",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0016",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0017",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0018",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0019",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0020",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0022",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0023",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0024",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0026",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0027",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0029",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0037",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0039",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0043",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0044",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0045",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0046",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0048",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0050",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   }
+  ]
+ },
+ "per_bucket": {
+  "banned_prior": {
+   "n": 7,
+   "correct": 7,
+   "wrong": []
+  },
+  "certificate_below_log": {
+   "n": 8,
+   "correct": 8,
+   "wrong": []
+  },
+  "alarming_but_fine": {
+   "n": 6,
+   "correct": 6,
+   "wrong": []
+  },
+  "banned_two_back": {
+   "n": 5,
+   "correct": 5,
+   "wrong": []
+  }
+ },
+ "max_tokens": 4000,
+ "thinking": null
+}

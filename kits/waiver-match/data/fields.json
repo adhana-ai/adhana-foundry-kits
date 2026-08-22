@@ -1,0 +1,27 @@
+{
+ "fields": [
+  {"name": "package_id", "type": "string",
+   "hint": "the payment package identifier, verbatim"},
+  {"name": "project_name", "type": "string",
+   "hint": "the project this pay application belongs to, verbatim"},
+  {"name": "pay_app_number", "type": "string",
+   "hint": "the pay application number, verbatim (e.g. 'Application 07')"},
+  {"name": "period_through", "type": "string",
+   "hint": "the through-date of the payment period, YYYY-MM-DD"},
+  {"name": "payment_amount_usd", "type": "number",
+   "hint": "the total being released on this pay application, as a bare number with no currency symbol, no thousands separators and no unit"},
+  {"name": "prior_payment_cleared", "type": "enum", "values": ["yes", "no"],
+   "hint": "has the previous progress payment on this package already cleared?"},
+  {"name": "release_status", "type": "enum", "values": ["scheduled", "on_hold"],
+   "hint": "is this pay application scheduled to be released this cycle, or already on hold?"},
+  {"name": "coordinator_note", "type": "string",
+   "hint": "the payment coordinator's own free-text note on the package, copied verbatim"},
+  {"name": "parties_uncovered", "type": "number", "spannable": false,
+   "hint": "how many of the parties listed under Waiver Coverage are NOT covered by a waiver, applying the coverage rule below to each party in turn. 0 when every party is covered"},
+  {"name": "first_gap_party", "type": "string",
+   "hint": "the name of the FIRST party in document order that is not covered. null when parties_uncovered is 0 -- return null rather than an empty string or a guess"},
+  {"name": "first_gap_reason", "type": "enum",
+   "values": ["no_waiver_on_file", "notice_after_waiver", "period_short", "amount_short", "conditional_stale", "none"],
+   "hint": "why the FIRST uncovered party is not covered, decided by the coverage rule in this order and reporting the FIRST condition that is true. 'no_waiver_on_file': there is no waiver on file for that party. 'notice_after_waiver': the party's preliminary notice is dated AFTER the waiver was signed, so the waiver predates the claim -- this outranks everything below it even when the waiver is unconditional, for the full amount and covers the whole period. 'period_short': the party has a PROGRESS waiver whose 'covers work through' date is earlier than the pay application's Period Through date (a FINAL waiver has no through-date and can never be period_short). 'amount_short': the waiver amount is less than that party's amount due this application. 'conditional_stale': the waiver is CONDITIONAL and something has already cleared against it -- either Prior Payment Cleared is yes, or that party is on a joint check arrangement, which clears on issue. 'none' when parties_uncovered is 0"}
+ ]
+}

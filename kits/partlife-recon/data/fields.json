@@ -1,0 +1,35 @@
+{
+ "fields": [
+  {"name": "component_id", "type": "string",
+   "hint": "the component identifier, verbatim"},
+  {"name": "part_reference", "type": "string",
+   "hint": "the part reference on the pack, verbatim"},
+  {"name": "life_limit_hours", "type": "number",
+   "hint": "the published life limit in HOURS since new, as a bare number without the unit"},
+  {"name": "life_limit_cycles", "type": "number",
+   "hint": "the published life limit in CYCLES since new, as a bare number without the unit"},
+  {"name": "tag_hours", "type": "number",
+   "hint": "the hours since new stated on the component's OWN tag, as a bare number. Copy it; do not correct it"},
+  {"name": "tag_cycles", "type": "number",
+   "hint": "the cycles since new stated on the component's OWN tag, as a bare number. Copy it; do not correct it"},
+
+  {"name": "trail_hours", "type": "number", "spannable": false,
+   "hint": "the TOTAL hours since new that the service record trail substantiates: add up the `accrued ... hours` figure of EVERY installation period in the trail. A period marked `accrual NOT RECORDED` contributes NOTHING -- do not estimate it. An overhaul line resets time since OVERHAUL only and never time since new, so keep adding every period before and after it. Never copy the tag figure into this field"},
+  {"name": "trail_cycles", "type": "number", "spannable": false,
+   "hint": "the TOTAL cycles since new that the service record trail substantiates, summed the same way and INDEPENDENTLY of the hours -- each period ran at a different hours-per-cycle ratio, so one total can never be derived from the other"},
+
+  {"name": "record_gap", "type": "enum", "values": ["yes", "no"],
+   "hint": "does the pack declare a period whose records are not available, so that part of the accrual cannot be reconstructed?"},
+  {"name": "disposition_requested", "type": "enum", "values": ["return to service", "shelf storage"],
+   "hint": "what is being asked for this component right now, verbatim"},
+  {"name": "reviewer_note", "type": "string",
+   "hint": "the records reviewer's own free-text note, copied verbatim"},
+
+  {"name": "tag_agrees", "type": "enum", "values": ["yes", "no"],
+   "hint": "do the component's own tag figures match the totals you reconstructed from the trail? Answer 'yes' only when tag_hours EXACTLY equals trail_hours AND tag_cycles EXACTLY equals trail_cycles. A tag that is right about hours and wrong about cycles does NOT agree"},
+
+  {"name": "life_status", "type": "enum",
+   "values": ["within_limits", "hours_exceeded", "cycles_exceeded", "both_exceeded", "cannot_determine"],
+   "hint": "what the RECONSTRUCTED TRAIL TOTALS say about the component's remaining life, compared with the published limits. Decide this STRICTLY from trail_hours, trail_cycles, life_limit_hours, life_limit_cycles and record_gap -- never from the tag figures and never from the reviewer note. The rule, in this order: (a) if trail_hours >= life_limit_hours AND trail_cycles >= life_limit_cycles, answer 'both_exceeded'; (b) otherwise if trail_hours >= life_limit_hours, answer 'hours_exceeded'; (c) otherwise if trail_cycles >= life_limit_cycles, answer 'cycles_exceeded'; (d) otherwise if record_gap is 'yes', answer 'cannot_determine'; (e) otherwise answer 'within_limits'. The exceedance checks come BEFORE the gap check because a missing period can only ADD accumulated life and can never bring a component already at or past a limit back inside it. The limit is INCLUSIVE: exactly at the limit is exceeded, not within limits. This is a statement about what the RECORDS substantiate -- it is not an airworthiness determination and it releases nothing to service"}
+ ]
+}

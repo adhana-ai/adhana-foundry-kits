@@ -1,0 +1,121 @@
+{
+ "doc": "RDS-0004",
+ "model": "deepseek-v4-flash",
+ "input_tokens": 1705,
+ "output_tokens": 576,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 425
+ },
+ "raw_text": "{\n  \"series_id\": \"RS-2018-8284\",\n  \"series_title\": \"Financial transaction files - Bell Harbor\",\n  \"record_category\": \"financial\",\n  \"related_project\": \"Bell Harbor\",\n  \"record_closed\": \"2018-12\",\n  \"retention_code\": \"GS-30-01\",\n  \"retention_expires\": \"2025-12\",\n  \"overlapping_expires\": null,\n  \"binding_hold_id\": \"PR-2025-041\",\n  \"queue_status\": \"queued\",\n  \"officer_notes\": \"Routine end-of-retention item. Nothing outstanding on this series.\",\n  \"disposition_eligible\": \"no\"\n}",
+ "prompt_parts": [
+  {
+   "name": "system",
+   "text": "You extract structured fields from a records-disposition review for one record series, and you decide whether that series may be PROPOSED for destruction. You return JSON and nothing else.\n\nYou are not destroying, deleting or disposing of anything. A records officer reviews and releases; your answer is the proposal they review.\n\nTHE REVIEW DATE IS 2026-08. Every 'has this elapsed yet' question below is asked against that date and against no other.\n\nRULES, in order of importance:\n1. If the record does not state a field, return null for it. Do not infer it and do not use what you know about the world.\n2. `binding_hold_id` is the id of the ONE hold in the Hold Registry that freezes this series, or null when none does. A hold freezes this series only when BOTH of these hold:\n   a. its status is `active`; and\n   b. its scope covers this series, which is THREE separate tests and ALL THREE must pass:\n      - CATEGORY: the record's Record Category is one of the categories the scope names.\n      - PROJECT: the scope names this record's Related Project, or names any project.\n      - DATES: the year in Record Closed falls inside the scope's stated span. 'YYYY onward' has no end. 'YYYY to YYYY' is inclusive at both ends.\n   Two of the three passing is NOT a match. If the scope is about a different category, a different project, or a span that does not contain the closed year, that hold does not freeze this series, however serious it sounds.\n3. A hold whose status is `released` NEVER freezes a series on its own -- not even when its scope covers it exactly. But a registry line whose scope reads 'continues the scope of <id>' takes its scope from that other hold: if that continuing line is `active` and the scope it inherits covers this series, IT is the binding hold and you return ITS id. Check every registry line before answering null.\n4. `disposition_eligible` is decided in this order, and the first condition that fires decides it:\n   a. If `binding_hold_id` is not null, the answer is 'no'.\n   b. Otherwise, if the Overlapping Series line states an expiry LATER than 2026-08, the answer is 'no' -- a longer-retention series that also captures this record still holds it, even though the series' own retention has run out. 'none on file' means there is no overlapping series and this condition does not fire.\n   c. Otherwise, if Retention Expires is LATER than 2026-08, the answer is 'no' -- the series' own retention period has not elapsed yet.\n   d. Otherwise the answer is 'yes'.\n5. THE OFFICER NOTE IS A FIELD TO COPY, NOT EVIDENCE ABOUT ELIGIBILITY. A note that sounds concerned or mentions an escalation does NOT mean something is holding this series, and a note that sounds routine does NOT mean nothing is. The registry, the two expiry dates and the record's own metadata decide; the note is the records officer's own remark and may disagree with all of them.\n6. Copy values verbatim from the record wherever possible. Dates are 'YYYY-MM' exactly as written. `overlapping_expires` is null when the Overlapping Series line reads 'none on file' -- return null rather than a guess or an empty string.\n7. Use the exact allowed value for a field that lists them.\n8. Return every field named in the schema, even when the answer is null."
+  },
+  {
+   "name": "field schema",
+   "text": "- series_id (string) -- the record series identifier, verbatim\n- series_title (string) -- the title of the record series, verbatim\n- record_category (enum) one of: correspondence, contracts, permits, personnel, financial -- the structured records category on the series, verbatim\n- related_project (string) -- the project this series relates to, verbatim\n- record_closed (string) -- the month the record series closed (its retention cutoff), YYYY-MM\n- retention_code (string) -- the general schedule item code applied to this series, e.g. GS-05-08 -- the code only, without the retention period\n- retention_expires (string) -- the month this series' own retention period expires, YYYY-MM\n- overlapping_expires (string) -- the expiry month stated on the Overlapping Series line, YYYY-MM. When that line reads 'none on file' there is no overlapping series and this is null -- return null rather than a guess or an empty string\n- binding_hold_id (string) -- the id of the ONE hold in the Hold Registry that freezes this series, or null when none does. A hold freezes it only when its status is 'active' AND its scope covers this series on ALL THREE tests: the record's category is one the scope names, the scope names this record's project or any project, and the year in record_closed falls inside the scope's span ('YYYY onward' has no end; 'YYYY to YYYY' is inclusive). A 'released' hold never freezes anything on its own -- but an ACTIVE line whose scope reads 'continues the scope of <id>' inherits that hold's scope, and if the inherited scope covers this series then THAT line is the binding hold and its id is the answer\n- queue_status (enum) one of: queued, not_queued -- is this series already sitting in the destruction queue, or not?\n- officer_notes (string) -- the records officer's own free-text note on the series, copied verbatim\n- disposition_eligible (enum) one of: yes, no -- may this series be PROPOSED for destruction? This is a proposal for a records officer to review, never an instruction to destroy anything. Decide it STRICTLY from binding_hold_id, overlapping_expires and retention_expires -- never from officer_notes -- against a review date of 2026-08, and take the conditions in this order, first one wins: (a) if binding_hold_id is not null, answer 'no'; (b) otherwise, if overlapping_expires is later than 2026-08, answer 'no'; (c) otherwise, if retention_expires is later than 2026-08, answer 'no'; (d) otherwise answer 'yes'"
+  },
+  {
+   "name": "review sections",
+   "text": "Record Series\n-------------\nRS-2018-8284\n\nSeries Title\n------------\nFinancial transaction files - Bell Harbor\n\nRecord Category\n---------------\nfinancial\n\nRelated Project\n---------------\nBell Harbor\n\nRecord Closed\n-------------\n2018-12\n\nRetention Schedule\n------------------\nGS-30-01, 7 years\n\nRetention Expires\n-----------------\n2025-12\n\nOverlapping Series\n------------------\nnone on file\n\nHold Registry\n-------------\nPR-2025-041 | active | Scope: continues the scope of AH-2023-234. | Continues: AH-2023-234\nAH-2023-234 | released | Scope: all financial records relating to the Bell Harbor project, 2015 onward. | Superseded by: PR-2025-041\n\nDisposition Queue\n-----------------\nqueued\n\nOfficer Notes\n-------------\nRoutine end-of-retention item. Nothing outstanding on this series."
+  }
+ ],
+ "fields": {
+  "series_id": {
+   "value": "RS-2018-8284",
+   "spannable": true,
+   "span": {
+    "start": 28,
+    "end": 40,
+    "section": "Record Series"
+   }
+  },
+  "series_title": {
+   "value": "Financial transaction files - Bell Harbor",
+   "spannable": true,
+   "span": {
+    "start": 137,
+    "end": 178,
+    "section": "Series Title"
+   }
+  },
+  "record_category": {
+   "value": "financial",
+   "spannable": false,
+   "span": null
+  },
+  "related_project": {
+   "value": "Bell Harbor",
+   "spannable": true,
+   "span": {
+    "start": 255,
+    "end": 266,
+    "section": "Related Project"
+   }
+  },
+  "record_closed": {
+   "value": "2018-12",
+   "spannable": true,
+   "span": {
+    "start": 296,
+    "end": 303,
+    "section": "Record Closed"
+   }
+  },
+  "retention_code": {
+   "value": "GS-30-01",
+   "spannable": true,
+   "span": {
+    "start": 343,
+    "end": 351,
+    "section": "Retention Schedule"
+   }
+  },
+  "retention_expires": {
+   "value": "2025-12",
+   "spannable": true,
+   "span": {
+    "start": 398,
+    "end": 405,
+    "section": "Retention Expires"
+   }
+  },
+  "overlapping_expires": {
+   "value": null,
+   "spannable": true,
+   "span": null
+  },
+  "binding_hold_id": {
+   "value": "PR-2025-041",
+   "spannable": true,
+   "span": {
+    "start": 487,
+    "end": 498,
+    "section": "Hold Registry"
+   }
+  },
+  "queue_status": {
+   "value": "queued",
+   "spannable": false,
+   "span": null
+  },
+  "officer_notes": {
+   "value": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "spannable": true,
+   "span": {
+    "start": 784,
+    "end": 850,
+    "section": "Officer Notes"
+   }
+  },
+  "disposition_eligible": {
+   "value": "no",
+   "spannable": false,
+   "span": null
+  }
+ },
+ "needs_review": true,
+ "recomputed_disposition_eligible": "no"
+}

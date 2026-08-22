@@ -1,0 +1,62 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>commission-audit — check whether a channel's commission claim is actually owed against the folio</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Check whether a channel&rsquo;s commission claim is actually owed against the folio</h1>
+    <p class="sub">One commission claim line joined to the property&rsquo;s own folio record, one
+      model call, a field table &mdash; plus a routing decision taken afterwards, in pure code,
+      from two of the extracted values. Whether a claim is owed is a five-branch computation with
+      a priority order: the booking source first, then whether the stay was already commissioned,
+      then the commissionable base (room revenue net of refunds, or the cancellation penalty
+      actually charged &mdash; never the taxes and fees beside them), then the contracted
+      percentage. The property reviewer&rsquo;s own note is their remark on the line, and on this
+      corpus it often reads the opposite way from what the folio says.</p>
+  </header>
+
+  <div class="bar">
+    <select id="doc" aria-label="Commission claim record"></select>
+    <button id="go" type="button">Extract</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="panel">
+    <div class="ph"><span>Field table</span>
+      <span class="k kf" id="k-filled">&mdash;</span>
+      <span class="k kn" id="k-missing">&mdash;</span>
+      <span class="k ks" id="k-span">&mdash;</span></div>
+    <table id="tbl">
+      <thead><tr><th>Field</th><th>Value</th><th>Source span</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>Routed downstream, pure code</span></div>
+    <table>
+      <tbody>
+        <tr><td class="n">Commission owed, recomputed</td><td id="c-owed">&mdash;</td></tr>
+        <tr><td class="n">Claim valid</td><td id="c-valid">&mdash;</td></tr>
+        <tr><td class="n">Invoice status</td><td id="c-sig">&mdash;</td></tr>
+        <tr><td class="n">Needs a recovery claim</td><td id="c-flag">&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot">The flag is a <strong>business condition</strong>, not a check on the model:
+    <code>needs_recovery</code> fires when <code>claim_valid</code> is <code>no</code>
+    <em>and</em> <code>invoice_status</code> is <code>paid</code>. A bad line on an unpaid invoice
+    can simply be short-paid before settlement; the same line on an invoice already paid means the
+    property is out of pocket and has to raise a recovery claim against the channel.
+    <strong>This is the kit&rsquo;s own simplification, not a real property&rsquo;s dispute
+    policy</strong> &mdash; no channel&rsquo;s published dispute procedure or distribution
+    agreement was consulted, and none is reproduced.</p>
+
+  <details class="doc">
+    <summary>The commission claim record this was read from</summary>
+    <pre id="text"></pre>
+  </details>
+</div>
+<script src="/app.js"></script>

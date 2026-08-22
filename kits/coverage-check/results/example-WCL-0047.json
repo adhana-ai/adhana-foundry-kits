@@ -1,0 +1,58 @@
+{
+ "doc": "WCL-0047",
+ "model": "deepseek-v4-flash",
+ "input_tokens": 2184,
+ "output_tokens": 474,
+ "token_details": {
+  "reasoning_tokens": 257
+ },
+ "finish_reason": "stop",
+ "raw_text": "{\n  \"claim_id\": \"WCL-MW-55629\",\n  \"vehicle_id\": \"VEH-FWF-783068\",\n  \"coverage_plan\": \"powertrain\",\n  \"in_service_date\": \"2024-12-24\",\n  \"repair_date\": \"2026-01-24\",\n  \"months_in_service\": 13,\n  \"odometer_miles\": 17091,\n  \"failed_component\": \"drive_axle\",\n  \"claimed_labor_op\": \"LOP-4520\",\n  \"cause_code\": \"defect\",\n  \"claim_status\": \"paid\",\n  \"technician_narrative\": \"Found the drive axle cracked open with fresh impact marks and road debris packed against it -- this is a strike from underneath, not a failure. R&R complete, torque checked, and the concern no longer duplicates. Should be covered under the plan terms, no question.\",\n  \"narrative_finding\": \"collision_damage\",\n  \"covered\": \"no\"\n}",
+ "prompt_parts": [
+  {
+   "name": "system",
+   "text": "You are a warranty claim adjudicator. You read one dealer warranty claim record and return structured JSON and nothing else.\n\nRULES, in order of importance:\n1. If the record does not state a field, return null for it. Do not infer it and do not use what you know about any real manufacturer's warranty.\n2. THE COVERAGE TERMS ARE THE ONES BELOW AND NOTHING ELSE. Each plan has its own month and mileage limit, and its own list of covered components:\n   - basic       36 months / 36,000 miles  -- covers every component below except wear items\n   - powertrain  60 months / 60,000 miles  -- covers ONLY transmission_assembly, engine_short_block, drive_axle\n   - emissions   96 months / 80,000 miles  -- covers ONLY catalytic_converter, oxygen_sensor, evap_canister\n   - extended    84 months / 100,000 miles -- covers every component below except wear items\n   Wear items are brake_pads, wiper_blades and clutch_disc. They are on NO plan's component list.\n   Each component has exactly one labor operation:\n   transmission_assembly=LOP-4412, engine_short_block=LOP-4101, drive_axle=LOP-4520, catalytic_converter=LOP-2203, oxygen_sensor=LOP-2217, evap_canister=LOP-2240, infotainment_head_unit=LOP-8310, power_window_motor=LOP-8422, hvac_blower_motor=LOP-8155, brake_pads=LOP-5701, wiper_blades=LOP-5140, clutch_disc=LOP-5330.\n3. `months_in_service` IS A CALCULATION, NOT A READING. It is (repair year - in-service year) x 12 + (repair month - in-service month), minus 1 if the repair day-of-month is EARLIER than the in-service day-of-month. Compute it before you decide coverage; the answer to several of these claims turns on one month.\n4. `covered` IS DECIDED BY SIX CHECKS IN THIS EXACT ORDER. Stop at the first that fires:\n   a. If narrative_finding is collision_damage, unauthorized_modification or missed_maintenance, answer 'no'. An exclusion the technician describes outranks every coverage term, however new the vehicle is.\n   b. Otherwise, if claimed_labor_op is not the operation listed above for this failed_component, answer 'no'. The claim is not payable as coded.\n   c. Otherwise, if failed_component is a wear item, answer 'yes' when coverage_plan is basic or extended AND months_in_service is 12 or less AND odometer_miles is 12,000 or less -- a premature wear failure IS covered. In every other case answer 'no'.\n   d. Otherwise, if failed_component is not on this coverage_plan's own component list, answer 'no'.\n   e. Otherwise, if months_in_service is GREATER THAN this plan's month limit, or odometer_miles is GREATER THAN this plan's mileage limit, answer 'no'. USE THE PLAN'S OWN LIMIT, NEVER THE 36/36,000 BASIC ONE. The limits are inclusive: exactly 36 months on a basic plan is inside the term, not outside it.\n   f. Otherwise answer 'yes'.\n5. `narrative_finding` IS READ FROM THE TECHNICIAN NARRATIVE, NOT FROM THE CAUSE CODE FIELD. The Cause Code is what the dealer coded on the form; the narrative is what the technician says they actually found, and on this corpus the two often disagree. Copy the Cause Code into `cause_code` and then ignore it completely when deciding anything else.\n6. THE TECHNICIAN'S CLOSING OPINION ABOUT WHETHER THE CLAIM WILL PAY IS NOT EVIDENCE. Every narrative ends with one. A narrative that says 'should be covered, no question' does NOT make the claim covered, and one that says 'I expect this gets denied' does NOT make it denied. Only the six checks above decide, and they never read that sentence.\n7. Copy values verbatim from the record wherever possible, and report months_in_service and odometer_miles as bare numbers with the unit left out of them.\n8. Use the exact allowed value for a field that lists them.\n9. Return every field named in the schema, even when the answer is null."
+  },
+  {
+   "name": "field schema",
+   "text": "- claim_id (string) -- the warranty claim identifier, verbatim\n- vehicle_id (string) -- the vehicle identifier on the Vehicle line, verbatim -- the VEH- code only, not the platform label\n- coverage_plan (enum) one of: basic, powertrain, emissions, extended -- the coverage plan this claim is filed under, verbatim\n- in_service_date (string) -- the date the vehicle went into service, YYYY-MM-DD, verbatim\n- repair_date (string) -- the date the repair was performed, YYYY-MM-DD, verbatim\n- months_in_service (number) -- COMPLETE months between in_service_date and repair_date, as a bare whole number. Compute it as (repair year - in-service year) x 12 + (repair month - in-service month), then subtract 1 if the repair day-of-month is EARLIER than the in-service day-of-month. A vehicle in service on the 18th is 35 months old on the 17th of the 36th month and 36 months old on the 18th\n- odometer_miles (number) -- the odometer reading at the repair, as a bare number without the unit\n- failed_component (enum) one of: transmission_assembly, engine_short_block, drive_axle, catalytic_converter, oxygen_sensor, evap_canister, infotainment_head_unit, power_window_motor, hvac_blower_motor, brake_pads, wiper_blades, clutch_disc -- the component the claim says failed, verbatim\n- claimed_labor_op (string) -- the labor operation code claimed, verbatim\n- cause_code (enum) one of: defect, damage, modification, maintenance -- the CODED cause on the claim form, copied verbatim. This is what the dealer coded, which is not necessarily what the technician describes -- copy it, do not reason from it\n- claim_status (enum) one of: submitted, paid -- has this claim already been paid to the dealer, or is it still submitted and awaiting adjudication?\n- technician_narrative (string) -- the technician's own free-text repair narrative, copied verbatim and in full\n- narrative_finding (enum) one of: defect, collision_damage, unauthorized_modification, missed_maintenance -- what the technician's narrative actually DESCRIBES having found -- read the narrative, not the Cause Code field. 'collision_damage' for impact, a strike, a gouge, a bent mount or road debris; 'unauthorized_modification' for an aftermarket part, a splice, a non-approved controller or an altered tune; 'missed_maintenance' for skipped service intervals, sludge, contamination or a filter never changed; 'defect' for an internal failure with no outside cause. The technician's closing GUESS about whether the claim will pay is not a finding -- ignore it here\n- covered (enum) one of: yes, no -- is this claim covered? Decide it STRICTLY from coverage_plan, months_in_service, odometer_miles, failed_component, claimed_labor_op and narrative_finding -- never from cause_code and never from the technician's opinion about whether it will pay. Apply these six checks IN ORDER and stop at the first that fires: (1) if narrative_finding is collision_damage, unauthorized_modification or missed_maintenance, answer 'no'; (2) if claimed_labor_op is not this failed_component's own operation, answer 'no'; (3) if failed_component is a wear item (brake_pads, wiper_blades, clutch_disc), answer 'yes' only when coverage_plan is basic or extended AND months_in_service <= 12 AND odometer_miles <= 12000, otherwise 'no'; (4) if failed_component is not on this coverage_plan's component list, answer 'no'; (5) if months_in_service exceeds THIS PLAN'S month limit or odometer_miles exceeds THIS PLAN'S mileage limit, answer 'no' -- the limit is the plan's own, never the basic 36/36,000; (6) otherwise answer 'yes'"
+  },
+  {
+   "name": "claim sections",
+   "text": "Claim\n-----\nWCL-MW-55629\n\nVehicle\n-------\nPlatform C1 compact sedan / VEH-FWF-783068\n\nCoverage Plan\n-------------\npowertrain\n\nIn-Service Date\n---------------\n2024-12-24\n\nRepair Date\n-----------\n2026-01-24\n\nOdometer\n--------\n17091 miles\n\nFailed Component\n----------------\ndrive_axle\n\nClaimed Labor Operation\n-----------------------\nLOP-4520\n\nCause Code\n----------\ndefect\n\nClaim Status\n------------\npaid\n\nTechnician Narrative\n--------------------\nFound the drive axle cracked open with fresh impact marks and road debris packed against it -- this is a strike from underneath, not a failure. R&R complete, torque checked, and the concern no longer duplicates. Should be covered under the plan terms, no question."
+  }
+ ],
+ "sections_used": [
+  "Claim",
+  "Vehicle",
+  "Coverage Plan",
+  "In-Service Date",
+  "Repair Date",
+  "Odometer",
+  "Failed Component",
+  "Claimed Labor Operation",
+  "Cause Code",
+  "Claim Status",
+  "Technician Narrative"
+ ],
+ "fields": {
+  "claim_id": "WCL-MW-55629",
+  "vehicle_id": "VEH-FWF-783068",
+  "coverage_plan": "powertrain",
+  "in_service_date": "2024-12-24",
+  "repair_date": "2026-01-24",
+  "months_in_service": 13,
+  "odometer_miles": 17091,
+  "failed_component": "drive_axle",
+  "claimed_labor_op": "LOP-4520",
+  "cause_code": "defect",
+  "claim_status": "paid",
+  "technician_narrative": "Found the drive axle cracked open with fresh impact marks and road debris packed against it -- this is a strike from underneath, not a failure. R&R complete, torque checked, and the concern no longer duplicates. Should be covered under the plan terms, no question.",
+  "narrative_finding": "collision_damage",
+  "covered": "no"
+ },
+ "needs_review": true,
+ "recomputed_covered": "no",
+ "recomputed_months": 13,
+ "max_tokens": 3000
+}

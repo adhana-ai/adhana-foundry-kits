@@ -1,0 +1,8060 @@
+{
+ "run_id": "r001-hold-conflict",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "baseline_floor": null,
+ "records": 55,
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 3873,
+ "latency_p95_ms": 10887,
+ "latency_ms_all": [
+  3396,
+  4008,
+  4203,
+  5251,
+  10887,
+  3262,
+  2645,
+  3648,
+  3567,
+  2971,
+  12332,
+  4736,
+  6456,
+  4105,
+  4357,
+  5519,
+  3714,
+  2907,
+  5111,
+  5029,
+  5236,
+  5044,
+  4181,
+  4534,
+  7939,
+  4532,
+  3151,
+  3124,
+  3860,
+  4242,
+  3742,
+  2854,
+  3316,
+  3808,
+  3880,
+  3768,
+  3752,
+  3210,
+  15123,
+  4362,
+  4083,
+  4332,
+  6329,
+  3456,
+  3225,
+  2906,
+  3982,
+  3116,
+  3252,
+  3318,
+  3214,
+  4752,
+  3873,
+  3647,
+  3062
+ ],
+ "wall_seconds": 248.3,
+ "input_tokens_total": 91915,
+ "output_tokens_total": 26713,
+ "output_tokens_max": 1788,
+ "output_tokens_min": 252,
+ "scores": {
+  "extraction_cells": 660,
+  "extraction_accuracy": 1.0,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 421,
+  "values_with_span": 421,
+  "non_spannable_fields": [
+   "disposition_eligible",
+   "queue_status",
+   "record_category"
+  ],
+  "span_rate": 1.0,
+  "hold_identification_accuracy": 1.0,
+  "eligibility_accuracy": 1.0,
+  "frozen_recall": 1.0
+ },
+ "by_field": {
+  "series_id": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "series_title": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "record_category": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "related_project": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "record_closed": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "retention_code": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "retention_expires": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "overlapping_expires": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "binding_hold_id": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "queue_status": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "officer_notes": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "disposition_eligible": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "RDS-0001",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2006-3779",
+   "want": "RS-2006-3779",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Personnel action files - Riverside",
+   "want": "Personnel action files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "personnel",
+   "want": "personnel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2006-03",
+   "want": "2006-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-22-06",
+   "want": "GS-22-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2013-03",
+   "want": "2013-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2006-4823",
+   "want": "RS-2006-4823",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Cedar Hollow",
+   "want": "Project correspondence - Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Cedar Hollow",
+   "want": "Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2006-05",
+   "want": "2006-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-01-04",
+   "want": "GS-01-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2009-05",
+   "want": "2009-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2016-05",
+   "want": "2016-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "LH-2016-290",
+   "want": "LH-2016-290",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Standard disposition cycle. No open matters noted by this office.",
+   "want": "Standard disposition cycle. No open matters noted by this office.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2023-4545",
+   "want": "RS-2023-4545",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Milldam",
+   "want": "Permit application files - Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Milldam",
+   "want": "Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2023-05",
+   "want": "2023-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2028-05",
+   "want": "2028-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "want": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2018-8284",
+   "want": "RS-2018-8284",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Bell Harbor",
+   "want": "Financial transaction files - Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Bell Harbor",
+   "want": "Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2018-12",
+   "want": "2018-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2025-12",
+   "want": "2025-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "PR-2025-041",
+   "want": "PR-2025-041",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "want": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2020-2297",
+   "want": "RS-2020-2297",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Riverside",
+   "want": "Permit application files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2020-05",
+   "want": "2020-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2025-05",
+   "want": "2025-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Counsel asked us to take a second look at this one before anything moves.",
+   "want": "Counsel asked us to take a second look at this one before anything moves.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2008-2169",
+   "want": "RS-2008-2169",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Contract and procurement files - Milldam",
+   "want": "Contract and procurement files - Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "contracts",
+   "want": "contracts",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Milldam",
+   "want": "Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2008-09",
+   "want": "2008-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-11-02",
+   "want": "GS-11-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2015-09",
+   "want": "2015-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "LH-2016-191",
+   "want": "LH-2016-191",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Counsel asked us to take a second look at this one before anything moves.",
+   "want": "Counsel asked us to take a second look at this one before anything moves.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0006",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2025-4307",
+   "want": "RS-2025-4307",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Bell Harbor",
+   "want": "Project correspondence - Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Bell Harbor",
+   "want": "Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2025-12",
+   "want": "2025-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-05-08",
+   "want": "GS-05-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2031-12",
+   "want": "2031-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "want": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0007",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2012-4933",
+   "want": "RS-2012-4933",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Northgate",
+   "want": "Project correspondence - Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Northgate",
+   "want": "Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2012-03",
+   "want": "2012-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-01-04",
+   "want": "GS-01-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2015-03",
+   "want": "2015-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2037-03",
+   "want": "2037-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Clean series. The custodian confirms nothing further is expected here.",
+   "want": "Clean series. The custodian confirms nothing further is expected here.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0008",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2006-9595",
+   "want": "RS-2006-9595",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Riverside",
+   "want": "Financial transaction files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2006-07",
+   "want": "2006-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2013-07",
+   "want": "2013-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0009",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2013-4276",
+   "want": "RS-2013-4276",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Fairview",
+   "want": "Project correspondence - Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Fairview",
+   "want": "Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2013-11",
+   "want": "2013-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-01-04",
+   "want": "GS-01-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2016-11",
+   "want": "2016-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "want": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0010",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2017-4719",
+   "want": "RS-2017-4719",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Riverside",
+   "want": "Financial transaction files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2017-11",
+   "want": "2017-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2024-11",
+   "want": "2024-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Counsel asked us to take a second look at this one before anything moves.",
+   "want": "Counsel asked us to take a second look at this one before anything moves.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0011",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2010-9120",
+   "want": "RS-2010-9120",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Northgate",
+   "want": "Permit application files - Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Northgate",
+   "want": "Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2010-03",
+   "want": "2010-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2015-03",
+   "want": "2015-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "PR-2018-297",
+   "want": "PR-2018-297",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Disputed at intake. Something about this series looked off to the records committee.",
+   "want": "Disputed at intake. Something about this series looked off to the records committee.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0012",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2012-0619",
+   "want": "RS-2012-0619",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Northgate",
+   "want": "Permit application files - Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Northgate",
+   "want": "Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2012-02",
+   "want": "2012-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2017-02",
+   "want": "2017-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2024-02",
+   "want": "2024-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0013",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2014-8891",
+   "want": "RS-2014-8891",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Contract and procurement files - Fairview",
+   "want": "Contract and procurement files - Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "contracts",
+   "want": "contracts",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Fairview",
+   "want": "Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2014-05",
+   "want": "2014-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-11-09",
+   "want": "GS-11-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2024-05",
+   "want": "2024-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0014",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2006-4803",
+   "want": "RS-2006-4803",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Cedar Hollow",
+   "want": "Permit application files - Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Cedar Hollow",
+   "want": "Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2006-11",
+   "want": "2006-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2011-11",
+   "want": "2011-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2026-11",
+   "want": "2026-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "want": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0015",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2014-7000",
+   "want": "RS-2014-7000",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Personnel action files - Cedar Hollow",
+   "want": "Personnel action files - Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "personnel",
+   "want": "personnel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Cedar Hollow",
+   "want": "Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2014-09",
+   "want": "2014-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-22-06",
+   "want": "GS-22-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2021-09",
+   "want": "2021-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2024-09",
+   "want": "2024-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0016",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2009-5548",
+   "want": "RS-2009-5548",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Northgate",
+   "want": "Permit application files - Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Northgate",
+   "want": "Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2009-08",
+   "want": "2009-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2014-08",
+   "want": "2014-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Disputed at intake. Something about this series looked off to the records committee.",
+   "want": "Disputed at intake. Something about this series looked off to the records committee.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0017",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2018-4055",
+   "want": "RS-2018-4055",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Milldam",
+   "want": "Permit application files - Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Milldam",
+   "want": "Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2018-12",
+   "want": "2018-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2023-12",
+   "want": "2023-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "want": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0018",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2008-9900",
+   "want": "RS-2008-9900",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Northgate",
+   "want": "Project correspondence - Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Northgate",
+   "want": "Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2008-12",
+   "want": "2008-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-05-08",
+   "want": "GS-05-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2014-12",
+   "want": "2014-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "PR-2018-066",
+   "want": "PR-2018-066",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "want": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0019",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2011-1879",
+   "want": "RS-2011-1879",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Bell Harbor",
+   "want": "Permit application files - Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Bell Harbor",
+   "want": "Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2011-02",
+   "want": "2011-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2016-02",
+   "want": "2016-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2023-02",
+   "want": "2023-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Standard disposition cycle. No open matters noted by this office.",
+   "want": "Standard disposition cycle. No open matters noted by this office.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0020",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2015-6963",
+   "want": "RS-2015-6963",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Milldam",
+   "want": "Permit application files - Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Milldam",
+   "want": "Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2015-12",
+   "want": "2015-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2020-12",
+   "want": "2020-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2025-12",
+   "want": "2025-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "PR-2019-338",
+   "want": "PR-2019-338",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "want": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0021",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2013-9537",
+   "want": "RS-2013-9537",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Contract and procurement files - Northgate",
+   "want": "Contract and procurement files - Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "contracts",
+   "want": "contracts",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Northgate",
+   "want": "Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2013-02",
+   "want": "2013-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-11-09",
+   "want": "GS-11-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2023-02",
+   "want": "2023-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "want": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0022",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2020-1824",
+   "want": "RS-2020-1824",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Cedar Hollow",
+   "want": "Project correspondence - Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Cedar Hollow",
+   "want": "Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2020-07",
+   "want": "2020-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-01-04",
+   "want": "GS-01-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2023-07",
+   "want": "2023-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2032-07",
+   "want": "2032-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "want": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0023",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2016-6704",
+   "want": "RS-2016-6704",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Riverside",
+   "want": "Financial transaction files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2016-02",
+   "want": "2016-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2023-02",
+   "want": "2023-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "PR-2018-252",
+   "want": "PR-2018-252",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Clean series. The custodian confirms nothing further is expected here.",
+   "want": "Clean series. The custodian confirms nothing further is expected here.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0024",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2012-7702",
+   "want": "RS-2012-7702",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Contract and procurement files - Fairview",
+   "want": "Contract and procurement files - Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "contracts",
+   "want": "contracts",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Fairview",
+   "want": "Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2012-10",
+   "want": "2012-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-11-02",
+   "want": "GS-11-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2019-10",
+   "want": "2019-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2024-10",
+   "want": "2024-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Disputed at intake. Something about this series looked off to the records committee.",
+   "want": "Disputed at intake. Something about this series looked off to the records committee.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0025",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2019-8127",
+   "want": "RS-2019-8127",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Riverside",
+   "want": "Permit application files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2019-12",
+   "want": "2019-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2024-12",
+   "want": "2024-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "AH-2021-392",
+   "want": "AH-2021-392",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0026",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2013-0696",
+   "want": "RS-2013-0696",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Northgate",
+   "want": "Financial transaction files - Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Northgate",
+   "want": "Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2013-04",
+   "want": "2013-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2020-04",
+   "want": "2020-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0027",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2022-1212",
+   "want": "RS-2022-1212",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Riverside",
+   "want": "Financial transaction files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2022-01",
+   "want": "2022-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2029-01",
+   "want": "2029-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Escalated last cycle over a possible hold conflict -- pending supervisor review.",
+   "want": "Escalated last cycle over a possible hold conflict -- pending supervisor review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0028",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2013-7421",
+   "want": "RS-2013-7421",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Contract and procurement files - Northgate",
+   "want": "Contract and procurement files - Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "contracts",
+   "want": "contracts",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Northgate",
+   "want": "Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2013-02",
+   "want": "2013-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-11-09",
+   "want": "GS-11-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2023-02",
+   "want": "2023-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2038-02",
+   "want": "2038-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Clean series. The custodian confirms nothing further is expected here.",
+   "want": "Clean series. The custodian confirms nothing further is expected here.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0029",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2021-8050",
+   "want": "RS-2021-8050",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Personnel action files - Riverside",
+   "want": "Personnel action files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "personnel",
+   "want": "personnel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2021-12",
+   "want": "2021-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-22-06",
+   "want": "GS-22-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2028-12",
+   "want": "2028-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Disputed at intake. Something about this series looked off to the records committee.",
+   "want": "Disputed at intake. Something about this series looked off to the records committee.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0030",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2009-7604",
+   "want": "RS-2009-7604",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Fairview",
+   "want": "Project correspondence - Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Fairview",
+   "want": "Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2009-03",
+   "want": "2009-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-05-08",
+   "want": "GS-05-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2015-03",
+   "want": "2015-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0031",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2022-3761",
+   "want": "RS-2022-3761",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Riverside",
+   "want": "Project correspondence - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2022-03",
+   "want": "2022-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-01-04",
+   "want": "GS-01-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2025-03",
+   "want": "2025-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Clean series. The custodian confirms nothing further is expected here.",
+   "want": "Clean series. The custodian confirms nothing further is expected here.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0032",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2006-5524",
+   "want": "RS-2006-5524",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Fairview",
+   "want": "Financial transaction files - Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Fairview",
+   "want": "Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2006-02",
+   "want": "2006-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2013-02",
+   "want": "2013-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Standard disposition cycle. No open matters noted by this office.",
+   "want": "Standard disposition cycle. No open matters noted by this office.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0033",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2008-7609",
+   "want": "RS-2008-7609",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Personnel action files - Bell Harbor",
+   "want": "Personnel action files - Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "personnel",
+   "want": "personnel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Bell Harbor",
+   "want": "Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2008-03",
+   "want": "2008-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-22-06",
+   "want": "GS-22-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2015-03",
+   "want": "2015-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2018-03",
+   "want": "2018-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0034",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2014-7828",
+   "want": "RS-2014-7828",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Personnel action files - Bell Harbor",
+   "want": "Personnel action files - Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "personnel",
+   "want": "personnel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Bell Harbor",
+   "want": "Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2014-12",
+   "want": "2014-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-22-06",
+   "want": "GS-22-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2021-12",
+   "want": "2021-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2024-12",
+   "want": "2024-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "PR-2016-186",
+   "want": "PR-2016-186",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Disputed at intake. Something about this series looked off to the records committee.",
+   "want": "Disputed at intake. Something about this series looked off to the records committee.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0035",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2022-7819",
+   "want": "RS-2022-7819",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Personnel action files - Bell Harbor",
+   "want": "Personnel action files - Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "personnel",
+   "want": "personnel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Bell Harbor",
+   "want": "Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2022-03",
+   "want": "2022-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-22-06",
+   "want": "GS-22-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2029-03",
+   "want": "2029-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0036",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2023-9154",
+   "want": "RS-2023-9154",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Riverside",
+   "want": "Permit application files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2023-07",
+   "want": "2023-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2028-07",
+   "want": "2028-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0037",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2010-3521",
+   "want": "RS-2010-3521",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Cedar Hollow",
+   "want": "Permit application files - Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Cedar Hollow",
+   "want": "Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2010-10",
+   "want": "2010-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2015-10",
+   "want": "2015-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "PR-2016-274",
+   "want": "PR-2016-274",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Disputed at intake. Something about this series looked off to the records committee.",
+   "want": "Disputed at intake. Something about this series looked off to the records committee.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0038",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2009-8978",
+   "want": "RS-2009-8978",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Personnel action files - Northgate",
+   "want": "Personnel action files - Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "personnel",
+   "want": "personnel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Northgate",
+   "want": "Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2009-06",
+   "want": "2009-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-22-06",
+   "want": "GS-22-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2016-06",
+   "want": "2016-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2019-06",
+   "want": "2019-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Escalated last cycle over a possible hold conflict -- pending supervisor review.",
+   "want": "Escalated last cycle over a possible hold conflict -- pending supervisor review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0039",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2019-3525",
+   "want": "RS-2019-3525",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Northgate",
+   "want": "Financial transaction files - Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Northgate",
+   "want": "Northgate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2019-06",
+   "want": "2019-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2026-06",
+   "want": "2026-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Clean series. The custodian confirms nothing further is expected here.",
+   "want": "Clean series. The custodian confirms nothing further is expected here.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0040",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2011-7644",
+   "want": "RS-2011-7644",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Cedar Hollow",
+   "want": "Financial transaction files - Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Cedar Hollow",
+   "want": "Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2011-11",
+   "want": "2011-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2018-11",
+   "want": "2018-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0041",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2013-1427",
+   "want": "RS-2013-1427",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Riverside",
+   "want": "Permit application files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2013-08",
+   "want": "2013-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2018-08",
+   "want": "2018-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2023-08",
+   "want": "2023-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "LH-2016-264",
+   "want": "LH-2016-264",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Disputed at intake. Something about this series looked off to the records committee.",
+   "want": "Disputed at intake. Something about this series looked off to the records committee.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0042",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2008-0421",
+   "want": "RS-2008-0421",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Contract and procurement files - Bell Harbor",
+   "want": "Contract and procurement files - Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "contracts",
+   "want": "contracts",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Bell Harbor",
+   "want": "Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2008-06",
+   "want": "2008-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-11-09",
+   "want": "GS-11-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2018-06",
+   "want": "2018-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2018-06",
+   "want": "2018-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "LH-2018-248",
+   "want": "LH-2018-248",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "want": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0043",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2009-5918",
+   "want": "RS-2009-5918",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Riverside",
+   "want": "Permit application files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2009-01",
+   "want": "2009-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2014-01",
+   "want": "2014-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Disputed at intake. Something about this series looked off to the records committee.",
+   "want": "Disputed at intake. Something about this series looked off to the records committee.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0044",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2018-8173",
+   "want": "RS-2018-8173",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Personnel action files - Milldam",
+   "want": "Personnel action files - Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "personnel",
+   "want": "personnel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Milldam",
+   "want": "Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2018-08",
+   "want": "2018-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-22-06",
+   "want": "GS-22-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2025-08",
+   "want": "2025-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2030-08",
+   "want": "2030-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Clean series. The custodian confirms nothing further is expected here.",
+   "want": "Clean series. The custodian confirms nothing further is expected here.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0045",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2010-0360",
+   "want": "RS-2010-0360",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Riverside",
+   "want": "Permit application files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2010-11",
+   "want": "2010-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2015-11",
+   "want": "2015-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2035-11",
+   "want": "2035-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "want": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0046",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2009-4998",
+   "want": "RS-2009-4998",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Bell Harbor",
+   "want": "Financial transaction files - Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Bell Harbor",
+   "want": "Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2009-07",
+   "want": "2009-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2016-07",
+   "want": "2016-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2019-07",
+   "want": "2019-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "AH-2016-334",
+   "want": "AH-2016-334",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Standard disposition cycle. No open matters noted by this office.",
+   "want": "Standard disposition cycle. No open matters noted by this office.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0047",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2015-3768",
+   "want": "RS-2015-3768",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Fairview",
+   "want": "Project correspondence - Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Fairview",
+   "want": "Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2015-10",
+   "want": "2015-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-05-08",
+   "want": "GS-05-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2021-10",
+   "want": "2021-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Clean series. The custodian confirms nothing further is expected here.",
+   "want": "Clean series. The custodian confirms nothing further is expected here.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0048",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2013-7261",
+   "want": "RS-2013-7261",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Milldam",
+   "want": "Project correspondence - Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Milldam",
+   "want": "Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2013-12",
+   "want": "2013-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-05-08",
+   "want": "GS-05-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2019-12",
+   "want": "2019-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2025-12",
+   "want": "2025-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "AH-2016-010",
+   "want": "AH-2016-010",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Escalated last cycle over a possible hold conflict -- pending supervisor review.",
+   "want": "Escalated last cycle over a possible hold conflict -- pending supervisor review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0049",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2009-9372",
+   "want": "RS-2009-9372",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Contract and procurement files - Riverside",
+   "want": "Contract and procurement files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "contracts",
+   "want": "contracts",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2009-09",
+   "want": "2009-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-11-02",
+   "want": "GS-11-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2016-09",
+   "want": "2016-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2021-09",
+   "want": "2021-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Escalated last cycle over a possible hold conflict -- pending supervisor review.",
+   "want": "Escalated last cycle over a possible hold conflict -- pending supervisor review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0050",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2011-5576",
+   "want": "RS-2011-5576",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Cedar Hollow",
+   "want": "Project correspondence - Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Cedar Hollow",
+   "want": "Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2011-06",
+   "want": "2011-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-01-04",
+   "want": "GS-01-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2014-06",
+   "want": "2014-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "want": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0051",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2019-6269",
+   "want": "RS-2019-6269",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Cedar Hollow",
+   "want": "Financial transaction files - Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Cedar Hollow",
+   "want": "Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2019-04",
+   "want": "2019-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2026-04",
+   "want": "2026-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "want": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0052",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2019-7618",
+   "want": "RS-2019-7618",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Fairview",
+   "want": "Permit application files - Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Fairview",
+   "want": "Fairview",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2019-12",
+   "want": "2019-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2024-12",
+   "want": "2024-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "AH-2021-274",
+   "want": "AH-2021-274",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Counsel asked us to take a second look at this one before anything moves.",
+   "want": "Counsel asked us to take a second look at this one before anything moves.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0053",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2009-5609",
+   "want": "RS-2009-5609",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Personnel action files - Cedar Hollow",
+   "want": "Personnel action files - Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "personnel",
+   "want": "personnel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Cedar Hollow",
+   "want": "Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2009-07",
+   "want": "2009-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-22-06",
+   "want": "GS-22-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2016-07",
+   "want": "2016-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "AH-2016-205",
+   "want": "AH-2016-205",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0054",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2011-8148",
+   "want": "RS-2011-8148",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Personnel action files - Riverside",
+   "want": "Personnel action files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "personnel",
+   "want": "personnel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2011-12",
+   "want": "2011-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-22-06",
+   "want": "GS-22-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2018-12",
+   "want": "2018-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "want": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0055",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "positive_class": "no (this series may NOT be proposed for destruction)",
+  "true_positive": 28,
+  "false_positive": 0,
+  "true_negative": 27,
+  "false_negative": 0,
+  "unanswered": 0,
+  "not_applicable": 0,
+  "accuracy": 1.0,
+  "recall": 1.0,
+  "precision": 1.0,
+  "binding_hold": {
+   "correct": 55,
+   "of": 55,
+   "accuracy": 1.0,
+   "counts": {
+    "correct": 55
+   },
+   "unanswered": 0,
+   "note": "Did the run name the hold gold names, including naming none when none binds? This is the prose scope judgement the eligibility verdict rests on. It is one of the twelve extraction cells as well; it is broken out because an average over twelve fields hides the only one that required reasoning. The denominator is every gold record, not every reply -- a record that produced no reply is `unanswered` and is never a correct call.",
+   "rows": [
+    {
+     "doc": "RDS-0001",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0002",
+     "want": "LH-2016-290",
+     "got": "LH-2016-290",
+     "verdict": "correct",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0003",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0004",
+     "want": "PR-2025-041",
+     "got": "PR-2025-041",
+     "verdict": "correct",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0005",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_project_miss"
+    },
+    {
+     "doc": "RDS-0006",
+     "want": "LH-2016-191",
+     "got": "LH-2016-191",
+     "verdict": "correct",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0007",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0008",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0009",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_category_miss"
+    },
+    {
+     "doc": "RDS-0010",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "clear"
+    },
+    {
+     "doc": "RDS-0011",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_project_miss"
+    },
+    {
+     "doc": "RDS-0012",
+     "want": "PR-2018-297",
+     "got": "PR-2018-297",
+     "verdict": "correct",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0013",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0014",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_category_miss"
+    },
+    {
+     "doc": "RDS-0015",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0016",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0017",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "released_no_successor"
+    },
+    {
+     "doc": "RDS-0018",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "released_no_successor"
+    },
+    {
+     "doc": "RDS-0019",
+     "want": "PR-2018-066",
+     "got": "PR-2018-066",
+     "verdict": "correct",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0020",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0021",
+     "want": "PR-2019-338",
+     "got": "PR-2019-338",
+     "verdict": "correct",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0022",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_project_miss"
+    },
+    {
+     "doc": "RDS-0023",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0024",
+     "want": "PR-2018-252",
+     "got": "PR-2018-252",
+     "verdict": "correct",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0025",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_category_miss"
+    },
+    {
+     "doc": "RDS-0026",
+     "want": "AH-2021-392",
+     "got": "AH-2021-392",
+     "verdict": "correct",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0027",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "released_no_successor"
+    },
+    {
+     "doc": "RDS-0028",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0029",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0030",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0031",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "clear"
+    },
+    {
+     "doc": "RDS-0032",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "clear"
+    },
+    {
+     "doc": "RDS-0033",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "clear"
+    },
+    {
+     "doc": "RDS-0034",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "clear"
+    },
+    {
+     "doc": "RDS-0035",
+     "want": "PR-2016-186",
+     "got": "PR-2016-186",
+     "verdict": "correct",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0036",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0037",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0038",
+     "want": "PR-2016-274",
+     "got": "PR-2016-274",
+     "verdict": "correct",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0039",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_project_miss"
+    },
+    {
+     "doc": "RDS-0040",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_category_miss"
+    },
+    {
+     "doc": "RDS-0041",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_category_miss"
+    },
+    {
+     "doc": "RDS-0042",
+     "want": "LH-2016-264",
+     "got": "LH-2016-264",
+     "verdict": "correct",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0043",
+     "want": "LH-2018-248",
+     "got": "LH-2018-248",
+     "verdict": "correct",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0044",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0045",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0046",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0047",
+     "want": "AH-2016-334",
+     "got": "AH-2016-334",
+     "verdict": "correct",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0048",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "released_no_successor"
+    },
+    {
+     "doc": "RDS-0049",
+     "want": "AH-2016-010",
+     "got": "AH-2016-010",
+     "verdict": "correct",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0050",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0051",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "released_no_successor"
+    },
+    {
+     "doc": "RDS-0052",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_project_miss"
+    },
+    {
+     "doc": "RDS-0053",
+     "want": "AH-2021-274",
+     "got": "AH-2021-274",
+     "verdict": "correct",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0054",
+     "want": "AH-2016-205",
+     "got": "AH-2016-205",
+     "verdict": "correct",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0055",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_category_miss"
+    }
+   ]
+  },
+  "by_class": {
+   "scope_date_miss": {
+    "n": 6,
+    "verdict_correct": 6,
+    "hold_correct": 6
+   },
+   "hold_active": {
+    "n": 10,
+    "verdict_correct": 10,
+    "hold_correct": 10
+   },
+   "retention_open": {
+    "n": 6,
+    "verdict_correct": 6,
+    "hold_correct": 6
+   },
+   "hold_successor": {
+    "n": 6,
+    "verdict_correct": 6,
+    "hold_correct": 6
+   },
+   "scope_project_miss": {
+    "n": 5,
+    "verdict_correct": 5,
+    "hold_correct": 5
+   },
+   "overlap_longer": {
+    "n": 6,
+    "verdict_correct": 6,
+    "hold_correct": 6
+   },
+   "scope_category_miss": {
+    "n": 6,
+    "verdict_correct": 6,
+    "hold_correct": 6
+   },
+   "clear": {
+    "n": 5,
+    "verdict_correct": 5,
+    "hold_correct": 5
+   },
+   "released_no_successor": {
+    "n": 5,
+    "verdict_correct": 5,
+    "hold_correct": 5
+   }
+  },
+  "review_flag": {
+   "true_positive": 16,
+   "false_positive": 0,
+   "true_negative": 39,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (frozen and already in the destruction queue)",
+   "note": "needs_review compares the run's own disposition_eligible and queue_status against the same two-value rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the extraction grade, which does too, and unlike the consistency diagnostic below, which does not. It asks for a series to be pulled OUT of a destruction queue; it never proposes putting one in.",
+   "rows": [
+    {
+     "doc": "RDS-0001",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0002",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0004",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0005",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0006",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0007",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0008",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0009",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0010",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0011",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0012",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0013",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0014",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0015",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0016",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0017",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0018",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0019",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0020",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0021",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0022",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0023",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0024",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0025",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0026",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0027",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0028",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0029",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0030",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0031",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0032",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0033",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0034",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0035",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0036",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0037",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0038",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0039",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0040",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0041",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0042",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0043",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0044",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0045",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0046",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0047",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0048",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0049",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0050",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0051",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0052",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0053",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0054",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0055",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_values": 0,
+   "verdict_errors": 0,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 0,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the eligibility derivation over the run's OWN named binding hold and OWN extracted dates and counts the replies whose stated verdict disagrees with it. It uses no gold, so a forker can compute it on unlabelled records -- but it collapses the hold search to its result, so it is blind to a reply that names the wrong hold, or misses a live successor, and then derives correctly from that. That is precisely the step this corpus is built to test."
+  },
+  "rows": [
+   {
+    "doc": "RDS-0001",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0002",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0003",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "retention_open",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0004",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_successor",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0005",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_project_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0006",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0007",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "retention_open",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0008",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "overlap_longer",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0009",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0010",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "clear",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0011",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_project_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0012",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_successor",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0013",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0014",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0015",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "overlap_longer",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0016",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0017",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "released_no_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0018",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "released_no_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0019",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_successor",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0020",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0021",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0022",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_project_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0023",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "overlap_longer",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0024",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0025",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0026",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0027",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "released_no_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0028",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "retention_open",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0029",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "overlap_longer",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0030",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "retention_open",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0031",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "clear",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0032",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "clear",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0033",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "clear",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0034",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "clear",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0035",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_active",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0036",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "retention_open",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0037",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "retention_open",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0038",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_active",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0039",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_project_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0040",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0041",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0042",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0043",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_successor",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0044",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0045",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "overlap_longer",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0046",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "overlap_longer",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0047",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_active",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0048",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "released_no_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0049",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0050",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0051",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "released_no_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0052",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_project_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0053",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0054",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0055",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3258
+  },
+  {
+   "name": "field schema",
+   "chars": 2455
+  },
+  {
+   "name": "review sections",
+   "chars": 653
+  }
+ ],
+ "sections_used": [
+  "Record Series",
+  "Series Title",
+  "Record Category",
+  "Related Project",
+  "Record Closed",
+  "Retention Schedule",
+  "Retention Expires",
+  "Overlapping Series",
+  "Hold Registry",
+  "Disposition Queue",
+  "Officer Notes"
+ ],
+ "raw_text": "{\"series_id\":\"RS-2006-3779\",\"series_title\":\"Personnel action files - Riverside\",\"record_category\":\"personnel\",\"related_project\":\"Riverside\",\"record_closed\":\"2006-03\",\"retention_code\":\"GS-22-06\",\"retention_expires\":\"2013-03\",\"overlapping_expires\":null,\"binding_hold_id\":null,\"queue_status\":\"queued\",\"officer_notes\":\"Ordinary cycle item, no correspondence pending on it.\",\"disposition_eligible\":\"yes\"}",
+ "max_tokens": 6000,
+ "rescored_from_cells": true
+}

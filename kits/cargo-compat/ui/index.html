@@ -1,0 +1,77 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>cargo-compat — check a tank's prior cargo against the product about to go in</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Check a tank&rsquo;s prior cargo against the product about to go in</h1>
+    <p class="sub">One pre-load check sheet, one model call, a field table &mdash; plus a hold
+      decision taken afterwards, in pure code, from two of the extracted values. The verdict is a
+      compatibility-matrix lookup with a stopping order: is the prior cargo even recorded, is the
+      pair reactive, is the predecessor banned for this grade over its own look-back depth, and
+      only then did the <em>certificate</em> meet the minimum wash. The tank log&rsquo;s own
+      &ldquo;wash performed&rdquo; line and the inspector&rsquo;s note are both on the sheet, and
+      neither decides anything.</p>
+  </header>
+
+  <div class="warn">
+    <strong>This proposes a verdict. It never authorises a load.</strong>
+    A qualified person authorises the load, against the incoming product&rsquo;s safety data sheet
+    and the tank&rsquo;s real cleaning record. <strong>The compatibility matrix shipped with this
+    kit is illustrative and is not an authority</strong> &mdash; it was written for this kit and
+    reproduces no commercial, industry-body or proprietary chart. Replace it with your own before
+    you decide anything real by it.
+  </div>
+
+  <div class="bar">
+    <select id="doc" aria-label="Pre-load check sheet"></select>
+    <button id="go" type="button">Check</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="panel">
+    <div class="ph"><span>Field table</span>
+      <span class="k kf" id="k-filled">&mdash;</span>
+      <span class="k kn" id="k-missing">&mdash;</span>
+      <span class="k ks" id="k-span">&mdash;</span></div>
+    <table id="tbl">
+      <thead><tr><th>Field</th><th>Value</th><th>Source span</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>Decided downstream, pure code</span></div>
+    <table>
+      <tbody>
+        <tr><td class="n">Verdict</td><td id="c-verdict">&mdash;</td></tr>
+        <tr><td class="n">Why</td><td id="c-reason">&mdash;</td></tr>
+        <tr><td class="n">Minimum certified wash</td><td id="c-req">&mdash;</td></tr>
+        <tr><td class="n">Load status</td><td id="c-status">&mdash;</td></tr>
+        <tr><td class="n">Hold this tank</td><td id="c-flag">&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot">The hold flag is a <strong>business condition</strong>, not a check on the model:
+    <code>needs_hold</code> fires when <code>verdict</code> is anything other than
+    <code>accept</code> <em>and</em> <code>load_status</code> is <code>loaded</code>. A pending
+    load can simply be cleaned or refused before it goes in; the same verdict on a tank already
+    loaded means product is sitting on a residue it should not be sitting on.
+    <code>undetermined</code> counts here too &mdash; treating an unknown as a pass is the one
+    thing a pre-load check must never do. <strong>This is the kit&rsquo;s own simplification, not
+    a terminal&rsquo;s quarantine policy</strong> &mdash; no operator&rsquo;s procedure, industry
+    code or regulatory rule was consulted, and none is reproduced.</p>
+
+  <details class="doc">
+    <summary>The pre-load check sheet this was read from</summary>
+    <pre id="text"></pre>
+  </details>
+
+  <details class="doc">
+    <summary>The shipped compatibility matrix &mdash; illustrative, not an authority</summary>
+    <div id="matrix" class="mx"></div>
+  </details>
+</div>
+<script src="/app.js"></script>

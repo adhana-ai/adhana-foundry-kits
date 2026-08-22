@@ -1,0 +1,12 @@
+# NOTHING. This kit is Python standard library, end to end.
+#
+# It was not written to be minimal for its own sake -- docs-qa has one dependency, pypdf, and
+# that dependency earns its place because PDF text extraction is genuinely not something to
+# hand-roll. This corpus is generated in-process by tools/build_corpus.py and the model is reached
+# over urllib in src/adapters/__init__.py rather than through any vendor SDK -- so a forker runs
+# this on whichever key they already hold, instead of installing a client for a vendor they will
+# never call. There was nothing left to add.
+#
+# ⚠︎ A requirements file naming a package the code never touches is a small lie that costs a
+# forker an install and teaches them the kit is bigger than it is. If you add a line here,
+# something under src/ or evals/ must import it.

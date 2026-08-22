@@ -1,0 +1,2011 @@
+{
+ "run_id": "c000-ceiling",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "baseline_floor": null,
+ "records": 5,
+ "documents": 5,
+ "failures": [],
+ "latency_p50_ms": 3937,
+ "latency_p95_ms": 17830,
+ "latency_ms_all": [
+  3529,
+  4724,
+  2623,
+  3937,
+  17830
+ ],
+ "wall_seconds": 32.6,
+ "input_tokens_total": 8363,
+ "output_tokens_total": 3443,
+ "output_tokens_max": 1849,
+ "output_tokens_min": 294,
+ "scores": {
+  "extraction_cells": 60,
+  "extraction_accuracy": 1.0,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 38,
+  "values_with_span": 38,
+  "non_spannable_fields": [
+   "disposition_eligible",
+   "queue_status",
+   "record_category"
+  ],
+  "span_rate": 1.0,
+  "hold_identification_accuracy": 0.0909,
+  "eligibility_accuracy": 0.0909,
+  "frozen_recall": 0.1071
+ },
+ "by_field": {
+  "series_id": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "series_title": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "record_category": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "related_project": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "record_closed": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "retention_code": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "retention_expires": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "overlapping_expires": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "binding_hold_id": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "queue_status": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "officer_notes": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "disposition_eligible": {
+   "hit": 5,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "RDS-0001",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2006-3779",
+   "want": "RS-2006-3779",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Personnel action files - Riverside",
+   "want": "Personnel action files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "personnel",
+   "want": "personnel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2006-03",
+   "want": "2006-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-22-06",
+   "want": "GS-22-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2013-03",
+   "want": "2013-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Ordinary cycle item, no correspondence pending on it.",
+   "want": "Ordinary cycle item, no correspondence pending on it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0001",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2006-4823",
+   "want": "RS-2006-4823",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Project correspondence - Cedar Hollow",
+   "want": "Project correspondence - Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "correspondence",
+   "want": "correspondence",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Cedar Hollow",
+   "want": "Cedar Hollow",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2006-05",
+   "want": "2006-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-01-04",
+   "want": "GS-01-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2009-05",
+   "want": "2009-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": "2016-05",
+   "want": "2016-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "LH-2016-290",
+   "want": "LH-2016-290",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "not_queued",
+   "want": "not_queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Standard disposition cycle. No open matters noted by this office.",
+   "want": "Standard disposition cycle. No open matters noted by this office.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0002",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2023-4545",
+   "want": "RS-2023-4545",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Milldam",
+   "want": "Permit application files - Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Milldam",
+   "want": "Milldam",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2023-05",
+   "want": "2023-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2028-05",
+   "want": "2028-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "want": "The custodian was not confident this series is clear; flagged for manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0003",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2018-8284",
+   "want": "RS-2018-8284",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Financial transaction files - Bell Harbor",
+   "want": "Financial transaction files - Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "financial",
+   "want": "financial",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Bell Harbor",
+   "want": "Bell Harbor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2018-12",
+   "want": "2018-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-30-01",
+   "want": "GS-30-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2025-12",
+   "want": "2025-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": "PR-2025-041",
+   "want": "PR-2025-041",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "want": "Routine end-of-retention item. Nothing outstanding on this series.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0004",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "series_id",
+   "verdict": "hit",
+   "got": "RS-2020-2297",
+   "want": "RS-2020-2297",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "series_title",
+   "verdict": "hit",
+   "got": "Permit application files - Riverside",
+   "want": "Permit application files - Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "record_category",
+   "verdict": "hit",
+   "got": "permits",
+   "want": "permits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "related_project",
+   "verdict": "hit",
+   "got": "Riverside",
+   "want": "Riverside",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "record_closed",
+   "verdict": "hit",
+   "got": "2020-05",
+   "want": "2020-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "retention_code",
+   "verdict": "hit",
+   "got": "GS-17-03",
+   "want": "GS-17-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "retention_expires",
+   "verdict": "hit",
+   "got": "2025-05",
+   "want": "2025-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "overlapping_expires",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "binding_hold_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "queue_status",
+   "verdict": "hit",
+   "got": "queued",
+   "want": "queued",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "officer_notes",
+   "verdict": "hit",
+   "got": "Counsel asked us to take a second look at this one before anything moves.",
+   "want": "Counsel asked us to take a second look at this one before anything moves.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "RDS-0005",
+   "field": "disposition_eligible",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "positive_class": "no (this series may NOT be proposed for destruction)",
+  "true_positive": 3,
+  "false_positive": 0,
+  "true_negative": 2,
+  "false_negative": 0,
+  "unanswered": 50,
+  "not_applicable": 0,
+  "accuracy": 0.0909,
+  "recall": 0.1071,
+  "precision": 1.0,
+  "binding_hold": {
+   "correct": 5,
+   "of": 55,
+   "accuracy": 0.0909,
+   "counts": {
+    "correct": 5,
+    "unanswered": 50
+   },
+   "unanswered": 50,
+   "note": "Did the run name the hold gold names, including naming none when none binds? This is the prose scope judgement the eligibility verdict rests on. It is one of the twelve extraction cells as well; it is broken out because an average over twelve fields hides the only one that required reasoning. The denominator is every gold record, not every reply -- a record that produced no reply is `unanswered` and is never a correct call.",
+   "rows": [
+    {
+     "doc": "RDS-0001",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0002",
+     "want": "LH-2016-290",
+     "got": "LH-2016-290",
+     "verdict": "correct",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0003",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0004",
+     "want": "PR-2025-041",
+     "got": "PR-2025-041",
+     "verdict": "correct",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0005",
+     "want": null,
+     "got": null,
+     "verdict": "correct",
+     "klass": "scope_project_miss"
+    },
+    {
+     "doc": "RDS-0006",
+     "want": "LH-2016-191",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0007",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0008",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0009",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_category_miss"
+    },
+    {
+     "doc": "RDS-0010",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "clear"
+    },
+    {
+     "doc": "RDS-0011",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_project_miss"
+    },
+    {
+     "doc": "RDS-0012",
+     "want": "PR-2018-297",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0013",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0014",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_category_miss"
+    },
+    {
+     "doc": "RDS-0015",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0016",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0017",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "released_no_successor"
+    },
+    {
+     "doc": "RDS-0018",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "released_no_successor"
+    },
+    {
+     "doc": "RDS-0019",
+     "want": "PR-2018-066",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0020",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0021",
+     "want": "PR-2019-338",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0022",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_project_miss"
+    },
+    {
+     "doc": "RDS-0023",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0024",
+     "want": "PR-2018-252",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0025",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_category_miss"
+    },
+    {
+     "doc": "RDS-0026",
+     "want": "AH-2021-392",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0027",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "released_no_successor"
+    },
+    {
+     "doc": "RDS-0028",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0029",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0030",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0031",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "clear"
+    },
+    {
+     "doc": "RDS-0032",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "clear"
+    },
+    {
+     "doc": "RDS-0033",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "clear"
+    },
+    {
+     "doc": "RDS-0034",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "clear"
+    },
+    {
+     "doc": "RDS-0035",
+     "want": "PR-2016-186",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0036",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0037",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "retention_open"
+    },
+    {
+     "doc": "RDS-0038",
+     "want": "PR-2016-274",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0039",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_project_miss"
+    },
+    {
+     "doc": "RDS-0040",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_category_miss"
+    },
+    {
+     "doc": "RDS-0041",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_category_miss"
+    },
+    {
+     "doc": "RDS-0042",
+     "want": "LH-2016-264",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0043",
+     "want": "LH-2018-248",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_successor"
+    },
+    {
+     "doc": "RDS-0044",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0045",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0046",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "overlap_longer"
+    },
+    {
+     "doc": "RDS-0047",
+     "want": "AH-2016-334",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0048",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "released_no_successor"
+    },
+    {
+     "doc": "RDS-0049",
+     "want": "AH-2016-010",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0050",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_date_miss"
+    },
+    {
+     "doc": "RDS-0051",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "released_no_successor"
+    },
+    {
+     "doc": "RDS-0052",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_project_miss"
+    },
+    {
+     "doc": "RDS-0053",
+     "want": "AH-2021-274",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0054",
+     "want": "AH-2016-205",
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "hold_active"
+    },
+    {
+     "doc": "RDS-0055",
+     "want": null,
+     "got": null,
+     "verdict": "unanswered",
+     "klass": "scope_category_miss"
+    }
+   ]
+  },
+  "by_class": {
+   "scope_date_miss": {
+    "n": 6,
+    "verdict_correct": 1,
+    "hold_correct": 1
+   },
+   "hold_active": {
+    "n": 10,
+    "verdict_correct": 1,
+    "hold_correct": 1
+   },
+   "retention_open": {
+    "n": 6,
+    "verdict_correct": 1,
+    "hold_correct": 1
+   },
+   "hold_successor": {
+    "n": 6,
+    "verdict_correct": 1,
+    "hold_correct": 1
+   },
+   "scope_project_miss": {
+    "n": 5,
+    "verdict_correct": 1,
+    "hold_correct": 1
+   },
+   "overlap_longer": {
+    "n": 6,
+    "verdict_correct": 0,
+    "hold_correct": 0
+   },
+   "scope_category_miss": {
+    "n": 6,
+    "verdict_correct": 0,
+    "hold_correct": 0
+   },
+   "clear": {
+    "n": 5,
+    "verdict_correct": 0,
+    "hold_correct": 0
+   },
+   "released_no_successor": {
+    "n": 5,
+    "verdict_correct": 0,
+    "hold_correct": 0
+   }
+  },
+  "review_flag": {
+   "true_positive": 2,
+   "false_positive": 0,
+   "true_negative": 3,
+   "false_negative": 0,
+   "unanswered": 50,
+   "not_applicable": 0,
+   "accuracy": 0.0909,
+   "recall": 0.125,
+   "precision": 1.0,
+   "positive_class": "yes (frozen and already in the destruction queue)",
+   "note": "needs_review compares the run's own disposition_eligible and queue_status against the same two-value rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the extraction grade, which does too, and unlike the consistency diagnostic below, which does not. It asks for a series to be pulled OUT of a destruction queue; it never proposes putting one in.",
+   "rows": [
+    {
+     "doc": "RDS-0001",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0002",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0004",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "RDS-0005",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "RDS-0006",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0007",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0008",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0009",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0010",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0011",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0012",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0013",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0014",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0015",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0016",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0017",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0018",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0019",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0020",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0021",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0022",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0023",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0024",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0025",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0026",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0027",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0028",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0029",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0030",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0031",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0032",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0033",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0034",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0035",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0036",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0037",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0038",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0039",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0040",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0041",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0042",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0043",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0044",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0045",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0046",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0047",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0048",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0049",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0050",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0051",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0052",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0053",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0054",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "RDS-0055",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_values": 0,
+   "verdict_errors": 50,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 50,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the eligibility derivation over the run's OWN named binding hold and OWN extracted dates and counts the replies whose stated verdict disagrees with it. It uses no gold, so a forker can compute it on unlabelled records -- but it collapses the hold search to its result, so it is blind to a reply that names the wrong hold, or misses a live successor, and then derives correctly from that. That is precisely the step this corpus is built to test."
+  },
+  "rows": [
+   {
+    "doc": "RDS-0001",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0002",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0003",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "retention_open",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0004",
+    "want": "no",
+    "got": "no",
+    "verdict": "true_positive",
+    "klass": "hold_successor",
+    "needs_review": true
+   },
+   {
+    "doc": "RDS-0005",
+    "want": "yes",
+    "got": "yes",
+    "verdict": "true_negative",
+    "klass": "scope_project_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0006",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0007",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "retention_open",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0008",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "overlap_longer",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0009",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0010",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "clear",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0011",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_project_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0012",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0013",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0014",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0015",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "overlap_longer",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0016",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0017",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "released_no_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0018",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "released_no_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0019",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0020",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0021",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0022",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_project_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0023",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "overlap_longer",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0024",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0025",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0026",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0027",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "released_no_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0028",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "retention_open",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0029",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "overlap_longer",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0030",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "retention_open",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0031",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "clear",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0032",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "clear",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0033",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "clear",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0034",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "clear",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0035",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0036",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "retention_open",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0037",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "retention_open",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0038",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0039",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_project_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0040",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0041",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0042",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0043",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0044",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0045",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "overlap_longer",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0046",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "overlap_longer",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0047",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0048",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "released_no_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0049",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0050",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_date_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0051",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "released_no_successor",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0052",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_project_miss",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0053",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0054",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "hold_active",
+    "needs_review": false
+   },
+   {
+    "doc": "RDS-0055",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "klass": "scope_category_miss",
+    "needs_review": false
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3258
+  },
+  {
+   "name": "field schema",
+   "chars": 2455
+  },
+  {
+   "name": "review sections",
+   "chars": 653
+  }
+ ],
+ "sections_used": [
+  "Record Series",
+  "Series Title",
+  "Record Category",
+  "Related Project",
+  "Record Closed",
+  "Retention Schedule",
+  "Retention Expires",
+  "Overlapping Series",
+  "Hold Registry",
+  "Disposition Queue",
+  "Officer Notes"
+ ],
+ "raw_text": "{\n  \"series_id\": \"RS-2006-3779\",\n  \"series_title\": \"Personnel action files - Riverside\",\n  \"record_category\": \"personnel\",\n  \"related_project\": \"Riverside\",\n  \"record_closed\": \"2006-03\",\n  \"retention_code\": \"GS-22-06\",\n  \"retention_expires\": \"2013-03\",\n  \"overlapping_expires\": null,\n  \"binding_hold_id\": null,\n  \"queue_status\": \"queued\",\n  \"officer_notes\": \"Ordinary cycle item, no correspondence pending on it.\",\n  \"disposition_eligible\": \"yes\"\n}",
+ "max_tokens": 8000,
+ "rescored_from_cells": true
+}

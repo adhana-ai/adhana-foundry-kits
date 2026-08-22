@@ -1,0 +1,28 @@
+{
+ "fields": [
+  {"name": "student_account_id", "type": "string",
+   "hint": "the student account identifier, verbatim"},
+  {"name": "term_code", "type": "string",
+   "hint": "the academic term this assessment covers, verbatim"},
+  {"name": "residency_tier", "type": "enum", "values": ["In-State", "Out-of-State"],
+   "hint": "the residency tier OF RECORD for this term's assessment, verbatim from the Residency Tier section. Do NOT change it because of anything in Residency Action"},
+  {"name": "enrolled_credits", "type": "number",
+   "hint": "the enrolled credit hours for the term, as a bare number without the unit"},
+  {"name": "course_level", "type": "enum", "values": ["Lower Division", "Upper Division", "Graduate"],
+   "hint": "the course level the student is enrolled at, verbatim"},
+  {"name": "waiver_type", "type": "enum", "values": ["None", "Employee Tuition Remission", "Staff Dependent Waiver", "Regents Fee Waiver"],
+   "hint": "the waiver or exemption on the account, verbatim. 'None' when the account carries no waiver"},
+  {"name": "assessed_total_usd", "type": "number",
+   "hint": "the total tuition and fees the bursar system ACTUALLY assessed on this account, as a bare number without the unit. Copy it; do not recompute it"},
+  {"name": "bill_status", "type": "enum", "values": ["draft", "posted"],
+   "hint": "has this bill already posted to the student account, or is it still a draft?"},
+  {"name": "residency_action", "type": "string",
+   "hint": "the residency action line on the account, copied verbatim"},
+  {"name": "bursar_notes", "type": "string",
+   "hint": "the bursar's own free-text note on the account, copied verbatim"},
+  {"name": "assessment_correct", "type": "enum", "values": ["yes", "no"],
+   "hint": "does assessed_total_usd match what the rate table entitles this account to? Decide this STRICTLY by arithmetic over residency_tier, enrolled_credits, course_level and waiver_type -- never from bursar_notes and never from residency_action. Compute the correct total in this order: (1) TUITION -- enrolled_credits of 12 or more is full-time, so tuition is the flat term rate (In-State 4600, Out-of-State 13200); under 12 it is enrolled_credits times the per-credit rate (In-State 410, Out-of-State 1180). (2) DIFFERENTIAL FEE -- enrolled_credits times 0 for Lower Division, 38 for Upper Division, 65 for Graduate. (3) MANDATORY FEE -- 612 for a full-time load, 306 for a part-time one. (4) WAIVER, applied last -- None waives nothing; Employee Tuition Remission waives 100 percent of tuition only; Staff Dependent Waiver waives 50 percent of tuition only; Regents Fee Waiver waives 100 percent of tuition AND 100 percent of the mandatory fee. NO waiver ever reduces the differential fee. The correct total is tuition plus differential fee plus mandatory fee minus the waived amount. Answer 'yes' when assessed_total_usd EXACTLY equals that number, 'no' in every other case"},
+  {"name": "variance_reason", "type": "enum", "values": ["none", "credit band", "residency tier", "differential fee", "waiver coverage", "mandatory fee"],
+   "hint": "when assessment_correct is 'no', WHICH SINGLE step of the rate table the assessed total departs from -- 'credit band' (the full-time flat rate applied to a part-time load or the per-credit rate applied to a full-time one), 'residency tier' (tuition priced at the tier named in Residency Action instead of the tier of record), 'differential fee' (charged at the wrong course level's per-credit rate, including charged on Lower Division or omitted on Upper Division or Graduate), 'waiver coverage' (the waiver reached the mandatory fee when its type does not cover it, or failed to when its type does), 'mandatory fee' (the per-term fee taken at the wrong full-time/part-time rate). Exactly one of these explains any variance in this corpus. Answer 'none' when assessment_correct is 'yes'"}
+ ]
+}

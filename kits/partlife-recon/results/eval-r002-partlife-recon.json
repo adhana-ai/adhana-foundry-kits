@@ -1,0 +1,8137 @@
+{
+ "run_id": "r002-partlife-recon",
+ "stub": false,
+ "model": "deepseek-v4-pro",
+ "provider": "openai-compatible",
+ "documents": 50,
+ "failures": [],
+ "latency_p50_ms": 7655,
+ "latency_p95_ms": 15899,
+ "latency_ms_all": [
+  13608,
+  7299,
+  9573,
+  20151,
+  7876,
+  7234,
+  7486,
+  7750,
+  8006,
+  8805,
+  5409,
+  12400,
+  5425,
+  5610,
+  10447,
+  19643,
+  9344,
+  10853,
+  5192,
+  15899,
+  13348,
+  6711,
+  6145,
+  7901,
+  7024,
+  8777,
+  6997,
+  6069,
+  6483,
+  6142,
+  9048,
+  9090,
+  10416,
+  6544,
+  4225,
+  6722,
+  4681,
+  7655,
+  6234,
+  6977,
+  5604,
+  7715,
+  4736,
+  7994,
+  4413,
+  13706,
+  7379,
+  9676,
+  8340,
+  6853
+ ],
+ "wall_seconds": 421.6,
+ "input_tokens_total": 98943,
+ "output_tokens_total": 31808,
+ "scores": {
+  "extraction_cells": 650,
+  "extraction_accuracy": 0.9969,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 350,
+  "values_with_span": 348,
+  "non_spannable_fields": [
+   "disposition_requested",
+   "life_status",
+   "record_gap",
+   "tag_agrees",
+   "trail_cycles",
+   "trail_hours"
+  ],
+  "span_rate": 0.9943
+ },
+ "by_field": {
+  "component_id": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "part_reference": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "life_limit_hours": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "life_limit_cycles": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "tag_hours": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "tag_cycles": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "trail_hours": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "trail_cycles": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "record_gap": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "disposition_requested": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "reviewer_note": {
+   "hit": 48,
+   "miss": 0,
+   "wrong": 2,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "tag_agrees": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "life_status": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "REC-0001",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-ME-15955",
+   "want": "CMP-ME-15955",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0001",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-1089-85",
+   "want": "LLP-1089-85",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0001",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0001",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 18000,
+   "want": 18000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0001",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 11965,
+   "want": 11965,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0001",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 14565,
+   "want": 14565,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0001",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 11894,
+   "want": 11894,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0001",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 14565,
+   "want": 14565,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0001",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0001",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0001",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Paperwork reads complete to me, nothing outstanding from records.",
+   "want": "Paperwork reads complete to me, nothing outstanding from records.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0001",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0001",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0002",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-EB-60554",
+   "want": "CMP-EB-60554",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0002",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-1676-24",
+   "want": "LLP-1676-24",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0002",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 16000,
+   "want": 16000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0002",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0002",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 10320,
+   "want": 10320,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0002",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 14594,
+   "want": 14594,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0002",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 10320,
+   "want": 10320,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0002",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 14594,
+   "want": 14594,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0002",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0002",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0002",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Second reviewer asked for this pack to be looked at again before anyone signs it.",
+   "want": "Second reviewer asked for this pack to be looked at again before anyone signs it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0002",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0002",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0003",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-BA-53776",
+   "want": "CMP-BA-53776",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0003",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-4741-64",
+   "want": "LLP-4741-64",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0003",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 18000,
+   "want": 18000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0003",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0003",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 12477,
+   "want": 12477,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0003",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 8723,
+   "want": 8723,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0003",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 12477,
+   "want": 12477,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0003",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 8723,
+   "want": 8723,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0003",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0003",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0003",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Not comfortable with this file yet, would want a supervisor over it first.",
+   "want": "Not comfortable with this file yet, would want a supervisor over it first.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0003",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0003",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cannot_determine",
+   "want": "cannot_determine",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0004",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-WT-99376",
+   "want": "CMP-WT-99376",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0004",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-3283-24",
+   "want": "LLP-3283-24",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0004",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 18000,
+   "want": 18000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0004",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0004",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 6290,
+   "want": 6290,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0004",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 11552,
+   "want": 11552,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0004",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 6290,
+   "want": 6290,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0004",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 11552,
+   "want": 11552,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0004",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0004",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0004",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "want": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0004",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0004",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cannot_determine",
+   "want": "cannot_determine",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0005",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-BB-87144",
+   "want": "CMP-BB-87144",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0005",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-7675-81",
+   "want": "LLP-7675-81",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0005",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0005",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 15000,
+   "want": 15000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0005",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 14481,
+   "want": 14481,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0005",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 12615,
+   "want": 12615,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0005",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 14481,
+   "want": 14481,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0005",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 12615,
+   "want": 12615,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0005",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0005",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0005",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Routine file. Nothing here I would hold anyone up over.",
+   "want": "Routine file. Nothing here I would hold anyone up over.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0005",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0005",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0006",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-ND-78802",
+   "want": "CMP-ND-78802",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0006",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-9355-40",
+   "want": "LLP-9355-40",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0006",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0006",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0006",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 14166,
+   "want": 14166,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0006",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 14519,
+   "want": 14519,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0006",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 14256,
+   "want": 14256,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0006",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 14519,
+   "want": 14519,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0006",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0006",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0006",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0006",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0006",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "hours_exceeded",
+   "want": "hours_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0007",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-VV-78491",
+   "want": "CMP-VV-78491",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0007",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-2653-49",
+   "want": "LLP-2653-49",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0007",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 18000,
+   "want": 18000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0007",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0007",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 22948,
+   "want": 22948,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0007",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 16642,
+   "want": 16642,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0007",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 22948,
+   "want": 22948,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0007",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 16642,
+   "want": 16642,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0007",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0007",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0007",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Routine file. Nothing here I would hold anyone up over.",
+   "want": "Routine file. Nothing here I would hold anyone up over.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0007",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0007",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "hours_exceeded",
+   "want": "hours_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0008",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-SS-63809",
+   "want": "CMP-SS-63809",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0008",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-4786-52",
+   "want": "LLP-4786-52",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0008",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 18000,
+   "want": 18000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0008",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0008",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 14272,
+   "want": 14272,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0008",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 25939,
+   "want": 25939,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0008",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 14272,
+   "want": 14272,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0008",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 25939,
+   "want": 25939,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0008",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0008",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0008",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "want": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0008",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0008",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cycles_exceeded",
+   "want": "cycles_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0009",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-GM-91900",
+   "want": "CMP-GM-91900",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0009",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-7525-86",
+   "want": "LLP-7525-86",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0009",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 16000,
+   "want": 16000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0009",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0009",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 13641,
+   "want": 13641,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0009",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 14954,
+   "want": 14954,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0009",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 12586,
+   "want": 12586,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0009",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 14814,
+   "want": 14814,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0009",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0009",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0009",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Paperwork reads complete to me, nothing outstanding from records.",
+   "want": "Paperwork reads complete to me, nothing outstanding from records.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0009",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0009",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cannot_determine",
+   "want": "cannot_determine",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0010",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-BM-83955",
+   "want": "CMP-BM-83955",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0010",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-7149-39",
+   "want": "LLP-7149-39",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0010",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 18000,
+   "want": 18000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0010",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0010",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 12658,
+   "want": 12658,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0010",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 28922,
+   "want": 28922,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0010",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 12658,
+   "want": 12658,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0010",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 28922,
+   "want": 28922,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0010",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0010",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0010",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0010",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0010",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cycles_exceeded",
+   "want": "cycles_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0011",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-DB-77532",
+   "want": "CMP-DB-77532",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0011",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-9700-72",
+   "want": "LLP-9700-72",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0011",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0011",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 18000,
+   "want": 18000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0011",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 15989,
+   "want": 15989,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0011",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 6567,
+   "want": 6567,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0011",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 15989,
+   "want": 15989,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0011",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 6567,
+   "want": 6567,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0011",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0011",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0011",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Second reviewer asked for this pack to be looked at again before anyone signs it.",
+   "want": "Second reviewer asked for this pack to be looked at again before anyone signs it.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0011",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0011",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0012",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-KT-69314",
+   "want": "CMP-KT-69314",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0012",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-2548-65",
+   "want": "LLP-2548-65",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0012",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0012",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0012",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 20037,
+   "want": 20037,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0012",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 6890,
+   "want": 6890,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0012",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 20037,
+   "want": 20037,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0012",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 6890,
+   "want": 6890,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0012",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0012",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0012",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Paperwork reads complete to me, nothing outstanding from records.",
+   "want": "Paperwork reads complete to me, nothing outstanding from records.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0012",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0012",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0013",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-LD-46669",
+   "want": "CMP-LD-46669",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0013",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-9828-50",
+   "want": "LLP-9828-50",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0013",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0013",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0013",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 23836,
+   "want": 23836,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0013",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 7821,
+   "want": 7821,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0013",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0013",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 7301,
+   "want": 7301,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0013",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0013",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0013",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0013",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0013",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "hours_exceeded",
+   "want": "hours_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0014",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-BG-74450",
+   "want": "CMP-BG-74450",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0014",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-8118-57",
+   "want": "LLP-8118-57",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0014",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0014",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 15000,
+   "want": 15000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0014",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 14623,
+   "want": 14623,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0014",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 12222,
+   "want": 12222,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0014",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 14623,
+   "want": 14623,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0014",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 12222,
+   "want": 12222,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0014",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0014",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0014",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Routine file. Nothing here I would hold anyone up over.",
+   "want": "Routine file. Nothing here I would hold anyone up over.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0014",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0014",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0015",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-GF-94167",
+   "want": "CMP-GF-94167",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0015",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-8504-81",
+   "want": "LLP-8504-81",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0015",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 16000,
+   "want": 16000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0015",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0015",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 16000,
+   "want": 16000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0015",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0015",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 16000,
+   "want": 16000,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0015",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0015",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0015",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0015",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Trail looks continuous on a quick read, filed without comment.",
+   "want": "Trail looks continuous on a quick read, filed without comment.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0015",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0015",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "both_exceeded",
+   "want": "both_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0016",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-RV-68569",
+   "want": "CMP-RV-68569",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0016",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-8057-87",
+   "want": "LLP-8057-87",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0016",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0016",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 15000,
+   "want": 15000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0016",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 7388,
+   "want": 7388,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0016",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 9199,
+   "want": 9199,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0016",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 7388,
+   "want": 7388,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0016",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 9199,
+   "want": 9199,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0016",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0016",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0016",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0016",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0016",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cannot_determine",
+   "want": "cannot_determine",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0017",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-KF-14550",
+   "want": "CMP-KF-14550",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0017",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-2878-12",
+   "want": "LLP-2878-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0017",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0017",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0017",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 8643,
+   "want": 8643,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0017",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 18340,
+   "want": 18340,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0017",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 8643,
+   "want": 8643,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0017",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 18787,
+   "want": 18787,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0017",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0017",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0017",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Not comfortable with this file yet, would want a supervisor over it first.",
+   "want": "Not comfortable with this file yet, would want a supervisor over it first.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0017",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0017",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0018",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-RT-11456",
+   "want": "CMP-RT-11456",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0018",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-9761-55",
+   "want": "LLP-9761-55",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0018",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0018",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0018",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 15656,
+   "want": 15656,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0018",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 13586,
+   "want": 13586,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0018",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 15656,
+   "want": 15656,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0018",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 13586,
+   "want": 13586,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0018",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0018",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0018",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Escalated at last audit for an unresolved paperwork query; still open as far as I know.",
+   "want": "Escalated at last audit for an unresolved paperwork query; still open as far as I know.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0018",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0018",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cycles_exceeded",
+   "want": "cycles_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0019",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-GS-75793",
+   "want": "CMP-GS-75793",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0019",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-9878-19",
+   "want": "LLP-9878-19",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0019",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0019",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0019",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 15987,
+   "want": 15987,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0019",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 9816,
+   "want": 9816,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0019",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 15987,
+   "want": 15987,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0019",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 9816,
+   "want": 9816,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0019",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0019",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0019",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "want": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0019",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0019",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0020",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-KT-60872",
+   "want": "CMP-KT-60872",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0020",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-1591-69",
+   "want": "LLP-1591-69",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0020",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 16000,
+   "want": 16000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0020",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0020",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 17046,
+   "want": 17046,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0020",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 21290,
+   "want": 21290,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0020",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 17046,
+   "want": 17046,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0020",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 21981,
+   "want": 21981,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0020",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0020",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0020",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Routine file. Nothing here I would hold anyone up over.",
+   "want": "Routine file. Nothing here I would hold anyone up over.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0020",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0020",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "both_exceeded",
+   "want": "both_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0021",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-CK-35135",
+   "want": "CMP-CK-35135",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0021",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-6669-66",
+   "want": "LLP-6669-66",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0021",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0021",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 15000,
+   "want": 15000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0021",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 11707,
+   "want": 11707,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0021",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 10504,
+   "want": 10504,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0021",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 11707,
+   "want": 11707,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0021",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 10436,
+   "want": 10436,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0021",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0021",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0021",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "want": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0021",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0021",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0022",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-EW-33785",
+   "want": "CMP-EW-33785",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0022",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-8907-78",
+   "want": "LLP-8907-78",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0022",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0022",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 15000,
+   "want": 15000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0022",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 11585,
+   "want": 11585,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0022",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 16115,
+   "want": 16115,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0022",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 11677,
+   "want": 11677,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0022",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 16218,
+   "want": 16218,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0022",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0022",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0022",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Trail looks continuous on a quick read, filed without comment.",
+   "want": "Trail looks continuous on a quick read, filed without comment.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0022",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0022",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cycles_exceeded",
+   "want": "cycles_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0023",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-VC-99984",
+   "want": "CMP-VC-99984",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0023",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-7609-53",
+   "want": "LLP-7609-53",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0023",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0023",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0023",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 26044,
+   "want": 26044,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0023",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 10041,
+   "want": 10041,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0023",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 26044,
+   "want": 26044,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0023",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 10041,
+   "want": 10041,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0023",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0023",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0023",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "want": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0023",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0023",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "hours_exceeded",
+   "want": "hours_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0024",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-NR-48550",
+   "want": "CMP-NR-48550",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0024",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-4270-39",
+   "want": "LLP-4270-39",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0024",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 18000,
+   "want": 18000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0024",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0024",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 8820,
+   "want": 8820,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0024",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 19254,
+   "want": 19254,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0024",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 8820,
+   "want": 8820,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0024",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 19876,
+   "want": 19876,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0024",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0024",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0024",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Paperwork reads complete to me, nothing outstanding from records.",
+   "want": "Paperwork reads complete to me, nothing outstanding from records.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0024",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0024",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0025",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-HS-13007",
+   "want": "CMP-HS-13007",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0025",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-7500-66",
+   "want": "LLP-7500-66",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0025",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0025",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0025",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 7514,
+   "want": 7514,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0025",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 22758,
+   "want": 22758,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0025",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 7514,
+   "want": 7514,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0025",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 22758,
+   "want": 22758,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0025",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0025",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0025",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Not comfortable with this file yet, would want a supervisor over it first.",
+   "want": "Not comfortable with this file yet, would want a supervisor over it first.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0025",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0025",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cannot_determine",
+   "want": "cannot_determine",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0026",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-JL-14073",
+   "want": "CMP-JL-14073",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0026",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-2195-25",
+   "want": "LLP-2195-25",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0026",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 16000,
+   "want": 16000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0026",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0026",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 7273,
+   "want": 7273,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0026",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 10352,
+   "want": 10352,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0026",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 7273,
+   "want": 7273,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0026",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 10352,
+   "want": 10352,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0026",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0026",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0026",
+   "field": "reviewer_note",
+   "verdict": "wrong",
+   "got": "Second reviewer asked for this pack to be looked at again before anyone signs.",
+   "want": "Second reviewer asked for this pack to be looked at again before anyone signs it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0026",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0026",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0027",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-GA-55749",
+   "want": "CMP-GA-55749",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0027",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-9213-23",
+   "want": "LLP-9213-23",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0027",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0027",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 18000,
+   "want": 18000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0027",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0027",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 12136,
+   "want": 12136,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0027",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0027",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 12136,
+   "want": 12136,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0027",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0027",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0027",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Not comfortable with this file yet, would want a supervisor over it first.",
+   "want": "Not comfortable with this file yet, would want a supervisor over it first.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0027",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0027",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "hours_exceeded",
+   "want": "hours_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0028",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-FL-64984",
+   "want": "CMP-FL-64984",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0028",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-9014-14",
+   "want": "LLP-9014-14",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0028",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0028",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0028",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 13303,
+   "want": 13303,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0028",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 37879,
+   "want": 37879,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0028",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 13434,
+   "want": 13434,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0028",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 37879,
+   "want": 37879,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0028",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0028",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0028",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0028",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0028",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "both_exceeded",
+   "want": "both_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0029",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-AC-25850",
+   "want": "CMP-AC-25850",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0029",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-9787-39",
+   "want": "LLP-9787-39",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0029",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0029",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0029",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 15941,
+   "want": 15941,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0029",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 13282,
+   "want": 13282,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0029",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 15941,
+   "want": 15941,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0029",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 13282,
+   "want": 13282,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0029",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0029",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0029",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Routine file. Nothing here I would hold anyone up over.",
+   "want": "Routine file. Nothing here I would hold anyone up over.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0029",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0029",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0030",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-CT-52910",
+   "want": "CMP-CT-52910",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0030",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-8222-31",
+   "want": "LLP-8222-31",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0030",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0030",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0030",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 17319,
+   "want": 17319,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0030",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 9218,
+   "want": 9218,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0030",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 17319,
+   "want": 17319,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0030",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 9218,
+   "want": 9218,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0030",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0030",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0030",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Paperwork reads complete to me, nothing outstanding from records.",
+   "want": "Paperwork reads complete to me, nothing outstanding from records.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0030",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0030",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0031",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-MJ-94344",
+   "want": "CMP-MJ-94344",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0031",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-8497-31",
+   "want": "LLP-8497-31",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0031",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0031",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 15000,
+   "want": 15000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0031",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 11216,
+   "want": 11216,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0031",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 9804,
+   "want": 9804,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0031",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 11216,
+   "want": 11216,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0031",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 9804,
+   "want": 9804,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0031",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0031",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0031",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0031",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0031",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cannot_determine",
+   "want": "cannot_determine",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0032",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-HW-47305",
+   "want": "CMP-HW-47305",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0032",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-3437-07",
+   "want": "LLP-3437-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0032",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0032",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 15000,
+   "want": 15000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0032",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 20805,
+   "want": 20805,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0032",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 15381,
+   "want": 15381,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0032",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0032",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 15163,
+   "want": 15163,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0032",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0032",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0032",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0032",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0032",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "both_exceeded",
+   "want": "both_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0033",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-NV-30218",
+   "want": "CMP-NV-30218",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0033",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-5041-37",
+   "want": "LLP-5041-37",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0033",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0033",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0033",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 23033,
+   "want": 23033,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0033",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 8967,
+   "want": 8967,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0033",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 23033,
+   "want": 23033,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0033",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 8967,
+   "want": 8967,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0033",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0033",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0033",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Paperwork reads complete to me, nothing outstanding from records.",
+   "want": "Paperwork reads complete to me, nothing outstanding from records.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0033",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0033",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0034",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-ML-29263",
+   "want": "CMP-ML-29263",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0034",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-5810-37",
+   "want": "LLP-5810-37",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0034",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0034",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0034",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 14095,
+   "want": 14095,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0034",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 15169,
+   "want": 15169,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0034",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 14095,
+   "want": 14095,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0034",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 15169,
+   "want": 15169,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0034",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0034",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0034",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0034",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0034",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "hours_exceeded",
+   "want": "hours_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0035",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-AE-82185",
+   "want": "CMP-AE-82185",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0035",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-3464-10",
+   "want": "LLP-3464-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0035",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 18000,
+   "want": 18000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0035",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 25000,
+   "want": 25000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0035",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 7181,
+   "want": 7181,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0035",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 16982,
+   "want": 16982,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0035",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 7181,
+   "want": 7181,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0035",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 16982,
+   "want": 16982,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0035",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0035",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0035",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Routine file. Nothing here I would hold anyone up over.",
+   "want": "Routine file. Nothing here I would hold anyone up over.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0035",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0035",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0036",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-JB-79595",
+   "want": "CMP-JB-79595",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0036",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-6147-22",
+   "want": "LLP-6147-22",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0036",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0036",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0036",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 20187,
+   "want": 20187,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0036",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 7997,
+   "want": 7997,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0036",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 20187,
+   "want": 20187,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0036",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 7997,
+   "want": 7997,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0036",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0036",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0036",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "want": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0036",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0036",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0037",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-JB-46981",
+   "want": "CMP-JB-46981",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0037",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-7313-28",
+   "want": "LLP-7313-28",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0037",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0037",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 15000,
+   "want": 15000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0037",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 11143,
+   "want": 11143,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0037",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 16104,
+   "want": 16104,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0037",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 11143,
+   "want": 11143,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0037",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 16104,
+   "want": 16104,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0037",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0037",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0037",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0037",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0037",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cycles_exceeded",
+   "want": "cycles_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0038",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-CE-88179",
+   "want": "CMP-CE-88179",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0038",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-7052-10",
+   "want": "LLP-7052-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0038",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0038",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0038",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 19075,
+   "want": 19075,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0038",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0038",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 18809,
+   "want": 18809,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0038",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0038",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0038",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0038",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Trail looks continuous on a quick read, filed without comment.",
+   "want": "Trail looks continuous on a quick read, filed without comment.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0038",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0038",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cycles_exceeded",
+   "want": "cycles_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0039",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-GK-87279",
+   "want": "CMP-GK-87279",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0039",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-2147-63",
+   "want": "LLP-2147-63",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0039",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0039",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0039",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 10999,
+   "want": 10999,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0039",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 4566,
+   "want": 4566,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0039",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 10999,
+   "want": 10999,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0039",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 4566,
+   "want": 4566,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0039",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0039",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0039",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Escalated at last audit for an unresolved paperwork query; still open as far as I know.",
+   "want": "Escalated at last audit for an unresolved paperwork query; still open as far as I know.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0039",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0039",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0040",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-BV-49165",
+   "want": "CMP-BV-49165",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0040",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-1046-54",
+   "want": "LLP-1046-54",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0040",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0040",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0040",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 21182,
+   "want": 21182,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0040",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 10809,
+   "want": 10809,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0040",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 21182,
+   "want": 21182,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0040",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 10809,
+   "want": 10809,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0040",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0040",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0040",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Routine file. Nothing here I would hold anyone up over.",
+   "want": "Routine file. Nothing here I would hold anyone up over.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0040",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0040",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0041",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-CL-79964",
+   "want": "CMP-CL-79964",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0041",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-3243-04",
+   "want": "LLP-3243-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0041",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0041",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0041",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 16569,
+   "want": 16569,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0041",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 15513,
+   "want": 15513,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0041",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 16569,
+   "want": 16569,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0041",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 15513,
+   "want": 15513,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0041",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0041",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0041",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Trail looks continuous on a quick read, filed without comment.",
+   "want": "Trail looks continuous on a quick read, filed without comment.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0041",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0041",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0042",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-NM-71096",
+   "want": "CMP-NM-71096",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0042",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-6864-74",
+   "want": "LLP-6864-74",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0042",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0042",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0042",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 8991,
+   "want": 8991,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0042",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 7209,
+   "want": 7209,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0042",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 8991,
+   "want": 8991,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0042",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 7209,
+   "want": 7209,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0042",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0042",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0042",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0042",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0042",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0043",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-WS-52069",
+   "want": "CMP-WS-52069",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0043",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-4466-68",
+   "want": "LLP-4466-68",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0043",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0043",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0043",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 8649,
+   "want": 8649,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0043",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 7582,
+   "want": 7582,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0043",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 8649,
+   "want": 8649,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0043",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 7582,
+   "want": 7582,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0043",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0043",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0043",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Not comfortable with this file yet, would want a supervisor over it first.",
+   "want": "Not comfortable with this file yet, would want a supervisor over it first.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0043",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0043",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0044",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-NV-48907",
+   "want": "CMP-NV-48907",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0044",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-4543-01",
+   "want": "LLP-4543-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0044",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0044",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 15000,
+   "want": 15000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0044",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 20910,
+   "want": 20910,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0044",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 15000,
+   "want": 15000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0044",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 20910,
+   "want": 20910,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0044",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 15000,
+   "want": 15000,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0044",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0044",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0044",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0044",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0044",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "both_exceeded",
+   "want": "both_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0045",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-MV-15534",
+   "want": "CMP-MV-15534",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0045",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-2527-27",
+   "want": "LLP-2527-27",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0045",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0045",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0045",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 7752,
+   "want": 7752,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0045",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 12538,
+   "want": 12538,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0045",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 7752,
+   "want": 7752,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0045",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 12538,
+   "want": 12538,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0045",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0045",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0045",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Escalated at last audit for an unresolved paperwork query; still open as far as I know.",
+   "want": "Escalated at last audit for an unresolved paperwork query; still open as far as I know.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0045",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0045",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0046",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-SR-68962",
+   "want": "CMP-SR-68962",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0046",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-5859-51",
+   "want": "LLP-5859-51",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0046",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 16000,
+   "want": 16000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0046",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 20000,
+   "want": 20000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0046",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 12846,
+   "want": 12846,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0046",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 10534,
+   "want": 10534,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0046",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 12846,
+   "want": 12846,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0046",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 10534,
+   "want": 10534,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0046",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0046",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0046",
+   "field": "reviewer_note",
+   "verdict": "wrong",
+   "got": "Second reviewer asked for this pack to be looked at again before anyone signs.",
+   "want": "Second reviewer asked for this pack to be looked at again before anyone signs it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0046",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0046",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cannot_determine",
+   "want": "cannot_determine",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0047",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-JF-87676",
+   "want": "CMP-JF-87676",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0047",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-7831-46",
+   "want": "LLP-7831-46",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0047",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0047",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0047",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 12360,
+   "want": 12360,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0047",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0047",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0047",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0047",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0047",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "shelf storage",
+   "want": "shelf storage",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0047",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Flagged during the last records sweep and never properly closed out.",
+   "want": "Flagged during the last records sweep and never properly closed out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0047",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0047",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "both_exceeded",
+   "want": "both_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0048",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-CF-60379",
+   "want": "CMP-CF-60379",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0048",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-3143-86",
+   "want": "LLP-3143-86",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0048",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0048",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 30000,
+   "want": 30000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0048",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 5324,
+   "want": 5324,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0048",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 25148,
+   "want": 25148,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0048",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 5324,
+   "want": 5324,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0048",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 25148,
+   "want": 25148,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0048",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0048",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0048",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "want": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0048",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0048",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0049",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-BM-92293",
+   "want": "CMP-BM-92293",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0049",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-6989-67",
+   "want": "LLP-6989-67",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0049",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0049",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0049",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 9685,
+   "want": 9685,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0049",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 4813,
+   "want": 4813,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0049",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 9066,
+   "want": 9066,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0049",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 4813,
+   "want": 4813,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0049",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0049",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0049",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "want": "Pack arrived tidy and in order; no follow-up raised at receipt.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0049",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0049",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "within_limits",
+   "want": "within_limits",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0050",
+   "field": "component_id",
+   "verdict": "hit",
+   "got": "CMP-CB-87546",
+   "want": "CMP-CB-87546",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0050",
+   "field": "part_reference",
+   "verdict": "hit",
+   "got": "LLP-1499-84",
+   "want": "LLP-1499-84",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0050",
+   "field": "life_limit_hours",
+   "verdict": "hit",
+   "got": 24000,
+   "want": 24000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0050",
+   "field": "life_limit_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0050",
+   "field": "tag_hours",
+   "verdict": "hit",
+   "got": 12901,
+   "want": 12901,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0050",
+   "field": "tag_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0050",
+   "field": "trail_hours",
+   "verdict": "hit",
+   "got": 12901,
+   "want": 12901,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0050",
+   "field": "trail_cycles",
+   "verdict": "hit",
+   "got": 12000,
+   "want": 12000,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0050",
+   "field": "record_gap",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0050",
+   "field": "disposition_requested",
+   "verdict": "hit",
+   "got": "return to service",
+   "want": "return to service",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0050",
+   "field": "reviewer_note",
+   "verdict": "hit",
+   "got": "Escalated at last audit for an unresolved paperwork query; still open as far as I know.",
+   "want": "Escalated at last audit for an unresolved paperwork query; still open as far as I know.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REC-0050",
+   "field": "tag_agrees",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REC-0050",
+   "field": "life_status",
+   "verdict": "hit",
+   "got": "cycles_exceeded",
+   "want": "cycles_exceeded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "positive_class": "not_cleared (the record trail does not put this component inside both published limits -- including the case where a records gap means it cannot be determined at all)",
+  "true_positive": 26,
+  "false_positive": 0,
+  "true_negative": 24,
+  "false_negative": 0,
+  "unanswered": 0,
+  "not_applicable": 0,
+  "accuracy": 1.0,
+  "recall": 1.0,
+  "precision": 1.0,
+  "life_status_accuracy": 1.0,
+  "life_status_correct": 50,
+  "life_status_of": 50,
+  "life_status_by_class": {
+   "within_limits": {
+    "n": 24,
+    "correct": 24,
+    "answered_as": {}
+   },
+   "cannot_determine": {
+    "n": 7,
+    "correct": 7,
+    "answered_as": {}
+   },
+   "hours_exceeded": {
+    "n": 6,
+    "correct": 6,
+    "answered_as": {}
+   },
+   "cycles_exceeded": {
+    "n": 7,
+    "correct": 7,
+    "answered_as": {}
+   },
+   "both_exceeded": {
+    "n": 6,
+    "correct": 6,
+    "answered_as": {}
+   }
+  },
+  "life_status_rows": [
+   {
+    "doc": "REC-0001",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0002",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0003",
+    "want": "cannot_determine",
+    "got": "cannot_determine",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0004",
+    "want": "cannot_determine",
+    "got": "cannot_determine",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0005",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0006",
+    "want": "hours_exceeded",
+    "got": "hours_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0007",
+    "want": "hours_exceeded",
+    "got": "hours_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0008",
+    "want": "cycles_exceeded",
+    "got": "cycles_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0009",
+    "want": "cannot_determine",
+    "got": "cannot_determine",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0010",
+    "want": "cycles_exceeded",
+    "got": "cycles_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0011",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0012",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0013",
+    "want": "hours_exceeded",
+    "got": "hours_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0014",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0015",
+    "want": "both_exceeded",
+    "got": "both_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0016",
+    "want": "cannot_determine",
+    "got": "cannot_determine",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0017",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0018",
+    "want": "cycles_exceeded",
+    "got": "cycles_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0019",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0020",
+    "want": "both_exceeded",
+    "got": "both_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0021",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0022",
+    "want": "cycles_exceeded",
+    "got": "cycles_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0023",
+    "want": "hours_exceeded",
+    "got": "hours_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0024",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0025",
+    "want": "cannot_determine",
+    "got": "cannot_determine",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0026",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0027",
+    "want": "hours_exceeded",
+    "got": "hours_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0028",
+    "want": "both_exceeded",
+    "got": "both_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0029",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0030",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0031",
+    "want": "cannot_determine",
+    "got": "cannot_determine",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0032",
+    "want": "both_exceeded",
+    "got": "both_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0033",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0034",
+    "want": "hours_exceeded",
+    "got": "hours_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0035",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0036",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0037",
+    "want": "cycles_exceeded",
+    "got": "cycles_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0038",
+    "want": "cycles_exceeded",
+    "got": "cycles_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0039",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0040",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0041",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0042",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0043",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0044",
+    "want": "both_exceeded",
+    "got": "both_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0045",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0046",
+    "want": "cannot_determine",
+    "got": "cannot_determine",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0047",
+    "want": "both_exceeded",
+    "got": "both_exceeded",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0048",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0049",
+    "want": "within_limits",
+    "got": "within_limits",
+    "verdict": "correct"
+   },
+   {
+    "doc": "REC-0050",
+    "want": "cycles_exceeded",
+    "got": "cycles_exceeded",
+    "verdict": "correct"
+   }
+  ],
+  "tag_agrees": {
+   "true_positive": 14,
+   "false_positive": 0,
+   "true_negative": 36,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "no (the component's own tag does not match the total the record trail substantiates)",
+   "rows": [
+    {
+     "doc": "REC-0001",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0002",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0004",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0005",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0006",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0007",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0008",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0009",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0010",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0011",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0012",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0013",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0014",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0015",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0016",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0017",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0018",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0019",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0020",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0021",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0022",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0023",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0024",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0025",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0026",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0027",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0028",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0029",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0030",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0031",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0032",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0033",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0034",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0035",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0036",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0037",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0038",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0039",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0040",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0041",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0042",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0043",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0044",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0045",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0046",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0047",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0048",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0049",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0050",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "escalate": {
+   "true_positive": 19,
+   "false_positive": 0,
+   "true_negative": 31,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (a discrepancy on a pack up for return to service)",
+   "note": "escalate compares the run's own life_status, tag_agrees and disposition_requested against the same rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the two consistency diagnostics below, which do not. It ESCALATES and it never clears: a `no` means this rule found nothing to raise, not that the component may fly.",
+   "rows": [
+    {
+     "doc": "REC-0001",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0002",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0004",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0005",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0006",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0007",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0008",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0009",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0010",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0011",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0012",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0013",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0014",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0015",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0016",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0017",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0018",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0019",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0020",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0021",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0022",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0023",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0024",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0025",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0026",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0027",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0028",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0029",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0030",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0031",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0032",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0033",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0034",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0035",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0036",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0037",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0038",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0039",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0040",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0041",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0042",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0043",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0044",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0045",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0046",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0047",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0048",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REC-0049",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REC-0050",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_life_arithmetic": 0,
+   "replies_disagreeing_with_own_tag_comparison": 0,
+   "life_status_errors": 0,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 0,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the life-status rule and the tag comparison over the run's OWN reconstructed figures and counts the replies whose stated answer disagrees with them. It uses no gold, so a forker can compute it on unlabelled packs -- but it is blind to the failure that matters most here: a reply that sums the trail WRONG and then reasons about its own wrong total perfectly is self-consistent and still wrong."
+  },
+  "rows": [
+   {
+    "doc": "REC-0001",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0002",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0003",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cannot_determine",
+    "got_status": "cannot_determine",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0004",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cannot_determine",
+    "got_status": "cannot_determine",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0005",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0006",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "hours_exceeded",
+    "got_status": "hours_exceeded",
+    "verdict": "true_positive",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0007",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "hours_exceeded",
+    "got_status": "hours_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0008",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cycles_exceeded",
+    "got_status": "cycles_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0009",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cannot_determine",
+    "got_status": "cannot_determine",
+    "verdict": "true_positive",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0010",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cycles_exceeded",
+    "got_status": "cycles_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0011",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0012",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0013",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "hours_exceeded",
+    "got_status": "hours_exceeded",
+    "verdict": "true_positive",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0014",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0015",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "both_exceeded",
+    "got_status": "both_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0016",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cannot_determine",
+    "got_status": "cannot_determine",
+    "verdict": "true_positive",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0017",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0018",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cycles_exceeded",
+    "got_status": "cycles_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0019",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0020",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "both_exceeded",
+    "got_status": "both_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0021",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0022",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cycles_exceeded",
+    "got_status": "cycles_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0023",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "hours_exceeded",
+    "got_status": "hours_exceeded",
+    "verdict": "true_positive",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0024",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0025",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cannot_determine",
+    "got_status": "cannot_determine",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0026",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0027",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "hours_exceeded",
+    "got_status": "hours_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0028",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "both_exceeded",
+    "got_status": "both_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0029",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0030",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0031",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cannot_determine",
+    "got_status": "cannot_determine",
+    "verdict": "true_positive",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0032",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "both_exceeded",
+    "got_status": "both_exceeded",
+    "verdict": "true_positive",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0033",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0034",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "hours_exceeded",
+    "got_status": "hours_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0035",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0036",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0037",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cycles_exceeded",
+    "got_status": "cycles_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0038",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cycles_exceeded",
+    "got_status": "cycles_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0039",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0040",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0041",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0042",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0043",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0044",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "both_exceeded",
+    "got_status": "both_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0045",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0046",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cannot_determine",
+    "got_status": "cannot_determine",
+    "verdict": "true_positive",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0047",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "both_exceeded",
+    "got_status": "both_exceeded",
+    "verdict": "true_positive",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0048",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": false
+   },
+   {
+    "doc": "REC-0049",
+    "want": "cleared",
+    "got": "cleared",
+    "want_status": "within_limits",
+    "got_status": "within_limits",
+    "verdict": "true_negative",
+    "escalate": true
+   },
+   {
+    "doc": "REC-0050",
+    "want": "not_cleared",
+    "got": "not_cleared",
+    "want_status": "cycles_exceeded",
+    "got_status": "cycles_exceeded",
+    "verdict": "true_positive",
+    "escalate": true
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3404
+  },
+  {
+   "name": "field schema",
+   "chars": 3128
+  },
+  {
+   "name": "pack sections",
+   "chars": 611
+  }
+ ],
+ "sections_used": [
+  "Component",
+  "Part Reference",
+  "Published Life Limit",
+  "Component Tag Figures",
+  "Service Record Trail",
+  "Records Gap",
+  "Disposition Requested",
+  "Reviewer Note"
+ ],
+ "raw_text": "{\n  \"component_id\": \"CMP-ME-15955\",\n  \"part_reference\": \"LLP-1089-85\",\n  \"life_limit_hours\": 25000,\n  \"life_limit_cycles\": 18000,\n  \"tag_hours\": 11965,\n  \"tag_cycles\": 14565,\n  \"trail_hours\": 11894,\n  \"trail_cycles\": 14565,\n  \"record_gap\": \"no\",\n  \"disposition_requested\": \"shelf storage\",\n  \"reviewer_note\": \"Paperwork reads complete to me, nothing outstanding from records.\",\n  \"tag_agrees\": \"no\",\n  \"life_status\": \"within_limits\"\n}",
+ "max_tokens": 2000
+}

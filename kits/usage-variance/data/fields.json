@@ -1,0 +1,27 @@
+{
+ "fields": [
+  {"name": "line_id", "type": "string",
+   "hint": "the invoice line identifier, verbatim"},
+  {"name": "service_type", "type": "enum", "values": ["voice", "data", "sms"],
+   "hint": "which service this invoice line bills, verbatim"},
+  {"name": "billing_period", "type": "string",
+   "hint": "the billing period, YYYY-MM"},
+  {"name": "mediated_quantity", "type": "number",
+   "hint": "the total usage mediation produced for this line and period, as a bare number without the unit"},
+  {"name": "invoiced_quantity", "type": "number",
+   "hint": "the quantity the invoice line actually charged, as a bare number without the unit"},
+  {"name": "unrated_quantity", "type": "number",
+   "hint": "usage that failed rating and is sitting in the suspense bucket, as a bare number without the unit. It is part of the mediated total. It may be 0"},
+  {"name": "prior_period_quantity", "type": "number",
+   "hint": "usage inside the mediated total that arrived after the collection cutoff and belongs to the PREVIOUS billing period, as a bare number without the unit. It may be 0"},
+  {"name": "confirmed_duplicate_quantity", "type": "number",
+   "hint": "usage inside the mediated total that de-duplication review CONFIRMED as duplicate records, as a bare number without the unit. Read the Confirmed Duplicates section, NOT the Duplicate Suspects section -- a suspect that review cleared is two genuinely distinct sessions and is not a duplicate. It may be 0"},
+  {"name": "invoice_status", "type": "enum", "values": ["draft", "issued"],
+   "hint": "has this invoice already been issued to the customer, or is it still a draft?"},
+  {"name": "analyst_note", "type": "string",
+   "hint": "the billing analyst's own free-text note on the line, copied verbatim"},
+  {"name": "variance_cause", "type": "enum",
+   "values": ["none", "rounding", "unrated_usage", "duplicate_records", "late_records", "unexplained"],
+   "hint": "why the invoiced quantity differs from the usage that should have been billed. Decide this STRICTLY by arithmetic over mediated_quantity, invoiced_quantity, unrated_quantity, prior_period_quantity and confirmed_duplicate_quantity -- never from analyst_note and never from the Duplicate Suspects figure. Step 1, the billing increment for this service: voice is billed in whole minutes, so the increment is 60 seconds; data is billed in whole megabytes, so the increment is 1024 KB; SMS is billed per message, so the increment is 1 and there is NO rounding tolerance at all. Step 2, billable = mediated_quantity - prior_period_quantity - confirmed_duplicate_quantity. Unrated usage is NOT subtracted: it failed rating but it is still this period's usage and is still owed. Step 3, expected = billable rounded UP to the next whole increment. Step 4, gap = invoiced_quantity - expected. Step 5, classify the gap in this order and stop at the first match: if gap is 0 answer 'none'; else if the absolute value of gap is smaller than the increment answer 'rounding'; else if gap is negative and its size is within one increment of unrated_quantity (which must be above 0) answer 'unrated_usage'; else if gap is positive and within one increment of confirmed_duplicate_quantity (which must be above 0) answer 'duplicate_records'; else if gap is positive and within one increment of prior_period_quantity (which must be above 0) answer 'late_records'; otherwise answer 'unexplained'."}
+ ]
+}

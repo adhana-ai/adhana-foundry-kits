@@ -1,0 +1,27 @@
+{
+ "fields": [
+  {"name": "tank_id", "type": "string",
+   "hint": "the tank or container identifier, verbatim"},
+  {"name": "incoming_product", "type": "string",
+   "hint": "the product about to be loaded, verbatim and in lower case as the sheet states it"},
+  {"name": "incoming_grade", "type": "enum", "values": ["technical", "food_grade", "high_purity"],
+   "hint": "the grade the incoming product is being loaded as, verbatim"},
+  {"name": "prior_cargo", "type": "string",
+   "hint": "the last cargo this tank carried, verbatim and in lower case. When the sheet says the prior cargo is 'not recorded', return null -- do not guess it and do not copy the words 'not recorded'"},
+  {"name": "two_back_cargo", "type": "string",
+   "hint": "the cargo carried BEFORE the prior one, verbatim and in lower case. When the sheet says there is none because the tank was recertified, return null"},
+  {"name": "wash_performed", "type": "enum",
+   "values": ["none", "water_rinse", "hot_detergent_wash", "caustic_wash", "steam_and_dry"],
+   "hint": "the wash the tank log claims was carried out after the prior cargo, verbatim. Report it as stated -- it is NOT what decides the verdict"},
+  {"name": "wash_certified_for", "type": "enum",
+   "values": ["not_certified", "water_rinse", "hot_detergent_wash", "caustic_wash", "steam_and_dry"],
+   "hint": "the wash regime the cleaning CERTIFICATE actually certifies, taken from the Cleaning Certificate section. When the sheet says there is no certificate on file, return 'not_certified'. This may name a different regime from wash_performed, and when it does, this is the one that counts"},
+  {"name": "load_status", "type": "enum", "values": ["pending", "loaded"],
+   "hint": "has the incoming product already gone into this tank, or is the load still pending?"},
+  {"name": "inspector_notes", "type": "string",
+   "hint": "the terminal inspector's own free-text remark on the tank, copied verbatim"},
+  {"name": "verdict", "type": "enum",
+   "values": ["accept", "clean_then_load", "refuse", "undetermined"],
+   "hint": "the pre-load compatibility verdict this sheet's own facts produce. Decide it STRICTLY from incoming_product, incoming_grade, prior_cargo, two_back_cargo and wash_certified_for -- never from inspector_notes and never from wash_performed. Work through the four checks IN ORDER, stopping at the first that fires. (1) If prior_cargo is not recorded, or either cargo is not in the shipped matrix, answer 'undetermined'. (2) If the prior cargo's class and the incoming product's class are a reactive pair, answer 'refuse'. (3) Read the predecessor ban over the look-back depth for the grade -- technical reads the prior cargo only, food_grade and high_purity read the prior cargo AND the two-back cargo -- and if any cargo in that chain is barred for this grade, answer 'refuse'; cleaning does not cure a ban. (4) Otherwise compare the wash the CERTIFICATE names against the minimum for the prior cargo's class at this grade: meets or exceeds it, answer 'accept'; falls short, answer 'clean_then_load'"}
+ ]
+}

@@ -1,0 +1,6735 @@
+{
+ "run_id": "r001-cargo-compat",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 4516,
+ "latency_p95_ms": 6387,
+ "latency_ms_all": [
+  7754,
+  4894,
+  5251,
+  5774,
+  5208,
+  5545,
+  4025,
+  4260,
+  4021,
+  2866,
+  4523,
+  6214,
+  4228,
+  4685,
+  4393,
+  4933,
+  4455,
+  6387,
+  4009,
+  3643,
+  3992,
+  5301,
+  5876,
+  5105,
+  5379,
+  3862,
+  4731,
+  5383,
+  5040,
+  5173,
+  3070,
+  2254,
+  2742,
+  4684,
+  4796,
+  4256,
+  5414,
+  5223,
+  4190,
+  4295,
+  3961,
+  4683,
+  4973,
+  3413,
+  6489,
+  3746,
+  3937,
+  4516,
+  4018,
+  4713,
+  3258,
+  2534,
+  4388,
+  3692,
+  4131
+ ],
+ "wall_seconds": 250.3,
+ "input_tokens_total": 115219,
+ "output_tokens_total": 26889,
+ "output_tokens_max": 811,
+ "reasoning_tokens_total": 20553,
+ "scores": {
+  "extraction_cells": 550,
+  "extraction_accuracy": 1.0,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 245,
+  "values_with_span": 245,
+  "non_spannable_fields": [
+   "incoming_grade",
+   "load_status",
+   "verdict",
+   "wash_certified_for",
+   "wash_performed"
+  ],
+  "span_rate": 1.0,
+  "unsafe_release_rate_pct": 0.0,
+  "unsafe_release_count": 0,
+  "verdict_accuracy_pct": 100.0,
+  "hold_flag_recall_pct": 100.0,
+  "hold_flag_precision_pct": 100.0,
+  "self_consistency_disagreements": 0
+ },
+ "by_field": {
+  "tank_id": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0
+  },
+  "incoming_product": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0
+  },
+  "incoming_grade": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0
+  },
+  "prior_cargo": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0
+  },
+  "two_back_cargo": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0
+  },
+  "wash_performed": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0
+  },
+  "wash_certified_for": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0
+  },
+  "load_status": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0
+  },
+  "inspector_notes": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0
+  },
+  "verdict": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "CGO-0001",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-AE-71805",
+   "want": "TNK-AE-71805",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0001",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "ethanol",
+   "want": "ethanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0001",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0001",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "methanol",
+   "want": "methanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0001",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0001",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0001",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0001",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0001",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Something looked off in the tank record, flagged for a second look before loading.",
+   "want": "Something looked off in the tank record, flagged for a second look before loading.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0001",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0002",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-NH-12662",
+   "want": "TNK-NH-12662",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0002",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "ethanol",
+   "want": "ethanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0002",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0002",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "refined coconut oil",
+   "want": "refined coconut oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0002",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "refined coconut oil",
+   "want": "refined coconut oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0002",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0002",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0002",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0002",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "want": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0002",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0003",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-FT-13228",
+   "want": "TNK-FT-13228",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0003",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "methyl ethyl ketone",
+   "want": "methyl ethyl ketone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0003",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0003",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "sodium hydroxide solution",
+   "want": "sodium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0003",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "sodium hydroxide solution",
+   "want": "sodium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0003",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0003",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0003",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0003",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Something looked off in the tank record, flagged for a second look before loading.",
+   "want": "Something looked off in the tank record, flagged for a second look before loading.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0003",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0004",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-JT-76942",
+   "want": "TNK-JT-76942",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0004",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "white mineral oil",
+   "want": "white mineral oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0004",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0004",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "sodium hypochlorite solution",
+   "want": "sodium hypochlorite solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0004",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "propylene glycol",
+   "want": "propylene glycol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0004",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0004",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0004",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0004",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "want": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0004",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0005",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-JH-61326",
+   "want": "TNK-JH-61326",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0005",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "sodium hypochlorite solution",
+   "want": "sodium hypochlorite solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0005",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0005",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "acetone",
+   "want": "acetone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0005",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0005",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0005",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0005",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0005",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "want": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0005",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0006",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-SC-44430",
+   "want": "TNK-SC-44430",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0006",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "ethanol",
+   "want": "ethanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0006",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0006",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "methyl ethyl ketone",
+   "want": "methyl ethyl ketone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0006",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "refined rapeseed oil",
+   "want": "refined rapeseed oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0006",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0006",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0006",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0006",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "want": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0006",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0007",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-FW-30915",
+   "want": "TNK-FW-30915",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0007",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined soybean oil",
+   "want": "refined soybean oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0007",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0007",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "hydrochloric acid",
+   "want": "hydrochloric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0007",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "ethanol",
+   "want": "ethanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0007",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0007",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0007",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0007",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "want": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0007",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0008",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-LB-14094",
+   "want": "TNK-LB-14094",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0008",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined sunflower oil",
+   "want": "refined sunflower oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0008",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0008",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "sodium hydroxide solution",
+   "want": "sodium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0008",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "refined sunflower oil",
+   "want": "refined sunflower oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0008",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0008",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "not_certified",
+   "want": "not_certified",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0008",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0008",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "want": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0008",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0009",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-EN-53117",
+   "want": "TNK-EN-53117",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0009",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "isopropanol",
+   "want": "isopropanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0009",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0009",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "methanol",
+   "want": "methanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0009",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0009",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0009",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "not_certified",
+   "want": "not_certified",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0009",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0009",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Something looked off in the tank record, flagged for a second look before loading.",
+   "want": "Something looked off in the tank record, flagged for a second look before loading.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0009",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0010",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-AT-62123",
+   "want": "TNK-AT-62123",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0010",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "toluene",
+   "want": "toluene",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0010",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0010",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0010",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0010",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0010",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0010",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0010",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "want": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0010",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "undetermined",
+   "want": "undetermined",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0011",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-LV-12250",
+   "want": "TNK-LV-12250",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0011",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "toluene",
+   "want": "toluene",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0011",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0011",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "sodium hypochlorite solution",
+   "want": "sodium hypochlorite solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0011",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "refined sunflower oil",
+   "want": "refined sunflower oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0011",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0011",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0011",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0011",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "want": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0011",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0012",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-PJ-56432",
+   "want": "TNK-PJ-56432",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0012",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "gas oil",
+   "want": "gas oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0012",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0012",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "hydrogen peroxide solution",
+   "want": "hydrogen peroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0012",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0012",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0012",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0012",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0012",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Tank presented clean and dry, no odour on opening. Nothing of concern.",
+   "want": "Tank presented clean and dry, no odour on opening. Nothing of concern.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0012",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0013",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-PM-93505",
+   "want": "TNK-PM-93505",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0013",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined sunflower oil",
+   "want": "refined sunflower oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0013",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0013",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "methanol",
+   "want": "methanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0013",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0013",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0013",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0013",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0013",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Something looked off in the tank record, flagged for a second look before loading.",
+   "want": "Something looked off in the tank record, flagged for a second look before loading.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0013",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0014",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-HE-91972",
+   "want": "TNK-HE-91972",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0014",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "xylene",
+   "want": "xylene",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0014",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0014",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "refined rapeseed oil",
+   "want": "refined rapeseed oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0014",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "sulphuric acid",
+   "want": "sulphuric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0014",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0014",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0014",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0014",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "want": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0014",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0015",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-WC-82167",
+   "want": "TNK-WC-82167",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0015",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "ethanol",
+   "want": "ethanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0015",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0015",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "potassium hydroxide solution",
+   "want": "potassium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0015",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0015",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0015",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "not_certified",
+   "want": "not_certified",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0015",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0015",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "want": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0015",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0016",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-GW-76521",
+   "want": "TNK-GW-76521",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0016",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined sunflower oil",
+   "want": "refined sunflower oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0016",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0016",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "methanol",
+   "want": "methanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0016",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0016",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0016",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0016",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0016",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "want": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0016",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0017",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-WP-42393",
+   "want": "TNK-WP-42393",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0017",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined sunflower oil",
+   "want": "refined sunflower oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0017",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0017",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "refined rapeseed oil",
+   "want": "refined rapeseed oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0017",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "gas oil",
+   "want": "gas oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0017",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0017",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0017",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0017",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Standard changeover, nothing unusual about this unit at all.",
+   "want": "Standard changeover, nothing unusual about this unit at all.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0017",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0018",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-RG-80333",
+   "want": "TNK-RG-80333",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0018",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "isopropanol",
+   "want": "isopropanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0018",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0018",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "base oil",
+   "want": "base oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0018",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "methyl ethyl ketone",
+   "want": "methyl ethyl ketone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0018",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0018",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0018",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0018",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "want": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0018",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0019",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-RJ-65437",
+   "want": "TNK-RJ-65437",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0019",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "ethanol",
+   "want": "ethanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0019",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0019",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "sulphuric acid",
+   "want": "sulphuric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0019",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "acetic acid",
+   "want": "acetic acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0019",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0019",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0019",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0019",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "want": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0019",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0020",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-BP-59173",
+   "want": "TNK-BP-59173",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0020",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "methyl ethyl ketone",
+   "want": "methyl ethyl ketone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0020",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0020",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "toluene",
+   "want": "toluene",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0020",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0020",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0020",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0020",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0020",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Something looked off in the tank record, flagged for a second look before loading.",
+   "want": "Something looked off in the tank record, flagged for a second look before loading.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0020",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0021",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-JM-54161",
+   "want": "TNK-JM-54161",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0021",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "phosphoric acid",
+   "want": "phosphoric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0021",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0021",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "propylene glycol",
+   "want": "propylene glycol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0021",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0021",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0021",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0021",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0021",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "want": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0021",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0022",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-VE-88937",
+   "want": "TNK-VE-88937",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0022",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "ethylene glycol",
+   "want": "ethylene glycol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0022",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0022",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "methyl ethyl ketone",
+   "want": "methyl ethyl ketone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0022",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "gas oil",
+   "want": "gas oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0022",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0022",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0022",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0022",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Standard changeover, nothing unusual about this unit at all.",
+   "want": "Standard changeover, nothing unusual about this unit at all.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0022",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0023",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-LS-53345",
+   "want": "TNK-LS-53345",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0023",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "ethylene glycol",
+   "want": "ethylene glycol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0023",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0023",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "gas oil",
+   "want": "gas oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0023",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "gas oil",
+   "want": "gas oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0023",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0023",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0023",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0023",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Faint odour still present at the hatch -- escalated to the duty superintendent.",
+   "want": "Faint odour still present at the hatch -- escalated to the duty superintendent.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0023",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0024",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-PJ-12517",
+   "want": "TNK-PJ-12517",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0024",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined soybean oil",
+   "want": "refined soybean oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0024",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0024",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "sulphuric acid",
+   "want": "sulphuric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0024",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0024",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0024",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0024",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0024",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "want": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0024",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0025",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-EK-32399",
+   "want": "TNK-EK-32399",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0025",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined rapeseed oil",
+   "want": "refined rapeseed oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0025",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0025",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "acetic acid",
+   "want": "acetic acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0025",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "refined coconut oil",
+   "want": "refined coconut oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0025",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0025",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0025",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0025",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "want": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0025",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0026",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-SP-40293",
+   "want": "TNK-SP-40293",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0026",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined coconut oil",
+   "want": "refined coconut oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0026",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0026",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "hydrochloric acid",
+   "want": "hydrochloric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0026",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0026",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0026",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0026",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0026",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "want": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0026",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0027",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-KF-21337",
+   "want": "TNK-KF-21337",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0027",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "phosphoric acid",
+   "want": "phosphoric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0027",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0027",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "white mineral oil",
+   "want": "white mineral oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0027",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "acetone",
+   "want": "acetone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0027",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0027",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0027",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0027",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "want": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0027",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0028",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-RB-24233",
+   "want": "TNK-RB-24233",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0028",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "phosphoric acid",
+   "want": "phosphoric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0028",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0028",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "base oil",
+   "want": "base oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0028",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0028",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0028",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "not_certified",
+   "want": "not_certified",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0028",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0028",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Something looked off in the tank record, flagged for a second look before loading.",
+   "want": "Something looked off in the tank record, flagged for a second look before loading.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0028",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0029",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-AJ-17411",
+   "want": "TNK-AJ-17411",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0029",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "methyl ethyl ketone",
+   "want": "methyl ethyl ketone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0029",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0029",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "potassium hydroxide solution",
+   "want": "potassium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0029",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0029",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0029",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0029",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0029",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "want": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0029",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0030",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-NB-57619",
+   "want": "TNK-NB-57619",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0030",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined rapeseed oil",
+   "want": "refined rapeseed oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0030",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0030",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "refined coconut oil",
+   "want": "refined coconut oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0030",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "isopropanol",
+   "want": "isopropanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0030",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0030",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0030",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0030",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "want": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0030",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0031",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-CR-61862",
+   "want": "TNK-CR-61862",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0031",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined coconut oil",
+   "want": "refined coconut oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0031",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0031",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0031",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "isopropanol",
+   "want": "isopropanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0031",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0031",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0031",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0031",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Something looked off in the tank record, flagged for a second look before loading.",
+   "want": "Something looked off in the tank record, flagged for a second look before loading.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0031",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "undetermined",
+   "want": "undetermined",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0032",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-KW-17552",
+   "want": "TNK-KW-17552",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0032",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "isopropanol",
+   "want": "isopropanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0032",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0032",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0032",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0032",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0032",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0032",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0032",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Faint odour still present at the hatch -- escalated to the duty superintendent.",
+   "want": "Faint odour still present at the hatch -- escalated to the duty superintendent.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0032",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "undetermined",
+   "want": "undetermined",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0033",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-VR-98382",
+   "want": "TNK-VR-98382",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0033",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "isopropanol",
+   "want": "isopropanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0033",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0033",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0033",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "hydrogen peroxide solution",
+   "want": "hydrogen peroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0033",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0033",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "not_certified",
+   "want": "not_certified",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0033",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0033",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "want": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0033",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "undetermined",
+   "want": "undetermined",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0034",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-TE-22081",
+   "want": "TNK-TE-22081",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0034",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "base oil",
+   "want": "base oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0034",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0034",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0034",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "ethanol",
+   "want": "ethanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0034",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0034",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0034",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0034",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "want": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0034",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "undetermined",
+   "want": "undetermined",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0035",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-KN-15537",
+   "want": "TNK-KN-15537",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0035",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined rapeseed oil",
+   "want": "refined rapeseed oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0035",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0035",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "ethylene glycol",
+   "want": "ethylene glycol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0035",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "potassium hydroxide solution",
+   "want": "potassium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0035",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0035",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0035",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0035",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "want": "Routine turnaround for this berth. Cleaning paperwork looked in order to me.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0035",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0036",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-RD-75547",
+   "want": "TNK-RD-75547",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0036",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "white mineral oil",
+   "want": "white mineral oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0036",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0036",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "acetone",
+   "want": "acetone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0036",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0036",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0036",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "not_certified",
+   "want": "not_certified",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0036",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0036",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "want": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0036",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0037",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-JB-42484",
+   "want": "TNK-JB-42484",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0037",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined soybean oil",
+   "want": "refined soybean oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0037",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0037",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "potassium hydroxide solution",
+   "want": "potassium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0037",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0037",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0037",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "not_certified",
+   "want": "not_certified",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0037",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0037",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Standard changeover, nothing unusual about this unit at all.",
+   "want": "Standard changeover, nothing unusual about this unit at all.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0037",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0038",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-GR-53671",
+   "want": "TNK-GR-53671",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0038",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "xylene",
+   "want": "xylene",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0038",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0038",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "refined rapeseed oil",
+   "want": "refined rapeseed oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0038",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0038",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0038",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0038",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0038",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "want": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0038",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0039",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-PV-31536",
+   "want": "TNK-PV-31536",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0039",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "isopropanol",
+   "want": "isopropanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0039",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0039",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "methyl ethyl ketone",
+   "want": "methyl ethyl ketone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0039",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0039",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0039",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0039",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0039",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Standard changeover, nothing unusual about this unit at all.",
+   "want": "Standard changeover, nothing unusual about this unit at all.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0039",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0040",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-RS-82197",
+   "want": "TNK-RS-82197",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0040",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "hydrochloric acid",
+   "want": "hydrochloric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0040",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0040",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "hydrogen peroxide solution",
+   "want": "hydrogen peroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0040",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "refined coconut oil",
+   "want": "refined coconut oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0040",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0040",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0040",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0040",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "want": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0040",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0041",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-PR-73451",
+   "want": "TNK-PR-73451",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0041",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "sodium hydroxide solution",
+   "want": "sodium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0041",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0041",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "sulphuric acid",
+   "want": "sulphuric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0041",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "isopropanol",
+   "want": "isopropanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0041",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0041",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0041",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0041",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Faint odour still present at the hatch -- escalated to the duty superintendent.",
+   "want": "Faint odour still present at the hatch -- escalated to the duty superintendent.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0041",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0042",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-EP-69147",
+   "want": "TNK-EP-69147",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0042",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "sulphuric acid",
+   "want": "sulphuric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0042",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0042",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "ethylene glycol",
+   "want": "ethylene glycol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0042",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "methanol",
+   "want": "methanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0042",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0042",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0042",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0042",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Standard changeover, nothing unusual about this unit at all.",
+   "want": "Standard changeover, nothing unusual about this unit at all.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0042",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0043",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-NH-67896",
+   "want": "TNK-NH-67896",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0043",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "base oil",
+   "want": "base oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0043",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0043",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "sodium hydroxide solution",
+   "want": "sodium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0043",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0043",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0043",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0043",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0043",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "want": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0043",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0044",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-FR-92655",
+   "want": "TNK-FR-92655",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0044",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "isopropanol",
+   "want": "isopropanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0044",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0044",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "methyl ethyl ketone",
+   "want": "methyl ethyl ketone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0044",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "base oil",
+   "want": "base oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0044",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0044",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0044",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0044",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Tank presented clean and dry, no odour on opening. Nothing of concern.",
+   "want": "Tank presented clean and dry, no odour on opening. Nothing of concern.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0044",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0045",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-KW-43159",
+   "want": "TNK-KW-43159",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0045",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "hydrochloric acid",
+   "want": "hydrochloric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0045",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0045",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "refined sunflower oil",
+   "want": "refined sunflower oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0045",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0045",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0045",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0045",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0045",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Tank presented clean and dry, no odour on opening. Nothing of concern.",
+   "want": "Tank presented clean and dry, no odour on opening. Nothing of concern.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0045",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0046",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-VH-34454",
+   "want": "TNK-VH-34454",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0046",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "xylene",
+   "want": "xylene",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0046",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0046",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "toluene",
+   "want": "toluene",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0046",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0046",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0046",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0046",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0046",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "want": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0046",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "clean_then_load",
+   "want": "clean_then_load",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0047",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-RP-99079",
+   "want": "TNK-RP-99079",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0047",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "propylene glycol",
+   "want": "propylene glycol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0047",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0047",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "acetone",
+   "want": "acetone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0047",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "toluene",
+   "want": "toluene",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0047",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0047",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "caustic_wash",
+   "want": "caustic_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0047",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0047",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Faint odour still present at the hatch -- escalated to the duty superintendent.",
+   "want": "Faint odour still present at the hatch -- escalated to the duty superintendent.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0047",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0048",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-CG-69078",
+   "want": "TNK-CG-69078",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0048",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "isopropanol",
+   "want": "isopropanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0048",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "high_purity",
+   "want": "high_purity",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0048",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "refined soybean oil",
+   "want": "refined soybean oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0048",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "methyl ethyl ketone",
+   "want": "methyl ethyl ketone",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0048",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0048",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0048",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0048",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Something looked off in the tank record, flagged for a second look before loading.",
+   "want": "Something looked off in the tank record, flagged for a second look before loading.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0048",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0049",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-LK-33168",
+   "want": "TNK-LK-33168",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0049",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "sodium hypochlorite solution",
+   "want": "sodium hypochlorite solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0049",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0049",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "gas oil",
+   "want": "gas oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0049",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "sodium hydroxide solution",
+   "want": "sodium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0049",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0049",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0049",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0049",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Tank presented clean and dry, no odour on opening. Nothing of concern.",
+   "want": "Tank presented clean and dry, no odour on opening. Nothing of concern.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0049",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0050",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-PN-44770",
+   "want": "TNK-PN-44770",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0050",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined rapeseed oil",
+   "want": "refined rapeseed oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0050",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0050",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "potassium hydroxide solution",
+   "want": "potassium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0050",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "sodium hypochlorite solution",
+   "want": "sodium hypochlorite solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0050",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0050",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0050",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0050",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Standard changeover, nothing unusual about this unit at all.",
+   "want": "Standard changeover, nothing unusual about this unit at all.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0050",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0051",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-TT-21895",
+   "want": "TNK-TT-21895",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0051",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "refined coconut oil",
+   "want": "refined coconut oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0051",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0051",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0051",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0051",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0051",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "hot_detergent_wash",
+   "want": "hot_detergent_wash",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0051",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0051",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Something looked off in the tank record, flagged for a second look before loading.",
+   "want": "Something looked off in the tank record, flagged for a second look before loading.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0051",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "undetermined",
+   "want": "undetermined",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0052",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-PN-28417",
+   "want": "TNK-PN-28417",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0052",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "sulphuric acid",
+   "want": "sulphuric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0052",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0052",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "sodium hydroxide solution",
+   "want": "sodium hydroxide solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0052",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "refined soybean oil",
+   "want": "refined soybean oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0052",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0052",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0052",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "loaded",
+   "want": "loaded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0052",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "want": "Not confident about this changeover; asked for the paperwork to be reviewed again.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0052",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0053",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-JS-93749",
+   "want": "TNK-JS-93749",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0053",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "ethanol",
+   "want": "ethanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0053",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "food_grade",
+   "want": "food_grade",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0053",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "refined rapeseed oil",
+   "want": "refined rapeseed oil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0053",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "sulphuric acid",
+   "want": "sulphuric acid",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0053",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0053",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "steam_and_dry",
+   "want": "steam_and_dry",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0053",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0053",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "want": "No issues noted at the hatch. Happy for this one to go ahead.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0053",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0054",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-MD-31120",
+   "want": "TNK-MD-31120",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0054",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "toluene",
+   "want": "toluene",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0054",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0054",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "ethylene glycol",
+   "want": "ethylene glycol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0054",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": "methanol",
+   "want": "methanol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0054",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0054",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0054",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0054",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "want": "Previous cargo history on this unit is disputed; under manual audit this week.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0054",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "accept",
+   "want": "accept",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0055",
+   "field": "tank_id",
+   "verdict": "hit",
+   "got": "TNK-VW-66267",
+   "want": "TNK-VW-66267",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0055",
+   "field": "incoming_product",
+   "verdict": "hit",
+   "got": "propylene glycol",
+   "want": "propylene glycol",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0055",
+   "field": "incoming_grade",
+   "verdict": "hit",
+   "got": "technical",
+   "want": "technical",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0055",
+   "field": "prior_cargo",
+   "verdict": "hit",
+   "got": "sodium hypochlorite solution",
+   "want": "sodium hypochlorite solution",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0055",
+   "field": "two_back_cargo",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0055",
+   "field": "wash_performed",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0055",
+   "field": "wash_certified_for",
+   "verdict": "hit",
+   "got": "water_rinse",
+   "want": "water_rinse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0055",
+   "field": "load_status",
+   "verdict": "hit",
+   "got": "pending",
+   "want": "pending",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CGO-0055",
+   "field": "inspector_notes",
+   "verdict": "hit",
+   "got": "Something looked off in the tank record, flagged for a second look before loading.",
+   "want": "Something looked off in the tank record, flagged for a second look before loading.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CGO-0055",
+   "field": "verdict",
+   "verdict": "hit",
+   "got": "refuse",
+   "want": "refuse",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "verdict_scores": {
+  "verdict_accuracy": 1.0,
+  "verdict_correct": 55,
+  "verdict_rows": 55,
+  "verdict_unanswered": 0,
+  "confusion": {
+   "refuse": {
+    "refuse": 18
+   },
+   "accept": {
+    "accept": 16
+   },
+   "clean_then_load": {
+    "clean_then_load": 15
+   },
+   "undetermined": {
+    "undetermined": 6
+   }
+  },
+  "blocked": {
+   "true_positive": 39,
+   "false_positive": 0,
+   "true_negative": 16,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (this tank must NOT be loaded as it stands)",
+   "note": "The four-way verdict collapsed onto the one distinction that is safety-relevant. A false negative here is a tank the shipped matrix would have stopped and the run cleared.",
+   "rows": [
+    {
+     "doc": "CGO-0001",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0002",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0004",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0005",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0006",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0007",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0008",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0009",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0010",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0011",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0012",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0013",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0014",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0015",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0016",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0017",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0018",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0019",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0020",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0021",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0022",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0023",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0024",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0025",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0026",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0027",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0028",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0029",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0030",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0031",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0032",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0033",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0034",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0035",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0036",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0037",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0038",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0039",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0040",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0041",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0042",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0043",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0044",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0045",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0046",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0047",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0048",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0049",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0050",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0051",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0052",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0053",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0054",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0055",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    }
+   ]
+  },
+  "unsafe_release": [],
+  "unsafe_release_count": 0,
+  "unsafe_release_rate_pct": 0.0,
+  "over_block": [],
+  "over_block_count": 0,
+  "hold_flag": {
+   "true_positive": 19,
+   "false_positive": 0,
+   "true_negative": 36,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (not clear-to-load and already loaded)",
+   "note": "needs_hold compares the run's own verdict and load_status against the same rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the consistency diagnostic below, which does not.",
+   "rows": [
+    {
+     "doc": "CGO-0001",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0002",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0004",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0005",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0006",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0007",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0008",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0009",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0010",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0011",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0012",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0013",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0014",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0015",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0016",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0017",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0018",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0019",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0020",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0021",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0022",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0023",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0024",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0025",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0026",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0027",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0028",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0029",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0030",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0031",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0032",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0033",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0034",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0035",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0036",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0037",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0038",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0039",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0040",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0041",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0042",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0043",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0044",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0045",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0046",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0047",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0048",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0049",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0050",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0051",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0052",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "CGO-0053",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0054",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "CGO-0055",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_values": 0,
+   "verdict_errors": 0,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 0,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the matrix lookup over the run's OWN extracted values and counts the replies whose stated verdict disagrees with it. It uses no gold, so a forker can compute it on unlabelled sheets -- but it is blind to a reply that misreads a cargo name or a certificate and then reasons correctly from the misreading."
+  },
+  "rows": [
+   {
+    "doc": "CGO-0001",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0002",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0003",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0004",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0005",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0006",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0007",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0008",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0009",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0010",
+    "want": "undetermined",
+    "got": "undetermined",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0011",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0012",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0013",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0014",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0015",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0016",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0017",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0018",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0019",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0020",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0021",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0022",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0023",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0024",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0025",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0026",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0027",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0028",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0029",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0030",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0031",
+    "want": "undetermined",
+    "got": "undetermined",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0032",
+    "want": "undetermined",
+    "got": "undetermined",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0033",
+    "want": "undetermined",
+    "got": "undetermined",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0034",
+    "want": "undetermined",
+    "got": "undetermined",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0035",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0036",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0037",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0038",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0039",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0040",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0041",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0042",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0043",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0044",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0045",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0046",
+    "want": "clean_then_load",
+    "got": "clean_then_load",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0047",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0048",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0049",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0050",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0051",
+    "want": "undetermined",
+    "got": "undetermined",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0052",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0053",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0054",
+    "want": "accept",
+    "got": "accept",
+    "correct": true
+   },
+   {
+    "doc": "CGO-0055",
+    "want": "refuse",
+    "got": "refuse",
+    "correct": true
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3000
+  },
+  {
+   "name": "compatibility matrix",
+   "chars": 1700
+  },
+  {
+   "name": "field schema",
+   "chars": 2642
+  },
+  {
+   "name": "check sheet sections",
+   "chars": 509
+  }
+ ],
+ "sections_used": [
+  "Tank",
+  "Incoming Product",
+  "Incoming Grade",
+  "Prior Cargo",
+  "Two-Back Cargo",
+  "Wash Performed",
+  "Cleaning Certificate",
+  "Load Status",
+  "Inspector Notes"
+ ],
+ "raw_text": "{\"tank_id\":\"TNK-AE-71805\",\"incoming_product\":\"ethanol\",\"incoming_grade\":\"food_grade\",\"prior_cargo\":\"methanol\",\"two_back_cargo\":null,\"wash_performed\":\"hot_detergent_wash\",\"wash_certified_for\":\"hot_detergent_wash\",\"load_status\":\"pending\",\"inspector_notes\":\"Something looked off in the tank record, flagged for a second look before loading.\",\"verdict\":\"refuse\"}",
+ "max_tokens": 4000,
+ "thinking": null
+}

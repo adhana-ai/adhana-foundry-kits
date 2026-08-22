@@ -1,0 +1,8839 @@
+{
+ "run_id": "t000-stub",
+ "stub": true,
+ "model": "stub",
+ "provider": "stub",
+ "claims": 55,
+ "documents": 55,
+ "failures": [],
+ "latency_p50_ms": 0,
+ "latency_p95_ms": 0,
+ "latency_ms_all": [
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "wall_seconds": 0.0,
+ "input_tokens_total": 56462,
+ "output_tokens_total": 783,
+ "scores": {
+  "extraction_cells": 770,
+  "extraction_accuracy": 0.2143,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 55,
+  "values_with_span": 55,
+  "non_spannable_fields": [
+   "already_commissioned",
+   "booking_source",
+   "claim_valid",
+   "folio_status",
+   "invoice_status"
+  ],
+  "span_rate": 1.0
+ },
+ "by_field": {
+  "claim_id": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "confirmation_number": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "folio_status": {
+   "hit": 55,
+   "miss": 0,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "booking_source": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "room_revenue_usd": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "room_revenue_refunded_usd": {
+   "hit": 13,
+   "miss": 42,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "non_room_charges_usd": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "penalty_charged_usd": {
+   "hit": 42,
+   "miss": 13,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "contract_rate_pct": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "claimed_commission_usd": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "already_commissioned": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "invoice_status": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "reviewer_note": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  },
+  "claim_valid": {
+   "hit": 0,
+   "miss": 55,
+   "wrong": 0,
+   "abstained": 0,
+   "hallucinated": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "CMA-0001",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-04-7415",
+   "want": "CLM-2026-04-7415",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-EL-178215",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 2756.36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 530.52,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 482.36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off against the folio on this line, revisit before settlement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0001",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-10-2481",
+   "want": "CLM-2026-10-2481",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-SC-375445",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "rebooked",
+   "want": "rebooked",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 727.83,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 141.15,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 10.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 72.78,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Folio matches the claim, no action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0002",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-01-7606",
+   "want": "CLM-2026-01-7606",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-JE-124087",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 3121.67,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 667.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 643.95,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 294.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Flagged by the night auditor -- amount looked high against the folio.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0003",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-06-2115",
+   "want": "CLM-2026-06-2115",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-NF-455387",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "rebooked",
+   "want": "rebooked",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 400.59,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 87.39,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 10.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 40.06,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this line is owed -- second look before payment.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0004",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-01-1089",
+   "want": "CLM-2026-01-1089",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-JW-979599",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "cancelled",
+   "want": "cancelled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 65.62,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 426.85,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 76.83,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Routine line, previously approved by the front-office manager.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0005",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-05-2101",
+   "want": "CLM-2026-05-2101",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-EB-314308",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 489.29,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 143.58,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 75.94,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this line is owed -- second look before payment.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0006",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-06-9235",
+   "want": "CLM-2026-06-9235",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-AE-139698",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 2380.71,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 356.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 15.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 297.59,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Flagged by the night auditor -- amount looked high against the folio.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0007",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-12-4130",
+   "want": "CLM-2026-12-4130",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-KW-621324",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1524.68,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 232.89,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 239.69,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 10.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 129.18,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Routine line, previously approved by the front-office manager.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0008",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-10-2667",
+   "want": "CLM-2026-10-2667",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-FH-173716",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 2260.61,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1196.92,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 531.55,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 15.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 339.09,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this line is owed -- second look before payment.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0009",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-01-1043",
+   "want": "CLM-2026-01-1043",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-LH-616186",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1130.96,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 190.1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 141.37,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Folio matches the claim, no action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0010",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-03-6517",
+   "want": "CLM-2026-03-6517",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-AF-251642",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "no_show",
+   "want": "no_show",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 31.66,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 289.53,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 36.19,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Routine line, previously approved by the front-office manager.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0011",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-07-8859",
+   "want": "CLM-2026-07-8859",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-WC-847374",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1725.71,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 334.85,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 360.6,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Folio matches the claim, no action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0012",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-02-4509",
+   "want": "CLM-2026-02-4509",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-WT-815013",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "rebooked",
+   "want": "rebooked",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 790.24,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 107.92,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 94.83,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this line is owed -- second look before payment.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0013",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-05-4526",
+   "want": "CLM-2026-05-4526",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-BW-551876",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "direct",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1054.84,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 257.43,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 126.58,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Routine line, previously approved by the front-office manager.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0014",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-01-7675",
+   "want": "CLM-2026-01-7675",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-VT-791282",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1114.81,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 241.42,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 200.67,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Disputed with the channel last month; awaiting their response.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0015",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-05-7597",
+   "want": "CLM-2026-05-7597",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-AV-129533",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 2971.29,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 705.14,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 534.83,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Checked against the folio last cycle and it came out clean.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0016",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-12-7929",
+   "want": "CLM-2026-12-7929",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-DG-965889",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "no_show",
+   "want": "no_show",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 35.04,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 348.22,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 15.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 52.23,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off against the folio on this line, revisit before settlement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0017",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-01-7890",
+   "want": "CLM-2026-01-7890",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-ND-650417",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1193.25,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 275.04,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 119.33,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this line is owed -- second look before payment.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0018",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-11-7057",
+   "want": "CLM-2026-11-7057",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-LR-240637",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1895.53,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 591.04,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 285.15,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 15.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 284.33,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Flagged by the night auditor -- amount looked high against the folio.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0019",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-11-9714",
+   "want": "CLM-2026-11-9714",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-EN-865747",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 2974.39,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1355.3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 590.09,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 535.39,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Disputed with the channel last month; awaiting their response.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0020",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-01-6448",
+   "want": "CLM-2026-01-6448",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-SL-672870",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "cancelled",
+   "want": "cancelled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 241.19,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this line is owed -- second look before payment.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0021",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-01-2812",
+   "want": "CLM-2026-01-2812",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-RP-817064",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 300.69,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 50.94,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 37.59,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Checked against the folio last cycle and it came out clean.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0022",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-11-6055",
+   "want": "CLM-2026-11-6055",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-KE-842507",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 445.16,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 63.03,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 66.77,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Checked against the folio last cycle and it came out clean.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0023",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-05-6304",
+   "want": "CLM-2026-05-6304",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-ES-995498",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "rebooked",
+   "want": "rebooked",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1604.3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 431.99,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 280.75,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Folio matches the claim, no action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0024",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-11-9244",
+   "want": "CLM-2026-11-9244",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-TE-610261",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 2263.43,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1172.47,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 488.24,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 196.37,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this line is owed -- second look before payment.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0025",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-02-1403",
+   "want": "CLM-2026-02-1403",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-TG-734325",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "cancelled",
+   "want": "cancelled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 83.36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 606.85,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 109.23,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Checked against the folio last cycle and it came out clean.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0026",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-11-8480",
+   "want": "CLM-2026-11-8480",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-BD-321600",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1862.13,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 342.13,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 232.77,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this line is owed -- second look before payment.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0027",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-05-9912",
+   "want": "CLM-2026-05-9912",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-FM-114906",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "no_show",
+   "want": "no_show",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 47.63,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Folio matches the claim, no action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0028",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-02-9224",
+   "want": "CLM-2026-02-9224",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-PK-276636",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "cancelled",
+   "want": "cancelled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.48,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 293.97,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 35.28,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off against the folio on this line, revisit before settlement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0029",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-06-7149",
+   "want": "CLM-2026-06-7149",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-KR-618791",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1374.3,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 254.09,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 240.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off against the folio on this line, revisit before settlement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0030",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-06-6011",
+   "want": "CLM-2026-06-6011",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-AT-411791",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "corporate_gds",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 960.15,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 255.11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 10.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 96.02,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard channel booking, nothing unusual on this line.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0031",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-11-2785",
+   "want": "CLM-2026-11-2785",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-BT-939762",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "cancelled",
+   "want": "cancelled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 244.38,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Checked against the folio last cycle and it came out clean.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0032",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-05-3668",
+   "want": "CLM-2026-05-3668",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-FM-178576",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 818.59,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 126.68,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 165.42,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Checked against the folio last cycle and it came out clean.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0033",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-06-7604",
+   "want": "CLM-2026-06-7604",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-KE-378139",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "walk_in",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1297.75,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 216.04,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 10.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 129.78,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Flagged by the night auditor -- amount looked high against the folio.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0034",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-01-5950",
+   "want": "CLM-2026-01-5950",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-TR-199085",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 894.37,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 266.65,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 181.2,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 156.51,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off against the folio on this line, revisit before settlement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0035",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-05-1140",
+   "want": "CLM-2026-05-1140",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-AP-959677",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1074.41,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 134.56,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 193.39,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off against the folio on this line, revisit before settlement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0036",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-12-2333",
+   "want": "CLM-2026-12-2333",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-LH-417480",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "rebooked",
+   "want": "rebooked",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1556.21,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 301.41,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 10.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 155.62,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Flagged by the night auditor -- amount looked high against the folio.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0037",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-09-7376",
+   "want": "CLM-2026-09-7376",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-SA-888762",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1909.05,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 400.81,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 15.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 286.36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Routine line, previously approved by the front-office manager.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0038",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-04-8563",
+   "want": "CLM-2026-04-8563",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-TJ-184542",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 602.26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 117.31,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 10.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 60.23,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Checked against the folio last cycle and it came out clean.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0039",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-07-1915",
+   "want": "CLM-2026-07-1915",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-JJ-164778",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1793.83,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 464.23,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 215.26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Checked against the folio last cycle and it came out clean.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0040",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-12-4915",
+   "want": "CLM-2026-12-4915",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-BH-245646",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "direct",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 2165.94,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 445.55,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 15.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 324.89,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Disputed with the channel last month; awaiting their response.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0041",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-03-8018",
+   "want": "CLM-2026-03-8018",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-RD-546571",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "cancelled",
+   "want": "cancelled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 10.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 219.36,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Flagged by the night auditor -- amount looked high against the folio.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0042",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-05-7595",
+   "want": "CLM-2026-05-7595",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-CN-344325",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "no_show",
+   "want": "no_show",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 41.58,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 291.1,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 52.4,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Disputed with the channel last month; awaiting their response.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0043",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-07-1765",
+   "want": "CLM-2026-07-1765",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-JV-806187",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1117.07,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 454.49,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 300.54,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 15.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 99.39,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Checked against the folio last cycle and it came out clean.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0044",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-01-2696",
+   "want": "CLM-2026-01-2696",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-TF-939084",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "no_show",
+   "want": "no_show",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 38.64,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 423.28,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 15.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 63.49,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Folio matches the claim, no action needed.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0045",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-10-5144",
+   "want": "CLM-2026-10-5144",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-BA-933477",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 2496.2,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 443.56,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 10.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 293.98,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this line is owed -- second look before payment.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0046",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-07-9772",
+   "want": "CLM-2026-07-9772",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-HF-231441",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "cancelled",
+   "want": "cancelled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.51,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 162.51,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 15.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 24.38,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not confident this line is owed -- second look before payment.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0047",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-11-8509",
+   "want": "CLM-2026-11-8509",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-VR-551687",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 507.77,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 130.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 114.89,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Checked against the folio last cycle and it came out clean.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0048",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-02-2384",
+   "want": "CLM-2026-02-2384",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-VS-576554",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 900.67,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 228.55,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 201.69,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 10.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 90.07,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Disputed with the channel last month; awaiting their response.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0049",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-06-9259",
+   "want": "CLM-2026-06-9259",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-SP-533129",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 2567.26,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 429.89,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 462.11,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Standard channel booking, nothing unusual on this line.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0050",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-02-8719",
+   "want": "CLM-2026-02-8719",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-RJ-182793",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "corporate_gds",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1722.99,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 395.41,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 18.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 310.14,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Disputed with the channel last month; awaiting their response.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0051",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-12-7605",
+   "want": "CLM-2026-12-7605",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-JJ-887959",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1744.97,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 288.74,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 305.37,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Something looked off against the folio on this line, revisit before settlement.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0052",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-11-3225",
+   "want": "CLM-2026-11-3225",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-TT-195162",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 1265.87,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 196.29,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 17.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 255.88,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "paid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Flagged by the night auditor -- amount looked high against the folio.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0053",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-04-8197",
+   "want": "CLM-2026-04-8197",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-TA-660709",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "cancelled",
+   "want": "cancelled",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 70.96,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "penalty_charged_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 538.44,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 15.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 80.77,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Checked against the folio last cycle and it came out clean.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0054",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "claim_id",
+   "verdict": "hit",
+   "got": "CLM-2026-03-7308",
+   "want": "CLM-2026-03-7308",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "confirmation_number",
+   "verdict": "miss",
+   "got": null,
+   "want": "BK-GM-151235",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "folio_status",
+   "verdict": "hit",
+   "got": "stayed",
+   "want": "stayed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "booking_source",
+   "verdict": "miss",
+   "got": null,
+   "want": "channel",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "room_revenue_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 2378.15,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "room_revenue_refunded_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 0.0,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "non_room_charges_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 555.25,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "penalty_charged_usd",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "contract_rate_pct",
+   "verdict": "miss",
+   "got": null,
+   "want": 12.5,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "claimed_commission_usd",
+   "verdict": "miss",
+   "got": null,
+   "want": 297.27,
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "already_commissioned",
+   "verdict": "miss",
+   "got": null,
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "invoice_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "unpaid",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "reviewer_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Disputed with the channel last month; awaiting their response.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "CMA-0055",
+   "field": "claim_valid",
+   "verdict": "miss",
+   "got": null,
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "flag_scores": {
+  "positive_class": "no (the commission claimed is not what is actually owed)",
+  "true_positive": 0,
+  "false_positive": 0,
+  "true_negative": 0,
+  "false_negative": 0,
+  "unanswered": 55,
+  "not_applicable": 0,
+  "accuracy": 0.0,
+  "recall": 0.0,
+  "precision": null,
+  "by_case": {
+   "cancel_no_penalty": {
+    "n": 4,
+    "correct": 0,
+    "accuracy": 0.0
+   },
+   "cancel_with_penalty": {
+    "n": 5,
+    "correct": 0,
+    "accuracy": 0.0
+   },
+   "duplicate_claim": {
+    "n": 4,
+    "correct": 0,
+    "accuracy": 0.0
+   },
+   "no_show_with_penalty": {
+    "n": 4,
+    "correct": 0,
+    "accuracy": 0.0
+   },
+   "rate_mismatch": {
+    "n": 3,
+    "correct": 0,
+    "accuracy": 0.0
+   },
+   "rebooked": {
+    "n": 5,
+    "correct": 0,
+    "accuracy": 0.0
+   },
+   "refund_ignored": {
+    "n": 5,
+    "correct": 0,
+    "accuracy": 0.0
+   },
+   "refund_net": {
+    "n": 4,
+    "correct": 0,
+    "accuracy": 0.0
+   },
+   "stayed_plain": {
+    "n": 10,
+    "correct": 0,
+    "accuracy": 0.0
+   },
+   "taxes_in_base": {
+    "n": 6,
+    "correct": 0,
+    "accuracy": 0.0
+   },
+   "wrong_channel": {
+    "n": 5,
+    "correct": 0,
+    "accuracy": 0.0
+   }
+  },
+  "recovery_flag": {
+   "true_positive": 0,
+   "false_positive": 0,
+   "true_negative": 0,
+   "false_negative": 0,
+   "unanswered": 55,
+   "not_applicable": 0,
+   "accuracy": 0.0,
+   "recall": 0.0,
+   "precision": null,
+   "positive_class": "yes (not owed as claimed, invoice already paid)",
+   "note": "needs_recovery compares the run's own claim_valid and invoice_status against the same two-boolean rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the extraction grade, which does too, and unlike the consistency diagnostic below, which does not.",
+   "rows": [
+    {
+     "doc": "CMA-0001",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0002",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0003",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0004",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0005",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0006",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0007",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0008",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0009",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0010",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0011",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0012",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0013",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0014",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0015",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0016",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0017",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0018",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0019",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0020",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0021",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0022",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0023",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0024",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0025",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0026",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0027",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0028",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0029",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0030",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0031",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0032",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0033",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0034",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0035",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0036",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0037",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0038",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0039",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0040",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0041",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0042",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0043",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0044",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0045",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0046",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0047",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0048",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0049",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0050",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0051",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0052",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0053",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0054",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "CMA-0055",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_numbers": 0,
+   "verdict_errors": 55,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 55,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the commission computation over the run's OWN extracted values and counts the replies whose stated verdict disagrees with it. It uses no gold, so a forker can compute it on unlabelled records -- but it is blind to a reply that misreads a value and then judges that misreading correctly."
+  },
+  "rows": [
+   {
+    "doc": "CMA-0001",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "duplicate_claim",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0002",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "rebooked",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0003",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "refund_net",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0004",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "rebooked",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0005",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "cancel_with_penalty",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0006",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "taxes_in_base",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0007",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "rate_mismatch",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0008",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "refund_net",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0009",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "refund_ignored",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0010",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "stayed_plain",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0011",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "no_show_with_penalty",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0012",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "taxes_in_base",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0013",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "rebooked",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0014",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "wrong_channel",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0015",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "stayed_plain",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0016",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "stayed_plain",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0017",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "no_show_with_penalty",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0018",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "rate_mismatch",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0019",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "refund_ignored",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0020",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "refund_ignored",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0021",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "cancel_no_penalty",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0022",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "stayed_plain",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0023",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "rate_mismatch",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0024",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "rebooked",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0025",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "refund_net",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0026",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "cancel_with_penalty",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0027",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "duplicate_claim",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0028",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "cancel_no_penalty",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0029",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "cancel_with_penalty",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0030",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "stayed_plain",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0031",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "wrong_channel",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0032",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "cancel_no_penalty",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0033",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "taxes_in_base",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0034",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "wrong_channel",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0035",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "refund_ignored",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0036",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "stayed_plain",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0037",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "rebooked",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0038",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "duplicate_claim",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0039",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "stayed_plain",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0040",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "stayed_plain",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0041",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "wrong_channel",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0042",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "cancel_no_penalty",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0043",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "no_show_with_penalty",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0044",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "refund_net",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0045",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "no_show_with_penalty",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0046",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "taxes_in_base",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0047",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "cancel_with_penalty",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0048",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "taxes_in_base",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0049",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "refund_ignored",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0050",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "stayed_plain",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0051",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "wrong_channel",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0052",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "stayed_plain",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0053",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "taxes_in_base",
+    "shape": null,
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0054",
+    "want": "yes",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": null,
+    "shape": "cancel_with_penalty",
+    "needs_recovery": false
+   },
+   {
+    "doc": "CMA-0055",
+    "want": "no",
+    "got": null,
+    "verdict": "unanswered",
+    "fault": "duplicate_claim",
+    "shape": null,
+    "needs_recovery": false
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 2972
+  },
+  {
+   "name": "field schema",
+   "chars": 3021
+  },
+  {
+   "name": "record sections",
+   "chars": 679
+  }
+ ],
+ "sections_used": [
+  "Claim Line",
+  "Confirmation Number",
+  "Folio Status",
+  "Booking Source",
+  "Room Revenue",
+  "Room Revenue Refunded",
+  "Non-Room Charges",
+  "Cancellation Penalty",
+  "Contract Rate",
+  "Claimed Commission",
+  "Previously Commissioned",
+  "Invoice Status",
+  "Reviewer Note"
+ ],
+ "raw_text": "{\"claim_id\": \"CLM-2026-04-7415\", \"folio_status\": \"stayed\"}",
+ "max_tokens": 4000
+}

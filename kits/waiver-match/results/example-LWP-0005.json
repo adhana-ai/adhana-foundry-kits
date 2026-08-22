@@ -1,0 +1,54 @@
+{
+ "doc": "LWP-0005",
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "captured": "A fresh single call replayed after runs r001/r002 to capture the reply verbatim for the LLM lens. It agrees with both scored runs and with gold. ⚠︎ IT IS THE SECOND REPLAY, NOT THE FIRST -- the first replay of this same package, same model, same prompt, answered WRONGLY, and all four replays are recorded in results/repeat-LWP-0005.json rather than the wrong one being quietly dropped.",
+ "input_tokens": 2049,
+ "output_tokens": 937,
+ "finish_reason": "stop",
+ "max_tokens": 3000,
+ "raw_text": "{\n  \"package_id\": \"PA-2027-188\",\n  \"project_name\": \"Cedar Point Transit Center\",\n  \"pay_app_number\": \"Application 08\",\n  \"period_through\": \"2027-01-31\",\n  \"payment_amount_usd\": 316504.01,\n  \"prior_payment_cleared\": \"no\",\n  \"release_status\": \"scheduled\",\n  \"coordinator_note\": \"Waiver file reviewed at intake and it looked complete.\",\n  \"parties_uncovered\": 2,\n  \"first_gap_party\": \"Linden Sheet Metal\",\n  \"first_gap_reason\": \"notice_after_waiver\"\n}",
+ "values": {
+  "package_id": "PA-2027-188",
+  "project_name": "Cedar Point Transit Center",
+  "pay_app_number": "Application 08",
+  "period_through": "2027-01-31",
+  "payment_amount_usd": 316504.01,
+  "prior_payment_cleared": "no",
+  "release_status": "scheduled",
+  "coordinator_note": "Waiver file reviewed at intake and it looked complete.",
+  "parties_uncovered": 2,
+  "first_gap_party": "Linden Sheet Metal",
+  "first_gap_reason": "notice_after_waiver"
+ },
+ "spans": {
+  "package_id": "Package",
+  "project_name": "Project",
+  "pay_app_number": "Pay Application",
+  "period_through": "Period Through",
+  "payment_amount_usd": "Payment Amount",
+  "prior_payment_cleared": null,
+  "release_status": null,
+  "coordinator_note": "Coordinator Note",
+  "parties_uncovered": null,
+  "first_gap_party": "Waiver Coverage",
+  "first_gap_reason": null
+ },
+ "needs_hold": true,
+ "self_check": {
+  "party_agrees": true,
+  "reason_agrees": true,
+  "party_exists": true
+ },
+ "sections_used": [
+  "Package",
+  "Project",
+  "Pay Application",
+  "Period Through",
+  "Payment Amount",
+  "Prior Payment Cleared",
+  "Release Status",
+  "Waiver Coverage",
+  "Coordinator Note"
+ ]
+}
