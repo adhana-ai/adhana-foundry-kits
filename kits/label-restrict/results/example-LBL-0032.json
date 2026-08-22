@@ -1,0 +1,128 @@
+{
+ "doc": "LBL-0032",
+ "beside_run": "r001-label-restrict",
+ "note": "A fresh single call replayed after the scored run, to capture one reply verbatim. It is NOT a 53rd scored case and is not counted in any denominator.",
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "max_tokens": 6000,
+ "input_tokens": 3558,
+ "output_tokens": 1153,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 838
+ },
+ "raw_text": "{\n  \"field_id\": \"FLD-NP-20692\",\n  \"permitted_crops\": \"potatoes, carrots, winter barley, winter oilseed rape, field lettuce\",\n  \"max_rate_l_per_ha\": 2.4,\n  \"max_applications_per_season\": 3,\n  \"min_retreatment_interval_days\": 7,\n  \"pre_harvest_interval_days\": 28,\n  \"re_entry_interval_hours\": 48,\n  \"buffer_to_water_m\": 6,\n  \"tank_mix_prohibited_with\": \"Corvistel 275 SC, Trelmara 400 EC\",\n  \"crop_proposed\": \"winter barley\",\n  \"rate_proposed_l_per_ha\": 0.6,\n  \"applications_made_this_season\": 2,\n  \"days_since_last_application\": 14,\n  \"days_to_harvest\": 48,\n  \"planned_re_entry_hours\": 30,\n  \"distance_to_water_m\": 6,\n  \"tank_mix_partner\": \"none\",\n  \"previous_season_applications\": 3,\n  \"application_status\": \"applied\",\n  \"agronomist_note\": \"Spray records for this parcel are disputed and are under manual audit this week.\",\n  \"verdict\": \"wait_required\",\n  \"deciding_restriction\": \"re_entry_interval\"\n}",
+ "sections_used": [
+  "Field",
+  "Label Restrictions",
+  "Proposed Application",
+  "Season History",
+  "Application Status",
+  "Agronomist Notes"
+ ],
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3236
+  },
+  {
+   "name": "check set",
+   "chars": 5006
+  },
+  {
+   "name": "field schema",
+   "chars": 4569
+  },
+  {
+   "name": "case sections",
+   "chars": 936
+  }
+ ],
+ "values": {
+  "field_id": "FLD-NP-20692",
+  "permitted_crops": "potatoes, carrots, winter barley, winter oilseed rape, field lettuce",
+  "max_rate_l_per_ha": 2.4,
+  "max_applications_per_season": 3,
+  "min_retreatment_interval_days": 7,
+  "pre_harvest_interval_days": 28,
+  "re_entry_interval_hours": 48,
+  "buffer_to_water_m": 6,
+  "tank_mix_prohibited_with": "Corvistel 275 SC, Trelmara 400 EC",
+  "crop_proposed": "winter barley",
+  "rate_proposed_l_per_ha": 0.6,
+  "applications_made_this_season": 2,
+  "days_since_last_application": 14,
+  "days_to_harvest": 48,
+  "planned_re_entry_hours": 30,
+  "distance_to_water_m": 6,
+  "tank_mix_partner": "none",
+  "previous_season_applications": 3,
+  "application_status": "applied",
+  "agronomist_note": "Spray records for this parcel are disputed and are under manual audit this week.",
+  "verdict": "wait_required",
+  "deciding_restriction": "re_entry_interval"
+ },
+ "spans": {
+  "field_id": "Field",
+  "permitted_crops": "Label Restrictions",
+  "max_rate_l_per_ha": "Label Restrictions",
+  "max_applications_per_season": "Label Restrictions",
+  "min_retreatment_interval_days": "Label Restrictions",
+  "pre_harvest_interval_days": "Label Restrictions",
+  "re_entry_interval_hours": "Label Restrictions",
+  "buffer_to_water_m": "Label Restrictions",
+  "tank_mix_prohibited_with": "Label Restrictions",
+  "crop_proposed": "Proposed Application",
+  "rate_proposed_l_per_ha": "Proposed Application",
+  "applications_made_this_season": "Proposed Application",
+  "days_since_last_application": "Proposed Application",
+  "days_to_harvest": "Proposed Application",
+  "planned_re_entry_hours": "Proposed Application",
+  "distance_to_water_m": "Proposed Application",
+  "tank_mix_partner": "Proposed Application",
+  "previous_season_applications": "Season History",
+  "application_status": null,
+  "agronomist_note": "Agronomist Notes",
+  "verdict": null,
+  "deciding_restriction": null
+ },
+ "needs_hold": true,
+ "recomputed_verdict": "wait_required",
+ "recomputed_restriction": "re_entry_interval",
+ "recomputed_reason": "The label's re-entry interval is 48 hours and re-entry is planned 30 hours after application.",
+ "recomputed_checks": [
+  {
+   "id": "permitted_crops",
+   "state": "pass"
+  },
+  {
+   "id": "tank_mix_prohibited",
+   "state": "not_applicable"
+  },
+  {
+   "id": "max_rate_per_application",
+   "state": "pass"
+  },
+  {
+   "id": "max_applications_per_season",
+   "state": "pass"
+  },
+  {
+   "id": "buffer_to_water",
+   "state": "pass"
+  },
+  {
+   "id": "min_retreatment_interval",
+   "state": "pass"
+  },
+  {
+   "id": "pre_harvest_interval",
+   "state": "pass"
+  },
+  {
+   "id": "re_entry_interval",
+   "state": "breach"
+  }
+ ],
+ "document_text": "Field\n-----\nFLD-NP-20692\n\nProduct and Registration\n------------------------\nCorvistel 275 SC -- registration REG-2020-67366 -- active substance avomextil 300 g/L\n\nLabel Restrictions\n------------------\npermitted crops: potatoes, carrots, winter barley, winter oilseed rape, field lettuce\nmaximum rate per application: 2.4 L/ha\nmaximum applications per season: 3\nminimum re-treatment interval: 7 days\npre-harvest interval: 28 days\nre-entry interval: 48 hours\nminimum buffer to surface water: 6 m\ntank mix prohibited with: Corvistel 275 SC, Trelmara 400 EC\n\nProposed Application\n--------------------\ncrop: winter barley\nrate: 0.6 L/ha\napplications already made this season: 2\ndays since the last application: 14\ndays to harvest: 48\nplanned re-entry: 30 hours after application\ndistance to nearest surface water: 6 m\ntank mix partner: none\n\nSeason History\n--------------\napplications made in the PREVIOUS season: 3\n\nApplication Status\n------------------\napplied\n\nAgronomist Notes\n----------------\nSpray records for this parcel are disputed and are under manual audit this week.\n\n"
+}

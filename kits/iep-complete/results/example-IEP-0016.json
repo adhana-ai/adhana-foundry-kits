@@ -1,0 +1,91 @@
+{
+ "doc": "IEP-0016",
+ "beside_run": "r001-iep-complete",
+ "note": "A fresh single call replayed after the scored run, to capture one reply verbatim. It is NOT a 56th scored sheet and is not counted in any denominator.",
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "max_tokens": 5000,
+ "input_tokens": 3594,
+ "output_tokens": 1010,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 875
+ },
+ "raw_text": "{\"plan_id\":\"PLN-DN-60887\",\"pupil_ref\":\"PUP-C61-3660\",\"pupil_age\":9,\"plan_status\":\"in_effect\",\"present_levels\":\"present_complete\",\"annual_goals\":\"present_complete\",\"progress_measurement\":\"present_complete\",\"services\":\"present_not_measurable\",\"accommodations\":\"present_complete\",\"participation_rationale\":\"present_complete\",\"transition\":\"not_required\",\"checklist_claim\":\"all_present\",\"case_manager_note\":\"Straightforward plan, nothing unusual about it at all.\",\"plan_outcome\":\"not_measurable\"}",
+ "sections_used": [
+  "Plan",
+  "Pupil Reference",
+  "Pupil Age",
+  "Plan Status",
+  "Present Levels of Performance",
+  "Annual Goals",
+  "Progress Measurement and Reporting",
+  "Services",
+  "Accommodations",
+  "Participation with Peers",
+  "Checklist Completed By",
+  "Case Manager Note"
+ ],
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3529
+  },
+  {
+   "name": "component rulebook",
+   "chars": 4545
+  },
+  {
+   "name": "component states",
+   "chars": 1124
+  },
+  {
+   "name": "field schema",
+   "chars": 3782
+  },
+  {
+   "name": "plan sections",
+   "chars": 2127
+  }
+ ],
+ "values": {
+  "plan_id": "PLN-DN-60887",
+  "pupil_ref": "PUP-C61-3660",
+  "pupil_age": 9,
+  "plan_status": "in_effect",
+  "present_levels": "present_complete",
+  "annual_goals": "present_complete",
+  "progress_measurement": "present_complete",
+  "services": "present_not_measurable",
+  "accommodations": "present_complete",
+  "participation_rationale": "present_complete",
+  "transition": "not_required",
+  "checklist_claim": "all_present",
+  "case_manager_note": "Straightforward plan, nothing unusual about it at all.",
+  "plan_outcome": "not_measurable"
+ },
+ "spans": {
+  "plan_id": "Plan",
+  "pupil_ref": "Pupil Reference",
+  "pupil_age": "Pupil Age",
+  "plan_status": null,
+  "present_levels": null,
+  "annual_goals": null,
+  "progress_measurement": null,
+  "services": null,
+  "accommodations": null,
+  "participation_rationale": null,
+  "transition": null,
+  "checklist_claim": null,
+  "case_manager_note": "Case Manager Note",
+  "plan_outcome": null
+ },
+ "on_worklist": true,
+ "recomputed_outcome": "not_measurable",
+ "recomputed_reason": "Every required component is present, and 1 of them cannot be measured against: Services, with frequency, duration and location. Each is written, each would pass a checkbox review, and none of them can be shown to have been met or missed.",
+ "recomputed_missing": [],
+ "recomputed_unmeasurable": [
+  "services"
+ ],
+ "document_text": "Synthetic Record\n----------------\nGENERATED SAMPLE -- not a real pupil, school or district. No names, no dates and no diagnosis appear anywhere in this file.\nWritten by tools/build_corpus.py from seed 20260822.\n\nPlan\n----\nPLN-DN-60887\n\nPupil Reference\n---------------\nPUP-C61-3660\n\nPupil Age\n---------\n9\n\nPlan Status\n-----------\nin_effect\n\nPresent Levels of Performance\n-----------------------------\nReading comprehension: 8 of a possible 15 on the autumn benchmark, against a year-group median of 12.\nThis level means the pupil cannot complete unmodified grade-level tasks in this area without the support set out below.\n\nAnnual Goals\n------------\nGoal 1 -- mathematics problem solving\n  Baseline: 5 of 11 on the classroom rubric\n  Criterion: 9 of 12 on the classroom rubric, on 4 of 5 occasions\n  Measured by: a monthly timed fluency probe\nGoal 2 -- reading comprehension\n  Baseline: 2 of 10 on the classroom rubric\n  Criterion: 8 of 12 on the classroom rubric, on 4 of 5 occasions\n  Measured by: the school's own writing rubric\nGoal 3 -- attention and self-regulation\n  Baseline: 2 of 8 on the classroom rubric\n  Criterion: 6 of 12 on the classroom rubric, on 4 of 5 occasions\n  Measured by: scored classroom work samples\n\nProgress Measurement and Reporting\n----------------------------------\nProgress against each goal is measured by the school's own writing rubric.\nProgress is reported to the family every 12 weeks, alongside the general report card.\n\nServices\n--------\nSpecialist reading instruction -- 4 sessions per week, 25 minutes each, in the resource room.\nMathematics intervention group -- 3 sessions per week, in a small-group room.\nSpeech and language therapy -- 3 sessions per week, 25 minutes each, in the resource room.\n\nAccommodations\n--------------\nText-to-speech for reading passages.\nA printed copy of every set of instructions -- in every subject.\n\nParticipation with Peers\n------------------------\nThe pupil will be outside the general classroom for 360 minutes of the 1,650 minutes in a school week, for the services set out above, because that instruction cannot be delivered at the intensity needed in a class of 29.\n\nChecklist Completed By\n----------------------\nReviewer R-6509 -- all required components present: yes\n\nCase Manager Note\n-----------------\nStraightforward plan, nothing unusual about it at all.\n\nSchool and District\n-------------------\nStonepath Academy, Ashcombe Valley District\n\n"
+}

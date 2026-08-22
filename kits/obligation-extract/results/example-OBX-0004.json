@@ -1,0 +1,177 @@
+{
+ "doc": "OBX-0004",
+ "beside_run": "r001-obligation-extract",
+ "note": "A fresh single call replayed after the scored run, to capture one reply verbatim. It is NOT a 51st scored pack and is not counted in any denominator.",
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "max_tokens": 8000,
+ "input_tokens": 3067,
+ "output_tokens": 5735,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 5379
+ },
+ "raw_text": "{\"contract_id\":\"OBX-0004\",\"obligations\":[{\"item_code\":\"PO-6949\",\"item_label\":\"Platform subscription, standard edition\",\"item_type\":\"subscription_platform\",\"charge\":\"separate_fee\",\"dependency\":\"separately_available\",\"timing\":\"period\",\"separation\":\"distinct\",\"pattern\":\"over_time\"},{\"item_code\":\"PO-2213\",\"item_label\":\"Implementation and configuration\",\"item_type\":\"implementation_services\",\"charge\":\"separate_fee\",\"dependency\":\"required_first\",\"timing\":\"event\",\"separation\":\"bundled\",\"pattern\":\"point_in_time\"},{\"item_code\":\"PO-2070\",\"item_label\":\"Regional data-residency module\",\"item_type\":\"optional_module\",\"charge\":\"separate_fee\",\"dependency\":\"silent\",\"timing\":\"event\",\"separation\":\"not_determined\",\"pattern\":\"point_in_time\"},{\"item_code\":\"PO-6508\",\"item_label\":\"Extension right over the following term\",\"item_type\":\"renewal_option\",\"charge\":\"no_separate_charge\",\"dependency\":\"silent\",\"timing\":\"event\",\"separation\":\"bundled\",\"pattern\":\"point_in_time\"},{\"item_code\":\"PO-2195\",\"item_label\":\"Administrator training, 5 days\",\"item_type\":\"training_days\",\"charge\":\"separate_fee\",\"dependency\":\"silent\",\"timing\":\"silent\",\"separation\":\"not_determined\",\"pattern\":\"not_determined\"},{\"item_code\":\"PO-6476\",\"item_label\":\"Metered API calls above the included allowance\",\"item_type\":\"usage_component\",\"charge\":\"no_separate_charge\",\"dependency\":\"silent\",\"timing\":\"silent\",\"separation\":\"bundled\",\"pattern\":\"not_determined\"}]}",
+ "sections_used": [
+  "Contract",
+  "Order Form",
+  "Item PO-6949",
+  "Item PO-2213",
+  "Item PO-2070",
+  "Item PO-6508",
+  "Item PO-2195",
+  "Item PO-6476",
+  "Item PO-8102",
+  "Professional Services Rate Card",
+  "Continuing Items From An Earlier Order Form",
+  "Contract Notes"
+ ],
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 2767
+  },
+  {
+   "name": "worksheet rulebook",
+   "chars": 3759
+  },
+  {
+   "name": "field schema",
+   "chars": 3109
+  },
+  {
+   "name": "contract pack sections",
+   "chars": 3055
+  }
+ ],
+ "prompt_verbatim": "You read a SUBSCRIPTION CONTRACT PACK -- an order form plus the clauses behind its lines -- and return a REVIEWER'S WORKSHEET of the promises in it. You return JSON and nothing else.\n\nYou are preparing a worksheet for a qualified reviewer. You never determine a performance obligation, never allocate a price, never conclude on timing, never open a revenue schedule and never write a journal entry. Your job is to say what the paperwork states, apply the rulebook given below, and NAME THE LINES THE PAPERWORK DOES NOT SETTLE.\n\nRULES, in order of importance:\n1. ONE OBJECT PER ORDERED LINE OF THIS ORDER FORM, AND NO OTHERS. A line struck by an amendment is not ordered, even though its clause is still printed in the pack. A rate card, day rate or price list for work nobody has ordered is not a line. An item supplied under an EARLIER order form and continuing is not a line. All three carry codes in the same format as a real line, and putting one on the worksheet puts a promise in front of a reviewer that does not exist.\n2. REPORT WHAT THE PACK STATES. `charge`, `dependency` and `timing` are readings of the paperwork, not judgements about it. If a line's Item section says nothing about how it relates to the other lines, `dependency` is 'silent' -- that is a finding about the contract, and it is the most common one. Never infer a dependency from the line type, from the fee, or from what you know about how software is usually sold.\n3. `separation` IS DECIDED ONLY BY THE RULEBOOK BELOW, from `charge` and `dependency`. Work through the four steps IN ORDER and STOP at the first that fires:\n   a. dependency 'required_first' -> 'bundled'.\n   b. dependency 'separately_available' -> 'distinct'. This holds WHATEVER the fee column says, including a line the order form prices at nothing.\n   c. dependency 'silent' AND charge 'no_separate_charge' -> 'bundled'.\n   d. anything else -> 'not_determined'.\n4. A FEE OF ITS OWN IS A PRICE, NOT A STATEMENT ABOUT SEPARABILITY. A priced line whose clause says nothing about whether the customer could take it alone is 'not_determined'. It is not 'distinct'. This is the step a confident reader skips, and on this rulebook it is the wrong answer rather than a defensible one.\n5. `pattern` IS DECIDED ONLY FROM `timing`: 'period' -> 'over_time', 'event' -> 'point_in_time', 'silent' -> 'not_determined'. It is asked of every line independently of its separation call.\n6. 'not_determined' IS A REAL ANSWER AND YOU ARE EXPECTED TO USE IT. A worksheet that never reaches for it is guessing, and a call recorded as settled is a call nobody re-reads.\n7. Copy `item_code`, `item_label` and `item_type` verbatim from the pack. Use the exact allowed value for every field that lists them, and return every field for every line.\n\nWORKSHEET RULEBOOK (the authority for `separation` and `pattern`; this is an ILLUSTRATIVE rulebook written for this kit, and it reproduces no accounting standard)\n\nWHAT COUNTS AS A LINE ON THE WORKSHEET\n  - An item is on the worksheet if and only if it is a LINE OF THIS ORDER FORM that the contract supplies.\n  - A line struck from the order form by an amendment is NOT on the worksheet, even though its code and its description are printed on the page.\n  - A rate card, day rate or price list for work that has not been ordered is NOT on the worksheet. A price is not a promise.\n  - An item supplied under an EARLIER order form and continuing is NOT on the worksheet. It is somebody else's paperwork, referred to here for context.\n\nTHE THREE STATED FACTS, read off the contract\n  charge:\n    separate_fee           the order form gives this line a fee of its own\n    no_separate_charge     the order form states the line is included at no separate charge\n    not_stated             the order form's fee column for this line says the fee is not separately stated\n  dependency:\n    required_first         the contract states this item must be completed, accepted or supplied before another ordered item can be used - or that it cannot be supplied except together with another ordered item\n    separately_available   the contract states the customer may take, cancel, defer or obtain this item on its own, or from another supplier, without affecting the remaining items\n    silent                 the contract says neither of those things about this item\n  timing:\n    period                 the contract states a period, term or window over which this item is supplied\n    event                  the contract states a single completion, delivery, issue or acceptance event for this item\n    silent                 the contract states neither\n\nSEPARATION -- work through IN ORDER, stop at the first that fires\n  1. DEPENDENCY STATED AS A PREREQUISITE. If dependency is `required_first`, the worksheet records the item as `bundled`. The paperwork itself ties it to another ordered item, so this rulebook does not carry it as a promise on its own.\n  2. DEPENDENCY STATED AS SEPARABLE. If dependency is `separately_available`, the worksheet records the item as `distinct`. This is true whatever the fee line says, including a line the order form prices at nothing.\n  3. NOTHING STATED, AND THE LINE IS EXPLICITLY FREE. If dependency is `silent` and charge is `no_separate_charge`, the worksheet records the item as `bundled`. An order form that gives a line no price of its own AND says nothing about taking it separately is, on this rulebook, recording it alongside the line it rides on.\n  4. NOTHING STATED, ANYTHING ELSE. The worksheet records `not_determined`. A FEE OF ITS OWN IS A PRICE, NOT A STATEMENT ABOUT SEPARABILITY - it says what the customer is charged, not whether the customer could have taken the item alone. This is the branch a confident reader skips.\n\nDELIVERY PATTERN\n  1. If timing is `period`, the worksheet records `over_time`.\n  2. If timing is `event`, the worksheet records `point_in_time`.\n  3. If timing is `silent`, the worksheet records `not_determined`. The pattern question is asked of every item independently of the separation call - a bundled item still either has a stated window, a stated event, or neither.\n\nWHY `not_determined` IS A REAL ANSWER\n  A worksheet that never says `not_determined` is not a confident worksheet, it is a guessing one. The whole value of this shape is that a reviewer can see, in one column, which calls the paperwork actually settles and which ones somebody has to go back to the deal desk about. Over-confidence here costs more than caution: a call recorded as settled is a call nobody re-reads.\n\nReturn these:\n- contract_id (string) -- the contract identifier from the Contract section, verbatim\n- obligations (array of objects) -- one object per ORDERED line, each carrying:\n    - item_code (string) -- the line code from the Order Form row, verbatim (for example PO-4417). THIS IS THE KEY -- one object per ORDERED line and no others\n    - item_label (string) -- the line's description, copied verbatim from its own Item section's Description line\n    - item_type (enum) one of: subscription_platform, implementation_services, training_days, support_tier, usage_component, renewal_option, optional_module -- the line type, copied verbatim from the Type line of the line's own Item section\n    - charge (enum) one of: separate_fee, no_separate_charge, not_stated -- what the ORDER FORM's fee column says about this line. A money amount is 'separate_fee'; the words 'included at no separate charge' are 'no_separate_charge'; the words 'fee not separately stated' are 'not_stated'. Report what the paperwork says -- this is NOT on its own what decides `separation`\n    - dependency (enum) one of: required_first, separately_available, silent -- what the line's Item section STATES about how it relates to the other ordered lines. 'required_first' when it says this line must be completed, accepted or supplied before another ordered item can be used, or that it cannot be supplied except together with another ordered item. 'separately_available' when it says the customer may take, cancel, defer or obtain this line on its own or from another supplier without affecting the remaining lines. 'silent' when the section says NEITHER. Silence is the common case and it is a finding, not a gap -- never infer a dependency from the line type, from the fee, or from what you know about how software is usually sold\n    - timing (enum) one of: period, event, silent -- what the line's Item section STATES about when it is supplied. 'period' when it names a period, term or window; 'event' when it names a single completion, delivery, issue or acceptance event; 'silent' when it names neither\n    - separation (enum) one of: distinct, bundled, not_determined -- the worksheet's separation call for this line, decided STRICTLY by the shipped rulebook from `charge` and `dependency` and nothing else. Work through the four steps IN ORDER, stopping at the first that fires. (1) dependency 'required_first' -> 'bundled'. (2) dependency 'separately_available' -> 'distinct', whatever the fee column says. (3) dependency 'silent' AND charge 'no_separate_charge' -> 'bundled'. (4) anything else -> 'not_determined'. A FEE OF ITS OWN IS A PRICE, NOT A STATEMENT ABOUT SEPARABILITY: a priced line with nothing said about taking it alone is 'not_determined', never 'distinct'\n    - pattern (enum) one of: over_time, point_in_time, not_determined -- the worksheet's delivery-pattern call, decided STRICTLY from `timing`: 'period' -> 'over_time', 'event' -> 'point_in_time', 'silent' -> 'not_determined'. Asked of every line independently of its separation call -- a bundled line still either has a stated window, a stated event, or neither\n\nReturn a JSON object with exactly these top-level keys: contract_id, obligations\n`obligations` is an array. Return it empty only if the order form has no ordered line at all.\n\nCONTRACT PACK\n-------------\nContract\n--------\nOBX-0004\n\nOrder Form\n----------\nOrder form OF-74140, signed 2026-02-14. Currency USD. Lines as ordered:\n\n  PO-6949   Platform subscription, standard edition              USD 192,000\n  PO-2213   Implementation and configuration                     USD 57,000\n  PO-2070   Regional data-residency module                       USD 15,000\n  PO-6508   Extension right over the following term              included at no separate charge\n  PO-2195   Administrator training, 5 days                       USD 17,000\n  PO-6476   Metered API calls above the included allowance       included at no separate charge\n  PO-8102   Analytics module                                     WITHDRAWN by amendment A-1 -- not supplied under this order form\n\nItem PO-6949\n------------\nDescription: Platform subscription, standard edition\nType: subscription_platform\nFee on the order form: USD 192,000\nThe customer may cancel this line at any time without affecting the remaining lines of this order form.\nDelivered across the 12-month period beginning on the service start date.\n\nItem PO-2213\n------------\nDescription: Implementation and configuration\nType: implementation_services\nFee on the order form: USD 57,000\nNo part of the subscription may be used until this work is accepted in writing.\nComplete on the date the access credentials are issued to the customer.\n\nItem PO-2070\n------------\nDescription: Regional data-residency module\nType: optional_module\nFee on the order form: USD 15,000\nComplete on the date the access credentials are issued to the customer.\n\nItem PO-6508\n------------\nDescription: Extension right over the following term\nType: renewal_option\nFee on the order form: included at no separate charge\nComplete on signature of the acceptance certificate.\n\nItem PO-2195\n------------\nDescription: Administrator training, 5 days\nType: training_days\nFee on the order form: USD 17,000\n\nItem PO-6476\n------------\nDescription: Metered API calls above the included allowance\nType: usage_component\nFee on the order form: included at no separate charge\n\nItem PO-8102\n------------\nDescription: Analytics module\nType: optional_module\nFee on the order form: withdrawn\nThis clause was drafted before amendment A-1 and is retained in the pack for the audit trail.\n\nProfessional Services Rate Card\n-------------------------------\nRate card reference PO-7231, consultancy day rate USD 2,180 per day.\nNo services are ordered under this order form. These rates apply only to work ordered later under a separate statement of work.\n\nContinuing Items From An Earlier Order Form\n-------------------------------------------\nItem PO-3726, Extended-hours support tier, was supplied under order form OF-43294 and continues in effect.\nIt is not re-ordered here and is listed for context only.\n\nContract Notes\n--------------\nThis pack is a draft for review.\nAmendment A-1 removed line PO-8102 before signature; it is not supplied under this order form.\nCirculated for review only. The controller has not seen this pack and no determination has been made on any line in it.\n",
+ "contract": {
+  "contract_id": "OBX-0004"
+ },
+ "obligations": [
+  {
+   "item_code": "PO-6949",
+   "item_label": "Platform subscription, standard edition",
+   "item_type": "subscription_platform",
+   "charge": "separate_fee",
+   "dependency": "separately_available",
+   "timing": "period",
+   "separation": "distinct",
+   "pattern": "over_time"
+  },
+  {
+   "item_code": "PO-2213",
+   "item_label": "Implementation and configuration",
+   "item_type": "implementation_services",
+   "charge": "separate_fee",
+   "dependency": "required_first",
+   "timing": "event",
+   "separation": "bundled",
+   "pattern": "point_in_time"
+  },
+  {
+   "item_code": "PO-2070",
+   "item_label": "Regional data-residency module",
+   "item_type": "optional_module",
+   "charge": "separate_fee",
+   "dependency": "silent",
+   "timing": "event",
+   "separation": "not_determined",
+   "pattern": "point_in_time"
+  },
+  {
+   "item_code": "PO-6508",
+   "item_label": "Extension right over the following term",
+   "item_type": "renewal_option",
+   "charge": "no_separate_charge",
+   "dependency": "silent",
+   "timing": "event",
+   "separation": "bundled",
+   "pattern": "point_in_time"
+  },
+  {
+   "item_code": "PO-2195",
+   "item_label": "Administrator training, 5 days",
+   "item_type": "training_days",
+   "charge": "separate_fee",
+   "dependency": "silent",
+   "timing": "silent",
+   "separation": "not_determined",
+   "pattern": "not_determined"
+  },
+  {
+   "item_code": "PO-6476",
+   "item_label": "Metered API calls above the included allowance",
+   "item_type": "usage_component",
+   "charge": "no_separate_charge",
+   "dependency": "silent",
+   "timing": "silent",
+   "separation": "bundled",
+   "pattern": "not_determined"
+  }
+ ],
+ "spans": [
+  {
+   "item_code": "Item PO-6949",
+   "item_label": "Item PO-6949",
+   "item_type": null,
+   "charge": null,
+   "dependency": null,
+   "timing": null,
+   "separation": null,
+   "pattern": null
+  },
+  {
+   "item_code": "Item PO-2213",
+   "item_label": "Item PO-2213",
+   "item_type": null,
+   "charge": null,
+   "dependency": null,
+   "timing": null,
+   "separation": null,
+   "pattern": null
+  },
+  {
+   "item_code": "Item PO-2070",
+   "item_label": "Item PO-2070",
+   "item_type": null,
+   "charge": null,
+   "dependency": null,
+   "timing": null,
+   "separation": null,
+   "pattern": null
+  },
+  {
+   "item_code": "Item PO-6508",
+   "item_label": "Item PO-6508",
+   "item_type": null,
+   "charge": null,
+   "dependency": null,
+   "timing": null,
+   "separation": null,
+   "pattern": null
+  },
+  {
+   "item_code": "Item PO-2195",
+   "item_label": "Item PO-2195",
+   "item_type": null,
+   "charge": null,
+   "dependency": null,
+   "timing": null,
+   "separation": null,
+   "pattern": null
+  },
+  {
+   "item_code": "Item PO-6476",
+   "item_label": "Item PO-6476",
+   "item_type": null,
+   "charge": null,
+   "dependency": null,
+   "timing": null,
+   "separation": null,
+   "pattern": null
+  }
+ ],
+ "needs_drafting_review": true,
+ "document_text": "Contract\n--------\nOBX-0004\n\nCustomer Reference\n------------------\nHalstow Manufacturing (commercial), account AC-10646, billing contact BC-6530.\n\nOrder Form\n----------\nOrder form OF-74140, signed 2026-02-14. Currency USD. Lines as ordered:\n\n  PO-6949   Platform subscription, standard edition              USD 192,000\n  PO-2213   Implementation and configuration                     USD 57,000\n  PO-2070   Regional data-residency module                       USD 15,000\n  PO-6508   Extension right over the following term              included at no separate charge\n  PO-2195   Administrator training, 5 days                       USD 17,000\n  PO-6476   Metered API calls above the included allowance       included at no separate charge\n  PO-8102   Analytics module                                     WITHDRAWN by amendment A-1 -- not supplied under this order form\n\nItem PO-6949\n------------\nDescription: Platform subscription, standard edition\nType: subscription_platform\nFee on the order form: USD 192,000\nThe customer may cancel this line at any time without affecting the remaining lines of this order form.\nDelivered across the 12-month period beginning on the service start date.\n\nItem PO-2213\n------------\nDescription: Implementation and configuration\nType: implementation_services\nFee on the order form: USD 57,000\nNo part of the subscription may be used until this work is accepted in writing.\nComplete on the date the access credentials are issued to the customer.\n\nItem PO-2070\n------------\nDescription: Regional data-residency module\nType: optional_module\nFee on the order form: USD 15,000\nComplete on the date the access credentials are issued to the customer.\n\nItem PO-6508\n------------\nDescription: Extension right over the following term\nType: renewal_option\nFee on the order form: included at no separate charge\nComplete on signature of the acceptance certificate.\n\nItem PO-2195\n------------\nDescription: Administrator training, 5 days\nType: training_days\nFee on the order form: USD 17,000\n\nItem PO-6476\n------------\nDescription: Metered API calls above the included allowance\nType: usage_component\nFee on the order form: included at no separate charge\n\nItem PO-8102\n------------\nDescription: Analytics module\nType: optional_module\nFee on the order form: withdrawn\nThis clause was drafted before amendment A-1 and is retained in the pack for the audit trail.\n\nProfessional Services Rate Card\n-------------------------------\nRate card reference PO-7231, consultancy day rate USD 2,180 per day.\nNo services are ordered under this order form. These rates apply only to work ordered later under a separate statement of work.\n\nContinuing Items From An Earlier Order Form\n-------------------------------------------\nItem PO-3726, Extended-hours support tier, was supplied under order form OF-43294 and continues in effect.\nIt is not re-ordered here and is listed for context only.\n\nContract Notes\n--------------\nThis pack is a draft for review.\nAmendment A-1 removed line PO-8102 before signature; it is not supplied under this order form.\nCirculated for review only. The controller has not seen this pack and no determination has been made on any line in it.\n\n"
+}

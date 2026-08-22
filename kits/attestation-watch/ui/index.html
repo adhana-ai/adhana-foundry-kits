@@ -1,0 +1,83 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>attestation-watch — whose attestation is missing, stale, or contradicted by the register</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Whose attestation is missing, stale, or contradicted by what else is on file</h1>
+    <p class="sub">One engagement&rsquo;s independence attestation register, one model call, a
+      roster back &mdash; plus a status per person taken afterwards, in pure code, from the
+      extracted values. Five gates in order: is this person required to attest at all, can the
+      register even be read on them, is there a return, does the register contradict itself, and
+      only then was the return in time and about the right window. The due date is
+      <em>derived</em>, never read &mdash; no register states one. The administrator&rsquo;s note
+      is on the page and decides nothing.</p>
+  </header>
+
+  <div class="warn">
+    <strong>This kit watches nothing.</strong> It reads one snapshot somebody else assembled and
+    proposes a worklist. It does not poll, subscribe, schedule, alert, escalate, chase, file, sign
+    a register off or clear anybody, and nothing in it runs unattended.
+    <strong>It proposes a status with its reasoning, names what it could not determine, and never
+    authorises, writes, dispatches, releases or clears anything.</strong>
+    <strong>And the rulebook it decides by is invented.</strong> It was written for this kit and
+    reproduces no real professional standard, standard-setter&rsquo;s rule, regulator&rsquo;s
+    requirement or firm policy. Replace it with your own before you route anything real by it.
+  </div>
+
+  <div class="bar">
+    <select id="doc" aria-label="Attestation register"></select>
+    <button id="go" type="button">Check</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="panel">
+    <div class="ph"><span>The register</span>
+      <span class="k kf" id="k-people">&mdash;</span>
+      <span class="k kn" id="k-work">&mdash;</span>
+      <span class="k ks" id="k-span">&mdash;</span></div>
+    <table>
+      <tbody id="regrows"></tbody>
+    </table>
+  </div>
+
+  <div class="panel mt">
+    <div class="ph"><span>Decided downstream, pure code &mdash; one row per person</span></div>
+    <table id="tbl">
+      <thead><tr><th>Person</th><th>Status &amp; why</th><th>Due (derived)</th><th>Filed</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="panel mt">
+    <div class="ph"><span>Where this register goes</span></div>
+    <table>
+      <tbody>
+        <tr><td class="n">Worklist</td><td id="c-work">&mdash;</td></tr>
+        <tr><td class="n">Cannot be determined</td><td id="c-nd">&mdash;</td></tr>
+        <tr><td class="n">Needs an owner, not a reminder</td><td id="c-flag">&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot">The routing flag is a <strong>business condition</strong>, not a check on the
+    model: <code>needs_owner_review</code> fires when the register carries at least one
+    <code>contradicted</code> person <em>or</em> at least one <code>not_determinable</code> one. A
+    missing or stale attestation is cleared by asking somebody for a form; a contradiction and an
+    unreadable record are not, and routing them to the same queue as a chase is how they get buried
+    under it. <strong>This is the kit&rsquo;s own simplification, not anybody&rsquo;s escalation
+    policy</strong> &mdash; no firm&rsquo;s procedure, professional standard or regulatory rule was
+    consulted, and none is reproduced.</p>
+
+  <details class="doc">
+    <summary>The register this was read from</summary>
+    <pre id="text"></pre>
+  </details>
+
+  <details class="doc">
+    <summary>The shipped rulebook &mdash; invented for this kit, not an authority</summary>
+    <div id="rulebook" class="mx"></div>
+  </details>
+</div>
+<script src="/app.js"></script>

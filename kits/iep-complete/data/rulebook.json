@@ -1,0 +1,114 @@
+{
+ "version": "iep-complete-rulebook-1",
+ "title": "Component rulebook for an individualised education plan",
+ "authority": "NONE. This rulebook was written for this kit.",
+ "note": "⚠︎ INVENTED. It reproduces no statute, no regulation, no state or district plan template, no agency guidance and no published checklist. Nothing in it was copied from, derived from or checked against any such document, because none was consulted. It exists so that the SHAPE of a completeness-and-quality check is measurable: seven components, each with the elements that make it checkable, and one of them conditional on the pupil's age. Replace it with your own before you review anything real by it.",
+ "transition_age": 14,
+ "transition_age_note": "The age at or above which this rulebook asks for transition content. 14 is a number this kit chose. It is not taken from any rule anywhere and it is the first thing a forker should change.",
+ "states": ["absent", "present_not_measurable", "present_complete", "not_required"],
+ "outcome_order": ["components_missing", "not_measurable", "undetermined", "complete"],
+ "placeholder_bodies": ["to be completed", "to be completed at the meeting", "n/a", "see pupil file", "see file", "tbc"],
+ "rules": [
+  {
+   "id": "C-1",
+   "key": "present_levels",
+   "label": "Present levels of performance",
+   "section": "Present Levels of Performance",
+   "applies": "always",
+   "requirement": "The plan states where the pupil is now, in terms a later reader can compare against.",
+   "elements": [
+    "a current performance level carrying a number, a rate or a scored band",
+    "a statement of how the pupil's needs affect progress in the general curriculum"
+   ],
+   "unmeasurable_when": "The section is written entirely as narrative — 'is working below peers', 'continues to find reading difficult' — with no current level anybody can measure against later.",
+   "why_it_matters": "Every goal in the plan is a distance from this number. With no number stated, no goal in the plan can be shown to have been met or missed."
+  },
+  {
+   "id": "C-2",
+   "key": "annual_goals",
+   "label": "Measurable annual goals",
+   "section": "Annual Goals",
+   "applies": "always",
+   "requirement": "Each annual goal states a baseline, a criterion and the method the goal will be measured by.",
+   "elements": [
+    "a baseline carrying a number, a rate or a scored band",
+    "a criterion carrying a number, a rate or a scored band",
+    "a named measurement method"
+   ],
+   "unmeasurable_when": "ANY goal in the section is missing one of the three elements, or states one in words that carry no quantity — 'to the best of the pupil's ability', 'as appropriate', 'improved'. One unmeasurable goal makes the component unmeasurable; the section is not scored on average.",
+   "why_it_matters": "THIS IS THE ONE THIS KIT EXISTS FOR. A goal with no baseline, no criterion or no measurement method passes every checkbox review — the section is there, it is full of prose, and the box gets ticked. It cannot be shown to have been met or missed at the next review, so the pupil gets a year of provision nobody can evaluate."
+  },
+  {
+   "id": "C-3",
+   "key": "progress_measurement",
+   "label": "How progress is measured and reported",
+   "section": "Progress Measurement and Reporting",
+   "applies": "always",
+   "requirement": "The plan states how progress against the goals will be measured AND how often it will be reported to the family.",
+   "elements": [
+    "a named measurement method",
+    "a stated reporting frequency"
+   ],
+   "unmeasurable_when": "The section names a method and never says how often anybody will be told — or says 'regularly', 'as needed', 'periodically', none of which is a frequency.",
+   "why_it_matters": "A measurement nobody has to report on a schedule is a measurement nobody takes. The reporting frequency is the only element in the whole plan that puts a date on somebody."
+  },
+  {
+   "id": "C-4",
+   "key": "services",
+   "label": "Services, with frequency, duration and location",
+   "section": "Services",
+   "applies": "always",
+   "requirement": "Each service the plan commits to states its frequency, its duration and where it is delivered.",
+   "elements": [
+    "a frequency for every service line",
+    "a duration for every service line",
+    "a location for every service line"
+   ],
+   "unmeasurable_when": "ANY service line is missing one of the three. A service named with no frequency cannot be reconciled against what was actually delivered.",
+   "why_it_matters": "Frequency times duration is the commitment. Without both, nobody can say afterwards whether it was kept, and 'in the appropriate setting' is not a location."
+  },
+  {
+   "id": "C-5",
+   "key": "accommodations",
+   "label": "Accommodations, and where each applies",
+   "section": "Accommodations",
+   "applies": "always",
+   "requirement": "The plan names specific accommodations and states, for each, the setting or activity it applies to.",
+   "elements": [
+    "at least one named, specific accommodation",
+    "a setting or activity for every accommodation named"
+   ],
+   "unmeasurable_when": "The section lists accommodations with no setting, or is written as a general permission — 'accommodations as needed', 'support as required', 'teacher discretion'.",
+   "why_it_matters": "An accommodation with no setting attached is a suggestion. The adult who has to provide it in a specific room at a specific time cannot read one out of 'as needed'."
+  },
+  {
+   "id": "C-6",
+   "key": "participation_rationale",
+   "label": "Participation with peers, and the rationale",
+   "section": "Participation with Peers",
+   "applies": "always",
+   "requirement": "The plan states the extent to which the pupil will NOT take part with peers who have no plan, and why.",
+   "elements": [
+    "a stated extent, carrying a number or a proportion of the school day",
+    "a reason for that extent"
+   ],
+   "unmeasurable_when": "The section states an intention with no extent — 'will participate with peers as appropriate', 'included wherever possible' — or gives an extent with no reason attached to it.",
+   "why_it_matters": "This is the component most often written as a sentiment. Without an extent it commits nobody to anything, and without a reason nobody can review whether the extent is still right."
+  },
+  {
+   "id": "C-7",
+   "key": "transition",
+   "label": "Transition content",
+   "section": "Transition",
+   "applies": "conditional",
+   "applies_note": "Required only when the plan states the pupil's age and it is at or above the rulebook's transition age. Below that age the component is `not_required`, whatever the plan does or does not contain. When the plan does NOT state the pupil's age, the requirement cannot be determined — describe what the document contains and let the outcome rule report the gap.",
+   "requirement": "The plan states post-school goals and the steps or services that lead to them.",
+   "elements": [
+    "at least one post-school goal",
+    "the steps or services that lead to it"
+   ],
+   "unmeasurable_when": "The section states an aspiration with no steps under it — 'will explore options after school' — so nothing in the plan year moves the pupil towards it.",
+   "why_it_matters": "It is the one component whose requirement depends on a fact about the pupil rather than on the plan. A reviewer who checks seven boxes on every plan raises a false defect on every younger pupil, and a reviewer who never checks it misses it on every older one."
+  }
+ ]
+}

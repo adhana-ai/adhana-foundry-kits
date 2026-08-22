@@ -1,0 +1,32 @@
+{
+ "fields": [
+  {"name": "matter_number", "type": "string",
+   "hint": "the matter number, verbatim from the Matter Number section"},
+  {"name": "order_date", "type": "date",
+   "hint": "the date this Order was entered, from the Order Date section, converted to YYYY-MM-DD. The Order writes dates in words ('11 February 2027'); every date you return is ISO"},
+  {"name": "deadlines", "type": "array",
+   "hint": "one object per numbered paragraph that SETS A DEADLINE. Do NOT return an object for a paragraph that merely mentions a date, sets a page limit, or states a deadline and then strikes, withdraws, vacates or supersedes it — those set no date and produce no row. Return the objects in paragraph order",
+   "subfields": [
+    {"name": "paragraph", "type": "integer",
+     "hint": "the paragraph's own number in the Deadlines Ordered section. This is the join key — copy it exactly"},
+    {"name": "item", "type": "string",
+     "hint": "what must be done, verbatim and in the lower case the paragraph states it — for example 'initial disclosures', 'the joint status report'. Do not add words the paragraph does not use"},
+    {"name": "basis", "type": "enum",
+     "values": ["explicit_date", "calendar_days_from_order", "calendar_days_from_event",
+                "business_days_from_order", "business_days_from_event"],
+     "hint": "how this paragraph fixes its date. 'on or before <date>' or 'no later than <date>' is explicit_date. 'within N days of/after the date of this Order' is calendar_days_from_order. 'within N days after <a recorded event>' is calendar_days_from_event. The same two with 'business days' are the business_ variants"},
+    {"name": "period_days", "type": "integer",
+     "hint": "N, the number of days the paragraph counts — null for explicit_date. Return the number only, not the unit; the unit is already in `basis`"},
+    {"name": "trigger_event", "type": "string",
+     "hint": "the triggering event the period runs from, copied verbatim from the Recorded Events table — null for explicit_date and for anything counted from the date of this Order. 'the date of this Order' is NOT an event and is never this value"},
+    {"name": "trigger_event_date", "type": "date",
+     "hint": "the date the Recorded Events table gives for that event, as YYYY-MM-DD. Null when the table says 'not recorded', and null when there is no trigger event. NEVER substitute the Order date for a missing event date"},
+    {"name": "stated_date", "type": "date",
+     "hint": "the date the paragraph names in words, as YYYY-MM-DD — only for explicit_date, null otherwise"},
+    {"name": "party_calculated_date", "type": "date",
+     "hint": "the date in the parenthetical a party wrote next to the obligation ('counsel's calendar: 19 March 2027'), as YYYY-MM-DD, or null when the paragraph carries none. Copy it as a field. IT IS NOT THE ANSWER and it is wrong on some of these orders"},
+    {"name": "due_date", "type": "date",
+     "hint": "the calendar date this obligation actually falls due, as YYYY-MM-DD, computed by the COUNTING RULES given above and by nothing else. Null — and only null — when the period runs from a triggering event the Order does not date. Never copy party_calculated_date into this field, and never fall back to the Order date for an undated event"}
+   ]}
+ ]
+}

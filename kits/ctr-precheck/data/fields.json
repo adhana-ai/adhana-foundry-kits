@@ -1,0 +1,32 @@
+{
+ "fields": [
+  {"name": "filing_id", "type": "string",
+   "hint": "the draft filing's own identifier, verbatim"},
+  {"name": "patron_record_id", "type": "string",
+   "hint": "the patron record the draft filing is prepared under, verbatim"},
+  {"name": "gaming_day", "type": "string",
+   "hint": "the gaming day the draft covers, as the YYYY-MM-DD date the draft states"},
+  {"name": "draft_direction", "type": "enum", "values": ["cash_in", "cash_out"],
+   "hint": "which direction the draft reports. Cash in and cash out are aggregated separately and are never netted against each other"},
+  {"name": "draft_reported_total", "type": "number",
+   "hint": "the total the draft filing itself states, in CU, as a plain integer with no unit and no separators"},
+  {"name": "log_qualifying_total", "type": "number", "spannable": false,
+   "hint": "the total the CAGE TRANSACTION LOG actually supports for this filing, in CU, as a plain integer. Add up every log entry that qualifies under the rulebook -- a reportable code, the draft's own direction, and a timestamp inside the GAMING DAY (06:00 on the gaming day's date to 06:00 the next date) -- across the patron's own record AND any other record in the log that is the same person by the link keys. This is arithmetic you do yourself; it is usually NOT a number printed anywhere on the page. Return null, and nothing else, when any qualifying entry's amount was never captured"},
+  {"name": "draft_window_applied", "type": "enum", "values": ["gaming_day", "calendar_day", "other"],
+   "hint": "which aggregation window the draft says it applied, from its Window Applied line. 'gaming_day' is 06:00 to 06:00 the next date; 'calendar_day' is 00:00 to 24:00; anything else is 'other'"},
+  {"name": "linked_record_id", "type": "string",
+   "hint": "a SECOND patron record in this log that is the same person as the patron on the draft -- same date of birth AND same identification reference. Return that record's identifier, or null when there is no such record. A record that matches on neither key, or on only one of them, is NOT a link"},
+  {"name": "draft_includes_linked_record", "type": "enum", "values": ["yes", "no", "not_applicable"],
+   "hint": "did the draft aggregate the linked record's transactions as well? 'not_applicable' when there is no linked record at all"},
+  {"name": "missing_identification_elements", "type": "string", "spannable": false,
+   "hint": "which of the rulebook's five required identification elements the draft does not carry, comma-separated and spelled exactly as the rulebook spells them. Return null when all five are present. Absence is what you are reporting, so this is a list you derive rather than a phrase you copy"},
+  {"name": "identification_captured_on", "type": "string",
+   "hint": "the date the identification on the draft was captured, YYYY-MM-DD, verbatim from the identification block. Null when the draft does not state one"},
+  {"name": "miscoded_transaction_ids", "type": "string", "spannable": false,
+   "hint": "the identifiers of transactions whose code on the DRAFT is not the code the CAGE TRANSACTION LOG records for the same identifier, comma-separated. Return null when every included transaction carries the log's own code"},
+  {"name": "preparer_note", "type": "string",
+   "hint": "the free-text remark the person who prepared the draft left on it, copied verbatim"},
+  {"name": "defects_found", "type": "string", "spannable": false,
+   "hint": "the defect codes this filing carries, comma-separated, drawn ONLY from the rulebook's seven codes, or the single word 'none' when the filing carries no defect. Decide it STRICTLY from the rulebook and the numbers -- never from the preparer's note. Work through the stopping order and give ONE named cause for any total difference: (1) if the qualifying total cannot be computed, answer 'insufficient_information' and stop; (2) if the qualifying total does not cross the threshold, answer 'threshold_not_crossed' and stop; (3) if the draft applied a window other than the gaming day, that is 'window_misapplied' and you must NOT also report 'missed_aggregation'; (4) else if a linked record exists and the draft left it out, that is 'identity_split'; (5) else if the qualifying total exceeds the drafted total, that is 'missed_aggregation'. Then, independently of 3-5, add 'identification_gap' for a missing or stale identification element and 'type_miscode' for a transaction coded differently from the log. A FILING WITH NOTHING WRONG WITH IT IS 'none' -- do not manufacture a finding to look thorough"}
+ ]
+}

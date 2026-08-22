@@ -97,11 +97,19 @@ def answer_pass(rows, index, results, cfg, k, limit=None):
     (429/5xx) with backoff — concurrency just makes hitting that path more likely than the old
     one-at-a-time loop ever did, so nothing new was added here for that. `pool.map` preserves row
     order for the prints below even though completion order is not guaranteed. EVAL_WORKERS is the
-    one knob to raise if a real run shows headroom — no rate limit for this provider is documented
-    anywhere in this repo, so the default stays conservative rather than guessed high.
+    one knob to raise if a real run shows headroom.
+
+    ⚑ THE DEFAULT WENT 5 -> 12 ON 2026-08-22, AND THE REASON IS THAT THE OLD REASON EXPIRED.
+    It was 5 because no concurrency ceiling was documented anywhere in this repo, and a guessed-high
+    default is how a shared key gets rate-limited for everybody using it. A ceiling is documented
+    now, it is account-level, and it is two orders of magnitude above this number — so 5 had stopped
+    being conservative and had merely become stale. 12 is still far below the limit: it is chosen to
+    be polite to whichever provider a forker points this at, not to be the most the wire will carry.
+    If you hold the key and know your own ceiling, raise it with the environment variable and change
+    nothing else.
     """
     from src.adapters import complete
-    workers = int(os.environ.get("EVAL_WORKERS", "5"))
+    workers = int(os.environ.get("EVAL_WORKERS", "12"))
     by_id = {r["id"]: r for r in results}
     todo = rows[:limit] if limit else rows
 

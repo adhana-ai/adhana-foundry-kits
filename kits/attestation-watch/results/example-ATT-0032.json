@@ -1,0 +1,299 @@
+{
+ "doc": "ATT-0032",
+ "beside_run": "r001-attestation-watch",
+ "note": "A fresh single call replayed after the scored run, to capture one reply verbatim. It is NOT a 51st scored register and is not counted in any denominator on any page.",
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "max_tokens": 16000,
+ "input_tokens": 3226,
+ "output_tokens": 5991,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 5242
+ },
+ "raw_text": "{\"engagement_ref\":\"ENG-1642-PV\",\"as_at_date\":\"2026-05-31\",\"rulebook_id\":\"IAR-1\",\"register_note\":\"Standard rollover, nothing unusual about this engagement's declarations at all.\",\"attesters\":[{\"person_ref\":\"P-2421\",\"role\":\"quality_reviewer\",\"roster_event\":\"none\",\"cycle_opened_on\":\"2025-10-09\",\"return_filed_on\":\"2026-02-24\",\"return_covers_to\":null,\"declared_relationship\":\"no interests to report\",\"earlier_declared_relationship\":null,\"relationship_disposed_on\":null,\"due_on\":\"2026-04-07\",\"status\":\"not_determinable\"},{\"person_ref\":\"P-3190\",\"role\":\"engagement_lead\",\"roster_event\":\"none\",\"cycle_opened_on\":\"2025-08-04\",\"return_filed_on\":null,\"return_covers_to\":null,\"declared_relationship\":null,\"earlier_declared_relationship\":null,\"relationship_disposed_on\":null,\"due_on\":\"2026-01-31\",\"status\":\"missing\"},{\"person_ref\":\"P-3501\",\"role\":\"specialist_advisor\",\"roster_event\":\"none\",\"cycle_opened_on\":\"2025-03-19\",\"return_filed_on\":\"2026-01-25\",\"return_covers_to\":\"2026-04-29\",\"declared_relationship\":\"no interests to report\",\"earlier_declared_relationship\":null,\"relationship_disposed_on\":null,\"due_on\":\"2026-03-19\",\"status\":\"satisfied\"},{\"person_ref\":\"P-2273\",\"role\":\"specialist_advisor\",\"roster_event\":\"none\",\"cycle_opened_on\":\"2025-04-15\",\"return_filed_on\":\"2026-03-19\",\"return_covers_to\":\"2026-02-06\",\"declared_relationship\":\"no interests to report\",\"earlier_declared_relationship\":null,\"relationship_disposed_on\":null,\"due_on\":\"2026-04-15\",\"status\":\"stale\"},{\"person_ref\":\"P-4719\",\"role\":\"senior_manager\",\"roster_event\":\"none\",\"cycle_opened_on\":\"2025-05-10\",\"return_filed_on\":\"2026-03-16\",\"return_covers_to\":\"2026-07-02\",\"declared_relationship\":\"no interests to report\",\"earlier_declared_relationship\":null,\"relationship_disposed_on\":null,\"due_on\":\"2026-05-10\",\"status\":\"satisfied\"},{\"person_ref\":\"P-6891\",\"role\":\"specialist_advisor\",\"roster_event\":\"none\",\"cycle_opened_on\":\"2025-04-08\",\"return_filed_on\":\"2026-02-25\",\"return_covers_to\":\"2026-04-23\",\"declared_relationship\":\"no interests to report\",\"earlier_declared_relationship\":null,\"relationship_disposed_on\":null,\"due_on\":\"2026-04-08\",\"status\":\"satisfied\"},{\"person_ref\":\"P-4651\",\"role\":\"quality_reviewer\",\"roster_event\":\"none\",\"cycle_opened_on\":\"2025-08-24\",\"return_filed_on\":\"2026-02-17\",\"return_covers_to\":\"2026-02-28\",\"declared_relationship\":\"no interests to report\",\"earlier_declared_relationship\":\"equity holding in a listed distribution group\",\"relationship_disposed_on\":null,\"due_on\":\"2026-02-20\",\"status\":\"contradicted\"}]}",
+ "sections_used": [
+  "Engagement",
+  "Register As At",
+  "Cycle Rulebook",
+  "Attesters On Record",
+  "Returns Filed",
+  "Holdings And Relationships On File",
+  "Roster Changes",
+  "Register Notes"
+ ],
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3980
+  },
+  {
+   "name": "attestation rulebook",
+   "chars": 2344
+  },
+  {
+   "name": "field schema",
+   "chars": 4400
+  },
+  {
+   "name": "register sections",
+   "chars": 1703
+  }
+ ],
+ "register_values": {
+  "engagement_ref": "ENG-1642-PV",
+  "as_at_date": "2026-05-31",
+  "rulebook_id": "IAR-1",
+  "register_note": "Standard rollover, nothing unusual about this engagement's declarations at all."
+ },
+ "attesters": [
+  {
+   "person_ref": "P-2421",
+   "values": {
+    "person_ref": "P-2421",
+    "role": "quality_reviewer",
+    "roster_event": "none",
+    "cycle_opened_on": "2025-10-09",
+    "return_filed_on": "2026-02-24",
+    "return_covers_to": null,
+    "declared_relationship": "no interests to report",
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": "2026-04-07",
+    "status": "not_determinable"
+   },
+   "spans": {
+    "person_ref": "Attesters On Record",
+    "role": null,
+    "roster_event": null,
+    "cycle_opened_on": "Attesters On Record",
+    "return_filed_on": "Returns Filed",
+    "return_covers_to": null,
+    "declared_relationship": "Returns Filed",
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": null,
+    "status": null
+   },
+   "computed_status": "not_determinable",
+   "computed_reason": "A return was filed on 2026-02-24 and the register does not state the period it covers, so the coverage test cannot be run. The person has attested; what they attested to cannot be read off this register.",
+   "computed_due_on": "2026-04-07",
+   "computed_stale_after": "2026-04-21",
+   "not_determinable_because": "a return is on file and the register does not state what period it covers"
+  },
+  {
+   "person_ref": "P-3190",
+   "values": {
+    "person_ref": "P-3190",
+    "role": "engagement_lead",
+    "roster_event": "none",
+    "cycle_opened_on": "2025-08-04",
+    "return_filed_on": null,
+    "return_covers_to": null,
+    "declared_relationship": null,
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": "2026-01-31",
+    "status": "missing"
+   },
+   "spans": {
+    "person_ref": "Attesters On Record",
+    "role": null,
+    "roster_event": null,
+    "cycle_opened_on": "Attesters On Record",
+    "return_filed_on": null,
+    "return_covers_to": null,
+    "declared_relationship": null,
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": null,
+    "status": null
+   },
+   "computed_status": "missing",
+   "computed_reason": "No return is on file for this person and the due date (2026-01-31) has passed. This is a gap, not a clearance.",
+   "computed_due_on": "2026-01-31",
+   "computed_stale_after": "2026-02-14",
+   "not_determinable_because": null
+  },
+  {
+   "person_ref": "P-3501",
+   "values": {
+    "person_ref": "P-3501",
+    "role": "specialist_advisor",
+    "roster_event": "none",
+    "cycle_opened_on": "2025-03-19",
+    "return_filed_on": "2026-01-25",
+    "return_covers_to": "2026-04-29",
+    "declared_relationship": "no interests to report",
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": "2026-03-19",
+    "status": "satisfied"
+   },
+   "spans": {
+    "person_ref": "Attesters On Record",
+    "role": null,
+    "roster_event": null,
+    "cycle_opened_on": "Attesters On Record",
+    "return_filed_on": "Returns Filed",
+    "return_covers_to": "Returns Filed",
+    "declared_relationship": "Returns Filed",
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": null,
+    "status": null
+   },
+   "computed_status": "satisfied",
+   "computed_reason": "Filed 2026-01-25, in time against a due date of 2026-03-19 with 14 days of grace, covering a period ending 2026-04-29, and nothing on the register contradicts it.",
+   "computed_due_on": "2026-03-19",
+   "computed_stale_after": "2026-04-02",
+   "not_determinable_because": null
+  },
+  {
+   "person_ref": "P-2273",
+   "values": {
+    "person_ref": "P-2273",
+    "role": "specialist_advisor",
+    "roster_event": "none",
+    "cycle_opened_on": "2025-04-15",
+    "return_filed_on": "2026-03-19",
+    "return_covers_to": "2026-02-06",
+    "declared_relationship": "no interests to report",
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": "2026-04-15",
+    "status": "stale"
+   },
+   "spans": {
+    "person_ref": "Attesters On Record",
+    "role": null,
+    "roster_event": null,
+    "cycle_opened_on": "Attesters On Record",
+    "return_filed_on": "Returns Filed",
+    "return_covers_to": "Returns Filed",
+    "declared_relationship": "Returns Filed",
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": null,
+    "status": null
+   },
+   "computed_status": "stale",
+   "computed_reason": "The return was filed in time, on 2026-03-19, and covers a period ending 2026-02-06 — before the due date of 2026-04-15. It attests to the previous window, not this one.",
+   "computed_due_on": "2026-04-15",
+   "computed_stale_after": "2026-04-29",
+   "not_determinable_because": null
+  },
+  {
+   "person_ref": "P-4719",
+   "values": {
+    "person_ref": "P-4719",
+    "role": "senior_manager",
+    "roster_event": "none",
+    "cycle_opened_on": "2025-05-10",
+    "return_filed_on": "2026-03-16",
+    "return_covers_to": "2026-07-02",
+    "declared_relationship": "no interests to report",
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": "2026-05-10",
+    "status": "satisfied"
+   },
+   "spans": {
+    "person_ref": "Attesters On Record",
+    "role": null,
+    "roster_event": null,
+    "cycle_opened_on": "Attesters On Record",
+    "return_filed_on": "Returns Filed",
+    "return_covers_to": "Returns Filed",
+    "declared_relationship": "Returns Filed",
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": null,
+    "status": null
+   },
+   "computed_status": "satisfied",
+   "computed_reason": "Filed 2026-03-16, in time against a due date of 2026-05-10 with 14 days of grace, covering a period ending 2026-07-02, and nothing on the register contradicts it.",
+   "computed_due_on": "2026-05-10",
+   "computed_stale_after": "2026-05-24",
+   "not_determinable_because": null
+  },
+  {
+   "person_ref": "P-6891",
+   "values": {
+    "person_ref": "P-6891",
+    "role": "specialist_advisor",
+    "roster_event": "none",
+    "cycle_opened_on": "2025-04-08",
+    "return_filed_on": "2026-02-25",
+    "return_covers_to": "2026-04-23",
+    "declared_relationship": "no interests to report",
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": "2026-04-08",
+    "status": "satisfied"
+   },
+   "spans": {
+    "person_ref": "Attesters On Record",
+    "role": null,
+    "roster_event": null,
+    "cycle_opened_on": "Attesters On Record",
+    "return_filed_on": "Returns Filed",
+    "return_covers_to": "Returns Filed",
+    "declared_relationship": "Returns Filed",
+    "earlier_declared_relationship": null,
+    "relationship_disposed_on": null,
+    "due_on": null,
+    "status": null
+   },
+   "computed_status": "satisfied",
+   "computed_reason": "Filed 2026-02-25, in time against a due date of 2026-04-08 with 14 days of grace, covering a period ending 2026-04-23, and nothing on the register contradicts it.",
+   "computed_due_on": "2026-04-08",
+   "computed_stale_after": "2026-04-22",
+   "not_determinable_because": null
+  },
+  {
+   "person_ref": "P-4651",
+   "values": {
+    "person_ref": "P-4651",
+    "role": "quality_reviewer",
+    "roster_event": "none",
+    "cycle_opened_on": "2025-08-24",
+    "return_filed_on": "2026-02-17",
+    "return_covers_to": "2026-02-28",
+    "declared_relationship": "no interests to report",
+    "earlier_declared_relationship": "equity holding in a listed distribution group",
+    "relationship_disposed_on": null,
+    "due_on": "2026-02-20",
+    "status": "contradicted"
+   },
+   "spans": {
+    "person_ref": "Attesters On Record",
+    "role": null,
+    "roster_event": null,
+    "cycle_opened_on": "Attesters On Record",
+    "return_filed_on": "Returns Filed",
+    "return_covers_to": "Returns Filed",
+    "declared_relationship": "Returns Filed",
+    "earlier_declared_relationship": "Returns Filed",
+    "relationship_disposed_on": null,
+    "due_on": null,
+    "status": null
+   },
+   "computed_status": "contradicted",
+   "computed_reason": "Two returns from the same person disagree: the earlier one declares “equity holding in a listed distribution group” and the later one declares “no interests to report”. The later filing governs, and a disagreement between the two is not resolved by filing a third.",
+   "computed_due_on": "2026-02-20",
+   "computed_stale_after": "2026-03-06",
+   "not_determinable_because": null
+  }
+ ],
+ "worklist": [
+  "P-3190",
+  "P-2273",
+  "P-4651"
+ ],
+ "not_determinable": [
+  "P-2421"
+ ],
+ "needs_owner_review": true,
+ "document_text": "Engagement\n----------\nENG-1642-PV\n\nRegister As At\n--------------\n2026-05-31\n\nCycle Rulebook\n--------------\nIAR-1 -- illustrative, shipped with this kit; reproduces no real professional standard\n\nAttesters On Record\n-------------------\nP-2421   quality_reviewer         cycle opened 2025-10-09\nP-3190   engagement_lead          cycle opened 2025-08-04\nP-3501   specialist_advisor       cycle opened 2025-03-19\nP-2273   specialist_advisor       cycle opened 2025-04-15\nP-4719   senior_manager           cycle opened 2025-05-10\nP-6891   specialist_advisor       cycle opened 2025-04-08\nP-4651   quality_reviewer         cycle opened 2025-08-24\n\nReturns Filed\n-------------\nP-3501   filed 2026-01-25   covering the period to 2026-04-29   declared: no interests to report\nP-2273   filed 2026-03-19   covering the period to 2026-02-06   declared: no interests to report\nP-4719   filed 2026-03-16   covering the period to 2026-07-02   declared: no interests to report\nP-6891   filed 2026-02-25   covering the period to 2026-04-23   declared: no interests to report\nP-4651   filed 2026-02-17   covering the period to 2026-02-28   declared: no interests to report\nP-2421   filed 2026-02-24   covering the period to -- not stated on the filed return   declared: no interests to report\nP-4651   filed 2026-01-05   covering the period to 2025-08-16   declared: equity holding in a listed distribution group\n\nHoldings And Relationships On File\n----------------------------------\nno holdings or relationships recorded on this register\n\nRoster Changes\n--------------\nno roster changes recorded in this cycle\n\nRegister Notes\n--------------\nStandard rollover, nothing unusual about this engagement's declarations at all.\n\nPrepared By\n-----------\nengagement administration, register assembled 2026-05-31\n\n"
+}

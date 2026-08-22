@@ -1,0 +1,106 @@
+// Screenshot the running kit UI, for the use-case standard's UI lens.
+//
+//   node tools/shoot_ui.mjs               # the two free shots
+//   node tools/shoot_ui.mjs --live        # adds the answered shot; SPENDS one call
+import { spawn } from 'node:child_process'
+import { mkdirSync } from 'node:fs'
+import path from 'node:path'
+
+const HERE = path.dirname(path.dirname(new URL(import.meta.url).pathname))
+const OUT = path.join(HERE, 'docs', 'shots')
+const PORT = Number(process.env.PORT || 8958)
+const LIVE = process.argv.includes('--live')
+
+function chromePath() {
+  if (process.env.PUPPETEER_EXECUTABLE_PATH) return process.env.PUPPETEER_EXECUTABLE_PATH
+  return '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+}
+
+const sleep = (ms) => new Promise(r => setTimeout(r, ms))
+
+mkdirSync(OUT, { recursive: true })
+
+const env = { ...process.env, PORT: String(PORT) }
+if (!LIVE) { env.API_KEY = ''; env.LLM_API_KEY = ''; env.OPENAI_API_KEY = '' }
+
+async function portIsFree(port) {
+  const net = await import('node:net')
+  return new Promise((resolve) => {
+    const s = net.createConnection({ host: '127.0.0.1', port })
+    const done = (v) => { try { s.destroy() } catch {} ; resolve(v) }
+    s.setTimeout(1200)
+    s.on('connect', () => done(false))
+    s.on('timeout', () => done(true))
+    s.on('error', () => done(true))
+  })
+}
+if (!(await portIsFree(PORT))) {
+  console.error(`  !! something is ALREADY listening on 127.0.0.1:${PORT}.`)
+  console.error('     Refusing to start: this script blanks API_KEY so its shots are free, and a')
+  console.error('     server it did not start may hold a real key — clicking would SPEND.')
+  console.error(`     Free the port (lsof -nP -iTCP:${PORT} -sTCP:LISTEN) or set PORT= to a spare one.`)
+  process.exit(4)
+}
+
+const server = spawn('python3', ['-m', 'src.app'], { cwd: HERE, env, stdio: 'ignore' })
+process.on('exit', () => server.kill())
+
+const PUP = process.env.PUPPETEER_MODULE || 'puppeteer'
+let puppeteer
+try {
+  puppeteer = (await import(PUP)).default
+} catch {
+  console.error('  !! puppeteer not resolvable as %r.', PUP)
+  console.error('     Set PUPPETEER_MODULE to an installed copy.')
+  process.exit(2)
+}
+let browser
+try {
+  await sleep(1500)
+  browser = await puppeteer.launch({ executablePath: chromePath(), args: ['--no-sandbox'] })
+  const page = await browser.newPage()
+  // ⚠︎ 1560 HIGH, TALLER AGAIN THAN THE SIBLING KIT THIS WAS FORKED FROM. This kit's payoff is the
+  // DECIDED panel under the field table -- FOURTEEN field rows plus SIX decided rows, two of which
+  // wrap to several lines of rulebook reasoning -- and it sits under a three-sentence notice the
+  // page must not be screenshotted without. At 1180 the "On the reviewer's worklist" row falls
+  // below the fold, which is the one row the shot exists to show.
+  await page.setViewport({ width: 1280, height: 1560, deviceScaleFactor: 2 })
+  await page.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: 'networkidle0' })
+  await sleep(600)
+
+  await page.screenshot({ path: path.join(OUT, 'check-fields.png') })
+  console.log('  wrote check-fields.png')
+
+  if (LIVE) {
+    // IEP-0016 exercises every moving part at once: every one of the seven sections is PRESENT, so
+    // a checkbox review passes it outright -- and two of them cannot be measured against. A service
+    // line states no duration, and an accommodation is named with no setting. The pupil's stated
+    // age is 9, below the rulebook's transition age, so the missing Transition section is
+    // `not_required` rather than a defect: a checker that counts seven headings raises a false
+    // alarm here. The plan is already IN EFFECT, so the pure-code rule puts it on the worklist.
+    // It is also one of the two plans the scored run got wrong, on the accommodation line.
+    await page.select('#doc', 'IEP-0016')
+    await sleep(300)
+  }
+
+  const btn = await page.$('#go, button[type=submit], .go, button')
+  if (btn) {
+    await btn.click()
+    if (LIVE) {
+      await page.waitForFunction(
+        () => !document.querySelector('#rows').textContent.includes('not checked yet'),
+        { timeout: 120000 })
+      await sleep(400)
+    } else {
+      await sleep(1200)
+    }
+    await page.screenshot({ path: path.join(OUT, LIVE ? 'check-answered.png' : 'check-nokey.png') })
+    console.log(`  wrote ${LIVE ? 'check-answered.png' : 'check-nokey.png'}`)
+  } else {
+    console.log('  !! no Check control found — the UI changed; fix the selector above')
+    process.exitCode = 1
+  }
+} finally {
+  if (browser) await browser.close()
+  server.kill()
+}

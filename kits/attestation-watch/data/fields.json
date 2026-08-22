@@ -1,0 +1,49 @@
+{
+ "_README": [
+  "Two field sets, because the document is a REGISTER and the unit of the answer is a PERSON.",
+  "`register` is stated once per file. `attester` is stated once per person on the roster, and",
+  "the reply carries a list of them keyed by `person_ref`.",
+  "",
+  "`due_on` is DERIVED, not read: no register in this corpus states it. The model is asked for",
+  "its own arithmetic and that number is SCORED ON ITS OWN and decides nothing -- what the kit",
+  "publishes is src/rulebook.py's date. `status` is the same: the model is asked for its own read,",
+  "it is measured, and the status the kit publishes is the one pure code computes from the",
+  "extracted values."
+ ],
+ "register": [
+  {"name": "engagement_ref", "type": "string",
+   "hint": "the engagement reference, verbatim from the Engagement section"},
+  {"name": "as_at_date", "type": "date",
+   "hint": "the date this register was assembled, from the Register As At section, as yyyy-mm-dd"},
+  {"name": "rulebook_id", "type": "string",
+   "hint": "the identifier of the cycle rulebook this register is kept under, verbatim -- the short code only, not the sentence after it"},
+  {"name": "register_note", "type": "string",
+   "hint": "the engagement administrator's own free-text remark from the Register Notes section, copied verbatim. It is a field to copy and it is NOT evidence about anybody's status"}
+ ],
+ "attester": [
+  {"name": "person_ref", "type": "string", "key": true,
+   "hint": "the person reference as the Attesters On Record section states it, e.g. P-1234. Return one object per person listed there, and no others"},
+  {"name": "role", "type": "enum",
+   "values": ["engagement_lead", "quality_reviewer", "senior_manager", "specialist_advisor", "engagement_administrator"],
+   "hint": "the role recorded beside this person in the Attesters On Record section, verbatim"},
+  {"name": "roster_event", "type": "enum", "values": ["none", "joined_mid_cycle", "role_vacated"],
+   "hint": "what the Roster Changes section records about THIS person: 'role_vacated' where it records the role as vacated, 'joined_mid_cycle' where it records them as having joined inside the new-joiner window, and 'none' where that section says nothing about them. Read this from the Roster Changes section only -- the roster line above cannot tell you"},
+  {"name": "cycle_opened_on", "type": "date",
+   "hint": "the date this person's cycle opened, from the Attesters On Record section, as yyyy-mm-dd. Where the line reads 'cycle opened -- not recorded on this register', return null. That line means the same thing on every person who carries it, whatever Roster Changes says about them"},
+  {"name": "return_filed_on", "type": "date",
+   "hint": "the filing date of this person's LATEST return in the Returns Filed section, as yyyy-mm-dd. That section is not grouped by person and not in date order, so read every line for this person and take the LATER filing date. Return null where the section carries no line for them at all"},
+  {"name": "return_covers_to", "type": "date",
+   "hint": "the end of the period the LATEST return covers, as yyyy-mm-dd. Where the line reads 'covering the period to -- not stated on the filed return', return null. Return null where there is no return at all"},
+  {"name": "declared_relationship", "type": "string",
+   "hint": "what the LATEST return declares, copied verbatim after 'declared:'. That includes 'no interests to report', which is a declaration and not a null. Return null only where there is no return at all"},
+  {"name": "earlier_declared_relationship", "type": "string",
+   "hint": "where this person has MORE THAN ONE line in Returns Filed, what the EARLIER one declares, copied verbatim. Return null where they have only one return, or none"},
+  {"name": "relationship_disposed_on", "type": "date",
+   "hint": "from the Holdings And Relationships On File section, the disposal date recorded against the relationship this person's LATEST return declares, as yyyy-mm-dd. Return null where that section records it as current with no disposal recorded, or carries no line for this person"},
+  {"name": "due_on", "type": "derived",
+   "hint": "the date this person's attestation was due. NO REGISTER STATES IT -- derive it as cycle_opened_on plus the cycle length the rulebook gives for their role (engagement_lead and quality_reviewer 180 days, senior_manager and specialist_advisor 365 days), as yyyy-mm-dd. Return null where cycle_opened_on is null, and null where the rulebook gives no cycle length for the role"},
+  {"name": "status", "type": "enum",
+   "values": ["satisfied", "missing", "stale", "contradicted", "not_required", "not_determinable"],
+   "hint": "this person's attestation status under the shipped rulebook. Work through five gates IN ORDER and stop at the first that fires. (1) NOT REQUIRED: roster_event is role_vacated or joined_mid_cycle, or the role is engagement_administrator, which the rulebook puts no requirement on. (2) NOT DETERMINABLE: cycle_opened_on is null so no due date can be derived, or a return is on file and return_covers_to is null so the coverage test cannot be run. (3) MISSING: no return on file at all. (4) CONTRADICTED: earlier_declared_relationship is present and differs from declared_relationship, or relationship_disposed_on is earlier than return_filed_on. (5) STALE: return_filed_on is later than due_on plus 14 days of grace, or return_covers_to is earlier than due_on. Anything that survives all five is SATISFIED. Never decide it from the administrator's note"}
+ ]
+}

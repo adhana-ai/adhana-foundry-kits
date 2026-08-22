@@ -16,6 +16,7 @@ Adding a provider is one function and one entry in PROVIDERS. It must return the
 including token counts -- lens 05 publishes them and lens 07 prices them, so a provider that
 returns no usage cannot be published.
 """
+import http.client
 import json
 import time
 import urllib.error
@@ -26,11 +27,17 @@ from .. import budget
 
 class AdapterError(RuntimeError):
     """`status` is the HTTP code when there was one, else None — so a caller can tell a provider
-    being BUSY from a request being WRONG without parsing an error string."""
+    being BUSY from a request being WRONG without parsing an error string.
 
-    def __init__(self, msg, status=None):
+    `transport` is True when the request never got far enough to HAVE a status: a connection reset,
+    a socket timeout, a DNS failure, a half-read body. See the TRANSPORT note below — that
+    distinction is the difference between a busy provider and a lost document.
+    """
+
+    def __init__(self, msg, status=None, transport=False):
         super().__init__(msg)
         self.status = status
+        self.transport = transport
 
 
 # ⚑ TRANSIENT vs TERMINAL. 429 and 5xx mean "ask again shortly"; 400/401/403/404 mean "asking
@@ -52,6 +59,28 @@ def _post(url, headers, payload, timeout=120):
         # different model" into "400", which is the kind of error message that costs an afternoon.
         raise AdapterError("%s %s: %s" % (e.code, e.reason, e.read().decode("utf-8", "replace")),
                            status=e.code)
+    # ⚑ A DROPPED CONNECTION IS NOT A FAILED DOCUMENT EITHER.
+    #
+    # ⚠︎ THE RETRY LOOP IN `complete` ONLY EVER SAW `AdapterError`, AND ONLY EVER LOOKED AT ITS
+    # STATUS. A transport failure -- a TLS handshake that timed out, a connection reset, a DNS
+    # failure, a body that died mid-read -- raises a bare OSError out of urlopen, which is not an
+    # AdapterError at all. It flew straight past four perfectly good backoff attempts and out to
+    # the harness, which recorded it as a failed document on a run where the model was right.
+    # Two sibling kits each lost documents of a paid run to exactly this before the branch existed.
+    #
+    # `urllib.error.URLError`, `TimeoutError` and `ConnectionResetError` are all OSError
+    # subclasses, and HTTPError -- which IS a URLError -- is caught above, so this cannot swallow a
+    # real status. `http.client.HTTPException` covers a body that died mid-read
+    # (RemoteDisconnected, IncompleteRead), which returns no completion and is billed for none,
+    # exactly like a 503.
+    #
+    # ⚠︎ THIS BRANCH POSTDATES EVERY PUBLISHED RUN IN THIS KIT AND NO PUBLISHED NUMBER WAS
+    # CHANGED TO MATCH IT. A run that lost a document to a transport failure still reports that
+    # loss on the page. The fix changes what the NEXT run does; it does not retroactively repair a
+    # finished result file, and re-firing one document into one would be the dishonest half of
+    # this change rather than the honest half.
+    except (OSError, http.client.HTTPException) as e:
+        raise AdapterError("transport failure talking to the provider: %s" % e, transport=True)
 
 
 def openai_compatible(cfg, system, user, max_tokens, thinking=None):
@@ -190,7 +219,10 @@ def complete(cfg, system, user, max_tokens=1024, thinking=None):
                 return PROVIDERS[name](cfg, system, user, max_tokens, thinking=thinking)
             return PROVIDERS[name](cfg, system, user, max_tokens)
         except AdapterError as exc:
-            if exc.status not in TRANSIENT or attempt == RETRIES:
+            # ⚑ `or exc.transport` IS THE HALF THAT WAS MISSING. A reset connection and a socket
+            # timeout have no status to test, so `exc.status not in TRANSIENT` was True for both
+            # and the loop re-raised on the first attempt instead of backing off like a 503.
+            if not (exc.status in TRANSIENT or exc.transport) or attempt == RETRIES:
                 raise
             last = exc
             time.sleep(2 ** attempt)

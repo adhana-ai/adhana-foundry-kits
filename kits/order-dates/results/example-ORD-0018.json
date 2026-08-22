@@ -1,0 +1,152 @@
+{
+ "doc": "ORD-0018",
+ "beside_run": "r001-order-dates",
+ "note": "A fresh single call replayed after the scored run, to capture one reply verbatim. It is NOT a 53rd scored order and is not counted in any denominator.",
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "max_tokens": 32000,
+ "input_tokens": 2644,
+ "output_tokens": 3816,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 3532
+ },
+ "raw_text": "{\"matter_number\":\"MVC-27-64660\",\"order_date\":\"2027-03-29\",\"deadlines\":[{\"paragraph\":1,\"item\":\"the opposition to dispositive motions\",\"basis\":\"calendar_days_from_order\",\"period_days\":90,\"trigger_event\":null,\"trigger_event_date\":null,\"stated_date\":null,\"party_calculated_date\":null,\"due_date\":\"2027-06-28\"},{\"paragraph\":2,\"item\":\"the joint status report\",\"basis\":\"explicit_date\",\"period_days\":null,\"trigger_event\":null,\"trigger_event_date\":null,\"stated_date\":\"2027-10-03\",\"party_calculated_date\":null,\"due_date\":\"2027-10-03\"},{\"paragraph\":3,\"item\":\"dispositive motions\",\"basis\":\"business_days_from_event\",\"period_days\":15,\"trigger_event\":\"service of written discovery\",\"trigger_event_date\":null,\"stated_date\":null,\"party_calculated_date\":null,\"due_date\":null},{\"paragraph\":5,\"item\":\"the pretrial statement\",\"basis\":\"calendar_days_from_event\",\"period_days\":35,\"trigger_event\":\"the close of fact discovery\",\"trigger_event_date\":\"2027-05-19\",\"stated_date\":null,\"party_calculated_date\":\"2027-07-24\",\"due_date\":\"2027-06-23\"}]}",
+ "sections_used": [
+  "Matter Number",
+  "Order Date",
+  "Recorded Events",
+  "Deadlines Ordered"
+ ],
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 2727
+  },
+  {
+   "name": "counting rules",
+   "chars": 3471
+  },
+  {
+   "name": "field schema",
+   "chars": 3225
+  },
+  {
+   "name": "order sections",
+   "chars": 920
+  }
+ ],
+ "matter_number": "MVC-27-64660",
+ "order_date": "2027-03-29",
+ "deadlines": [
+  {
+   "paragraph": 1,
+   "item": "the opposition to dispositive motions",
+   "basis": "calendar_days_from_order",
+   "period_days": 90,
+   "trigger_event": null,
+   "trigger_event_date": null,
+   "stated_date": null,
+   "party_calculated_date": null,
+   "due_date": "2027-06-28",
+   "spans": {
+    "item": {
+     "start": 377,
+     "end": 414,
+     "label": "¶1"
+    },
+    "trigger_event": null
+   },
+   "computed_date": "2027-06-28",
+   "rolled": true,
+   "rolled_from": "2027-06-27",
+   "landed_on": "a Sunday",
+   "working": "90 calendar days after 2027-03-29 is 2027-06-27, which is a Sunday, so it moves forward to 2027-06-28.",
+   "undatable": false
+  },
+  {
+   "paragraph": 2,
+   "item": "the joint status report",
+   "basis": "explicit_date",
+   "period_days": null,
+   "trigger_event": null,
+   "trigger_event_date": null,
+   "stated_date": "2027-10-03",
+   "party_calculated_date": null,
+   "due_date": "2027-10-03",
+   "spans": {
+    "item": {
+     "start": 483,
+     "end": 506,
+     "label": "¶2"
+    },
+    "trigger_event": null
+   },
+   "computed_date": "2027-10-03",
+   "rolled": false,
+   "rolled_from": null,
+   "landed_on": "a Sunday",
+   "working": "The Order names this date, so nothing is counted -- and it falls on a Sunday, which does not move it. A stated date is never rolled.",
+   "undatable": false
+  },
+  {
+   "paragraph": 3,
+   "item": "dispositive motions",
+   "basis": "business_days_from_event",
+   "period_days": 15,
+   "trigger_event": "service of written discovery",
+   "trigger_event_date": null,
+   "stated_date": null,
+   "party_calculated_date": null,
+   "due_date": null,
+   "spans": {
+    "item": {
+     "start": 624,
+     "end": 643,
+     "label": "¶3"
+    },
+    "trigger_event": {
+     "start": 571,
+     "end": 599,
+     "label": "¶3"
+    }
+   },
+   "computed_date": null,
+   "rolled": false,
+   "rolled_from": null,
+   "landed_on": null,
+   "working": "This period runs from an event the Order does not date, so no calendar date can be computed from the four corners of the Order. This is not a clearance and it is not the Order date.",
+   "undatable": true
+  },
+  {
+   "paragraph": 5,
+   "item": "the pretrial statement",
+   "basis": "calendar_days_from_event",
+   "period_days": 35,
+   "trigger_event": "the close of fact discovery",
+   "trigger_event_date": "2027-05-19",
+   "stated_date": null,
+   "party_calculated_date": "2027-07-24",
+   "due_date": "2027-06-23",
+   "spans": {
+    "item": {
+     "start": 828,
+     "end": 850,
+     "label": "¶5"
+    },
+    "trigger_event": {
+     "start": 872,
+     "end": 899,
+     "label": "¶5"
+    }
+   },
+   "computed_date": "2027-06-23",
+   "rolled": false,
+   "rolled_from": null,
+   "landed_on": null,
+   "working": "35 calendar days after 2027-05-19 is 2027-06-23, a business day, so it stands.",
+   "undatable": false
+  }
+ ],
+ "document_text": "Court\n-----\nMeridian Vale Civil Court\n\nDivision and Courtroom\n----------------------\nCivil Division C, Courtroom 1\n\nMatter Number\n-------------\nMVC-27-64660\n\nOrder Date\n----------\n29 March 2027\n\nRecorded Events\n---------------\nthe close of fact discovery    19 May 2027\nservice of written discovery   not recorded\n\nDeadlines Ordered\n-----------------\n1. Each party shall serve the opposition to dispositive motions within 90 days of the date of this Order.\n\n2. Each party shall file the joint status report no later than 3 October 2027.\n\n3. Within 15 business days after service of written discovery, the parties shall file dispositive motions.\n\n4. The requirement that the pretrial statement be served within 14 business days after the case management conference is WITHDRAWN and sets no date here.\n\n5. The parties shall serve the pretrial statement within 35 days after the close of fact discovery. (the parties calculate this as 24 July 2027)\n\n6. Within 20 days of the date of this Order, the parties shall exchange the witness list.\n\n"
+}

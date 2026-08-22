@@ -1,0 +1,88 @@
+{
+ "_README": [
+  "⚠︎ THIS RULEBOOK IS INVENTED AND WAS WRITTEN FOR THIS KIT. IT IS NOT AN AUTHORITY.",
+  "It reproduces no real reporting regulation, no real filing form, no real filing instruction,",
+  "no supervisory guidance and no gaming operator's own compliance manual. The threshold, the",
+  "aggregation window, the staleness horizon, the identification element list and the whole",
+  "transaction-code table below were made up so the SHAPE of a currency-transaction filing QC",
+  "check could be measured: aggregate the qualifying entries, link the records that are one",
+  "person, hold the required identification elements, code each entry to what actually happened,",
+  "and file only when the threshold is genuinely crossed.",
+  "",
+  "The amounts are in CU -- an invented unit, deliberately not any real currency, so a number on",
+  "these pages cannot be mistaken for a real reporting threshold.",
+  "",
+  "Replace every table below with your own programme's before you route anything real by it. The",
+  "real authority is your own compliance programme, the filing instructions that apply to you and",
+  "a qualified compliance officer's judgement -- none of which this file is. This kit FILES",
+  "nothing and CLEARS nothing."
+ ],
+
+ "version": "ctr-precheck-rulebook-v1",
+
+ "unit": "CU",
+ "unit_note": "An invented unit of account. It is not a currency and it maps to no currency. Every amount in this kit is in CU so no figure here can be read as a real reporting threshold.",
+
+ "threshold": 7500,
+ "threshold_note": "A filing is due when the qualifying total for one patron, in ONE direction, over ONE gaming day, is MORE THAN 7,500 CU. Exactly 7,500 does not cross it. This number was chosen for this kit; it is not any real reporting threshold and resembles none deliberately.",
+
+ "gaming_day_start": "06:00",
+ "gaming_day_note": "The aggregation window is the GAMING DAY, which runs from 06:00 on its own date to 06:00 the following calendar date. An entry timestamped 02:40 on the day AFTER the gaming day's date still belongs to that gaming day; an entry timestamped 03:15 on the gaming day's OWN date belongs to the PREVIOUS one. A draft that aggregates the calendar day (00:00 to 24:00) instead has applied the wrong window, and on this corpus that always moves the total.",
+
+ "directions_aggregate_separately": true,
+ "direction_note": "Cash in and cash out are aggregated SEPARATELY and never netted against each other. A filing states one direction. Entries in the other direction are not part of its total and are not a defect when they are absent from it.",
+
+ "transaction_codes": {
+  "chip_purchase_cash":        {"direction": "in",  "reportable": true,  "what": "cash across the cage counter for chips"},
+  "front_money_deposit":       {"direction": "in",  "reportable": true,  "what": "cash placed on deposit against future play"},
+  "credit_instrument_payment": {"direction": "in",  "reportable": true,  "what": "cash paid against an outstanding credit instrument"},
+  "safekeeping_deposit":       {"direction": "in",  "reportable": true,  "what": "cash lodged for safekeeping"},
+  "wire_received":             {"direction": "in",  "reportable": false, "what": "funds arriving by wire -- not currency, so it is never part of a currency total"},
+  "promotional_credit":        {"direction": "in",  "reportable": false, "what": "a non-cash promotional award posted to the patron account"},
+  "chip_redemption_cash":      {"direction": "out", "reportable": true,  "what": "chips redeemed for cash at the cage"},
+  "front_money_withdrawal":    {"direction": "out", "reportable": true,  "what": "cash drawn down from a front-money balance"},
+  "credit_instrument_issue":   {"direction": "out", "reportable": true,  "what": "cash advanced against a credit instrument"},
+  "ticket_redemption_cash":    {"direction": "out", "reportable": true,  "what": "a machine ticket redeemed for cash"},
+  "safekeeping_withdrawal":    {"direction": "out", "reportable": true,  "what": "cash drawn from a safekeeping balance"},
+  "wire_sent":                 {"direction": "out", "reportable": false, "what": "funds leaving by wire -- not currency, so it is never part of a currency total"}
+ },
+ "transaction_codes_note": "Two codes in each direction are NON-REPORTABLE, and that is the single most common way a QC check raises a false alarm on this corpus: a checker sees log entries the draft left out and calls it a missed aggregation, when the draft was right to leave them out. A non-reportable entry is never part of a currency total.",
+
+ "identification_elements": [
+  "full name",
+  "date of birth",
+  "residential address",
+  "identification reference",
+  "patron account number"
+ ],
+ "identification_elements_note": "All five must appear on the draft filing. An element that is absent is a defect; an element present but empty is treated the same way. This list was written for this kit and matches no real form's element set.",
+
+ "identification_stale_days": 400,
+ "identification_stale_note": "Identification captured MORE THAN 400 days before the gaming day is stale and must be re-taken before the filing goes anywhere. 400 is an invented horizon.",
+
+ "identity_link_keys": ["date_of_birth", "identification_reference"],
+ "identity_link_note": "Two patron records are the SAME PERSON when their date of birth AND their identification reference both match. The same person's transactions aggregate together whatever record number they were booked under. Matching on a name alone is deliberately NOT enough here -- this corpus contains no name-only near-matches, so nothing in this kit measures whether that would have been the right rule.",
+
+ "defect_codes": {
+  "missed_aggregation":       "A qualifying entry on the patron's own record -- right direction, inside the gaming day, a reportable code -- is not in the draft's total.",
+  "window_misapplied":        "The draft aggregated something other than the gaming day, so entries either side of the 06:00 boundary are counted or dropped wrongly.",
+  "identification_gap":       "A required identification element is missing from the draft, or the identification on it was captured more than the staleness horizon before the gaming day.",
+  "identity_split":           "A second patron record in the log is the same person by the link keys, and the draft aggregated only one of them.",
+  "type_miscode":             "An entry's transaction code on the draft is not the code the log records for that entry.",
+  "threshold_not_crossed":    "The qualifying total never crossed the threshold. No filing is due at all, and the draft should not exist.",
+  "insufficient_information": "The record does not carry what the check needs -- an amount that was never captured, or a missing gaming day -- so no conclusion about the total can be reached from it."
+ },
+
+ "stopping_order": [
+  "1. insufficient_information -- if the qualifying total cannot be computed at all, stop. Nothing below can be decided from a record that does not say what happened.",
+  "2. threshold_not_crossed -- if the qualifying total is at or below the threshold, stop. Arguing about the address block on a filing that should not exist is noise.",
+  "3. window_misapplied -- if the draft applied a window other than the gaming day, that is the named cause of any total difference; do NOT also report missed_aggregation for the same difference.",
+  "4. identity_split -- else, if a linked record exists and the draft excluded it, that is the named cause.",
+  "5. missed_aggregation -- else, if the qualifying total exceeds the drafted total, entries on the patron's own record were left out.",
+  "6. identification_gap and type_miscode are CONTENT defects and are checked independently of 3-5. They do not change what is filed; they change what the filing says."
+ ],
+ "stopping_order_note": "Three of the seven defects show up the same way -- the drafted total is lower than it should be -- so without a stopping order one difference gets reported three times and the false-alarm rate is an artefact of the checker rather than a property of the filing. The order names ONE cause per difference.",
+
+ "recompute_defects": ["missed_aggregation", "window_misapplied", "identity_split", "threshold_not_crossed", "insufficient_information"],
+ "recompute_note": "These change WHAT WOULD BE FILED, or whether a filing is due at all, so the totals have to be recomputed before anybody submits. identification_gap and type_miscode change what the filing SAYS and are corrected in place. insufficient_information counts here deliberately: an unknown is not a pass. ⚠︎ This split is this kit's own invention and no compliance programme was consulted for it."
+}

@@ -1,0 +1,28 @@
+{
+ "contract_fields": [
+  {"name": "contract_id", "type": "string",
+   "hint": "the contract identifier from the Contract section, verbatim"}
+ ],
+ "fields": [
+  {"name": "item_code", "type": "string",
+   "hint": "the line code from the Order Form row, verbatim (for example PO-4417). THIS IS THE KEY -- one object per ORDERED line and no others"},
+  {"name": "item_label", "type": "string",
+   "hint": "the line's description, copied verbatim from its own Item section's Description line"},
+  {"name": "item_type", "type": "enum",
+   "values": ["subscription_platform", "implementation_services", "training_days", "support_tier",
+              "usage_component", "renewal_option", "optional_module"],
+   "hint": "the line type, copied verbatim from the Type line of the line's own Item section"},
+  {"name": "charge", "type": "enum",
+   "values": ["separate_fee", "no_separate_charge", "not_stated"],
+   "hint": "what the ORDER FORM's fee column says about this line. A money amount is 'separate_fee'; the words 'included at no separate charge' are 'no_separate_charge'; the words 'fee not separately stated' are 'not_stated'. Report what the paperwork says -- this is NOT on its own what decides `separation`"},
+  {"name": "dependency", "type": "enum",
+   "values": ["required_first", "separately_available", "silent"],
+   "hint": "what the line's Item section STATES about how it relates to the other ordered lines. 'required_first' when it says this line must be completed, accepted or supplied before another ordered item can be used, or that it cannot be supplied except together with another ordered item. 'separately_available' when it says the customer may take, cancel, defer or obtain this line on its own or from another supplier without affecting the remaining lines. 'silent' when the section says NEITHER. Silence is the common case and it is a finding, not a gap -- never infer a dependency from the line type, from the fee, or from what you know about how software is usually sold"},
+  {"name": "timing", "type": "enum", "values": ["period", "event", "silent"],
+   "hint": "what the line's Item section STATES about when it is supplied. 'period' when it names a period, term or window; 'event' when it names a single completion, delivery, issue or acceptance event; 'silent' when it names neither"},
+  {"name": "separation", "type": "enum", "values": ["distinct", "bundled", "not_determined"],
+   "hint": "the worksheet's separation call for this line, decided STRICTLY by the shipped rulebook from `charge` and `dependency` and nothing else. Work through the four steps IN ORDER, stopping at the first that fires. (1) dependency 'required_first' -> 'bundled'. (2) dependency 'separately_available' -> 'distinct', whatever the fee column says. (3) dependency 'silent' AND charge 'no_separate_charge' -> 'bundled'. (4) anything else -> 'not_determined'. A FEE OF ITS OWN IS A PRICE, NOT A STATEMENT ABOUT SEPARABILITY: a priced line with nothing said about taking it alone is 'not_determined', never 'distinct'"},
+  {"name": "pattern", "type": "enum", "values": ["over_time", "point_in_time", "not_determined"],
+   "hint": "the worksheet's delivery-pattern call, decided STRICTLY from `timing`: 'period' -> 'over_time', 'event' -> 'point_in_time', 'silent' -> 'not_determined'. Asked of every line independently of its separation call -- a bundled line still either has a stated window, a stated event, or neither"}
+ ]
+}

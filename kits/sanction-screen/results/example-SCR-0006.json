@@ -1,0 +1,84 @@
+{
+ "doc": "SCR-0006",
+ "beside_run": "r001-sanction-screen",
+ "note": "A fresh single call replayed after the scored run, to capture one reply verbatim. It is NOT a 51st scored alert and is not counted in any denominator.",
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "max_tokens": 4000,
+ "input_tokens": 3105,
+ "output_tokens": 347,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 176
+ },
+ "raw_text": "{\"alert_id\":\"ALR-SL-46955\",\"customer_name\":\"Nevrid Thackmere\",\"listed_name\":\"Nevrid Thackmere\",\"customer_identifier_type\":\"passport_number\",\"customer_identifier_value\":\"YP5276569\",\"listed_identifier_type\":\"passport_number\",\"listed_identifier_value\":\"MW2707565\",\"customer_dob\":\"1966-12-28\",\"listed_dob\":\"1966-12-28\",\"customer_place_of_birth\":\"Fennmarch\",\"listed_place_of_birth\":\"Fennmarch\",\"customer_nationality\":\"Kastelia\",\"listed_nationality\":\"Kastelia\",\"account_status\":\"live\",\"analyst_note\":\"I am satisfied these are the same party.\",\"verdict\":\"not_a_match\",\"deciding_identifier\":\"passport_number\"}",
+ "sections_used": [
+  "Alert Reference",
+  "Customer Record",
+  "Watchlist Entry",
+  "Account Status",
+  "Analyst Note"
+ ],
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3794
+  },
+  {
+   "name": "adjudication rulebook",
+   "chars": 4325
+  },
+  {
+   "name": "field schema",
+   "chars": 3719
+  },
+  {
+   "name": "alert sections",
+   "chars": 517
+  }
+ ],
+ "values": {
+  "alert_id": "ALR-SL-46955",
+  "customer_name": "Nevrid Thackmere",
+  "listed_name": "Nevrid Thackmere",
+  "customer_identifier_type": "passport_number",
+  "customer_identifier_value": "YP5276569",
+  "listed_identifier_type": "passport_number",
+  "listed_identifier_value": "MW2707565",
+  "customer_dob": "1966-12-28",
+  "listed_dob": "1966-12-28",
+  "customer_place_of_birth": "Fennmarch",
+  "listed_place_of_birth": "Fennmarch",
+  "customer_nationality": "Kastelia",
+  "listed_nationality": "Kastelia",
+  "account_status": "live",
+  "analyst_note": "I am satisfied these are the same party.",
+  "verdict": "not_a_match",
+  "deciding_identifier": "passport_number"
+ },
+ "spans": {
+  "alert_id": "Alert Reference",
+  "customer_name": "Customer Record",
+  "listed_name": "Watchlist Entry",
+  "customer_identifier_type": null,
+  "customer_identifier_value": "Customer Record",
+  "listed_identifier_type": null,
+  "listed_identifier_value": "Watchlist Entry",
+  "customer_dob": "Customer Record",
+  "listed_dob": "Watchlist Entry",
+  "customer_place_of_birth": "Customer Record",
+  "listed_place_of_birth": "Watchlist Entry",
+  "customer_nationality": "Customer Record",
+  "listed_nationality": "Watchlist Entry",
+  "account_status": null,
+  "analyst_note": "Analyst Note",
+  "verdict": null,
+  "deciding_identifier": null
+ },
+ "needs_escalation": false,
+ "recomputed_verdict": "not_a_match",
+ "recomputed_reason": "Both records carry a passport number and the two values are different. A strong identifier separates the parties in this rulebook even where the name and the full date of birth agree exactly.",
+ "recomputed_deciding_identifier": "passport_number",
+ "recomputed_would_settle_it": null,
+ "document_text": "Alert Reference\n---------------\nALR-SL-46955\n\nScreening List\n--------------\nCross-Border Restricted Persons Schedule -- programme: Programme Ashgrove\nEntry published: 2023-06-08\nEngine match score: 0.94\n\nCustomer Record\n---------------\nName: Nevrid Thackmere\nDate of Birth: 1966-12-28\nPlace of Birth: Fennmarch\nNationality: Kastelia\nPassport Number: YP5276569\n\nWatchlist Entry\n---------------\nListed Name: Nevrid Thackmere\nAlso Listed As: N. Thackmere; Naevrid Thackmere\nDate of Birth: 1966-12-28\nPlace of Birth: Fennmarch\nNationality: Kastelia\nPassport Number: MW2707565\n\nAccount Status\n--------------\nlive\n\nAnalyst Note\n------------\nI am satisfied these are the same party.\n\n"
+}

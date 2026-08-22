@@ -1,0 +1,66 @@
+{
+ "_README": [
+  "⚠︎ THIS RULEBOOK IS ILLUSTRATIVE AND WAS WRITTEN FOR THIS KIT. IT IS NOT AN AUTHORITY.",
+  "It reproduces no sanctions programme, no designation list, no supervisor's guidance, no",
+  "industry body's matching standard and no vendor's screening-engine tuning. No real list,",
+  "authority, programme or jurisdiction is named anywhere in this kit, and every list name,",
+  "programme name, country name, person name and identifier in the corpus is invented.",
+  "",
+  "It is a small, deliberately readable construction whose only job is to make the DECISION",
+  "SHAPE measurable: identifiers sorted into strength tiers, a stopping order in which a strong",
+  "identifier outranks everything below it, an explicit definition of when a field is even",
+  "COMPARABLE, and a third verdict for the case where the file cannot decide.",
+  "",
+  "Replace every table below with your own before you route anything real by it. The real",
+  "authority for a screening alert is your own sanctions policy, your compliance function and",
+  "the people who own the decision. This kit is not one of them."
+ ],
+
+ "version": "sanction-screen-rulebook-v1",
+
+ "verdicts": ["same_party", "not_a_match", "insufficient_information"],
+ "verdicts_note": "THREE, AND THE THIRD IS THE ONE THAT MATTERS. `insufficient_information` is a real answer, not a failure to produce one: it means the two records in front of you do not carry enough to separate or join them. An adjudicator that never reaches for it is not decisive, it is guessing — and on a screening queue a confident wrong `not_a_match` is the one that costs, because the alert is closed and nobody looks again.",
+
+ "identifier_tiers": {
+  "strong": ["passport_number", "national_id_number", "tax_reference"],
+  "moderate": ["date_of_birth", "place_of_birth"],
+  "weak": ["nationality", "name_similarity", "engine_match_score", "analyst_note"]
+ },
+
+ "strong_note": "A strong identifier is a number issued to ONE party and to no other. In this rulebook a strong identifier that is present on both records SETTLES the alert, in whichever direction it points, and it outranks every disagreement below it. Two records carrying the same passport number are the same party even if the names are spelled differently and the nationalities disagree; two records carrying different passport numbers are different parties even if the name and the full date of birth agree exactly. That is the sharpest claim in this file and it is deliberately absolute.",
+
+ "moderate_note": "A moderate identifier narrows a population; it does not name a party. This rulebook needs MIN_MODERATE_AGREEMENTS of them, agreeing and comparable, before it will join two records — and ONE of them conflicting is enough to separate them. Weak agreements never add up to a strong identifier, and no number of them substitutes for one.",
+
+ "weak_note": "A weak field is RECORDED, is EXTRACTED, and is never an input to the verdict. Nationality on a list record is often stale or secondary; the screening engine's own match score is a statement about strings; and the analyst's note is one person's impression written before anybody compared the identifiers. All three are on the alert, all three are read back, and none of them moves the answer.",
+
+ "comparable": {
+  "date_of_birth": "A date is comparable only when BOTH records carry a FULL calendar date. A year-only or year-and-month date is a STATED FACT and not a missing one — and it is still not comparable, because it cannot agree or disagree with anything at the precision the rule needs. A partial date contributes nothing in either direction.",
+  "place_of_birth": "A place is comparable only when both records name one. A place published on one record and absent from the other contributes nothing."
+ },
+
+ "min_moderate_agreements": 2,
+
+ "decision_order": [
+  "1. STRONG IDENTIFIER, SAME VALUE. If both records carry a strong identifier OF THE SAME TYPE and the values match, answer same_party. Nothing below this line can overturn it.",
+  "2. STRONG IDENTIFIER, DIFFERENT VALUE. If both records carry a strong identifier of the same type and the values differ, answer not_a_match. Nothing below this line can overturn it either.",
+  "3. MODERATE CONFLICT. With no strong identifier comparable, any single comparable moderate identifier that DISAGREES answers not_a_match. Date of birth is read before place of birth.",
+  "4. MODERATE AGREEMENT. At least min_moderate_agreements comparable moderate identifiers agreeing, and none disagreeing, answers same_party.",
+  "5. OTHERWISE. Answer insufficient_information, and name what would settle it."
+ ],
+
+ "identifier_labels": {
+  "passport_number": "passport number",
+  "national_id_number": "national identity number",
+  "tax_reference": "tax reference",
+  "date_of_birth": "date of birth",
+  "place_of_birth": "place of birth",
+  "date_of_birth_and_place_of_birth": "date of birth and place of birth together",
+  "none": "nothing on the file"
+ },
+
+ "deciding_identifier_note": "Every verdict names the identifier that produced it, and `none` is the honest answer for insufficient_information. A verdict with no named identifier behind it is an opinion; a verdict that names the wrong one is right by accident, which is why this kit scores the two separately.",
+
+ "different_types_note": "TWO STRONG IDENTIFIERS OF DIFFERENT TYPES ARE NOT COMPARABLE. A passport number on one record and a national identity number on the other tell you nothing about each other, and this rulebook does not pretend otherwise — it falls through to the moderate fields exactly as though neither record carried an identifier at all. That is one of the two commonest routes to insufficient_information on this corpus.",
+
+ "not_an_authority": "This kit PROPOSES an adjudication with its reasoning and names what it could not determine. It clears nothing, blocks nothing and files nothing: no alert is closed, no party is designated or de-designated, no account is frozen or released, no payment is stopped or let through, and no report of any kind is made to anybody. A human makes the call."
+}

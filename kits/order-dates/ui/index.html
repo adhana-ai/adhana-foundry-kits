@@ -1,0 +1,81 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>order-dates &mdash; every deadline a scheduling order sets, and the day it lands on</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Every deadline a scheduling order sets, and the day it lands on</h1>
+    <p class="sub">One scheduling order, one model call, a row per obligation &mdash; plus the
+      calendar date recomputed afterwards in pure code from the shipped counting rules. The
+      arithmetic is the hard part, not the reading: whether the day the clock starts on is counted,
+      whether the period is in business days or calendar days, and what happens when it lands on a
+      weekend or a court holiday. A party&rsquo;s own calculation, where the order carries one, is
+      copied as a field and decides nothing.</p>
+  </header>
+
+  <div class="warn">
+    <strong>This computes a proposed calendar. It does not file, serve, docket or waive
+    anything.</strong> Nothing here is legal advice, nothing is a substitute for the file and the
+    rules that actually govern it, and no date on this page goes anywhere until a person puts it
+    there. <strong>The counting rulebook shipped with this kit is invented and is not an
+    authority</strong> &mdash; Meridian Vale is not a place, MV-CR-1 is not anybody&rsquo;s
+    procedure, and every court holiday on its list was made up for this kit. Replace it with your
+    own before you calendar anything real by it.
+  </div>
+
+  <div class="bar">
+    <select id="doc" aria-label="Scheduling order"></select>
+    <button id="go" type="button">Compute</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="panel">
+    <div class="ph"><span>Order</span>
+      <span class="k kf" id="k-rows">&mdash;</span>
+      <span class="k kn" id="k-undated">&mdash;</span>
+      <span class="k ks" id="k-span">&mdash;</span></div>
+    <table>
+      <tbody>
+        <tr><td class="n">Matter number</td><td id="c-matter">&mdash;</td></tr>
+        <tr><td class="n">Order date</td><td id="c-date">&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>Deadlines &mdash; the date on the right is pure code</span></div>
+    <div class="scroll">
+      <table id="tbl">
+        <thead><tr>
+          <th>&para;</th><th>What</th><th>How it is fixed</th><th>Counted from</th>
+          <th>Party&rsquo;s own</th><th>Model&rsquo;s date</th><th>Recomputed</th><th>Working</th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <p class="foot">The <strong>Recomputed</strong> column is
+    <code>src/calendar_rules.py::compute()</code> re-run over the model&rsquo;s <em>own</em>
+    extracted values &mdash; the same function that wrote this kit&rsquo;s gold and the same one
+    stated to the model in words. Where the two columns disagree, the reply contradicts the
+    rulebook applied to what the reply itself read, and that is visible <em>without any labels at
+    all</em>. A row whose recomputed date is <strong>cannot be dated</strong> is one the Order
+    does not date: its period runs from an event the Recorded Events table leaves blank.
+    <strong>That is a real answer, not a failure to produce one</strong> &mdash; and it is not the
+    Order date, not zero days and not a guess. A confident wrong date on a docketing queue is worse
+    than a blank, because a blank gets chased and a date gets diarised.</p>
+
+  <details class="doc">
+    <summary>The scheduling order this was read from</summary>
+    <pre id="text"></pre>
+  </details>
+
+  <details class="doc">
+    <summary>The shipped counting rulebook &mdash; invented, not an authority</summary>
+    <div id="rulebook" class="mx"></div>
+  </details>
+</div>
+<script src="/app.js"></script>

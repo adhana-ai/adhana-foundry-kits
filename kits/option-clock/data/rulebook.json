@@ -1,0 +1,54 @@
+{
+ "_README": [
+  "⚠︎ THIS COUNTING RULEBOOK IS ILLUSTRATIVE AND WAS WRITTEN FOR THIS KIT. IT IS NOT AN AUTHORITY.",
+  "It reproduces no option agreement, no rights-management system's own logic, no guild or trade",
+  "body schedule, no standard form and no statute. Nothing in it was copied from, derived from or",
+  "checked against any such document, because none was consulted.",
+  "",
+  "It exists so the SHAPE of an option clock is measurable: what starts the clock, what perfects an",
+  "extension, how extensions stack, how months are added, and how far ahead 'about to lapse' looks.",
+  "Several of its simplifications are visibly not how a real option works -- most obviously that",
+  "every extension in a chain is the same length, and that a single window applies to every",
+  "property regardless of what is at stake behind it.",
+  "",
+  "Replace every clause below with your own, read out of your own agreements, before you route",
+  "anything real by it. The real authority for any option is the executed agreement and the",
+  "lawyer who reads it."
+ ],
+
+ "version": "option-clock-rulebook-v1",
+
+ "window_days": 45,
+ "window_note": "How far ahead 'lapsing' looks. 45 days is this kit's own number and is not a market convention: it was chosen because it is long enough that a payment or a notice can still be got out, and short enough that a worklist stays readable. A real desk would set it per property, per counterparty, or per what the exercise costs.",
+
+ "clock_start": {
+  "grant_date": "the option period runs from the date the option was granted",
+  "triggering_event": "the option period runs from the date the triggering event ACTUALLY OCCURRED. Until it occurs, the period has not started and no expiry can be counted -- the answer is not_determinable, and it is not 'live'"
+ },
+ "clock_start_note": "AN OPTION WHOSE CLOCK HAS NOT STARTED IS NOT AN OPTION WITH A LONG TIME LEFT. It is an option nobody can date, and the honest answer is that it cannot be determined from the register. Reading it as 'live' is the single most comfortable mistake on this shape of record, because it removes a row from the worklist and looks like good news.",
+
+ "contradiction_rule": "A CONTRADICTION BLOCKS ONLY THE DATE THE CLOCK ACTUALLY RUNS FROM. Where two entries on the register disagree about the grant date AND the clock runs from the grant date, the clock start is not settled: answer not_determinable, and do NOT pick the earlier entry, the later entry, or the one from the more official-looking source. Where the clock runs from a triggering event that has occurred, the grant date is not an input at all, and a disagreement about it does not block the count -- flagging that record is a FALSE ALARM.",
+
+ "perfection": {
+  "payment": "a payment reference AND a payment date must both be recorded against the extension. An extension the register records as exercised, with no payment recorded, is NOT perfected",
+  "notice": "notice must be served on the GRANTOR OF RECORD -- the rights holder named on the register. Service on an agent, a co-financier, an escrow party or the grantee's own counsel does NOT perfect the extension, however customary the practice"
+ },
+ "perfection_note": "AN EXTENSION IS PERFECTED BY THE ACT THE AGREEMENT NAMES, NOT BY THE REGISTER RECORDING THAT IT WAS EXERCISED. 'recorded: exercised' is a clerk's entry. The payment and the notice are the acts. Where the register records an exercise the acts do not support, the extension does not stack and the option is shorter than the file believes it is -- which is the whole reason this kit exists.",
+
+ "stacking": "consecutive_from_end_of_preceding_period",
+ "stacking_note": "A perfected extension runs CONSECUTIVELY from the end of the period it extends, never from the date it was exercised. An extension exercised early does not shorten the option and one exercised late does not lengthen it. Expiry = clock start + the initial term + (the length of each PERFECTED extension). Only perfected extensions are added.",
+
+ "month_arithmetic": "same day-of-month; where the target month is short, the last day of that month",
+ "month_arithmetic_note": "Months are added calendar-wise and never as 30-day blocks. 2025-01-31 plus one month is 2025-02-28; plus one more is 2025-03-28, not 2025-03-31 -- each addition is taken from the ORIGINAL start date and the whole term is added at once, so the clamping cannot compound. Counting in days instead moves an 18-month option by up to five days, which is the difference between 'live' and 'lapsing' on a 45-day window.",
+
+ "statuses": {
+  "lapsed": "expiry on or before the register's as-of date",
+  "lapsing": "expiry after the as-of date and on or before as-of plus the window",
+  "live": "expiry after as-of plus the window",
+  "not_determinable": "no expiry can be counted from what the register states"
+ },
+
+ "register_status_is_not_evidence": "The register carries its own status line -- live or lapsed -- and it is NEVER an input to this count. It is what somebody last typed, and this kit's whole subject is the gap between that and the arithmetic. Note also what the line cannot express even when it is right: it has no word for 'lapsing inside the window' and no word for 'the paperwork does not settle it'. A status column with two values cannot carry a four-value answer.",
+
+ "clerk_note_is_not_evidence": "The clerk's note is one person's remark on the file. A note that sounds relaxed does not add a day to the term and a note that sounds worried does not remove one. It is extracted, it is displayed, and it decides nothing."
+}

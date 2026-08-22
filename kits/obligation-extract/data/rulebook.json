@@ -1,0 +1,59 @@
+{
+ "edition": "obligation-extract worksheet rulebook v1",
+ "title": "Worksheet Rulebook v1 - separating and timing the promises in a subscription contract",
+ "not_an_authority": "THIS RULEBOOK WAS WRITTEN FOR THIS KIT AND IS ILLUSTRATIVE. It reproduces no accounting standard, no standard-setter's guidance, no audit firm's manual and no company's own revenue policy, and it names none of them. Nothing in it was copied from, derived from or checked against any such document, because none was consulted. It exists to make one decision SHAPE measurable: a promise is read off paperwork, the paperwork either settles a question or it does not, and the worksheet has to say which. A real determination is the controller's, on the whole arrangement, against the framework their company reports under.",
+ "produces": "a reviewer's worksheet, never an accounting conclusion and never a journal entry. Nothing here allocates a transaction price, recognises revenue, books an entry, opens a schedule or approves anything.",
+
+ "item_types": {
+  "subscription_platform": "the platform subscription itself",
+  "implementation_services": "implementation, configuration or migration work",
+  "training_days": "training days, delivered on site or remotely",
+  "support_tier": "a named support or success tier",
+  "usage_component": "a metered or usage-based component charged on consumption",
+  "renewal_option": "a renewal option, an extension right or a stated price ramp",
+  "optional_module": "an optional module ordered alongside the platform"
+ },
+
+ "stated_facts": {
+  "charge": {
+   "separate_fee": "the order form gives this line a fee of its own",
+   "no_separate_charge": "the order form states the line is included at no separate charge",
+   "not_stated": "the order form's fee column for this line says the fee is not separately stated"
+  },
+  "dependency": {
+   "required_first": "the contract states this item must be completed, accepted or supplied before another ordered item can be used - or that it cannot be supplied except together with another ordered item",
+   "separately_available": "the contract states the customer may take, cancel, defer or obtain this item on its own, or from another supplier, without affecting the remaining items",
+   "silent": "the contract says neither of those things about this item"
+  },
+  "timing": {
+   "period": "the contract states a period, term or window over which this item is supplied",
+   "event": "the contract states a single completion, delivery, issue or acceptance event for this item",
+   "silent": "the contract states neither"
+  }
+ },
+
+ "separation_rule": [
+  "1. DEPENDENCY STATED AS A PREREQUISITE. If dependency is `required_first`, the worksheet records the item as `bundled`. The paperwork itself ties it to another ordered item, so this rulebook does not carry it as a promise on its own.",
+  "2. DEPENDENCY STATED AS SEPARABLE. If dependency is `separately_available`, the worksheet records the item as `distinct`. This is true whatever the fee line says, including a line the order form prices at nothing.",
+  "3. NOTHING STATED, AND THE LINE IS EXPLICITLY FREE. If dependency is `silent` and charge is `no_separate_charge`, the worksheet records the item as `bundled`. An order form that gives a line no price of its own AND says nothing about taking it separately is, on this rulebook, recording it alongside the line it rides on.",
+  "4. NOTHING STATED, ANYTHING ELSE. The worksheet records `not_determined`. A FEE OF ITS OWN IS A PRICE, NOT A STATEMENT ABOUT SEPARABILITY - it says what the customer is charged, not whether the customer could have taken the item alone. This is the branch a confident reader skips."
+ ],
+
+ "pattern_rule": [
+  "1. If timing is `period`, the worksheet records `over_time`.",
+  "2. If timing is `event`, the worksheet records `point_in_time`.",
+  "3. If timing is `silent`, the worksheet records `not_determined`. The pattern question is asked of every item independently of the separation call - a bundled item still either has a stated window, a stated event, or neither."
+ ],
+
+ "what_is_an_obligation_here": [
+  "An item is on the worksheet if and only if it is a LINE OF THIS ORDER FORM that the contract supplies.",
+  "A line struck from the order form by an amendment is NOT on the worksheet, even though its code and its description are printed on the page.",
+  "A rate card, day rate or price list for work that has not been ordered is NOT on the worksheet. A price is not a promise.",
+  "An item supplied under an EARLIER order form and continuing is NOT on the worksheet. It is somebody else's paperwork, referred to here for context."
+ ],
+
+ "separation_values": ["distinct", "bundled", "not_determined"],
+ "pattern_values": ["over_time", "point_in_time", "not_determined"],
+
+ "why_not_determined_is_first_class": "A worksheet that never says `not_determined` is not a confident worksheet, it is a guessing one. The whole value of this shape is that a reviewer can see, in one column, which calls the paperwork actually settles and which ones somebody has to go back to the deal desk about. Over-confidence here costs more than caution: a call recorded as settled is a call nobody re-reads."
+}

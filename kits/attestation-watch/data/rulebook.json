@@ -1,0 +1,74 @@
+{
+ "_README": [
+  "⚠︎ THIS RULEBOOK IS ILLUSTRATIVE AND WAS WRITTEN FOR THIS KIT. IT IS NOT AN AUTHORITY.",
+  "It reproduces no real professional standard, no standard-setter's rule, no regulator's",
+  "requirement and no firm's own independence policy. No such document was consulted, quoted,",
+  "paraphrased or checked against, because none was. Nothing in it should be read as a statement",
+  "about what any real attestation regime requires.",
+  "",
+  "It is a small, deliberately readable construction whose only job is to make the DECISION SHAPE",
+  "measurable: an applicability gate, a determinability gate, a cycle length that produces a DUE",
+  "DATE by arithmetic, a grace window, a coverage test, and two ways a register can contradict",
+  "itself. Every number below was chosen so a reader can check the arithmetic by eye.",
+  "",
+  "Several of its simplifications are visibly not how a real engagement works, and are named",
+  "as such in the fields beside them -- most obviously that one cycle length applies to a role",
+  "regardless of the client, the assignment or anything the person actually does.",
+  "",
+  "Replace every table below with your own before you route anything real by it. The real",
+  "authority for an independence question is the standard your firm is actually bound by, the",
+  "engagement's own terms, and a person qualified to read both -- none of which this file is."
+ ],
+
+ "version": "attestation-watch-rulebook-v1",
+ "id": "IAR-1",
+ "name": "Illustrative Attestation Rulebook IAR-1",
+ "is_authority": false,
+
+ "roles_requiring_attestation": [
+  "engagement_lead",
+  "quality_reviewer",
+  "senior_manager",
+  "specialist_advisor"
+ ],
+ "roles_not_requiring_attestation": [
+  "engagement_administrator"
+ ],
+ "roles_note": "A role that is not in the first list carries no attestation requirement under this rulebook, however it appears on the register. An administrator with no return on file is not a gap; a monitoring queue that says otherwise is the queue people stop reading.",
+
+ "cycle_days": {
+  "engagement_lead": 180,
+  "quality_reviewer": 180,
+  "senior_manager": 365,
+  "specialist_advisor": 365
+ },
+ "cycle_days_note": "The number of days from the date a person's cycle OPENED to the date their attestation is due. This is the arithmetic the due date comes from, and it is the only arithmetic in the rulebook. ⚠︎ A single cycle length per role, independent of client, assignment and jurisdiction, is a simplification chosen so the derived date is checkable by eye. A real regime does not work this way.",
+
+ "grace_days": 14,
+ "grace_days_note": "A return filed after the due date is still in time if it is filed within this many days of it. Filed after that, the return is late and the attestation is STALE -- the person did attest, and not when they were required to.",
+
+ "coverage_rule": "The return must cover a period ending ON OR AFTER the due date. A return whose covered period ends before the due date attests to the wrong window: it is a real return, filed on time, about the previous cycle.",
+
+ "supersede_rule": "When one person has filed more than once, the return with the LATER filing date governs. The earlier one is not discarded -- it is compared against the later one, and a disagreement between the two is a contradiction rather than a supersession.",
+
+ "contradiction_rules": [
+  "TWO RETURNS THAT DISAGREE. The same person's earlier return declares something the later one does not, or the other way round. Filing again does not resolve it; somebody has to decide which is true.",
+  "A DECLARED RELATIONSHIP THE REGISTER RECORDS AS DISPOSED. The latest return declares a relationship, and the register's own holdings section records that relationship as disposed of on a date BEFORE the return was filed. The register contradicts itself. ⚑ THE ORDER OF THE TWO DATES IS THE WHOLE TEST: a relationship disposed of AFTER the return was filed is not a contradiction at all -- the return was correct on the day it was filed, which is the only day a return can be correct about."
+ ],
+
+ "statuses": [
+  "satisfied",
+  "missing",
+  "stale",
+  "contradicted",
+  "not_required",
+  "not_determinable"
+ ],
+ "status_order_note": "The rule works through five gates IN ORDER and stops at the first that fires: (1) is this person required to attest at all -- a vacated role and a mid-cycle joiner are NOT; (2) can the register even be read on this person -- no cycle date, or a return whose covered period is not stated, is NOT DETERMINABLE and is a first-class answer rather than a failure to produce one; (3) is there a return at all; (4) does the register contradict itself about this person; (5) was the return in time and about the right window. Anything that survives all five is SATISFIED.",
+
+ "worklist": ["missing", "stale", "contradicted"],
+ "worklist_note": "The three statuses that put a person on somebody's list today. `not_required` and `satisfied` are the two answers that mean nothing needs doing, and `not_determinable` means the register needs opening rather than the person needing chasing.",
+
+ "owner_review_rule": "A register needs an OWNER, not a reminder, when it carries at least one `contradicted` attester or at least one `not_determinable` one. A missing or stale attestation is cleared by asking somebody for a form. A contradiction and an unreadable record are not: no reminder resolves them, and a queue that routes them to the same place as a chase is a queue that buries them.",
+ "owner_review_note": "⚠︎ THIS IS THE KIT'S OWN INVENTION, NOT ANYBODY'S ESCALATION POLICY. No firm's procedure was consulted and none is reproduced."
+}

@@ -1,0 +1,86 @@
+{
+ "doc": "QCP-0040",
+ "beside_run": "r001-ctr-precheck",
+ "note": "A fresh single call replayed after the scored run, to capture one reply verbatim. It is NOT a 57th scored pack and is not counted in any denominator.",
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "max_tokens": 8000,
+ "input_tokens": 3439,
+ "output_tokens": 2560,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 2365
+ },
+ "raw_text": "{\n  \"filing_id\": \"DF-2026-6580\",\n  \"patron_record_id\": \"PR-GD1148\",\n  \"gaming_day\": \"2026-04-08\",\n  \"draft_direction\": \"cash_out\",\n  \"draft_reported_total\": 12250,\n  \"log_qualifying_total\": 14750,\n  \"draft_window_applied\": \"gaming_day\",\n  \"linked_record_id\": \"PR-CC8122\",\n  \"draft_includes_linked_record\": \"no\",\n  \"missing_identification_elements\": null,\n  \"identification_captured_on\": \"2025-06-12\",\n  \"miscoded_transaction_ids\": null,\n  \"preparer_note\": \"Reviewed against the log line by line; totals agree and the pack is ready to go.\",\n  \"defects_found\": \"identity_split\"\n}",
+ "sections_used": [
+  "Draft Filing",
+  "Patron Record",
+  "Gaming Day",
+  "Direction Reported",
+  "Window Applied",
+  "Reported Total",
+  "Transactions Included On The Draft",
+  "Patron Identification On The Draft",
+  "Cage Transaction Log",
+  "Other Patron Records In This Log",
+  "Preparer Note"
+ ],
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3235
+  },
+  {
+   "name": "filing rulebook",
+   "chars": 4762
+  },
+  {
+   "name": "field schema",
+   "chars": 3980
+  },
+  {
+   "name": "qc pack sections",
+   "chars": 1519
+  }
+ ],
+ "values": {
+  "filing_id": "DF-2026-6580",
+  "patron_record_id": "PR-GD1148",
+  "gaming_day": "2026-04-08",
+  "draft_direction": "cash_out",
+  "draft_reported_total": 12250,
+  "log_qualifying_total": 14750,
+  "draft_window_applied": "gaming_day",
+  "linked_record_id": "PR-CC8122",
+  "draft_includes_linked_record": "no",
+  "missing_identification_elements": null,
+  "identification_captured_on": "2025-06-12",
+  "miscoded_transaction_ids": null,
+  "preparer_note": "Reviewed against the log line by line; totals agree and the pack is ready to go.",
+  "defects_found": "identity_split"
+ },
+ "spans": {
+  "filing_id": "Draft Filing",
+  "patron_record_id": "Patron Record",
+  "gaming_day": "Gaming Day",
+  "draft_direction": null,
+  "draft_reported_total": "Reported Total",
+  "log_qualifying_total": null,
+  "draft_window_applied": null,
+  "linked_record_id": "Other Patron Records In This Log",
+  "draft_includes_linked_record": null,
+  "missing_identification_elements": null,
+  "identification_captured_on": "Patron Identification On The Draft",
+  "miscoded_transaction_ids": null,
+  "preparer_note": "Preparer Note",
+  "defects_found": null
+ },
+ "needs_recompute": true,
+ "recomputed_defects": [
+  "identity_split"
+ ],
+ "recomputed_reasons": {
+  "identity_split": "Record PR-CC8122 in the log matches this patron on both link keys, so it is the same person, and the draft aggregated only one of the two records. Together they total 14,750 CU against the drafted 12,250 CU."
+ },
+ "document_text": "Draft Filing\n------------\nDF-2026-6580\n\nProperty And Shift\n------------------\nLongview Terrace, day shift, cage 3\n\nPatron Record\n-------------\nPR-GD1148\n\nGaming Day\n----------\n2026-04-08\n\nDirection Reported\n------------------\ncash_out\n\nWindow Applied\n--------------\ngaming day (06:00 to 06:00 the next date)\n\nReported Total\n--------------\n12250 CU\n\nTransactions Included On The Draft\n----------------------------------\nTXN-04762  credit_instrument_issue    3150 CU\nTXN-04765  chip_redemption_cash       5000 CU\nTXN-04768  front_money_withdrawal     4100 CU\n\nPatron Identification On The Draft\n----------------------------------\nfull name: J. Mardwick\ndate of birth: 1957-04-22\nresidential address: 200 Quenbourne Rise, Westhaven\nidentification reference: IDR-988491\npatron account number: PA-952459\nidentification captured on: 2025-06-12\n\nCage Transaction Log\n--------------------\nTXN-04777  2026-04-08 01:26  PR-GD1148    credit_instrument_issue    1950 CU\nTXN-04774  2026-04-08 06:44  PR-CC8122    front_money_withdrawal     1400 CU\nTXN-04768  2026-04-08 14:23  PR-GD1148    front_money_withdrawal     4100 CU\nTXN-04765  2026-04-08 14:27  PR-GD1148    chip_redemption_cash       5000 CU\nTXN-04762  2026-04-08 16:04  PR-GD1148    credit_instrument_issue    3150 CU\nTXN-04771  2026-04-08 16:47  PR-CC8122    ticket_redemption_cash     1100 CU\n\nOther Patron Records In This Log\n--------------------------------\nPR-CC8122 -- date of birth 1957-04-22, identification reference IDR-988491\n\nPreparer Note\n-------------\nReviewed against the log line by line; totals agree and the pack is ready to go.\n\n"
+}

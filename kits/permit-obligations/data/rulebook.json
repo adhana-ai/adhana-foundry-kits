@@ -1,0 +1,86 @@
+{
+ "_README": [
+  "⚠︎ THIS RULEBOOK IS ILLUSTRATIVE AND WAS WRITTEN FOR THIS KIT. IT IS NOT AN AUTHORITY.",
+  "It reproduces no permit, no licence condition, no regulator's guidance, no industry code and",
+  "no statutory schedule. No real permit, operator, site or administering body was consulted and",
+  "none is named anywhere in this kit. It is a small, deliberately readable construction whose",
+  "only job is to make the DECISION SHAPE measurable: does a condition still bind at all, does",
+  "the register carry what the rule needs, when does the next instance fall due, and is that date",
+  "already past, inside the action window, or still ahead.",
+  "",
+  "Replace every interval, every window and every state below with the ones your own permit",
+  "actually states, before you put a single obligation on a worklist by it. A real obligation",
+  "register is governed by the permit instrument, its amendments and the administering body's own",
+  "correspondence -- none of which this file is.",
+  "",
+  "⚑ THE KIT WATCHES NOTHING. It reads one register somebody else assembled, at one moment, and",
+  "proposes a worklist. It does not poll, subscribe, schedule, alert, escalate, file or clear."
+ ],
+
+ "version": "permit-obligations-rulebook-v1",
+
+ "statuses": ["overdue", "due_in_window", "not_yet_due", "not_binding", "not_determinable"],
+ "statuses_note": "FIVE, NOT FOUR, AND THE FIFTH IS THE ONE THAT EARNS ITS PLACE. `not_binding` covers a condition that is on the register and does not bind -- superseded by an amendment, or waived in writing. Calling those 'not yet due' would be a lie a reader acts on later, because they will never be due; and folding them into the worklist is the single easiest way to make a monitoring queue cry wolf. `not_determinable` is a real answer too: the register does not carry what the rule needs, and saying so is the point rather than a failure to produce a status.",
+
+ "obligation_types": {
+  "monitoring_reading": {
+   "basis": "cycle",
+   "interval_days": 90,
+   "window_days": 30,
+   "what": "a reading, sample or measurement due on a fixed cycle. The next one falls due `interval_days` after the date the register records the last one as taken."
+  },
+  "inspection": {
+   "basis": "cycle",
+   "interval_days": 180,
+   "window_days": 30,
+   "what": "a physical inspection due on a fixed cycle, dated from the last one the register records."
+  },
+  "financial_assurance": {
+   "basis": "cycle",
+   "interval_days": 365,
+   "window_days": 60,
+   "what": "a security, bond or provision that must be renewed or re-lodged annually, dated from the last renewal the register records."
+  },
+  "periodic_report": {
+   "basis": "reporting_period",
+   "period": "calendar year",
+   "deadline_month_day": "03-31",
+   "window_days": 30,
+   "what": "a report covering a whole calendar reporting year, due on 31 March of the year AFTER the year it covers. The next one due is the report for the year after the one the register credits as filed."
+  },
+  "event_triggered": {
+   "basis": "trigger",
+   "window_days": 30,
+   "what": "a condition that engages only when a named event occurs. Until the register records the trigger as having occurred, nothing is due. Once it has, the register states the resulting due date and that date governs."
+  }
+ },
+
+ "window_note": "⚠︎ THE ACTION WINDOW IS NOT ONE NUMBER, AND FLATTENING IT IS THE EASIEST MISTAKE ON THIS PAGE. Four of the five types use 30 days; `financial_assurance` uses 60, because re-lodging a security is arranged with a third party and 30 days is not enough notice to do it. So an obligation falling due in 45 days is INSIDE the window if it is a financial assurance and OUTSIDE it if it is a reading or an inspection -- same interval to the day, different answer. A reader who remembers one window gets both classes of row wrong, in opposite directions: false alarms on the readings, missed renewals on the securities.",
+
+ "condition_states": {
+  "active": "the condition binds and its status is computed.",
+  "superseded": "the condition has been replaced by a later one in a permit amendment. It is still printed on the register -- registers accrete -- and it binds nothing. Status is `not_binding` whatever its dates say.",
+  "waived": "the administering body has waived the condition in writing, with a reference. It binds nothing. Status is `not_binding` whatever its dates say."
+ },
+ "condition_states_note": "⚠︎ A SUPERSEDED OR WAIVED ROW IS CONSTRUCTED TO LOOK OVERDUE. It still carries a type and a stale last-done date, so anything that computes a due date before it reads the state will raise it. That is not a hypothetical: on this kit's own corpus every superseded and waived row would land on the worklist if the state were ignored, and `evals/check_labels.py` asserts exactly that before any run may spend. This is the single largest source of false alarms available to a monitor of this shape.",
+
+ "trigger_states": {
+  "occurred": "the register records the trigger event as having happened, and states the resulting due date.",
+  "not_occurred": "the register records that the trigger event has not happened. Nothing is due -- `not_yet_due`, and it is not an omission.",
+  "not_recorded": "the register does not say either way. `not_determinable` -- an unrecorded trigger is not the same fact as a trigger that did not fire.",
+  "not_applicable": "the row is not an event-triggered condition."
+ },
+
+ "period_credited_note": "⚠︎ THE FILING DATE IS NOT THE ANSWER; THE PERIOD IT WAS CREDITED TO IS. A register row for an annual report carries both, and they routinely disagree: a report filed last month can be the report for a reporting year two years back, which leaves the year in between still outstanding. `last_done` is recorded, is extracted, and is NEVER an input to the status of a `periodic_report`. Only `period_credited` decides.",
+
+ "not_determinable_when": [
+  "a cycle-based obligation whose register entry has no date on it -- a reading logged with the date column left empty is not a reading you can date the next one from;",
+  "an event-triggered obligation whose trigger state the register does not record;",
+  "an event-triggered obligation recorded as occurred with no due date stated against it;",
+  "a periodic report with no reporting period credited;",
+  "an obligation type this rulebook does not carry;",
+  "a condition state this rulebook does not carry, or a register with no readable register date."
+ ],
+
+ "never": "This rulebook decides a STATUS. It does not authorise, file, submit, notify, escalate, clear, close or renew anything, and nothing in this kit does either. A qualified person reads the permit."
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>sanction-screen &mdash; is the alert and the watchlist entry the same party?</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Compare a screening alert against the watchlist entry it fired on</h1>
+    <p class="sub">One alert review sheet, one model call, a field table &mdash; plus an
+      adjudication taken afterwards, in pure code, from eight of the extracted values. The verdict
+      is an identifier comparison with a stopping order: is a strong identifier of the
+      <em>same type</em> on both records and equal, is one there and different, then does a
+      comparable moderate identifier conflict, then do enough of them agree &mdash; and otherwise
+      the file does not decide. The names, the nationalities, the screening engine&rsquo;s own
+      match score and the analyst&rsquo;s note are all on the sheet, and none of them decides
+      anything.</p>
+  </header>
+
+  <div class="warn">
+    <strong>This kit clears nothing, blocks nothing and files nothing.</strong>
+    No alert is closed, no party is designated or de-designated, no account is frozen or released,
+    no payment is stopped or let through, and no report of any kind is made to anybody. It proposes
+    an adjudication with the deciding identifier attached, names what it could not determine, and
+    <strong>a human makes the call.</strong>
+    <br><br>
+    <strong>The rulebook shipped with this kit is illustrative and is not an authority</strong>
+    &mdash; it was written for this kit and reproduces no sanctions programme, designation list,
+    supervisor&rsquo;s guidance or vendor tuning. <strong>Every name, list, programme, country,
+    place and identifier in this corpus is invented</strong>, and no real list, authority,
+    programme, jurisdiction or person is named anywhere in it. Replace the rulebook with your own
+    before you decide anything real by it.
+  </div>
+
+  <div class="bar">
+    <select id="doc" aria-label="Screening alert"></select>
+    <button id="go" type="button">Adjudicate</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="panel">
+    <div class="ph"><span>Field table</span>
+      <span class="k kf" id="k-filled">&mdash;</span>
+      <span class="k kn" id="k-missing">&mdash;</span>
+      <span class="k ks" id="k-span">&mdash;</span></div>
+    <table id="tbl">
+      <thead><tr><th>Field</th><th>Value</th><th>Source span</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>Decided downstream, pure code</span></div>
+    <table>
+      <tbody>
+        <tr><td class="n">Adjudication</td><td id="c-verdict">&mdash;</td></tr>
+        <tr><td class="n">Deciding identifier</td><td id="c-deciding">&mdash;</td></tr>
+        <tr><td class="n">Why</td><td id="c-reason">&mdash;</td></tr>
+        <tr><td class="n">What would settle it</td><td id="c-settle">&mdash;</td></tr>
+        <tr><td class="n">Account status</td><td id="c-status">&mdash;</td></tr>
+        <tr><td class="n">Put in front of a person</td><td id="c-flag">&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot">The escalation flag is a <strong>business condition</strong>, not a check on the
+    model: <code>needs_escalation</code> fires when <code>verdict</code> is anything other than
+    <code>not_a_match</code> <em>and</em> <code>account_status</code> is <code>live</code>. A
+    pending onboarding can wait for a person to work the alert; the same verdict on a live account
+    means money is moving for a party nobody has adjudicated.
+    <code>insufficient_information</code> counts here too &mdash; an alert nobody can decide, on an
+    account that is already running, is precisely the one to put in front of a human, and treating
+    &ldquo;cannot tell&rdquo; as a clearance is the worst thing anything in this kit could do.
+    <strong>It orders a worklist and nothing else</strong> &mdash; it does not freeze the account,
+    stop a payment, close or escalate a case, or notify anybody. <strong>And it is this
+    kit&rsquo;s own simplification, not anybody&rsquo;s real alert-handling policy</strong> &mdash;
+    no supervisor&rsquo;s guidance, institution&rsquo;s procedure or regulatory rule was consulted,
+    and none is reproduced.</p>
+
+  <details class="doc">
+    <summary>The alert review sheet this was read from</summary>
+    <pre id="text"></pre>
+  </details>
+
+  <details class="doc">
+    <summary>The shipped adjudication rulebook &mdash; illustrative, not an authority</summary>
+    <div id="rulebook" class="mx"></div>
+  </details>
+</div>
+<script src="/app.js"></script>

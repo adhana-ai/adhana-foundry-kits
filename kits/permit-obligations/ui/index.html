@@ -1,0 +1,82 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>permit-obligations &mdash; which permit obligations need action, by when, and which cannot be determined</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>Which permit obligations need action, by when, and which cannot be determined</h1>
+    <p class="sub">One site&rsquo;s obligation register, one model call, a row per condition &mdash;
+      plus a status decided afterwards, in pure code, from the values that came back. The rule reads
+      five things in order: is the register readable, does the condition still bind, has the trigger
+      fired, what is the due date, and where does that date sit against the register date and the
+      type&rsquo;s own action window. The site&rsquo;s own <em>register flag</em> is on every row,
+      is copied out, and decides nothing.</p>
+  </header>
+
+  <div class="warn">
+    <strong>This kit watches nothing.</strong> It reads one register that somebody else assembled,
+    as at the date printed on it, and proposes a worklist. It does not poll, subscribe, schedule,
+    alert, escalate, file, submit, renew or clear, and nothing in it runs unattended.
+    <strong>It proposes a status with its reasoning and names what it could not determine; it never
+    authorises, files or clears anything.</strong> A qualified person reads the permit.
+    <strong>The rulebook shipped with this kit is illustrative and is not an authority</strong>
+    &mdash; it was written for this kit and reproduces no permit, licence condition,
+    regulator&rsquo;s guidance or statutory schedule. Replace it with your own before you put a
+    single obligation on a worklist by it.
+  </div>
+
+  <div class="bar">
+    <select id="doc" aria-label="Obligation register"></select>
+    <button id="go" type="button">Read register</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="panel">
+    <div class="ph"><span>Register</span>
+      <span class="k kf" id="k-rows">&mdash;</span>
+      <span class="k ks" id="k-span">&mdash;</span></div>
+    <table>
+      <tbody id="toprows"></tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>Proposed worklist &mdash; decided downstream, pure code</span>
+      <span class="k kw" id="k-work">&mdash;</span>
+      <span class="k kn" id="k-nd">&mdash;</span></div>
+    <table id="tbl">
+      <thead><tr><th>Condition</th><th>Type</th><th>Status</th><th>Due</th><th>Why</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>Escalation</span></div>
+    <table>
+      <tbody>
+        <tr><td class="n">Look at this register first</td><td id="c-esc">&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot">The escalation flag is a <strong>business condition</strong>, not a check on the
+    model: it fires when at least one obligation the rulebook makes <code>overdue</code> carries a
+    <code>register flag</code> of <code>on track</code> or <code>closed</code>. An overdue row
+    already flagged <code>attention</code> is a site that knows about it. An overdue row the
+    site&rsquo;s own tracker calls fine is the other thing entirely &mdash; nobody is looking, and
+    chasing the site&rsquo;s own list will never surface it. <strong>This is the kit&rsquo;s own
+    simplification, not any real escalation policy</strong> &mdash; no permit, regulator&rsquo;s
+    guidance or operator&rsquo;s procedure was consulted, and none is reproduced.</p>
+
+  <details class="doc">
+    <summary>The obligation register this was read from</summary>
+    <pre id="text"></pre>
+  </details>
+
+  <details class="doc">
+    <summary>The shipped rulebook &mdash; illustrative, not an authority</summary>
+    <div id="rulebook" class="mx"></div>
+  </details>
+</div>
+<script src="/app.js"></script>

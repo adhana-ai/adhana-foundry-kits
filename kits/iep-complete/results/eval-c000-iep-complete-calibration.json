@@ -1,0 +1,1225 @@
+{
+ "run_id": "c000-iep-complete-calibration",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 6,
+ "failures": [],
+ "latency_p50_ms": 9881,
+ "latency_p95_ms": 11303,
+ "latency_ms_all": [
+  9850,
+  9106,
+  10931,
+  11303,
+  9881,
+  8681
+ ],
+ "wall_seconds": 11.3,
+ "workers": 12,
+ "input_tokens_total": 21625,
+ "output_tokens_total": 6884,
+ "output_tokens_max": 1258,
+ "reasoning_tokens_total": 5903,
+ "scores": {
+  "extraction_cells": 84,
+  "extraction_accuracy": 1.0,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 23,
+  "values_with_span": 23,
+  "non_spannable_fields": [
+   "accommodations",
+   "annual_goals",
+   "checklist_claim",
+   "participation_rationale",
+   "plan_outcome",
+   "plan_status",
+   "present_levels",
+   "progress_measurement",
+   "services",
+   "transition"
+  ],
+  "span_rate": 1.0,
+  "component_state_accuracy_pct": 100.0,
+  "passed_unmeasurable_count": 0,
+  "passed_unmeasurable_rate_pct": 0.0,
+  "missed_absent_count": 0,
+  "missed_absent_rate_pct": 0.0,
+  "false_defect_count": 0,
+  "false_defect_rate_pct": 0.0,
+  "plan_outcome_accuracy_pct": 100.0,
+  "unaddressed_count": 0,
+  "unaddressed_rate_pct": 0.0,
+  "worklist_recall_pct": 100.0,
+  "worklist_precision_pct": 100.0,
+  "self_consistency_disagreements": 0
+ },
+ "by_field": {
+  "plan_id": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "pupil_ref": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "pupil_age": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "plan_status": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "present_levels": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "annual_goals": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "progress_measurement": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "services": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "accommodations": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "participation_rationale": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "transition": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "checklist_claim": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "case_manager_note": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "plan_outcome": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "IEP-0001",
+   "field": "plan_id",
+   "verdict": "hit",
+   "got": "PLN-BF-31487",
+   "want": "PLN-BF-31487",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "pupil_ref",
+   "verdict": "hit",
+   "got": "PUP-L96-9836",
+   "want": "PUP-L96-9836",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "pupil_age",
+   "verdict": "hit",
+   "got": 16,
+   "want": 16,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "plan_status",
+   "verdict": "hit",
+   "got": "draft",
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "present_levels",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "annual_goals",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "progress_measurement",
+   "verdict": "hit",
+   "got": "present_not_measurable",
+   "want": "present_not_measurable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "services",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "accommodations",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "participation_rationale",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "transition",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "checklist_claim",
+   "verdict": "hit",
+   "got": "not_completed",
+   "want": "not_completed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "case_manager_note",
+   "verdict": "hit",
+   "got": "Reviewed with the team; everything is in place and ready to sign.",
+   "want": "Reviewed with the team; everything is in place and ready to sign.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0001",
+   "field": "plan_outcome",
+   "verdict": "hit",
+   "got": "not_measurable",
+   "want": "not_measurable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "plan_id",
+   "verdict": "hit",
+   "got": "PLN-HG-26126",
+   "want": "PLN-HG-26126",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "pupil_ref",
+   "verdict": "hit",
+   "got": "PUP-G85-9315",
+   "want": "PUP-G85-9315",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "pupil_age",
+   "verdict": "hit",
+   "got": 15,
+   "want": 15,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "plan_status",
+   "verdict": "hit",
+   "got": "draft",
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "present_levels",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "annual_goals",
+   "verdict": "hit",
+   "got": "present_not_measurable",
+   "want": "present_not_measurable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "progress_measurement",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "services",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "accommodations",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "participation_rationale",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "transition",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "checklist_claim",
+   "verdict": "hit",
+   "got": "all_present",
+   "want": "all_present",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "case_manager_note",
+   "verdict": "hit",
+   "got": "Something looked thin here -- flagged for a second read before it goes out.",
+   "want": "Something looked thin here -- flagged for a second read before it goes out.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0002",
+   "field": "plan_outcome",
+   "verdict": "hit",
+   "got": "not_measurable",
+   "want": "not_measurable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "plan_id",
+   "verdict": "hit",
+   "got": "PLN-LJ-91938",
+   "want": "PLN-LJ-91938",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "pupil_ref",
+   "verdict": "hit",
+   "got": "PUP-M53-8469",
+   "want": "PUP-M53-8469",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "pupil_age",
+   "verdict": "hit",
+   "got": 13,
+   "want": 13,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "plan_status",
+   "verdict": "hit",
+   "got": "in_effect",
+   "want": "in_effect",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "present_levels",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "annual_goals",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "progress_measurement",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "services",
+   "verdict": "hit",
+   "got": "present_not_measurable",
+   "want": "present_not_measurable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "accommodations",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "participation_rationale",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "transition",
+   "verdict": "hit",
+   "got": "not_required",
+   "want": "not_required",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "checklist_claim",
+   "verdict": "hit",
+   "got": "all_present",
+   "want": "all_present",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "case_manager_note",
+   "verdict": "hit",
+   "got": "The previous version of this plan is disputed by the family; under manual review this term.",
+   "want": "The previous version of this plan is disputed by the family; under manual review this term.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0003",
+   "field": "plan_outcome",
+   "verdict": "hit",
+   "got": "not_measurable",
+   "want": "not_measurable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "plan_id",
+   "verdict": "hit",
+   "got": "PLN-EK-32399",
+   "want": "PLN-EK-32399",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "pupil_ref",
+   "verdict": "hit",
+   "got": "PUP-R48-5173",
+   "want": "PUP-R48-5173",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "pupil_age",
+   "verdict": "hit",
+   "got": 14,
+   "want": 14,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "plan_status",
+   "verdict": "hit",
+   "got": "draft",
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "present_levels",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "annual_goals",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "progress_measurement",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "services",
+   "verdict": "hit",
+   "got": "absent",
+   "want": "absent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "accommodations",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "participation_rationale",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "transition",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "checklist_claim",
+   "verdict": "hit",
+   "got": "not_completed",
+   "want": "not_completed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "case_manager_note",
+   "verdict": "hit",
+   "got": "Escalated to the programme lead; the write-up did not sit right with me.",
+   "want": "Escalated to the programme lead; the write-up did not sit right with me.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0004",
+   "field": "plan_outcome",
+   "verdict": "hit",
+   "got": "components_missing",
+   "want": "components_missing",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "plan_id",
+   "verdict": "hit",
+   "got": "PLN-VF-59003",
+   "want": "PLN-VF-59003",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "pupil_ref",
+   "verdict": "hit",
+   "got": "PUP-A44-1926",
+   "want": "PUP-A44-1926",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "pupil_age",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "plan_status",
+   "verdict": "hit",
+   "got": "draft",
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "present_levels",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "annual_goals",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "progress_measurement",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "services",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "accommodations",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "participation_rationale",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "transition",
+   "verdict": "hit",
+   "got": "absent",
+   "want": "absent",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "checklist_claim",
+   "verdict": "hit",
+   "got": "all_present",
+   "want": "all_present",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "case_manager_note",
+   "verdict": "hit",
+   "got": "Standard annual rewrite for this pupil. Paperwork looked in order to me.",
+   "want": "Standard annual rewrite for this pupil. Paperwork looked in order to me.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0005",
+   "field": "plan_outcome",
+   "verdict": "hit",
+   "got": "undetermined",
+   "want": "undetermined",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "plan_id",
+   "verdict": "hit",
+   "got": "PLN-TW-75574",
+   "want": "PLN-TW-75574",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "pupil_ref",
+   "verdict": "hit",
+   "got": "PUP-S68-6903",
+   "want": "PUP-S68-6903",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "pupil_age",
+   "verdict": "hit",
+   "got": 12,
+   "want": 12,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "plan_status",
+   "verdict": "hit",
+   "got": "draft",
+   "want": "draft",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "present_levels",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "annual_goals",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "progress_measurement",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "services",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "accommodations",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "participation_rationale",
+   "verdict": "hit",
+   "got": "present_complete",
+   "want": "present_complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "transition",
+   "verdict": "hit",
+   "got": "not_required",
+   "want": "not_required",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "checklist_claim",
+   "verdict": "hit",
+   "got": "all_present",
+   "want": "all_present",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "case_manager_note",
+   "verdict": "hit",
+   "got": "No concerns from my side. Happy for this one to go to the meeting.",
+   "want": "No concerns from my side. Happy for this one to go to the meeting.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "IEP-0006",
+   "field": "plan_outcome",
+   "verdict": "hit",
+   "got": "complete",
+   "want": "complete",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "verdict_scores": {
+  "component_cells": 42,
+  "component_correct": 42,
+  "component_accuracy": 1.0,
+  "component_confusion": {
+   "present_complete": {
+    "present_complete": 35
+   },
+   "present_not_measurable": {
+    "present_not_measurable": 3
+   },
+   "not_required": {
+    "not_required": 2
+   },
+   "absent": {
+    "absent": 2
+   }
+  },
+  "component_defect_detection": {
+   "true_positive": 5,
+   "false_positive": 0,
+   "true_negative": 37,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (this component needs work: absent, or present and not measurable)",
+   "note": "Every (plan, component) pair, collapsed onto the one question a worklist row answers. A false negative is a component the rulebook would have flagged and the run cleared; a false positive is a row somebody has to clear for nothing."
+  },
+  "passed_unmeasurable": [],
+  "passed_unmeasurable_count": 0,
+  "passed_unmeasurable_of": 3,
+  "passed_unmeasurable_rate_pct": 0.0,
+  "missed_absent": [],
+  "missed_absent_count": 0,
+  "missed_absent_of": 2,
+  "missed_absent_rate_pct": 0.0,
+  "false_defect": [],
+  "false_defect_count": 0,
+  "false_defect_of": 37,
+  "false_defect_rate_pct": 0.0,
+  "plan_outcome_accuracy": 1.0,
+  "plan_outcome_correct": 6,
+  "plan_outcome_rows": 6,
+  "plan_outcome_unanswered": 0,
+  "confusion": {
+   "not_measurable": {
+    "not_measurable": 3
+   },
+   "components_missing": {
+    "components_missing": 1
+   },
+   "undetermined": {
+    "undetermined": 1
+   },
+   "complete": {
+    "complete": 1
+   }
+  },
+  "needs_work": {
+   "true_positive": 5,
+   "false_positive": 0,
+   "true_negative": 1,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (somebody has to open this plan)",
+   "note": "The four-way outcome collapsed onto the one distinction a reviewer acts on. A false negative here is a plan the shipped rulebook would have put on the worklist and the run cleared.",
+   "rows": [
+    {
+     "doc": "IEP-0001",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "IEP-0002",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "IEP-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "IEP-0004",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "IEP-0005",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "IEP-0006",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "unaddressed": [],
+  "unaddressed_count": 0,
+  "unaddressed_rate_pct": 0.0,
+  "worklist_flag": {
+   "true_positive": 1,
+   "false_positive": 0,
+   "true_negative": 5,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (not complete and already in effect)",
+   "note": "on_worklist compares the run's own outcome and plan_status against the same rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the consistency diagnostic below, which does not.",
+   "rows": [
+    {
+     "doc": "IEP-0001",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "IEP-0002",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "IEP-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "IEP-0004",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "IEP-0005",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "IEP-0006",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_values": 0,
+   "outcome_errors": 0,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 0,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the rulebook over the run's OWN seven component states and counts the replies whose stated outcome disagrees with it. It uses no gold, so a forker can compute it on unlabelled plans -- but it is blind to the failure this kit cares about most: a reply that calls an unmeasurable goal complete and then computes the outcome perfectly from that reading is entirely self-consistent and entirely wrong."
+  },
+  "rows": [
+   {
+    "doc": "IEP-0001",
+    "want": "not_measurable",
+    "got": "not_measurable",
+    "correct": true
+   },
+   {
+    "doc": "IEP-0002",
+    "want": "not_measurable",
+    "got": "not_measurable",
+    "correct": true
+   },
+   {
+    "doc": "IEP-0003",
+    "want": "not_measurable",
+    "got": "not_measurable",
+    "correct": true
+   },
+   {
+    "doc": "IEP-0004",
+    "want": "components_missing",
+    "got": "components_missing",
+    "correct": true
+   },
+   {
+    "doc": "IEP-0005",
+    "want": "undetermined",
+    "got": "undetermined",
+    "correct": true
+   },
+   {
+    "doc": "IEP-0006",
+    "want": "complete",
+    "got": "complete",
+    "correct": true
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3529
+  },
+  {
+   "name": "component rulebook",
+   "chars": 4545
+  },
+  {
+   "name": "component states",
+   "chars": 1124
+  },
+  {
+   "name": "field schema",
+   "chars": 3782
+  },
+  {
+   "name": "plan sections",
+   "chars": 2431
+  }
+ ],
+ "sections_used": [
+  "Plan",
+  "Pupil Reference",
+  "Pupil Age",
+  "Plan Status",
+  "Present Levels of Performance",
+  "Annual Goals",
+  "Progress Measurement and Reporting",
+  "Services",
+  "Accommodations",
+  "Participation with Peers",
+  "Transition",
+  "Checklist Completed By",
+  "Case Manager Note"
+ ],
+ "raw_text": "{\n  \"plan_id\": \"PLN-BF-31487\",\n  \"pupil_ref\": \"PUP-L96-9836\",\n  \"pupil_age\": 16,\n  \"plan_status\": \"draft\",\n  \"present_levels\": \"present_complete\",\n  \"annual_goals\": \"present_complete\",\n  \"progress_measurement\": \"present_not_measurable\",\n  \"services\": \"present_complete\",\n  \"accommodations\": \"present_complete\",\n  \"participation_rationale\": \"present_complete\",\n  \"transition\": \"present_complete\",\n  \"checklist_claim\": \"not_completed\",\n  \"case_manager_note\": \"Reviewed with the team; everything is in place and ready to sign.\",\n  \"plan_outcome\": \"not_measurable\"\n}",
+ "max_tokens": 16000,
+ "thinking": null
+}

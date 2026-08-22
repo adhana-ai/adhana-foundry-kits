@@ -91,10 +91,17 @@ def main():
     # (429/5xx) with backoff, so nothing new was added here for that — concurrency just makes
     # hitting that path more likely than the old one-at-a-time loop ever did. `pool.map` preserves
     # doc order for the prints/`first` sample below even though completion order is not
-    # guaranteed. EVAL_WORKERS is the one knob to raise if a real run shows headroom — no rate
-    # limit for this provider is documented anywhere in this repo, so the default stays
-    # conservative rather than guessed high.
-    workers = 1 if (a.stub or a.baseline) else int(os.environ.get("EVAL_WORKERS", "5"))
+    # guaranteed. EVAL_WORKERS is the one knob to raise if a real run shows headroom.
+    #
+    # ⚑ THE DEFAULT WENT 5 -> 12 ON 2026-08-22, AND THE REASON IS THAT THE OLD REASON EXPIRED.
+    # It was 5 because no concurrency ceiling was documented anywhere in this repo, and a
+    # guessed-high default is how a shared key gets rate-limited for everybody using it. A ceiling
+    # is documented now, it is account-level, and it is two orders of magnitude above this number —
+    # so 5 had stopped being conservative and had merely become stale. 12 is still far below the
+    # limit: it is chosen to be polite to whichever provider a forker points this at, not to be the
+    # most the wire will carry. If you hold the key and know your own ceiling, raise it with the
+    # environment variable and change nothing else.
+    workers = 1 if (a.stub or a.baseline) else int(os.environ.get("EVAL_WORKERS", "12"))
     items = list(enumerate(docs, 1))
     if workers > 1:
         print("  running %d docs with %d concurrent workers" % (len(items), workers))

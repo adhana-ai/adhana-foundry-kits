@@ -1,0 +1,3748 @@
+{
+ "run_id": "c000-permit-obligations-calibration",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 6,
+ "obligations": 30,
+ "failures": [],
+ "latency_p50_ms": 5123,
+ "latency_p95_ms": 11949,
+ "latency_ms_all": [
+  4188,
+  5123,
+  4026,
+  11949,
+  5850,
+  4161
+ ],
+ "wall_seconds": 12.0,
+ "input_tokens_total": 12879,
+ "output_tokens_total": 5923,
+ "output_tokens_max": 2097,
+ "reasoning_tokens_total": 3588,
+ "scores": {
+  "extraction_cells": 258,
+  "extraction_accuracy": 1.0,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 78,
+  "values_with_span": 78,
+  "non_spannable_fields": [
+   "condition_state",
+   "obligation_type",
+   "register_flag",
+   "trigger_state"
+  ],
+  "span_rate": 1.0,
+  "row_recall_pct": 100.0,
+  "spurious_row_count": 0,
+  "false_alarm_rate_pct": 0.0,
+  "false_alarm_count": 0,
+  "missed_action_count": 0,
+  "missed_action_rate_pct": 0.0,
+  "worklist_raised": 14,
+  "worklist_precision_pct": 100.0,
+  "worklist_recall_pct": 100.0,
+  "status_accuracy_pct": 100.0,
+  "due_date_accuracy_pct": 100.0,
+  "due_dates_scored": 19,
+  "not_determinable_recall_pct": 100.0,
+  "not_determinable_precision_pct": 100.0,
+  "escalate_recall_pct": 100.0,
+  "escalate_precision_pct": 100.0,
+  "register_flag_disagreements": 8
+ },
+ "by_field": {
+  "site_id": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "permit_no": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "register_date": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "condition_id": {
+   "hit": 30,
+   "miss": 0,
+   "wrong": 0
+  },
+  "obligation_type": {
+   "hit": 30,
+   "miss": 0,
+   "wrong": 0
+  },
+  "condition_state": {
+   "hit": 30,
+   "miss": 0,
+   "wrong": 0
+  },
+  "last_done": {
+   "hit": 30,
+   "miss": 0,
+   "wrong": 0
+  },
+  "period_credited": {
+   "hit": 30,
+   "miss": 0,
+   "wrong": 0
+  },
+  "stated_due": {
+   "hit": 30,
+   "miss": 0,
+   "wrong": 0
+  },
+  "trigger_state": {
+   "hit": 30,
+   "miss": 0,
+   "wrong": 0
+  },
+  "register_flag": {
+   "hit": 30,
+   "miss": 0,
+   "wrong": 0
+  }
+ },
+ "rows": {
+  "expected": 30,
+  "found": 30,
+  "missing": 0,
+  "spurious": 0,
+  "spurious_ids": [],
+  "row_recall_pct": 100.0
+ },
+ "cells": [
+  {
+   "doc": "REG-0001",
+   "condition": null,
+   "field": "site_id",
+   "verdict": "hit",
+   "got": "SITE-NR-9441",
+   "want": "SITE-NR-9441",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": null,
+   "field": "permit_no",
+   "verdict": "hit",
+   "got": "MP-9700-J",
+   "want": "MP-9700-J",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": null,
+   "field": "register_date",
+   "verdict": "hit",
+   "got": "2026-01-17",
+   "want": "2026-01-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-11.9",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-11.9",
+   "want": "C-11.9",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-11.9",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "monitoring_reading",
+   "want": "monitoring_reading",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-11.9",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-11.9",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2025-12-05",
+   "want": "2025-12-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-11.9",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-11.9",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-11.9",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-11.9",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "closed",
+   "want": "closed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-3.6",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-3.6",
+   "want": "C-3.6",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-3.6",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "periodic_report",
+   "want": "periodic_report",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-3.6",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-3.6",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2025-11-04",
+   "want": "2025-11-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-3.6",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": "2023",
+   "want": "2023",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-3.6",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-3.6",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-3.6",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "on track",
+   "want": "on track",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-8.1",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-8.1",
+   "want": "C-8.1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-8.1",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "financial_assurance",
+   "want": "financial_assurance",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-8.1",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-8.1",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2024-11-03",
+   "want": "2024-11-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-8.1",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-8.1",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-8.1",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-8.1",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-9.3",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-9.3",
+   "want": "C-9.3",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-9.3",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "periodic_report",
+   "want": "periodic_report",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-9.3",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-9.3",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2025-11-04",
+   "want": "2025-11-04",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-9.3",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": "2023",
+   "want": "2023",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-9.3",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-9.3",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0001",
+   "condition": "C-9.3",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": null,
+   "field": "site_id",
+   "verdict": "hit",
+   "got": "SITE-SR-8102",
+   "want": "SITE-SR-8102",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": null,
+   "field": "permit_no",
+   "verdict": "hit",
+   "got": "MP-4585-D",
+   "want": "MP-4585-D",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": null,
+   "field": "register_date",
+   "verdict": "hit",
+   "got": "2026-02-07",
+   "want": "2026-02-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-10.5",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-10.5",
+   "want": "C-10.5",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-10.5",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "financial_assurance",
+   "want": "financial_assurance",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-10.5",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-10.5",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2025-03-29",
+   "want": "2025-03-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-10.5",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-10.5",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-10.5",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-10.5",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-11.7",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-11.7",
+   "want": "C-11.7",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-11.7",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "event_triggered",
+   "want": "event_triggered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-11.7",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-11.7",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-11.7",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-11.7",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-11.7",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_occurred",
+   "want": "not_occurred",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-11.7",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "closed",
+   "want": "closed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-13.7",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-13.7",
+   "want": "C-13.7",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-13.7",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "monitoring_reading",
+   "want": "monitoring_reading",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-13.7",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-13.7",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2025-11-22",
+   "want": "2025-11-22",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-13.7",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-13.7",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-13.7",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-13.7",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "closed",
+   "want": "closed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.1",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-8.1",
+   "want": "C-8.1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.1",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "financial_assurance",
+   "want": "financial_assurance",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.1",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.1",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2025-01-18",
+   "want": "2025-01-18",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.1",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.1",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.1",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.1",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.8",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-8.8",
+   "want": "C-8.8",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.8",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "monitoring_reading",
+   "want": "monitoring_reading",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.8",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.8",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2025-08-14",
+   "want": "2025-08-14",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.8",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.8",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.8",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-8.8",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-9.9",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-9.9",
+   "want": "C-9.9",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-9.9",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "inspection",
+   "want": "inspection",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-9.9",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-9.9",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2025-10-08",
+   "want": "2025-10-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-9.9",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-9.9",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-9.9",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0009",
+   "condition": "C-9.9",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "on track",
+   "want": "on track",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": null,
+   "field": "site_id",
+   "verdict": "hit",
+   "got": "SITE-WB-7194",
+   "want": "SITE-WB-7194",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": null,
+   "field": "permit_no",
+   "verdict": "hit",
+   "got": "MP-6463-D",
+   "want": "MP-6463-D",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": null,
+   "field": "register_date",
+   "verdict": "hit",
+   "got": "2026-03-31",
+   "want": "2026-03-31",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.3",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-2.3",
+   "want": "C-2.3",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.3",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "monitoring_reading",
+   "want": "monitoring_reading",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.3",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.3",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2026-03-17",
+   "want": "2026-03-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.3",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.3",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.3",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.3",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "on track",
+   "want": "on track",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.5",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-2.5",
+   "want": "C-2.5",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.5",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "monitoring_reading",
+   "want": "monitoring_reading",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.5",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.5",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2026-02-17",
+   "want": "2026-02-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.5",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.5",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.5",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-2.5",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "on track",
+   "want": "on track",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-3.1",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-3.1",
+   "want": "C-3.1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-3.1",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "event_triggered",
+   "want": "event_triggered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-3.1",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-3.1",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-3.1",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-3.1",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-3.1",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_occurred",
+   "want": "not_occurred",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-3.1",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-5.1",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-5.1",
+   "want": "C-5.1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-5.1",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "financial_assurance",
+   "want": "financial_assurance",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-5.1",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-5.1",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2025-10-29",
+   "want": "2025-10-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-5.1",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-5.1",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-5.1",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0017",
+   "condition": "C-5.1",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "on track",
+   "want": "on track",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": null,
+   "field": "site_id",
+   "verdict": "hit",
+   "got": "SITE-HR-7897",
+   "want": "SITE-HR-7897",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": null,
+   "field": "permit_no",
+   "verdict": "hit",
+   "got": "MP-3769-F",
+   "want": "MP-3769-F",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": null,
+   "field": "register_date",
+   "verdict": "hit",
+   "got": "2026-04-25",
+   "want": "2026-04-25",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-10.8",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-10.8",
+   "want": "C-10.8",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-10.8",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "monitoring_reading",
+   "want": "monitoring_reading",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-10.8",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-10.8",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2026-02-09",
+   "want": "2026-02-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-10.8",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-10.8",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-10.8",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-10.8",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.1",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-11.1",
+   "want": "C-11.1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.1",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "event_triggered",
+   "want": "event_triggered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.1",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.1",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.1",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.1",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": "2026-04-02",
+   "want": "2026-04-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.1",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "occurred",
+   "want": "occurred",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.1",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "closed",
+   "want": "closed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.5",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-11.5",
+   "want": "C-11.5",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.5",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "event_triggered",
+   "want": "event_triggered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.5",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.5",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.5",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.5",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": "2026-02-25",
+   "want": "2026-02-25",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.5",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "occurred",
+   "want": "occurred",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-11.5",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-12.7",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-12.7",
+   "want": "C-12.7",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-12.7",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "periodic_report",
+   "want": "periodic_report",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-12.7",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-12.7",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2026-03-15",
+   "want": "2026-03-15",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-12.7",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": "2025",
+   "want": "2025",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-12.7",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-12.7",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-12.7",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "on track",
+   "want": "on track",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-2.1",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-2.1",
+   "want": "C-2.1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-2.1",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "event_triggered",
+   "want": "event_triggered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-2.1",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-2.1",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-2.1",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-2.1",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-2.1",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_occurred",
+   "want": "not_occurred",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-2.1",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "closed",
+   "want": "closed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-6.1",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-6.1",
+   "want": "C-6.1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-6.1",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "monitoring_reading",
+   "want": "monitoring_reading",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-6.1",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "waived",
+   "want": "waived",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-6.1",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2026-01-11",
+   "want": "2026-01-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-6.1",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-6.1",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-6.1",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-6.1",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "closed",
+   "want": "closed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-7.8",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-7.8",
+   "want": "C-7.8",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-7.8",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "event_triggered",
+   "want": "event_triggered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-7.8",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-7.8",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-7.8",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-7.8",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-7.8",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_occurred",
+   "want": "not_occurred",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0025",
+   "condition": "C-7.8",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "closed",
+   "want": "closed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": null,
+   "field": "site_id",
+   "verdict": "hit",
+   "got": "SITE-KH-5472",
+   "want": "SITE-KH-5472",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": null,
+   "field": "permit_no",
+   "verdict": "hit",
+   "got": "MP-6581-C",
+   "want": "MP-6581-C",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": null,
+   "field": "register_date",
+   "verdict": "hit",
+   "got": "2026-05-22",
+   "want": "2026-05-22",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-12.8",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-12.8",
+   "want": "C-12.8",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-12.8",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "periodic_report",
+   "want": "periodic_report",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-12.8",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-12.8",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2026-04-14",
+   "want": "2026-04-14",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-12.8",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": "2024",
+   "want": "2024",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-12.8",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-12.8",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-12.8",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-13.9",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-13.9",
+   "want": "C-13.9",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-13.9",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "monitoring_reading",
+   "want": "monitoring_reading",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-13.9",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-13.9",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2026-04-26",
+   "want": "2026-04-26",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-13.9",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-13.9",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-13.9",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-13.9",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "on track",
+   "want": "on track",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-4.6",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-4.6",
+   "want": "C-4.6",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-4.6",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "event_triggered",
+   "want": "event_triggered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-4.6",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-4.6",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-4.6",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-4.6",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": "2026-06-02",
+   "want": "2026-06-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-4.6",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "occurred",
+   "want": "occurred",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-4.6",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-8.1",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-8.1",
+   "want": "C-8.1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-8.1",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "periodic_report",
+   "want": "periodic_report",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-8.1",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-8.1",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2026-03-27",
+   "want": "2026-03-27",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-8.1",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": "2025",
+   "want": "2025",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-8.1",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-8.1",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0033",
+   "condition": "C-8.1",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "on track",
+   "want": "on track",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": null,
+   "field": "site_id",
+   "verdict": "hit",
+   "got": "SITE-NR-1449",
+   "want": "SITE-NR-1449",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": null,
+   "field": "permit_no",
+   "verdict": "hit",
+   "got": "MP-1325-D",
+   "want": "MP-1325-D",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": null,
+   "field": "register_date",
+   "verdict": "hit",
+   "got": "2026-07-07",
+   "want": "2026-07-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-10.6",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-10.6",
+   "want": "C-10.6",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-10.6",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "event_triggered",
+   "want": "event_triggered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-10.6",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-10.6",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-10.6",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-10.6",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": "2026-05-27",
+   "want": "2026-05-27",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-10.6",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "occurred",
+   "want": "occurred",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-10.6",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.1",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-12.1",
+   "want": "C-12.1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.1",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "monitoring_reading",
+   "want": "monitoring_reading",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.1",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.1",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2026-06-03",
+   "want": "2026-06-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.1",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.1",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.1",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.1",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "on track",
+   "want": "on track",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.4",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-12.4",
+   "want": "C-12.4",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.4",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "event_triggered",
+   "want": "event_triggered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.4",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.4",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.4",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.4",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.4",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_recorded",
+   "want": "not_recorded",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.4",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "on track",
+   "want": "on track",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.5",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-12.5",
+   "want": "C-12.5",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.5",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "event_triggered",
+   "want": "event_triggered",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.5",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.5",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.5",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.5",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": "2026-07-30",
+   "want": "2026-07-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.5",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "occurred",
+   "want": "occurred",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-12.5",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "attention",
+   "want": "attention",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-13.1",
+   "field": "condition_id",
+   "verdict": "hit",
+   "got": "C-13.1",
+   "want": "C-13.1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-13.1",
+   "field": "obligation_type",
+   "verdict": "hit",
+   "got": "financial_assurance",
+   "want": "financial_assurance",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-13.1",
+   "field": "condition_state",
+   "verdict": "hit",
+   "got": "active",
+   "want": "active",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-13.1",
+   "field": "last_done",
+   "verdict": "hit",
+   "got": "2026-03-16",
+   "want": "2026-03-16",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-13.1",
+   "field": "period_credited",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-13.1",
+   "field": "stated_due",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-13.1",
+   "field": "trigger_state",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "REG-0041",
+   "condition": "C-13.1",
+   "field": "register_flag",
+   "verdict": "hit",
+   "got": "on track",
+   "want": "on track",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "status_scores": {
+  "status_accuracy": 1.0,
+  "status_correct": 30,
+  "status_rows": 30,
+  "status_unanswered": 0,
+  "confusion": {
+   "not_yet_due": {
+    "not_yet_due": 14
+   },
+   "overdue": {
+    "overdue": 9
+   },
+   "due_in_window": {
+    "due_in_window": 5
+   },
+   "not_binding": {
+    "not_binding": 1
+   },
+   "not_determinable": {
+    "not_determinable": 1
+   }
+  },
+  "worklist": {
+   "true_positive": 14,
+   "false_positive": 0,
+   "true_negative": 16,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (this obligation needs action today)",
+   "note": "The five-way status collapsed onto the one distinction a monitoring desk acts on. A false positive here is a row somebody has to clear by hand for nothing; a false negative is an obligation nobody raised.",
+   "rows": [
+    {
+     "doc": "REG-0001",
+     "condition": "C-11.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-3.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-8.1",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-9.3",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-10.5",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-11.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-13.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-8.1",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-8.8",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-9.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0017",
+     "condition": "C-2.3",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0017",
+     "condition": "C-2.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0017",
+     "condition": "C-3.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0017",
+     "condition": "C-5.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-10.8",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-11.1",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-11.5",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-12.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-2.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-6.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-7.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-12.8",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-13.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-4.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-8.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0041",
+     "condition": "C-10.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0041",
+     "condition": "C-12.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0041",
+     "condition": "C-12.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0041",
+     "condition": "C-12.5",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0041",
+     "condition": "C-13.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "false_alarms": [],
+  "false_alarm_count": 0,
+  "false_alarm_rate_pct": 0.0,
+  "worklist_raised": 14,
+  "missed_actions": [],
+  "missed_action_count": 0,
+  "missed_action_rate_pct": 0.0,
+  "not_determinable": {
+   "true_positive": 1,
+   "false_positive": 0,
+   "true_negative": 29,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (the register does not carry what the rule needs)",
+   "note": "Scored on its own because a monitor that never says 'cannot determine' is guessing, and a monitor that says it everywhere is useless. Both directions matter.",
+   "rows": [
+    {
+     "doc": "REG-0001",
+     "condition": "C-11.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-3.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-8.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-9.3",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-10.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-11.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-13.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-8.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-8.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0009",
+     "condition": "C-9.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0017",
+     "condition": "C-2.3",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0017",
+     "condition": "C-2.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0017",
+     "condition": "C-3.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0017",
+     "condition": "C-5.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-10.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-11.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-11.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-12.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-2.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-6.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "condition": "C-7.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-12.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-13.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-4.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-8.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0041",
+     "condition": "C-10.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0041",
+     "condition": "C-12.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0041",
+     "condition": "C-12.4",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0041",
+     "condition": "C-12.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0041",
+     "condition": "C-13.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "due_dates": {
+   "scored": 19,
+   "correct": 19,
+   "accuracy_pct": 100.0,
+   "note": "Only rows where the due date is DERIVED -- a cycle dated from the last recorded entry, or an annual report dated from the reporting period credited. Rows whose date is stated on the register, and rows where the rule stops before any date, are excluded rather than counted as misses.",
+   "rows": []
+  },
+  "escalate": {
+   "true_positive": 2,
+   "false_positive": 0,
+   "true_negative": 4,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (something already overdue, and the site's own register flag is quiet about it)",
+   "note": "A BUSINESS CONDITION, so unlike the diagnostic below it genuinely needs labels, and saying so is half of what makes the number believable. It is scored against the same rule run over GOLD's own values.",
+   "rows": [
+    {
+     "doc": "REG-0001",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0009",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0017",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0025",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0033",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0041",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "register_flag_diagnostic": {
+   "rows_compared": 30,
+   "disagreements": 8,
+   "disagreement_pct": 26.67,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It compares the site's OWN register flag against the status the rulebook computes from the same row, and uses no gold at all -- so a forker can compute it on registers nobody has labelled. It is blind to a reply that misreads a date and then computes a status consistent with the misreading, and it says nothing about which of the two is right when they disagree."
+  },
+  "rows": [
+   {
+    "doc": "REG-0001",
+    "condition": "C-11.9",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0001",
+    "condition": "C-3.6",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0001",
+    "condition": "C-8.1",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0001",
+    "condition": "C-9.3",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0009",
+    "condition": "C-10.5",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0009",
+    "condition": "C-11.7",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0009",
+    "condition": "C-13.7",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0009",
+    "condition": "C-8.1",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0009",
+    "condition": "C-8.8",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0009",
+    "condition": "C-9.9",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0017",
+    "condition": "C-2.3",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0017",
+    "condition": "C-2.5",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0017",
+    "condition": "C-3.1",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0017",
+    "condition": "C-5.1",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0025",
+    "condition": "C-10.8",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0025",
+    "condition": "C-11.1",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0025",
+    "condition": "C-11.5",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0025",
+    "condition": "C-12.7",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0025",
+    "condition": "C-2.1",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0025",
+    "condition": "C-6.1",
+    "want": "not_binding",
+    "got": "not_binding",
+    "correct": true
+   },
+   {
+    "doc": "REG-0025",
+    "condition": "C-7.8",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0033",
+    "condition": "C-12.8",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0033",
+    "condition": "C-13.9",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0033",
+    "condition": "C-4.6",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0033",
+    "condition": "C-8.1",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0041",
+    "condition": "C-10.6",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0041",
+    "condition": "C-12.1",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0041",
+    "condition": "C-12.4",
+    "want": "not_determinable",
+    "got": "not_determinable",
+    "correct": true
+   },
+   {
+    "doc": "REG-0041",
+    "condition": "C-12.5",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0041",
+    "condition": "C-13.1",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 2247
+  },
+  {
+   "name": "rulebook",
+   "chars": 1879
+  },
+  {
+   "name": "field schema",
+   "chars": 2364
+  },
+  {
+   "name": "register sections",
+   "chars": 1550
+  }
+ ],
+ "sections_used": [
+  "Site",
+  "Permit",
+  "Register Date",
+  "Condition C-9.3",
+  "Condition C-11.9",
+  "Condition C-8.1",
+  "Condition C-3.6"
+ ],
+ "raw_text": "{\"site_id\":\"SITE-NR-9441\",\"permit_no\":\"MP-9700-J\",\"register_date\":\"2026-01-17\",\"obligations\":[{\"condition_id\":\"C-9.3\",\"obligation_type\":\"periodic_report\",\"condition_state\":\"active\",\"last_done\":\"2025-11-04\",\"period_credited\":\"2023\",\"stated_due\":null,\"trigger_state\":\"not_applicable\",\"register_flag\":\"attention\"},{\"condition_id\":\"C-11.9\",\"obligation_type\":\"monitoring_reading\",\"condition_state\":\"active\",\"last_done\":\"2025-12-05\",\"period_credited\":null,\"stated_due\":null,\"trigger_state\":\"not_applicable\",\"register_flag\":\"closed\"},{\"condition_id\":\"C-8.1\",\"obligation_type\":\"financial_assurance\",\"condition_state\":\"active\",\"last_done\":\"2024-11-03\",\"period_credited\":null,\"stated_due\":null,\"trigger_state\":\"not_applicable\",\"register_flag\":\"attention\"},{\"condition_id\":\"C-3.6\",\"obligation_type\":\"periodic_report\",\"condition_state\":\"active\",\"last_done\":\"2025-11-04\",\"period_credited\":\"2023\",\"stated_due\":null,\"trigger_state\":\"not_applicable\",\"register_flag\":\"on track\"}]}",
+ "max_tokens": 16000,
+ "thinking": null
+}

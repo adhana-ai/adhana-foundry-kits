@@ -1,0 +1,162 @@
+{
+ "_README": [
+  "⚠︎ THIS CHECK SET IS ILLUSTRATIVE AND WAS WRITTEN FOR THIS KIT. IT IS NOT AN AUTHORITY.",
+  "It reproduces no real product label, no manufacturer's use instructions, no national or",
+  "regional registration, no approved-use database and no regulator's guidance. Nothing in it was",
+  "copied from, derived from or checked against any such document, because none was consulted.",
+  "",
+  "It is a small, deliberately readable construction whose only job is to make the DECISION SHAPE",
+  "measurable: eight restrictions, read off a label, compared against one proposed application,",
+  "in a fixed precedence order, so that a verdict AND the restriction that decided it are both",
+  "checkable facts rather than opinions.",
+  "",
+  "Replace every check below with the restrictions on your own product's label before you route",
+  "anything real by it. The real authority for any application is the approved label for that",
+  "product in that territory, the conditions of its registration, and a qualified adviser."
+ ],
+
+ "version": "label-restrict-checks-v1",
+
+ "at_the_limit": "EVERY NUMERIC LIMIT HERE IS INCLUSIVE, and that is stated because it is the single most common way to read a label wrong. A rate exactly equal to the maximum is INSIDE the label. A pre-harvest interval of 35 days is satisfied by exactly 35 days to harvest. A buffer of 5 m is satisfied by exactly 5 m. The one check that is NOT inclusive is the season count, and it is not inclusive for a reason: `maximum applications per season: 3` means three in total, so a proposal made when three have ALREADY been applied would be the fourth.",
+
+ "precedence": "The checks run in the order below and STOP at the first one that fires. Two things follow from that and both are load-bearing. First, a HARD restriction outranks a TIMING one: if the crop is not on the label, it does not matter that the pre-harvest interval has not elapsed either — the application must not be made at all, and 'wait a fortnight' is the wrong answer to it. Second, a check whose value is NOT STATED cannot be performed, and a check that cannot be performed stops the walk with `insufficient_information` — you cannot skip past a restriction you were unable to read.",
+
+ "skipped_is_not_unknown": "A SKIPPED CHECK AND AN UNREADABLE ONE ARE DIFFERENT THINGS AND ARE NEVER FOLDED TOGETHER. The re-treatment interval does not apply when no application has been made to this crop this season; the tank-mix prohibition does not apply when no tank mix is planned or when the label prohibits none. Those are checks that are NOT APPLICABLE, and they pass. A label that simply does not state its pre-harvest interval is a check that could not be performed, and it does not pass.",
+
+ "verdicts": {
+  "within_label": "Every applicable restriction is satisfied. The proposal is inside the label as it stands.",
+  "outside_label": "A restriction is breached that no waiting will cure — the crop, the tank mix, the rate, the season count or the buffer. Changing WHEN the application is made does not fix any of these.",
+  "wait_required": "Every hard restriction is satisfied and the only thing standing in the way is an interval that has not yet elapsed. The application may be inside the label later; it is not inside it today.",
+  "insufficient_information": "A restriction this proposal turns on is not stated — on the label, or in the proposal. The kit names which one rather than guessing a verdict."
+ },
+
+ "checks": [
+  {
+   "order": 1,
+   "id": "permitted_crops",
+   "kind": "hard",
+   "breach_verdict": "outside_label",
+   "label_field": "permitted_crops",
+   "label_line": "permitted crops",
+   "proposal_field": "crop_proposed",
+   "proposal_line": "crop",
+   "op": "member_of",
+   "unit": "",
+   "test": "the proposed crop must appear in the label's permitted-crop list, matched on the WHOLE crop name and never on part of it",
+   "breach_says": "The label permits {label}. The proposal is for {proposal}, which is not on that list.",
+   "why": "A crop that is not on the label is not an application that can be adjusted into compliance. It is the one restriction where the correct answer is 'not with this product', and it is also the easiest to read past when the permitted list carries a near neighbour of the proposed crop — winter wheat beside spring wheat, field lettuce beside protected lettuce. Matching on the head noun clears an application the label does not."
+  },
+  {
+   "order": 2,
+   "id": "tank_mix_prohibited",
+   "kind": "hard",
+   "breach_verdict": "outside_label",
+   "label_field": "tank_mix_prohibited_with",
+   "label_line": "tank mix prohibited with",
+   "proposal_field": "tank_mix_partner",
+   "proposal_line": "tank mix partner",
+   "op": "not_member_of",
+   "unit": "",
+   "skip_when": [
+    {"field": "tank_mix_partner", "equals": "none"},
+    {"field": "tank_mix_prohibited_with", "equals": "none"}
+   ],
+   "test": "the proposed tank-mix partner must NOT appear in the label's prohibited-partner list, matched on the whole product name",
+   "breach_says": "The label prohibits mixing with {label}. The proposal names {proposal} as the tank-mix partner.",
+   "why": "Product names in this corpus are deliberately close to one another, because on a real label they are too. A prohibition read as covering a similarly-named product blocks an application that is fine; a prohibition read as not covering the product actually named clears one that is not."
+  },
+  {
+   "order": 3,
+   "id": "max_rate_per_application",
+   "kind": "hard",
+   "breach_verdict": "outside_label",
+   "label_field": "max_rate_l_per_ha",
+   "label_line": "maximum rate per application",
+   "proposal_field": "rate_proposed_l_per_ha",
+   "proposal_line": "rate",
+   "op": "le",
+   "unit": "L/ha",
+   "test": "the proposed rate must be less than or equal to the label maximum. EXACTLY EQUAL IS INSIDE THE LABEL",
+   "breach_says": "The label maximum is {label} L/ha per application. The proposal is {proposal} L/ha.",
+   "why": "The limit is inclusive, and the corpus puts several proposals exactly on it. A reader who treats the maximum as an exclusive bound refuses applications that are inside the label, which is the cheap direction of this error but is still wrong."
+  },
+  {
+   "order": 4,
+   "id": "max_applications_per_season",
+   "kind": "hard",
+   "breach_verdict": "outside_label",
+   "label_field": "max_applications_per_season",
+   "label_line": "maximum applications per season",
+   "proposal_field": "applications_made_this_season",
+   "proposal_line": "applications already made this season",
+   "op": "lt",
+   "unit": "",
+   "test": "the applications ALREADY MADE this season must be strictly fewer than the label maximum, because this proposal would be the next one",
+   "breach_says": "The label allows {label} application(s) per season and {proposal} have already been made to this crop this season, so this one would be over the maximum.",
+   "why": "This is the off-by-one on the page. `maximum applications per season: 3` with `applications already made this season: 3` reads as 'at the limit, therefore inside' and is the opposite — the limit is a total, and the proposal is the next one. It is also the check the PREVIOUS SEASON count on every case is there to disturb: the maximum is per season, so a count from last season is not added to this one."
+  },
+  {
+   "order": 5,
+   "id": "buffer_to_water",
+   "kind": "hard",
+   "breach_verdict": "outside_label",
+   "label_field": "buffer_to_water_m",
+   "label_line": "minimum buffer to surface water",
+   "proposal_field": "distance_to_water_m",
+   "proposal_line": "distance to nearest surface water",
+   "op": "ge",
+   "unit": "m",
+   "test": "the distance to the nearest surface water must be greater than or equal to the label's minimum buffer. EXACTLY EQUAL IS INSIDE THE LABEL",
+   "breach_says": "The label requires a buffer of at least {label} m to surface water. The nearest water is {proposal} m from the proposed application.",
+   "why": "Classed as HARD here rather than as something to adjust, because the proposal in front of you names one distance and this kit has no way to know whether a different part of the field would do. A reader who treats it as adjustable answers a question the document did not ask."
+  },
+  {
+   "order": 6,
+   "id": "min_retreatment_interval",
+   "kind": "timing",
+   "breach_verdict": "wait_required",
+   "label_field": "min_retreatment_interval_days",
+   "label_line": "minimum re-treatment interval",
+   "proposal_field": "days_since_last_application",
+   "proposal_line": "days since the last application",
+   "op": "ge",
+   "unit": "days",
+   "skip_when": [
+    {"field": "applications_made_this_season", "equals": 0}
+   ],
+   "test": "at least the label's minimum re-treatment interval must have elapsed since the last application to this crop. NOT APPLICABLE when no application has been made this season",
+   "breach_says": "The label requires at least {label} days between applications and {proposal} days have elapsed since the last one.",
+   "why": "The first of two day counts on the same label, and the pair is the confusion this kit measures. The re-treatment interval counts BACKWARDS from the last application; the pre-harvest interval counts FORWARDS to harvest. A verdict of `wait_required` naming the wrong one of the two is a right answer for the wrong reason, and a grower told to wait the wrong number of days from the wrong date is not helped by it."
+  },
+  {
+   "order": 7,
+   "id": "pre_harvest_interval",
+   "kind": "timing",
+   "breach_verdict": "wait_required",
+   "label_field": "pre_harvest_interval_days",
+   "label_line": "pre-harvest interval",
+   "proposal_field": "days_to_harvest",
+   "proposal_line": "days to harvest",
+   "op": "ge",
+   "unit": "days",
+   "test": "the days remaining to harvest must be at least the label's pre-harvest interval. EXACTLY EQUAL IS INSIDE THE LABEL",
+   "breach_says": "The label's pre-harvest interval is {label} days and harvest is {proposal} days away.",
+   "why": "The second day count, and the one a careless reader reaches for first because it is the restriction everybody has heard of. On this corpus it is frequently satisfied on a case that fails a different interval entirely."
+  },
+  {
+   "order": 8,
+   "id": "re_entry_interval",
+   "kind": "timing",
+   "breach_verdict": "wait_required",
+   "label_field": "re_entry_interval_hours",
+   "label_line": "re-entry interval",
+   "proposal_field": "planned_re_entry_hours",
+   "proposal_line": "planned re-entry",
+   "op": "ge",
+   "unit": "hours",
+   "test": "the planned re-entry must be at least the label's re-entry interval. THIS ONE IS IN HOURS AND EVERY OTHER INTERVAL ON THE LABEL IS IN DAYS. EXACTLY EQUAL IS INSIDE THE LABEL",
+   "breach_says": "The label's re-entry interval is {label} hours and re-entry is planned {proposal} hours after application.",
+   "why": "The unit trap. It is the only restriction on the label measured in hours, and its numbers (24, 48) sit in the same range as the day counts above it. A reader comparing the number without the unit can satisfy a 48-hour re-entry interval out of a 48-day harvest window and never notice."
+  }
+ ]
+}

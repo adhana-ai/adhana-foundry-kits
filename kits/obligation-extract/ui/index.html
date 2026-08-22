@@ -1,0 +1,79 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>obligation-extract &mdash; the promises in a subscription contract, and the ones it leaves open</title>
+<link rel="stylesheet" href="/app.css">
+<div class="wrap">
+  <header>
+    <h1>The promises in a subscription contract &mdash; and the ones the paperwork leaves open</h1>
+    <p class="sub">One contract pack, one model call, a worksheet row per ordered line &mdash; plus
+      a review flag taken afterwards, in pure code, from three of the extracted values. Each row
+      carries two calls made by the shipped rulebook: is the line <em>distinct</em>, <em>bundled</em>,
+      or something the contract does not determine; and is it delivered <em>over time</em>, at a
+      <em>point in time</em>, or again not determined. A rate card, a line struck by an amendment and
+      an item continuing under an earlier order form are all in the pack, all carry a line code, and
+      none of them is a promise.</p>
+  </header>
+
+  <div class="warn">
+    <strong>This is a reviewer&rsquo;s worksheet. It is never an accounting conclusion.</strong>
+    It does not determine performance obligations, does not allocate a transaction price, does not
+    conclude on timing, does not open a revenue schedule and does not write a journal entry. A
+    controller does all of that, on the whole arrangement, against the framework their company
+    reports under. <strong>The rulebook shipped with this kit is illustrative and is not an
+    authority</strong> &mdash; it was written for this kit and reproduces no accounting standard, no
+    standard-setter&rsquo;s guidance, no audit manual and no company&rsquo;s revenue policy. Replace
+    it with your own before you decide anything real by it.
+  </div>
+
+  <div class="bar">
+    <select id="doc" aria-label="Contract pack"></select>
+    <button id="go" type="button">Build worksheet</button>
+    <span id="key" class="key"></span>
+  </div>
+
+  <div id="note" class="note" hidden></div>
+
+  <div class="panel">
+    <div class="ph"><span>Worksheet</span>
+      <span class="k kf" id="k-lines">&mdash;</span>
+      <span class="k kn" id="k-open">&mdash;</span>
+      <span class="k ks" id="k-span">&mdash;</span></div>
+    <table id="tbl">
+      <thead><tr><th>Line</th><th>Description</th><th>Fee column</th><th>What the pack states</th>
+        <th>Separation</th><th>Pattern</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="ph"><span>Decided downstream, pure code</span></div>
+    <table>
+      <tbody>
+        <tr><td class="n">Contract</td><td id="c-id">&mdash;</td></tr>
+        <tr><td class="n">Lines on the worksheet</td><td id="c-count">&mdash;</td></tr>
+        <tr><td class="n">Calls the pack does not settle</td><td id="c-open">&mdash;</td></tr>
+        <tr><td class="n">Take this back to the deal desk</td><td id="c-flag">&mdash;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="foot">The review flag is a <strong>business condition</strong>, not a check on the
+    model: <code>needs_drafting_review</code> fires when the pack carries at least one line the
+    order form <em>prices</em> &mdash; a fee of its own &mdash; whose <code>separation</code>
+    <em>and</em> <code>pattern</code> the paperwork settles neither of. An open call on an unpriced
+    line is drafting untidiness; the same open call with money attached is a number somebody will
+    have to place, and the contract says neither where it goes nor when.
+    <strong>This is the kit&rsquo;s own simplification, not any company&rsquo;s review
+    policy</strong> &mdash; no revenue policy, audit manual, accounting standard or
+    standard-setter&rsquo;s guidance was consulted, and none is reproduced.</p>
+
+  <details class="doc">
+    <summary>The contract pack this was read from</summary>
+    <pre id="text"></pre>
+  </details>
+
+  <details class="doc">
+    <summary>The shipped worksheet rulebook &mdash; illustrative, reproduces no accounting standard</summary>
+    <div id="rulebook" class="mx"></div>
+  </details>
+</div>
+<script src="/app.js"></script>

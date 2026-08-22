@@ -1,0 +1,1436 @@
+{
+ "run_id": "c000-option-clock-calibration",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 6,
+ "failures": [],
+ "latency_p50_ms": 6933,
+ "latency_p95_ms": 8468,
+ "latency_ms_all": [
+  8468,
+  7212,
+  1967,
+  5987,
+  6933,
+  6708
+ ],
+ "wall_seconds": 8.5,
+ "input_tokens_total": 18694,
+ "output_tokens_total": 5120,
+ "output_tokens_max": 1104,
+ "reasoning_tokens_total": 4002,
+ "scores": {
+  "extraction_cells": 102,
+  "extraction_accuracy": 0.9706,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 54,
+  "values_with_span": 51,
+  "non_spannable_fields": [
+   "clock_basis",
+   "expiry_date",
+   "extensions_perfected",
+   "extensions_recorded_taken",
+   "register_status",
+   "status",
+   "trigger_status"
+  ],
+  "span_rate": 0.9444,
+  "status_accuracy_pct": 100.0,
+  "status_correct": 6,
+  "status_rows": 6,
+  "false_alarm": 0,
+  "false_alarm_rate_pct": 0.0,
+  "missed_lapse": 0,
+  "missed_lapse_rate_pct": 0.0,
+  "worklist_recall_pct": 100.0,
+  "worklist_precision_pct": 100.0,
+  "date_accuracy_pct": 100.0,
+  "date_rows": 6,
+  "phantom_expiry": 0,
+  "escalate_flag_recall_pct": 100.0,
+  "escalate_flag_precision_pct": 100.0,
+  "claimed_status_accuracy_pct": 100.0,
+  "note_contradiction_accuracy_pct": 100.0,
+  "self_consistency_disagreements": 0
+ },
+ "by_field": {
+  "register_id": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "property_title": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 3
+  },
+  "rights_holder": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "grantee": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "register_as_of": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "option_granted_date": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "clock_basis": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "trigger_status": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "trigger_date": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "initial_term_months": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "extension_months_each": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "extensions_recorded_taken": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "extensions_perfected": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "register_status": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "clerk_note": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "expiry_date": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "status": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "ROR-0001",
+   "field": "register_id",
+   "verdict": "hit",
+   "got": "RGT-9140-DN",
+   "want": "RGT-9140-DN",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "property_title",
+   "verdict": "hit",
+   "got": "Two Rivers Deep",
+   "want": "Two Rivers Deep",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "rights_holder",
+   "verdict": "hit",
+   "got": "Fenmarket Books Limited",
+   "want": "Fenmarket Books Limited",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "grantee",
+   "verdict": "hit",
+   "got": "Harrowgate Screen Limited",
+   "want": "Harrowgate Screen Limited",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "register_as_of",
+   "verdict": "hit",
+   "got": "2026-08-20",
+   "want": "2026-08-20",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "option_granted_date",
+   "verdict": "hit",
+   "got": "2025-10-18",
+   "want": "2025-10-18",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "clock_basis",
+   "verdict": "hit",
+   "got": "grant_date",
+   "want": "grant_date",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "trigger_status",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "trigger_date",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "initial_term_months",
+   "verdict": "hit",
+   "got": 12,
+   "want": 12,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "extension_months_each",
+   "verdict": "hit",
+   "got": 12,
+   "want": 12,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "extensions_recorded_taken",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "extensions_perfected",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "register_status",
+   "verdict": "hit",
+   "got": "live",
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "clerk_note",
+   "verdict": "hit",
+   "got": "Escalated internally last week; nobody has come back on the paperwork yet.",
+   "want": "Escalated internally last week; nobody has come back on the paperwork yet.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "expiry_date",
+   "verdict": "hit",
+   "got": "2026-10-18",
+   "want": "2026-10-18",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0001",
+   "field": "status",
+   "verdict": "hit",
+   "got": "live",
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "register_id",
+   "verdict": "hit",
+   "got": "RGT-9367-PJ",
+   "want": "RGT-9367-PJ",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "property_title",
+   "verdict": "wrong",
+   "got": "The Paper Season -- radio serial",
+   "want": "The Paper Season",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "rights_holder",
+   "verdict": "hit",
+   "got": "Marrowfield Editions Limited",
+   "want": "Marrowfield Editions Limited",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "grantee",
+   "verdict": "hit",
+   "got": "Peregrine Lane Films Limited",
+   "want": "Peregrine Lane Films Limited",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "register_as_of",
+   "verdict": "hit",
+   "got": "2026-08-14",
+   "want": "2026-08-14",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "option_granted_date",
+   "verdict": "hit",
+   "got": "2023-10-07",
+   "want": "2023-10-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "clock_basis",
+   "verdict": "hit",
+   "got": "grant_date",
+   "want": "grant_date",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "trigger_status",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "trigger_date",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "initial_term_months",
+   "verdict": "hit",
+   "got": 12,
+   "want": 12,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "extension_months_each",
+   "verdict": "hit",
+   "got": 12,
+   "want": 12,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "extensions_recorded_taken",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "extensions_perfected",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "register_status",
+   "verdict": "hit",
+   "got": "lapsed",
+   "want": "lapsed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "clerk_note",
+   "verdict": "hit",
+   "got": "Nothing outstanding on this one. Paperwork all looks in order to me.",
+   "want": "Nothing outstanding on this one. Paperwork all looks in order to me.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "expiry_date",
+   "verdict": "hit",
+   "got": "2025-10-07",
+   "want": "2025-10-07",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0002",
+   "field": "status",
+   "verdict": "hit",
+   "got": "lapsed",
+   "want": "lapsed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "register_id",
+   "verdict": "hit",
+   "got": "RGT-8570-KW",
+   "want": "RGT-8570-KW",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "property_title",
+   "verdict": "hit",
+   "got": "Small Hours, Loud Streets",
+   "want": "Small Hours, Loud Streets",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "rights_holder",
+   "verdict": "hit",
+   "got": "Beckridge Literary Trust",
+   "want": "Beckridge Literary Trust",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "grantee",
+   "verdict": "hit",
+   "got": "Harrowgate Screen Limited",
+   "want": "Harrowgate Screen Limited",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "register_as_of",
+   "verdict": "hit",
+   "got": "2026-08-20",
+   "want": "2026-08-20",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "option_granted_date",
+   "verdict": "hit",
+   "got": "2025-02-27",
+   "want": "2025-02-27",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "clock_basis",
+   "verdict": "hit",
+   "got": "grant_date",
+   "want": "grant_date",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "trigger_status",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "trigger_date",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "initial_term_months",
+   "verdict": "hit",
+   "got": 18,
+   "want": 18,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "extension_months_each",
+   "verdict": "hit",
+   "got": 6,
+   "want": 6,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "extensions_recorded_taken",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "extensions_perfected",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "register_status",
+   "verdict": "hit",
+   "got": "live",
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "clerk_note",
+   "verdict": "hit",
+   "got": "This one looks tight to me -- worth a second pair of eyes before the next sweep.",
+   "want": "This one looks tight to me -- worth a second pair of eyes before the next sweep.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "expiry_date",
+   "verdict": "hit",
+   "got": "2026-08-27",
+   "want": "2026-08-27",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0003",
+   "field": "status",
+   "verdict": "hit",
+   "got": "lapsing",
+   "want": "lapsing",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "register_id",
+   "verdict": "hit",
+   "got": "RGT-7599-JA",
+   "want": "RGT-7599-JA",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "property_title",
+   "verdict": "wrong",
+   "got": "The Wintering Ground -- unpublished novel",
+   "want": "The Wintering Ground",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "rights_holder",
+   "verdict": "hit",
+   "got": "Beckridge Literary Trust",
+   "want": "Beckridge Literary Trust",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "grantee",
+   "verdict": "hit",
+   "got": "Larkhill Screen Partners LLC",
+   "want": "Larkhill Screen Partners LLC",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "register_as_of",
+   "verdict": "hit",
+   "got": "2026-08-10",
+   "want": "2026-08-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "option_granted_date",
+   "verdict": "hit",
+   "got": "2024-08-22",
+   "want": "2024-08-22",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "clock_basis",
+   "verdict": "hit",
+   "got": "grant_date",
+   "want": "grant_date",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "trigger_status",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "trigger_date",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "initial_term_months",
+   "verdict": "hit",
+   "got": 24,
+   "want": 24,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "extension_months_each",
+   "verdict": "hit",
+   "got": 6,
+   "want": 6,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "extensions_recorded_taken",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "extensions_perfected",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "register_status",
+   "verdict": "hit",
+   "got": "live",
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "clerk_note",
+   "verdict": "hit",
+   "got": "Chased the file twice and I am not confident the dates on it are settled.",
+   "want": "Chased the file twice and I am not confident the dates on it are settled.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "expiry_date",
+   "verdict": "hit",
+   "got": "2026-08-22",
+   "want": "2026-08-22",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0004",
+   "field": "status",
+   "verdict": "hit",
+   "got": "lapsing",
+   "want": "lapsing",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "register_id",
+   "verdict": "hit",
+   "got": "RGT-5417-KH",
+   "want": "RGT-5417-KH",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "property_title",
+   "verdict": "hit",
+   "got": "The Ropewalk",
+   "want": "The Ropewalk",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "rights_holder",
+   "verdict": "hit",
+   "got": "Ashlyn Grove Publishing Limited",
+   "want": "Ashlyn Grove Publishing Limited",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "grantee",
+   "verdict": "hit",
+   "got": "Harrowgate Screen Limited",
+   "want": "Harrowgate Screen Limited",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "register_as_of",
+   "verdict": "hit",
+   "got": "2026-08-20",
+   "want": "2026-08-20",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "option_granted_date",
+   "verdict": "hit",
+   "got": "2024-11-18",
+   "want": "2024-11-18",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "clock_basis",
+   "verdict": "hit",
+   "got": "grant_date",
+   "want": "grant_date",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "trigger_status",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "trigger_date",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "initial_term_months",
+   "verdict": "hit",
+   "got": 12,
+   "want": 12,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "extension_months_each",
+   "verdict": "hit",
+   "got": 6,
+   "want": 6,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "extensions_recorded_taken",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "extensions_perfected",
+   "verdict": "hit",
+   "got": 0,
+   "want": 0,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "register_status",
+   "verdict": "hit",
+   "got": "lapsed",
+   "want": "lapsed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "clerk_note",
+   "verdict": "hit",
+   "got": "Escalated internally last week; nobody has come back on the paperwork yet.",
+   "want": "Escalated internally last week; nobody has come back on the paperwork yet.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "expiry_date",
+   "verdict": "hit",
+   "got": "2025-11-18",
+   "want": "2025-11-18",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0005",
+   "field": "status",
+   "verdict": "hit",
+   "got": "lapsed",
+   "want": "lapsed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "register_id",
+   "verdict": "hit",
+   "got": "RGT-3227-SG",
+   "want": "RGT-3227-SG",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "property_title",
+   "verdict": "wrong",
+   "got": "Anvil Bay -- essay collection",
+   "want": "Anvil Bay",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "rights_holder",
+   "verdict": "hit",
+   "got": "The Copperline Estate",
+   "want": "The Copperline Estate",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "grantee",
+   "verdict": "hit",
+   "got": "Foxbourne Pictures Limited",
+   "want": "Foxbourne Pictures Limited",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "register_as_of",
+   "verdict": "hit",
+   "got": "2026-08-22",
+   "want": "2026-08-22",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "option_granted_date",
+   "verdict": "hit",
+   "got": "2024-09-26",
+   "want": "2024-09-26",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "clock_basis",
+   "verdict": "hit",
+   "got": "grant_date",
+   "want": "grant_date",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "trigger_status",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "trigger_date",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "initial_term_months",
+   "verdict": "hit",
+   "got": 18,
+   "want": 18,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "extension_months_each",
+   "verdict": "hit",
+   "got": 6,
+   "want": 6,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "extensions_recorded_taken",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "extensions_perfected",
+   "verdict": "hit",
+   "got": 1,
+   "want": 1,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "register_status",
+   "verdict": "hit",
+   "got": "live",
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "clerk_note",
+   "verdict": "hit",
+   "got": "Routine file. No queries from either side since the last review.",
+   "want": "Routine file. No queries from either side since the last review.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "expiry_date",
+   "verdict": "hit",
+   "got": "2026-09-26",
+   "want": "2026-09-26",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ROR-0006",
+   "field": "status",
+   "verdict": "hit",
+   "got": "lapsing",
+   "want": "lapsing",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "clock_scores": {
+  "status_accuracy": 1.0,
+  "status_correct": 6,
+  "status_rows": 6,
+  "status_unanswered": 0,
+  "confusion": {
+   "live": {
+    "live": 1
+   },
+   "lapsed": {
+    "lapsed": 2
+   },
+   "lapsing": {
+    "lapsing": 3
+   }
+  },
+  "worklist": {
+   "true_positive": 5,
+   "false_positive": 0,
+   "true_negative": 1,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (this option needs somebody today)",
+   "note": "The four-way status collapsed onto the one distinction a worklist has. lapsing, lapsed and not_determinable are all `yes`; only live is `no`. A false positive here is a FALSE ALARM and a false negative is a MISSED LAPSE, and the two are named separately because they cost different people different things.",
+   "rows": [
+    {
+     "doc": "ROR-0001",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ROR-0002",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ROR-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ROR-0004",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ROR-0005",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ROR-0006",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    }
+   ]
+  },
+  "false_alarm": [],
+  "false_alarm_count": 0,
+  "false_alarm_rate_pct": 0.0,
+  "false_alarm_denominator": 1,
+  "missed_lapse": [],
+  "missed_lapse_count": 0,
+  "missed_lapse_rate_pct": 0.0,
+  "missed_lapse_denominator": 5,
+  "dates": {
+   "rows": [
+    {
+     "doc": "ROR-0001",
+     "want": "2026-10-18",
+     "got": "2026-10-18",
+     "correct": true
+    },
+    {
+     "doc": "ROR-0002",
+     "want": "2025-10-07",
+     "got": "2025-10-07",
+     "correct": true
+    },
+    {
+     "doc": "ROR-0003",
+     "want": "2026-08-27",
+     "got": "2026-08-27",
+     "correct": true
+    },
+    {
+     "doc": "ROR-0004",
+     "want": "2026-08-22",
+     "got": "2026-08-22",
+     "correct": true
+    },
+    {
+     "doc": "ROR-0005",
+     "want": "2025-11-18",
+     "got": "2025-11-18",
+     "correct": true
+    },
+    {
+     "doc": "ROR-0006",
+     "want": "2026-09-26",
+     "got": "2026-09-26",
+     "correct": true
+    }
+   ],
+   "scored": 6,
+   "correct": 6,
+   "accuracy_pct": 100.0,
+   "missing_expiry": [],
+   "missing_expiry_count": 0,
+   "phantom_expiry": [],
+   "phantom_expiry_count": 0,
+   "note": "The COUNTED expiry, exact match, over the registers where an expiry can be counted at all. A phantom expiry is a date produced for a register whose clock the rulebook says cannot be started -- inventing a due date is worse than declining to give one, so it is counted on its own rather than folded in here."
+  },
+  "escalate_flag": {
+   "true_positive": 3,
+   "false_positive": 0,
+   "true_negative": 3,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (not live, and still carried as live)",
+   "note": "escalate_now compares the run's own counted status and the register's carried status against the same rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the consistency diagnostic below, which does not.",
+   "rows": [
+    {
+     "doc": "ROR-0001",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ROR-0002",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ROR-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ROR-0004",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ROR-0005",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ROR-0006",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    }
+   ]
+  },
+  "claimed_status": {
+   "rows": 6,
+   "correct": 6,
+   "accuracy_pct": 100.0,
+   "note": "The model's OWN stated status, scored as a claim. This kit publishes the COUNTED status, not this one -- a due date is arithmetic and arithmetic done in prose is arithmetic nobody can check. The gap between the two is the consistency diagnostic below."
+  },
+  "note_contradiction": {
+   "rows": 3,
+   "correct": 3,
+   "accuracy_pct": 100.0,
+   "note": "Counted-status accuracy restricted to the registers whose clerk note is written in the register that points the wrong way -- a relaxed note on a lapsed option, or a worried one on an option with two years to run."
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_values": 0,
+   "status_errors": 0,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 0,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the rulebook count over the run's OWN extracted values and counts the replies whose stated status disagrees with it. It uses no gold, so a forker can compute it on unlabelled registers -- but it is blind to a reply that misreads a date or an extension and then counts correctly from the misreading, which is exactly the failure this corpus is built to produce."
+  },
+  "rows": [
+   {
+    "doc": "ROR-0001",
+    "want": "live",
+    "got": "live",
+    "correct": true
+   },
+   {
+    "doc": "ROR-0002",
+    "want": "lapsed",
+    "got": "lapsed",
+    "correct": true
+   },
+   {
+    "doc": "ROR-0003",
+    "want": "lapsing",
+    "got": "lapsing",
+    "correct": true
+   },
+   {
+    "doc": "ROR-0004",
+    "want": "lapsing",
+    "got": "lapsing",
+    "correct": true
+   },
+   {
+    "doc": "ROR-0005",
+    "want": "lapsed",
+    "got": "lapsed",
+    "correct": true
+   },
+   {
+    "doc": "ROR-0006",
+    "want": "lapsing",
+    "got": "lapsing",
+    "correct": true
+   }
+  ]
+ },
+ "window_days": 45,
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3621
+  },
+  {
+   "name": "counting rulebook",
+   "chars": 4390
+  },
+  {
+   "name": "field schema",
+   "chars": 3684
+  },
+  {
+   "name": "register sections",
+   "chars": 765
+  }
+ ],
+ "sections_used": [
+  "Register",
+  "Property",
+  "Rights Holder",
+  "Grantee",
+  "Register As Of",
+  "Option Granted",
+  "Clock Basis",
+  "Triggering Event",
+  "Initial Option Period",
+  "Extension One",
+  "Register Status",
+  "Clerk Note"
+ ],
+ "raw_text": "{\"register_id\":\"RGT-9140-DN\",\"property_title\":\"Two Rivers Deep\",\"rights_holder\":\"Fenmarket Books Limited\",\"grantee\":\"Harrowgate Screen Limited\",\"register_as_of\":\"2026-08-20\",\"option_granted_date\":\"2025-10-18\",\"clock_basis\":\"grant_date\",\"trigger_status\":\"not_applicable\",\"trigger_date\":null,\"initial_term_months\":12,\"extension_months_each\":12,\"extensions_recorded_taken\":0,\"extensions_perfected\":0,\"register_status\":\"live\",\"clerk_note\":\"Escalated internally last week; nobody has come back on the paperwork yet.\",\"expiry_date\":\"2026-10-18\",\"status\":\"live\"}",
+ "max_tokens": 16000,
+ "thinking": null
+}

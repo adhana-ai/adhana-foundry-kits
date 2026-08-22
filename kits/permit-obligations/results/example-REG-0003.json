@@ -1,0 +1,226 @@
+{
+ "doc": "REG-0003",
+ "beside_run": "r001-permit-obligations",
+ "note": "A fresh single call replayed after the scored run, to capture one reply verbatim. It is NOT a 51st scored register and is not counted in any denominator. Its `reason` strings were re-derived in place from the committed values on 2026-08-22 after an article defect ('a inspection') was found by opening the UI; no field, status, due date or token count was touched and no call was made.",
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "max_tokens": 8000,
+ "input_tokens": 2223,
+ "output_tokens": 881,
+ "finish_reason": "stop",
+ "token_details": {
+  "reasoning_tokens": 483
+ },
+ "raw_text": "{\"site_id\":\"SITE-KH-3501\",\"permit_no\":\"MP-3516-C\",\"register_date\":\"2026-01-24\",\"obligations\":[{\"condition_id\":\"C-3.7\",\"obligation_type\":\"inspection\",\"condition_state\":\"active\",\"last_done\":null,\"period_credited\":null,\"stated_due\":null,\"trigger_state\":\"not_applicable\",\"register_flag\":\"attention\"},{\"condition_id\":\"C-9.5\",\"obligation_type\":\"monitoring_reading\",\"condition_state\":\"superseded\",\"last_done\":\"2025-04-28\",\"period_credited\":null,\"stated_due\":null,\"trigger_state\":\"not_applicable\",\"register_flag\":\"attention\"},{\"condition_id\":\"C-12.8\",\"obligation_type\":\"periodic_report\",\"condition_state\":\"active\",\"last_done\":\"2025-11-17\",\"period_credited\":\"2023\",\"stated_due\":null,\"trigger_state\":\"not_applicable\",\"register_flag\":\"on track\"},{\"condition_id\":\"C-6.5\",\"obligation_type\":\"financial_assurance\",\"condition_state\":\"active\",\"last_done\":\"2025-03-14\",\"period_credited\":null,\"stated_due\":null,\"trigger_state\":\"not_applicable\",\"register_flag\":\"attention\"},{\"condition_id\":\"C-8.9\",\"obligation_type\":\"financial_assurance\",\"condition_state\":\"active\",\"last_done\":\"2025-03-25\",\"period_credited\":null,\"stated_due\":null,\"trigger_state\":\"not_applicable\",\"register_flag\":\"attention\"},{\"condition_id\":\"C-10.8\",\"obligation_type\":\"inspection\",\"condition_state\":\"active\",\"last_done\":\"2025-09-18\",\"period_credited\":null,\"stated_due\":null,\"trigger_state\":\"not_applicable\",\"register_flag\":\"on track\"}]}",
+ "sections_used": [
+  "Site",
+  "Permit",
+  "Register Date",
+  "Condition C-3.7",
+  "Condition C-9.5",
+  "Condition C-12.8",
+  "Condition C-6.5",
+  "Condition C-8.9",
+  "Condition C-10.8"
+ ],
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 2247
+  },
+  {
+   "name": "rulebook",
+   "chars": 1879
+  },
+  {
+   "name": "field schema",
+   "chars": 2364
+  },
+  {
+   "name": "register sections",
+   "chars": 2365
+  }
+ ],
+ "register": {
+  "site_id": "SITE-KH-3501",
+  "permit_no": "MP-3516-C",
+  "register_date": "2026-01-24"
+ },
+ "obligations": [
+  {
+   "condition_id": "C-3.7",
+   "values": {
+    "condition_id": "C-3.7",
+    "obligation_type": "inspection",
+    "condition_state": "active",
+    "last_done": null,
+    "period_credited": null,
+    "stated_due": null,
+    "trigger_state": "not_applicable",
+    "register_flag": "attention"
+   },
+   "spans": {
+    "condition_id": "Condition C-3.7",
+    "obligation_type": null,
+    "condition_state": null,
+    "last_done": null,
+    "period_credited": null,
+    "stated_due": null,
+    "trigger_state": null,
+    "register_flag": null
+   },
+   "status": "not_determinable",
+   "due_date": null,
+   "days_to_due": null,
+   "reason": "This obligation runs on a cycle dated from the last time it was done, and the register carries no date for that. A logged entry with no date cannot date the next one.",
+   "undetermined_because": "the register records this obligation but carries no date for the last one"
+  },
+  {
+   "condition_id": "C-9.5",
+   "values": {
+    "condition_id": "C-9.5",
+    "obligation_type": "monitoring_reading",
+    "condition_state": "superseded",
+    "last_done": "2025-04-28",
+    "period_credited": null,
+    "stated_due": null,
+    "trigger_state": "not_applicable",
+    "register_flag": "attention"
+   },
+   "spans": {
+    "condition_id": "Condition C-9.5",
+    "obligation_type": null,
+    "condition_state": null,
+    "last_done": "Condition C-9.5",
+    "period_credited": null,
+    "stated_due": null,
+    "trigger_state": null,
+    "register_flag": null
+   },
+   "status": "not_binding",
+   "due_date": null,
+   "days_to_due": null,
+   "reason": "This condition has been superseded by a later one in a permit amendment. It is still printed on the register and it binds nothing, whatever its dates say.",
+   "undetermined_because": null
+  },
+  {
+   "condition_id": "C-12.8",
+   "values": {
+    "condition_id": "C-12.8",
+    "obligation_type": "periodic_report",
+    "condition_state": "active",
+    "last_done": "2025-11-17",
+    "period_credited": "2023",
+    "stated_due": null,
+    "trigger_state": "not_applicable",
+    "register_flag": "on track"
+   },
+   "spans": {
+    "condition_id": "Condition C-12.8",
+    "obligation_type": null,
+    "condition_state": null,
+    "last_done": "Condition C-12.8",
+    "period_credited": "Condition C-12.8",
+    "stated_due": null,
+    "trigger_state": null,
+    "register_flag": null
+   },
+   "status": "overdue",
+   "due_date": "2025-03-31",
+   "days_to_due": -299,
+   "reason": "Due 2025-03-31, 299 day(s) before this register was drawn.",
+   "undetermined_because": null
+  },
+  {
+   "condition_id": "C-6.5",
+   "values": {
+    "condition_id": "C-6.5",
+    "obligation_type": "financial_assurance",
+    "condition_state": "active",
+    "last_done": "2025-03-14",
+    "period_credited": null,
+    "stated_due": null,
+    "trigger_state": "not_applicable",
+    "register_flag": "attention"
+   },
+   "spans": {
+    "condition_id": "Condition C-6.5",
+    "obligation_type": null,
+    "condition_state": null,
+    "last_done": "Condition C-6.5",
+    "period_credited": null,
+    "stated_due": null,
+    "trigger_state": null,
+    "register_flag": null
+   },
+   "status": "due_in_window",
+   "due_date": "2026-03-14",
+   "days_to_due": 49,
+   "reason": "Due 2026-03-14, 49 day(s) away, inside the 60-day action window this rulebook gives a financial assurance.",
+   "undetermined_because": null
+  },
+  {
+   "condition_id": "C-8.9",
+   "values": {
+    "condition_id": "C-8.9",
+    "obligation_type": "financial_assurance",
+    "condition_state": "active",
+    "last_done": "2025-03-25",
+    "period_credited": null,
+    "stated_due": null,
+    "trigger_state": "not_applicable",
+    "register_flag": "attention"
+   },
+   "spans": {
+    "condition_id": "Condition C-8.9",
+    "obligation_type": null,
+    "condition_state": null,
+    "last_done": "Condition C-8.9",
+    "period_credited": null,
+    "stated_due": null,
+    "trigger_state": null,
+    "register_flag": null
+   },
+   "status": "due_in_window",
+   "due_date": "2026-03-25",
+   "days_to_due": 60,
+   "reason": "Due 2026-03-25, 60 day(s) away, inside the 60-day action window this rulebook gives a financial assurance.",
+   "undetermined_because": null
+  },
+  {
+   "condition_id": "C-10.8",
+   "values": {
+    "condition_id": "C-10.8",
+    "obligation_type": "inspection",
+    "condition_state": "active",
+    "last_done": "2025-09-18",
+    "period_credited": null,
+    "stated_due": null,
+    "trigger_state": "not_applicable",
+    "register_flag": "on track"
+   },
+   "spans": {
+    "condition_id": "Condition C-10.8",
+    "obligation_type": null,
+    "condition_state": null,
+    "last_done": "Condition C-10.8",
+    "period_credited": null,
+    "stated_due": null,
+    "trigger_state": null,
+    "register_flag": null
+   },
+   "status": "not_yet_due",
+   "due_date": "2026-03-17",
+   "days_to_due": 52,
+   "reason": "Due 2026-03-17, 52 day(s) away, beyond the 30-day action window this rulebook gives an inspection.",
+   "undetermined_because": null
+  }
+ ],
+ "worklist": [
+  "C-12.8",
+  "C-6.5",
+  "C-8.9"
+ ],
+ "escalate": true,
+ "document_text": "Site\n----\nKestrel Hollow Operation (SITE-KH-3501)\n\nPermit\n------\nMP-3516-C, issued by the Ninth District Minerals and Environment Office\n\nRegister Date\n-------------\n2026-01-24\n\nRegister Note\n-------------\nSite self-assessment at this review: nothing expected to fall due before the next cycle.\n\nCondition C-3.7\n---------------\nRequirement: half-yearly geotechnical inspection of the waste rock dump\nObligation type: inspection\nCondition state: active\nLast recorded as done: entry logged, date not recorded\nPeriod credited: not applicable to this condition\nStated due date: not stated\nTrigger event: not applicable to this condition\nRegister flag: attention\n\nCondition C-9.5\n---------------\nRequirement: quarterly surface water sampling at discharge point DP-21\nObligation type: monitoring_reading\nCondition state: superseded - replaced by condition C-21.1 in the permit amendment of 2024-12-24\nLast recorded as done: 2025-04-28\nPeriod credited: not applicable to this condition\nStated due date: not stated\nTrigger event: not applicable to this condition\nRegister flag: attention\n\nCondition C-12.8\n----------------\nRequirement: annual environmental performance report for the calendar reporting year\nObligation type: periodic_report\nCondition state: active\nLast recorded as done: 2025-11-17\nPeriod credited: 2023 reporting year\nStated due date: not stated\nTrigger event: not applicable to this condition\nRegister flag: on track\n\nCondition C-6.5\n---------------\nRequirement: annual renewal of the rehabilitation security held against this permit\nObligation type: financial_assurance\nCondition state: active\nLast recorded as done: 2025-03-14\nPeriod credited: not applicable to this condition\nStated due date: not stated\nTrigger event: not applicable to this condition\nRegister flag: attention\n\nCondition C-8.9\n---------------\nRequirement: annual renewal of the pollution incident financial provision\nObligation type: financial_assurance\nCondition state: active\nLast recorded as done: 2025-03-25\nPeriod credited: not applicable to this condition\nStated due date: not stated\nTrigger event: not applicable to this condition\nRegister flag: attention\n\nCondition C-10.8\n----------------\nRequirement: half-yearly inspection of the haul road water crossings\nObligation type: inspection\nCondition state: active\nLast recorded as done: 2025-09-18\nPeriod credited: not applicable to this condition\nStated due date: not stated\nTrigger event: not applicable to this condition\nRegister flag: on track\n"
+}

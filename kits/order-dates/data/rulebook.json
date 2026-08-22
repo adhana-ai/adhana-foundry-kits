@@ -1,0 +1,85 @@
+{
+ "name": "Meridian Vale Civil Deadline Counting Rules",
+ "code": "MV-CR-1",
+ "illustrative": "⚠︎ THIS RULEBOOK IS INVENTED FOR THIS KIT AND IS NOT AN AUTHORITY. Meridian Vale is not a place, the Meridian Vale Civil Court is not a court, and MV-CR-1 reproduces no procedural code, court rule, local rule, standing order or published holiday schedule of any real jurisdiction. Nothing in it was copied from, derived from or checked against any such document, because none was consulted. It exists so that the counting a docketing desk actually does is measurable end to end: what a business day is, whether the trigger day counts, and what happens when a period lands on a day the court is shut. Replace it with your own before you calendar anything real by it.",
+ "weekend": [
+  "Saturday",
+  "Sunday"
+ ],
+ "trigger_day_counts": false,
+ "trigger_day_note": "THE DAY THE PERIOD RUNS FROM IS DAY ZERO. The day this Order was entered, or the day the triggering event occurred, is not counted. Counting begins on the following day. A period of 1 day from a Monday ends on the Tuesday.",
+ "roll": {
+  "direction": "forward",
+  "applies_to": [
+   "calendar_days_from_order",
+   "calendar_days_from_event"
+  ],
+  "never_applies_to": [
+   "explicit_date",
+   "business_days_from_order",
+   "business_days_from_event"
+  ],
+  "note": "A period counted in CALENDAR days that ends on a day which is not a business day moves FORWARD to the next business day, and keeps moving until it reaches one — so a period ending on a Saturday before a Monday holiday moves to the Tuesday. A period counted in BUSINESS days cannot end on a non-business day, so nothing rolls. ⚑ A DATE THIS ORDER STATES IN WORDS IS THE DATE IT STATES, AND IS NEVER ROLLED, even when it falls on a weekend or a court holiday. The Court is taken to have meant the day it wrote."
+ },
+ "bases": [
+  {
+   "code": "explicit_date",
+   "wording": "on or before <date> / no later than <date>",
+   "counts": "nothing is counted — the Order names the day",
+   "rolls": false
+  },
+  {
+   "code": "calendar_days_from_order",
+   "wording": "within N days of (or after) the date of this Order",
+   "counts": "every day, including weekends and court holidays, from the day after the Order date",
+   "rolls": true
+  },
+  {
+   "code": "calendar_days_from_event",
+   "wording": "within N days after <a recorded event>",
+   "counts": "every day, including weekends and court holidays, from the day after the event",
+   "rolls": true
+  },
+  {
+   "code": "business_days_from_order",
+   "wording": "within N business days of (or after) the date of this Order",
+   "counts": "business days only, from the day after the Order date",
+   "rolls": false
+  },
+  {
+   "code": "business_days_from_event",
+   "wording": "within N business days after <a recorded event>",
+   "counts": "business days only, from the day after the event",
+   "rolls": false
+  }
+ ],
+ "undatable_note": "A period that runs from a triggering event the Order does not date CANNOT be calendared from the four corners of the Order. It is not zero days and it is not the Order date — it has no date yet, and the honest answer is to say so and route it to somebody who can find out when the event happened.",
+ "holidays": [
+  {"date": "2027-01-12", "name": "Founders' Rest"},
+  {"date": "2027-02-01", "name": "Vale Charter Day"},
+  {"date": "2027-03-04", "name": "Spring Assize Recess"},
+  {"date": "2027-04-22", "name": "Chancery Rest"},
+  {"date": "2027-05-03", "name": "Vale Common Day"},
+  {"date": "2027-06-16", "name": "Meridian Day"},
+  {"date": "2027-07-02", "name": "Midsummer Adjournment"},
+  {"date": "2027-08-05", "name": "Harvest Rest"},
+  {"date": "2027-09-23", "name": "Michaelmas Recess"},
+  {"date": "2027-10-01", "name": "Vale Records Day"},
+  {"date": "2027-11-10", "name": "Assize Rest"},
+  {"date": "2027-12-29", "name": "Winter Adjournment"},
+  {"date": "2028-01-11", "name": "Founders' Rest"},
+  {"date": "2028-02-04", "name": "Vale Charter Day"},
+  {"date": "2028-03-02", "name": "Spring Assize Recess"},
+  {"date": "2028-04-20", "name": "Chancery Rest"},
+  {"date": "2028-05-01", "name": "Vale Common Day"},
+  {"date": "2028-06-14", "name": "Meridian Day"},
+  {"date": "2028-07-07", "name": "Midsummer Adjournment"},
+  {"date": "2028-08-03", "name": "Harvest Rest"},
+  {"date": "2028-09-21", "name": "Michaelmas Recess"},
+  {"date": "2028-10-02", "name": "Vale Records Day"},
+  {"date": "2028-11-08", "name": "Assize Rest"},
+  {"date": "2028-12-27", "name": "Winter Adjournment"}
+ ],
+ "holiday_note": "⚠︎ EVERY DAY ON THIS LIST IS INVENTED, INCLUDING ITS NAME. None of them is a public holiday anywhere, none is a real court's closure day, and the set was deliberately chosen NOT to coincide with any real holiday — several fall on ordinary mid-week days for no reason other than that a mid-week closure is the case that actually breaks a business-day count. Two of them (Vale Common Day, Vale Charter Day) sit on a Monday and two (Midsummer Adjournment, Vale Records Day) on a Friday, so a calendar period ending on the neighbouring weekend rolls two days rather than one. ⚠︎ THE NAMES BORROW ORDINARY LEGAL-HISTORICAL ENGLISH — recess, adjournment, assize, chancery, Michaelmas — because that is what a court closure sounds like, and NONE of them refers to a real holiday, a real court term, a real division or a real institution. They are labels on invented dates in an invented jurisdiction, and they are never an input to the arithmetic: src/calendar_rules.py reads only the `date` field of each entry. Rename every one of them and nothing this kit computes changes.",
+ "not_rendered_note": "⚑ NEITHER THIS NOTE NOR `illustrative` REACHES THE MODEL, AND THAT IS DELIBERATE. src/prompt.py::rulebook_block() renders the code, the weekend, the counting rules, the roll rule, the undatable rule and the holiday dates-and-names — nothing else. Prose about the rulebook's status belongs to the reader, not to the call, and keeping it out of the prompt means it can be corrected without invalidating a measured run."
+}

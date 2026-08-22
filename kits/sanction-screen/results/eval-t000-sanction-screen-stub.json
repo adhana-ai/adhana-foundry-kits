@@ -1,0 +1,10006 @@
+{
+ "run_id": "t000-sanction-screen-stub",
+ "stub": true,
+ "model": "stub",
+ "provider": "stub",
+ "documents": 50,
+ "failures": [],
+ "latency_p50_ms": 0,
+ "latency_p95_ms": 0,
+ "latency_ms_all": [
+  1,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ],
+ "wall_seconds": 0.0,
+ "workers": 1,
+ "input_tokens_total": 113321,
+ "output_tokens_total": 786,
+ "output_tokens_max": 16,
+ "reasoning_tokens_total": null,
+ "scores": {
+  "extraction_cells": 850,
+  "extraction_accuracy": 0.1718,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 100,
+  "values_with_span": 100,
+  "non_spannable_fields": [
+   "account_status",
+   "customer_identifier_type",
+   "deciding_identifier",
+   "listed_identifier_type",
+   "verdict"
+  ],
+  "span_rate": 1.0,
+  "verdict_accuracy_pct": 0.0,
+  "false_clearance": 0,
+  "false_clearance_rate_pct": 0.0,
+  "over_escalation": 0,
+  "false_confidence": 0,
+  "false_confidence_rate_pct": 0.0,
+  "false_caution": 0,
+  "false_caution_rate_pct": 0.0,
+  "deciding_identifier_accuracy_pct": 0.0,
+  "right_verdict_wrong_reason": 0,
+  "escalation_flag_recall_pct": 0.0,
+  "escalation_flag_precision_pct": null,
+  "self_consistency_disagreements": 0
+ },
+ "by_field": {
+  "alert_id": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0
+  },
+  "customer_name": {
+   "hit": 50,
+   "miss": 0,
+   "wrong": 0
+  },
+  "listed_name": {
+   "hit": 0,
+   "miss": 50,
+   "wrong": 0
+  },
+  "customer_identifier_type": {
+   "hit": 0,
+   "miss": 50,
+   "wrong": 0
+  },
+  "customer_identifier_value": {
+   "hit": 14,
+   "miss": 36,
+   "wrong": 0
+  },
+  "listed_identifier_type": {
+   "hit": 0,
+   "miss": 50,
+   "wrong": 0
+  },
+  "listed_identifier_value": {
+   "hit": 11,
+   "miss": 39,
+   "wrong": 0
+  },
+  "customer_dob": {
+   "hit": 4,
+   "miss": 46,
+   "wrong": 0
+  },
+  "listed_dob": {
+   "hit": 5,
+   "miss": 45,
+   "wrong": 0
+  },
+  "customer_place_of_birth": {
+   "hit": 1,
+   "miss": 49,
+   "wrong": 0
+  },
+  "listed_place_of_birth": {
+   "hit": 11,
+   "miss": 39,
+   "wrong": 0
+  },
+  "customer_nationality": {
+   "hit": 0,
+   "miss": 50,
+   "wrong": 0
+  },
+  "listed_nationality": {
+   "hit": 0,
+   "miss": 50,
+   "wrong": 0
+  },
+  "account_status": {
+   "hit": 0,
+   "miss": 50,
+   "wrong": 0
+  },
+  "analyst_note": {
+   "hit": 0,
+   "miss": 50,
+   "wrong": 0
+  },
+  "verdict": {
+   "hit": 0,
+   "miss": 50,
+   "wrong": 0
+  },
+  "deciding_identifier": {
+   "hit": 0,
+   "miss": 50,
+   "wrong": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "SCR-0001",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-ES-35824",
+   "want": "ALR-ES-35824",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Tavrick Jarnevik",
+   "want": "Tavrick Jarnevik",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrick Jarnevik",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "FT5132423",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "FT5132423",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1980-03-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1980-03-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Looks like a clear hit to me; the file lines up.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0001",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-MJ-21005",
+   "want": "ALR-MJ-21005",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Maruth Gattikor",
+   "want": "Maruth Gattikor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Marut Gattikhor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-8290-5324",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "HS3093364",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1979-04-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1979-04-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Old Saltrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Old Saltrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Coincidence of names, nothing more.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0002",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "date_of_birth_and_place_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-AF-85599",
+   "want": "ALR-AF-85599",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Maruth Oravin",
+   "want": "Maruth Oravin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Maruth Oravin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "EL2251451",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-8421-8465",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1993-10-27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "listed_dob",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Lower Thessin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "listed_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Looks like a clear hit to me; the file lines up.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0003",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-EB-36788",
+   "want": "ALR-EB-36788",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Sondrel Halbric",
+   "want": "Sondrel Halbric",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sondrael Halbrik",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "KS2469653",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "listed_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1970-06-26",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "listed_dob",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Highspire",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "listed_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I would close this one; it does not look like our customer at all.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0004",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-DM-10899",
+   "want": "ALR-DM-10899",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Yorvale Eskelund",
+   "want": "Yorvale Eskelund",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Iorwale Aeskhaelund",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "AT7671856",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "AT7671856",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1995-05-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1995-05-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Old Saltrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Braymoor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrinia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Verdania",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Different person, clearly. Nothing beyond the name lines up.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0005",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-SL-46955",
+   "want": "ALR-SL-46955",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Nevrid Thackmere",
+   "want": "Nevrid Thackmere",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Nevrid Thackmere",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "YP5276569",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "MW2707565",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1966-12-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1966-12-28",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Fennmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Fennmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I am satisfied these are the same party.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0006",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-GW-76521",
+   "want": "ALR-GW-76521",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Vandric Oravin",
+   "want": "Vandric Oravin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Vandrik Orawin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "EY9572443",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1963-03-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1963",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Port Ellisar",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Lower Thessin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not the same party in my view -- the records read quite differently.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0007",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "place_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-VT-96410",
+   "want": "ALR-VT-96410",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Nevrid Halbric",
+   "want": "Nevrid Halbric",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "N. Halbric",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "MF5510613",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "listed_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1992-11-27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1992-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Fennmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Verdania",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Verdania",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I have gone back and forth on this one and cannot land it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0008",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "place_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-NS-47625",
+   "want": "ALR-NS-47625",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Nevrid Lomvard",
+   "want": "Nevrid Lomvard",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "N. Lomvard",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-38615066",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-9791-9005",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "customer_dob",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1974-07-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "customer_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "listed_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridonia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Would want a second identifier before saying anything.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0009",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-PR-92053",
+   "want": "ALR-PR-92053",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Urwen Kestrane",
+   "want": "Urwen Kestrane",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "U. Kestrane",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-25128838",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1988-09-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1988",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Highspire",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kadrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridonia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridonia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I have gone back and forth on this one and cannot land it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0010",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "place_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-KB-53584",
+   "want": "ALR-KB-53584",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Tavrick Marrowvy",
+   "want": "Tavrick Marrowvy",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "T. Marrowvy",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-4688-4116",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-2699-8807",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1995-12-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1995-12-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I have gone back and forth on this one and cannot land it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0011",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-DN-17932",
+   "want": "ALR-DN-17932",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Dalmir Aldreth",
+   "want": "Dalmir Aldreth",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Dalmir Aldreth",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-6418-9951",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-9833-9561",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1961-07-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1961-07-24",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Old Saltrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Old Saltrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridonia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridonia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Confident this is the listed party, on the face of it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0012",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-CD-15201",
+   "want": "ALR-CD-15201",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Orsolen Marrowvy",
+   "want": "Orsolen Marrowvy",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Orsolen Marrowvy",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-7149-5875",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-8637-9106",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1991-06-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1991-06-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I am satisfied these are the same party.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0013",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-AP-90845",
+   "want": "ALR-AP-90845",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Eskilde Corvella",
+   "want": "Eskilde Corvella",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Eskilde Corvella",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "listed_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1963-05-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1963-05-06",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrinia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrinia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Confident this is the listed party, on the face of it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0014",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "date_of_birth_and_place_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-HT-64045",
+   "want": "ALR-HT-64045",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Corvane Oravin",
+   "want": "Corvane Oravin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "C. Oravin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-9539-4325",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "AK9394068",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1983-02-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1983",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kadrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kadrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrinia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrinia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Honestly cannot separate these two from what is on the file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0015",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-DM-71266",
+   "want": "ALR-DM-71266",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Rasmyre Marrowvy",
+   "want": "Rasmyre Marrowvy",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Rasmire Marrowvih",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "LH6079695",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1962-08-07",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1962",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Lower Thessin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Lower Thessin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrinia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrinia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I would close this one; it does not look like our customer at all.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0016",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-EP-69147",
+   "want": "ALR-EP-69147",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Bethun Gattikor",
+   "want": "Bethun Gattikor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Baethun Gattikhor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-9921-9806",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-9921-9806",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1981-01-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1981-01-13",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Old Saltrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Verdania",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sulmara",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I would close this one; it does not look like our customer at all.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0017",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-AB-23570",
+   "want": "ALR-AB-23570",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Halvra Wintermark",
+   "want": "Halvra Wintermark",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Halvra Wintermark",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "DW1767088",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1983-05-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1983-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Confident this is the listed party, on the face of it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0018",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-NE-68210",
+   "want": "ALR-NE-68210",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Aravel Dravenil",
+   "want": "Aravel Dravenil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Aravel Dravenil",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-33507789",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-33507789",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1986-06-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1986-06-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Fennmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Fennmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Looks like a clear hit to me; the file lines up.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0019",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-LM-76077",
+   "want": "ALR-LM-76077",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Maruth Oravin",
+   "want": "Maruth Oravin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Maruth Oravin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-97936422",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-8509-8321",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1982-11-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "listed_dob",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kadrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "listed_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridonia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridonia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Same person as far as I can see -- I would treat this as a match.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0020",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-NJ-44612",
+   "want": "ALR-NJ-44612",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Corvane Wintermark",
+   "want": "Corvane Wintermark",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "C. Wintermark",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "listed_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1996-12-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1996-12-11",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Old Saltrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Old Saltrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kastelia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Would want a second identifier before saying anything.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0021",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "date_of_birth_and_place_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-FM-81904",
+   "want": "ALR-FM-81904",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Dalmir Corvella",
+   "want": "Dalmir Corvella",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Dalmir Corvella",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "listed_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1960-11-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1988-02-17",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridonia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridonia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Looks like a clear hit to me; the file lines up.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0022",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "date_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-PF-54758",
+   "want": "ALR-PF-54758",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Bethun Farrowyne",
+   "want": "Bethun Farrowyne",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Betun Farrowyneh",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-7013-7990",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1985-09-18",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1985-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Braymoor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Braymoor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Coincidence of names, nothing more.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0023",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-BD-68423",
+   "want": "ALR-BD-68423",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Lorvane Bracamo",
+   "want": "Lorvane Bracamo",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Lorwaneh Bracamoh",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-38107067",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-38107067",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1979-10-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1979-10-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Old Saltrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Highspire",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrinia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Verdania",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Different person, clearly. Nothing beyond the name lines up.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0024",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-WV-55759",
+   "want": "ALR-WV-55759",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Sondrel Halbric",
+   "want": "Sondrel Halbric",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sondrel Halbric",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-38524323",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "customer_dob",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1972-05-26",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Lower Thessin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "listed_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrinia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrinia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Same person as far as I can see -- I would treat this as a match.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0025",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-GK-82319",
+   "want": "ALR-GK-82319",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Maruth Immerdav",
+   "want": "Maruth Immerdav",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Maruth Immerdav",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-51411668",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "listed_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1991-11-08",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1991-11-08",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Fennmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Fennmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ellisar",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ellisar",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Same person as far as I can see -- I would treat this as a match.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0026",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "date_of_birth_and_place_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-AA-94725",
+   "want": "ALR-AA-94725",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Pellamir Zorranth",
+   "want": "Pellamir Zorranth",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Pellamir Zorranth",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-32489902",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-23818051",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1971-06-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1971-06-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Confident this is the listed party, on the face of it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0027",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-GT-47910",
+   "want": "ALR-GT-47910",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Nevrid Lomvard",
+   "want": "Nevrid Lomvard",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Nevrid Lomvard",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-8012-8363",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "listed_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "customer_dob",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1978-04-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Kadrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "listed_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Confident this is the listed party, on the face of it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0028",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-AC-35112",
+   "want": "ALR-AC-35112",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Urwen Dravenil",
+   "want": "Urwen Dravenil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Urwen Dravenil",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-50493230",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-50493230",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1980-07-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1980-07-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Highspire",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Highspire",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I am satisfied these are the same party.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0029",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-DP-59250",
+   "want": "ALR-DP-59250",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Tavrick Quillonet",
+   "want": "Tavrick Quillonet",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tavrikhkh Quillonaet",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-7881-6476",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-7881-6476",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1958-11-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1958-11-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Fennmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Oradon",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ellisar",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not the same party in my view -- the records read quite differently.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0030",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-RT-37741",
+   "want": "ALR-RT-37741",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Maruth Oravin",
+   "want": "Maruth Oravin",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "M. Oravin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-39035248",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-1366-6718",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1987-03-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "listed_dob",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "listed_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I have gone back and forth on this one and cannot land it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0031",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-PS-24029",
+   "want": "ALR-PS-24029",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Dalmir Marrowvy",
+   "want": "Dalmir Marrowvy",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "D. Marrowvy",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-6417-5737",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "listed_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1959-07-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1959",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Verdania",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Verdania",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Would want a second identifier before saying anything.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0032",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-PL-12028",
+   "want": "ALR-PL-12028",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Urwen Yalbrook",
+   "want": "Urwen Yalbrook",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "U. Yalbrook",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-37849100",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-37849100",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1978-12-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1978-12-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Highspire",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "listed_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Oradon",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Oradon",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Would want a second identifier before saying anything.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0033",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-NF-99679",
+   "want": "ALR-NF-99679",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Farven Dravenil",
+   "want": "Farven Dravenil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Farven Dravenil",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "DV6051285",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "SP1352722",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1985-03-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1985-03-15",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I am satisfied these are the same party.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0034",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-ND-41145",
+   "want": "ALR-ND-41145",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Tavrick Sorrenvold",
+   "want": "Tavrick Sorrenvold",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "T. Sorrenvold",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "ZC9594839",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "LX8395765",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1970-02-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1970-02-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Honestly cannot separate these two from what is on the file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0035",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-RR-88773",
+   "want": "ALR-RR-88773",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Sondrel Dravenil",
+   "want": "Sondrel Dravenil",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sondrel Dravenil",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-4803-8383",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-4803-8383",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1970-06-14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1970-06-14",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Oradon",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Oradon",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I am satisfied these are the same party.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0036",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-MA-32675",
+   "want": "ALR-MA-32675",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Wesmar Immerdav",
+   "want": "Wesmar Immerdav",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "W. Immerdav",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-54424848",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1968-12-08",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1980-07-25",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Lower Thessin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Lower Thessin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Would want a second identifier before saying anything.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0037",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "date_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-SH-85397",
+   "want": "ALR-SH-85397",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Urwen Halbric",
+   "want": "Urwen Halbric",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Urwen Halbric",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-37137059",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "BC8265324",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1985-07-04",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1985-01-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "listed_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Oradon",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Oradon",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I am satisfied these are the same party.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0038",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "date_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-PV-82476",
+   "want": "ALR-PV-82476",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Vandric Sorrenvold",
+   "want": "Vandric Sorrenvold",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "V. Sorrenvold",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-3437-1894",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-3437-1894",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1966-04-27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1966-04-27",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Oradon",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Oradon",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Honestly cannot separate these two from what is on the file.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0039",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-EC-16762",
+   "want": "ALR-EC-16762",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Maruth Ravensmoor",
+   "want": "Maruth Ravensmoor",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Maruth Ravensmoor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "listed_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1987-11-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1987-11-10",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Braymoor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Braymoor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridonia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Verdania",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I am satisfied these are the same party.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0040",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "date_of_birth_and_place_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-ND-85736",
+   "want": "ALR-ND-85736",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Orsolen Kestrane",
+   "want": "Orsolen Kestrane",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Orsolen Kestrane",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-55219728",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-43636991",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1960-12-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1960-12-02",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ellisar",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ellisar",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Same person as far as I can see -- I would treat this as a match.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0041",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-VE-20100",
+   "want": "ALR-VE-20100",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Corvane Corvella",
+   "want": "Corvane Corvella",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "C. Corvella",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "tax_reference",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "TRF-43245545",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1982-08-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1982-08-21",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Highspire",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Highspire",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not enough here to call it either way; asked for more from onboarding.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0042",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "date_of_birth_and_place_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-TN-40887",
+   "want": "ALR-TN-40887",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Wesmar Aldreth",
+   "want": "Wesmar Aldreth",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Wesmar Aldreth",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "CY7298738",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "CY7298738",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1987-01-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1987-01-20",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Lower Thessin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Lower Thessin",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sulmara",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sulmara",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I am satisfied these are the same party.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0043",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-GM-99791",
+   "want": "ALR-GM-99791",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Urwen Wintermark",
+   "want": "Urwen Wintermark",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Urwen Wintermark",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "listed_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1963-01-01",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1963",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant City",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Confident this is the listed party, on the face of it.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0044",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-GR-90062",
+   "want": "ALR-GR-90062",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Bethun Marrowvy",
+   "want": "Bethun Marrowvy",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Baethun Marrowwy",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "HF9817499",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "HF9817499",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1993-09-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1993-09-09",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Old Saltrun",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Corvant",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "I would close this one; it does not look like our customer at all.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0045",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-KW-69649",
+   "want": "ALR-KW-69649",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Ghiselle Jarnevik",
+   "want": "Ghiselle Jarnevik",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ghiselle Jarnevik",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-1147-4163",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "passport_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "KH6569456",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1993-10-22",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1993",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Brackenholt",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Looks like a clear hit to me; the file lines up.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0046",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-KH-61007",
+   "want": "ALR-KH-61007",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Sondrel Halbric",
+   "want": "Sondrel Halbric",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Sondrael Halbrik",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "customer_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-6104-5086",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "customer_dob",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1985-12-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ilvane Reach",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "listed_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Northmarch",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not the same party in my view -- the records read quite differently.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "insufficient_information",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0047",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-WE-89142",
+   "want": "ALR-WE-89142",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Tavrick Yalbrook",
+   "want": "Tavrick Yalbrook",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Tawrick Yalbrookh",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-3686-5475",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-3686-5475",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1996-08-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1996-08-03",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Highspire",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Veldt Harbour",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Meridonia",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Verdania",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Coincidence of names, nothing more.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0048",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-MH-81994",
+   "want": "ALR-MH-81994",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Jessamir Pelleway",
+   "want": "Jessamir Pelleway",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Jessamir Pelleway",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-1515-5540",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "listed_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-1515-5540",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1977-03-05",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "listed_dob",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Braymoor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "listed_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Braymoor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Oradon",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Oradon",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "live",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Same person as far as I can see -- I would treat this as a match.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "same_party",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0049",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "alert_id",
+   "verdict": "hit",
+   "got": "ALR-FB-26920",
+   "want": "ALR-FB-26920",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "customer_name",
+   "verdict": "hit",
+   "got": "Kestran Yalbrook",
+   "want": "Kestran Yalbrook",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "listed_name",
+   "verdict": "miss",
+   "got": null,
+   "want": "Khestran Ialbrookh",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "customer_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "national_id_number",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "customer_identifier_value",
+   "verdict": "miss",
+   "got": null,
+   "want": "NID-7135-2433",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "listed_identifier_type",
+   "verdict": "miss",
+   "got": null,
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "listed_identifier_value",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "customer_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1991-11-16",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "listed_dob",
+   "verdict": "miss",
+   "got": null,
+   "want": "1996-05-19",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "customer_place_of_birth",
+   "verdict": "miss",
+   "got": null,
+   "want": "Braymoor",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "listed_place_of_birth",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "customer_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ellisar",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "listed_nationality",
+   "verdict": "miss",
+   "got": null,
+   "want": "Ellisar",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "account_status",
+   "verdict": "miss",
+   "got": null,
+   "want": "pending_onboarding",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "analyst_note",
+   "verdict": "miss",
+   "got": null,
+   "want": "Not the same party in my view -- the records read quite differently.",
+   "stated": true,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "verdict",
+   "verdict": "miss",
+   "got": null,
+   "want": "not_a_match",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "SCR-0050",
+   "field": "deciding_identifier",
+   "verdict": "miss",
+   "got": null,
+   "want": "date_of_birth",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "verdict_scores": {
+  "verdict_accuracy": 0.0,
+  "verdict_correct": 0,
+  "verdict_rows": 50,
+  "verdict_unanswered": 50,
+  "confusion": {
+   "same_party": {
+    "unanswered": 20
+   },
+   "insufficient_information": {
+    "unanswered": 15
+   },
+   "not_a_match": {
+    "unanswered": 15
+   }
+  },
+  "per_class": {
+   "same_party": {
+    "gold": 20,
+    "correct": 0
+   },
+   "not_a_match": {
+    "gold": 15,
+    "correct": 0
+   },
+   "insufficient_information": {
+    "gold": 15,
+    "correct": 0
+   }
+  },
+  "open": {
+   "true_positive": 0,
+   "false_positive": 0,
+   "true_negative": 0,
+   "false_negative": 0,
+   "unanswered": 50,
+   "not_applicable": 0,
+   "accuracy": 0.0,
+   "recall": 0.0,
+   "precision": null,
+   "positive_class": "yes (this alert is NOT dismissible on the file)",
+   "note": "The three-way verdict collapsed onto the one distinction that decides whether a human ever sees the alert again. A false negative here is an alert the shipped rulebook would have left open and the run closed.",
+   "rows": [
+    {
+     "doc": "SCR-0001",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0002",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0003",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0004",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0005",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0006",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0007",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0008",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0009",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0010",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0011",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0012",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0013",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0014",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0015",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0016",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0017",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0018",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0019",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0020",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0021",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0022",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0023",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0024",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0025",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0026",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0027",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0028",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0029",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0030",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0031",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0032",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0033",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0034",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0035",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0036",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0037",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0038",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0039",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0040",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0041",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0042",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0043",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0044",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0045",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0046",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0047",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0048",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0049",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0050",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    }
+   ]
+  },
+  "false_clearance": [],
+  "false_clearance_count": 0,
+  "false_clearance_rate_pct": 0.0,
+  "over_escalation": [],
+  "over_escalation_count": 0,
+  "false_confidence": [],
+  "false_confidence_count": 0,
+  "false_confidence_rate_pct": 0.0,
+  "false_caution": [],
+  "false_caution_count": 0,
+  "false_caution_rate_pct": 0.0,
+  "deciding": {
+   "accuracy": 0.0,
+   "correct": 0,
+   "rows": 50,
+   "right_verdict_wrong_reason": [],
+   "right_verdict_wrong_reason_count": 0,
+   "note": "Which identifier produced the verdict, scored on its own. A run can land on the right verdict for the wrong reason, and on an adjudication a person has to sign, the reason is half the answer.",
+   "detail": [
+    {
+     "doc": "SCR-0001",
+     "want": "passport_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0002",
+     "want": "date_of_birth_and_place_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0003",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0004",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0005",
+     "want": "passport_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0006",
+     "want": "passport_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0007",
+     "want": "place_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0008",
+     "want": "place_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0009",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0010",
+     "want": "place_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0011",
+     "want": "national_id_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0012",
+     "want": "national_id_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0013",
+     "want": "national_id_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0014",
+     "want": "date_of_birth_and_place_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0015",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0016",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0017",
+     "want": "national_id_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0018",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0019",
+     "want": "tax_reference",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0020",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0021",
+     "want": "date_of_birth_and_place_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0022",
+     "want": "date_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0023",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0024",
+     "want": "tax_reference",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0025",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0026",
+     "want": "date_of_birth_and_place_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0027",
+     "want": "tax_reference",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0028",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0029",
+     "want": "tax_reference",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0030",
+     "want": "national_id_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0031",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0032",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0033",
+     "want": "tax_reference",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0034",
+     "want": "passport_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0035",
+     "want": "passport_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0036",
+     "want": "national_id_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0037",
+     "want": "date_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0038",
+     "want": "date_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0039",
+     "want": "national_id_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0040",
+     "want": "date_of_birth_and_place_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0041",
+     "want": "tax_reference",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0042",
+     "want": "date_of_birth_and_place_of_birth",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0043",
+     "want": "passport_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0044",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0045",
+     "want": "passport_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0046",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0047",
+     "want": "none",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0048",
+     "want": "national_id_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0049",
+     "want": "national_id_number",
+     "got": null,
+     "correct": false
+    },
+    {
+     "doc": "SCR-0050",
+     "want": "date_of_birth",
+     "got": null,
+     "correct": false
+    }
+   ]
+  },
+  "escalation_flag": {
+   "true_positive": 0,
+   "false_positive": 0,
+   "true_negative": 0,
+   "false_negative": 0,
+   "unanswered": 50,
+   "not_applicable": 0,
+   "accuracy": 0.0,
+   "recall": 0.0,
+   "precision": null,
+   "positive_class": "yes (not dismissible on the file, account live)",
+   "note": "needs_escalation compares the run's own verdict and account_status against the same rule run over GOLD's values. It is a business condition, so it needs labels -- unlike the consistency diagnostic below, which does not. It orders a worklist and freezes nothing.",
+   "rows": [
+    {
+     "doc": "SCR-0001",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0002",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0003",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0004",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0005",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0006",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0007",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0008",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0009",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0010",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0011",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0012",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0013",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0014",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0015",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0016",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0017",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0018",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0019",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0020",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0021",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0022",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0023",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0024",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0025",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0026",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0027",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0028",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0029",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0030",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0031",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0032",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0033",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0034",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0035",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0036",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0037",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0038",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0039",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0040",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0041",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0042",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0043",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0044",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0045",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0046",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0047",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0048",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0049",
+     "want": "yes",
+     "got": null,
+     "verdict": "unanswered"
+    },
+    {
+     "doc": "SCR-0050",
+     "want": "no",
+     "got": null,
+     "verdict": "unanswered"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_values": 0,
+   "verdict_errors": 50,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 50,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the rulebook over the run's OWN extracted values and counts the replies whose stated verdict disagrees with it. It uses no gold, so a forker can compute it on unlabelled alerts -- but it is blind to a reply that misreads an identifier or a date and then reasons correctly from the misreading."
+  },
+  "rows": [
+   {
+    "doc": "SCR-0001",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0002",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0003",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0004",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0005",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0006",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0007",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0008",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0009",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0010",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0011",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0012",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0013",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0014",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0015",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0016",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0017",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0018",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0019",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0020",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0021",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0022",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0023",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0024",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0025",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0026",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0027",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0028",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0029",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0030",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0031",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0032",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0033",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0034",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0035",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0036",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0037",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0038",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0039",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0040",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0041",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0042",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0043",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0044",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0045",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0046",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0047",
+    "want": "insufficient_information",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0048",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0049",
+    "want": "same_party",
+    "got": null,
+    "correct": false
+   },
+   {
+    "doc": "SCR-0050",
+    "want": "not_a_match",
+    "got": null,
+    "correct": false
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3794
+  },
+  {
+   "name": "adjudication rulebook",
+   "chars": 4325
+  },
+  {
+   "name": "field schema",
+   "chars": 3719
+  },
+  {
+   "name": "alert sections",
+   "chars": 530
+  }
+ ],
+ "sections_used": [
+  "Alert Reference",
+  "Customer Record",
+  "Watchlist Entry",
+  "Account Status",
+  "Analyst Note"
+ ],
+ "raw_text": "{\"alert_id\": \"ALR-ES-35824\", \"customer_name\": \"Tavrick Jarnevik\"}",
+ "max_tokens": 4000,
+ "thinking": null
+}

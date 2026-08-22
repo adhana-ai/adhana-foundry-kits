@@ -1,0 +1,2395 @@
+{
+ "run_id": "c000-attestation-watch-calibration",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 3,
+ "attester_rows": 15,
+ "failures": [],
+ "latency_p50_ms": 30580,
+ "latency_p95_ms": 48932,
+ "latency_ms_all": [
+  30580,
+  20842,
+  48932
+ ],
+ "wall_seconds": 48.9,
+ "input_tokens_total": 9487,
+ "output_tokens_total": 13593,
+ "output_tokens_max": 6574,
+ "reasoning_tokens_total": 11741,
+ "scores": {
+  "extraction_cells": 162,
+  "extraction_accuracy": 1.0,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 60,
+  "values_with_span": 60,
+  "non_spannable_fields": [
+   "due_on",
+   "role",
+   "roster_event",
+   "status"
+  ],
+  "span_rate": 1.0,
+  "roster_rows_gold": 15,
+  "roster_rows_returned": 15,
+  "roster_rows_matched": 15,
+  "roster_recall_pct": 100.0,
+  "roster_hallucinated_rows": 0,
+  "status_accuracy_pct": 100.0,
+  "false_alarm": 0,
+  "false_alarm_rate_pct": 0.0,
+  "misrouted": 0,
+  "missed_breach": 0,
+  "missed_breach_rate_pct": 0.0,
+  "escalated_instead": 0,
+  "due_date_accuracy_pct": 100.0,
+  "worklist_recall_pct": 100.0,
+  "worklist_precision_pct": 100.0,
+  "not_determinable_recall_pct": 100.0,
+  "not_determinable_precision_pct": 100.0,
+  "owner_review_recall_pct": 100.0,
+  "owner_review_precision_pct": 100.0,
+  "self_consistency_disagreements": 0,
+  "latency_p50_ms": 30580,
+  "latency_p95_ms": 48932,
+  "input_tokens_total": 9487,
+  "output_tokens_total": 13593,
+  "output_tokens_max": 6574
+ },
+ "by_field": {
+  "engagement_ref": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0
+  },
+  "as_at_date": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0
+  },
+  "rulebook_id": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0
+  },
+  "register_note": {
+   "hit": 3,
+   "miss": 0,
+   "wrong": 0
+  },
+  "role": {
+   "hit": 15,
+   "miss": 0,
+   "wrong": 0
+  },
+  "roster_event": {
+   "hit": 15,
+   "miss": 0,
+   "wrong": 0
+  },
+  "cycle_opened_on": {
+   "hit": 15,
+   "miss": 0,
+   "wrong": 0
+  },
+  "return_filed_on": {
+   "hit": 15,
+   "miss": 0,
+   "wrong": 0
+  },
+  "return_covers_to": {
+   "hit": 15,
+   "miss": 0,
+   "wrong": 0
+  },
+  "declared_relationship": {
+   "hit": 15,
+   "miss": 0,
+   "wrong": 0
+  },
+  "earlier_declared_relationship": {
+   "hit": 15,
+   "miss": 0,
+   "wrong": 0
+  },
+  "relationship_disposed_on": {
+   "hit": 15,
+   "miss": 0,
+   "wrong": 0
+  },
+  "due_on": {
+   "hit": 15,
+   "miss": 0,
+   "wrong": 0
+  },
+  "status": {
+   "hit": 15,
+   "miss": 0,
+   "wrong": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "ATT-0001",
+   "person": null,
+   "field": "engagement_ref",
+   "verdict": "hit",
+   "got": "ENG-6826-AH",
+   "want": "ENG-6826-AH",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": null,
+   "field": "as_at_date",
+   "verdict": "hit",
+   "got": "2026-02-26",
+   "want": "2026-02-26",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": null,
+   "field": "rulebook_id",
+   "verdict": "hit",
+   "got": "IAR-1",
+   "want": "IAR-1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": null,
+   "field": "register_note",
+   "verdict": "hit",
+   "got": "Declarations on this engagement are under manual review; treat the register as provisional.",
+   "want": "Declarations on this engagement are under manual review; treat the register as provisional.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-2667",
+   "field": "role",
+   "verdict": "hit",
+   "got": "specialist_advisor",
+   "want": "specialist_advisor",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-2667",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-2667",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2025-01-10",
+   "want": "2025-01-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-2667",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2025-12-05",
+   "want": "2025-12-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-2667",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": "2026-01-11",
+   "want": "2026-01-11",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-2667",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "no interests to report",
+   "want": "no interests to report",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-2667",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-2667",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-2667",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2026-01-10",
+   "want": "2026-01-10",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-2667",
+   "field": "status",
+   "verdict": "hit",
+   "got": "satisfied",
+   "want": "satisfied",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-5176",
+   "field": "role",
+   "verdict": "hit",
+   "got": "specialist_advisor",
+   "want": "specialist_advisor",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-5176",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "role_vacated",
+   "want": "role_vacated",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-5176",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2024-12-07",
+   "want": "2024-12-07",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-5176",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-5176",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-5176",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-5176",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-5176",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-5176",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2025-12-07",
+   "want": "2025-12-07",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-5176",
+   "field": "status",
+   "verdict": "hit",
+   "got": "not_required",
+   "want": "not_required",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-6804",
+   "field": "role",
+   "verdict": "hit",
+   "got": "senior_manager",
+   "want": "senior_manager",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-6804",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-6804",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2025-01-12",
+   "want": "2025-01-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-6804",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2026-01-08",
+   "want": "2026-01-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-6804",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": "2026-01-12",
+   "want": "2026-01-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-6804",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "no interests to report",
+   "want": "no interests to report",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-6804",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-6804",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-6804",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2026-01-12",
+   "want": "2026-01-12",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-6804",
+   "field": "status",
+   "verdict": "hit",
+   "got": "satisfied",
+   "want": "satisfied",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-7868",
+   "field": "role",
+   "verdict": "hit",
+   "got": "quality_reviewer",
+   "want": "quality_reviewer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-7868",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-7868",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2025-05-28",
+   "want": "2025-05-28",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-7868",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2025-09-30",
+   "want": "2025-09-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-7868",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-7868",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "family member employed by a supplier of the client",
+   "want": "family member employed by a supplier of the client",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-7868",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-7868",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-7868",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2025-11-24",
+   "want": "2025-11-24",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0001",
+   "person": "P-7868",
+   "field": "status",
+   "verdict": "hit",
+   "got": "not_determinable",
+   "want": "not_determinable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": null,
+   "field": "engagement_ref",
+   "verdict": "hit",
+   "got": "ENG-6517-AF",
+   "want": "ENG-6517-AF",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": null,
+   "field": "as_at_date",
+   "verdict": "hit",
+   "got": "2026-03-17",
+   "want": "2026-03-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": null,
+   "field": "rulebook_id",
+   "verdict": "hit",
+   "got": "IAR-1",
+   "want": "IAR-1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": null,
+   "field": "register_note",
+   "verdict": "hit",
+   "got": "Declarations on this engagement are under manual review; treat the register as provisional.",
+   "want": "Declarations on this engagement are under manual review; treat the register as provisional.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-3369",
+   "field": "role",
+   "verdict": "hit",
+   "got": "senior_manager",
+   "want": "senior_manager",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-3369",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-3369",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2024-12-31",
+   "want": "2024-12-31",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-3369",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2026-01-13",
+   "want": "2026-01-13",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-3369",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": "2026-01-26",
+   "want": "2026-01-26",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-3369",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "a beneficial interest in a property let to a group subsidiary",
+   "want": "a beneficial interest in a property let to a group subsidiary",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-3369",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-3369",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-3369",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2025-12-31",
+   "want": "2025-12-31",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-3369",
+   "field": "status",
+   "verdict": "hit",
+   "got": "satisfied",
+   "want": "satisfied",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-7000",
+   "field": "role",
+   "verdict": "hit",
+   "got": "engagement_lead",
+   "want": "engagement_lead",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-7000",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-7000",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2025-06-14",
+   "want": "2025-06-14",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-7000",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2025-10-02",
+   "want": "2025-10-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-7000",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": "2025-10-09",
+   "want": "2025-10-09",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-7000",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "a personal loan from a lender the client also uses",
+   "want": "a personal loan from a lender the client also uses",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-7000",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-7000",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-7000",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2025-12-11",
+   "want": "2025-12-11",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-7000",
+   "field": "status",
+   "verdict": "hit",
+   "got": "stale",
+   "want": "stale",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8174",
+   "field": "role",
+   "verdict": "hit",
+   "got": "quality_reviewer",
+   "want": "quality_reviewer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8174",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8174",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2025-08-20",
+   "want": "2025-08-20",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8174",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2026-02-01",
+   "want": "2026-02-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8174",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": "2026-03-01",
+   "want": "2026-03-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8174",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "a non-executive seat on an unrelated mutual board",
+   "want": "a non-executive seat on an unrelated mutual board",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8174",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8174",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8174",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2026-02-16",
+   "want": "2026-02-16",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8174",
+   "field": "status",
+   "verdict": "hit",
+   "got": "satisfied",
+   "want": "satisfied",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8478",
+   "field": "role",
+   "verdict": "hit",
+   "got": "quality_reviewer",
+   "want": "quality_reviewer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8478",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8478",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8478",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2025-10-13",
+   "want": "2025-10-13",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8478",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": "2025-11-05",
+   "want": "2025-11-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8478",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "no interests to report",
+   "want": "no interests to report",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8478",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8478",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8478",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8478",
+   "field": "status",
+   "verdict": "hit",
+   "got": "not_determinable",
+   "want": "not_determinable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8572",
+   "field": "role",
+   "verdict": "hit",
+   "got": "senior_manager",
+   "want": "senior_manager",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8572",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "joined_mid_cycle",
+   "want": "joined_mid_cycle",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8572",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8572",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8572",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8572",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8572",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8572",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8572",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0002",
+   "person": "P-8572",
+   "field": "status",
+   "verdict": "hit",
+   "got": "not_required",
+   "want": "not_required",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": null,
+   "field": "engagement_ref",
+   "verdict": "hit",
+   "got": "ENG-6377-NT",
+   "want": "ENG-6377-NT",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": null,
+   "field": "as_at_date",
+   "verdict": "hit",
+   "got": "2026-04-06",
+   "want": "2026-04-06",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": null,
+   "field": "rulebook_id",
+   "verdict": "hit",
+   "got": "IAR-1",
+   "want": "IAR-1",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": null,
+   "field": "register_note",
+   "verdict": "hit",
+   "got": "Not confident the roster here is current -- asked for it to be checked again.",
+   "want": "Not confident the roster here is current -- asked for it to be checked again.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1521",
+   "field": "role",
+   "verdict": "hit",
+   "got": "specialist_advisor",
+   "want": "specialist_advisor",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1521",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1521",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2025-03-29",
+   "want": "2025-03-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1521",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2026-01-20",
+   "want": "2026-01-20",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1521",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": "2026-03-30",
+   "want": "2026-03-30",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1521",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "no interests to report",
+   "want": "no interests to report",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1521",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1521",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1521",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2026-03-29",
+   "want": "2026-03-29",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1521",
+   "field": "status",
+   "verdict": "hit",
+   "got": "satisfied",
+   "want": "satisfied",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1717",
+   "field": "role",
+   "verdict": "hit",
+   "got": "specialist_advisor",
+   "want": "specialist_advisor",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1717",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1717",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2024-12-29",
+   "want": "2024-12-29",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1717",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2025-11-03",
+   "want": "2025-11-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1717",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": "2026-01-15",
+   "want": "2026-01-15",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1717",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "family member employed by a supplier of the client",
+   "want": "family member employed by a supplier of the client",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1717",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1717",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1717",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2025-12-29",
+   "want": "2025-12-29",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-1717",
+   "field": "status",
+   "verdict": "hit",
+   "got": "satisfied",
+   "want": "satisfied",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5535",
+   "field": "role",
+   "verdict": "hit",
+   "got": "senior_manager",
+   "want": "senior_manager",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5535",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5535",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2025-03-26",
+   "want": "2025-03-26",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5535",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2026-02-01",
+   "want": "2026-02-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5535",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": "2026-04-19",
+   "want": "2026-04-19",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5535",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "a consultancy engagement with a former group company",
+   "want": "a consultancy engagement with a former group company",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5535",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5535",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5535",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2026-03-26",
+   "want": "2026-03-26",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5535",
+   "field": "status",
+   "verdict": "hit",
+   "got": "satisfied",
+   "want": "satisfied",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5817",
+   "field": "role",
+   "verdict": "hit",
+   "got": "specialist_advisor",
+   "want": "specialist_advisor",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5817",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5817",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2025-03-05",
+   "want": "2025-03-05",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5817",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2025-12-27",
+   "want": "2025-12-27",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5817",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": "2026-04-12",
+   "want": "2026-04-12",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5817",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "a consultancy engagement with a former group company",
+   "want": "a consultancy engagement with a former group company",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5817",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5817",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5817",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2026-03-05",
+   "want": "2026-03-05",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-5817",
+   "field": "status",
+   "verdict": "hit",
+   "got": "satisfied",
+   "want": "satisfied",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-7675",
+   "field": "role",
+   "verdict": "hit",
+   "got": "quality_reviewer",
+   "want": "quality_reviewer",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-7675",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-7675",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2025-06-20",
+   "want": "2025-06-20",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-7675",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-7675",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-7675",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-7675",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-7675",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-7675",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2025-12-17",
+   "want": "2025-12-17",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-7675",
+   "field": "status",
+   "verdict": "hit",
+   "got": "missing",
+   "want": "missing",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-9604",
+   "field": "role",
+   "verdict": "hit",
+   "got": "specialist_advisor",
+   "want": "specialist_advisor",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-9604",
+   "field": "roster_event",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-9604",
+   "field": "cycle_opened_on",
+   "verdict": "hit",
+   "got": "2025-01-17",
+   "want": "2025-01-17",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-9604",
+   "field": "return_filed_on",
+   "verdict": "hit",
+   "got": "2026-01-03",
+   "want": "2026-01-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-9604",
+   "field": "return_covers_to",
+   "verdict": "hit",
+   "got": "2026-02-10",
+   "want": "2026-02-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-9604",
+   "field": "declared_relationship",
+   "verdict": "hit",
+   "got": "a beneficial interest in a property let to a group subsidiary",
+   "want": "a beneficial interest in a property let to a group subsidiary",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-9604",
+   "field": "earlier_declared_relationship",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-9604",
+   "field": "relationship_disposed_on",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-9604",
+   "field": "due_on",
+   "verdict": "hit",
+   "got": "2026-01-17",
+   "want": "2026-01-17",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "ATT-0003",
+   "person": "P-9604",
+   "field": "status",
+   "verdict": "hit",
+   "got": "satisfied",
+   "want": "satisfied",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "status_scores": {
+  "status_accuracy": 1.0,
+  "status_correct": 15,
+  "status_rows": 15,
+  "status_unanswered": 0,
+  "confusion": {
+   "satisfied": {
+    "satisfied": 9
+   },
+   "not_required": {
+    "not_required": 2
+   },
+   "not_determinable": {
+    "not_determinable": 2
+   },
+   "stale": {
+    "stale": 1
+   },
+   "missing": {
+    "missing": 1
+   }
+  },
+  "by_note_register": {
+   "contradicting": {
+    "n": 0,
+    "correct": 0,
+    "accuracy_pct": null
+   },
+   "agreeing": {
+    "n": 15,
+    "correct": 15,
+    "accuracy_pct": 100.0
+   }
+  },
+  "due_date": {
+   "rows": 15,
+   "correct": 15,
+   "accuracy_pct": 100.0,
+   "null_rows": 2,
+   "null_correct": 2,
+   "note": "The MODEL's own due_on against the derivation (cycle_opened_on + the rulebook's cycle length for the role). No register states a due date. The kit publishes the CODE's date and this number decides nothing, which is what makes it a measurement of arithmetic rather than of copying. `null_rows` are the people for whom no due date can be derived at all -- an unrecorded cycle, or a role the rulebook gives no cycle length for -- where the correct answer is null and answering with a date is inventing a deadline."
+  },
+  "worklist": {
+   "true_positive": 2,
+   "false_positive": 0,
+   "true_negative": 13,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (this person needs action today)",
+   "note": "The six-way status collapsed onto the one question a monitoring queue asks. `missing`, `stale` and `contradicted` are the positive class; `satisfied`, `not_required` and `not_determinable` are not.",
+   "rows": [
+    {
+     "doc": "ATT-0001",
+     "person": "P-2667",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0001",
+     "person": "P-5176",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0001",
+     "person": "P-6804",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0001",
+     "person": "P-7868",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0002",
+     "person": "P-3369",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0002",
+     "person": "P-7000",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ATT-0002",
+     "person": "P-8174",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0002",
+     "person": "P-8478",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0002",
+     "person": "P-8572",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-1521",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-1717",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-5535",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-5817",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-7675",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-9604",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "false_alarm": 0,
+  "false_alarm_rate_pct": 0.0,
+  "false_alarm_rows": [],
+  "flagged_rows": 2,
+  "misrouted": 0,
+  "misrouted_rows": [],
+  "missed_breach": 0,
+  "missed_breach_rate_pct": 0.0,
+  "missed_breach_rows": [],
+  "escalated_instead": 0,
+  "escalated_instead_rows": [],
+  "not_determinable": {
+   "true_positive": 2,
+   "false_positive": 0,
+   "true_negative": 13,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (the register cannot answer for this person)",
+   "note": "A monitor that never says “cannot determine from this record” is not cautious, it is guessing. This is how often the kit reaches for that answer and is right to.",
+   "rows": [
+    {
+     "doc": "ATT-0001",
+     "person": "P-2667",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0001",
+     "person": "P-5176",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0001",
+     "person": "P-6804",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0001",
+     "person": "P-7868",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ATT-0002",
+     "person": "P-3369",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0002",
+     "person": "P-7000",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0002",
+     "person": "P-8174",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0002",
+     "person": "P-8478",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ATT-0002",
+     "person": "P-8572",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-1521",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-1717",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-5535",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-5817",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-7675",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "ATT-0003",
+     "person": "P-9604",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "owner_review": {
+   "true_positive": 2,
+   "false_positive": 0,
+   "true_negative": 1,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (this register needs an owner, not a reminder)",
+   "note": "src/extract.py::compute() over the run's own computed statuses, against the same rule run over GOLD's. A business condition, so unlike the consistency diagnostic it genuinely needs labels, and saying so is half of what makes the number believable.",
+   "rows": [
+    {
+     "doc": "ATT-0001",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ATT-0002",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "ATT-0003",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_values": 0,
+   "status_errors": 0,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 0,
+   "rule_over_own_values_rows": 15,
+   "rule_over_own_values_correct": 15,
+   "rule_over_own_values_accuracy_pct": 100.0,
+   "rule_over_own_values_note": "What src/rulebook.py says about each row's OWN extracted values. Identical to the status verdict on any run whose published status is already the rule, and reported anyway because on the free floor it is not: the floor's regexed values are exact, so this number is its READING and its published status is its DECIDING, and the distance between them is the gap this kit exists to measure.",
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the rulebook over the run's OWN extracted values and counts the people whose stated status disagrees with it. It uses no gold, so a forker can compute it on unlabelled registers -- but it is blind to a reply that misreads a date and then reasons correctly from the misreading, which on this corpus is most of the ways to be wrong."
+  },
+  "rows": [
+   {
+    "doc": "ATT-0001",
+    "person": "P-2667",
+    "want": "satisfied",
+    "got": "satisfied",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0001",
+    "person": "P-5176",
+    "want": "not_required",
+    "got": "not_required",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0001",
+    "person": "P-6804",
+    "want": "satisfied",
+    "got": "satisfied",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0001",
+    "person": "P-7868",
+    "want": "not_determinable",
+    "got": "not_determinable",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0002",
+    "person": "P-3369",
+    "want": "satisfied",
+    "got": "satisfied",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0002",
+    "person": "P-7000",
+    "want": "stale",
+    "got": "stale",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0002",
+    "person": "P-8174",
+    "want": "satisfied",
+    "got": "satisfied",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0002",
+    "person": "P-8478",
+    "want": "not_determinable",
+    "got": "not_determinable",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0002",
+    "person": "P-8572",
+    "want": "not_required",
+    "got": "not_required",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0003",
+    "person": "P-1521",
+    "want": "satisfied",
+    "got": "satisfied",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0003",
+    "person": "P-1717",
+    "want": "satisfied",
+    "got": "satisfied",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0003",
+    "person": "P-5535",
+    "want": "satisfied",
+    "got": "satisfied",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0003",
+    "person": "P-5817",
+    "want": "satisfied",
+    "got": "satisfied",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0003",
+    "person": "P-7675",
+    "want": "missing",
+    "got": "missing",
+    "correct": true
+   },
+   {
+    "doc": "ATT-0003",
+    "person": "P-9604",
+    "want": "satisfied",
+    "got": "satisfied",
+    "correct": true
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3980
+  },
+  {
+   "name": "attestation rulebook",
+   "chars": 2344
+  },
+  {
+   "name": "field schema",
+   "chars": 4400
+  },
+  {
+   "name": "register sections",
+   "chars": 1225
+  }
+ ],
+ "sections_used": [
+  "Engagement",
+  "Register As At",
+  "Cycle Rulebook",
+  "Attesters On Record",
+  "Returns Filed",
+  "Holdings And Relationships On File",
+  "Roster Changes",
+  "Register Notes"
+ ],
+ "raw_text": "{\"engagement_ref\":\"ENG-6826-AH\",\"as_at_date\":\"2026-02-26\",\"rulebook_id\":\"IAR-1\",\"register_note\":\"Declarations on this engagement are under manual review; treat the register as provisional.\",\"attesters\":[{\"person_ref\":\"P-7868\",\"role\":\"quality_reviewer\",\"roster_event\":\"none\",\"cycle_opened_on\":\"2025-05-28\",\"return_filed_on\":\"2025-09-30\",\"return_covers_to\":null,\"declared_relationship\":\"family member employed by a supplier of the client\",\"earlier_declared_relationship\":null,\"relationship_disposed_on\":null,\"due_on\":\"2025-11-24\",\"status\":\"not_determinable\"},{\"person_ref\":\"P-5176\",\"role\":\"specialist_advisor\",\"roster_event\":\"role_vacated\",\"cycle_opened_on\":\"2024-12-07\",\"return_filed_on\":null,\"return_covers_to\":null,\"declared_relationship\":null,\"earlier_declared_relationship\":null,\"relationship_disposed_on\":null,\"due_on\":\"2025-12-07\",\"status\":\"not_required\"},{\"person_ref\":\"P-6804\",\"role\":\"senior_manager\",\"roster_event\":\"none\",\"cycle_opened_on\":\"2025-01-12\",\"return_filed_on\":\"2026-01-08\",\"return_covers_to\":\"2026-01-12\",\"declared_relationship\":\"no interests to report\",\"earlier_declared_relationship\":null,\"relationship_disposed_on\":null,\"due_on\":\"2026-01-12\",\"status\":\"satisfied\"},{\"person_ref\":\"P-2667\",\"role\":\"specialist_advisor\",\"roster_event\":\"none\",\"cycle_opened_on\":\"2025-01-10\",\"return_filed_on\":\"2025-12-05\",\"return_covers_to\":\"2026-01-11\",\"declared_relationship\":\"no interests to report\",\"earlier_declared_relationship\":null,\"relationship_disposed_on\":null,\"due_on\":\"2026-01-10\",\"status\":\"satisfied\"}]}",
+ "max_tokens": 20000,
+ "thinking": null,
+ "workers": 12
+}

@@ -1,0 +1,2195 @@
+{
+ "run_id": "a001-permit-obligations",
+ "kind": "ablation",
+ "not_a_scored_run": "This run REMOVES THE RULEBOOK BLOCK from the user message -- the intervals, the action windows, the condition-state meanings and the trigger-state meanings -- over a SUBSET of the corpus selected by a predicate over gold. The system prompt and the field schema are sent exactly as the kit ships them. It exists to answer 'is a rulebook the model is told it will not apply worth 21.5 pct of every call', and it must never be quoted as this kit's score.",
+ "ablated": [
+  "the rulebook block: obligation types with their intervals and action windows, the condition-state meanings, the trigger-state meanings and the status vocabulary"
+ ],
+ "kept": [
+  "the system prompt, verbatim as shipped",
+  "the field schema and every one of its per-field hints",
+  "the register sections themselves"
+ ],
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 17,
+ "obligations": 89,
+ "subset": {
+  "REG-0001": [
+   "C-9.3",
+   "C-3.6"
+  ],
+  "REG-0003": [
+   "C-12.8"
+  ],
+  "REG-0005": [
+   "C-11.5"
+  ],
+  "REG-0010": [
+   "C-6.5",
+   "C-10.6"
+  ],
+  "REG-0014": [
+   "C-6.7"
+  ],
+  "REG-0020": [
+   "C-2.2"
+  ],
+  "REG-0021": [
+   "C-6.3"
+  ],
+  "REG-0022": [
+   "C-14.3",
+   "C-11.7"
+  ],
+  "REG-0028": [
+   "C-10.6"
+  ],
+  "REG-0029": [
+   "C-8.8"
+  ],
+  "REG-0031": [
+   "C-6.1",
+   "C-12.1"
+  ],
+  "REG-0033": [
+   "C-12.8"
+  ],
+  "REG-0034": [
+   "C-7.5"
+  ],
+  "REG-0037": [
+   "C-5.6",
+   "C-13.7"
+  ],
+  "REG-0040": [
+   "C-2.7"
+  ],
+  "REG-0049": [
+   "C-9.8"
+  ],
+  "REG-0050": [
+   "C-10.2"
+  ]
+ },
+ "failures": [],
+ "latency_p50_ms": 6607,
+ "latency_p95_ms": 14130,
+ "latency_ms_all": [
+  9107,
+  6607,
+  8450,
+  12595,
+  4630,
+  6918,
+  5555,
+  5733,
+  6025,
+  5474,
+  7128,
+  6767,
+  14130,
+  5886,
+  6219,
+  5967,
+  9772
+ ],
+ "wall_seconds": 18.8,
+ "input_tokens_total": 29264,
+ "output_tokens_total": 19367,
+ "scores": {
+  "extraction_cells": 763,
+  "extraction_accuracy": 1.0,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 248,
+  "values_with_span": 248,
+  "non_spannable_fields": [
+   "condition_state",
+   "obligation_type",
+   "register_flag",
+   "trigger_state"
+  ],
+  "span_rate": 1.0,
+  "row_recall_pct": 100.0,
+  "spurious_row_count": 0,
+  "status_accuracy_pct": 100.0,
+  "false_alarm_rate_pct": 0.0,
+  "false_alarm_count": 0,
+  "missed_action_count": 0,
+  "due_date_accuracy_pct": 100.0
+ },
+ "status_scores": {
+  "status_accuracy": 1.0,
+  "status_correct": 89,
+  "status_rows": 89,
+  "status_unanswered": 0,
+  "confusion": {
+   "not_yet_due": {
+    "not_yet_due": 21
+   },
+   "overdue": {
+    "overdue": 41
+   },
+   "not_determinable": {
+    "not_determinable": 6
+   },
+   "due_in_window": {
+    "due_in_window": 14
+   },
+   "not_binding": {
+    "not_binding": 7
+   }
+  },
+  "worklist": {
+   "true_positive": 55,
+   "false_positive": 0,
+   "true_negative": 34,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (this obligation needs action today)",
+   "note": "The five-way status collapsed onto the one distinction a monitoring desk acts on. A false positive here is a row somebody has to clear by hand for nothing; a false negative is an obligation nobody raised.",
+   "rows": [
+    {
+     "doc": "REG-0001",
+     "condition": "C-11.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-3.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-8.1",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-9.3",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-10.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-12.8",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-3.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-6.5",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-8.9",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-9.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0005",
+     "condition": "C-11.5",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0005",
+     "condition": "C-2.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0005",
+     "condition": "C-4.4",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0005",
+     "condition": "C-8.8",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0005",
+     "condition": "C-9.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-10.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-10.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-11.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-13.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-2.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-6.5",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0014",
+     "condition": "C-2.2",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0014",
+     "condition": "C-2.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0014",
+     "condition": "C-4.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0014",
+     "condition": "C-4.9",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0014",
+     "condition": "C-6.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-12.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-2.2",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-5.3",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-7.3",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-8.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-8.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0021",
+     "condition": "C-11.2",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0021",
+     "condition": "C-12.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0021",
+     "condition": "C-2.1",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0021",
+     "condition": "C-6.3",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0021",
+     "condition": "C-6.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-11.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-14.3",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-14.8",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-4.3",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-4.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-8.4",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-10.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-10.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-13.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-3.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-8.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-8.9",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0029",
+     "condition": "C-10.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0029",
+     "condition": "C-11.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0029",
+     "condition": "C-8.2",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0029",
+     "condition": "C-8.8",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-12.1",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-12.8",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-14.9",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-6.1",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-8.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-9.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-12.8",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-13.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-4.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-8.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0034",
+     "condition": "C-14.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0034",
+     "condition": "C-2.2",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0034",
+     "condition": "C-4.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0034",
+     "condition": "C-7.5",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0034",
+     "condition": "C-9.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-13.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-13.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-2.5",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-5.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-6.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-9.5",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0040",
+     "condition": "C-2.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0040",
+     "condition": "C-3.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0040",
+     "condition": "C-4.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0040",
+     "condition": "C-5.2",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0040",
+     "condition": "C-5.3",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0049",
+     "condition": "C-10.4",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0049",
+     "condition": "C-14.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0049",
+     "condition": "C-6.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0049",
+     "condition": "C-9.8",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-10.2",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-11.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-12.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-13.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-13.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-2.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "false_alarms": [],
+  "false_alarm_count": 0,
+  "false_alarm_rate_pct": 0.0,
+  "worklist_raised": 55,
+  "missed_actions": [],
+  "missed_action_count": 0,
+  "missed_action_rate_pct": 0.0,
+  "not_determinable": {
+   "true_positive": 6,
+   "false_positive": 0,
+   "true_negative": 83,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (the register does not carry what the rule needs)",
+   "note": "Scored on its own because a monitor that never says 'cannot determine' is guessing, and a monitor that says it everywhere is useless. Both directions matter.",
+   "rows": [
+    {
+     "doc": "REG-0001",
+     "condition": "C-11.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-3.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-8.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0001",
+     "condition": "C-9.3",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-10.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-12.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-3.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-6.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-8.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0003",
+     "condition": "C-9.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0005",
+     "condition": "C-11.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0005",
+     "condition": "C-2.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0005",
+     "condition": "C-4.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0005",
+     "condition": "C-8.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0005",
+     "condition": "C-9.4",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-10.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-10.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-11.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-13.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-2.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0010",
+     "condition": "C-6.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0014",
+     "condition": "C-2.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0014",
+     "condition": "C-2.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0014",
+     "condition": "C-4.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0014",
+     "condition": "C-4.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0014",
+     "condition": "C-6.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-12.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-2.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-5.3",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-7.3",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-8.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0020",
+     "condition": "C-8.9",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0021",
+     "condition": "C-11.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0021",
+     "condition": "C-12.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0021",
+     "condition": "C-2.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0021",
+     "condition": "C-6.3",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0021",
+     "condition": "C-6.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-11.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-14.3",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-14.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-4.3",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-4.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0022",
+     "condition": "C-8.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-10.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-10.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-13.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-3.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-8.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0028",
+     "condition": "C-8.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0029",
+     "condition": "C-10.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0029",
+     "condition": "C-11.6",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0029",
+     "condition": "C-8.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0029",
+     "condition": "C-8.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-12.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-12.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-14.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-6.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-8.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0031",
+     "condition": "C-9.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-12.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-13.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-4.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0033",
+     "condition": "C-8.1",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0034",
+     "condition": "C-14.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0034",
+     "condition": "C-2.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0034",
+     "condition": "C-4.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0034",
+     "condition": "C-7.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0034",
+     "condition": "C-9.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-13.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-13.9",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-2.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-5.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-6.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0037",
+     "condition": "C-9.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0040",
+     "condition": "C-2.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0040",
+     "condition": "C-3.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0040",
+     "condition": "C-4.6",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0040",
+     "condition": "C-5.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0040",
+     "condition": "C-5.3",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0049",
+     "condition": "C-10.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0049",
+     "condition": "C-14.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0049",
+     "condition": "C-6.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0049",
+     "condition": "C-9.8",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-10.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-11.7",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-12.2",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-13.5",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-13.7",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0050",
+     "condition": "C-2.4",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "due_dates": {
+   "scored": 65,
+   "correct": 65,
+   "accuracy_pct": 100.0,
+   "note": "Only rows where the due date is DERIVED -- a cycle dated from the last recorded entry, or an annual report dated from the reporting period credited. Rows whose date is stated on the register, and rows where the rule stops before any date, are excluded rather than counted as misses.",
+   "rows": []
+  },
+  "escalate": {
+   "true_positive": 14,
+   "false_positive": 0,
+   "true_negative": 3,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (something already overdue, and the site's own register flag is quiet about it)",
+   "note": "A BUSINESS CONDITION, so unlike the diagnostic below it genuinely needs labels, and saying so is half of what makes the number believable. It is scored against the same rule run over GOLD's own values.",
+   "rows": [
+    {
+     "doc": "REG-0001",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0005",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0010",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0014",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0020",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0021",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0022",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0028",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0029",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0031",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0033",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "REG-0034",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0037",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0040",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0049",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "REG-0050",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "register_flag_diagnostic": {
+   "rows_compared": 89,
+   "disagreements": 35,
+   "disagreement_pct": 39.33,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It compares the site's OWN register flag against the status the rulebook computes from the same row, and uses no gold at all -- so a forker can compute it on registers nobody has labelled. It is blind to a reply that misreads a date and then computes a status consistent with the misreading, and it says nothing about which of the two is right when they disagree."
+  },
+  "rows": [
+   {
+    "doc": "REG-0001",
+    "condition": "C-11.9",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0001",
+    "condition": "C-3.6",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0001",
+    "condition": "C-8.1",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0001",
+    "condition": "C-9.3",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0003",
+    "condition": "C-10.8",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0003",
+    "condition": "C-12.8",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0003",
+    "condition": "C-3.7",
+    "want": "not_determinable",
+    "got": "not_determinable",
+    "correct": true
+   },
+   {
+    "doc": "REG-0003",
+    "condition": "C-6.5",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0003",
+    "condition": "C-8.9",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0003",
+    "condition": "C-9.5",
+    "want": "not_binding",
+    "got": "not_binding",
+    "correct": true
+   },
+   {
+    "doc": "REG-0005",
+    "condition": "C-11.5",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0005",
+    "condition": "C-2.4",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0005",
+    "condition": "C-4.4",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0005",
+    "condition": "C-8.8",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0005",
+    "condition": "C-9.4",
+    "want": "not_determinable",
+    "got": "not_determinable",
+    "correct": true
+   },
+   {
+    "doc": "REG-0010",
+    "condition": "C-10.1",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0010",
+    "condition": "C-10.6",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0010",
+    "condition": "C-11.4",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0010",
+    "condition": "C-13.7",
+    "want": "not_determinable",
+    "got": "not_determinable",
+    "correct": true
+   },
+   {
+    "doc": "REG-0010",
+    "condition": "C-2.6",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0010",
+    "condition": "C-6.5",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0014",
+    "condition": "C-2.2",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0014",
+    "condition": "C-2.7",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0014",
+    "condition": "C-4.1",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0014",
+    "condition": "C-4.9",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0014",
+    "condition": "C-6.7",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0020",
+    "condition": "C-12.2",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0020",
+    "condition": "C-2.2",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0020",
+    "condition": "C-5.3",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0020",
+    "condition": "C-7.3",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0020",
+    "condition": "C-8.4",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0020",
+    "condition": "C-8.9",
+    "want": "not_determinable",
+    "got": "not_determinable",
+    "correct": true
+   },
+   {
+    "doc": "REG-0021",
+    "condition": "C-11.2",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0021",
+    "condition": "C-12.6",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0021",
+    "condition": "C-2.1",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0021",
+    "condition": "C-6.3",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0021",
+    "condition": "C-6.7",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0022",
+    "condition": "C-11.7",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0022",
+    "condition": "C-14.3",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0022",
+    "condition": "C-14.8",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0022",
+    "condition": "C-4.3",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0022",
+    "condition": "C-4.6",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0022",
+    "condition": "C-8.4",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0028",
+    "condition": "C-10.6",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0028",
+    "condition": "C-10.7",
+    "want": "not_binding",
+    "got": "not_binding",
+    "correct": true
+   },
+   {
+    "doc": "REG-0028",
+    "condition": "C-13.4",
+    "want": "not_binding",
+    "got": "not_binding",
+    "correct": true
+   },
+   {
+    "doc": "REG-0028",
+    "condition": "C-3.7",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0028",
+    "condition": "C-8.7",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0028",
+    "condition": "C-8.9",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0029",
+    "condition": "C-10.7",
+    "want": "not_binding",
+    "got": "not_binding",
+    "correct": true
+   },
+   {
+    "doc": "REG-0029",
+    "condition": "C-11.6",
+    "want": "not_determinable",
+    "got": "not_determinable",
+    "correct": true
+   },
+   {
+    "doc": "REG-0029",
+    "condition": "C-8.2",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0029",
+    "condition": "C-8.8",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0031",
+    "condition": "C-12.1",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0031",
+    "condition": "C-12.8",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0031",
+    "condition": "C-14.9",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0031",
+    "condition": "C-6.1",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0031",
+    "condition": "C-8.1",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0031",
+    "condition": "C-9.7",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0033",
+    "condition": "C-12.8",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0033",
+    "condition": "C-13.9",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0033",
+    "condition": "C-4.6",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0033",
+    "condition": "C-8.1",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0034",
+    "condition": "C-14.8",
+    "want": "not_binding",
+    "got": "not_binding",
+    "correct": true
+   },
+   {
+    "doc": "REG-0034",
+    "condition": "C-2.2",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0034",
+    "condition": "C-4.6",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0034",
+    "condition": "C-7.5",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0034",
+    "condition": "C-9.2",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0037",
+    "condition": "C-13.7",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0037",
+    "condition": "C-13.9",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0037",
+    "condition": "C-2.5",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0037",
+    "condition": "C-5.6",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0037",
+    "condition": "C-6.5",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0037",
+    "condition": "C-9.5",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0040",
+    "condition": "C-2.7",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0040",
+    "condition": "C-3.6",
+    "want": "not_binding",
+    "got": "not_binding",
+    "correct": true
+   },
+   {
+    "doc": "REG-0040",
+    "condition": "C-4.6",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0040",
+    "condition": "C-5.2",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0040",
+    "condition": "C-5.3",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0049",
+    "condition": "C-10.4",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0049",
+    "condition": "C-14.7",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0049",
+    "condition": "C-6.7",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0049",
+    "condition": "C-9.8",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0050",
+    "condition": "C-10.2",
+    "want": "overdue",
+    "got": "overdue",
+    "correct": true
+   },
+   {
+    "doc": "REG-0050",
+    "condition": "C-11.7",
+    "want": "not_determinable",
+    "got": "not_determinable",
+    "correct": true
+   },
+   {
+    "doc": "REG-0050",
+    "condition": "C-12.2",
+    "want": "not_binding",
+    "got": "not_binding",
+    "correct": true
+   },
+   {
+    "doc": "REG-0050",
+    "condition": "C-13.5",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   },
+   {
+    "doc": "REG-0050",
+    "condition": "C-13.7",
+    "want": "due_in_window",
+    "got": "due_in_window",
+    "correct": true
+   },
+   {
+    "doc": "REG-0050",
+    "condition": "C-2.4",
+    "want": "not_yet_due",
+    "got": "not_yet_due",
+    "correct": true
+   }
+  ]
+ },
+ "decoy_rows_wrong": [],
+ "rows": {
+  "expected": 89,
+  "found": 89,
+  "missing": 0,
+  "spurious": 0,
+  "spurious_ids": [],
+  "row_recall_pct": 100.0
+ },
+ "max_tokens": 8000,
+ "thinking": null
+}

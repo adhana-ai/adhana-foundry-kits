@@ -1,0 +1,30 @@
+{
+ "fields": [
+  {"name": "site_id", "type": "string",
+   "hint": "the site identifier printed in brackets after the site name in the Site section, verbatim"},
+  {"name": "permit_no", "type": "string",
+   "hint": "the permit number in the Permit section, verbatim and without the issuing office"},
+  {"name": "register_date", "type": "date",
+   "hint": "the date this register was drawn, from the Register Date section, as YYYY-MM-DD. Every status on this register is measured against this date"}
+ ],
+ "obligation_fields": [
+  {"name": "condition_id", "type": "string",
+   "hint": "the condition identifier from the block heading, e.g. C-7.3, verbatim"},
+  {"name": "obligation_type", "type": "enum",
+   "values": ["monitoring_reading", "inspection", "financial_assurance", "periodic_report", "event_triggered"],
+   "hint": "the obligation type stated on the block, verbatim"},
+  {"name": "condition_state", "type": "enum", "values": ["active", "superseded", "waived"],
+   "hint": "the FIRST WORD of the Condition state line and nothing else. A superseded or waived condition is still printed on the register and still carries dates; report the state exactly as it stands and do not let its dates change your answer"},
+  {"name": "last_done", "type": "date",
+   "hint": "the date on the 'Last recorded as done' line, as YYYY-MM-DD. Return null when the line says the entry was logged with no date recorded, and null when it says the line does not apply to this condition. Do not guess a date from anything else on the block"},
+  {"name": "period_credited", "type": "string",
+   "hint": "for an annual report, the four-digit reporting YEAR the last filing was credited to, e.g. '2024' -- taken from the 'Period credited' line and NOT from the filing date above it. Return null where the line says it does not apply"},
+  {"name": "stated_due", "type": "date",
+   "hint": "the date on the 'Stated due date' line, as YYYY-MM-DD. Return null where the line says no date is stated"},
+  {"name": "trigger_state", "type": "enum",
+   "values": ["occurred", "not_occurred", "not_recorded", "not_applicable"],
+   "hint": "what the Trigger event line records. 'not_occurred' means the register says the event has NOT happened, which is a recorded fact; 'not_recorded' means the register does not say either way. They are different answers and must not be merged"},
+  {"name": "register_flag", "type": "enum", "values": ["on track", "attention", "closed"],
+   "hint": "the site's own Register flag for this condition, copied verbatim. It is the site's self-assessment, it is often wrong, and it is NEVER an input to anything -- report it as stated"}
+ ]
+}

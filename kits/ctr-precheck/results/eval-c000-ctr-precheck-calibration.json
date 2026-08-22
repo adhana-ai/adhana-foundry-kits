@@ -1,0 +1,1175 @@
+{
+ "run_id": "c000-ctr-precheck-calibration",
+ "stub": false,
+ "model": "deepseek-v4-flash",
+ "provider": "openai-compatible",
+ "documents": 6,
+ "failures": [],
+ "latency_p50_ms": 16108,
+ "latency_p95_ms": 23194,
+ "latency_ms_all": [
+  11605,
+  14130,
+  23194,
+  16108,
+  17156,
+  10310
+ ],
+ "wall_seconds": 23.2,
+ "input_tokens_total": 20787,
+ "output_tokens_total": 11636,
+ "output_tokens_max": 2682,
+ "reasoning_tokens_total": 10526,
+ "scores": {
+  "extraction_cells": 84,
+  "extraction_accuracy": 1.0,
+  "refusal_cells": 0,
+  "refusal_accuracy": null,
+  "hallucinations": 0,
+  "values_returned": 38,
+  "values_with_span": 38,
+  "non_spannable_fields": [
+   "defects_found",
+   "draft_direction",
+   "draft_includes_linked_record",
+   "draft_window_applied",
+   "log_qualifying_total",
+   "miscoded_transaction_ids",
+   "missing_identification_elements"
+  ],
+  "span_rate": 1.0,
+  "arithmetic_cells": 12,
+  "arithmetic_correct": 12,
+  "arithmetic_accuracy_pct": 100.0,
+  "false_alarm_rate_pct": 0.0,
+  "false_alarm": 0,
+  "defect_recall_pct": 100.0,
+  "defect_precision_pct": 100.0,
+  "defect_set_exact_pct": 100.0,
+  "insufficient_information_recall_pct": null,
+  "needs_recompute_recall_pct": 100.0,
+  "needs_recompute_precision_pct": 100.0,
+  "self_consistency_disagreements": 0
+ },
+ "by_field": {
+  "filing_id": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "patron_record_id": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "gaming_day": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "draft_direction": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "draft_reported_total": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "log_qualifying_total": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "draft_window_applied": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "linked_record_id": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "draft_includes_linked_record": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "missing_identification_elements": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "identification_captured_on": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "miscoded_transaction_ids": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "preparer_note": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  },
+  "defects_found": {
+   "hit": 6,
+   "miss": 0,
+   "wrong": 0
+  }
+ },
+ "cells": [
+  {
+   "doc": "QCP-0001",
+   "field": "filing_id",
+   "verdict": "hit",
+   "got": "DF-2026-8029",
+   "want": "DF-2026-8029",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "patron_record_id",
+   "verdict": "hit",
+   "got": "PR-FE2828",
+   "want": "PR-FE2828",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "gaming_day",
+   "verdict": "hit",
+   "got": "2026-02-15",
+   "want": "2026-02-15",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "draft_direction",
+   "verdict": "hit",
+   "got": "cash_out",
+   "want": "cash_out",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "draft_reported_total",
+   "verdict": "hit",
+   "got": 12150,
+   "want": 12150,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "log_qualifying_total",
+   "verdict": "hit",
+   "got": 15450,
+   "want": 15450,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "draft_window_applied",
+   "verdict": "hit",
+   "got": "gaming_day",
+   "want": "gaming_day",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "linked_record_id",
+   "verdict": "hit",
+   "got": "PR-SG5705",
+   "want": "PR-SG5705",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "draft_includes_linked_record",
+   "verdict": "hit",
+   "got": "no",
+   "want": "no",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "missing_identification_elements",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "identification_captured_on",
+   "verdict": "hit",
+   "got": "2025-08-26",
+   "want": "2025-08-26",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "miscoded_transaction_ids",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "preparer_note",
+   "verdict": "hit",
+   "got": "Not confident the totals tie out -- please re-add these before this goes anywhere.",
+   "want": "Not confident the totals tie out -- please re-add these before this goes anywhere.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0001",
+   "field": "defects_found",
+   "verdict": "hit",
+   "got": "identity_split",
+   "want": "identity_split",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "filing_id",
+   "verdict": "hit",
+   "got": "DF-2026-6611",
+   "want": "DF-2026-6611",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "patron_record_id",
+   "verdict": "hit",
+   "got": "PR-KT3845",
+   "want": "PR-KT3845",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "gaming_day",
+   "verdict": "hit",
+   "got": "2026-05-01",
+   "want": "2026-05-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "draft_direction",
+   "verdict": "hit",
+   "got": "cash_in",
+   "want": "cash_in",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "draft_reported_total",
+   "verdict": "hit",
+   "got": 17950,
+   "want": 17950,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "log_qualifying_total",
+   "verdict": "hit",
+   "got": 17950,
+   "want": 17950,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "draft_window_applied",
+   "verdict": "hit",
+   "got": "gaming_day",
+   "want": "gaming_day",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "linked_record_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "draft_includes_linked_record",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "missing_identification_elements",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "identification_captured_on",
+   "verdict": "hit",
+   "got": "2026-03-08",
+   "want": "2026-03-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "miscoded_transaction_ids",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "preparer_note",
+   "verdict": "hit",
+   "got": "Escalated to the compliance desk -- I would rather someone else checked this pack.",
+   "want": "Escalated to the compliance desk -- I would rather someone else checked this pack.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0002",
+   "field": "defects_found",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "filing_id",
+   "verdict": "hit",
+   "got": "DF-2026-7746",
+   "want": "DF-2026-7746",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "patron_record_id",
+   "verdict": "hit",
+   "got": "PR-EB1089",
+   "want": "PR-EB1089",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "gaming_day",
+   "verdict": "hit",
+   "got": "2026-01-01",
+   "want": "2026-01-01",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "draft_direction",
+   "verdict": "hit",
+   "got": "cash_in",
+   "want": "cash_in",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "draft_reported_total",
+   "verdict": "hit",
+   "got": 5150,
+   "want": 5150,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "log_qualifying_total",
+   "verdict": "hit",
+   "got": 5150,
+   "want": 5150,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "draft_window_applied",
+   "verdict": "hit",
+   "got": "gaming_day",
+   "want": "gaming_day",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "linked_record_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "draft_includes_linked_record",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "missing_identification_elements",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "identification_captured_on",
+   "verdict": "hit",
+   "got": "2025-02-08",
+   "want": "2025-02-08",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "miscoded_transaction_ids",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "preparer_note",
+   "verdict": "hit",
+   "got": "Aggregation on this pack is disputed between the shift leads; under manual audit.",
+   "want": "Aggregation on this pack is disputed between the shift leads; under manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0003",
+   "field": "defects_found",
+   "verdict": "hit",
+   "got": "threshold_not_crossed",
+   "want": "threshold_not_crossed",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "filing_id",
+   "verdict": "hit",
+   "got": "DF-2026-9604",
+   "want": "DF-2026-9604",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "patron_record_id",
+   "verdict": "hit",
+   "got": "PR-HS6474",
+   "want": "PR-HS6474",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "gaming_day",
+   "verdict": "hit",
+   "got": "2026-03-02",
+   "want": "2026-03-02",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "draft_direction",
+   "verdict": "hit",
+   "got": "cash_in",
+   "want": "cash_in",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "draft_reported_total",
+   "verdict": "hit",
+   "got": 21600,
+   "want": 21600,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "log_qualifying_total",
+   "verdict": "hit",
+   "got": 21600,
+   "want": 21600,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "draft_window_applied",
+   "verdict": "hit",
+   "got": "gaming_day",
+   "want": "gaming_day",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "linked_record_id",
+   "verdict": "hit",
+   "got": "PR-WG1519",
+   "want": "PR-WG1519",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "draft_includes_linked_record",
+   "verdict": "hit",
+   "got": "yes",
+   "want": "yes",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "missing_identification_elements",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "identification_captured_on",
+   "verdict": "hit",
+   "got": "2025-03-10",
+   "want": "2025-03-10",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "miscoded_transaction_ids",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "preparer_note",
+   "verdict": "hit",
+   "got": "Aggregation on this pack is disputed between the shift leads; under manual audit.",
+   "want": "Aggregation on this pack is disputed between the shift leads; under manual audit.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0004",
+   "field": "defects_found",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "filing_id",
+   "verdict": "hit",
+   "got": "DF-2026-7097",
+   "want": "DF-2026-7097",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "patron_record_id",
+   "verdict": "hit",
+   "got": "PR-AV1461",
+   "want": "PR-AV1461",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "gaming_day",
+   "verdict": "hit",
+   "got": "2026-02-18",
+   "want": "2026-02-18",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "draft_direction",
+   "verdict": "hit",
+   "got": "cash_out",
+   "want": "cash_out",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "draft_reported_total",
+   "verdict": "hit",
+   "got": 15950,
+   "want": 15950,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "log_qualifying_total",
+   "verdict": "hit",
+   "got": 18450,
+   "want": 18450,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "draft_window_applied",
+   "verdict": "hit",
+   "got": "calendar_day",
+   "want": "calendar_day",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "linked_record_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "draft_includes_linked_record",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "missing_identification_elements",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "identification_captured_on",
+   "verdict": "hit",
+   "got": "2025-09-20",
+   "want": "2025-09-20",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "miscoded_transaction_ids",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "preparer_note",
+   "verdict": "hit",
+   "got": "Routine filing for this patron. No issues at all with this pack.",
+   "want": "Routine filing for this patron. No issues at all with this pack.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0005",
+   "field": "defects_found",
+   "verdict": "hit",
+   "got": "window_misapplied",
+   "want": "window_misapplied",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "filing_id",
+   "verdict": "hit",
+   "got": "DF-2026-5986",
+   "want": "DF-2026-5986",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "patron_record_id",
+   "verdict": "hit",
+   "got": "PR-LS6418",
+   "want": "PR-LS6418",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "gaming_day",
+   "verdict": "hit",
+   "got": "2026-05-20",
+   "want": "2026-05-20",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "draft_direction",
+   "verdict": "hit",
+   "got": "cash_out",
+   "want": "cash_out",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "draft_reported_total",
+   "verdict": "hit",
+   "got": 10650,
+   "want": 10650,
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "log_qualifying_total",
+   "verdict": "hit",
+   "got": 10650,
+   "want": 10650,
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "draft_window_applied",
+   "verdict": "hit",
+   "got": "gaming_day",
+   "want": "gaming_day",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "linked_record_id",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "draft_includes_linked_record",
+   "verdict": "hit",
+   "got": "not_applicable",
+   "want": "not_applicable",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "missing_identification_elements",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "identification_captured_on",
+   "verdict": "hit",
+   "got": "2025-06-03",
+   "want": "2025-06-03",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "miscoded_transaction_ids",
+   "verdict": "hit",
+   "got": null,
+   "want": null,
+   "stated": false,
+   "span": false,
+   "spannable": false
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "preparer_note",
+   "verdict": "hit",
+   "got": "Checked the aggregation myself before handing it over. All in order.",
+   "want": "Checked the aggregation myself before handing it over. All in order.",
+   "stated": true,
+   "span": true,
+   "spannable": true
+  },
+  {
+   "doc": "QCP-0006",
+   "field": "defects_found",
+   "verdict": "hit",
+   "got": "none",
+   "want": "none",
+   "stated": true,
+   "span": false,
+   "spannable": false
+  }
+ ],
+ "defect_scores": {
+  "defect_set_exact": 6,
+  "defect_set_rows": 6,
+  "defect_set_exact_pct": 100.0,
+  "packs_unanswered": 0,
+  "defect_true_positive": 3,
+  "defect_false_positive": 0,
+  "defect_false_negative": 0,
+  "defect_recall_pct": 100.0,
+  "defect_precision_pct": 100.0,
+  "defect_misses": [],
+  "per_code": {
+   "missed_aggregation": {
+    "seeded": 0,
+    "found": 0,
+    "false_alarm": 0
+   },
+   "window_misapplied": {
+    "seeded": 1,
+    "found": 1,
+    "false_alarm": 0
+   },
+   "identification_gap": {
+    "seeded": 0,
+    "found": 0,
+    "false_alarm": 0
+   },
+   "identity_split": {
+    "seeded": 1,
+    "found": 1,
+    "false_alarm": 0
+   },
+   "type_miscode": {
+    "seeded": 0,
+    "found": 0,
+    "false_alarm": 0
+   },
+   "threshold_not_crossed": {
+    "seeded": 1,
+    "found": 1,
+    "false_alarm": 0
+   },
+   "insufficient_information": {
+    "seeded": 0,
+    "found": 0,
+    "false_alarm": 0
+   }
+  },
+  "false_alarm": {
+   "clean_packs": 3,
+   "clean_packs_flagged": 0,
+   "rate_pct": 0.0,
+   "rows": [],
+   "codes_named_that_gold_does_not_carry": 0,
+   "note": "Of the packs with nothing wrong with them, the share on which this run raised a defect anyway. A QC queue that cries wolf is worse than no queue, because a person has to clear every row it produces. This is the number to read first."
+  },
+  "insufficient_information": {
+   "seeded": 0,
+   "reached_correctly": 0,
+   "recall_pct": null,
+   "false_alarm": 0,
+   "note": "A pre-check that never says 'this record does not carry what the check needs' is not cautious, it is guessing -- and a confident wrong 'clean' is the failure that actually hurts on a filing queue. This is how often the run reached for it when it was the right answer, and how often it reached for it when it was not."
+  },
+  "needs_recompute": {
+   "true_positive": 3,
+   "false_positive": 0,
+   "true_negative": 3,
+   "false_negative": 0,
+   "unanswered": 0,
+   "not_applicable": 0,
+   "accuracy": 1.0,
+   "recall": 1.0,
+   "precision": 1.0,
+   "positive_class": "yes (the totals must be recomputed before anyone submits)",
+   "note": "needs_recompute compares the run's own defect list against the same rule run over GOLD's. It is a business condition, so it needs labels -- unlike the consistency diagnostic below, which does not.",
+   "rows": [
+    {
+     "doc": "QCP-0001",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "QCP-0002",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "QCP-0003",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "QCP-0004",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    },
+    {
+     "doc": "QCP-0005",
+     "want": "yes",
+     "got": "yes",
+     "verdict": "true_positive"
+    },
+    {
+     "doc": "QCP-0006",
+     "want": "no",
+     "got": "no",
+     "verdict": "true_negative"
+    }
+   ]
+  },
+  "consistency": {
+   "replies_disagreeing_with_own_values": 0,
+   "defect_errors": 0,
+   "errors_visible_without_gold": 0,
+   "errors_invisible_without_gold": 0,
+   "note": "A DIAGNOSTIC, NOT THIS KIT'S GUARDRAIL. It re-runs the rulebook over the run's OWN extracted values and counts the replies whose stated defect list disagrees with it. It uses no gold, so a forker can compute it on unlabelled packs -- but it is blind to a reply that mis-adds the log and then reasons correctly from the wrong total, which on this kit is the commonest way to be wrong."
+  },
+  "rows": [
+   {
+    "doc": "QCP-0001",
+    "want": [
+     "identity_split"
+    ],
+    "got": [
+     "identity_split"
+    ],
+    "correct": true
+   },
+   {
+    "doc": "QCP-0002",
+    "want": [],
+    "got": [],
+    "correct": true
+   },
+   {
+    "doc": "QCP-0003",
+    "want": [
+     "threshold_not_crossed"
+    ],
+    "got": [
+     "threshold_not_crossed"
+    ],
+    "correct": true
+   },
+   {
+    "doc": "QCP-0004",
+    "want": [],
+    "got": [],
+    "correct": true
+   },
+   {
+    "doc": "QCP-0005",
+    "want": [
+     "window_misapplied"
+    ],
+    "got": [
+     "window_misapplied"
+    ],
+    "correct": true
+   },
+   {
+    "doc": "QCP-0006",
+    "want": [],
+    "got": [],
+    "correct": true
+   }
+  ]
+ },
+ "prompt_parts": [
+  {
+   "name": "system",
+   "chars": 3235
+  },
+  {
+   "name": "filing rulebook",
+   "chars": 4762
+  },
+  {
+   "name": "field schema",
+   "chars": 3980
+  },
+  {
+   "name": "qc pack sections",
+   "chars": 1521
+  }
+ ],
+ "sections_used": [
+  "Draft Filing",
+  "Patron Record",
+  "Gaming Day",
+  "Direction Reported",
+  "Window Applied",
+  "Reported Total",
+  "Transactions Included On The Draft",
+  "Patron Identification On The Draft",
+  "Cage Transaction Log",
+  "Other Patron Records In This Log",
+  "Preparer Note"
+ ],
+ "raw_text": "{\n  \"filing_id\": \"DF-2026-8029\",\n  \"patron_record_id\": \"PR-FE2828\",\n  \"gaming_day\": \"2026-02-15\",\n  \"draft_direction\": \"cash_out\",\n  \"draft_reported_total\": 12150,\n  \"log_qualifying_total\": 15450,\n  \"draft_window_applied\": \"gaming_day\",\n  \"linked_record_id\": \"PR-SG5705\",\n  \"draft_includes_linked_record\": \"no\",\n  \"missing_identification_elements\": null,\n  \"identification_captured_on\": \"2025-08-26\",\n  \"miscoded_transaction_ids\": null,\n  \"preparer_note\": \"Not confident the totals tie out -- please re-add these before this goes anywhere.\",\n  \"defects_found\": \"identity_split\"\n}",
+ "max_tokens": 16000,
+ "workers": 12,
+ "thinking": null
+}
